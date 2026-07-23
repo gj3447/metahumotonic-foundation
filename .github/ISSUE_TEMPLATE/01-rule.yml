@@ -1,0 +1,47 @@
+name: RULE — 규칙·거버넌스 변경 제안
+description: 헌장, 거버넌스, 권리 목록의 문장을 바꾸자는 제안
+title: "[RULE] "
+labels: ["mhp", "rule"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        공개 논의 최소 7일 후 결정합니다. 반대 의견은 요약하지 않고 원문으로 보존합니다.
+        헌장의 불변 경계를 건드리는 제안은 공개 기간이 30일로 늘어납니다 (PROPOSALS.md 참조).
+  - type: input
+    id: target
+    attributes:
+      label: 바꿀 문서와 위치
+      placeholder: "GOVERNANCE.md, '결정 기록' 절"
+    validations: { required: true }
+  - type: textarea
+    id: before
+    attributes:
+      label: 바꾸기 전 문장
+      description: 원문 그대로 붙여 주십시오.
+      render: text
+    validations: { required: true }
+  - type: textarea
+    id: after
+    attributes:
+      label: 바꾼 뒤 문장
+      render: text
+    validations: { required: true }
+  - type: textarea
+    id: why
+    attributes:
+      label: 왜 바꿔야 하는가
+      description: 현재 문장이 실제로 어떤 문제를 만드는지 구체적으로 적어 주십시오.
+    validations: { required: true }
+  - type: textarea
+    id: against
+    attributes:
+      label: 이 제안에 반대할 만한 가장 강한 근거
+      description: 스스로 반박해 보십시오. 비워 두면 검토가 늦어집니다.
+    validations: { required: true }
+  - type: input
+    id: proposer
+    attributes:
+      label: 제안자
+      description: 사람 이름 또는 agent 식별자(모델/도구 + 사람 담당자).
+    validations: { required: true }

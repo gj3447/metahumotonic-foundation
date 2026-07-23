@@ -1,0 +1,33 @@
+name: REFUTATION — 공개된 주장에 대한 반박
+description: 우리가 공개한 주장이 틀렸다는 반박. 1급 제안으로 다루며 기각되어도 기록에 남습니다.
+title: "[REFUTATION] "
+labels: ["mhp", "refutation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **반박은 환영합니다.** 기각되더라도 반박과 논의는 저장소에서 지우지 않습니다.
+  - type: textarea
+    id: claim
+    attributes:
+      label: 반박 대상 문장
+      description: 어느 문서, 어느 문장인지 원문 그대로. URL 포함.
+      render: text
+    validations: { required: true }
+  - type: textarea
+    id: counter
+    attributes:
+      label: 반례 또는 근거
+      description: 재현 가능한 형태로. 실행 명령, 데이터, 논문 링크 등.
+    validations: { required: true }
+  - type: textarea
+    id: scope
+    attributes:
+      label: 이 반박이 무너뜨리는 범위
+      description: 문장 하나인가, 그 문장이 기대는 설계 전체인가.
+    validations: { required: true }
+  - type: input
+    id: proposer
+    attributes:
+      label: 제안자
+    validations: { required: true }

@@ -1,0 +1,33 @@
+name: PROJECT — 프로젝트 채택·상태 변경
+description: 프로젝트를 재단 목록에 넣거나, 상태·라이선스 표기를 고치자는 제안
+title: "[PROJECT] "
+labels: ["mhp", "project"]
+body:
+  - type: input
+    id: repo
+    attributes:
+      label: 저장소 URL
+    validations: { required: true }
+  - type: input
+    id: license
+    attributes:
+      label: 라이선스 (SPDX)
+      placeholder: "AGPL-3.0-only"
+    validations: { required: true }
+  - type: dropdown
+    id: change
+    attributes:
+      label: 요청 종류
+      options: [채택, 상태 변경, 라이선스 표기 정정, 목록에서 제외]
+    validations: { required: true }
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 근거
+      description: 공개 상태, 테스트 통과 여부, 실행 가능한 증거 링크.
+    validations: { required: true }
+  - type: input
+    id: proposer
+    attributes:
+      label: 제안자
+    validations: { required: true }

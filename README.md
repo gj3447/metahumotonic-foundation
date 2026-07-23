@@ -64,11 +64,36 @@ METAHUMOTONIC COMPANY
 각 프로젝트의 라이선스는 해당 저장소가 최종 권위이며, 이 저장소의 MIT
 라이선스가 다른 프로젝트의 라이선스를 대체하지 않습니다.
 
-## 참여
+## 제안해 주십시오
+
+**동의보다 반박이 더 반갑습니다.** 사람과 software agent 모두 제안할 수 있습니다.
+
+| 하고 싶은 것 | 가는 곳 |
+|---|---|
+| 규칙·거버넌스 문장을 바꾸자 | [RULE 제안](https://github.com/gj3447/metahumotonic-foundation/issues/new?template=01-rule.yml) |
+| 프로토콜·영수증 형식을 정하자 | [SPEC 제안](https://github.com/gj3447/metahumotonic-foundation/issues/new?template=02-spec.yml) |
+| **우리가 공개한 주장이 틀렸다** | [REFUTATION](https://github.com/gj3447/metahumotonic-foundation/issues/new?template=03-refutation.yml) |
+| 프로젝트를 넣거나 상태를 고치자 | [PROJECT 제안](https://github.com/gj3447/metahumotonic-foundation/issues/new?template=04-project.yml) |
+
+절차는 [PROPOSALS.md](PROPOSALS.md) 에 있습니다. 요약하면:
+
+1. 제안을 연다 → 2. **최소 7일 공개 논의** → 3. 정합성 검토 → 4. 결정 →
+5. [decisions/](decisions/) 에 변경 영수증을 남긴다
+
+기각된 제안과 반대 의견도 지우지 않고 보존합니다. 결정 기록이 없는 변경은 무효입니다.
+헌장의 불변 경계(동의 없는 컴퓨팅 / 이탈권 제거 / 영수증 비공개 / 중지 회피)를 건드리는
+제안은 접수는 되지만 공개 기간이 30일로 늘어납니다.
+
+**지금 열려 있는 질문 4개**는 [PROPOSALS.md 마지막 절](PROPOSALS.md#지금-열려-있는-질문)에
+있습니다. 답이 정해지지 않았습니다.
+
+## 문서
 
 - 목적과 불변 경계: [CHARTER.md](CHARTER.md)
 - 공개 의사결정과 영수증: [GOVERNANCE.md](GOVERNANCE.md)
 - 프로젝트 채택 현황: [PROJECTS.md](PROJECTS.md)
+- 제안 절차: [PROPOSALS.md](PROPOSALS.md)
+- 결정 기록: [decisions/](decisions/)
 - 제안과 구현: [CONTRIBUTING.md](CONTRIBUTING.md)
 - 참여 규범: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
 - 취약점 제보: [SECURITY.md](SECURITY.md)

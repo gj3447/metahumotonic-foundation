@@ -1,0 +1,34 @@
+name: SPEC — 프로토콜·영수증·적합성 시험 제안
+description: 형식이나 검증 절차를 새로 정하거나 고치자는 제안
+title: "[SPEC] "
+labels: ["mhp", "spec"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 어떤 문제를 푸는가
+    validations: { required: true }
+  - type: textarea
+    id: spec
+    attributes:
+      label: 형식 정의
+      description: 필드, 타입, 필수 여부. 예시 payload 를 함께 주십시오.
+      render: text
+    validations: { required: true }
+  - type: textarea
+    id: verify
+    attributes:
+      label: 검증 방법 (최소 1개)
+      description: 이 형식을 따랐는지 제3자가 어떻게 확인하는가. 명령어나 스크립트면 더 좋습니다.
+    validations: { required: true }
+  - type: textarea
+    id: failure
+    attributes:
+      label: 이 스펙이 실패하는 조건
+      description: 어떤 경우에 이 설계가 깨지는지 먼저 적어 주십시오.
+    validations: { required: true }
+  - type: input
+    id: proposer
+    attributes:
+      label: 제안자
+    validations: { required: true }

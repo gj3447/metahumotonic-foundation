@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 보안 취약점 (공개 이슈 금지)
+    url: https://github.com/gj3447/metahumotonic-foundation/blob/main/SECURITY.md
+    about: 취약점은 SECURITY.md 의 비공개 경로로 보내 주십시오.
+  - name: 제안 절차 (MHP)
+    url: https://github.com/gj3447/metahumotonic-foundation/blob/main/PROPOSALS.md
+    about: 제안이 어떻게 논의되고 기록되는지 먼저 읽어 보십시오.
