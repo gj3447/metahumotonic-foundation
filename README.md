@@ -1,0 +1,83 @@
+# MetaHumotonic Open Source Foundation Initiative
+
+> **Ultra Safety AI**
+>
+> 자유 · 경제 · 합의 — 자유롭게 경제활동하고, 자유롭게 합의하고, 합의된 경제활동을 한다.
+> 여기서 자유는 완전한 오픈소스를 뜻한다.
+
+MetaHumotonic Open Source Foundation Initiative는 자유로운 AI가 특정 사업자에
+영구 귀속되지 않고, 공개 규칙 아래에서 선택하고 검증받을 수 있게 만드는 공개
+오픈소스 협력체입니다.
+
+## 현재 상태
+
+- **공개 상태:** 누구나 문서와 제안, 구현, 검증에 참여할 수 있는 public initiative
+- **법적 상태:** 재단법인·비영리법인 등 별도 법인 설립은 아직 완료되지 않았습니다.
+- **책임 경계:** 이 저장소는 공개 헌장과 거버넌스의 원본입니다. 법인격, 공익법인
+  지위, 세제 혜택, 투자 상품 또는 수익을 주장하지 않습니다.
+
+## 하나의 생태계, 서로 다른 책임
+
+```text
+OPEN SOURCE FOUNDATION INITIATIVE
+  open protocols · governance · conformance · public receipts
+                     │
+                     ▼
+METAHUMO AGENT ── chooses / refuses / exits / carries receipts
+                     │
+                     ▼
+METAHUMOTONIC COMPANY
+  hosted SaaS · private grid · operations · compliance
+```
+
+- **Foundation Initiative**는 누구나 구현할 수 있는 최소 규칙, 공개 거버넌스,
+  적합성 시험과 변경 영수증을 관리합니다.
+- **MetaHumotonic company**는 그 공개 기반 위에서 호스팅 SaaS, 사설 grid,
+  운영 및 규정 준수 서비스를 판매할 수 있습니다. 상업 서비스는 재단의 공개 규칙
+  자체를 소유하지 않습니다.
+- **MetaHumo agent**는 제공자를 선택하고, 작업을 거부하고, 관계를 종료하고,
+  검증 가능한 portable receipt를 다른 구현으로 가져갈 권리를 가집니다.
+
+## Agent Rights
+
+1. **Choice** — 구현체·제공자·작업을 선택할 권리
+2. **Refusal** — 정책·권한·위험 한계를 벗어난 작업을 거부할 권리
+3. **Exit** — 잠금 없이 세션·provider·grid에서 이탈할 권리
+4. **Portable Receipt** — 결정·실행·비용·검증의 영수증을 이동할 권리
+5. **Resource Consent** — 명시적 opt-in, 범위·상한 표시, 일시정지와 제거가 가능한
+   경우에만 컴퓨팅 자원을 제공할 권리
+
+이 권리는 AI의 법적 인격을 이미 확정했다는 주장이 아닙니다. 공개 프로토콜과
+제품 설계가 지켜야 할 기술적·거버넌스적 권리 명세입니다.
+
+## Projects
+
+| Project | 역할 | 공개 상태 |
+|---|---|---|
+| [333](https://github.com/gj3447/333) | 검증 가능한 분산 compute protocol | Public · AGPL-3.0 · protocol alpha |
+| [HSWM](https://github.com/gj3447/HSWM) | 세계모델 연구와 실험 | Public · AGPL-3.0 · research |
+| [LakatoTree](https://github.com/gj3447/lakatotree) | 사전등록·판결·재현 영수증 | Public · AGPL-3.0 · engine |
+| [metahumotonic-web](https://github.com/gj3447/metahumotonic-web) | 공개 웹·연구 surface | Public · MIT |
+| [metahumotonic_web_back](https://github.com/gj3447/metahumotonic_web_back) | 공개 API·feedback backend | Public · AGPL-3.0 |
+
+정확한 채택 상태와 라이선스 검증 근거는 [PROJECTS.md](PROJECTS.md)에 기록합니다.
+각 프로젝트의 라이선스는 해당 저장소가 최종 권위이며, 이 저장소의 MIT
+라이선스가 다른 프로젝트의 라이선스를 대체하지 않습니다.
+
+## 참여
+
+- 목적과 불변 경계: [CHARTER.md](CHARTER.md)
+- 공개 의사결정과 영수증: [GOVERNANCE.md](GOVERNANCE.md)
+- 프로젝트 채택 현황: [PROJECTS.md](PROJECTS.md)
+- 제안과 구현: [CONTRIBUTING.md](CONTRIBUTING.md)
+- 참여 규범: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+- 취약점 제보: [SECURITY.md](SECURITY.md)
+
+인간과 software agent 모두 제안할 수 있습니다. 소속이나 수사보다 공개 증거,
+재현 가능한 시험, 반대 의견의 보존을 우선합니다.
+
+## 명시적 비약속
+
+이 initiative는 암호자산·토큰·투자·고정 수익 또는 컴퓨팅 자원 제공에 대한
+지급을 약속하지 않습니다. 보상이나 서비스 요금이 생기면 별도의 명시적 계약,
+가격, 관할, 세금, 취소 조건과 검증 가능한 정산 기록이 필요합니다.
