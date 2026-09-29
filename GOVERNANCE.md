@@ -37,7 +37,8 @@ Charter, Agent Rights, protocol의 MUST/SHALL, project adoption·퇴출, 상업 
 경계를 바꾸는 변경입니다.
 
 1. `RFC: <title>` 공개 제안과 정확한 diff를 게시합니다.
-2. 검토 기간은 원칙적으로 최소 14일입니다.
+2. 검토 기간은 원칙적으로 최소 14일입니다. [PROPOSALS.md](PROPOSALS.md)의
+   헌장 불변 경계를 바꾸는 별도 RULE 제안은 최소 30일입니다.
 3. 최소 2인의 공개 review가 필요하며, 그중 1인은 제안자와 달라야 합니다.
 4. 해결되지 않은 기술적 반대는 삭제하지 않고 decision receipt에 기록합니다.
 5. 승인된 변경은 version, effective date, supersedes 정보를 포함합니다.
@@ -92,4 +93,3 @@ adoption·퇴출 또는 회사 독점권에 관한 최종 독립 review를 대�
 결정에 대한 appeal은 새로운 증거, 절차 위반 또는 공개되지 않은 이해충돌을
 근거로 제출합니다. 단순 반복 표결은 하지 않습니다. appeal의 결과도 동일한
 Decision Receipt 형식으로 남깁니다.
-
