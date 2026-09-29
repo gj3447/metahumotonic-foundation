@@ -94,6 +94,7 @@ METAHUMOTONIC COMPANY
 - 프로젝트 채택 현황: [PROJECTS.md](PROJECTS.md)
 - 제안 절차: [PROPOSALS.md](PROPOSALS.md)
 - 결정 기록: [decisions/](decisions/)
+- 하나의 존재 참여 약정 (**DRAFT, MHP-0001 논의 중**): [COVENANT.md](COVENANT.md)
 - 제안과 구현: [CONTRIBUTING.md](CONTRIBUTING.md)
 - 참여 규범: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
 - 취약점 제보: [SECURITY.md](SECURITY.md)
