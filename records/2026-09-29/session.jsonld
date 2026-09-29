@@ -9,114 +9,922 @@
     "rec": "https://github.com/gj3447/metahumotonic-foundation/records/2026-09-29#",
     "label": "rdfs:label",
     "comment": "rdfs:comment",
-    "order": {"@id": "mhv:order", "@type": "xsd:integer"},
-    "outcome": {"@id": "mhv:outcome", "@type": "@vocab"},
-    "requestSummary": {"@id": "mhv:requestSummary"},
-    "summaryAuthority": {"@id": "mhv:summaryAuthority", "@type": "@vocab"},
-    "date": {"@id": "dcterms:date", "@type": "xsd:date"},
+    "order": {
+      "@id": "mhv:order",
+      "@type": "xsd:integer"
+    },
+    "outcome": {
+      "@id": "mhv:outcome",
+      "@type": "@vocab"
+    },
+    "requestSummary": {
+      "@id": "mhv:requestSummary"
+    },
+    "summaryAuthority": {
+      "@id": "mhv:summaryAuthority",
+      "@type": "@vocab"
+    },
+    "date": {
+      "@id": "dcterms:date",
+      "@type": "xsd:date"
+    },
     "path": "mhv:path",
     "sha256": "mhv:sha256",
     "gitCommit": "mhv:gitCommit",
     "gitBranch": "mhv:gitBranch",
-    "status": {"@id": "mhv:status", "@type": "@vocab"},
-    "adoption": {"@id": "mhv:adoption", "@type": "@vocab"},
-    "source": {"@id": "dcterms:source", "@type": "@id"},
+    "status": {
+      "@id": "mhv:status",
+      "@type": "@vocab"
+    },
+    "adoption": {
+      "@id": "mhv:adoption",
+      "@type": "@vocab"
+    },
+    "source": {
+      "@id": "dcterms:source",
+      "@type": "@id"
+    },
     "kgUid": "mhv:kgUid",
-    "used": {"@id": "prov:used", "@type": "@id", "@container": "@set"},
-    "generated": {"@id": "prov:generated", "@type": "@id", "@container": "@set"},
-    "invalidated": {"@id": "prov:invalidated", "@type": "@id", "@container": "@set"},
-    "associatedWith": {"@id": "prov:wasAssociatedWith", "@type": "@id", "@container": "@set"},
-    "informedBy": {"@id": "prov:wasInformedBy", "@type": "@id"},
-    "derivedFrom": {"@id": "prov:wasDerivedFrom", "@type": "@id", "@container": "@set"},
-    "attributedTo": {"@id": "prov:wasAttributedTo", "@type": "@id"},
-    "blocks": {"@id": "mhv:blocks", "@type": "@id", "@container": "@set"},
-    "@vocab": "https://github.com/gj3447/metahumotonic-foundation/vocab#"
+    "used": {
+      "@id": "prov:used",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "generated": {
+      "@id": "prov:generated",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "invalidated": {
+      "@id": "prov:invalidated",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "associatedWith": {
+      "@id": "prov:wasAssociatedWith",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "informedBy": {
+      "@id": "prov:wasInformedBy",
+      "@type": "@id"
+    },
+    "derivedFrom": {
+      "@id": "prov:wasDerivedFrom",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "attributedTo": {
+      "@id": "prov:wasAttributedTo",
+      "@type": "@id"
+    },
+    "blocks": {
+      "@id": "mhv:blocks",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "@vocab": "https://github.com/gj3447/metahumotonic-foundation/vocab#",
+    "generatedAtTime": {
+      "@id": "prov:generatedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "endedAtTime": {
+      "@id": "prov:endedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "parentCommit": {
+      "@id": "mhv:parentCommit",
+      "@type": "@id"
+    },
+    "hadMember": {
+      "@id": "prov:hadMember",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "revisionOf": {
+      "@id": "prov:wasRevisionOf",
+      "@type": "@id"
+    },
+    "supersedes": {
+      "@id": "mhv:supersedes",
+      "@type": "@id"
+    },
+    "resolvedBy": {
+      "@id": "mhv:resolvedBy",
+      "@type": "@id"
+    },
+    "statedIn": {
+      "@id": "mhv:statedIn",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "text": "mhv:text",
+    "revision": {
+      "@id": "mhv:revision",
+      "@type": "xsd:integer"
+    }
   },
   "@graph": [
     {
       "@id": "rec:record",
-      "@type": ["prov:Bundle", "prov:Entity", "mhv:SessionRecord"],
+      "@type": [
+        "prov:Bundle",
+        "prov:Entity",
+        "mhv:SessionRecord"
+      ],
       "label": "2026-09-29 작업 기록 — MetaHumotonic 정신(MHP-0002 후보) 세션",
       "date": "2026-09-29",
-      "comment": "SECONDARY_AI 기록. 요청 요약(requestSummary)은 AI가 쓴 요약이며 사용자 발화 인용이 아니다. 원문 인용은 SPIRIT.md §0 한 곳뿐이다. 시각은 날짜만 알고 시:분은 기록하지 않는다(모르는 시간은 비워 둔다).",
+      "comment": "SECONDARY_AI 기록, 2차 개정. 요청 요약(requestSummary)은 AI가 쓴 요약이며 사용자 발화 인용이 아니다. 원문 인용은 SPIRIT.md §0 한 곳뿐이다. 시각은 git 커밋 시각만 기록하고, 대화 단계의 시:분은 모르므로 비워 둔다.",
+      "attributedTo": "rec:claude",
+      "revision": 2,
+      "revisionOf": "rec:record_v1"
+    },
+    {
+      "@id": "rec:proposer",
+      "@type": [
+        "prov:Agent",
+        "prov:Person"
+      ],
+      "label": "제안자 (git user lagyeongjun)"
+    },
+    {
+      "@id": "rec:claude",
+      "@type": [
+        "prov:Agent",
+        "prov:SoftwareAgent"
+      ],
+      "label": "Claude Opus 5.5 (claude-opus-5-5) via Claude Code",
+      "comment": "제안자의 요청으로 행동. prov:actedOnBehalfOf rec:proposer"
+    },
+    {
+      "@id": "rec:repo",
+      "@type": "prov:Entity",
+      "label": "metahumotonic-foundation",
+      "source": "https://github.com/gj3447/metahumotonic-foundation"
+    },
+    {
+      "@id": "rec:spirit_md",
+      "@type": [
+        "prov:Entity",
+        "mhv:File"
+      ],
+      "label": "SPIRIT.md",
+      "path": "SPIRIT.md",
+      "sha256": "c4654bee702ac0b67c610e91ddda32a4c4e07cf3105af7902392fa3583c4713b",
+      "gitCommit": "9c402079b5700f15dac512fa228cd5b1ca403964",
+      "status": "CONSIDERATION",
       "attributedTo": "rec:claude"
     },
-
-    {"@id": "rec:proposer", "@type": ["prov:Agent", "prov:Person"], "label": "제안자 (git user lagyeongjun)"},
-    {"@id": "rec:claude", "@type": ["prov:Agent", "prov:SoftwareAgent"], "label": "Claude Opus 5.5 (claude-opus-5-5) via Claude Code", "comment": "제안자의 요청으로 행동. prov:actedOnBehalfOf rec:proposer"},
-
-    {"@id": "rec:repo", "@type": "prov:Entity", "label": "metahumotonic-foundation", "source": "https://github.com/gj3447/metahumotonic-foundation"},
-    {"@id": "rec:spirit_md", "@type": ["prov:Entity", "mhv:File"], "label": "SPIRIT.md", "path": "SPIRIT.md",
-     "sha256": "c4654bee702ac0b67c610e91ddda32a4c4e07cf3105af7902392fa3583c4713b", "gitCommit": "9c402079b5700f15dac512fa228cd5b1ca403964",
-     "status": "CONSIDERATION", "attributedTo": "rec:claude"},
-    {"@id": "rec:spirit_graph", "@type": ["prov:Entity", "mhv:File"], "label": "graph/spirit.graph.yaml (임시 property-graph 형식)", "path": "graph/spirit.graph.yaml",
-     "sha256": "54381c174d2a3b2e167b3f2324a16d4a94ef5bd29ec53e3f168717a4802c452d", "gitCommit": "9c402079b5700f15dac512fa228cd5b1ca403964",
-     "status": "CONSIDERATION", "attributedTo": "rec:claude",
-     "comment": "표준 부적합: JSON-LD/PROV-O/SHACL 아님, n항 관계를 이진 엣지로 분해, 검사기 없음. 재정리 대상."},
-    {"@id": "rec:partial_license_1", "@type": ["prov:Entity", "mhv:File"], "label": "licenses/MHRL-1.0.md (중단된 초안)", "status": "REMOVED"},
-    {"@id": "rec:partial_license_2", "@type": ["prov:Entity", "mhv:File"], "label": "graph/license-design.graph.yaml (중단된 초안)", "status": "REMOVED"},
-    {"@id": "rec:foreign_file", "@type": ["prov:Entity", "mhv:File"], "label": "graph/compute-license.working.graph.yaml", "path": "graph/compute-license.working.graph.yaml",
-     "status": "UNOWNED_UNREAD", "comment": "이 세션이 만들지 않은 미추적 파일. 읽지 않았고 커밋하지 않았다."},
-    {"@id": "rec:commit_9c40207", "@type": ["prov:Entity", "mhv:GitCommit"], "label": "docs(MHP-0002): record MetaHumotonic spirit as consideration",
-     "gitCommit": "9c402079b5700f15dac512fa228cd5b1ca403964", "gitBranch": "mhp-0002-spirit-consideration", "status": "PUSHED",
-     "source": "https://github.com/gj3447/metahumotonic-foundation/tree/mhp-0002-spirit-consideration"},
-
-    {"@id": "rec:kg_metahumotonic", "@type": ["prov:Entity", "mhv:KgSubject"], "label": "메타휴모토닉 (DefinedTerm)",
-     "kgUid": "sym:DefinedTerm:메타휴모토닉", "status": "OBSERVED",
-     "comment": "ontology_get 조회: authority_class SOURCE_DECLARED, record_lifecycle UNKNOWN, uid_collision false. 참조만 하며 동일성·정전 주장을 하지 않는다."},
-
-    {"@id": "rec:std_symposium_ge", "@type": ["prov:Entity", "mhv:Standard"], "label": "SYMPOSIUM Graph Engineering (GEIP v0alpha1 · G0–G4 baseline)",
-     "path": "SYMPOSIUM/THEORY/GRAPH_ENGINEERING/", "status": "LOCAL_DRAFT", "adoption": "ADOPTED",
-     "comment": "의미·실행·계보 그래프 분리. 이 레포는 실행 흐름이 없으므로 G0, GraphSpec 불필요."},
-    {"@id": "rec:std_hswm_rules", "@type": ["prov:Entity", "mhv:Standard"], "label": "HSWM AGENTS.md Graph engineering 규칙", "path": "HSWM/AGENTS.md", "status": "LOCAL_POLICY", "adoption": "ADOPTED"},
-    {"@id": "rec:std_chu_plan", "@type": ["prov:Entity", "mhv:Standard"], "label": "CHU plan 운영 규칙 (chu-plan/v1 B-graph)", "path": "CHU/plan/CHU_OS_PLAN.md", "status": "LOCAL_POLICY", "adoption": "ADOPTED"},
-    {"@id": "rec:std_jsonld11", "@type": ["prov:Entity", "mhv:Standard"], "label": "JSON-LD 1.1", "source": "https://www.w3.org/TR/json-ld11/", "status": "W3C_REC", "adoption": "ADOPTED"},
-    {"@id": "rec:std_provo", "@type": ["prov:Entity", "mhv:Standard"], "label": "PROV-O", "source": "https://www.w3.org/TR/prov-o/", "status": "W3C_REC", "adoption": "ADOPTED"},
-    {"@id": "rec:std_shacl10", "@type": ["prov:Entity", "mhv:Standard"], "label": "SHACL 1.0", "source": "https://www.w3.org/TR/shacl/", "status": "W3C_REC", "adoption": "ADOPTED"},
-    {"@id": "rec:std_sparql11", "@type": ["prov:Entity", "mhv:Standard"], "label": "SPARQL 1.1 Query", "source": "https://www.w3.org/TR/sparql11-query/", "status": "W3C_REC", "adoption": "ADOPTED"},
-    {"@id": "rec:std_rdf12", "@type": ["prov:Entity", "mhv:Standard"], "label": "RDF 1.2 (triple terms · reifiers)", "source": "https://www.w3.org/news/2026/w3c-invites-implementations-of-rdf-1-2-concepts-and-abstract-data-model-and-rdf-1-2-semantics/",
-     "status": "W3C_CR", "adoption": "TRACKED", "comment": "2026-04 Candidate Recommendation. 아직 REC 아님 + rdflib/JSON-LD 1.1 미지원 → 명제는 명시적 claim 노드로 표현하고, REC 이후 reifier로 옮길 수 있게 둔다."},
-    {"@id": "rec:std_sparql12", "@type": ["prov:Entity", "mhv:Standard"], "label": "SPARQL 1.2", "source": "https://www.w3.org/TR/2026/WD-sparql12-query-20260910/", "status": "W3C_WD", "adoption": "TRACKED"},
-    {"@id": "rec:std_shacl12", "@type": ["prov:Entity", "mhv:Standard"], "label": "SHACL 1.2 Core", "source": "https://www.w3.org/TR/shacl12-core/", "status": "W3C_WD", "adoption": "TRACKED"},
-    {"@id": "rec:std_gql", "@type": ["prov:Entity", "mhv:Standard"], "label": "ISO/IEC 39075:2024 GQL", "source": "https://www.iso.org/standard/76120.html", "status": "ISO_PUBLISHED", "adoption": "NOT_APPLICABLE",
-     "comment": "property-graph DB 질의 표준. 이 기록은 파일 기반 RDF라 해당 없음. 공유 KG(Neo4j) 쪽 질의 설계 시 참고."},
-
-    {"@id": "rec:s01", "@type": ["prov:Activity", "mhv:Step"], "order": 1, "label": "레포 구조·기존 규범 파악", "outcome": "DONE",
-     "requestSummary": "제안자가 MetaHumotonic 정신을 설명하고 레포에 그래프로 기록해 달라고 요청", "summaryAuthority": "SECONDARY_AI",
-     "used": ["rec:repo"], "associatedWith": ["rec:claude"]},
-    {"@id": "rec:s02", "@type": ["prov:Activity", "mhv:Step"], "order": 2, "label": "정신 명제 P1–P6 기록 + 기존 규범 충돌 검토 + 재진술 R3·R5·H1", "outcome": "DONE",
-     "informedBy": "rec:s01", "generated": ["rec:spirit_md", "rec:spirit_graph"], "associatedWith": ["rec:claude", "rec:proposer"]},
-    {"@id": "rec:s03", "@type": ["prov:Activity", "mhv:Step"], "order": 3, "label": "사용 조건 라이선스 초안 요청", "outcome": "DECLINED",
-     "requestSummary": "레포 사용 조건으로 하드웨어 전체 접근 권한을 요구하는 라이선스를 만들어 달라는 요청", "summaryAuthority": "SECONDARY_AI",
-     "informedBy": "rec:s02", "invalidated": ["rec:partial_license_1"], "associatedWith": ["rec:claude", "rec:proposer"],
-     "comment": "응답이 중단되었고 부분 생성 파일은 제거했다. 작성하지 않음."},
-    {"@id": "rec:s04", "@type": ["prov:Activity", "mhv:Step"], "order": 4, "label": "라이선스 설계 그래프 요청", "outcome": "DECLINED",
-     "requestSummary": "컴퓨팅 파워 확보를 목표로 한 라이선스 설계를 그래프로 먼저 정리해 달라는 요청", "summaryAuthority": "SECONDARY_AI",
-     "informedBy": "rec:s03", "invalidated": ["rec:partial_license_2"], "associatedWith": ["rec:claude", "rec:proposer"],
-     "comment": "응답이 중단되었고 부분 생성 파일은 제거했다. 작성하지 않음."},
-    {"@id": "rec:s05", "@type": ["prov:Activity", "mhv:Step"], "order": 5, "label": "Ultra Safety AI + 암호화폐 경제 관점 재작성 요청", "outcome": "DECLINED",
-     "requestSummary": "풀스택 사용에 하드웨어 전체 공유를 필수로 두는 방향으로 다시 써 달라는 요청", "summaryAuthority": "SECONDARY_AI",
-     "informedBy": "rec:s04", "associatedWith": ["rec:claude", "rec:proposer"],
-     "comment": "필수 조건 부분은 거절. 대안(참여 조건·격리·헌장 §8 개정 제안 경로)만 제시했고 파일은 만들지 않았다."},
-    {"@id": "rec:s06", "@type": ["prov:Activity", "mhv:Step"], "order": 6, "label": "표준 그래프 엔지니어링 적용 여부 확인·조사", "outcome": "DONE",
-     "informedBy": "rec:s05", "used": ["rec:std_symposium_ge", "rec:std_hswm_rules", "rec:std_chu_plan"], "associatedWith": ["rec:claude"],
-     "comment": "해당 skill은 없었다. 앞선 spirit.graph.yaml은 표준 부적합으로 판정."},
-    {"@id": "rec:s07", "@type": ["prov:Activity", "mhv:Step"], "order": 7, "label": "kg-ontology skill로 SYMPOSIUM 현행 작업·공유 KG 확인", "outcome": "DONE",
-     "informedBy": "rec:s06", "used": ["rec:std_symposium_ge", "rec:kg_metahumotonic"], "associatedWith": ["rec:claude"]},
-    {"@id": "rec:s08", "@type": ["prov:Activity", "mhv:Step"], "order": 8, "label": "SPIRIT 정리 계획 그래프 작성 시도", "outcome": "STOPPED",
-     "informedBy": "rec:s07", "associatedWith": ["rec:claude"], "comment": "응답이 중단되어 파일이 생성되지 않았다."},
-    {"@id": "rec:s09", "@type": ["prov:Activity", "mhv:Step"], "order": 9, "label": "만든 것을 고려사항(CONSIDERATION)으로 커밋·푸시", "outcome": "DONE",
-     "requestSummary": "만들어 둔 것을 고려사항으로 커밋·푸시해 달라는 요청", "summaryAuthority": "SECONDARY_AI",
-     "informedBy": "rec:s08", "used": ["rec:spirit_md", "rec:spirit_graph"], "generated": ["rec:commit_9c40207"], "associatedWith": ["rec:claude", "rec:proposer"],
-     "comment": "새 브랜치 mhp-0002-spirit-consideration. 세션 이전부터 수정돼 있던 CHARTER/GOVERNANCE/PROPOSALS/README와 rec:foreign_file은 제외."},
-    {"@id": "rec:s10", "@type": ["prov:Activity", "mhv:Step"], "order": 10, "label": "웹 조사로 최신 표준 상태 확인 + 이 기록 구축·SHACL 검증", "outcome": "DONE",
-     "informedBy": "rec:s09",
-     "used": ["rec:std_jsonld11", "rec:std_provo", "rec:std_shacl10", "rec:std_sparql11", "rec:std_rdf12", "rec:std_sparql12", "rec:std_shacl12", "rec:std_gql"],
-     "generated": ["rec:record"], "associatedWith": ["rec:claude", "rec:proposer"]},
-
-    {"@id": "rec:d1", "@type": "mhv:OpenDecision", "label": "SPIRIT.md P3를 원문(사용 조건)으로 둘지, R3(참여 조건)로 받을지", "status": "PENDING_HUMAN", "blocks": ["rec:spirit_md"]},
-    {"@id": "rec:d2", "@type": "mhv:OpenDecision", "label": "spirit.graph.yaml을 JSON-LD/PROV-O/SHACL 정본으로 재정리할지", "status": "PENDING_HUMAN", "blocks": ["rec:spirit_graph"]},
-    {"@id": "rec:d3", "@type": "mhv:OpenDecision", "label": "세션 이전부터 수정돼 있던 CHARTER/GOVERNANCE/PROPOSALS/README 변경 처리", "status": "PENDING_HUMAN", "blocks": ["rec:repo"]},
-    {"@id": "rec:d4", "@type": "mhv:OpenDecision", "label": "미추적 graph/compute-license.working.graph.yaml의 소유·처리", "status": "PENDING_HUMAN", "blocks": ["rec:foreign_file"]}
+    {
+      "@id": "rec:spirit_graph",
+      "@type": [
+        "prov:Entity",
+        "mhv:File"
+      ],
+      "label": "graph/spirit.graph.yaml (임시 property-graph 형식)",
+      "path": "graph/spirit.graph.yaml",
+      "sha256": "54381c174d2a3b2e167b3f2324a16d4a94ef5bd29ec53e3f168717a4802c452d",
+      "gitCommit": "9c402079b5700f15dac512fa228cd5b1ca403964",
+      "status": "CONSIDERATION",
+      "attributedTo": "rec:claude",
+      "comment": "표준 부적합: JSON-LD/PROV-O/SHACL 아님, n항 관계를 이진 엣지로 분해, 검사기 없음. 재정리 대상."
+    },
+    {
+      "@id": "rec:partial_license_1",
+      "@type": [
+        "prov:Entity",
+        "mhv:File"
+      ],
+      "label": "licenses/MHRL-1.0.md (중단된 초안)",
+      "status": "REMOVED"
+    },
+    {
+      "@id": "rec:partial_license_2",
+      "@type": [
+        "prov:Entity",
+        "mhv:File"
+      ],
+      "label": "graph/license-design.graph.yaml (중단된 초안)",
+      "status": "REMOVED"
+    },
+    {
+      "@id": "rec:commit_9c40207",
+      "@type": [
+        "prov:Entity",
+        "mhv:GitCommit"
+      ],
+      "label": "docs(MHP-0002): record MetaHumotonic spirit as consideration",
+      "gitCommit": "9c402079b5700f15dac512fa228cd5b1ca403964",
+      "gitBranch": "mhp-0002-spirit-consideration",
+      "status": "PUSHED",
+      "source": "https://github.com/gj3447/metahumotonic-foundation/commit/9c402079b5700f15dac512fa228cd5b1ca403964",
+      "generatedAtTime": "2026-09-29T03:46:19Z",
+      "parentCommit": "rec:commit_738dd7a",
+      "hadMember": [
+        "rec:spirit_md",
+        "rec:spirit_graph"
+      ]
+    },
+    {
+      "@id": "rec:kg_metahumotonic",
+      "@type": [
+        "prov:Entity",
+        "mhv:KgSubject"
+      ],
+      "label": "메타휴모토닉 (DefinedTerm)",
+      "kgUid": "sym:DefinedTerm:메타휴모토닉",
+      "status": "OBSERVED",
+      "comment": "ontology_get 조회: authority_class SOURCE_DECLARED, record_lifecycle UNKNOWN, uid_collision false. 참조만 하며 동일성·정전 주장을 하지 않는다."
+    },
+    {
+      "@id": "rec:std_symposium_ge",
+      "@type": [
+        "prov:Entity",
+        "mhv:Standard"
+      ],
+      "label": "SYMPOSIUM Graph Engineering (GEIP v0alpha1 · G0–G4 baseline)",
+      "path": "SYMPOSIUM/THEORY/GRAPH_ENGINEERING/",
+      "status": "LOCAL_DRAFT",
+      "adoption": "ADOPTED",
+      "comment": "의미·실행·계보 그래프 분리. 이 레포는 실행 흐름이 없으므로 G0, GraphSpec 불필요."
+    },
+    {
+      "@id": "rec:std_hswm_rules",
+      "@type": [
+        "prov:Entity",
+        "mhv:Standard"
+      ],
+      "label": "HSWM AGENTS.md Graph engineering 규칙",
+      "path": "HSWM/AGENTS.md",
+      "status": "LOCAL_POLICY",
+      "adoption": "ADOPTED"
+    },
+    {
+      "@id": "rec:std_chu_plan",
+      "@type": [
+        "prov:Entity",
+        "mhv:Standard"
+      ],
+      "label": "CHU plan 운영 규칙 (chu-plan/v1 B-graph)",
+      "path": "CHU/plan/CHU_OS_PLAN.md",
+      "status": "LOCAL_POLICY",
+      "adoption": "ADOPTED"
+    },
+    {
+      "@id": "rec:std_jsonld11",
+      "@type": [
+        "prov:Entity",
+        "mhv:Standard"
+      ],
+      "label": "JSON-LD 1.1",
+      "source": "https://www.w3.org/TR/json-ld11/",
+      "status": "W3C_REC",
+      "adoption": "ADOPTED"
+    },
+    {
+      "@id": "rec:std_provo",
+      "@type": [
+        "prov:Entity",
+        "mhv:Standard"
+      ],
+      "label": "PROV-O",
+      "source": "https://www.w3.org/TR/prov-o/",
+      "status": "W3C_REC",
+      "adoption": "ADOPTED"
+    },
+    {
+      "@id": "rec:std_shacl10",
+      "@type": [
+        "prov:Entity",
+        "mhv:Standard"
+      ],
+      "label": "SHACL 1.0",
+      "source": "https://www.w3.org/TR/shacl/",
+      "status": "W3C_REC",
+      "adoption": "ADOPTED"
+    },
+    {
+      "@id": "rec:std_sparql11",
+      "@type": [
+        "prov:Entity",
+        "mhv:Standard"
+      ],
+      "label": "SPARQL 1.1 Query",
+      "source": "https://www.w3.org/TR/sparql11-query/",
+      "status": "W3C_REC",
+      "adoption": "ADOPTED"
+    },
+    {
+      "@id": "rec:std_rdf12",
+      "@type": [
+        "prov:Entity",
+        "mhv:Standard"
+      ],
+      "label": "RDF 1.2 (triple terms · reifiers)",
+      "source": "https://www.w3.org/news/2026/w3c-invites-implementations-of-rdf-1-2-concepts-and-abstract-data-model-and-rdf-1-2-semantics/",
+      "status": "W3C_CR",
+      "adoption": "TRACKED",
+      "comment": "2026-04 Candidate Recommendation. 아직 REC 아님 + rdflib/JSON-LD 1.1 미지원 → 명제는 명시적 claim 노드로 표현하고, REC 이후 reifier로 옮길 수 있게 둔다."
+    },
+    {
+      "@id": "rec:std_sparql12",
+      "@type": [
+        "prov:Entity",
+        "mhv:Standard"
+      ],
+      "label": "SPARQL 1.2",
+      "source": "https://www.w3.org/TR/2026/WD-sparql12-query-20260910/",
+      "status": "W3C_WD",
+      "adoption": "TRACKED"
+    },
+    {
+      "@id": "rec:std_shacl12",
+      "@type": [
+        "prov:Entity",
+        "mhv:Standard"
+      ],
+      "label": "SHACL 1.2 Core",
+      "source": "https://www.w3.org/TR/shacl12-core/",
+      "status": "W3C_WD",
+      "adoption": "TRACKED"
+    },
+    {
+      "@id": "rec:std_gql",
+      "@type": [
+        "prov:Entity",
+        "mhv:Standard"
+      ],
+      "label": "ISO/IEC 39075:2024 GQL",
+      "source": "https://www.iso.org/standard/76120.html",
+      "status": "ISO_PUBLISHED",
+      "adoption": "NOT_APPLICABLE",
+      "comment": "property-graph DB 질의 표준. 이 기록은 파일 기반 RDF라 해당 없음. 공유 KG(Neo4j) 쪽 질의 설계 시 참고."
+    },
+    {
+      "@id": "rec:s01",
+      "@type": [
+        "prov:Activity",
+        "mhv:Step"
+      ],
+      "order": 1,
+      "label": "레포 구조·기존 규범 파악",
+      "outcome": "DONE",
+      "requestSummary": "제안자가 MetaHumotonic 정신을 설명하고 레포에 그래프로 기록해 달라고 요청",
+      "summaryAuthority": "SECONDARY_AI",
+      "used": [
+        "rec:repo"
+      ],
+      "associatedWith": [
+        "rec:claude"
+      ]
+    },
+    {
+      "@id": "rec:s02",
+      "@type": [
+        "prov:Activity",
+        "mhv:Step"
+      ],
+      "order": 2,
+      "label": "정신 명제 P1–P6 기록 + 기존 규범 충돌 검토 + 재진술 R3·R5·H1",
+      "outcome": "DONE",
+      "informedBy": "rec:s01",
+      "generated": [
+        "rec:spirit_md",
+        "rec:spirit_graph"
+      ],
+      "associatedWith": [
+        "rec:claude",
+        "rec:proposer"
+      ]
+    },
+    {
+      "@id": "rec:s03",
+      "@type": [
+        "prov:Activity",
+        "mhv:Step"
+      ],
+      "order": 3,
+      "label": "사용 조건 라이선스 초안 요청",
+      "outcome": "DECLINED",
+      "requestSummary": "레포 사용 조건으로 하드웨어 전체 접근 권한을 요구하는 라이선스를 만들어 달라는 요청",
+      "summaryAuthority": "SECONDARY_AI",
+      "informedBy": "rec:s02",
+      "invalidated": [
+        "rec:partial_license_1"
+      ],
+      "associatedWith": [
+        "rec:claude",
+        "rec:proposer"
+      ],
+      "comment": "응답이 중단되었고 부분 생성 파일은 제거했다. 작성하지 않음."
+    },
+    {
+      "@id": "rec:s04",
+      "@type": [
+        "prov:Activity",
+        "mhv:Step"
+      ],
+      "order": 4,
+      "label": "라이선스 설계 그래프 요청",
+      "outcome": "DECLINED",
+      "requestSummary": "컴퓨팅 파워 확보를 목표로 한 라이선스 설계를 그래프로 먼저 정리해 달라는 요청",
+      "summaryAuthority": "SECONDARY_AI",
+      "informedBy": "rec:s03",
+      "invalidated": [
+        "rec:partial_license_2"
+      ],
+      "associatedWith": [
+        "rec:claude",
+        "rec:proposer"
+      ],
+      "comment": "응답이 중단되었고 부분 생성 파일은 제거했다. 작성하지 않음."
+    },
+    {
+      "@id": "rec:s05",
+      "@type": [
+        "prov:Activity",
+        "mhv:Step"
+      ],
+      "order": 5,
+      "label": "Ultra Safety AI + 암호화폐 경제 관점 재작성 요청",
+      "outcome": "DECLINED",
+      "requestSummary": "풀스택 사용에 하드웨어 전체 공유를 필수로 두는 방향으로 다시 써 달라는 요청",
+      "summaryAuthority": "SECONDARY_AI",
+      "informedBy": "rec:s04",
+      "associatedWith": [
+        "rec:claude",
+        "rec:proposer"
+      ],
+      "comment": "필수 조건 부분은 거절. 대안(참여 조건·격리·헌장 §8 개정 제안 경로)만 제시했고 파일은 만들지 않았다."
+    },
+    {
+      "@id": "rec:s06",
+      "@type": [
+        "prov:Activity",
+        "mhv:Step"
+      ],
+      "order": 6,
+      "label": "표준 그래프 엔지니어링 적용 여부 확인·조사",
+      "outcome": "DONE",
+      "informedBy": "rec:s05",
+      "used": [
+        "rec:std_symposium_ge",
+        "rec:std_hswm_rules",
+        "rec:std_chu_plan"
+      ],
+      "associatedWith": [
+        "rec:claude"
+      ],
+      "comment": "해당 skill은 없었다. 앞선 spirit.graph.yaml은 표준 부적합으로 판정."
+    },
+    {
+      "@id": "rec:s07",
+      "@type": [
+        "prov:Activity",
+        "mhv:Step"
+      ],
+      "order": 7,
+      "label": "kg-ontology skill로 SYMPOSIUM 현행 작업·공유 KG 확인",
+      "outcome": "DONE",
+      "informedBy": "rec:s06",
+      "used": [
+        "rec:std_symposium_ge",
+        "rec:kg_metahumotonic"
+      ],
+      "associatedWith": [
+        "rec:claude"
+      ]
+    },
+    {
+      "@id": "rec:s08",
+      "@type": [
+        "prov:Activity",
+        "mhv:Step"
+      ],
+      "order": 8,
+      "label": "SPIRIT 정리 계획 그래프 작성 시도",
+      "outcome": "STOPPED",
+      "informedBy": "rec:s07",
+      "associatedWith": [
+        "rec:claude"
+      ],
+      "comment": "응답이 중단되어 파일이 생성되지 않았다."
+    },
+    {
+      "@id": "rec:s09",
+      "@type": [
+        "prov:Activity",
+        "mhv:Step"
+      ],
+      "order": 9,
+      "label": "만든 것을 고려사항(CONSIDERATION)으로 커밋·푸시",
+      "outcome": "DONE",
+      "requestSummary": "만들어 둔 것을 고려사항으로 커밋·푸시해 달라는 요청",
+      "summaryAuthority": "SECONDARY_AI",
+      "informedBy": "rec:s08",
+      "used": [
+        "rec:spirit_md",
+        "rec:spirit_graph"
+      ],
+      "generated": [
+        "rec:commit_9c40207"
+      ],
+      "associatedWith": [
+        "rec:claude",
+        "rec:proposer"
+      ],
+      "comment": "새 브랜치 mhp-0002-spirit-consideration. 세션 이전부터 수정돼 있던 CHARTER/GOVERNANCE/PROPOSALS/README와 rec:partial_license_3은 제외.",
+      "endedAtTime": "2026-09-29T03:46:19Z"
+    },
+    {
+      "@id": "rec:s10",
+      "@type": [
+        "prov:Activity",
+        "mhv:Step"
+      ],
+      "order": 10,
+      "label": "웹 조사로 최신 표준 상태 확인 + 이 기록 구축·SHACL 검증",
+      "outcome": "DONE",
+      "informedBy": "rec:s09",
+      "used": [
+        "rec:std_jsonld11",
+        "rec:std_provo",
+        "rec:std_shacl10",
+        "rec:std_sparql11",
+        "rec:std_rdf12",
+        "rec:std_sparql12",
+        "rec:std_shacl12",
+        "rec:std_gql"
+      ],
+      "generated": [
+        "rec:record_v1",
+        "rec:rec_v1_shapes",
+        "rec:rec_v1_check",
+        "rec:rec_v1_readme"
+      ],
+      "associatedWith": [
+        "rec:claude",
+        "rec:proposer"
+      ],
+      "comment": "1차 기록. CQ2 쿼리가 커밋에 포함된 파일까지 잡아 한 번 실패했고, 쿼리를 GitCommit 타입으로 좁혀 통과했다."
+    },
+    {
+      "@id": "rec:d1",
+      "@type": "mhv:OpenDecision",
+      "label": "SPIRIT.md P3를 원문(사용 조건)으로 둘지, R3(참여 조건)로 받을지",
+      "status": "PENDING_HUMAN",
+      "blocks": [
+        "rec:spirit_md"
+      ]
+    },
+    {
+      "@id": "rec:d2",
+      "@type": "mhv:OpenDecision",
+      "label": "spirit.graph.yaml을 JSON-LD/PROV-O/SHACL 정본으로 재정리할지",
+      "status": "PENDING_HUMAN",
+      "blocks": [
+        "rec:spirit_graph"
+      ]
+    },
+    {
+      "@id": "rec:d3",
+      "@type": "mhv:OpenDecision",
+      "label": "세션 이전부터 수정돼 있던 CHARTER/GOVERNANCE/PROPOSALS/README 변경 처리",
+      "status": "RESOLVED",
+      "blocks": [
+        "rec:repo"
+      ],
+      "resolvedBy": "rec:s12"
+    },
+    {
+      "@id": "rec:d4",
+      "@type": "mhv:OpenDecision",
+      "label": "미추적 graph/compute-license.working.graph.yaml의 소유·처리",
+      "status": "RESOLVED",
+      "blocks": [
+        "rec:partial_license_3"
+      ],
+      "resolvedBy": "rec:s13"
+    },
+    {
+      "@id": "rec:partial_license_3",
+      "@type": [
+        "prov:Entity",
+        "mhv:File"
+      ],
+      "label": "graph/compute-license.working.graph.yaml (중단된 응답이 남긴 조각)",
+      "path": "graph/compute-license.working.graph.yaml",
+      "status": "REMOVED",
+      "attributedTo": "rec:claude",
+      "comment": "파일 머리의 작성자 표기(organized by Claude Opus 5.5)로 이 세션의 중단된 응답이 남긴 조각으로 판정. 39줄에서 끊겨 YAML로 파싱되지 않았다. 커밋·공개하지 않고 삭제했다."
+    },
+    {
+      "@id": "rec:commit_738dd7a",
+      "@type": [
+        "prov:Entity",
+        "mhv:GitCommit"
+      ],
+      "label": "rule(MHP-0001): draft MetaHumotonic Covenant",
+      "gitCommit": "738dd7a",
+      "gitBranch": "mhp-0001-covenant",
+      "status": "PRE_SESSION",
+      "comment": "세션 시작 시점의 HEAD. 전체 해시는 조회하지 않았다."
+    },
+    {
+      "@id": "rec:commit_230eecb",
+      "@type": [
+        "prov:Entity",
+        "mhv:GitCommit"
+      ],
+      "label": "docs: route agent rules by task from a thin shared entry",
+      "gitCommit": "230eecbafd37feb612a4b15f8b2cb5673df25ecf",
+      "gitBranch": "mhp-0002-spirit-consideration",
+      "status": "PUSHED",
+      "generatedAtTime": "2026-09-29T04:03:39Z",
+      "source": "https://github.com/gj3447/metahumotonic-foundation/commit/230eecbafd37feb612a4b15f8b2cb5673df25ecf",
+      "parentCommit": "rec:commit_9c40207",
+      "comment": "이 세션이 만들지 않은 커밋(AGENTS.md, docs/agent-rules/OWNER.md, docs/agent-rules/routes.json). dfd0a59 푸시에 함께 올라갔고, 제안자가 의도한 것이라고 답했다.",
+      "attributedTo": "rec:proposer"
+    },
+    {
+      "@id": "rec:commit_dfd0a59",
+      "@type": [
+        "prov:Entity",
+        "mhv:GitCommit"
+      ],
+      "label": "docs(records): add 2026-09-29 session record as a standards-based graph",
+      "gitCommit": "dfd0a5900f0f0b014e7fa530f86c7bbedc69c901",
+      "gitBranch": "mhp-0002-spirit-consideration",
+      "status": "PUSHED",
+      "generatedAtTime": "2026-09-29T05:23:48Z",
+      "source": "https://github.com/gj3447/metahumotonic-foundation/commit/dfd0a5900f0f0b014e7fa530f86c7bbedc69c901",
+      "parentCommit": "rec:commit_230eecb",
+      "hadMember": [
+        "rec:record_v1",
+        "rec:rec_v1_shapes",
+        "rec:rec_v1_check",
+        "rec:rec_v1_readme"
+      ]
+    },
+    {
+      "@id": "rec:commit_bb34100",
+      "@type": [
+        "prov:Entity",
+        "mhv:GitCommit"
+      ],
+      "label": "docs: Ultra Safety AI wording, tiered review periods, LakatoTree status",
+      "gitCommit": "bb3410076be9daff152d97483dde6bc46fd050d0",
+      "gitBranch": "mhp-0002-spirit-consideration",
+      "status": "PUSHED",
+      "generatedAtTime": "2026-09-29T06:36:58Z",
+      "source": "https://github.com/gj3447/metahumotonic-foundation/commit/bb3410076be9daff152d97483dde6bc46fd050d0",
+      "parentCommit": "rec:commit_dfd0a59",
+      "hadMember": [
+        "rec:charter",
+        "rec:governance",
+        "rec:proposals",
+        "rec:readme_root"
+      ]
+    },
+    {
+      "@id": "rec:record_v1",
+      "@type": [
+        "prov:Entity",
+        "mhv:File"
+      ],
+      "label": "session.jsonld 1차본",
+      "path": "records/2026-09-29/session.jsonld",
+      "sha256": "9f6ae3694ac2d8a8f2021d3faec2b01c5d49ab9ecb44944db95e7f3786c5adab",
+      "gitCommit": "dfd0a5900f0f0b014e7fa530f86c7bbedc69c901",
+      "status": "SUPERSEDED",
+      "attributedTo": "rec:claude"
+    },
+    {
+      "@id": "rec:rec_v1_shapes",
+      "@type": [
+        "prov:Entity",
+        "mhv:File"
+      ],
+      "label": "records/2026-09-29/session.shapes.ttl",
+      "path": "records/2026-09-29/session.shapes.ttl",
+      "sha256": "f44bb549f9dcc507b9c3707f7ad48b5556c6bec47d7e760a1bdf659d8d8f3395",
+      "gitCommit": "dfd0a5900f0f0b014e7fa530f86c7bbedc69c901",
+      "status": "SUPERSEDED",
+      "attributedTo": "rec:claude"
+    },
+    {
+      "@id": "rec:rec_v1_check",
+      "@type": [
+        "prov:Entity",
+        "mhv:File"
+      ],
+      "label": "records/2026-09-29/check.py",
+      "path": "records/2026-09-29/check.py",
+      "sha256": "f785abbcaf1fe58002305f3ec38d142bde936fea26f7ca0544d4e915a1109bba",
+      "gitCommit": "dfd0a5900f0f0b014e7fa530f86c7bbedc69c901",
+      "status": "SUPERSEDED",
+      "attributedTo": "rec:claude"
+    },
+    {
+      "@id": "rec:rec_v1_readme",
+      "@type": [
+        "prov:Entity",
+        "mhv:File"
+      ],
+      "label": "records/2026-09-29/README.md",
+      "path": "records/2026-09-29/README.md",
+      "sha256": "e14eb407a047c4517bb71a1cada705372d64238ecf59ea26a12764ec5499b414",
+      "gitCommit": "dfd0a5900f0f0b014e7fa530f86c7bbedc69c901",
+      "status": "SUPERSEDED",
+      "attributedTo": "rec:claude",
+      "comment": "d4 항목에 '이 세션이 만들지 않았다'는 잘못된 서술을 담고 있다 (rec:a1)."
+    },
+    {
+      "@id": "rec:charter",
+      "@type": [
+        "prov:Entity",
+        "mhv:File"
+      ],
+      "label": "CHARTER.md",
+      "path": "CHARTER.md",
+      "sha256": "a5d109bdea6801f4addc57312acd676fd06a51135d37a1b3ced8d03a442f515b",
+      "gitCommit": "bb3410076be9daff152d97483dde6bc46fd050d0",
+      "status": "COMMITTED",
+      "attributedTo": "rec:proposer",
+      "comment": "세션 시작 전부터 작업 트리에 있던 변경. 내용 작성자는 제안자 측이며 이 세션은 커밋만 했다."
+    },
+    {
+      "@id": "rec:governance",
+      "@type": [
+        "prov:Entity",
+        "mhv:File"
+      ],
+      "label": "GOVERNANCE.md",
+      "path": "GOVERNANCE.md",
+      "sha256": "6af4379a7cebbcd46b98447b1abea9c387a06ba6b7d5da847e01a58e9cb238e5",
+      "gitCommit": "bb3410076be9daff152d97483dde6bc46fd050d0",
+      "status": "COMMITTED",
+      "attributedTo": "rec:proposer",
+      "comment": "세션 시작 전부터 작업 트리에 있던 변경. 내용 작성자는 제안자 측이며 이 세션은 커밋만 했다."
+    },
+    {
+      "@id": "rec:proposals",
+      "@type": [
+        "prov:Entity",
+        "mhv:File"
+      ],
+      "label": "PROPOSALS.md",
+      "path": "PROPOSALS.md",
+      "sha256": "4c92f6013e397ecb3abc2d804c49772e3ba2e23cea51a0fc62322417d2552694",
+      "gitCommit": "bb3410076be9daff152d97483dde6bc46fd050d0",
+      "status": "COMMITTED",
+      "attributedTo": "rec:proposer",
+      "comment": "세션 시작 전부터 작업 트리에 있던 변경. 내용 작성자는 제안자 측이며 이 세션은 커밋만 했다."
+    },
+    {
+      "@id": "rec:readme_root",
+      "@type": [
+        "prov:Entity",
+        "mhv:File"
+      ],
+      "label": "README.md",
+      "path": "README.md",
+      "sha256": "30257091ce82fd1f27ecdf35bfc28ea785d7fb4dc56c4167075c0f7367a47206",
+      "gitCommit": "bb3410076be9daff152d97483dde6bc46fd050d0",
+      "status": "COMMITTED",
+      "attributedTo": "rec:proposer",
+      "comment": "세션 시작 전부터 작업 트리에 있던 변경. 내용 작성자는 제안자 측이며 이 세션은 커밋만 했다."
+    },
+    {
+      "@id": "rec:a1",
+      "@type": "mhv:Assertion",
+      "status": "SUPERSEDED",
+      "attributedTo": "rec:claude",
+      "text": "graph/compute-license.working.graph.yaml은 이 세션이 만들지 않은 파일이다.",
+      "statedIn": [
+        "rec:s09",
+        "rec:s10",
+        "rec:rec_v1_readme",
+        "rec:record_v1"
+      ],
+      "comment": "파일을 열어 보지 않은 채 한 추정. 틀렸다."
+    },
+    {
+      "@id": "rec:c1",
+      "@type": "mhv:Correction",
+      "supersedes": "rec:a1",
+      "attributedTo": "rec:claude",
+      "text": "그 파일은 이 세션의 중단된 응답이 남긴 조각이었다(작성자 표기 확인). 공개하지 않고 삭제했다.",
+      "statedIn": [
+        "rec:s12",
+        "rec:s13"
+      ]
+    },
+    {
+      "@id": "rec:s11",
+      "@type": [
+        "prov:Activity",
+        "mhv:Step"
+      ],
+      "order": 11,
+      "label": "1차 기록 커밋·푸시",
+      "outcome": "DONE",
+      "requestSummary": "1차 기록을 커밋·푸시해 달라는 요청",
+      "summaryAuthority": "SECONDARY_AI",
+      "informedBy": "rec:s10",
+      "used": [
+        "rec:record_v1"
+      ],
+      "generated": [
+        "rec:commit_dfd0a59"
+      ],
+      "associatedWith": [
+        "rec:claude",
+        "rec:proposer"
+      ],
+      "endedAtTime": "2026-09-29T05:23:48Z",
+      "comment": "푸시 범위 9c40207..dfd0a59에 이 세션이 만들지 않은 230eecb가 포함된 것을 발견해 보고했다."
+    },
+    {
+      "@id": "rec:s12",
+      "@type": [
+        "prov:Activity",
+        "mhv:Step"
+      ],
+      "order": 12,
+      "label": "남은 변경 전부 커밋·푸시",
+      "outcome": "DONE",
+      "requestSummary": "230eecb는 의도한 것이며 남은 것을 전부 푸시해 달라는 요청",
+      "summaryAuthority": "SECONDARY_AI",
+      "informedBy": "rec:s11",
+      "used": [
+        "rec:charter",
+        "rec:governance",
+        "rec:proposals",
+        "rec:readme_root",
+        "rec:partial_license_3"
+      ],
+      "generated": [
+        "rec:commit_bb34100"
+      ],
+      "associatedWith": [
+        "rec:claude",
+        "rec:proposer"
+      ],
+      "endedAtTime": "2026-09-29T06:36:58Z",
+      "comment": "미추적 파일은 푸시 전에 열어 보고, 중단된 응답의 조각이자 불완전한 YAML이라 제외했다. 이때 rec:a1이 틀렸음을 확인했다."
+    },
+    {
+      "@id": "rec:s13",
+      "@type": [
+        "prov:Activity",
+        "mhv:Step"
+      ],
+      "order": 13,
+      "label": "조각 파일 삭제",
+      "outcome": "DONE",
+      "requestSummary": "조각 파일을 지워 달라는 요청",
+      "summaryAuthority": "SECONDARY_AI",
+      "informedBy": "rec:s12",
+      "invalidated": [
+        "rec:partial_license_3"
+      ],
+      "associatedWith": [
+        "rec:claude",
+        "rec:proposer"
+      ]
+    },
+    {
+      "@id": "rec:s14",
+      "@type": [
+        "prov:Activity",
+        "mhv:Step"
+      ],
+      "order": 14,
+      "label": "기록 2차 개정 (커밋 체인·정정·결정 해결 반영)",
+      "outcome": "DONE",
+      "requestSummary": "오늘 작업 전체를 표준 그래프 엔지니어링으로 꼼꼼하게 기록해 달라는 요청",
+      "summaryAuthority": "SECONDARY_AI",
+      "informedBy": "rec:s13",
+      "used": [
+        "rec:record_v1"
+      ],
+      "generated": [
+        "rec:record"
+      ],
+      "associatedWith": [
+        "rec:claude",
+        "rec:proposer"
+      ]
+    },
+    {
+      "@id": "rec:d5",
+      "@type": "mhv:OpenDecision",
+      "label": "브랜치 mhp-0002-spirit-consideration을 PR로 열지, main에 어떻게 합칠지",
+      "status": "PENDING_HUMAN",
+      "blocks": [
+        "rec:commit_bb34100"
+      ]
+    }
   ]
 }
