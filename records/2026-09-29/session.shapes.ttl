@@ -1,0 +1,124 @@
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix mhv:  <https://github.com/gj3447/metahumotonic-foundation/vocab#> .
+
+# SHACL 1.0 shapes for the 2026-09-29 session record.
+
+mhv:StepShape a sh:NodeShape ;
+  sh:targetClass mhv:Step ;
+  sh:property [ sh:path mhv:order ; sh:datatype xsd:integer ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path rdfs:label ; sh:minCount 1 ] ;
+  sh:property [ sh:path mhv:outcome ; sh:minCount 1 ; sh:maxCount 1 ;
+                sh:in ( mhv:DONE mhv:DECLINED mhv:STOPPED mhv:PENDING ) ] ;
+  sh:property [ sh:path prov:wasAssociatedWith ; sh:minCount 1 ; sh:class prov:Agent ] ;
+  sh:property [ sh:path prov:wasInformedBy ; sh:maxCount 1 ; sh:class mhv:Step ] ;
+  sh:property [ sh:path prov:used ; sh:class prov:Entity ] ;
+  sh:property [ sh:path prov:generated ; sh:class prov:Entity ] ;
+  sh:property [ sh:path prov:invalidated ; sh:class prov:Entity ] ;
+  sh:property [ sh:path prov:endedAtTime ; sh:maxCount 1 ; sh:datatype xsd:dateTime ] .
+
+# A request summary is AI prose: it must declare its authority so it is never read as a user quote.
+mhv:SummaryAuthorityShape a sh:NodeShape ;
+  sh:targetSubjectsOf mhv:requestSummary ;
+  sh:property [ sh:path mhv:summaryAuthority ; sh:minCount 1 ; sh:in ( mhv:SECONDARY_AI ) ] .
+
+# A declined or stopped step must explain what happened.
+mhv:NonDoneExplainedShape a sh:NodeShape ;
+  sh:targetClass mhv:Step ;
+  sh:or (
+    [ sh:property [ sh:path mhv:outcome ; sh:in ( mhv:DONE ) ] ]
+    [ sh:property [ sh:path rdfs:comment ; sh:minCount 1 ] ]
+  ) .
+
+mhv:FileShape a sh:NodeShape ;
+  sh:targetClass mhv:File ;
+  sh:property [ sh:path rdfs:label ; sh:minCount 1 ] ;
+  sh:property [ sh:path mhv:status ; sh:minCount 1 ;
+                sh:in ( mhv:CONSIDERATION mhv:COMMITTED mhv:SUPERSEDED mhv:REMOVED ) ] ;
+  sh:property [ sh:path mhv:sha256 ; sh:maxCount 1 ; sh:pattern "^[0-9a-f]{64}$" ] .
+
+# Anything bound to a commit names it by hex hash.
+mhv:CommitRefShape a sh:NodeShape ;
+  sh:targetSubjectsOf mhv:gitCommit ;
+  sh:property [ sh:path mhv:gitCommit ; sh:minCount 1 ; sh:maxCount 1 ; sh:pattern "^[0-9a-f]{7,40}$" ] .
+
+# A file bound to a commit must carry the sha256 of its bytes at that commit and a full commit hash.
+mhv:CommittedFileShape a sh:NodeShape ;
+  sh:targetClass mhv:File ;
+  sh:or (
+    [ sh:property [ sh:path mhv:gitCommit ; sh:maxCount 0 ] ]
+    [ sh:property [ sh:path mhv:sha256 ; sh:minCount 1 ] ;
+      sh:property [ sh:path mhv:gitCommit ; sh:pattern "^[0-9a-f]{40}$" ] ]
+  ) .
+
+# A commit pushed in this session has a full hash, a time and a parent; a pre-session commit may be abbreviated.
+mhv:GitCommitShape a sh:NodeShape ;
+  sh:targetClass mhv:GitCommit ;
+  sh:property [ sh:path mhv:status ; sh:minCount 1 ; sh:in ( mhv:PUSHED mhv:PRE_SESSION ) ] ;
+  sh:property [ sh:path mhv:parentCommit ; sh:maxCount 1 ; sh:class mhv:GitCommit ] ;
+  sh:property [ sh:path prov:hadMember ; sh:class mhv:File ] ;
+  sh:or (
+    [ sh:property [ sh:path mhv:status ; sh:in ( mhv:PRE_SESSION ) ] ]
+    [ sh:property [ sh:path mhv:gitCommit ; sh:pattern "^[0-9a-f]{40}$" ] ;
+      sh:property [ sh:path prov:generatedAtTime ; sh:minCount 1 ; sh:datatype xsd:dateTime ] ;
+      sh:property [ sh:path mhv:parentCommit ; sh:minCount 1 ] ]
+  ) .
+
+mhv:StandardShape a sh:NodeShape ;
+  sh:targetClass mhv:Standard ;
+  sh:property [ sh:path mhv:status ; sh:minCount 1 ; sh:maxCount 1 ;
+                sh:in ( mhv:W3C_REC mhv:W3C_CR mhv:W3C_WD mhv:ISO_PUBLISHED mhv:LOCAL_DRAFT mhv:LOCAL_POLICY ) ] ;
+  sh:property [ sh:path mhv:adoption ; sh:minCount 1 ; sh:maxCount 1 ;
+                sh:in ( mhv:ADOPTED mhv:TRACKED mhv:NOT_APPLICABLE ) ] ;
+  sh:or ( [ sh:path dcterms:source ; sh:minCount 1 ] [ sh:path mhv:path ; sh:minCount 1 ] ) .
+
+# Only a finished Recommendation or local policy may be ADOPTED; drafts stay TRACKED.
+mhv:NoDraftAdoptionShape a sh:NodeShape ;
+  sh:targetClass mhv:Standard ;
+  sh:or (
+    [ sh:property [ sh:path mhv:adoption ; sh:in ( mhv:TRACKED mhv:NOT_APPLICABLE ) ] ]
+    [ sh:property [ sh:path mhv:status ; sh:in ( mhv:W3C_REC mhv:ISO_PUBLISHED mhv:LOCAL_DRAFT mhv:LOCAL_POLICY ) ] ]
+  ) .
+
+mhv:OpenDecisionShape a sh:NodeShape ;
+  sh:targetClass mhv:OpenDecision ;
+  sh:property [ sh:path mhv:status ; sh:in ( mhv:PENDING_HUMAN mhv:RESOLVED ) ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path mhv:blocks ; sh:minCount 1 ; sh:class prov:Entity ] ;
+  sh:property [ sh:path mhv:resolvedBy ; sh:maxCount 1 ; sh:class mhv:Step ] .
+
+# A resolved decision must name the step that resolved it.
+mhv:ResolvedDecisionShape a sh:NodeShape ;
+  sh:targetClass mhv:OpenDecision ;
+  sh:or (
+    [ sh:property [ sh:path mhv:status ; sh:in ( mhv:PENDING_HUMAN ) ] ]
+    [ sh:property [ sh:path mhv:resolvedBy ; sh:minCount 1 ] ]
+  ) .
+
+# Assertions are never deleted; a superseded one must be pointed at by a correction.
+mhv:AssertionShape a sh:NodeShape ;
+  sh:targetClass mhv:Assertion ;
+  sh:property [ sh:path mhv:text ; sh:minCount 1 ] ;
+  sh:property [ sh:path mhv:statedIn ; sh:minCount 1 ] ;
+  sh:property [ sh:path mhv:status ; sh:minCount 1 ; sh:in ( mhv:ACTIVE mhv:SUPERSEDED ) ] .
+
+mhv:SupersededHasCorrectionShape a sh:NodeShape ;
+  sh:targetClass mhv:Assertion ;
+  sh:or (
+    [ sh:property [ sh:path mhv:status ; sh:in ( mhv:ACTIVE ) ] ]
+    [ sh:property [ sh:path [ sh:inversePath mhv:supersedes ] ; sh:minCount 1 ; sh:class mhv:Correction ] ]
+  ) .
+
+mhv:CorrectionShape a sh:NodeShape ;
+  sh:targetClass mhv:Correction ;
+  sh:property [ sh:path mhv:supersedes ; sh:minCount 1 ; sh:class mhv:Assertion ] ;
+  sh:property [ sh:path mhv:text ; sh:minCount 1 ] ;
+  sh:property [ sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:class prov:Agent ] .
+
+# The session record is a revision chain.
+mhv:SessionRecordShape a sh:NodeShape ;
+  sh:targetClass mhv:SessionRecord ;
+  sh:property [ sh:path mhv:revision ; sh:minCount 1 ; sh:datatype xsd:integer ] ;
+  sh:property [ sh:path prov:wasRevisionOf ; sh:maxCount 1 ; sh:class mhv:File ] .

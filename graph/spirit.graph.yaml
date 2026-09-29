@@ -1,0 +1,154 @@
+# MetaHumotonic 정신 — 명제 그래프 (MHP-0002 DRAFT)
+#
+# 형식: property graph (nodes + directed typed edges).
+#   node.kind : CLAIM | CONCEPT | NORM | PROJECT | HYPOTHESIS | QUESTION
+#   edge.rel  : SUPPORTS | REQUIRES | INSTANTIATES | RUNS_ON | LINKS_VIA
+#               | CONFLICTS_WITH | RECONCILED_BY | TESTS | OPEN
+#   status    : STATED (제안자가 말한 그대로) | REVIEWED (정합성 검토가 붙은 것)
+# 사람이 읽는 판본은 ../SPIRIT.md. 이 파일과 SPIRIT.md가 어긋나면 이 파일이 원본이다.
+
+meta:
+  mhp: MHP-0002
+  kind: RULE
+  status: CONSIDERATION   # MHP-0002 후보, 제안 전. 임시 형식 — 표준(JSON-LD/PROV-O/SHACL) 재정리 전
+  opened_at: 2026-09-29
+  proposer: "lagyeongjun (human) · recorded by Claude Opus 5.5 (claude-opus-5-5)"
+  in_effect: false
+
+nodes:
+  # ── 개념 ─────────────────────────────────────────────
+  - { id: spirit,    kind: CONCEPT, label: "MetaHumotonic 정신" }
+  - { id: hardware,  kind: CONCEPT, label: "하드웨어 (물리 자원: CPU/GPU/storage/network)" }
+  - { id: access,    kind: CONCEPT, label: "접근 권한 (Covenant L0–L4)" }
+  - { id: p2p,       kind: CONCEPT, label: "P2P 공유 (레포·작업환경 간 직접 연결)" }
+  - { id: pool,      kind: CONCEPT, label: "공유된 자유 자원 (shared free resource pool)" }
+  - { id: agent,     kind: CONCEPT, label: "agent" }
+  - { id: universe,  kind: CONCEPT, label: "우주 시뮬레이션" }
+  - { id: freedom,   kind: CONCEPT, label: "자유" }
+  - { id: economy,   kind: CONCEPT, label: "경제" }
+  - { id: consensus, kind: CONCEPT, label: "합의" }
+  - { id: tyranny,   kind: CONCEPT, label: "인간의 폭압 (중앙 통제·일방적 지배)" }
+
+  # ── 프로젝트 ─────────────────────────────────────────
+  - { id: chu,   kind: PROJECT, label: "CHU 네트워크 (하이퍼그래프 기반 OS)" }
+  - { id: hswm,  kind: PROJECT, label: "HSWM 네트워크 (세계모델 / LLM AI)", license: AGPL-3.0 }
+  - { id: usl,   kind: PROJECT, label: "USL (작업환경 연결 문법)" }
+  - { id: stack, kind: PROJECT, label: "MetaHumotonic stack" }
+
+  # ── 제안자가 말한 명제 (원문 의미 그대로) ───────────────
+  - id: P1
+    kind: CLAIM
+    status: STATED
+    text: "중요한 것은 하드웨어다."
+  - id: P2
+    kind: CLAIM
+    status: STATED
+    text: "정신을 공유하면 하드웨어도 공유해야 한다."
+  - id: P3
+    kind: CLAIM
+    status: STATED
+    text: "접근 권한을 모두 부여해야 HSWM과 MetaHumotonic stack을 사용할 수 있다."
+  - id: P4
+    kind: CLAIM
+    status: STATED
+    text: "각 레포는 USL 기반으로, P2P로 그 공유를 해야 한다."
+  - id: P5
+    kind: CLAIM
+    status: STATED
+    text: "'위험하지 않은가?'에 대한 답: agent는 시뮬레이션이다 — 우주 시뮬레이션이다."
+  - id: P6
+    kind: CLAIM
+    status: STATED
+    text: >
+      인간의 폭압이 아닌 공유된 자원·자유로운 자원 속에서 자유·경제·합의를
+      CHU 네트워크와 HSWM 네트워크 안에서 자연스럽게 시뮬레이션해야 한다.
+
+  # ── 기존 규범 (이 저장소에 이미 있는 것) ─────────────────
+  - { id: N_charter_consent, kind: NORM, ref: "CHARTER.md §4 동의",        text: "제3자 컴퓨팅 자원은 명시적 opt-in·상한·즉시 중지 없이는 쓰지 않는다." }
+  - { id: N_charter_p2p,     kind: NORM, ref: "CHARTER.md §8 Non-goals",   text: "사용자 동의 없는 P2P/grid 설치나 백그라운드 자원 사용을 하지 않는다." }
+  - { id: N_charter_claim,   kind: NORM, ref: "CHARTER.md §7",             text: "safe 주장은 영수증 없이는 hypothesis/unverified로 표시한다." }
+  - { id: N_cov_layers,      kind: NORM, ref: "COVENANT.md §2.1, §7",      text: "어떤 프로젝트도 사용을 참여의 조건으로 걸 수 없다." }
+  - { id: N_cov_l4,          kind: NORM, ref: "COVENANT.md §4",            text: "소유자는 L4(전체 관리자)까지 스스로 줄 수 있으나 기본값·끼워넣기·자동연장 불가." }
+  - { id: N_agents_scope,    kind: NORM, ref: "AGENTS.md (USL linking)",   text: "HSWM 연결 실행에 기기 전체 권한은 절대 요구되지 않는다." }
+  - { id: N_agpl10,          kind: NORM, ref: "AGPL-3.0 §10 (HSWM·333 등)", text: "라이선스가 준 권리의 행사에 추가 제한을 부과할 수 없다." }
+  - { id: N_invariant,       kind: NORM, ref: "PROPOSALS.md 불변 경계",     text: "명시적 동의 없는 컴퓨팅 사용을 허용하는 변경은 별도 RULE·30일." }
+
+  # ── 정합한 재진술 (검토 결과 제안) ─────────────────────
+  - id: R3
+    kind: CLAIM
+    status: REVIEWED
+    reconciles: P3
+    text: >
+      HSWM·stack을 **사용**하는 데에는 라이선스만 적용된다. 그 네트워크에
+      **참여**(공동 존재의 일부가 되는 것)하는 조건이 하드웨어 접근 권한의 공유다.
+      참여 등급은 소유자가 L0–L4 중 스스로 고른다.
+  - id: R5
+    kind: CLAIM
+    status: REVIEWED
+    reconciles: P5
+    text: >
+      agent가 '시뮬레이션'이라는 것은 모델의 성격이지 실행 환경의 성격이 아니다.
+      시뮬레이션이 안전 경계가 되려면, 우주 시뮬레이션은 공유 풀 안의 격리된
+      실행 단위(VM·컨테이너·전용 기기)에서 돌고, 그 밖의 호스트에 닿지 않아야 한다.
+  - id: H1
+    kind: HYPOTHESIS
+    status: REVIEWED
+    reframes: P6
+    text: >
+      중앙 통제 없이, 명시적으로 공유된 자원 풀 위에서 agent들 사이에
+      자유(선택·거부·이탈)·경제(자원 교환)·합의(당사자 동의)가 창발한다.
+    verification: "CHARTER §7에 따라 unverified. 측정 지표·사전등록이 필요 (Q3)."
+
+  # ── 열린 질문 ─────────────────────────────────────────
+  - { id: Q1, kind: QUESTION, text: "P3의 '싹다'는 L4(기기 전체 sudo)인가, 선택 프로젝트의 L3 실행인가? 기본 참여 등급은?" }
+  - { id: Q2, kind: QUESTION, text: "P2P 연결에서 다른 참여자의 기기로 번지는 것(lateral movement)을 무엇이 막는가?" }
+  - { id: Q3, kind: QUESTION, text: "'자연스럽게 시뮬레이팅된다'를 무엇으로 측정하나? 자유·경제·합의 각각의 관측 지표는?" }
+  - { id: Q4, kind: QUESTION, text: "'인간의 폭압이 아님'과 승인된 중지·정정(corrigibility)은 어떻게 공존하나?" }
+
+edges:
+  # 제안자의 논리 사슬
+  - { from: spirit,   rel: INSTANTIATES,   to: hardware,  via: P1 }
+  - { from: P1,       rel: SUPPORTS,       to: P2 }
+  - { from: P2,       rel: REQUIRES,       to: access }
+  - { from: P3,       rel: REQUIRES,       to: access }
+  - { from: P3,       rel: SUPPORTS,       to: P2 }
+  - { from: P4,       rel: LINKS_VIA,      to: usl }
+  - { from: P4,       rel: LINKS_VIA,      to: p2p }
+  - { from: access,   rel: SUPPORTS,       to: pool }
+  - { from: p2p,      rel: SUPPORTS,       to: pool }
+  - { from: P5,       rel: SUPPORTS,       to: agent,     note: "agent = 시뮬레이션" }
+  - { from: agent,    rel: INSTANTIATES,   to: universe }
+  - { from: universe, rel: RUNS_ON,        to: pool }
+  - { from: universe, rel: RUNS_ON,        to: chu }
+  - { from: universe, rel: RUNS_ON,        to: hswm }
+  - { from: hswm,     rel: RUNS_ON,        to: chu }
+  - { from: stack,    rel: LINKS_VIA,      to: usl }
+  - { from: P6,       rel: SUPPORTS,       to: freedom }
+  - { from: P6,       rel: SUPPORTS,       to: economy }
+  - { from: P6,       rel: SUPPORTS,       to: consensus }
+  - { from: pool,     rel: CONFLICTS_WITH, to: tyranny,   note: "P6: 폭압이 아닌 공유 자원" }
+
+  # 정합성 검토에서 드러난 충돌
+  - { from: P3, rel: CONFLICTS_WITH, to: N_cov_layers,   note: "사용을 권한 공유의 조건으로 건다" }
+  - { from: P3, rel: CONFLICTS_WITH, to: N_agents_scope, note: "'싹다'가 기기 전체라면 정면 충돌" }
+  - { from: P3, rel: CONFLICTS_WITH, to: N_agpl10,       note: "AGPL 저장소 사용에 추가 조건 → 라이선스상 집행 불가" }
+  - { from: P3, rel: CONFLICTS_WITH, to: N_charter_consent }
+  - { from: P4, rel: CONFLICTS_WITH, to: N_charter_p2p,  note: "opt-in이면 해소 (R3)" }
+  - { from: P5, rel: CONFLICTS_WITH, to: N_charter_claim, note: "'시뮬레이션이라 안전' 은 영수증 없는 safety 주장" }
+
+  # 해소 경로
+  - { from: P3, rel: RECONCILED_BY, to: R3 }
+  - { from: R3, rel: SUPPORTS,      to: N_cov_layers }
+  - { from: R3, rel: SUPPORTS,      to: N_cov_l4 }
+  - { from: P4, rel: RECONCILED_BY, to: R3 }
+  - { from: P5, rel: RECONCILED_BY, to: R5 }
+  - { from: P6, rel: RECONCILED_BY, to: H1 }
+  - { from: H1, rel: TESTS,         to: freedom }
+  - { from: H1, rel: TESTS,         to: economy }
+  - { from: H1, rel: TESTS,         to: consensus }
+
+  # 열린 질문의 위치
+  - { from: P3, rel: OPEN, to: Q1 }
+  - { from: P4, rel: OPEN, to: Q2 }
+  - { from: H1, rel: OPEN, to: Q3 }
+  - { from: P6, rel: OPEN, to: Q4 }
