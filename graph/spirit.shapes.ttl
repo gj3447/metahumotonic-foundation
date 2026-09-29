@@ -1,0 +1,106 @@
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix mhv:  <https://github.com/gj3447/metahumotonic-foundation/vocab#> .
+
+# SHACL 1.0 shapes for graph/spirit.jsonld.
+
+mhv:UtteranceShape a sh:NodeShape ;
+  sh:targetClass mhv:Utterance ;
+  sh:property [ sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:class prov:Person ] ;
+  sh:property [ sh:path dcterms:date ; sh:minCount 1 ; sh:datatype xsd:date ] ;
+  # Either an original with its hash, or an explicitly labelled AI summary.
+  sh:xone (
+    [ sh:property [ sh:path mhv:verbatim ; sh:minCount 1 ; sh:maxCount 1 ] ;
+      sh:property [ sh:path mhv:sha256 ; sh:minCount 1 ; sh:pattern "^[0-9a-f]{64}$" ] ]
+    [ sh:property [ sh:path mhv:summaryAuthority ; sh:minCount 1 ; sh:in ( mhv:SECONDARY_AI ) ] ]
+  ) .
+
+mhv:ClaimShape a sh:NodeShape ;
+  sh:targetClass mhv:Claim ;
+  sh:property [ sh:path mhv:text ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path mhv:order ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ] ;
+  sh:property [ sh:path mhv:claimStatus ; sh:minCount 1 ; sh:in ( mhv:STATED mhv:REVIEWED ) ] ;
+  sh:property [ sh:path prov:wasDerivedFrom ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mhv:Utterance ] ;
+  sh:property [ sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:class prov:Agent ] ;
+  sh:property [ sh:path mhv:about ; sh:class mhv:Project ] ;
+  sh:property [ sh:path mhv:supports ; sh:class mhv:Claim ] .
+
+# A claim derived from an original utterance must quote its span; one from a summary must say so.
+mhv:ClaimProvenanceShape a sh:NodeShape ;
+  sh:targetClass mhv:Claim ;
+  sh:xone (
+    [ sh:property [ sh:path mhv:span ; sh:minCount 1 ] ;
+      sh:property [ sh:path ( prov:wasDerivedFrom mhv:verbatim ) ; sh:minCount 1 ] ]
+    [ sh:property [ sh:path mhv:summaryAuthority ; sh:minCount 1 ; sh:in ( mhv:SECONDARY_AI ) ] ;
+      sh:property [ sh:path ( prov:wasDerivedFrom mhv:summaryAuthority ) ; sh:minCount 1 ] ]
+  ) .
+
+# A STATED claim belongs to the proposer, never to the AI.
+mhv:StatedAttributionShape a sh:NodeShape ;
+  sh:targetClass mhv:Claim ;
+  sh:or (
+    [ sh:property [ sh:path mhv:claimStatus ; sh:in ( mhv:REVIEWED ) ] ]
+    [ sh:property [ sh:path prov:wasAttributedTo ; sh:class prov:Person ] ]
+  ) .
+
+mhv:NormShape a sh:NodeShape ;
+  sh:targetClass mhv:Norm ;
+  sh:property [ sh:path mhv:path ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path mhv:section ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path mhv:quote ; sh:minCount 1 ; sh:maxCount 1 ; sh:minLength 8 ] .
+
+mhv:ConflictShape a sh:NodeShape ;
+  sh:targetClass mhv:Conflict ;
+  sh:property [ sh:path mhv:claim ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mhv:Claim ] ;
+  sh:property [ sh:path mhv:norm ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mhv:Norm ] ;
+  sh:property [ sh:path mhv:verdict ; sh:minCount 1 ; sh:maxCount 1 ;
+                sh:in ( mhv:CONFLICT mhv:CONFLICT_UNLESS_OPT_IN mhv:INSUFFICIENT_EVIDENCE mhv:REQUIRES_AMENDMENT ) ] ;
+  sh:property [ sh:path mhv:resolvedVia ; sh:maxCount 1 ; sh:class mhv:Reconciliation ] ;
+  sh:property [ sh:path rdfs:comment ; sh:minCount 1 ] ;
+  sh:property [ sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:class prov:SoftwareAgent ] .
+
+# A conflict marked as needing an amendment is not silently "resolved" by a restatement.
+mhv:AmendmentUnresolvedShape a sh:NodeShape ;
+  sh:targetClass mhv:Conflict ;
+  sh:or (
+    [ sh:property [ sh:path mhv:verdict ; sh:in ( mhv:CONFLICT mhv:CONFLICT_UNLESS_OPT_IN mhv:INSUFFICIENT_EVIDENCE ) ] ]
+    [ sh:property [ sh:path mhv:resolvedVia ; sh:maxCount 0 ] ]
+  ) .
+
+# The resolving reconciliation must actually reconcile the conflicting claim.
+mhv:ResolutionMatchesShape a sh:NodeShape ;
+  sh:targetClass mhv:Conflict ;
+  sh:sparql [
+    sh:message "resolvedVia does not reconcile the conflict's claim" ;
+    sh:prefixes [ sh:declare [ sh:prefix "mhv" ; sh:namespace "https://github.com/gj3447/metahumotonic-foundation/vocab#"^^xsd:anyURI ] ] ;
+    sh:select """SELECT $this WHERE { $this mhv:resolvedVia ?r ; mhv:claim ?c . FILTER NOT EXISTS { ?r mhv:reconciles ?c } }"""
+  ] .
+
+mhv:ReconciliationShape a sh:NodeShape ;
+  sh:targetClass mhv:Reconciliation ;
+  sh:property [ sh:path mhv:text ; sh:minCount 1 ] ;
+  sh:property [ sh:path mhv:reconciles ; sh:minCount 1 ; sh:class mhv:Claim ] ;
+  sh:property [ sh:path mhv:claimStatus ; sh:minCount 1 ; sh:in ( mhv:REVIEWED ) ] ;
+  sh:property [ sh:path mhv:needsEvidence ; sh:class mhv:EvidenceNeeded ] .
+
+mhv:HypothesisShape a sh:NodeShape ;
+  sh:targetClass mhv:Hypothesis ;
+  sh:property [ sh:path mhv:epistemic ; sh:minCount 1 ; sh:in ( mhv:UNVERIFIED ) ] ;
+  sh:property [ sh:path mhv:needsEvidence ; sh:minCount 1 ] .
+
+mhv:QuestionShape a sh:NodeShape ;
+  sh:targetClass mhv:Question ;
+  sh:property [ sh:path mhv:text ; sh:minCount 1 ] ;
+  sh:property [ sh:path mhv:openOn ; sh:minCount 1 ] .
+
+# Proposer's argument chain has no cycles.
+mhv:SupportsAcyclicShape a sh:NodeShape ;
+  sh:targetClass mhv:Claim ;
+  sh:sparql [
+    sh:message "mhv:supports forms a cycle" ;
+    sh:prefixes [ sh:declare [ sh:prefix "mhv" ; sh:namespace "https://github.com/gj3447/metahumotonic-foundation/vocab#"^^xsd:anyURI ] ] ;
+    sh:select """SELECT $this WHERE { $this mhv:supports+ $this }"""
+  ] .

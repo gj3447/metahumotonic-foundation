@@ -1,0 +1,50 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix mhv:  <https://github.com/gj3447/metahumotonic-foundation/vocab#> .
+
+# MetaHumotonic Foundation vocabulary for the spirit graph (graph/spirit.jsonld).
+# SECONDARY_AI draft. Not KG canon. Directions: subject -> object as written.
+# Records under records/ reuse the same namespace; their terms are declared by their own shapes.
+
+# ── Classes ──────────────────────────────────────────────────────────────
+mhv:SpiritGraph      a rdfs:Class ; rdfs:subClassOf prov:Entity ; rdfs:comment "The canonical claim graph document." .
+mhv:File             a rdfs:Class ; rdfs:subClassOf prov:Entity ; rdfs:comment "A repository file bound to a commit and content hash." .
+mhv:Utterance        a rdfs:Class ; rdfs:subClassOf prov:Entity ; rdfs:comment "An immutable statement by a person, or an explicitly labelled AI summary of one." .
+mhv:Project          a rdfs:Class ; rdfs:comment "A MetaHumotonic project a claim is about." .
+mhv:KgReference      a rdfs:Class ; rdfs:comment "A pointer to a shared-KG uid. Never an identity assertion." .
+mhv:Claim            a rdfs:Class ; rdfs:comment "One proposition, attributed and derived from an utterance." .
+mhv:Norm             a rdfs:Class ; rdfs:comment "An existing rule, pinned to a file, section and exact quote." .
+mhv:Conflict         a rdfs:Class ; rdfs:comment "n-ary relation node: claim x norm -> verdict, with optional resolution." .
+mhv:Reconciliation   a rdfs:Class ; rdfs:comment "A reviewed restatement that removes one or more conflicts." .
+mhv:Hypothesis       a rdfs:Class ; rdfs:subClassOf mhv:Reconciliation ; rdfs:comment "A reconciliation that is an empirical claim still to be tested." .
+mhv:EvidenceNeeded   a rdfs:Class ; rdfs:comment "Evidence that must exist before a claim can be used as fact." .
+mhv:Question         a rdfs:Class ; rdfs:comment "An open question attached to claims." .
+
+# ── Object properties ────────────────────────────────────────────────────
+mhv:claim        a rdf:Property ; rdfs:domain mhv:Conflict ; rdfs:range mhv:Claim ; rdfs:comment "Exactly one per conflict." .
+mhv:norm         a rdf:Property ; rdfs:domain mhv:Conflict ; rdfs:range mhv:Norm ; rdfs:comment "Exactly one per conflict." .
+mhv:resolvedVia  a rdf:Property ; rdfs:domain mhv:Conflict ; rdfs:range mhv:Reconciliation ; rdfs:comment "At most one." .
+mhv:reconciles   a rdf:Property ; rdfs:domain mhv:Reconciliation ; rdfs:range mhv:Claim ; rdfs:comment "One or more." .
+mhv:needsEvidence a rdf:Property ; rdfs:range mhv:EvidenceNeeded .
+mhv:about        a rdf:Property ; rdfs:domain mhv:Claim ; rdfs:range mhv:Project .
+mhv:supports     a rdf:Property ; rdfs:domain mhv:Claim ; rdfs:range mhv:Claim ; rdfs:comment "Proposer's argument chain; acyclic." .
+mhv:openOn       a rdf:Property ; rdfs:domain mhv:Question ; rdfs:range rdfs:Resource .
+
+# ── Datatype properties ──────────────────────────────────────────────────
+mhv:text         a rdf:Property ; rdfs:range xsd:string .
+mhv:verbatim     a rdf:Property ; rdfs:domain mhv:Utterance ; rdfs:range xsd:string ; rdfs:comment "Original text, never edited." .
+mhv:span         a rdf:Property ; rdfs:domain mhv:Claim ; rdfs:range xsd:string ; rdfs:comment "Exact substring of the source utterance's verbatim." .
+mhv:sha256       a rdf:Property ; rdfs:range xsd:string .
+mhv:path         a rdf:Property ; rdfs:range xsd:string ; rdfs:comment "Repository-relative path." .
+mhv:section      a rdf:Property ; rdfs:domain mhv:Norm ; rdfs:range xsd:string ; rdfs:comment "Heading line that contains the quote." .
+mhv:quote        a rdf:Property ; rdfs:domain mhv:Norm ; rdfs:range xsd:string ; rdfs:comment "Exact substring of the file." .
+mhv:gitCommit    a rdf:Property ; rdfs:range xsd:string .
+mhv:order        a rdf:Property ; rdfs:range xsd:integer .
+
+# ── Enumerated axes (kept separate on purpose) ───────────────────────────
+mhv:claimStatus       a rdf:Property ; rdfs:comment "STATED (proposer's) | REVIEWED (added in review) | CONSIDERATION (document status)." .
+mhv:epistemic         a rdf:Property ; rdfs:comment "UNVERIFIED | NOT_PRESENT. Absent = not an empirical claim." .
+mhv:verdict           a rdf:Property ; rdfs:domain mhv:Conflict ; rdfs:comment "CONFLICT | CONFLICT_UNLESS_OPT_IN | INSUFFICIENT_EVIDENCE | REQUIRES_AMENDMENT." .
+mhv:summaryAuthority  a rdf:Property ; rdfs:comment "SECONDARY_AI marks AI prose that must never be read as a user quote." .

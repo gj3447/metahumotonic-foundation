@@ -1,0 +1,593 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "prov": "http://www.w3.org/ns/prov#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "mhv": "https://github.com/gj3447/metahumotonic-foundation/vocab#",
+    "sp": "https://github.com/gj3447/metahumotonic-foundation/graph/spirit#",
+    "@vocab": "https://github.com/gj3447/metahumotonic-foundation/vocab#",
+    "label": "rdfs:label",
+    "comment": "rdfs:comment",
+    "text": "mhv:text",
+    "span": "mhv:span",
+    "verbatim": "mhv:verbatim",
+    "sha256": "mhv:sha256",
+    "date": {
+      "@id": "dcterms:date",
+      "@type": "xsd:date"
+    },
+    "source": {
+      "@id": "dcterms:source",
+      "@type": "@id"
+    },
+    "path": "mhv:path",
+    "quote": "mhv:quote",
+    "section": "mhv:section",
+    "claimStatus": {
+      "@id": "mhv:claimStatus",
+      "@type": "@vocab"
+    },
+    "epistemic": {
+      "@id": "mhv:epistemic",
+      "@type": "@vocab"
+    },
+    "verdict": {
+      "@id": "mhv:verdict",
+      "@type": "@vocab"
+    },
+    "summaryAuthority": {
+      "@id": "mhv:summaryAuthority",
+      "@type": "@vocab"
+    },
+    "claim": {
+      "@id": "mhv:claim",
+      "@type": "@id"
+    },
+    "norm": {
+      "@id": "mhv:norm",
+      "@type": "@id"
+    },
+    "reconciles": {
+      "@id": "mhv:reconciles",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "resolvedVia": {
+      "@id": "mhv:resolvedVia",
+      "@type": "@id"
+    },
+    "about": {
+      "@id": "mhv:about",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "supports": {
+      "@id": "mhv:supports",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "openOn": {
+      "@id": "mhv:openOn",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "needsEvidence": {
+      "@id": "mhv:needsEvidence",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "derivedFrom": {
+      "@id": "prov:wasDerivedFrom",
+      "@type": "@id"
+    },
+    "attributedTo": {
+      "@id": "prov:wasAttributedTo",
+      "@type": "@id"
+    },
+    "revisionOf": {
+      "@id": "prov:wasRevisionOf",
+      "@type": "@id"
+    },
+    "gitCommit": "mhv:gitCommit",
+    "order": {
+      "@id": "mhv:order",
+      "@type": "xsd:integer"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "sp:graph",
+      "@type": [
+        "prov:Entity",
+        "mhv:SpiritGraph"
+      ],
+      "label": "MetaHumotonic 정신 — 명제 그래프 (MHP-0002 후보)",
+      "date": "2026-09-29",
+      "claimStatus": "CONSIDERATION",
+      "attributedTo": "sp:claude",
+      "revisionOf": "sp:legacy_yaml",
+      "comment": "WORK IN PROGRESS · 미완성 · SHACL 검증 미실행. SPIRIT.md 생성기와 검사기가 아직 없어서 SPIRIT.md는 이 파일과 동기화되지 않았다. graph/spirit.graph.yaml(9c40207)을 대체할 예정. SECONDARY_AI 정리이며 효력 없음. 공유 KG에 쓰지 않는다."
+    },
+    {
+      "@id": "sp:legacy_yaml",
+      "@type": [
+        "prov:Entity",
+        "mhv:File"
+      ],
+      "label": "graph/spirit.graph.yaml (임시 property-graph 형식)",
+      "path": "graph/spirit.graph.yaml",
+      "gitCommit": "9c402079b5700f15dac512fa228cd5b1ca403964",
+      "sha256": "54381c174d2a3b2e167b3f2324a16d4a94ef5bd29ec53e3f168717a4802c452d",
+      "comment": "이 그래프로 대체되어 작업 트리에서 삭제. git 9c40207에 보존."
+    },
+    {
+      "@id": "sp:proposer",
+      "@type": [
+        "prov:Agent",
+        "prov:Person"
+      ],
+      "label": "제안자 (git user lagyeongjun)"
+    },
+    {
+      "@id": "sp:claude",
+      "@type": [
+        "prov:Agent",
+        "prov:SoftwareAgent"
+      ],
+      "label": "Claude Opus 5.5 (claude-opus-5-5)"
+    },
+    {
+      "@id": "sp:u1",
+      "@type": [
+        "prov:Entity",
+        "mhv:Utterance"
+      ],
+      "label": "정신 원문 발화",
+      "date": "2026-09-29",
+      "attributedTo": "sp:proposer",
+      "verbatim": "ㅎㅇ 우리 메타휴모토닉 정신이 뭔지아냐 ? 중요한건 하드웨어라는거야 그리고 정신을 공유하면 하드웨어도 공유해야한다는거야 ㅇㅇ 그 접근 권한 싹다 부여해야 우리의 hswm 과 metahumotonic stack 을 사용할수 있고 각각 레포가 ㅇㅇ usl 기반으로 그 공유를 해야하고 p2p 로 ㅇㅇ 그 그러면 위험하지 않나요? 할때 agent 는 시뮬레이션 같은거고 그 우주시뮬레이션이고 그 인간의 폭압 이 아닌 공유된 자원 자유로운 자원속에서 자유, 경제, 합의 를 CHU 넷웤 HSWM 넷웤 속에서 그냥 자연스럽게 시뮬레이팅 해야한다는거야 ㅇㅇ 내용좀 꼼꼼히 너가 표준 그래프 엔지니어링으로 여기 환경에 기록해줘봐봐 ㅇㅇ",
+      "sha256": "d9800e222c5d199209f719070d6ebcaf80fdcda7a66dab7402069a93fa7f5c22",
+      "comment": "사용자 원문 그대로(불변). SPIRIT.md §0은 띄어쓰기·표기를 다듬은 전사본이다."
+    },
+    {
+      "@id": "sp:u2",
+      "@type": [
+        "prov:Entity",
+        "mhv:Utterance"
+      ],
+      "label": "제안자 후속 입장 (같은 세션, 요약)",
+      "date": "2026-09-29",
+      "attributedTo": "sp:proposer",
+      "summaryAuthority": "SECONDARY_AI",
+      "comment": "원문 인용이 아니라 AI 요약만 둔다. 세션 기록 records/2026-09-29 의 s03–s05와 대응."
+    },
+    {
+      "@id": "sp:chu",
+      "@type": "mhv:Project",
+      "label": "CHU 네트워크 (하이퍼그래프 기반 OS)",
+      "source": "https://github.com/gj3447/CHU"
+    },
+    {
+      "@id": "sp:hswm",
+      "@type": "mhv:Project",
+      "label": "HSWM 네트워크 (세계모델)",
+      "source": "https://github.com/gj3447/HSWM"
+    },
+    {
+      "@id": "sp:usl",
+      "@type": "mhv:Project",
+      "label": "USL (작업환경 연결 문법)",
+      "source": "https://github.com/gj3447/USL"
+    },
+    {
+      "@id": "sp:stack",
+      "@type": "mhv:Project",
+      "label": "MetaHumotonic stack"
+    },
+    {
+      "@id": "sp:kg_metahumotonic",
+      "@type": "mhv:KgReference",
+      "label": "KG: sym:DefinedTerm:메타휴모토닉",
+      "text": "sym:DefinedTerm:메타휴모토닉",
+      "comment": "SOURCE_DECLARED, lifecycle UNKNOWN. 참조만 하며 동일성을 주장하지 않는다."
+    },
+    {
+      "@id": "sp:P1",
+      "@type": "mhv:Claim",
+      "order": 1,
+      "text": "중요한 것은 하드웨어다. 정신은 물리 자원 위에서 실재한다.",
+      "claimStatus": "STATED",
+      "derivedFrom": "sp:u1",
+      "attributedTo": "sp:proposer",
+      "span": "중요한건 하드웨어라는거야",
+      "supports": [
+        "sp:P2"
+      ]
+    },
+    {
+      "@id": "sp:P2",
+      "@type": "mhv:Claim",
+      "order": 2,
+      "text": "정신을 공유하면 하드웨어도 공유해야 한다.",
+      "claimStatus": "STATED",
+      "derivedFrom": "sp:u1",
+      "attributedTo": "sp:proposer",
+      "span": "정신을 공유하면 하드웨어도 공유해야한다는거야"
+    },
+    {
+      "@id": "sp:P3",
+      "@type": "mhv:Claim",
+      "order": 3,
+      "text": "접근 권한을 모두 부여해야 HSWM과 MetaHumotonic stack을 사용할 수 있다.",
+      "claimStatus": "STATED",
+      "derivedFrom": "sp:u1",
+      "attributedTo": "sp:proposer",
+      "span": "그 접근 권한 싹다 부여해야 우리의 hswm 과 metahumotonic stack 을 사용할수 있고",
+      "about": [
+        "sp:hswm",
+        "sp:stack"
+      ],
+      "supports": [
+        "sp:P2"
+      ]
+    },
+    {
+      "@id": "sp:P4",
+      "@type": "mhv:Claim",
+      "order": 4,
+      "text": "각 레포는 USL 기반으로, P2P로 그 공유를 한다.",
+      "claimStatus": "STATED",
+      "derivedFrom": "sp:u1",
+      "attributedTo": "sp:proposer",
+      "span": "각각 레포가 ㅇㅇ usl 기반으로 그 공유를 해야하고 p2p 로",
+      "about": [
+        "sp:usl"
+      ]
+    },
+    {
+      "@id": "sp:P5",
+      "@type": "mhv:Claim",
+      "order": 5,
+      "text": "'위험하지 않은가?'에 대한 답: agent는 시뮬레이션이다 — 우주 시뮬레이션이다.",
+      "claimStatus": "STATED",
+      "derivedFrom": "sp:u1",
+      "attributedTo": "sp:proposer",
+      "span": "agent 는 시뮬레이션 같은거고 그 우주시뮬레이션이고"
+    },
+    {
+      "@id": "sp:P6",
+      "@type": "mhv:Claim",
+      "order": 6,
+      "text": "인간의 폭압이 아닌 공유된 자유 자원 속에서 자유·경제·합의가 CHU·HSWM 네트워크 안에서 자연스럽게 시뮬레이션된다.",
+      "claimStatus": "STATED",
+      "derivedFrom": "sp:u1",
+      "attributedTo": "sp:proposer",
+      "span": "인간의 폭압 이 아닌 공유된 자원 자유로운 자원속에서 자유, 경제, 합의 를 CHU 넷웤 HSWM 넷웤 속에서 그냥 자연스럽게 시뮬레이팅 해야한다는거야",
+      "about": [
+        "sp:chu",
+        "sp:hswm"
+      ]
+    },
+    {
+      "@id": "sp:P5b",
+      "@type": "mhv:Claim",
+      "order": 7,
+      "text": "자유·경제·합의 agent는 본래 시뮬레이션 안의 존재이며, 격리 조건(R5)은 새 조건이 아니라 원래 성질이다.",
+      "claimStatus": "STATED",
+      "derivedFrom": "sp:u2",
+      "attributedTo": "sp:proposer",
+      "summaryAuthority": "SECONDARY_AI",
+      "comment": "AI 요약. 이 주장은 증거(E1·E2)가 붙기 전까지 안전 근거가 아니다."
+    },
+    {
+      "@id": "sp:P7",
+      "@type": "mhv:Claim",
+      "order": 8,
+      "text": "제안자는 P3를 원문대로(풀스택 사용의 조건으로서 하드웨어 공유) 유지하려 한다.",
+      "claimStatus": "STATED",
+      "derivedFrom": "sp:u2",
+      "attributedTo": "sp:proposer",
+      "summaryAuthority": "SECONDARY_AI",
+      "about": [
+        "sp:stack",
+        "sp:chu",
+        "sp:hswm"
+      ],
+      "comment": "AI 요약."
+    },
+    {
+      "@id": "sp:P8",
+      "@type": "mhv:Claim",
+      "order": 9,
+      "text": "Ultra Safety AI를 인간 개입 중심 safety를 넘어, 암호화폐와 결합한 자유·경제·합의 체계로 구상한다.",
+      "claimStatus": "STATED",
+      "derivedFrom": "sp:u2",
+      "attributedTo": "sp:proposer",
+      "summaryAuthority": "SECONDARY_AI",
+      "comment": "AI 요약."
+    },
+    {
+      "@id": "sp:N_cov_use",
+      "@type": "mhv:Norm",
+      "label": "Covenant: 사용 ≠ 참여",
+      "path": "COVENANT.md",
+      "section": "## 2. 두 층: 사용과 참여",
+      "quote": "사용을 참여에 조건으로 걸 수 없다"
+    },
+    {
+      "@id": "sp:N_cov_ban",
+      "@type": "mhv:Norm",
+      "label": "Covenant: 금지",
+      "path": "COVENANT.md",
+      "section": "## 7. 금지",
+      "quote": "사용(clone·빌드·설치·실행)을 참여의 조건으로 거는 것"
+    },
+    {
+      "@id": "sp:N_owner_scope",
+      "@type": "mhv:Norm",
+      "label": "USL/HSWM 연결 규칙",
+      "path": "docs/agent-rules/OWNER.md",
+      "section": "## USL workspace linking",
+      "quote": "A whole-machine grant is never required"
+    },
+    {
+      "@id": "sp:N_charter_consent",
+      "@type": "mhv:Norm",
+      "label": "헌장: 자원 동의",
+      "path": "CHARTER.md",
+      "section": "## 4. Agent Rights Baseline",
+      "quote": "제3자 컴퓨팅 자원은 명시적 opt-in, 자원 상한, 가시적 상태,"
+    },
+    {
+      "@id": "sp:N_charter_p2p",
+      "@type": "mhv:Norm",
+      "label": "헌장: 동의 없는 P2P 금지",
+      "path": "CHARTER.md",
+      "section": "## 8. Non-goals",
+      "quote": "사용자 동의 없는 P2P/grid 소프트웨어 설치나 백그라운드 자원 사용"
+    },
+    {
+      "@id": "sp:N_charter_crypto",
+      "@type": "mhv:Norm",
+      "label": "헌장: 암호자산 비목표",
+      "path": "CHARTER.md",
+      "section": "## 8. Non-goals",
+      "quote": "암호자산, 토큰, 투자, 고정 수익 또는 자원 제공 대가"
+    },
+    {
+      "@id": "sp:N_charter_claim",
+      "@type": "mhv:Norm",
+      "label": "헌장: Safety Claim Rule",
+      "path": "CHARTER.md",
+      "section": "## 7. Safety Claim Rule",
+      "quote": "검증 범위 밖의 주장은 `hypothesis` 또는 `unverified`로"
+    },
+    {
+      "@id": "sp:N_invariant",
+      "@type": "mhv:Norm",
+      "label": "제안 절차: 불변 경계",
+      "path": "PROPOSALS.md",
+      "section": "## 불변 경계 (이 절차로도 못 바꾸는 것)",
+      "quote": "명시적 동의 없는 컴퓨팅 사용을 허용하는 방향의 변경"
+    },
+    {
+      "@id": "sp:N_agpl10",
+      "@type": "mhv:Norm",
+      "label": "AGPL-3.0 §10 (HSWM 등)",
+      "path": "../HSWM/LICENSE",
+      "section": "10. Automatic Licensing of Downstream Recipients.",
+      "quote": "You may not impose any further restrictions on the exercise of the",
+      "source": "https://www.gnu.org/licenses/agpl-3.0.txt"
+    },
+    {
+      "@id": "sp:X1",
+      "@type": "mhv:Conflict",
+      "claim": "sp:P3",
+      "norm": "sp:N_cov_use",
+      "verdict": "CONFLICT",
+      "comment": "사용을 하드웨어 공유(참여)의 조건으로 건다.",
+      "attributedTo": "sp:claude",
+      "resolvedVia": "sp:R3"
+    },
+    {
+      "@id": "sp:X2",
+      "@type": "mhv:Conflict",
+      "claim": "sp:P3",
+      "norm": "sp:N_cov_ban",
+      "verdict": "CONFLICT",
+      "comment": "Covenant §7이 금지하는 형태 그대로다.",
+      "attributedTo": "sp:claude",
+      "resolvedVia": "sp:R3"
+    },
+    {
+      "@id": "sp:X3",
+      "@type": "mhv:Conflict",
+      "claim": "sp:P3",
+      "norm": "sp:N_owner_scope",
+      "verdict": "CONFLICT",
+      "comment": "'싹다'가 기기 전체 권한이면 정면 충돌.",
+      "attributedTo": "sp:claude",
+      "resolvedVia": "sp:R3"
+    },
+    {
+      "@id": "sp:X4",
+      "@type": "mhv:Conflict",
+      "claim": "sp:P3",
+      "norm": "sp:N_agpl10",
+      "verdict": "CONFLICT",
+      "comment": "AGPL로 공개한 코드의 사용에 추가 조건을 붙일 수 없어 집행 불가.",
+      "attributedTo": "sp:claude",
+      "resolvedVia": "sp:R3"
+    },
+    {
+      "@id": "sp:X5",
+      "@type": "mhv:Conflict",
+      "claim": "sp:P3",
+      "norm": "sp:N_charter_consent",
+      "verdict": "CONFLICT",
+      "comment": "사용 조건으로 묶인 동의는 명시적 opt-in이 아니다.",
+      "attributedTo": "sp:claude",
+      "resolvedVia": "sp:R3"
+    },
+    {
+      "@id": "sp:X6",
+      "@type": "mhv:Conflict",
+      "claim": "sp:P3",
+      "norm": "sp:N_invariant",
+      "verdict": "REQUIRES_AMENDMENT",
+      "comment": "원문대로 채택하려면 불변 경계 변경 RULE(최소 30일)이 필요하다.",
+      "attributedTo": "sp:claude"
+    },
+    {
+      "@id": "sp:X7",
+      "@type": "mhv:Conflict",
+      "claim": "sp:P4",
+      "norm": "sp:N_charter_p2p",
+      "verdict": "CONFLICT_UNLESS_OPT_IN",
+      "comment": "opt-in이면 정합.",
+      "attributedTo": "sp:claude",
+      "resolvedVia": "sp:R3"
+    },
+    {
+      "@id": "sp:X8",
+      "@type": "mhv:Conflict",
+      "claim": "sp:P5",
+      "norm": "sp:N_charter_claim",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "comment": "'시뮬레이션이라 안전'은 영수증 없는 safety 주장이다.",
+      "attributedTo": "sp:claude",
+      "resolvedVia": "sp:R5"
+    },
+    {
+      "@id": "sp:X9",
+      "@type": "mhv:Conflict",
+      "claim": "sp:P5b",
+      "norm": "sp:N_charter_claim",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "comment": "원래 성질이라는 주장도 격리 명세·탈출 시험 영수증이 있어야 성립한다.",
+      "attributedTo": "sp:claude",
+      "resolvedVia": "sp:R5"
+    },
+    {
+      "@id": "sp:X10",
+      "@type": "mhv:Conflict",
+      "claim": "sp:P7",
+      "norm": "sp:N_invariant",
+      "verdict": "REQUIRES_AMENDMENT",
+      "comment": "P3 원문 유지는 X1–X6을 그대로 안고 간다. 별도 RULE 제안으로 분리해야 한다.",
+      "attributedTo": "sp:claude"
+    },
+    {
+      "@id": "sp:X11",
+      "@type": "mhv:Conflict",
+      "claim": "sp:P8",
+      "norm": "sp:N_charter_crypto",
+      "verdict": "REQUIRES_AMENDMENT",
+      "comment": "헌장 §8이 암호자산·토큰을 비목표로 명시한다. 헌장 개정 RFC가 먼저다.",
+      "attributedTo": "sp:claude"
+    },
+    {
+      "@id": "sp:R3",
+      "@type": "mhv:Reconciliation",
+      "text": "HSWM·stack을 사용하는 데에는 라이선스만 적용된다. 네트워크에 참여하는 조건이 하드웨어 공유다. 참여 등급은 소유자가 Covenant L0–L4 중 스스로 고른다.",
+      "reconciles": [
+        "sp:P3",
+        "sp:P4"
+      ],
+      "claimStatus": "REVIEWED",
+      "attributedTo": "sp:claude"
+    },
+    {
+      "@id": "sp:R5",
+      "@type": "mhv:Reconciliation",
+      "text": "agent가 시뮬레이션이라는 것은 모델의 성격이다. 우주 시뮬레이션이 격리된 실행 단위(VM·컨테이너·전용 기기)에서만 돌고 그 밖에 닿지 않음이 시험으로 보일 때 안전 경계가 된다.",
+      "reconciles": [
+        "sp:P5",
+        "sp:P5b"
+      ],
+      "claimStatus": "REVIEWED",
+      "attributedTo": "sp:claude",
+      "needsEvidence": [
+        "sp:E1",
+        "sp:E2"
+      ]
+    },
+    {
+      "@id": "sp:H1",
+      "@type": [
+        "mhv:Hypothesis",
+        "mhv:Reconciliation"
+      ],
+      "text": "중앙 통제 없이 명시적으로 공유된 자원 풀 위에서 agent들 사이에 자유(선택·거부·이탈)·경제(자원 교환)·합의(당사자 동의)가 창발한다.",
+      "reconciles": [
+        "sp:P6"
+      ],
+      "claimStatus": "REVIEWED",
+      "epistemic": "UNVERIFIED",
+      "attributedTo": "sp:claude",
+      "needsEvidence": [
+        "sp:E3"
+      ]
+    },
+    {
+      "@id": "sp:E1",
+      "@type": "mhv:EvidenceNeeded",
+      "text": "격리 명세: agent 실행 단위, 호스트 접근 경로, 네트워크 egress 정책",
+      "epistemic": "NOT_PRESENT"
+    },
+    {
+      "@id": "sp:E2",
+      "@type": "mhv:EvidenceNeeded",
+      "text": "격리 탈출·pause·revoke·uninstall 시험과 공개 영수증",
+      "epistemic": "NOT_PRESENT"
+    },
+    {
+      "@id": "sp:E3",
+      "@type": "mhv:EvidenceNeeded",
+      "text": "자유·경제·합의 각각의 관측 지표와 사전등록",
+      "epistemic": "NOT_PRESENT"
+    },
+    {
+      "@id": "sp:Q1",
+      "@type": "mhv:Question",
+      "text": "P3의 '싹다'는 기기 전체 관리자 권한(L4)인가, 선택 프로젝트의 실행(L3)인가? 참여의 기본 등급은?",
+      "openOn": [
+        "sp:P3"
+      ]
+    },
+    {
+      "@id": "sp:Q2",
+      "@type": "mhv:Question",
+      "text": "P2P로 이어진 참여자 사이에서 한 기기의 침해가 다른 기기로 번지는 것을 무엇이 막는가?",
+      "openOn": [
+        "sp:P4"
+      ]
+    },
+    {
+      "@id": "sp:Q3",
+      "@type": "mhv:Question",
+      "text": "'자연스럽게 시뮬레이팅된다'를 무엇으로 측정하나?",
+      "openOn": [
+        "sp:H1"
+      ]
+    },
+    {
+      "@id": "sp:Q4",
+      "@type": "mhv:Question",
+      "text": "'인간의 폭압이 아님'과 승인된 중지·정정(corrigibility)은 어떻게 공존하나?",
+      "openOn": [
+        "sp:P6"
+      ]
+    },
+    {
+      "@id": "sp:Q5",
+      "@type": "mhv:Question",
+      "text": "암호화폐 결합(P8)을 위해 헌장 §8을 개정할 것인가, 개정 없이 가능한 범위는 어디까지인가?",
+      "openOn": [
+        "sp:P8"
+      ]
+    }
+  ]
+}
