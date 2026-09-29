@@ -1,0 +1,55 @@
+{
+  "schema": "cd-instructions/v1",
+  "owner": "metahumotonic-foundation",
+  "source_provenance": {
+    "original_path": "AGENTS.md",
+    "original_sha256": "b5a263af474134727de6013ebddde73ec162051c7884e8aabc5d340391bc5f75",
+    "original_commit": "9c402079b5700f15dac512fa228cd5b1ca403964",
+    "markdown_link_rebases": [],
+    "deliberate_changes": []
+  },
+  "nodes": [
+    {
+      "id": "owner:1",
+      "type": "Source",
+      "path": "docs/agent-rules/OWNER.md",
+      "section": "@preamble",
+      "content_role": "owner-instruction"
+    },
+    {
+      "id": "owner:2",
+      "type": "Source",
+      "path": "docs/agent-rules/OWNER.md",
+      "section": "usl-workspace-linking/@intro",
+      "content_role": "owner-instruction"
+    },
+    {
+      "id": "owner:usage",
+      "type": "Source",
+      "path": "README.md",
+      "section": "@body"
+    }
+  ],
+  "edges": [
+    {
+      "from": "task:base",
+      "type": "REQUIRES",
+      "to": "owner:1"
+    },
+    {
+      "from": "task:hswm",
+      "type": "REQUIRES",
+      "to": "owner:2"
+    },
+    {
+      "from": "task:deploy",
+      "type": "REQUIRES",
+      "to": "owner:2"
+    },
+    {
+      "from": "task:cli",
+      "type": "REQUIRES",
+      "to": "owner:usage"
+    }
+  ]
+}
