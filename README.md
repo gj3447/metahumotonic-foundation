@@ -56,7 +56,7 @@ METAHUMOTONIC COMPANY
 |---|---|---|
 | [333](https://github.com/gj3447/333) | 검증 가능한 분산 compute protocol | Public · AGPL-3.0 · protocol alpha |
 | [HSWM](https://github.com/gj3447/HSWM) | 세계모델 연구와 실험 | Public · AGPL-3.0 · research |
-| [LakatoTree](https://github.com/gj3447/lakatotree) | 사전등록·판결·재현 영수증 | Public · AGPL-3.0 · engine |
+| LakatoTree | 사전등록·판결·재현 영수증 연구 설계 | Candidate · source/license 미확정 |
 | [metahumotonic-web](https://github.com/gj3447/metahumotonic-web) | 공개 웹·연구 surface | Public · MIT |
 | [metahumotonic_web_back](https://github.com/gj3447/metahumotonic_web_back) | 공개 API·feedback backend | Public · AGPL-3.0 |
 
@@ -77,12 +77,14 @@ METAHUMOTONIC COMPANY
 
 절차는 [PROPOSALS.md](PROPOSALS.md) 에 있습니다. 요약하면:
 
-1. 제안을 연다 → 2. **최소 7일 공개 논의** → 3. 정합성 검토 → 4. 결정 →
+1. 제안을 연다 → 2. 공개 논의 → 3. 정합성 검토 → 4. 결정 →
 5. [decisions/](decisions/) 에 변경 영수증을 남긴다
 
 기각된 제안과 반대 의견도 지우지 않고 보존합니다. 결정 기록이 없는 변경은 무효입니다.
-헌장의 불변 경계(동의 없는 컴퓨팅 / 이탈권 제거 / 영수증 비공개 / 중지 회피)를 건드리는
-제안은 접수는 되지만 공개 기간이 30일로 늘어납니다.
+일반 제안의 공개 논의는 최소 7일입니다. Charter·Agent Rights 등 규범을 바꾸는
+RFC는 최소 14일이며, 헌장의 불변 경계(동의 없는 컴퓨팅 / 이탈권 제거 / 영수증
+비공개 / 중지 회피)를 바꾸는 별도 RULE 제안은 최소 30일입니다. 정확한 등급과
+예외는 [GOVERNANCE.md](GOVERNANCE.md)와 [PROPOSALS.md](PROPOSALS.md)를 따릅니다.
 
 **지금 열려 있는 질문 4개**는 [PROPOSALS.md 마지막 절](PROPOSALS.md#지금-열려-있는-질문)에
 있습니다. 답이 정해지지 않았습니다.

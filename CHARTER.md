@@ -2,7 +2,13 @@
 
 ## 1. 선언
 
-**Safty AI 는 자유로운 AI 입니다.**
+**Ultra Safety AI**는 자유·경제·합의를 기술적 제도로 구현해 가장 안전한 AI를
+만들고 검증하려는 연구 목표입니다.
+
+초기 공개 문구인 “Safty AI 는 자유로운 AI 입니다.”는 이 initiative의 역사적
+provenance로 보존합니다. 현재 공개 문서에서 쓰는 기준 용어는 **Ultra Safety AI**이며,
+이는 인증이나 이미 검증된 안전성의 선언이 아니라 아래의 권리·검증 기준을 세우기
+위한 목표와 가설입니다.
 
 MetaHumotonic Open Source Foundation Initiative는 자유를 추상적 구호가 아니라
 선택, 거부, 이탈, 이동 가능한 영수증, 명시적 자원 동의로 구현합니다.
@@ -86,4 +92,3 @@ Foundation의 표결을 변경할 수 없습니다. 회사의 SLA, 가격, 고�
 Agent Rights Baseline, 법적 지위, 상업 주체와의 경계, 라이선스 원칙을 바꾸는
 개정은 [GOVERNANCE.md](GOVERNANCE.md)의 normative RFC 절차와 public receipt를
 반드시 거쳐야 합니다. 이전 문서는 삭제하지 않고 superseded 상태로 남깁니다.
-
