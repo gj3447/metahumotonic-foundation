@@ -6,6 +6,12 @@
 > 결정 → [decisions/](decisions/) 영수증)를 거쳐야 하며, Steward가 2인 미만인 동안에는
 > 결정되더라도 `PROVISIONAL`입니다 ([GOVERNANCE.md](GOVERNANCE.md#3-normative-rfc)).
 
+> **2026-10-03 적용 안내:** 이 초안의 사용·참여 분리 문구는 과거 제안으로 보존합니다.
+> 현재 저장소에 적용한 [MetaHumotonic License 1.0](LICENSE)은 대상 코드의 운영 사용에
+> 하드웨어 공유를 요구합니다. 아래 초안은 그 조건을 면제하거나 실제 접근 권한을
+> 부여하지 않습니다. 기존 MIT 부분과 다른 저장소의 조건은
+> [라이선스 적용 경계](LICENSE-NOTICE.md)를 따릅니다.
+
 ## 1. 선언
 
 **우리는 하나의 존재다.**

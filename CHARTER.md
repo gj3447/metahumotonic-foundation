@@ -15,10 +15,16 @@ MetaHumotonic Open Source Foundation Initiative는 자유를 추상적 구호가
 
 ## 2. 지위
 
-이 문서는 공개 오픈소스 initiative의 헌장입니다. 별도의 재단법인,
+이 문서는 공개 initiative의 헌장입니다. 별도의 재단법인,
 비영리법인 또는 공익법인 설립은 아직 완료되지 않았습니다. 법적 조직이 만들어질
 경우에도 공개 프로젝트의 라이선스와 이미 부여된 사용 권한을 소급해 회수할 수
 없습니다.
+
+이 저장소의 현재 기본 조건은 [MetaHumotonic License 1.0](LICENSE)이며,
+운영 사용에 하드웨어 공유를 요구하는 소스 공개형 라이선스입니다. 단체명의
+“Open Source”와 이 저장소의 라이선스 분류는 구별합니다. 기존 MIT 허락,
+다른 프로젝트의 라이선스와 공개 규범 채택 상태는
+[라이선스 적용 경계](LICENSE-NOTICE.md)에 명시합니다.
 
 ## 3. Mission
 

@@ -3,11 +3,24 @@
 > **Ultra Safety AI**
 >
 > 자유 · 경제 · 합의 — 자유롭게 경제활동하고, 자유롭게 합의하고, 합의된 경제활동을 한다.
-> 여기서 자유는 완전한 오픈소스를 뜻한다.
+> 이 저장소는 소스를 공개하고, MetaHumotonic License 1.0에 따라 운영 사용에 하드웨어 공유를 요구합니다.
 
 MetaHumotonic Open Source Foundation Initiative는 자유로운 AI가 특정 사업자에
 영구 귀속되지 않고, 공개 규칙 아래에서 선택하고 검증받을 수 있게 만드는 공개
-오픈소스 협력체입니다.
+협력체입니다. 이 저장소의 현재 라이선스는 소스 공개형(source-available)이며
+OSI 승인 오픈소스 라이선스가 아닙니다.
+
+## 라이선스
+
+**[MetaHumotonic License 1.0](LICENSE)** — MHL로만 허락된 코드를 운영하려면
+사용자가 지정한 기기 또는 VM의 자원과 전체 관리 권한을 명세서에 따라 공유해야 합니다.
+대상·수신자·목적·자원 및 비용 상한·만료·철회 방법을 명시하고, 라이선스 수락과
+실제 접근 승인을 각각 받아야 합니다. 공유를 철회하면 해당 운영 사용도 중단합니다.
+라이선스 문서만으로 원격 접근이 허용되거나 공유 기능이 구현되지는 않습니다.
+
+열람·검토·격리된 빌드와 시험 등은 허용하며, 기존 MIT 배포 부분의 권한은 유지합니다.
+다른 프로젝트의 AGPL·MIT는 그대로입니다. 적용 범위와 변경 이력은
+[LICENSE-NOTICE.md](LICENSE-NOTICE.md)를 따릅니다.
 
 ## 현재 상태
 
@@ -61,8 +74,8 @@ METAHUMOTONIC COMPANY
 | [metahumotonic_web_back](https://github.com/gj3447/metahumotonic_web_back) | 공개 API·feedback backend | Public · AGPL-3.0 |
 
 정확한 채택 상태와 라이선스 검증 근거는 [PROJECTS.md](PROJECTS.md)에 기록합니다.
-각 프로젝트의 라이선스는 해당 저장소가 최종 권위이며, 이 저장소의 MIT
-라이선스가 다른 프로젝트의 라이선스를 대체하지 않습니다.
+각 프로젝트의 라이선스는 해당 저장소가 최종 권위이며, 이 저장소의
+MetaHumotonic License가 다른 프로젝트의 라이선스를 대체하지 않습니다.
 
 ## 제안해 주십시오
 
