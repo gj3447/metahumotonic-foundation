@@ -134,6 +134,7 @@ RFC는 최소 14일이며, 헌장의 불변 경계(동의 없는 컴퓨팅 / 이
 
 ## 문서
 
+- 2026-10-05 대화·구현 마감 기록과 남은 일: [일일 기록](records/2026-10-05/README.md)
 - 재단의 존재 이유·대안·반론·검증할 조건 (**연구 제안, 미비준**): [FOUNDATION-RATIONALE.md](FOUNDATION-RATIONALE.md)
 - 철학·직접 출처·연구 설계: [PHILOSOPHY.md](PHILOSOPHY.md)
 - 자원 목적·관측 근거·구현 순서: [RESOURCE-ROADMAP.md](RESOURCE-ROADMAP.md)

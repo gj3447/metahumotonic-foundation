@@ -1,0 +1,57 @@
+@prefix sv: <https://github.com/gj3447/metahumotonic-foundation/records/2026-10-05/vocab#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rec: <https://github.com/gj3447/metahumotonic-foundation/records/2026-10-05#> .
+
+sv:LabelShape a sh:NodeShape ; sh:targetSubjectsOf sv:authority ;
+  sh:property [ sh:path rdfs:label ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path sv:text ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:maxCount 1 ; sh:class prov:Agent ] .
+sv:DateShape a sh:NodeShape ; sh:targetSubjectsOf sv:recordedOn ;
+  sh:property [ sh:path sv:recordedOn ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:date ] .
+sv:HashShape a sh:NodeShape ; sh:targetSubjectsOf sv:sha256 ;
+  sh:property [ sh:path sv:sha256 ; sh:minCount 1 ; sh:maxCount 1 ; sh:pattern "^[0-9a-f]{64}$" ] .
+sv:RecordShape a sh:NodeShape ; sh:targetClass sv:SessionRecord ;
+  sh:property [ sh:path sv:authority ; sh:hasValue "SECONDARY_AI" ; sh:maxCount 1 ] ;
+  sh:property [ sh:path sv:normativeEffect ; sh:hasValue false ; sh:maxCount 1 ] ;
+  sh:property [ sh:path prov:wasAttributedTo ; sh:hasValue rec:codex ] ;
+  sh:property [ sh:path prov:hadMember ; sh:minCount 1 ; sh:nodeKind sh:IRI ] ;
+  sh:property [ sh:path sv:recordedOn ; sh:minCount 1 ] .
+sv:SourceShape a sh:NodeShape ; sh:targetClass sv:UserSource ;
+  sh:property [ sh:path sv:authority ; sh:hasValue "USER_PRIMARY" ; sh:maxCount 1 ] ;
+  sh:property [ sh:path prov:wasAttributedTo ; sh:hasValue rec:user ] ;
+  sh:property [ sh:path sv:sourceKey ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path sv:sha256 ; sh:minCount 1 ] ;
+  sh:property [ sh:path sv:recordedOn ; sh:minCount 1 ] ;
+  sh:property [ sh:path sv:sourceArtifact ; sh:minCount 1 ; sh:maxCount 1 ; sh:class sv:Artifact ] .
+sv:ClaimShape a sh:NodeShape ; sh:targetClass sv:SummaryClaim ;
+  sh:property [ sh:path sv:authority ; sh:hasValue "SECONDARY_AI" ; sh:maxCount 1 ] ;
+  sh:property [ sh:path prov:wasAttributedTo ; sh:hasValue rec:codex ] ;
+  sh:property [ sh:path sv:evidence ; sh:minCount 1 ; sh:class sv:UserSource ] ;
+  sh:property [ sh:path sv:kind ; sh:minCount 1 ; sh:maxCount 1 ; sh:in ("USER_DIRECTION" "NORMATIVE_POSITION" "UNTESTED_HYPOTHESIS") ] .
+sv:WorkShape a sh:NodeShape ; sh:targetClass sv:WorkItem ;
+  sh:property [ sh:path sv:authority ; sh:hasValue "SECONDARY_AI" ; sh:maxCount 1 ] ;
+  sh:property [ sh:path prov:wasAttributedTo ; sh:hasValue rec:codex ] ;
+  sh:property [ sh:path sv:state ; sh:minCount 1 ; sh:maxCount 1 ; sh:in ("RECORDED" "LOCAL_PROTOTYPE" "VERIFIED" "PENDING") ] ;
+  sh:property [ sh:path sv:nextAction ; sh:minCount 1 ; sh:maxCount 1 ; sh:minLength 1 ] ;
+  sh:property [ sh:path sv:addresses ; sh:minCount 1 ; sh:class sv:SummaryClaim ] ;
+  sh:property [ sh:path sv:artifact ; sh:class sv:Artifact ] ;
+  sh:property [ sh:path sv:dependsOn ; sh:class sv:WorkItem ] .
+sv:ArtifactShape a sh:NodeShape ; sh:targetClass sv:Artifact ;
+  sh:property [ sh:path rdfs:label ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path sv:kind ; sh:minCount 1 ; sh:maxCount 1 ; sh:in ("LOCAL_SNAPSHOT" "PRIVATE_REFERENCE") ] ;
+  sh:property [ sh:path sv:visibility ; sh:minCount 1 ; sh:maxCount 1 ; sh:in ("PUBLIC" "PRIVATE") ] ;
+  sh:property [ sh:path sv:recordedOn ; sh:minCount 1 ] ;
+  sh:property [ sh:path sv:revision ; sh:maxCount 1 ; sh:pattern "^[0-9a-f]{40}$" ] ;
+  sh:or (
+    [ sh:property [ sh:path sv:kind ; sh:hasValue "LOCAL_SNAPSHOT" ] ;
+      sh:property [ sh:path sv:path ; sh:minCount 1 ; sh:maxCount 1 ] ;
+      sh:property [ sh:path sv:sha256 ; sh:minCount 1 ] ;
+      sh:property [ sh:path sv:visibility ; sh:hasValue "PUBLIC" ] ]
+    [ sh:property [ sh:path sv:kind ; sh:hasValue "PRIVATE_REFERENCE" ] ;
+      sh:property [ sh:path sv:path ; sh:maxCount 0 ] ;
+      sh:property [ sh:path sv:visibility ; sh:hasValue "PRIVATE" ] ;
+      sh:property [ sh:path sv:revision ; sh:minCount 1 ] ]
+  ) .

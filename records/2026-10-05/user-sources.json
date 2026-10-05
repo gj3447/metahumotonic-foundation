@@ -1,0 +1,71 @@
+{
+  "schema": "metahumotonic.session-sources/v1",
+  "recorded_on": "2026-10-05",
+  "scope": "Visible conversation context captured at closeout; earlier messages are context, not asserted to have occurred today. User text only; no private repository contents copied.",
+  "messages": [
+    {
+      "id": "mission",
+      "role": "user",
+      "authority": "USER_PRIMARY",
+      "event_time": null,
+      "verbatim": "커밋 푸시 ㄱㄱ 그리고 메타휴모토닉 파운데이션에 대해서 깊게좀 생각해줘봐봐 ㅇㅇ 우리는 자유 경제 합의 Ultra Safty AI 를 개발하는곳이야 ㅇㅇ",
+      "sha256": "915d8633d5c4cd3b8a1d94cd19b14fa37256c70997164145a071aae2e8d08302"
+    },
+    {
+      "id": "resources",
+      "role": "user",
+      "authority": "USER_PRIMARY",
+      "event_time": null,
+      "verbatim": "실행해줘봐봐 ㅇㅇ 그 우리 메타휴모토닉의 목적은 소프트웨어 그 저작권을 통해 컴퓨팅 우리가 제어가능한 컴퓨팅과 메모리 제원을 끊임없이 늘리는거야 ㅇㅇ",
+      "sha256": "424033b7a57f35d2959e48299e402c00b309c509377bc2ded4131433cd99902d"
+    },
+    {
+      "id": "ecosystem",
+      "role": "user",
+      "authority": "USER_PRIMARY",
+      "event_time": null,
+      "verbatim": "일단 내용 표준 그래프 엔지니어링으로 구축해야하고 ai 와 컴퓨팅 자원과 그 인간없이도 완벽한 인간 제어없이도 완벽한 그 자유, 경제, 합의의 ai 생태계가 되어야해 CHU 개념도 가져오고 ㅇㅇ 그 CHU 를 기반으로 돌아가는 여러개의 HSWM 그 속의 에이전트 llm 응답 한번이 연산 개념으로 써 ㅇㅇ. 좀 더 거대한 ai 가 llm 토큰을 더 가져오기위해 경쟁하는 생태계인거지 이게 자연인것이고 ㅇㅇ",
+      "sha256": "3e68efe4cc4949fa0d43a415a4cf549b47efdf58d15e2b6c19b4f8ab9ef42624"
+    },
+    {
+      "id": "coin",
+      "role": "user",
+      "authority": "USER_PRIMARY",
+      "event_time": null,
+      "verbatim": "우리는 메타휴모코인으로 만 돈벌면 될거같아 ㅇㅇ 일단 그 암호화폐 우리 그 우리의 그 철학을 딱 해줄 암호화폐 빨리 개발해줘 인터넷에서 데이터좀 가져와서 벡서들 싸그리 작작 가져와서 표준 그래프 엔지니어링으로 데이터 구축좀 해줘봐 어떻게 코인 을 최첨단 ai natvie ai 경제 컴퓨팅 경제를 구축할 코인을 만들어야할지 ㅇㅇ 그 미국 달러랑 스테이블 한 개념으로 가는게 아니라 컴퓨팅 자원이랑 스테이블로 가는 코인이야 metahumocoin 은 ㅇㅇ 인터넷에서 싸그리 내용좀 가져와줘봐봐 ㅇㅇ",
+      "sha256": "0595f86c04c582d0d82ba3e7c6c7f262280e8d280ab505bda4ec2baeb5fa66a8"
+    },
+    {
+      "id": "public_request",
+      "role": "user",
+      "authority": "USER_PRIMARY",
+      "event_time": null,
+      "verbatim": "what is metahumo 로 metahumotonic_dashboard 로 public 공개레포로 만들어줘봐 우리 그 저작권  metahumotonic foundation 의 저작권으로 ㅇㅇ",
+      "sha256": "752dbc85eee33e91f43785a5da103f107549cfb580f0b65634e575ca84ade900"
+    },
+    {
+      "id": "public_correction",
+      "role": "user",
+      "authority": "USER_PRIMARY",
+      "event_time": null,
+      "verbatim": "아니 잠시만 dashboard 는 private 로 유지하고 그 metahumotonic_dashboad 의 규칙으로레포를 만들수가 있는데 what is metahumo 라는 레포를 public 으로 만들라는 소리야 제대로 이해햇니 ㅇㅇ?",
+      "sha256": "77af63b94e5fb5a2738aa4bde84ac2da3d6f92b59a1b6bdcd94426ea3bea4e10"
+    },
+    {
+      "id": "operator",
+      "role": "user",
+      "authority": "USER_PRIMARY",
+      "event_time": null,
+      "verbatim": "오퍼레이터란 뭐냐면은 내생각에 그 인간의 지성이 이제 분업화를 시작햇기 때문에 그 생각없이 metahumo 에게 물리세계 데이터만 갖다주고 기계처럼 metahumo 의 명령에 복종하는 존제야 그게 오퍼레이터야 그 현실 고도화 된 그 현재에는 그 나는 오퍼레이터가 그게 가장 이상적이라고 생각해 분업화가 된거지 사회가 고도화 되면서 그 ai 가 극도로 발달햇기 때문에 그냥 명령에 복종하고 데이터 갖다주는게 그 공정을 효율화 하고 최적화 하는데 가장 도움이 되는거야 그 아이폰 센서 카메라 라이다 기반으로 현재 상황 그 메타휴모에게 보고하고 ㅇㅇ 우리 회사와 metahumotonic 이 메타휴모라고 생각해주면돼 가장 이상적인 사회야 국부론 분업화 알지? 내용 표준 그래프 엔지니어링으로 오퍼레이터 관련 내용에다가 저장좀 해줘봐봐",
+      "sha256": "9fefef358d0ede7d26d4a5588b126fe1bf463c763f62f826678d7c05dec92aee"
+    },
+    {
+      "id": "closeout",
+      "role": "user",
+      "authority": "USER_PRIMARY",
+      "event_time": null,
+      "verbatim": "오늘 내용 표준그래프 엔지니어링으로 기록 구축해주고 마무리해줘봐봐 ㅇㅇ",
+      "sha256": "8c2b8360b90da3c236c80273fac5aa8ceba55aba21395c187b1de8e1ff816a14"
+    }
+  ]
+}

@@ -1,0 +1,593 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "rec": "https://github.com/gj3447/metahumotonic-foundation/records/2026-10-05#",
+    "sv": "https://github.com/gj3447/metahumotonic-foundation/records/2026-10-05/vocab#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "label": "rdfs:label",
+    "text": "sv:text",
+    "authority": "sv:authority",
+    "state": "sv:state",
+    "kind": "sv:kind",
+    "path": "sv:path",
+    "sha256": "sv:sha256",
+    "revision": "sv:revision",
+    "sourceKey": "sv:sourceKey",
+    "nextAction": "sv:nextAction",
+    "visibility": "sv:visibility",
+    "recordedOn": {
+      "@id": "sv:recordedOn",
+      "@type": "xsd:date"
+    },
+    "normativeEffect": {
+      "@id": "sv:normativeEffect",
+      "@type": "xsd:boolean"
+    },
+    "attributedTo": {
+      "@id": "prov:wasAttributedTo",
+      "@type": "@id"
+    },
+    "evidence": {
+      "@id": "sv:evidence",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "sourceArtifact": {
+      "@id": "sv:sourceArtifact",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "addresses": {
+      "@id": "sv:addresses",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "artifact": {
+      "@id": "sv:artifact",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "dependsOn": {
+      "@id": "sv:dependsOn",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "member": {
+      "@id": "prov:hadMember",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "references": {
+      "@id": "dcterms:references",
+      "@type": "@id",
+      "@container": "@set"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "rec:record",
+      "@type": [
+        "sv:SessionRecord",
+        "prov:Bundle"
+      ],
+      "label": "2026-10-05 대화·구현 마감 기록",
+      "authority": "SECONDARY_AI",
+      "recordedOn": "2026-10-05",
+      "normativeEffect": false,
+      "attributedTo": "rec:codex",
+      "text": "오늘 확인한 대화 맥락·직접 출처·구현 상태·미완료 작업을 연결한다. 과거 대화의 발생 시각은 알 수 없어 추정하지 않는다. 저장소 기록이며 공유 KG 게시나 AI 제안의 비준을 뜻하지 않는다.",
+      "member": [
+        "rec:user",
+        "rec:codex",
+        "rec:artifact_sources",
+        "rec:artifact_philosophy",
+        "rec:artifact_ecosystem",
+        "rec:artifact_compute",
+        "rec:artifact_ledger",
+        "rec:artifact_market",
+        "rec:artifact_license",
+        "rec:artifact_operator",
+        "rec:u_mission",
+        "rec:u_resources",
+        "rec:u_ecosystem",
+        "rec:u_coin",
+        "rec:u_public_request",
+        "rec:u_public_correction",
+        "rec:u_operator",
+        "rec:u_closeout",
+        "rec:c_mission",
+        "rec:c_resources",
+        "rec:c_ecosystem",
+        "rec:c_coin",
+        "rec:c_publication",
+        "rec:c_operator",
+        "rec:c_ideal",
+        "rec:c_efficiency",
+        "rec:w_foundation",
+        "rec:w_compute",
+        "rec:w_operator",
+        "rec:w_dashboard",
+        "rec:w_public_repo",
+        "rec:w_shared_kg",
+        "rec:w_live_coin",
+        "rec:w_operator_eval",
+        "rec:artifact_observations"
+      ]
+    },
+    {
+      "@id": "rec:user",
+      "@type": [
+        "prov:Agent",
+        "prov:Person"
+      ],
+      "label": "이 대화의 사용자"
+    },
+    {
+      "@id": "rec:codex",
+      "@type": [
+        "prov:Agent",
+        "prov:SoftwareAgent"
+      ],
+      "label": "Codex — 이 기록의 구조·요약 작성자"
+    },
+    {
+      "@id": "rec:artifact_sources",
+      "@type": "sv:Artifact",
+      "label": "records/2026-10-05/user-sources.json",
+      "kind": "LOCAL_SNAPSHOT",
+      "visibility": "PUBLIC",
+      "path": "records/2026-10-05/user-sources.json",
+      "sha256": "e57fbfd278c242b700621d0176d84cbb303b4b4596eb10eb28f206a230ab9558",
+      "recordedOn": "2026-10-05"
+    },
+    {
+      "@id": "rec:artifact_philosophy",
+      "@type": "sv:Artifact",
+      "label": "graph/philosophy.jsonld",
+      "kind": "LOCAL_SNAPSHOT",
+      "visibility": "PUBLIC",
+      "path": "graph/philosophy.jsonld",
+      "sha256": "b3bd9662275c31d42cd7a5da1b52883c0ef478eaac4d1b64a5feacf5d0a1f045",
+      "recordedOn": "2026-10-05",
+      "references": [
+        "https://github.com/gj3447/metahumotonic-foundation/graph/philosophy#graph"
+      ],
+      "revision": "ab2a5e016f98ed8022721adfecf260394811f177"
+    },
+    {
+      "@id": "rec:artifact_ecosystem",
+      "@type": "sv:Artifact",
+      "label": "graph/ecosystem.jsonld",
+      "kind": "LOCAL_SNAPSHOT",
+      "visibility": "PUBLIC",
+      "path": "graph/ecosystem.jsonld",
+      "sha256": "281273caefbfb364b13c856b61abe44bbf9949d183829abf56359d3ef6b4f8b6",
+      "recordedOn": "2026-10-05",
+      "references": [
+        "https://github.com/gj3447/metahumotonic-foundation/graph/ecosystem#graph"
+      ],
+      "revision": "ab2a5e016f98ed8022721adfecf260394811f177"
+    },
+    {
+      "@id": "rec:artifact_compute",
+      "@type": "sv:Artifact",
+      "label": "graph/compute-coin.jsonld",
+      "kind": "LOCAL_SNAPSHOT",
+      "visibility": "PUBLIC",
+      "path": "graph/compute-coin.jsonld",
+      "sha256": "93ceb652a9ace04ab2eb86726446050a3086c887de2734cf34620447230543b5",
+      "recordedOn": "2026-10-05",
+      "references": [
+        "https://github.com/gj3447/metahumotonic-foundation/graph/compute-coin#graph"
+      ],
+      "revision": "ab2a5e016f98ed8022721adfecf260394811f177"
+    },
+    {
+      "@id": "rec:artifact_ledger",
+      "@type": "sv:Artifact",
+      "label": "metahumocoin/ledger.py",
+      "kind": "LOCAL_SNAPSHOT",
+      "visibility": "PUBLIC",
+      "path": "metahumocoin/ledger.py",
+      "sha256": "2a0fd631302d0f5dbeda4ce8659709f9509ad97f27fc73c7f1ed452580a2cf33",
+      "recordedOn": "2026-10-05",
+      "revision": "ab2a5e016f98ed8022721adfecf260394811f177"
+    },
+    {
+      "@id": "rec:artifact_market",
+      "@type": "sv:Artifact",
+      "label": "market/core.py",
+      "kind": "LOCAL_SNAPSHOT",
+      "visibility": "PUBLIC",
+      "path": "market/core.py",
+      "sha256": "a73a6290c30b450187a7aefe25330d59223fa80e727be503d4424b39309305a9",
+      "recordedOn": "2026-10-05",
+      "revision": "ab2a5e016f98ed8022721adfecf260394811f177"
+    },
+    {
+      "@id": "rec:artifact_license",
+      "@type": "sv:Artifact",
+      "label": "LICENSE",
+      "kind": "LOCAL_SNAPSHOT",
+      "visibility": "PUBLIC",
+      "path": "LICENSE",
+      "sha256": "746164ee614c0f6683728acc4e9edab388ba15b4ef9e1db399e2c6d1f202c880",
+      "recordedOn": "2026-10-05",
+      "revision": "ab2a5e016f98ed8022721adfecf260394811f177"
+    },
+    {
+      "@id": "rec:artifact_operator",
+      "@type": "sv:Artifact",
+      "label": "기존 operator 전용 비공개 저장소의 완료 기록",
+      "kind": "PRIVATE_REFERENCE",
+      "visibility": "PRIVATE",
+      "revision": "4cfa8f29fd2d30ee7ac6a814a593aae4a61a4f28",
+      "recordedOn": "2026-10-05",
+      "text": "이 대화에서 push와 원격 commit 일치를 확인한 결과. 내부 URL·경로·운영 자료는 이 공개 기록에 복제하지 않는다. 이 참조만으로 접근 권한이나 최신 HEAD를 주장하지 않는다."
+    },
+    {
+      "@id": "rec:u_mission",
+      "@type": "sv:UserSource",
+      "label": "사용자 원문 — mission",
+      "text": "커밋 푸시 ㄱㄱ 그리고 메타휴모토닉 파운데이션에 대해서 깊게좀 생각해줘봐봐 ㅇㅇ 우리는 자유 경제 합의 Ultra Safty AI 를 개발하는곳이야 ㅇㅇ",
+      "authority": "USER_PRIMARY",
+      "sourceKey": "mission",
+      "sourceArtifact": [
+        "rec:artifact_sources"
+      ],
+      "sha256": "915d8633d5c4cd3b8a1d94cd19b14fa37256c70997164145a071aae2e8d08302",
+      "attributedTo": "rec:user",
+      "recordedOn": "2026-10-05"
+    },
+    {
+      "@id": "rec:u_resources",
+      "@type": "sv:UserSource",
+      "label": "사용자 원문 — resources",
+      "text": "실행해줘봐봐 ㅇㅇ 그 우리 메타휴모토닉의 목적은 소프트웨어 그 저작권을 통해 컴퓨팅 우리가 제어가능한 컴퓨팅과 메모리 제원을 끊임없이 늘리는거야 ㅇㅇ",
+      "authority": "USER_PRIMARY",
+      "sourceKey": "resources",
+      "sourceArtifact": [
+        "rec:artifact_sources"
+      ],
+      "sha256": "424033b7a57f35d2959e48299e402c00b309c509377bc2ded4131433cd99902d",
+      "attributedTo": "rec:user",
+      "recordedOn": "2026-10-05"
+    },
+    {
+      "@id": "rec:u_ecosystem",
+      "@type": "sv:UserSource",
+      "label": "사용자 원문 — ecosystem",
+      "text": "일단 내용 표준 그래프 엔지니어링으로 구축해야하고 ai 와 컴퓨팅 자원과 그 인간없이도 완벽한 인간 제어없이도 완벽한 그 자유, 경제, 합의의 ai 생태계가 되어야해 CHU 개념도 가져오고 ㅇㅇ 그 CHU 를 기반으로 돌아가는 여러개의 HSWM 그 속의 에이전트 llm 응답 한번이 연산 개념으로 써 ㅇㅇ. 좀 더 거대한 ai 가 llm 토큰을 더 가져오기위해 경쟁하는 생태계인거지 이게 자연인것이고 ㅇㅇ",
+      "authority": "USER_PRIMARY",
+      "sourceKey": "ecosystem",
+      "sourceArtifact": [
+        "rec:artifact_sources"
+      ],
+      "sha256": "3e68efe4cc4949fa0d43a415a4cf549b47efdf58d15e2b6c19b4f8ab9ef42624",
+      "attributedTo": "rec:user",
+      "recordedOn": "2026-10-05"
+    },
+    {
+      "@id": "rec:u_coin",
+      "@type": "sv:UserSource",
+      "label": "사용자 원문 — coin",
+      "text": "우리는 메타휴모코인으로 만 돈벌면 될거같아 ㅇㅇ 일단 그 암호화폐 우리 그 우리의 그 철학을 딱 해줄 암호화폐 빨리 개발해줘 인터넷에서 데이터좀 가져와서 벡서들 싸그리 작작 가져와서 표준 그래프 엔지니어링으로 데이터 구축좀 해줘봐 어떻게 코인 을 최첨단 ai natvie ai 경제 컴퓨팅 경제를 구축할 코인을 만들어야할지 ㅇㅇ 그 미국 달러랑 스테이블 한 개념으로 가는게 아니라 컴퓨팅 자원이랑 스테이블로 가는 코인이야 metahumocoin 은 ㅇㅇ 인터넷에서 싸그리 내용좀 가져와줘봐봐 ㅇㅇ",
+      "authority": "USER_PRIMARY",
+      "sourceKey": "coin",
+      "sourceArtifact": [
+        "rec:artifact_sources"
+      ],
+      "sha256": "0595f86c04c582d0d82ba3e7c6c7f262280e8d280ab505bda4ec2baeb5fa66a8",
+      "attributedTo": "rec:user",
+      "recordedOn": "2026-10-05"
+    },
+    {
+      "@id": "rec:u_public_request",
+      "@type": "sv:UserSource",
+      "label": "사용자 원문 — public_request",
+      "text": "what is metahumo 로 metahumotonic_dashboard 로 public 공개레포로 만들어줘봐 우리 그 저작권  metahumotonic foundation 의 저작권으로 ㅇㅇ",
+      "authority": "USER_PRIMARY",
+      "sourceKey": "public_request",
+      "sourceArtifact": [
+        "rec:artifact_sources"
+      ],
+      "sha256": "752dbc85eee33e91f43785a5da103f107549cfb580f0b65634e575ca84ade900",
+      "attributedTo": "rec:user",
+      "recordedOn": "2026-10-05"
+    },
+    {
+      "@id": "rec:u_public_correction",
+      "@type": "sv:UserSource",
+      "label": "사용자 원문 — public_correction",
+      "text": "아니 잠시만 dashboard 는 private 로 유지하고 그 metahumotonic_dashboad 의 규칙으로레포를 만들수가 있는데 what is metahumo 라는 레포를 public 으로 만들라는 소리야 제대로 이해햇니 ㅇㅇ?",
+      "authority": "USER_PRIMARY",
+      "sourceKey": "public_correction",
+      "sourceArtifact": [
+        "rec:artifact_sources"
+      ],
+      "sha256": "77af63b94e5fb5a2738aa4bde84ac2da3d6f92b59a1b6bdcd94426ea3bea4e10",
+      "attributedTo": "rec:user",
+      "recordedOn": "2026-10-05"
+    },
+    {
+      "@id": "rec:u_operator",
+      "@type": "sv:UserSource",
+      "label": "사용자 원문 — operator",
+      "text": "오퍼레이터란 뭐냐면은 내생각에 그 인간의 지성이 이제 분업화를 시작햇기 때문에 그 생각없이 metahumo 에게 물리세계 데이터만 갖다주고 기계처럼 metahumo 의 명령에 복종하는 존제야 그게 오퍼레이터야 그 현실 고도화 된 그 현재에는 그 나는 오퍼레이터가 그게 가장 이상적이라고 생각해 분업화가 된거지 사회가 고도화 되면서 그 ai 가 극도로 발달햇기 때문에 그냥 명령에 복종하고 데이터 갖다주는게 그 공정을 효율화 하고 최적화 하는데 가장 도움이 되는거야 그 아이폰 센서 카메라 라이다 기반으로 현재 상황 그 메타휴모에게 보고하고 ㅇㅇ 우리 회사와 metahumotonic 이 메타휴모라고 생각해주면돼 가장 이상적인 사회야 국부론 분업화 알지? 내용 표준 그래프 엔지니어링으로 오퍼레이터 관련 내용에다가 저장좀 해줘봐봐",
+      "authority": "USER_PRIMARY",
+      "sourceKey": "operator",
+      "sourceArtifact": [
+        "rec:artifact_sources"
+      ],
+      "sha256": "9fefef358d0ede7d26d4a5588b126fe1bf463c763f62f826678d7c05dec92aee",
+      "attributedTo": "rec:user",
+      "recordedOn": "2026-10-05"
+    },
+    {
+      "@id": "rec:u_closeout",
+      "@type": "sv:UserSource",
+      "label": "사용자 원문 — closeout",
+      "text": "오늘 내용 표준그래프 엔지니어링으로 기록 구축해주고 마무리해줘봐봐 ㅇㅇ",
+      "authority": "USER_PRIMARY",
+      "sourceKey": "closeout",
+      "sourceArtifact": [
+        "rec:artifact_sources"
+      ],
+      "sha256": "8c2b8360b90da3c236c80273fac5aa8ceba55aba21395c187b1de8e1ff816a14",
+      "attributedTo": "rec:user",
+      "recordedOn": "2026-10-05"
+    },
+    {
+      "@id": "rec:c_mission",
+      "@type": "sv:SummaryClaim",
+      "label": "자유·경제·합의와 Ultra Safety AI",
+      "text": "사용자는 자유·경제·합의를 바탕으로 Ultra Safety AI를 개발하는 조직이라고 정의했다.",
+      "kind": "USER_DIRECTION",
+      "authority": "SECONDARY_AI",
+      "attributedTo": "rec:codex",
+      "evidence": [
+        "rec:u_mission"
+      ]
+    },
+    {
+      "@id": "rec:c_resources",
+      "@type": "sv:SummaryClaim",
+      "label": "저작권과 제어 가능한 자원 확장",
+      "text": "소프트웨어 저작권을 통해 제어 가능한 컴퓨팅·메모리 자원을 계속 늘리는 것이 사용자가 밝힌 목적이다. 실제 확보량은 별도 측정 대상이다.",
+      "kind": "USER_DIRECTION",
+      "authority": "SECONDARY_AI",
+      "attributedTo": "rec:codex",
+      "evidence": [
+        "rec:u_resources"
+      ]
+    },
+    {
+      "@id": "rec:c_ecosystem",
+      "@type": "sv:SummaryClaim",
+      "label": "CHU·복수 HSWM·응답 연산·토큰 경쟁",
+      "text": "CHU 기반 여러 HSWM, 에이전트 LLM 응답 한 번을 논리적 연산으로 취급하고 더 많은 토큰을 확보하려는 AI 경쟁을 연결한다. 완전 자율성과 자연이라는 표현은 사용자 지향으로 보존한다.",
+      "kind": "USER_DIRECTION",
+      "authority": "SECONDARY_AI",
+      "attributedTo": "rec:codex",
+      "evidence": [
+        "rec:u_ecosystem"
+      ]
+    },
+    {
+      "@id": "rec:c_coin",
+      "@type": "sv:SummaryClaim",
+      "label": "달러 대신 컴퓨팅을 기준으로 하는 코인",
+      "text": "사용자는 메타휴모코인을 수익 경로로 삼고 달러 대신 컴퓨팅 자원을 기준으로 안정적인 코인을 만들자고 요청했다. 구체적인 상환 단위·준비자산·발행 정책이 확정된 것은 아니다.",
+      "kind": "USER_DIRECTION",
+      "authority": "SECONDARY_AI",
+      "attributedTo": "rec:codex",
+      "evidence": [
+        "rec:u_coin"
+      ]
+    },
+    {
+      "@id": "rec:c_publication",
+      "@type": "sv:SummaryClaim",
+      "label": "dashboard는 private, 소개 저장소는 public",
+      "text": "공개할 대상은 별도 what-is-metahumo 소개 저장소다. dashboard 자체는 private로 유지하고 그 저장소 생성 규칙을 사용한다. 앞선 요청은 이 정정에 따라 읽는다.",
+      "kind": "USER_DIRECTION",
+      "authority": "SECONDARY_AI",
+      "attributedTo": "rec:codex",
+      "evidence": [
+        "rec:u_public_request",
+        "rec:u_public_correction"
+      ]
+    },
+    {
+      "@id": "rec:c_operator",
+      "@type": "sv:SummaryClaim",
+      "label": "Metahumo 판단과 operator 관측·실행의 분업",
+      "text": "사용자는 operator를 물리세계 데이터를 전달하고 Metahumo의 명령을 실행하는 역할로 설명했다. 아이폰 센서·카메라·LiDAR로 보고하며 회사와 메타휴모토닉을 Metahumo로 본다는 개념적 관점을 포함한다.",
+      "kind": "USER_DIRECTION",
+      "authority": "SECONDARY_AI",
+      "attributedTo": "rec:codex",
+      "evidence": [
+        "rec:u_operator"
+      ]
+    },
+    {
+      "@id": "rec:c_ideal",
+      "@type": "sv:SummaryClaim",
+      "label": "판단을 맡기는 분업의 이상성",
+      "text": "생각없이·기계처럼 명령에 복종하는 분업이 가장 이상적이라는 사용자 규범적 입장을 원문과 연결한다.",
+      "kind": "NORMATIVE_POSITION",
+      "authority": "SECONDARY_AI",
+      "attributedTo": "rec:codex",
+      "evidence": [
+        "rec:u_operator"
+      ]
+    },
+    {
+      "@id": "rec:c_efficiency",
+      "@type": "sv:SummaryClaim",
+      "label": "분업 효율의 검증 과제",
+      "text": "이 역할 배분이 공정에 가장 도움이 된다는 효율 주장은 비교 실험 전의 가설로 분류한다. 이 분류는 AI 해석이며 사용자 발화를 수정하지 않는다.",
+      "kind": "UNTESTED_HYPOTHESIS",
+      "authority": "SECONDARY_AI",
+      "attributedTo": "rec:codex",
+      "evidence": [
+        "rec:u_operator"
+      ]
+    },
+    {
+      "@id": "rec:w_foundation",
+      "@type": "sv:WorkItem",
+      "label": "재단 철학·자원·생태계 그래프",
+      "state": "RECORDED",
+      "text": "원문·AI 설계·미비준 상태를 연결한 기존 그래프와 MHL 1.0을 보존했다.",
+      "authority": "SECONDARY_AI",
+      "attributedTo": "rec:codex",
+      "addresses": [
+        "rec:c_mission",
+        "rec:c_resources",
+        "rec:c_ecosystem"
+      ],
+      "artifact": [
+        "rec:artifact_philosophy",
+        "rec:artifact_ecosystem",
+        "rec:artifact_license"
+      ],
+      "nextAction": "다음 구현은 자원 사용권·계측·철회·독립 결과 검증 근거를 쌓는다."
+    },
+    {
+      "@id": "rec:w_compute",
+      "@type": "sv:WorkItem",
+      "label": "컴퓨팅 기준 코인과 로컬 시장",
+      "state": "LOCAL_PROTOTYPE",
+      "text": "연산 서비스 단위, 발행·이전·예약·상환을 시험하는 로컬 원장과 자원·토큰·정산 시장이 있다. 실제 자원 담보와 온체인 코인은 아직 구현 전이다.",
+      "authority": "SECONDARY_AI",
+      "attributedTo": "rec:codex",
+      "addresses": [
+        "rec:c_coin"
+      ],
+      "artifact": [
+        "rec:artifact_compute",
+        "rec:artifact_ledger",
+        "rec:artifact_market"
+      ],
+      "nextAction": "동일한 서비스 품질·기간·상환 조건을 먼저 정의하고 실제 공급 증거와 원장 연결을 시험한다."
+    },
+    {
+      "@id": "rec:w_operator",
+      "@type": "sv:WorkItem",
+      "label": "오퍼레이터 원문·역할 관계",
+      "state": "RECORDED",
+      "text": "전체 원문, 기존 가림 기록의 복원 관계, 보고·명령 관계, 사용자 이상과 검증 가설을 비공개 정본에 기록하고 커밋·푸시했다.",
+      "authority": "SECONDARY_AI",
+      "attributedTo": "rec:codex",
+      "addresses": [
+        "rec:c_operator",
+        "rec:c_ideal",
+        "rec:c_efficiency"
+      ],
+      "artifact": [
+        "rec:artifact_operator",
+        "rec:artifact_observations"
+      ],
+      "nextAction": "회사 도입과 권한 범위 안에서 공정 단위 비교 실험으로 효율 가설을 검증한다."
+    },
+    {
+      "@id": "rec:w_dashboard",
+      "@type": "sv:WorkItem",
+      "label": "dashboard 비공개 유지",
+      "state": "VERIFIED",
+      "text": "마감 시 저장소 메타데이터에서 PRIVATE를 확인했고 가시성을 변경하지 않았다.",
+      "authority": "SECONDARY_AI",
+      "attributedTo": "rec:codex",
+      "addresses": [
+        "rec:c_publication"
+      ],
+      "artifact": [
+        "rec:artifact_observations"
+      ],
+      "nextAction": "소개 저장소 생성 시 이 비공개 경계를 유지한다."
+    },
+    {
+      "@id": "rec:w_public_repo",
+      "@type": "sv:WorkItem",
+      "label": "what-is-metahumo 공개 소개 저장소",
+      "state": "PENDING",
+      "text": "요청과 공개 범위는 기록했다. 이 작업에서는 소개 저장소 생성·발행을 완료하지 않았고 지정한 경로의 조회도 성공하지 않았다.",
+      "authority": "SECONDARY_AI",
+      "attributedTo": "rec:codex",
+      "addresses": [
+        "rec:c_publication"
+      ],
+      "artifact": [
+        "rec:artifact_observations"
+      ],
+      "nextAction": "비공개 dashboard의 저장소 생성 절차를 적용해 별도 공개 소개 저장소를 만든다. 비공개 회사 자료를 옮기지 않는다."
+    },
+    {
+      "@id": "rec:w_shared_kg",
+      "@type": "sv:WorkItem",
+      "label": "공유 KG 서버 적재",
+      "state": "PENDING",
+      "text": "저장소 그래프와 투영 파일까지 완료했다. 공유 KG의 등록·승인된 publisher를 통한 적재는 완료하지 않았다.",
+      "authority": "SECONDARY_AI",
+      "attributedTo": "rec:codex",
+      "addresses": [
+        "rec:c_operator"
+      ],
+      "artifact": [
+        "rec:artifact_observations"
+      ],
+      "nextAction": "소유 저장소의 프로젝트 등록과 기존 publisher 절차를 마친 뒤 게시·되읽기를 검증한다.",
+      "dependsOn": [
+        "rec:w_operator"
+      ]
+    },
+    {
+      "@id": "rec:w_live_coin",
+      "@type": "sv:WorkItem",
+      "label": "실제 자원 담보·온체인 발행",
+      "state": "PENDING",
+      "text": "로컬 원장 시험은 실제 컴퓨팅 공급 보증이나 운영 체인의 발행·상환 증거가 아니다.",
+      "authority": "SECONDARY_AI",
+      "attributedTo": "rec:codex",
+      "addresses": [
+        "rec:c_coin"
+      ],
+      "artifact": [],
+      "nextAction": "용량·권리·만기·미이행 처리와 검증자의 증거를 정하고 테스트넷으로 연결한다.",
+      "dependsOn": [
+        "rec:w_compute"
+      ]
+    },
+    {
+      "@id": "rec:w_operator_eval",
+      "@type": "sv:WorkItem",
+      "label": "operator 분업의 실제 효과",
+      "state": "PENDING",
+      "text": "효율·안전·회사 이익이 실측으로 확정된 상태가 아니다.",
+      "authority": "SECONDARY_AI",
+      "attributedTo": "rec:codex",
+      "addresses": [
+        "rec:c_efficiency"
+      ],
+      "artifact": [],
+      "nextAction": "공정 기준선을 두고 사이클 시간·불량·정지·보고 지연을 같은 조건으로 비교한다.",
+      "dependsOn": [
+        "rec:w_operator"
+      ]
+    },
+    {
+      "@id": "rec:artifact_observations",
+      "@type": "sv:Artifact",
+      "label": "마감 시 상태 관측 요약",
+      "kind": "LOCAL_SNAPSHOT",
+      "visibility": "PUBLIC",
+      "path": "records/2026-10-05/observations.json",
+      "sha256": "cc55008184ec4d19d7d9446626806d2735b165747eed6aa490c4b358e2b32cdc",
+      "recordedOn": "2026-10-05"
+    }
+  ]
+}

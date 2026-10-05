@@ -1,0 +1,32 @@
+@prefix sv: <https://github.com/gj3447/metahumotonic-foundation/records/2026-10-05/vocab#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+# Owner-local session record, not a shared-KG vocabulary or a new project identity.
+# Edges run subject -> object. Cardinality is enforced in session.shapes.ttl.
+sv:SessionRecord a rdfs:Class ; rdfs:subClassOf prov:Bundle .
+sv:UserSource a rdfs:Class ; rdfs:subClassOf prov:Entity .
+sv:SummaryClaim a rdfs:Class ; rdfs:subClassOf prov:Entity .
+sv:WorkItem a rdfs:Class ; rdfs:subClassOf prov:Entity .
+sv:Artifact a rdfs:Class ; rdfs:subClassOf prov:Entity .
+
+sv:evidence a rdf:Property ; rdfs:domain sv:SummaryClaim ; rdfs:range sv:UserSource ; rdfs:comment "1..n; AI summary -> exact user source; never confers user authorship." .
+sv:sourceArtifact a rdf:Property ; rdfs:domain sv:UserSource ; rdfs:range sv:Artifact ; rdfs:comment "Exactly 1; quotation -> captured source file." .
+sv:addresses a rdf:Property ; rdfs:domain sv:WorkItem ; rdfs:range sv:SummaryClaim ; rdfs:comment "1..n; work -> direction being addressed, not proof of completion." .
+sv:artifact a rdf:Property ; rdfs:domain sv:WorkItem ; rdfs:range sv:Artifact ; rdfs:comment "0..n; work -> output or observed evidence." .
+sv:dependsOn a rdf:Property ; rdfs:domain sv:WorkItem ; rdfs:range sv:WorkItem ; rdfs:comment "0..n; follow-up -> prerequisite, acyclic; no access grant." .
+
+sv:text a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string .
+sv:authority a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 on records, sources, summaries, work; distinct from evidence status." .
+sv:state a rdf:Property ; rdfs:domain sv:WorkItem ; rdfs:range xsd:string ; rdfs:comment "Exactly 1; recorded, locally implemented, checked, or pending." .
+sv:kind a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 on claim/artifact; epistemic kind and artifact scope stay separate from work state." .
+sv:sourceKey a rdf:Property ; rdfs:domain sv:UserSource ; rdfs:range xsd:string ; rdfs:comment "Exactly 1; immutable message ID inside sourceArtifact." .
+sv:path a rdf:Property ; rdfs:domain sv:Artifact ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 on LOCAL_SNAPSHOT; repository-relative, no private workspace location." .
+sv:sha256 a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 on local artifacts/user sources; artifact bytes or exact UTF-8 utterance respectively." .
+sv:revision a rdf:Property ; rdfs:domain sv:Artifact ; rdfs:range xsd:string ; rdfs:comment "0..1; observed full git commit, not a claim about current HEAD." .
+sv:visibility a rdf:Property ; rdfs:domain sv:Artifact ; rdfs:range xsd:string ; rdfs:comment "Exactly 1; PUBLIC snapshot or PRIVATE reference without private content/location." .
+sv:nextAction a rdf:Property ; rdfs:domain sv:WorkItem ; rdfs:range xsd:string ; rdfs:comment "Exactly 1; concrete continuation; documenting it does not execute it." .
+sv:recordedOn a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:date ; rdfs:comment "Exactly 1 on record/source/artifact; recording date, not unknown utterance event time." .
+sv:normativeEffect a rdf:Property ; rdfs:domain sv:SessionRecord ; rdfs:range xsd:boolean ; rdfs:comment "Exactly 1 false; a session log does not amend governance or ratify AI interpretation." .

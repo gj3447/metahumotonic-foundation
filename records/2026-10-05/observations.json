@@ -1,0 +1,35 @@
+{
+  "schema": "metahumotonic.closeout-observations/v1",
+  "recorded_on": "2026-10-05",
+  "authority": "SECONDARY_AI",
+  "mode": "tool-output summary; not a new user utterance",
+  "observations": [
+    {
+      "id": "dashboard_visibility",
+      "method": "GitHub repository metadata read",
+      "subject": "METAHUMOTONIC_DASHBOARD",
+      "value": "PRIVATE",
+      "visibility_changed": false
+    },
+    {
+      "id": "public_repo_lookup",
+      "method": "GitHub repository lookup for requested owner/name",
+      "subject": "gj3447/what-is-metahumo",
+      "value": "NOT_FOUND_WITH_CURRENT_CREDENTIALS",
+      "limitation": "This lookup is not proof of absence under every account/name; no creation was performed in this session."
+    },
+    {
+      "id": "operator_record",
+      "method": "Previous turn push result and remote reference readback",
+      "value": "PUSHED",
+      "revision": "4cfa8f29fd2d30ee7ac6a814a593aae4a61a4f28",
+      "scope": "Private repository; no private URL, host path, access information or internal material copied."
+    },
+    {
+      "id": "shared_kg",
+      "method": "Actions completed in this conversation",
+      "value": "NOT_PUBLISHED",
+      "scope": "Repository graph and projection exist; shared-KG project registration/publisher work remains."
+    }
+  ]
+}
