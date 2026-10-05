@@ -1,0 +1,317 @@
+{
+  "prefixes": {
+    "cc": "https://github.com/gj3447/metahumotonic-foundation/graph/compute-coin#",
+    "cv": "https://github.com/gj3447/metahumotonic-foundation/compute-coin-vocab#",
+    "mhv": "https://github.com/gj3447/metahumotonic-foundation/vocab#",
+    "mhc": "https://github.com/gj3447/metahumotonic-foundation/graph/metahumocoin#",
+    "ex": "https://github.com/gj3447/metahumotonic-foundation/graph/ecosystem#",
+    "ph": "https://github.com/gj3447/metahumotonic-foundation/graph/philosophy#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dcterms": "http://purl.org/dc/terms/"
+  },
+  "questions": [
+    {
+      "id": "direct-redemption",
+      "question": "직접 상환의 사용자·외부 근거는?",
+      "query": "SELECT ?proposal ?basis WHERE { VALUES ?proposal { cc:D_anchor } ?proposal cv:basis ?basis }",
+      "columns": [
+        "proposal",
+        "basis"
+      ],
+      "expected": [
+        [
+          "cc:D_anchor",
+          "cc:U_request"
+        ],
+        [
+          "cc:D_anchor",
+          "cc:S_truebit"
+        ],
+        [
+          "cc:D_anchor",
+          "cc:S_mlperf"
+        ]
+      ]
+    },
+    {
+      "id": "source-attribution",
+      "question": "각 외부 관측의 원문 위치는?",
+      "query": "SELECT ?observation ?source WHERE { ?observation a cv:Observation ; dcterms:source ?source }",
+      "columns": [
+        "observation",
+        "source"
+      ],
+      "expected": [
+        [
+          "cc:S_truebit",
+          "https://arxiv.org/abs/1908.02946v1"
+        ],
+        [
+          "cc:S_clawcoin",
+          "https://arxiv.org/html/2604.19026v1"
+        ],
+        [
+          "cc:S_icp",
+          "https://docs.internetcomputer.org/references/cycle-costs/"
+        ],
+        [
+          "cc:S_akash",
+          "https://akash.network/blog/what-burn-mint-equilibrium-means-for-akash/"
+        ],
+        [
+          "cc:S_render",
+          "https://know.rendernetwork.com/basics/the-render-spl-token"
+        ],
+        [
+          "cc:S_golem",
+          "https://docs.golem.network/docs/golem/payments"
+        ],
+        [
+          "cc:S_filecoin",
+          "https://www.filecoin.io/assets/documents/filecoin.pdf"
+        ],
+        [
+          "cc:S_bittensor",
+          "https://www.bittensor.com/dtao-whitepaper"
+        ],
+        [
+          "cc:S_mlperf",
+          "https://mlcommons.org/2025/09/small-llm-inference-5-1/"
+        ],
+        [
+          "cc:S_erc1155",
+          "https://eips.ethereum.org/EIPS/eip-1155"
+        ],
+        [
+          "cc:S_x402",
+          "https://github.com/coinbase/x402/blob/main/specs/x402-specification-v2.md"
+        ]
+      ]
+    },
+    {
+      "id": "alternative-anchors",
+      "question": "비용 지수·법정화폐 기준 대안의 근거는?",
+      "query": "SELECT ?proposal ?basis WHERE { VALUES ?proposal { cc:D_index_alt } ?proposal cv:basis ?basis }",
+      "columns": [
+        "proposal",
+        "basis"
+      ],
+      "expected": [
+        [
+          "cc:D_index_alt",
+          "cc:U_request"
+        ],
+        [
+          "cc:D_index_alt",
+          "cc:S_clawcoin"
+        ],
+        [
+          "cc:D_index_alt",
+          "cc:S_icp"
+        ],
+        [
+          "cc:D_index_alt",
+          "cc:S_akash"
+        ],
+        [
+          "cc:D_index_alt",
+          "cc:S_render"
+        ]
+      ]
+    },
+    {
+      "id": "capacity-and-supply",
+      "question": "미래 가용량 발행 제안이 재검토하는 기존 노드는?",
+      "query": "SELECT ?proposal ?target WHERE { VALUES ?proposal { cc:D_capacity } ?proposal cv:targets ?target }",
+      "columns": [
+        "proposal",
+        "target"
+      ],
+      "expected": [
+        [
+          "cc:D_capacity",
+          "mhc:Q_supply"
+        ],
+        [
+          "cc:D_capacity",
+          "ex:compute"
+        ]
+      ]
+    },
+    {
+      "id": "mint-liability-chain",
+      "question": "서비스 단위와 발행·채무의 연결은?",
+      "query": "SELECT ?capacity ?unit ?mint ?liability WHERE { ?capacity cv:forUnit ?unit ; cv:boundsMint ?mint . ?mint cv:createsLiability ?liability }",
+      "columns": [
+        "capacity",
+        "unit",
+        "mint",
+        "liability"
+      ],
+      "expected": [
+        [
+          "cc:capacity",
+          "cc:unit",
+          "cc:mint",
+          "cc:liability"
+        ]
+      ]
+    },
+    {
+      "id": "receipt-before-burn",
+      "question": "상환은 어떤 채무와 영수증에 연결되는가?",
+      "query": "SELECT ?redemption ?liability ?receipt WHERE { ?redemption cv:settles ?liability ; cv:requiresReceipt ?receipt }",
+      "columns": [
+        "redemption",
+        "liability",
+        "receipt"
+      ],
+      "expected": [
+        [
+          "cc:redemption",
+          "cc:liability",
+          "cc:receipt"
+        ]
+      ]
+    },
+    {
+      "id": "revenue-evidence",
+      "question": "재단 수익 모델의 전제는?",
+      "query": "SELECT ?proposal ?basis WHERE { VALUES ?proposal { cc:D_fees } ?proposal cv:basis ?basis }",
+      "columns": [
+        "proposal",
+        "basis"
+      ],
+      "expected": [
+        [
+          "cc:D_fees",
+          "cc:U_request"
+        ],
+        [
+          "cc:D_fees",
+          "cc:D_capacity"
+        ]
+      ]
+    },
+    {
+      "id": "chu-hswm",
+      "question": "CHU·HSWM과 응답·연산 자원의 연결은?",
+      "query": "SELECT ?proposal ?target WHERE { VALUES ?proposal { cc:D_agents } ?proposal cv:targets ?target }",
+      "columns": [
+        "proposal",
+        "target"
+      ],
+      "expected": [
+        [
+          "cc:D_agents",
+          "ex:chu"
+        ],
+        [
+          "cc:D_agents",
+          "ex:hswm"
+        ],
+        [
+          "cc:D_agents",
+          "ex:response"
+        ],
+        [
+          "cc:D_agents",
+          "ex:compute"
+        ]
+      ]
+    },
+    {
+      "id": "remaining-decisions",
+      "question": "어떤 열린 결정이 어떤 설계에 영향을 주는가?",
+      "query": "SELECT ?question ?proposal WHERE { ?question a cv:Question ; cv:status \"OPEN\" ; cv:affects ?proposal }",
+      "columns": [
+        "question",
+        "proposal"
+      ],
+      "expected": [
+        [
+          "cc:Q_profile",
+          "cc:D_anchor"
+        ],
+        [
+          "cc:Q_rollover",
+          "cc:D_identity"
+        ],
+        [
+          "cc:Q_provider",
+          "cc:D_capacity"
+        ],
+        [
+          "cc:Q_distribution",
+          "cc:D_fees"
+        ],
+        [
+          "cc:Q_distribution",
+          "cc:D_capacity"
+        ],
+        [
+          "cc:Q_loss",
+          "cc:D_settlement"
+        ],
+        [
+          "cc:Q_chain",
+          "cc:D_identity"
+        ],
+        [
+          "cc:Q_revenue",
+          "cc:D_fees"
+        ]
+      ]
+    },
+    {
+      "id": "counterarguments",
+      "question": "설계에 대한 반론과 대상은?",
+      "query": "SELECT ?risk ?proposal WHERE { ?risk a cv:Risk ; cv:challenges ?proposal }",
+      "columns": [
+        "risk",
+        "proposal"
+      ],
+      "expected": [
+        [
+          "cc:R_default",
+          "cc:D_capacity"
+        ],
+        [
+          "cc:R_default",
+          "cc:D_settlement"
+        ],
+        [
+          "cc:R_quality",
+          "cc:D_anchor"
+        ],
+        [
+          "cc:R_quality",
+          "cc:D_agents"
+        ],
+        [
+          "cc:R_circular",
+          "cc:D_capacity"
+        ],
+        [
+          "cc:R_circular",
+          "cc:D_fees"
+        ],
+        [
+          "cc:R_exit",
+          "cc:D_capacity"
+        ],
+        [
+          "cc:R_exit",
+          "cc:D_settlement"
+        ],
+        [
+          "cc:R_rollover",
+          "cc:D_identity"
+        ]
+      ]
+    }
+  ]
+}

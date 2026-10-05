@@ -1,0 +1,144 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix mhv: <https://github.com/gj3447/metahumotonic-foundation/vocab#> .
+@prefix mhc: <https://github.com/gj3447/metahumotonic-foundation/graph/metahumocoin#> .
+@prefix eco: <https://github.com/gj3447/metahumotonic-foundation/graph/economy#> .
+
+# This version validates a DESIGN baseline, not production execution evidence.
+
+mhv:CoinDesignAttributionShape a sh:NodeShape ; sh:targetClass mhv:CoinBuildGraph ; sh:targetClass mhv:CurrencyProject ; sh:targetClass mhv:CoinRequirement ; sh:targetClass mhv:EngineeringDecision ; sh:targetClass mhv:EngineeringOption ; sh:targetClass mhv:CoinPolicy ; sh:targetClass mhv:CoinComponent ; sh:targetClass mhv:InterfaceContract ; sh:targetClass mhv:WorkPackage ; sh:targetClass mhv:AcceptanceCriterion ; sh:targetClass mhv:ReleaseTarget ; sh:targetClass mhv:SupportingImplementation ;
+  sh:property [ sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:maxCount 1 ; sh:class prov:SoftwareAgent ] ;
+  sh:property [ sh:path mhv:summaryAuthority ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue mhv:SECONDARY_AI ] ;
+  sh:not [ sh:class mhv:Claim ] .
+
+mhv:CoinBuildGraphShape a sh:NodeShape ; sh:targetClass mhv:CoinBuildGraph ;
+  sh:property [ sh:path mhv:text ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path prov:wasDerivedFrom ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mhv:Utterance ] .
+
+mhv:CurrencyProjectShape a sh:NodeShape ; sh:targetClass mhv:CurrencyProject ;
+  sh:class mhv:Project ;
+  sh:not [ sh:class mhv:Concept ] ;
+  sh:property [ sh:path mhv:projectStage ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:hasValue "DESIGN" ] ;
+  sh:property [ sh:path mhv:intentClaim ; sh:minCount 1 ; sh:class mhv:Claim ] ;
+  sh:property [ sh:path mhv:hasRequirement ; sh:minCount 1 ; sh:class mhv:CoinRequirement ] ;
+  sh:property [ sh:path mhv:hasDecision ; sh:minCount 1 ; sh:class mhv:EngineeringDecision ] ;
+  sh:property [ sh:path mhv:hasWork ; sh:minCount 1 ; sh:class mhv:WorkPackage ] ;
+  sh:property [ sh:path mhv:hasRelease ; sh:minCount 1 ; sh:class mhv:ReleaseTarget ] ;
+  sh:property [ sh:path mhv:implementsConcept ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mhv:Concept ] .
+
+mhv:CoinRequirementShape a sh:NodeShape ; sh:targetClass mhv:CoinRequirement ;
+  sh:property [ sh:path mhv:text ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path mhv:motivatedBy ; sh:minCount 1 ; sh:class mhv:Claim ] .
+
+mhv:EngineeringDecisionShape a sh:NodeShape ; sh:targetClass mhv:EngineeringDecision ;
+  sh:property [ sh:path mhv:text ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path mhv:decisionStatus ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:in ( "OPEN" "DECIDED" ) ] ;
+  sh:property [ sh:path mhv:option ; sh:minCount 2 ; sh:class mhv:EngineeringOption ] ;
+  sh:property [ sh:path mhv:recommendedOption ; sh:minCount 0 ; sh:maxCount 1 ; sh:class mhv:EngineeringOption ] ;
+  sh:property [ sh:path mhv:recommendationCondition ; sh:minCount 0 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path mhv:selectedOption ; sh:minCount 0 ; sh:maxCount 1 ; sh:class mhv:EngineeringOption ] ;
+  sh:property [ sh:path mhv:decisionReceipt ; sh:minCount 0 ; sh:maxCount 1 ; sh:class mhv:DecisionReceipt ] ;
+  sh:or ( [ sh:property [ sh:path mhv:decisionStatus ; sh:hasValue "OPEN" ] ; sh:property [ sh:path mhv:selectedOption ; sh:maxCount 0 ] ; sh:property [ sh:path mhv:decisionReceipt ; sh:maxCount 0 ] ] [ sh:property [ sh:path mhv:decisionStatus ; sh:hasValue "DECIDED" ] ; sh:property [ sh:path mhv:selectedOption ; sh:minCount 1 ] ; sh:property [ sh:path mhv:decisionReceipt ; sh:minCount 1 ] ] ) ;
+  sh:sparql [ sh:message "Recommendation must name one of this decision's alternatives and state a condition." ; sh:select """
+PREFIX mhv: <https://github.com/gj3447/metahumotonic-foundation/vocab#>
+SELECT $this WHERE {  $this mhv:recommendedOption ?o . FILTER NOT EXISTS { $this mhv:option ?o ; mhv:recommendationCondition ?c . FILTER (STRLEN(STR(?c)) > 0) } }
+""" ] ;
+  sh:sparql [ sh:message "Selected option must belong to this decision." ; sh:select """
+PREFIX mhv: <https://github.com/gj3447/metahumotonic-foundation/vocab#>
+SELECT $this WHERE { $this mhv:selectedOption ?o . FILTER NOT EXISTS { $this mhv:option ?o } }
+""" ] ;
+  sh:sparql [ sh:message "Decision and optionFor disagree." ; sh:select """
+PREFIX mhv: <https://github.com/gj3447/metahumotonic-foundation/vocab#>
+SELECT $this WHERE { $this mhv:option ?o . FILTER NOT EXISTS { ?o mhv:optionFor $this } }
+""" ] .
+
+mhv:EngineeringOptionShape a sh:NodeShape ; sh:targetClass mhv:EngineeringOption ;
+  sh:property [ sh:path mhv:optionFor ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mhv:EngineeringDecision ] ;
+  sh:property [ sh:path mhv:text ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path mhv:tradeoff ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:sparql [ sh:message "Alternative must be registered by its owning decision." ; sh:select """
+PREFIX mhv: <https://github.com/gj3447/metahumotonic-foundation/vocab#>
+SELECT $this WHERE { $this mhv:optionFor ?d . FILTER NOT EXISTS { ?d mhv:option $this } }
+""" ] .
+
+mhv:DecisionReceiptShape a sh:NodeShape ; sh:targetClass mhv:DecisionReceipt ;
+  sh:property [ sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:maxCount 1 ; sh:class prov:Agent ] ;
+  sh:property [ sh:path dcterms:source ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] ;
+  sh:property [ sh:path dcterms:date ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:date ] ;
+  sh:property [ sh:path mhv:sha256 ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:pattern "^[0-9a-f]{64}$" ] .
+
+mhv:CoinPolicyShape a sh:NodeShape ; sh:targetClass mhv:CoinPolicy ;
+  sh:property [ sh:path mhv:policyDecision ; sh:minCount 1 ; sh:class mhv:EngineeringDecision ] ;
+  sh:property [ sh:path mhv:text ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path mhv:boundary ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] .
+
+mhv:CoinComponentShape a sh:NodeShape ; sh:targetClass mhv:CoinComponent ;
+  sh:property [ sh:path mhv:implementsPolicy ; sh:minCount 1 ; sh:class mhv:CoinPolicy ] ;
+  sh:property [ sh:path mhv:implementsRequirement ; sh:minCount 1 ; sh:class mhv:CoinRequirement ] ;
+  sh:property [ sh:path mhv:hasInterface ; sh:minCount 1 ; sh:class mhv:InterfaceContract ] ;
+  sh:property [ sh:path mhv:text ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] .
+
+mhv:InterfaceContractShape a sh:NodeShape ; sh:targetClass mhv:InterfaceContract ;
+  sh:property [ sh:path mhv:text ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path mhv:fields ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype rdf:JSON ] .
+
+mhv:WorkPackageShape a sh:NodeShape ; sh:targetClass mhv:WorkPackage ;
+  sh:property [ sh:path mhv:workStatus ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:hasValue "PLANNED" ] ;
+  sh:property [ sh:path mhv:producesComponent ; sh:minCount 1 ; sh:class mhv:CoinComponent ] ;
+  sh:property [ sh:path mhv:implementsRequirement ; sh:minCount 1 ; sh:class mhv:CoinRequirement ] ;
+  sh:property [ sh:path mhv:acceptanceCriterion ; sh:minCount 1 ; sh:class mhv:AcceptanceCriterion ] ;
+  sh:property [ sh:path mhv:dependsOnWork ; sh:minCount 0 ; sh:class mhv:WorkPackage ] ;
+  sh:property [ sh:path mhv:plannedPath ; sh:minCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ] ;
+  sh:sparql [ sh:message "Work dependency cycle." ; sh:select """
+PREFIX mhv: <https://github.com/gj3447/metahumotonic-foundation/vocab#>
+SELECT $this WHERE { $this mhv:dependsOnWork+ $this }
+""" ] .
+
+mhv:DecisionBlockerShape a sh:NodeShape ; sh:targetSubjectsOf mhv:blockedByDecision ;
+  sh:or ( [ sh:class mhv:WorkPackage ] [ sh:class mhv:ReleaseTarget ] ) ;
+  sh:property [ sh:path mhv:blockedByDecision ; sh:minCount 1 ; sh:class mhv:EngineeringDecision ] .
+
+mhv:RequirementImplementationShape a sh:NodeShape ; sh:targetSubjectsOf mhv:implementsRequirement ;
+  sh:or ( [ sh:class mhv:WorkPackage ] [ sh:class mhv:CoinComponent ] ) ;
+  sh:property [ sh:path mhv:implementsRequirement ; sh:minCount 1 ; sh:class mhv:CoinRequirement ] .
+
+mhv:AcceptanceCriterionShape a sh:NodeShape ; sh:targetClass mhv:AcceptanceCriterion ;
+  sh:property [ sh:path mhv:verificationStatus ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:hasValue "NOT_RUN" ] ;
+  sh:property [ sh:path mhv:criterionScope ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:in ( "COMMON" "TESTNET" "MAINNET" ) ] ;
+  sh:property [ sh:path mhv:checkProcedure ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 20 ] ;
+  sh:property [ sh:path mhv:evidenceKind ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 4 ] .
+
+mhv:ReleaseTargetShape a sh:NodeShape ; sh:targetClass mhv:ReleaseTarget ;
+  sh:property [ sh:path mhv:releaseStage ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:in ( "TESTNET" "MAINNET" ) ] ;
+  sh:property [ sh:path mhv:releaseCriterion ; sh:minCount 1 ; sh:class mhv:AcceptanceCriterion ] ;
+  sh:property [ sh:path mhv:blockedByDecision ; sh:minCount 1 ; sh:class mhv:EngineeringDecision ] ;
+  sh:property [ sh:path mhv:dependsOnRelease ; sh:minCount 0 ; sh:maxCount 1 ; sh:class mhv:ReleaseTarget ] ;
+  sh:sparql [ sh:message "Release dependency cycle." ; sh:select """
+PREFIX mhv: <https://github.com/gj3447/metahumotonic-foundation/vocab#>
+SELECT $this WHERE { $this mhv:dependsOnRelease+ $this }
+""" ] ;
+  sh:sparql [ sh:message "Wrong environment criterion." ; sh:select """
+PREFIX mhv: <https://github.com/gj3447/metahumotonic-foundation/vocab#>
+SELECT $this WHERE { $this mhv:releaseStage ?stage ; mhv:releaseCriterion ?c . ?c mhv:criterionScope ?scope . FILTER (?scope != "COMMON" && ?scope != ?stage) }
+""" ] ;
+  sh:sparql [ sh:message "MAINNET must depend on TESTNET." ; sh:select """
+PREFIX mhv: <https://github.com/gj3447/metahumotonic-foundation/vocab#>
+SELECT $this WHERE { $this mhv:releaseStage "MAINNET" . FILTER NOT EXISTS { $this mhv:dependsOnRelease ?t . ?t mhv:releaseStage "TESTNET" } }
+""" ] ;
+  sh:sparql [ sh:message "TESTNET has no release prerequisite in this profile." ; sh:select """
+PREFIX mhv: <https://github.com/gj3447/metahumotonic-foundation/vocab#>
+SELECT $this WHERE { $this mhv:releaseStage "TESTNET" ; mhv:dependsOnRelease ?t }
+""" ] .
+
+mhv:SupportingImplementationShape a sh:NodeShape ; sh:targetClass mhv:SupportingImplementation ;
+  sh:property [ sh:path mhv:exercises ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mhv:CoinComponent ] ;
+  sh:property [ sh:path mhv:path ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path mhv:sha256 ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:pattern "^[0-9a-f]{64}$" ] ;
+  sh:property [ sh:path mhv:limitation ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:not [ sh:class mhv:AcceptanceCriterion ] ;
+  sh:not [ sh:class mhv:ReleaseTarget ] .
+

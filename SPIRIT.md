@@ -2,6 +2,12 @@
 
 > **상태: CONSIDERATION (고려사항) · MHP-0002 후보 · 제안 전 정리 · 효력 없음**
 >
+> **경제 확장 (2026-10-02):** [MetaHumoCoin 설계와 외부 구현 비교](ECONOMY.md)는
+> [별도 JSON-LD 그래프](graph/economy.jsonld)에 기록한다. 10월 1일 사용자 원문,
+> 외부 문서 근거, AI 적용 제안을 구분하며 `graph/check.py`로 검증한다.
+> 아래 문서/YAML은 기존 정신 기록으로 보존한다. 경제 확장에 쓰는 `spirit.jsonld` 입력은
+> 파일 해시로 고정하며, 기존 AI 재진술을 사용자 채택으로 승격하지 않는다.
+>
 > 아직 MHP로 열린 제안이 아니다. 표준 그래프 엔지니어링(JSON-LD · PROV-O · SHACL, G0 control card)으로
 > 다시 정리하기 전의 임시 기록이며, `graph/spirit.graph.yaml`은 임시 형식이다.
 >

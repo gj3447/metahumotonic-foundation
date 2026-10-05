@@ -1,0 +1,35 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix mhv: <https://github.com/gj3447/metahumotonic-foundation/vocab#> .
+
+# Additive G0 design vocabulary. Cardinalities below are enforced by SHACL.
+# Direction is subject -> object. No property asserts identity or adoption.
+mhv:EconomyGraph a rdfs:Class ; rdfs:subClassOf prov:Entity .
+mhv:Concept a rdfs:Class ; rdfs:comment "An idea, not evidence of a deployed project or issued asset." .
+mhv:SourceDocument a rdfs:Class ; rdfs:subClassOf prov:Entity .
+mhv:ExternalImplementation a rdfs:Class ; rdfs:comment "An identified external implementation; integration is not implied." .
+mhv:DocumentedMechanism a rdfs:Class ; rdfs:subClassOf prov:Entity ; rdfs:comment "An attributed reading of official documentation, not a live execution observation." .
+mhv:DesignComponent a rdfs:Class ; rdfs:subClassOf mhv:Concept .
+mhv:DesignProposal a rdfs:Class ; rdfs:subClassOf prov:Entity ; rdfs:comment "AI-authored candidate mapping from user claims and external evidence to local design." .
+mhv:OpenDecision a rdfs:Class ; rdfs:subClassOf mhv:Question .
+
+mhv:usesArtifact a rdf:Property ; rdfs:domain mhv:EconomyGraph ; rdfs:range mhv:File ; rdfs:comment "Exactly 1 local source artifact, checked by file-byte digest." .
+mhv:topic a rdf:Property ; rdfs:domain mhv:Claim ; rdfs:range mhv:Concept ; rdfs:comment "0..n concepts discussed by a claim. Does not change existing mhv:about Project semantics." .
+mhv:implementation a rdf:Property ; rdfs:domain mhv:DocumentedMechanism ; rdfs:range mhv:ExternalImplementation ; rdfs:comment "Exactly 1 implementation described by this mechanism." .
+mhv:sourceDocument a rdf:Property ; rdfs:domain mhv:DocumentedMechanism ; rdfs:range mhv:SourceDocument ; rdfs:comment "1..n documents supporting this description." .
+mhv:basedOn a rdf:Property ; rdfs:domain mhv:DesignProposal ; rdfs:range mhv:Claim ; rdfs:comment "1..n motivating claims; proposal does not become user-authored through this edge." .
+mhv:borrowsFrom a rdf:Property ; rdfs:domain mhv:DesignProposal ; rdfs:range mhv:DocumentedMechanism ; rdfs:comment "1..n documented patterns considered for reuse, not adopted dependencies." .
+mhv:targets a rdf:Property ; rdfs:domain mhv:DesignProposal ; rdfs:range mhv:DesignComponent ; rdfs:comment "1..n proposed local design targets." .
+mhv:requiresDecision a rdf:Property ; rdfs:domain mhv:DesignProposal ; rdfs:range mhv:OpenDecision ; rdfs:comment "1..n unresolved design decisions, not permission prompts for local graph work." .
+mhv:observedOn a rdf:Property ; rdfs:range xsd:date ; rdfs:comment "Exactly 1 review date on a source, external implementation or documented mechanism. Not release date." .
+mhv:limitation a rdf:Property ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 scope limit on a mechanism or design proposal." .
+mhv:proposalStatus a rdf:Property ; rdfs:comment "Exactly 1: PROPOSED for a design proposal; OPEN for an unresolved design question." .
+mhv:evidenceStatus a rdf:Property ; rdfs:domain mhv:DocumentedMechanism ; rdfs:comment "Exactly 1 DOCUMENTED; never denotes local integration or runtime verification." .
+mhv:inEffect a rdf:Property ; rdfs:domain mhv:EconomyGraph ; rdfs:range xsd:boolean ; rdfs:comment "Exactly 1 false in this draft." .
+mhv:governanceEffect a rdf:Property ; rdfs:domain mhv:EconomyGraph ; rdfs:range xsd:boolean ; rdfs:comment "Exactly 1 false: no governance rule is changed by this graph." .
+
+mhv:PROPOSED a rdfs:Resource .
+mhv:OPEN a rdfs:Resource .
+mhv:DOCUMENTED a rdfs:Resource .

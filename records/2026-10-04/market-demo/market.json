@@ -1,0 +1,783 @@
+{
+  "asset": "sandbox:SIM-MHC",
+  "balances": {
+    "buyer": 99719,
+    "provider-a": 0,
+    "provider-b": 281
+  },
+  "events": [
+    {
+      "action": "REGISTER",
+      "actor": "provider-a",
+      "at_ms": 1791101388593,
+      "data": {
+        "memory_mib": 256,
+        "observation_status": "OPERATOR_DECLARED_LOCAL_POOL",
+        "owner": "provider-a",
+        "quarantined": false,
+        "slots": 1,
+        "usl_resource_id": "usl:demo:provider-a"
+      },
+      "previous_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "sequence": 1,
+      "sha256": "37d7726a2b21eb6c1329d2aa4ac834ac07eea0bbdd12be2f6224dd5ec5fc02db",
+      "subject": "provider-a:cpu"
+    },
+    {
+      "action": "GRANT",
+      "actor": "provider-a",
+      "at_ms": 1791101388593,
+      "data": {
+        "expires_at_ms": 1791101448593,
+        "owner": "provider-a",
+        "provider": "provider-a",
+        "purpose": "bounded-local-market-test",
+        "resource_id": "provider-a:cpu",
+        "state": "ACTIVE"
+      },
+      "previous_sha256": "37d7726a2b21eb6c1329d2aa4ac834ac07eea0bbdd12be2f6224dd5ec5fc02db",
+      "sequence": 2,
+      "sha256": "3b3e229ecf50b73f8e5c049e290da2316c367ca42913533d90a8a696c45450be",
+      "subject": "provider-a:grant"
+    },
+    {
+      "action": "PUBLISH",
+      "actor": "provider-a",
+      "at_ms": 1791101388593,
+      "data": {
+        "state": "OPEN",
+        "terms": {
+          "asset": "sandbox:SIM-MHC",
+          "backend": "fixture-hswm",
+          "cell_id": "fixture-cell",
+          "configuration_sha256": "396a6ed3961f08b2151b56cf5e679a782f708be204090410c639c9ab07bfc849",
+          "expires_at_ms": 1791101448593,
+          "failure_policy": "NO_VALID_RESULT_FULL_REFUND",
+          "grant_id": "provider-a:grant",
+          "memory_meter": "PEAK_RSS_MIB_TIMES_WALL_MS",
+          "model": "fixture-model-v1",
+          "provider": "provider-a",
+          "rates": {
+            "cpu_ms": [
+              1,
+              10
+            ],
+            "input_tokens": [
+              3,
+              1
+            ],
+            "memory_mib_ms": [
+              1,
+              1000
+            ],
+            "output_tokens": [
+              6,
+              1
+            ]
+          },
+          "resource_id": "provider-a:cpu",
+          "rounding": "CEIL_TOTAL_ONCE",
+          "tokenizer": "fixture-tokenizer-v1"
+        },
+        "terms_sha256": "0ea1bfde1d81016d2b57682eeffd9681d6d49c745c73a317be048af5e9cdaad6"
+      },
+      "previous_sha256": "3b3e229ecf50b73f8e5c049e290da2316c367ca42913533d90a8a696c45450be",
+      "sequence": 3,
+      "sha256": "af334dd3262ab8e247dde09ab6ebed1f6262011852b8a6f758f3701a2a0d515e",
+      "subject": "provider-a:offer"
+    },
+    {
+      "action": "REGISTER",
+      "actor": "provider-b",
+      "at_ms": 1791101388594,
+      "data": {
+        "memory_mib": 256,
+        "observation_status": "OPERATOR_DECLARED_LOCAL_POOL",
+        "owner": "provider-b",
+        "quarantined": false,
+        "slots": 1,
+        "usl_resource_id": "usl:demo:provider-b"
+      },
+      "previous_sha256": "af334dd3262ab8e247dde09ab6ebed1f6262011852b8a6f758f3701a2a0d515e",
+      "sequence": 4,
+      "sha256": "a4df7b55118b0763bc799db5e267a23ec31fed717c9d8c0ef5dbeb53be4c3dbe",
+      "subject": "provider-b:cpu"
+    },
+    {
+      "action": "GRANT",
+      "actor": "provider-b",
+      "at_ms": 1791101388594,
+      "data": {
+        "expires_at_ms": 1791101448594,
+        "owner": "provider-b",
+        "provider": "provider-b",
+        "purpose": "bounded-local-market-test",
+        "resource_id": "provider-b:cpu",
+        "state": "ACTIVE"
+      },
+      "previous_sha256": "a4df7b55118b0763bc799db5e267a23ec31fed717c9d8c0ef5dbeb53be4c3dbe",
+      "sequence": 5,
+      "sha256": "deb0da4c578642ffd02c76bffca9afcd8254725fbaeec18a27eae97036efa10f",
+      "subject": "provider-b:grant"
+    },
+    {
+      "action": "PUBLISH",
+      "actor": "provider-b",
+      "at_ms": 1791101388595,
+      "data": {
+        "state": "OPEN",
+        "terms": {
+          "asset": "sandbox:SIM-MHC",
+          "backend": "fixture-hswm",
+          "cell_id": "fixture-cell",
+          "configuration_sha256": "396a6ed3961f08b2151b56cf5e679a782f708be204090410c639c9ab07bfc849",
+          "expires_at_ms": 1791101448594,
+          "failure_policy": "NO_VALID_RESULT_FULL_REFUND",
+          "grant_id": "provider-b:grant",
+          "memory_meter": "PEAK_RSS_MIB_TIMES_WALL_MS",
+          "model": "fixture-model-v1",
+          "provider": "provider-b",
+          "rates": {
+            "cpu_ms": [
+              1,
+              10
+            ],
+            "input_tokens": [
+              2,
+              1
+            ],
+            "memory_mib_ms": [
+              1,
+              1000
+            ],
+            "output_tokens": [
+              4,
+              1
+            ]
+          },
+          "resource_id": "provider-b:cpu",
+          "rounding": "CEIL_TOTAL_ONCE",
+          "tokenizer": "fixture-tokenizer-v1"
+        },
+        "terms_sha256": "23faf5dd4ab0e7444fa910648d76be9b09e6b62f3b64d051df668898374a9d00"
+      },
+      "previous_sha256": "deb0da4c578642ffd02c76bffca9afcd8254725fbaeec18a27eae97036efa10f",
+      "sequence": 6,
+      "sha256": "0d478f5c637a8b12ac116460eb27a53fca69820638a0cafff05e48c254152121",
+      "subject": "provider-b:offer"
+    },
+    {
+      "action": "RESERVE",
+      "actor": "buyer",
+      "at_ms": 1791101388597,
+      "data": {
+        "atoms": 508,
+        "quote_sha256": "ae1e42e971cdc027172f1fac59bb0e7ce1728574e928c7dcd8e8794a1f07fa8d"
+      },
+      "previous_sha256": "0d478f5c637a8b12ac116460eb27a53fca69820638a0cafff05e48c254152121",
+      "sequence": 7,
+      "sha256": "505c4ba0ef459e75f1b0ea18c15296253cb7f12186ac4018c215ae12c3f07f92",
+      "subject": "demo-completed"
+    },
+    {
+      "action": "START",
+      "actor": "provider-b",
+      "at_ms": 1791101388597,
+      "data": {
+        "deadline_ms": 1791101389597
+      },
+      "previous_sha256": "505c4ba0ef459e75f1b0ea18c15296253cb7f12186ac4018c215ae12c3f07f92",
+      "sequence": 8,
+      "sha256": "0250a8b7ac773a641772586385bfce79ac691bfb03d3f74b5f77666250293cdd",
+      "subject": "demo-completed"
+    },
+    {
+      "action": "SETTLED",
+      "actor": "local-operator",
+      "at_ms": 1791101388630,
+      "data": {
+        "receipt_sha256": "41236eca31abf2f8e180fb289a525562144f9dde203002dfc3bcfec595f35b3b"
+      },
+      "previous_sha256": "0250a8b7ac773a641772586385bfce79ac691bfb03d3f74b5f77666250293cdd",
+      "sequence": 9,
+      "sha256": "bb96d595272bcd17d7109d32a6ff6ad593a53533ce34ab524e894cd842e85d02",
+      "subject": "demo-completed"
+    },
+    {
+      "action": "RESERVE",
+      "actor": "buyer",
+      "at_ms": 1791101388631,
+      "data": {
+        "atoms": 648,
+        "quote_sha256": "a0c2c3a5912569ef29abcc25964d85db56ec04035ff050b0346ea613278a784a"
+      },
+      "previous_sha256": "bb96d595272bcd17d7109d32a6ff6ad593a53533ce34ab524e894cd842e85d02",
+      "sequence": 10,
+      "sha256": "8fb890887e590cf3985be024c1b0adc412967906b8356a37623cc552f8912830",
+      "subject": "demo-cancelled"
+    },
+    {
+      "action": "CANCELLED",
+      "actor": "local-operator",
+      "at_ms": 1791101388632,
+      "data": {
+        "receipt_sha256": "b0d6420da42abd912b5bb349b7e2e30b7a6173b5e62a040499f0c4411cafa2b1"
+      },
+      "previous_sha256": "8fb890887e590cf3985be024c1b0adc412967906b8356a37623cc552f8912830",
+      "sequence": 11,
+      "sha256": "0544bd8a156561c25c3c564116bc4a376474353e7d907baea077de5476d5ddad",
+      "subject": "demo-cancelled"
+    }
+  ],
+  "grants": {
+    "provider-a:grant": {
+      "expires_at_ms": 1791101448593,
+      "owner": "provider-a",
+      "provider": "provider-a",
+      "purpose": "bounded-local-market-test",
+      "resource_id": "provider-a:cpu",
+      "state": "ACTIVE"
+    },
+    "provider-b:grant": {
+      "expires_at_ms": 1791101448594,
+      "owner": "provider-b",
+      "provider": "provider-b",
+      "purpose": "bounded-local-market-test",
+      "resource_id": "provider-b:cpu",
+      "state": "ACTIVE"
+    }
+  },
+  "initial_balances": {
+    "buyer": 100000,
+    "provider-a": 0,
+    "provider-b": 0
+  },
+  "last_time": 1791101388632,
+  "mode": "LOCAL_SANDBOX",
+  "offers": {
+    "provider-a:offer": {
+      "state": "OPEN",
+      "terms": {
+        "asset": "sandbox:SIM-MHC",
+        "backend": "fixture-hswm",
+        "cell_id": "fixture-cell",
+        "configuration_sha256": "396a6ed3961f08b2151b56cf5e679a782f708be204090410c639c9ab07bfc849",
+        "expires_at_ms": 1791101448593,
+        "failure_policy": "NO_VALID_RESULT_FULL_REFUND",
+        "grant_id": "provider-a:grant",
+        "memory_meter": "PEAK_RSS_MIB_TIMES_WALL_MS",
+        "model": "fixture-model-v1",
+        "provider": "provider-a",
+        "rates": {
+          "cpu_ms": [
+            1,
+            10
+          ],
+          "input_tokens": [
+            3,
+            1
+          ],
+          "memory_mib_ms": [
+            1,
+            1000
+          ],
+          "output_tokens": [
+            6,
+            1
+          ]
+        },
+        "resource_id": "provider-a:cpu",
+        "rounding": "CEIL_TOTAL_ONCE",
+        "tokenizer": "fixture-tokenizer-v1"
+      },
+      "terms_sha256": "0ea1bfde1d81016d2b57682eeffd9681d6d49c745c73a317be048af5e9cdaad6"
+    },
+    "provider-b:offer": {
+      "state": "OPEN",
+      "terms": {
+        "asset": "sandbox:SIM-MHC",
+        "backend": "fixture-hswm",
+        "cell_id": "fixture-cell",
+        "configuration_sha256": "396a6ed3961f08b2151b56cf5e679a782f708be204090410c639c9ab07bfc849",
+        "expires_at_ms": 1791101448594,
+        "failure_policy": "NO_VALID_RESULT_FULL_REFUND",
+        "grant_id": "provider-b:grant",
+        "memory_meter": "PEAK_RSS_MIB_TIMES_WALL_MS",
+        "model": "fixture-model-v1",
+        "provider": "provider-b",
+        "rates": {
+          "cpu_ms": [
+            1,
+            10
+          ],
+          "input_tokens": [
+            2,
+            1
+          ],
+          "memory_mib_ms": [
+            1,
+            1000
+          ],
+          "output_tokens": [
+            4,
+            1
+          ]
+        },
+        "resource_id": "provider-b:cpu",
+        "rounding": "CEIL_TOTAL_ONCE",
+        "tokenizer": "fixture-tokenizer-v1"
+      },
+      "terms_sha256": "23faf5dd4ab0e7444fa910648d76be9b09e6b62f3b64d051df668898374a9d00"
+    }
+  },
+  "orders": {
+    "demo-cancelled": {
+      "created_at_ms": 1791101388631,
+      "deadline_ms": null,
+      "escrow": 0,
+      "evidence": null,
+      "grant_id": "provider-a:grant",
+      "lease": null,
+      "offer_terms": {
+        "asset": "sandbox:SIM-MHC",
+        "backend": "fixture-hswm",
+        "cell_id": "fixture-cell",
+        "configuration_sha256": "396a6ed3961f08b2151b56cf5e679a782f708be204090410c639c9ab07bfc849",
+        "expires_at_ms": 1791101448593,
+        "failure_policy": "NO_VALID_RESULT_FULL_REFUND",
+        "grant_id": "provider-a:grant",
+        "memory_meter": "PEAK_RSS_MIB_TIMES_WALL_MS",
+        "model": "fixture-model-v1",
+        "provider": "provider-a",
+        "rates": {
+          "cpu_ms": [
+            1,
+            10
+          ],
+          "input_tokens": [
+            3,
+            1
+          ],
+          "memory_mib_ms": [
+            1,
+            1000
+          ],
+          "output_tokens": [
+            6,
+            1
+          ]
+        },
+        "resource_id": "provider-a:cpu",
+        "rounding": "CEIL_TOTAL_ONCE",
+        "tokenizer": "fixture-tokenizer-v1"
+      },
+      "provider": "provider-a",
+      "requester": "buyer",
+      "resource_id": "provider-a:cpu",
+      "state": "CANCELLED",
+      "terms": {
+        "expires_at_ms": 1791101418631,
+        "limits": {
+          "cpu_ms": 1000,
+          "input_tokens": 100,
+          "memory_mib_ms": 128000,
+          "output_tokens": 20
+        },
+        "maximum_charge": {
+          "asset": "sandbox:SIM-MHC",
+          "atoms": 648,
+          "lines": {
+            "cpu_ms": {
+              "exact_atoms": [
+                100,
+                1
+              ],
+              "quantity": 1000,
+              "rate": [
+                1,
+                10
+              ]
+            },
+            "input_tokens": {
+              "exact_atoms": [
+                300,
+                1
+              ],
+              "quantity": 100,
+              "rate": [
+                3,
+                1
+              ]
+            },
+            "memory_mib_ms": {
+              "exact_atoms": [
+                128,
+                1
+              ],
+              "quantity": 128000,
+              "rate": [
+                1,
+                1000
+              ]
+            },
+            "output_tokens": {
+              "exact_atoms": [
+                120,
+                1
+              ],
+              "quantity": 20,
+              "rate": [
+                6,
+                1
+              ]
+            }
+          },
+          "rounding": "CEIL_TOTAL_ONCE"
+        },
+        "memory_mib": 128,
+        "offer_id": "provider-a:offer",
+        "offer_sha256": "0ea1bfde1d81016d2b57682eeffd9681d6d49c745c73a317be048af5e9cdaad6",
+        "requester": "buyer",
+        "sha256": "a0c2c3a5912569ef29abcc25964d85db56ec04035ff050b0346ea613278a784a",
+        "task": {
+          "delay_ms": 0,
+          "kind": "sum",
+          "n": 10000
+        },
+        "wall_ms": 1000
+      },
+      "usage": null
+    },
+    "demo-completed": {
+      "created_at_ms": 1791101388597,
+      "deadline_ms": 1791101389597,
+      "escrow": 0,
+      "evidence": {
+        "hswm": {
+          "cell_id": "fixture-cell",
+          "configuration_sha256": "396a6ed3961f08b2151b56cf5e679a782f708be204090410c639c9ab07bfc849",
+          "input_tokens": 100,
+          "meter_status": "PROVIDER_REPORTED",
+          "model": "fixture-model-v1",
+          "output": "{\"sum\":50005000}",
+          "output_sha256": "4fc8a2b2af5d6ad58e83ad4f6a0c7f3f82a852cf185ff95eb5ba7ae435783f65",
+          "output_tokens": 20,
+          "source_sha256": "cdf98ce4c30e8a4ae108f6e2adf827bc3d7f3a44335f40a098c2ea1e50e0c0e3"
+        },
+        "hswm_execution": {
+          "durationSeconds": 0,
+          "metadata": {
+            "execution_observation_v1": {
+              "cell_id": "fixture-cell",
+              "configuration_sha256": "396a6ed3961f08b2151b56cf5e679a782f708be204090410c639c9ab07bfc849",
+              "configured_model": "fixture-model-v1",
+              "executor_schema": "hswm-adaptive-executor/v1",
+              "kind": "llm",
+              "output_digest": "4fc8a2b2af5d6ad58e83ad4f6a0c7f3f82a852cf185ff95eb5ba7ae435783f65",
+              "provider_usage": {
+                "completion_tokens": 20,
+                "prompt_tokens": 100,
+                "reported_model": "fixture-model-v1",
+                "status": "REPORTED",
+                "total_tokens": 120
+              },
+              "schema_version": "hswm-adaptive-execution-observation/v1"
+            }
+          },
+          "output": "{\"sum\":50005000}",
+          "outputDigest": "4fc8a2b2af5d6ad58e83ad4f6a0c7f3f82a852cf185ff95eb5ba7ae435783f65",
+          "status": "SUCCEEDED",
+          "success": null
+        },
+        "inference_token_origin": "FIXTURE_NOT_MODEL_RUN",
+        "meter": "process_time_ns+ru_maxrss/v1",
+        "mode": "LOCAL_COMPUTE_WITH_SIMULATED_HSWM_USAGE",
+        "model_calls": 0,
+        "order_id": "demo-completed",
+        "output_sha256": "4fc8a2b2af5d6ad58e83ad4f6a0c7f3f82a852cf185ff95eb5ba7ae435783f65",
+        "peak_rss_mib": 20,
+        "request_sha256": "17ca00a412e9df3b89654dc8838d55a3f5b8fea0fe03518889d02d1151044a5f",
+        "result_status": "VERIFIED_FOR_SUM_ONLY",
+        "verifier": "sum-closed-form/v1",
+        "wall_ms": 1,
+        "worker_source_sha256": "3ef311147fe06f2930b5304baed531e59d9a4447dcd196bf172474c9d4b11f0c"
+      },
+      "grant_id": "provider-b:grant",
+      "lease": "0dbf12aeebae4ee2ac866f970c8ba0f5",
+      "offer_terms": {
+        "asset": "sandbox:SIM-MHC",
+        "backend": "fixture-hswm",
+        "cell_id": "fixture-cell",
+        "configuration_sha256": "396a6ed3961f08b2151b56cf5e679a782f708be204090410c639c9ab07bfc849",
+        "expires_at_ms": 1791101448594,
+        "failure_policy": "NO_VALID_RESULT_FULL_REFUND",
+        "grant_id": "provider-b:grant",
+        "memory_meter": "PEAK_RSS_MIB_TIMES_WALL_MS",
+        "model": "fixture-model-v1",
+        "provider": "provider-b",
+        "rates": {
+          "cpu_ms": [
+            1,
+            10
+          ],
+          "input_tokens": [
+            2,
+            1
+          ],
+          "memory_mib_ms": [
+            1,
+            1000
+          ],
+          "output_tokens": [
+            4,
+            1
+          ]
+        },
+        "resource_id": "provider-b:cpu",
+        "rounding": "CEIL_TOTAL_ONCE",
+        "tokenizer": "fixture-tokenizer-v1"
+      },
+      "provider": "provider-b",
+      "requester": "buyer",
+      "resource_id": "provider-b:cpu",
+      "state": "SETTLED",
+      "terms": {
+        "expires_at_ms": 1791101418596,
+        "limits": {
+          "cpu_ms": 1000,
+          "input_tokens": 100,
+          "memory_mib_ms": 128000,
+          "output_tokens": 20
+        },
+        "maximum_charge": {
+          "asset": "sandbox:SIM-MHC",
+          "atoms": 508,
+          "lines": {
+            "cpu_ms": {
+              "exact_atoms": [
+                100,
+                1
+              ],
+              "quantity": 1000,
+              "rate": [
+                1,
+                10
+              ]
+            },
+            "input_tokens": {
+              "exact_atoms": [
+                200,
+                1
+              ],
+              "quantity": 100,
+              "rate": [
+                2,
+                1
+              ]
+            },
+            "memory_mib_ms": {
+              "exact_atoms": [
+                128,
+                1
+              ],
+              "quantity": 128000,
+              "rate": [
+                1,
+                1000
+              ]
+            },
+            "output_tokens": {
+              "exact_atoms": [
+                80,
+                1
+              ],
+              "quantity": 20,
+              "rate": [
+                4,
+                1
+              ]
+            }
+          },
+          "rounding": "CEIL_TOTAL_ONCE"
+        },
+        "memory_mib": 128,
+        "offer_id": "provider-b:offer",
+        "offer_sha256": "23faf5dd4ab0e7444fa910648d76be9b09e6b62f3b64d051df668898374a9d00",
+        "requester": "buyer",
+        "sha256": "ae1e42e971cdc027172f1fac59bb0e7ce1728574e928c7dcd8e8794a1f07fa8d",
+        "task": {
+          "delay_ms": 0,
+          "kind": "sum",
+          "n": 10000
+        },
+        "wall_ms": 1000
+      },
+      "usage": {
+        "cpu_ms": 1,
+        "input_tokens": 100,
+        "memory_mib_ms": 20,
+        "output_tokens": 20
+      }
+    }
+  },
+  "receipts": {
+    "demo-cancelled": {
+      "asset": "sandbox:SIM-MHC",
+      "at_ms": 1791101388632,
+      "evidence": null,
+      "invoice": null,
+      "offer_sha256": "0ea1bfde1d81016d2b57682eeffd9681d6d49c745c73a317be048af5e9cdaad6",
+      "order_id": "demo-cancelled",
+      "paid_atoms": 0,
+      "quote_sha256": "a0c2c3a5912569ef29abcc25964d85db56ec04035ff050b0346ea613278a784a",
+      "reason": "before execution",
+      "refund_atoms": 648,
+      "reserved_atoms": 648,
+      "settlement": "LOCAL_SANDBOX_ONLY",
+      "sha256": "b0d6420da42abd912b5bb349b7e2e30b7a6173b5e62a040499f0c4411cafa2b1",
+      "state": "CANCELLED",
+      "usage": null
+    },
+    "demo-completed": {
+      "asset": "sandbox:SIM-MHC",
+      "at_ms": 1791101388630,
+      "evidence": {
+        "hswm": {
+          "cell_id": "fixture-cell",
+          "configuration_sha256": "396a6ed3961f08b2151b56cf5e679a782f708be204090410c639c9ab07bfc849",
+          "input_tokens": 100,
+          "meter_status": "PROVIDER_REPORTED",
+          "model": "fixture-model-v1",
+          "output": "{\"sum\":50005000}",
+          "output_sha256": "4fc8a2b2af5d6ad58e83ad4f6a0c7f3f82a852cf185ff95eb5ba7ae435783f65",
+          "output_tokens": 20,
+          "source_sha256": "cdf98ce4c30e8a4ae108f6e2adf827bc3d7f3a44335f40a098c2ea1e50e0c0e3"
+        },
+        "hswm_execution": {
+          "durationSeconds": 0,
+          "metadata": {
+            "execution_observation_v1": {
+              "cell_id": "fixture-cell",
+              "configuration_sha256": "396a6ed3961f08b2151b56cf5e679a782f708be204090410c639c9ab07bfc849",
+              "configured_model": "fixture-model-v1",
+              "executor_schema": "hswm-adaptive-executor/v1",
+              "kind": "llm",
+              "output_digest": "4fc8a2b2af5d6ad58e83ad4f6a0c7f3f82a852cf185ff95eb5ba7ae435783f65",
+              "provider_usage": {
+                "completion_tokens": 20,
+                "prompt_tokens": 100,
+                "reported_model": "fixture-model-v1",
+                "status": "REPORTED",
+                "total_tokens": 120
+              },
+              "schema_version": "hswm-adaptive-execution-observation/v1"
+            }
+          },
+          "output": "{\"sum\":50005000}",
+          "outputDigest": "4fc8a2b2af5d6ad58e83ad4f6a0c7f3f82a852cf185ff95eb5ba7ae435783f65",
+          "status": "SUCCEEDED",
+          "success": null
+        },
+        "inference_token_origin": "FIXTURE_NOT_MODEL_RUN",
+        "meter": "process_time_ns+ru_maxrss/v1",
+        "mode": "LOCAL_COMPUTE_WITH_SIMULATED_HSWM_USAGE",
+        "model_calls": 0,
+        "order_id": "demo-completed",
+        "output_sha256": "4fc8a2b2af5d6ad58e83ad4f6a0c7f3f82a852cf185ff95eb5ba7ae435783f65",
+        "peak_rss_mib": 20,
+        "request_sha256": "17ca00a412e9df3b89654dc8838d55a3f5b8fea0fe03518889d02d1151044a5f",
+        "result_status": "VERIFIED_FOR_SUM_ONLY",
+        "verifier": "sum-closed-form/v1",
+        "wall_ms": 1,
+        "worker_source_sha256": "3ef311147fe06f2930b5304baed531e59d9a4447dcd196bf172474c9d4b11f0c"
+      },
+      "invoice": {
+        "asset": "sandbox:SIM-MHC",
+        "atoms": 281,
+        "lines": {
+          "cpu_ms": {
+            "exact_atoms": [
+              1,
+              10
+            ],
+            "quantity": 1,
+            "rate": [
+              1,
+              10
+            ]
+          },
+          "input_tokens": {
+            "exact_atoms": [
+              200,
+              1
+            ],
+            "quantity": 100,
+            "rate": [
+              2,
+              1
+            ]
+          },
+          "memory_mib_ms": {
+            "exact_atoms": [
+              1,
+              50
+            ],
+            "quantity": 20,
+            "rate": [
+              1,
+              1000
+            ]
+          },
+          "output_tokens": {
+            "exact_atoms": [
+              80,
+              1
+            ],
+            "quantity": 20,
+            "rate": [
+              4,
+              1
+            ]
+          }
+        },
+        "rounding": "CEIL_TOTAL_ONCE"
+      },
+      "offer_sha256": "23faf5dd4ab0e7444fa910648d76be9b09e6b62f3b64d051df668898374a9d00",
+      "order_id": "demo-completed",
+      "paid_atoms": 281,
+      "quote_sha256": "ae1e42e971cdc027172f1fac59bb0e7ce1728574e928c7dcd8e8794a1f07fa8d",
+      "reason": "verified bounded workload",
+      "refund_atoms": 227,
+      "reserved_atoms": 508,
+      "settlement": "LOCAL_SANDBOX_ONLY",
+      "sha256": "41236eca31abf2f8e180fb289a525562144f9dde203002dfc3bcfec595f35b3b",
+      "state": "SETTLED",
+      "usage": {
+        "cpu_ms": 1,
+        "input_tokens": 100,
+        "memory_mib_ms": 20,
+        "output_tokens": 20
+      }
+    }
+  },
+  "resources": {
+    "provider-a:cpu": {
+      "memory_mib": 256,
+      "observation_status": "OPERATOR_DECLARED_LOCAL_POOL",
+      "owner": "provider-a",
+      "quarantined": false,
+      "slots": 1,
+      "usl_resource_id": "usl:demo:provider-a"
+    },
+    "provider-b:cpu": {
+      "memory_mib": 256,
+      "observation_status": "OPERATOR_DECLARED_LOCAL_POOL",
+      "owner": "provider-b",
+      "quarantined": false,
+      "slots": 1,
+      "usl_resource_id": "usl:demo:provider-b"
+    }
+  },
+  "schema": "metahumotonic-market/v1",
+  "supply": 100000
+}

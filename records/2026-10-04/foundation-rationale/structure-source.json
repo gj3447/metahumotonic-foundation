@@ -1,0 +1,15 @@
+{
+  "schema": "metahumotonic-source/v1",
+  "recorded_on": "2026-10-04",
+  "event_time": null,
+  "messages": [
+    {
+      "id": "user-rationale-structure",
+      "role": "user",
+      "authority": "USER_PRIMARY",
+      "locator": "current-conversation:user-rationale-structure",
+      "verbatim": "해당 내용들 표준 그래프 엔지니어링으로 구축좀 해줘봐봐 ㅇㅇ",
+      "sha256": "34febd8286b74d6fd9dd90efb8828a4d2f51025e9fbd9022d1315fceb67c6ba6"
+    }
+  ]
+}

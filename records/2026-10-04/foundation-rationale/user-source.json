@@ -1,0 +1,15 @@
+{
+  "schema": "metahumotonic-source/v1",
+  "recorded_on": "2026-10-04",
+  "event_time": null,
+  "messages": [
+    {
+      "id": "user-foundation-rationale",
+      "role": "user",
+      "authority": "USER_PRIMARY",
+      "locator": "current-conversation:user-foundation-rationale",
+      "verbatim": "제대로 깊게 사고하고 연구해줘봐봐 왜 메타휴모토닉 파운데이션이여야하는지에 대해서 ㅇㅇ",
+      "sha256": "c25f8a19ec2d7c1ad5e0f14c052fedfcd05dd41716089564cffecf58d223f908"
+    }
+  ]
+}

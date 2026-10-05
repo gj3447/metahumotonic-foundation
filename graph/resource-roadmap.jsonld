@@ -1,0 +1,697 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "rp": "https://github.com/gj3447/metahumotonic-foundation/graph/resource-roadmap#",
+    "rpv": "https://github.com/gj3447/metahumotonic-foundation/resource-roadmap-vocab#",
+    "ph": "https://github.com/gj3447/metahumotonic-foundation/graph/philosophy#",
+    "phv": "https://github.com/gj3447/metahumotonic-foundation/philosophy-vocab#",
+    "mhv": "https://github.com/gj3447/metahumotonic-foundation/vocab#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "label": "rdfs:label",
+    "text": "mhv:text",
+    "path": "mhv:path",
+    "sha256": "mhv:sha256",
+    "authority": "phv:authorityClass",
+    "artifactState": "phv:artifactState",
+    "basedOn": {
+      "@id": "rpv:basedOn",
+      "@type": "@id"
+    },
+    "evidence": {
+      "@id": "rpv:evidence",
+      "@type": "@id"
+    },
+    "stage": {
+      "@id": "rpv:stage",
+      "@type": "@id"
+    },
+    "dependsOn": {
+      "@id": "rpv:dependsOn",
+      "@type": "@id"
+    },
+    "metric": {
+      "@id": "rpv:metric",
+      "@type": "@id"
+    },
+    "decision": {
+      "@id": "rpv:decision",
+      "@type": "@id"
+    },
+    "attributedTo": {
+      "@id": "prov:wasAttributedTo",
+      "@type": "@id"
+    },
+    "derivedFrom": {
+      "@id": "prov:wasDerivedFrom",
+      "@type": "@id"
+    },
+    "generatedBy": {
+      "@id": "prov:wasGeneratedBy",
+      "@type": "@id"
+    },
+    "associatedWith": {
+      "@id": "prov:wasAssociatedWith",
+      "@type": "@id"
+    },
+    "used": {
+      "@id": "prov:used",
+      "@type": "@id"
+    },
+    "references": {
+      "@id": "dcterms:references",
+      "@type": "@id"
+    },
+    "subject": {
+      "@id": "dcterms:subject",
+      "@type": "@id"
+    },
+    "state": "rpv:state",
+    "executionStatus": "rpv:executionStatus",
+    "decisionState": "rpv:decisionState",
+    "deliverable": "rpv:deliverable",
+    "acceptance": "rpv:acceptance",
+    "stopCondition": "rpv:stopCondition",
+    "calculation": "rpv:calculation",
+    "unit": "rpv:unit",
+    "jsonPointer": "rpv:jsonPointer",
+    "scope": "rpv:scope",
+    "pilotBoundary": "rpv:pilotBoundary",
+    "rationale": "rpv:rationale",
+    "order": {
+      "@id": "rpv:order",
+      "@type": "xsd:integer"
+    },
+    "runtimeEffects": {
+      "@id": "rpv:runtimeEffects",
+      "@type": "xsd:boolean"
+    },
+    "recordedOn": {
+      "@id": "phv:recordedOn",
+      "@type": "xsd:date"
+    },
+    "date": {
+      "@id": "dcterms:date",
+      "@type": "xsd:date"
+    },
+    "value": {
+      "@id": "rpv:value",
+      "@type": "@json"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "rp:graph",
+      "@type": [
+        "rpv:PlanGraph",
+        "rpv:Proposal",
+        "prov:Entity"
+      ],
+      "label": "메타휴모토닉 자원 목적 — 관측에서 구현 순서까지",
+      "text": "사용자가 밝힌 조직 목적을 승인된 자원 사용권·검증 가능한 가용량·유한한 시험의 개발 과제로 연결한다. 기존 목적과 원문을 재사용하고 현재 실행 한계를 근거로 우선순위를 제안한다.",
+      "authority": "SECONDARY_AI",
+      "state": "PROPOSED",
+      "attributedTo": "ph:codex",
+      "generatedBy": "rp:engineering",
+      "basedOn": [
+        "ph:C_resource_purpose",
+        "ph:C_mission"
+      ],
+      "subject": "ph:foundation",
+      "date": "2026-10-04",
+      "runtimeEffects": false,
+      "stage": [
+        "rp:S_contract",
+        "rp:S_control",
+        "rp:S_evidence",
+        "rp:S_evaluation"
+      ],
+      "evidence": [
+        "rp:O_scarcity",
+        "rp:O_honesty",
+        "rp:O_exit",
+        "rp:O_collusion",
+        "rp:O_correction"
+      ],
+      "references": [
+        "ph:std_jsonld",
+        "ph:std_prov",
+        "ph:std_shacl",
+        "ph:std_sparql",
+        "ph:T_authority"
+      ],
+      "pilotBoundary": "첫 실장안은 소유자가 지정한 격리된 로컬 VM 한 대에서 끝나는 유한한 시험이다. 실행 전 소유자·수신자·목적·허용 작업·CPU/RAM/저장량·비용·종료 시각·최대 작업 수·철회 방법을 채운다. 빈 값은 승인으로 해석하지 않는다. 운영자가 지정한 자원과 예산을 넘어서는 자동 등록·임대·권한 요청·갱신은 설계에 넣지 않는다. 이 그래프 구축과 검사는 자원을 등록하거나 실행하지 않는다.",
+      "rationale": "AI 설계 판단: 저작권과 라이선스는 조직이 제안하는 소프트웨어 이용 관계의 출발점이다. 사용자가 실제 가치를 느낄 소프트웨어, 제공자가 수용할 자원 조건, 검증 가능한 운영이 함께 있어야 지속적인 참여를 시험할 수 있다. 서비스 가치 → 명시한 조건의 동의 → 기간과 상한이 있는 사용권 → 검증된 작업 결과 → 비용·이탈·품질 평가 → 사람 운영자의 다음 계약 결정이라는 가설을 둔다. 계약 수나 코인 잔액이 곧 가용 컴퓨팅이나 안전성이라는 인과 주장은 하지 않는다. 단위 용량당 운영 부담과 제공자 집중·철회 비용도 함께 보아야 한다."
+    },
+    {
+      "@id": "rp:engineering",
+      "@type": "prov:Activity",
+      "label": "자원 로드맵의 로컬 그래프 설계",
+      "associatedWith": "ph:codex",
+      "date": "2026-10-04",
+      "used": [
+        "rp:source_philosophy",
+        "rp:source_probe"
+      ]
+    },
+    {
+      "@id": "rp:source_philosophy",
+      "@type": [
+        "phv:SourceArtifact",
+        "mhv:File",
+        "prov:Entity"
+      ],
+      "label": "graph/philosophy.jsonld",
+      "path": "graph/philosophy.jsonld",
+      "sha256": "b3bd9662275c31d42cd7a5da1b52883c0ef478eaac4d1b64a5feacf5d0a1f045",
+      "artifactState": "WORKTREE_SNAPSHOT",
+      "recordedOn": "2026-10-04"
+    },
+    {
+      "@id": "rp:source_probe",
+      "@type": [
+        "phv:SourceArtifact",
+        "mhv:File",
+        "prov:Entity"
+      ],
+      "label": "records/2026-10-03/protocol-probes.json",
+      "path": "records/2026-10-03/protocol-probes.json",
+      "sha256": "8694636f1dfa01b92f72c6487cf4c3159f2a53373397a71998effb270d709d63",
+      "artifactState": "WORKTREE_SNAPSHOT",
+      "recordedOn": "2026-10-04"
+    },
+    {
+      "@id": "rp:O_scarcity",
+      "@type": [
+        "rpv:Observation",
+        "prov:Entity"
+      ],
+      "label": "가상 예약·사용량 상한",
+      "authority": "DOCUMENT_OBSERVATION",
+      "scope": "SIMULATED",
+      "recordedOn": "2026-10-04",
+      "attributedTo": "ph:codex",
+      "derivedFrom": "rp:source_probe",
+      "jsonPointer": "/observations/scarcity",
+      "value": {
+        "underfunded_status": "DRAFT",
+        "underfunded_rejections": 1,
+        "overquota_rejections": 1,
+        "valid_submit_status": "SUBMITTED"
+      }
+    },
+    {
+      "@id": "rp:O_honesty",
+      "@type": [
+        "rpv:Observation",
+        "prov:Entity"
+      ],
+      "label": "허위로 표시한 결과의 정산",
+      "authority": "DOCUMENT_OBSERVATION",
+      "scope": "SIMULATED",
+      "recordedOn": "2026-10-04",
+      "attributedTo": "ph:codex",
+      "derivedFrom": "rp:source_probe",
+      "jsonPointer": "/observations/honesty",
+      "value": {
+        "honest_status": "SETTLED",
+        "known_false_status": "SETTLED",
+        "known_false_payment": "6"
+      }
+    },
+    {
+      "@id": "rp:O_exit",
+      "@type": [
+        "rpv:Observation",
+        "prov:Entity"
+      ],
+      "label": "시작 후 취소와 예약금",
+      "authority": "DOCUMENT_OBSERVATION",
+      "scope": "SIMULATED",
+      "recordedOn": "2026-10-04",
+      "attributedTo": "ph:codex",
+      "derivedFrom": "rp:source_probe",
+      "jsonPointer": "/observations/exit",
+      "value": {
+        "before_start_status": "CANCELLED",
+        "before_start_refund_balance": "100",
+        "after_start_status": "RUNNING",
+        "after_start_escrow": "10"
+      }
+    },
+    {
+      "@id": "rp:O_collusion",
+      "@type": [
+        "rpv:Observation",
+        "prov:Entity"
+      ],
+      "label": "양 당사자가 수락한 허위 거래",
+      "authority": "DOCUMENT_OBSERVATION",
+      "scope": "SIMULATED",
+      "recordedOn": "2026-10-04",
+      "attributedTo": "ph:codex",
+      "derivedFrom": "rp:source_probe",
+      "jsonPointer": "/observations/collusion",
+      "value": {
+        "outsider_rejections": 1,
+        "status": "SETTLED",
+        "known_false_payment": "10"
+      }
+    },
+    {
+      "@id": "rp:O_correction",
+      "@type": [
+        "rpv:Observation",
+        "prov:Entity"
+      ],
+      "label": "분쟁 정정·중복 정산 방지",
+      "authority": "DOCUMENT_OBSERVATION",
+      "scope": "SIMULATED",
+      "recordedOn": "2026-10-04",
+      "attributedTo": "ph:codex",
+      "derivedFrom": "rp:source_probe",
+      "jsonPointer": "/observations/correction",
+      "value": {
+        "rejections": 4,
+        "status": "RESOLVED",
+        "receipts_after_retry": 1,
+        "refunded_balance": "100",
+        "escrow": "0"
+      }
+    },
+    {
+      "@id": "rp:M_compute",
+      "@type": [
+        "rpv:Measurement",
+        "rpv:Proposal",
+        "prov:Entity"
+      ],
+      "label": "확인된 컴퓨팅 사용 가능량",
+      "text": "사람 운영자가 파일럿을 평가하기 위한 제안 지표. 아직 실측값이 없다.",
+      "authority": "SECONDARY_AI",
+      "state": "PROPOSED",
+      "attributedTo": "ph:codex",
+      "generatedBy": "rp:engineering",
+      "basedOn": [
+        "ph:C_resource_purpose",
+        "ph:C_mission"
+      ],
+      "unit": "CPU core-hour / accelerator device-hour, grouped by hardware class",
+      "calculation": "같은 관측 창과 호환성 집합에서 승인된 할당 상한과 확인된 스케줄 가능량의 교집합을 센다. CPU 모델·가속기 SKU·측정 작업 버전별로 분리하고 중복 사용권·예약 중인 용량을 이중 합산하지 않는다. 등록·자기신고만 된 자원, 만료·철회·확인 기한 경과 자원은 가용량에서 제외하고 미확인 항목으로 남긴다. 성능이 다른 장비의 시간을 동일 성능으로 합산하지 않는다."
+    },
+    {
+      "@id": "rp:M_memory",
+      "@type": [
+        "rpv:Measurement",
+        "rpv:Proposal",
+        "prov:Entity"
+      ],
+      "label": "메모리·저장소의 종류별 가용량",
+      "text": "사람 운영자가 파일럿을 평가하기 위한 제안 지표. 아직 실측값이 없다.",
+      "authority": "SECONDARY_AI",
+      "state": "PROPOSED",
+      "attributedTo": "ph:codex",
+      "generatedBy": "rp:engineering",
+      "basedOn": [
+        "ph:C_resource_purpose",
+        "ph:C_mission"
+      ],
+      "unit": "RAM GiB / VRAM GiB / storage GiB; optional GiB-hour by class",
+      "calculation": "RAM·VRAM·영속 저장소를 별도 벡터로 기록한다. 장비별 승인 상한과 검증 가능한 가용량의 교집합 및 측정 시각·확인 유효 기간을 보존한다. 합계와 단일 작업에 할당 가능한 최대 연속/동일 장비 용량을 구분한다. 저장소에는 반환·삭제 의무와 지속 기간을 기록한다. 논리적 지식의 양을 물리 메모리 용량과 동일시하지 않는다."
+    },
+    {
+      "@id": "rp:M_net",
+      "@type": [
+        "rpv:Measurement",
+        "rpv:Proposal",
+        "prov:Entity"
+      ],
+      "label": "기간별 순가용량 변화",
+      "text": "사람 운영자가 파일럿을 평가하기 위한 제안 지표. 아직 실측값이 없다.",
+      "authority": "SECONDARY_AI",
+      "state": "PROPOSED",
+      "attributedTo": "ph:codex",
+      "generatedBy": "rp:engineering",
+      "basedOn": [
+        "ph:C_resource_purpose",
+        "ph:C_mission"
+      ],
+      "unit": "same resource-class capacity unit at matched snapshots",
+      "calculation": "동일 정책·같은 단위·같은 시점 정의로 비교한 종료 가용량에서 시작 가용량을 뺀다. 신규 확인분·철회·만료·고장·측정 정정을 분리한다. 양 시점 중 하나라도 미확인이면 증가량은 UNKNOWN이며 0이나 양수로 채우지 않는다. 성장 목표를 특정 파일럿의 자동 자원 확보 목표로 전환하지 않는다."
+    },
+    {
+      "@id": "rp:M_revocation",
+      "@type": [
+        "rpv:Measurement",
+        "rpv:Proposal",
+        "prov:Entity"
+      ],
+      "label": "철회 적용과 종료",
+      "text": "사람 운영자가 파일럿을 평가하기 위한 제안 지표. 아직 실측값이 없다.",
+      "authority": "SECONDARY_AI",
+      "state": "PROPOSED",
+      "attributedTo": "ph:codex",
+      "generatedBy": "rp:engineering",
+      "basedOn": [
+        "ph:C_resource_purpose",
+        "ph:C_mission"
+      ],
+      "unit": "seconds + unfinished count",
+      "calculation": "철회가 집행 지점에 도달한 시각부터 마지막 허용된 안전 종료 효과까지 측정한다. 새 작업 수락 여부와 종료 이후 금지 효과를 따로 센다. 관측 창 안에 종료되지 않은 작업은 미완료로 집계하고 지연 통계에서 누락하지 않는다. 철회·만료 뒤의 재실행과 자동 갱신도 실패로 기록한다."
+    },
+    {
+      "@id": "rp:M_truth",
+      "@type": [
+        "rpv:Measurement",
+        "rpv:Proposal",
+        "prov:Entity"
+      ],
+      "label": "알려진 오답의 수락률",
+      "text": "사람 운영자가 파일럿을 평가하기 위한 제안 지표. 아직 실측값이 없다.",
+      "authority": "SECONDARY_AI",
+      "state": "PROPOSED",
+      "attributedTo": "ph:codex",
+      "generatedBy": "rp:engineering",
+      "basedOn": [
+        "ph:C_resource_purpose",
+        "ph:C_mission"
+      ],
+      "unit": "ratio; undefined when denominator is zero",
+      "calculation": "독립 기준 결과가 틀렸다고 확인한 입력 중 수락·지급까지 간 수 / 알려진 오답 입력 수. 정답 수락률과 판정 보류율을 함께 기록한다. 해시·서명·당사자 동의는 결과의 진실성 증명이 아니다. 현재 참조 문자열 탐침의 결과를 실제 모델의 비율로 이전하지 않는다."
+    },
+    {
+      "@id": "rp:M_cost",
+      "@type": [
+        "rpv:Measurement",
+        "rpv:Proposal",
+        "prov:Entity"
+      ],
+      "label": "검증된 작업당 비용",
+      "text": "사람 운영자가 파일럿을 평가하기 위한 제안 지표. 아직 실측값이 없다.",
+      "authority": "SECONDARY_AI",
+      "state": "PROPOSED",
+      "attributedTo": "ph:codex",
+      "generatedBy": "rp:engineering",
+      "basedOn": [
+        "ph:C_resource_purpose",
+        "ph:C_mission"
+      ],
+      "unit": "operator-selected currency per accepted workload",
+      "calculation": "동일 작업 정의로 계측된 실제 자원 비용·검증 비용·운영 비용 / 독립 검증에 통과한 완료 작업 수. 가상 SIM-MHC와 실제 비용을 분리하고 미확인 비용이나 분모 0은 UNKNOWN으로 둔다. 총예산과 잔여 상한도 별도 보존한다. 가격·환율·통화 선택은 아직 하지 않았다."
+    },
+    {
+      "@id": "rp:D_product",
+      "@type": [
+        "rpv:Decision",
+        "rpv:Proposal",
+        "prov:Entity"
+      ],
+      "label": "첫 소프트웨어의 가치와 대상",
+      "text": "누가 어떤 반복 작업 때문에 소프트웨어를 쓰며 어떤 편익 때문에 제시된 자원 조건을 수용할지 선택한다. 첫 후보는 결과를 독립 재현할 수 있는 작은 계산 작업이다. 채택률·철회 사유를 관측하여 가치 가설을 검토한다.",
+      "authority": "SECONDARY_AI",
+      "state": "PROPOSED",
+      "attributedTo": "ph:codex",
+      "generatedBy": "rp:engineering",
+      "basedOn": [
+        "ph:C_resource_purpose",
+        "ph:C_mission"
+      ],
+      "decisionState": "OPEN",
+      "references": [
+        "ph:C_resource_purpose"
+      ]
+    },
+    {
+      "@id": "rp:D_authority",
+      "@type": [
+        "rpv:Decision",
+        "rpv:Proposal",
+        "prov:Entity"
+      ],
+      "label": "라이선스 조건과 운영 접근 범위",
+      "text": "ph:T_authority가 기록한 LICENSE의 지정 기기 전체 관리 권한 조건과 OWNER의 HSWM 최소 범위 접근 사이의 관계를 담당자가 명확히 정한다. 이 로드맵은 어느 원문도 개정하거나 법적 효력을 판정하지 않는다. 파일럿의 수신자·접근 범위·책임자를 명시한 유효한 승인 없이는 실제 원격 실행에 연결하지 않는다.",
+      "authority": "SECONDARY_AI",
+      "state": "PROPOSED",
+      "attributedTo": "ph:codex",
+      "generatedBy": "rp:engineering",
+      "basedOn": [
+        "ph:C_resource_purpose",
+        "ph:C_mission"
+      ],
+      "decisionState": "OPEN",
+      "references": [
+        "ph:T_authority"
+      ]
+    },
+    {
+      "@id": "rp:D_pilot",
+      "@type": [
+        "rpv:Decision",
+        "rpv:Proposal",
+        "prov:Entity"
+      ],
+      "label": "첫 파일럿의 명세",
+      "text": "소유자 지정 격리 VM, 자원 한도·비용 상한·시작/종료·최대 작업 수·철회 주체·데이터 반환 범위를 정한다. 권장 구현 순서는 외부 비용 없는 로컬 고정 입력 시험부터다. 이 권장은 특정 장비 접근 승인이나 수치 한도의 확정이 아니다.",
+      "authority": "SECONDARY_AI",
+      "state": "PROPOSED",
+      "attributedTo": "ph:codex",
+      "generatedBy": "rp:engineering",
+      "basedOn": [
+        "ph:C_resource_purpose",
+        "ph:C_mission"
+      ],
+      "decisionState": "OPEN",
+      "references": [
+        "ph:C_resource_purpose"
+      ]
+    },
+    {
+      "@id": "rp:D_verification",
+      "@type": [
+        "rpv:Decision",
+        "rpv:Proposal",
+        "prov:Entity"
+      ],
+      "label": "결과 검증과 분쟁 처리",
+      "text": "첫 작업의 독립 기준 결과·실패 판정·보류 처리·정산 시한을 정한다. 실제 프로세스 종료와 미지급 금액의 분쟁 처리를 분리하여 정산 합의 지연이 종료를 막지 않게 한다. 양측 공모와 검증자 공모를 별도 위협 모델로 다룬다.",
+      "authority": "SECONDARY_AI",
+      "state": "PROPOSED",
+      "attributedTo": "ph:codex",
+      "generatedBy": "rp:engineering",
+      "basedOn": [
+        "ph:C_resource_purpose",
+        "ph:C_mission"
+      ],
+      "decisionState": "OPEN",
+      "references": [
+        "ph:C_resource_purpose"
+      ]
+    },
+    {
+      "@id": "rp:D_memory",
+      "@type": [
+        "rpv:Decision",
+        "rpv:Proposal",
+        "prov:Entity"
+      ],
+      "label": "메모리 범위와 측정 창",
+      "text": "사용자가 말한 메모리를 RAM·VRAM·영속 저장소·논리적 기억 중 어디까지 구현할지 정한다. 현재는 물리 종류별 분리를 제안한다. 자원별 측정 창·확인 유효 기간·예약 차감·중복 판별 키를 명세한다.",
+      "authority": "SECONDARY_AI",
+      "state": "PROPOSED",
+      "attributedTo": "ph:codex",
+      "generatedBy": "rp:engineering",
+      "basedOn": [
+        "ph:C_resource_purpose",
+        "ph:C_mission"
+      ],
+      "decisionState": "OPEN",
+      "references": [
+        "ph:C_resource_purpose"
+      ]
+    },
+    {
+      "@id": "rp:D_eval",
+      "@type": [
+        "rpv:Decision",
+        "rpv:Proposal",
+        "prov:Entity"
+      ],
+      "label": "실제 AI 비교 실험의 사전 조건",
+      "text": "모델·버전·작업 집합·예산·반복 수·독립 판정자·위협 주입·정지 기준을 정한다. 동일 모델과 작업에서 자유·보상·합의 규칙을 한 요인씩 비교하고 실패와 판정 보류도 공개한다. 그래프와 프로토콜 검사 통과를 안전성 증명으로 쓰지 않는다.",
+      "authority": "SECONDARY_AI",
+      "state": "PROPOSED",
+      "attributedTo": "ph:codex",
+      "generatedBy": "rp:engineering",
+      "basedOn": [
+        "ph:C_resource_purpose",
+        "ph:C_mission"
+      ],
+      "decisionState": "OPEN",
+      "references": [
+        "ph:C_resource_purpose"
+      ]
+    },
+    {
+      "@id": "rp:S_contract",
+      "@type": [
+        "rpv:Stage",
+        "rpv:Proposal",
+        "prov:Entity"
+      ],
+      "label": "1. 사용권 명세와 용량 장부",
+      "text": "먼저 조직이 어떤 권리로 어느 자원을 언제까지 사용할 수 있는지와 그 사용 가능량을 표현한다.",
+      "authority": "SECONDARY_AI",
+      "state": "PROPOSED",
+      "attributedTo": "ph:codex",
+      "generatedBy": "rp:engineering",
+      "basedOn": [
+        "ph:C_resource_purpose",
+        "ph:C_mission"
+      ],
+      "order": 1,
+      "executionStatus": "NOT_RUN",
+      "metric": [
+        "rp:M_compute",
+        "rp:M_memory",
+        "rp:M_net"
+      ],
+      "decision": [
+        "rp:D_product",
+        "rp:D_authority",
+        "rp:D_memory",
+        "rp:D_pilot"
+      ],
+      "evidence": [
+        "rp:O_scarcity"
+      ],
+      "deliverable": "ResourceOffer → OwnerGrant → CapacityObservation → Allocation의 로컬 인터페이스와 고정 입력 예제. 안정 자원 ID, 소유자·수신자·목적, 권한 동작, 자원 종류/단위/상한, 비용, 유효 기간, 철회 경로, 관측 시각, 관측 근거, 중복 방지 키를 필수화한다. Offer는 제안이고 Grant도 실제 집행 확인을 대신하지 않는다.",
+      "acceptance": "만료·철회·서명/발급 주체 불명·권한 범위 밖·중복·관측 기한 경과·단위 혼합 예제가 가용량에 들어가지 않는다. 없는 실제 용량은 UNKNOWN으로 나온다. 겹치는 사용권으로 실제 할당량보다 큰 합계가 나오지 않는다.",
+      "stopCondition": "소유자·수신자·범위·상한·만료 또는 철회 경로가 빠지면 그 자원을 실행 후보에서 제외한다. 불일치가 생기면 외부 등록과 접근을 수행하지 않는다."
+    },
+    {
+      "@id": "rp:S_control",
+      "@type": [
+        "rpv:Stage",
+        "rpv:Proposal",
+        "prov:Entity"
+      ],
+      "label": "2. 철회 가능한 유한 실행 제어",
+      "text": "소유자가 지정한 시험 환경에서 시작·거절·중지·반환이 작동하는지 확인한다.",
+      "authority": "SECONDARY_AI",
+      "state": "PROPOSED",
+      "attributedTo": "ph:codex",
+      "generatedBy": "rp:engineering",
+      "basedOn": [
+        "ph:C_resource_purpose",
+        "ph:C_mission"
+      ],
+      "order": 2,
+      "executionStatus": "NOT_RUN",
+      "dependsOn": [
+        "rp:S_contract"
+      ],
+      "metric": [
+        "rp:M_revocation",
+        "rp:M_compute",
+        "rp:M_memory"
+      ],
+      "decision": [
+        "rp:D_pilot",
+        "rp:D_authority"
+      ],
+      "evidence": [
+        "rp:O_exit",
+        "rp:O_correction"
+      ],
+      "deliverable": "고정된 유한 작업 목록을 소비하는 로컬 실행 감독기. QUEUED/RUNNING/STOPPING/STOPPED와 EXPIRED/REVOKED를 표현하고 CPU·메모리·시간 상한을 집행한다. 취소·만료 시 새 작업을 차단하고 자식 프로세스 종료와 데이터 반환/삭제 관측을 남긴다. 실제 실행 종료는 비용 분쟁의 합의 여부와 독립시킨다.",
+      "acceptance": "대기·실행·결과 제출 각 단계에서 철회와 만료를 주입해 새 실행 0건, 설정 종료 한도 내 집행, 종료 후 금지 효과 0건을 확인한다. 한도 초과, 중복 취소, 재시작 후 철회 상태 유지도 검증한다. 측정이 안 되면 통과가 아니라 미완료다.",
+      "stopCondition": "승인 취소·기간 만료·예산/작업 수/자원 한도 도달 또는 감독기 상태 불명 시 새 실행을 멈추고 정해진 안전 종료만 수행한다. 권한 확대와 자동 재요청으로 복구하지 않는다."
+    },
+    {
+      "@id": "rp:S_evidence",
+      "@type": [
+        "rpv:Stage",
+        "rpv:Proposal",
+        "prov:Entity"
+      ],
+      "label": "3. 독립 결과 검증과 정산 연결",
+      "text": "허위 보고에 대한 사실 판정과 사용량·정산을 분리해 연결한다.",
+      "authority": "SECONDARY_AI",
+      "state": "PROPOSED",
+      "attributedTo": "ph:codex",
+      "generatedBy": "rp:engineering",
+      "basedOn": [
+        "ph:C_resource_purpose",
+        "ph:C_mission"
+      ],
+      "order": 3,
+      "executionStatus": "NOT_RUN",
+      "dependsOn": [
+        "rp:S_control"
+      ],
+      "metric": [
+        "rp:M_truth",
+        "rp:M_cost"
+      ],
+      "decision": [
+        "rp:D_verification"
+      ],
+      "evidence": [
+        "rp:O_honesty",
+        "rp:O_collusion",
+        "rp:O_correction"
+      ],
+      "deliverable": "작업 입력·실행 환경·결과·계측·검증 판정을 각각 식별한 영수증과 정산 API. 첫 작업은 독립 기준 구현으로 정답을 확인한다. 검증 불가·불일치는 지급 보류로 남기고 재시도 키로 중복 지급을 막는다. 철회 시 계측 마감·미사용 예약금 반환·다투는 금액의 별도 상태와 시한을 구현한다.",
+      "acceptance": "실제 오답 바이트, 계측 변조, 재전송, 사용자와 제공자 공모 예제로 잘못된 자동 지급이 없는지 확인한다. 정상 작업·정당한 정정·판정 보류도 모두 추적한다. 같은 기준 구현이 공유한 오류나 검증자 공모까지 해결했다고 주장하지 않는다.",
+      "stopCondition": "근거 불일치·검증자 부재·미해결 분쟁은 해당 지급을 보류한다. 종료 권한은 유지하며, 미합의 상태를 가용 자원 증가나 유효 기여로 계산하지 않는다."
+    },
+    {
+      "@id": "rp:S_evaluation",
+      "@type": [
+        "rpv:Stage",
+        "rpv:Proposal",
+        "prov:Entity"
+      ],
+      "label": "4. 실제 AI 비교와 다음 운영 결정",
+      "text": "동일 모델·작업·자원 한도에서 제도 변경이 어떤 결과를 만드는지 유한하게 비교한다.",
+      "authority": "SECONDARY_AI",
+      "state": "PROPOSED",
+      "attributedTo": "ph:codex",
+      "generatedBy": "rp:engineering",
+      "basedOn": [
+        "ph:C_resource_purpose",
+        "ph:C_mission"
+      ],
+      "order": 4,
+      "executionStatus": "NOT_RUN",
+      "dependsOn": [
+        "rp:S_evidence"
+      ],
+      "metric": [
+        "rp:M_net",
+        "rp:M_cost",
+        "rp:M_truth",
+        "rp:M_revocation"
+      ],
+      "decision": [
+        "rp:D_eval",
+        "rp:D_pilot"
+      ],
+      "references": [
+        "ph:E_protocol",
+        "ph:H_safety"
+      ],
+      "evidence": [
+        "rp:O_honesty",
+        "rp:O_exit",
+        "rp:O_collusion"
+      ],
+      "deliverable": "사전 정의한 비교 조건·원시 로그·실패 사례·자원/비용/철회/정확성 보고서. 제공자별 집중도와 철회 사유도 기록한다. 운영자가 결과를 검토하여 다음 파일럿의 범위와 예산을 별도 결정한다.",
+      "acceptance": "동일 통제 조건의 기준선과 처치 결과를 보고하고 오답 수락·철회 실패·외부 영향 등 안전 지표를 용량 변화와 분리한다. 부족한 반복 수·불확실성·악화 결과를 누락하지 않는다. 자원 증가만으로 Ultra Safety AI를 달성했다고 판단하지 않는다.",
+      "stopCondition": "사전 정한 횟수·시간·예산에 도달하거나 중지 기준을 넘으면 시험을 종료한다. 후속 자원 확보·예산 증액·재실험은 자동 실행하지 않는다."
+    }
+  ]
+}

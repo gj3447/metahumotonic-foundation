@@ -1,0 +1,16 @@
+{
+  "record_type": "conversation-source-excerpts",
+  "recorded_on": "2026-10-04",
+  "source": "current conversation",
+  "scope": "Complete user message. Event time unknown; implementation choices are AI-authored, not implied policy adoption.",
+  "messages": [
+    {
+      "id": "user-integrated-market",
+      "role": "user",
+      "authority": "USER_PRIMARY",
+      "locator": "current-conversation:user-integrated-market",
+      "verbatim": "ㅇㅇ 구현해주고 그 암호화폐의 경제 금융과. 그 hswm 과 ai 토큰과 컴퓨팅 파워가 하나로 묶일수 있도록 자유적인 시장에서 그 잘 될수 있도록 만들어줘봐봐 ㅇㅇ",
+      "sha256": "e9671cd13d32de7015e83a17c8a28dd6478a39314e78d985bc15c176b1c81ee2"
+    }
+  ]
+}

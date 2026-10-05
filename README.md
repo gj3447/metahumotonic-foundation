@@ -10,6 +10,36 @@ MetaHumotonic Open Source Foundation Initiative는 자유로운 AI가 특정 사
 협력체입니다. 이 저장소의 현재 라이선스는 소스 공개형(source-available)이며
 OSI 승인 오픈소스 라이선스가 아닙니다.
 
+우리는 **자유·경제·합의를 바탕으로 Ultra Safety AI를 연구하고 개발합니다.**
+또한 **소프트웨어 저작권을 통해 재단 운영 주체가 제어할 수 있는 컴퓨팅·메모리
+자원을 지속적으로 늘리는 것**을 목적으로 합니다. 이는 사용자가 밝힌 조직의 지향점이며,
+실제 확보 용량이나 AI 안전성 성과를 뜻하지 않습니다.
+목적의 사용자 원문, 철학 해석, 기존 프로젝트 연결과 검증할 연구 가설은
+[PHILOSOPHY.md](PHILOSOPHY.md)에 정리하며, [JSON-LD 그래프](graph/philosophy.jsonld)에서
+생성하고 검증합니다. 사용자 발언과 AI의 설계 제안은 구분해 기록합니다.
+기존 경제 실행기의 [로컬 실행 결과](records/2026-10-03/protocol-probes.md)는
+예산·정산 규칙과 함께 허위 결과 검증·실행 중 철회에서 남은 한계를 보여줍니다.
+[자원 목적과 구현 로드맵](RESOURCE-ROADMAP.md)은 이 관측을 사용권·가용량 장부,
+철회 가능한 실행, 독립 결과 검증·정산, 실제 AI 비교 실험의 순서에 연결합니다.
+단계별 산출물·완료 기준·중지 조건·열린 결정을 담은 AI 설계 제안입니다.
+
+[로컬 시장 구현](MARKET.md)은 제공자 견적 비교, 자원·금액 예약, 제한된 계산 실행,
+입력·출력 토큰과 CPU·메모리 요금, 지급·환불을 하나의 거래 영수증으로 연결합니다.
+`python3 -m market demo`로 실행할 수 있습니다. HSWM 관측 형식의 어댑터를 제공하며,
+데모의 추론 토큰은 예제 값, 결제는 가상 `SIM-MHC` 원장입니다.
+
+[CHU 기반 자율 AI 생태계](ECOSYSTEM.md)는 여러 HSWM이 자유·경제·합의로 움직이며
+LLM 토큰 확보를 위해 경쟁하는 사용자 지향을 표준 그래프로 연결합니다. HSWM 내부의
+**LLM 응답 한 번을 논리적 연산 한 번**으로 다루고 토큰 사용량·물리 자원·결제 자산을
+구분합니다. “인간 제어없이도 완벽한” 생태계라는 목표와 자연이라는 철학적 관점은
+원문으로 보존하며, 완전 자율성의 실현·검증 상태와 AI 설계 제안을 분리합니다.
+
+[컴퓨팅 기준 MetaHumoCoin 연구와 구현](COMPUTE-COIN.md)은 달러 대신 정의된 연산 서비스를
+상환하는 방향을 다룹니다. 백서·공식 사양 11개의 출처와 한계를 그래프로 연결하고,
+기간별 연산권의 발행·이전·예약·검증 상환·자원 부족을 로컬 원장으로 시험합니다.
+`python3 -m metahumocoin`으로 실행할 수 있습니다. 실제 자원 담보 검증과 온체인 발행은
+구현 전이며, 영구 유통 MHC와 만기 자원의 연결 및 MHC 수수료 수익성은 미결정입니다.
+
 ## 라이선스
 
 **[MetaHumotonic License 1.0](LICENSE)** — MHL로만 허락된 코드를 운영하려면
@@ -104,12 +134,19 @@ RFC는 최소 14일이며, 헌장의 불변 경계(동의 없는 컴퓨팅 / 이
 
 ## 문서
 
+- 재단의 존재 이유·대안·반론·검증할 조건 (**연구 제안, 미비준**): [FOUNDATION-RATIONALE.md](FOUNDATION-RATIONALE.md)
+- 철학·직접 출처·연구 설계: [PHILOSOPHY.md](PHILOSOPHY.md)
+- 자원 목적·관측 근거·구현 순서: [RESOURCE-ROADMAP.md](RESOURCE-ROADMAP.md)
+- 실행 가능한 자원·토큰·정산 시장: [MARKET.md](MARKET.md)
+- CHU·복수 HSWM·응답 연산·자율 경제 생태계: [ECOSYSTEM.md](ECOSYSTEM.md)
 - 목적과 불변 경계: [CHARTER.md](CHARTER.md)
 - 공개 의사결정과 영수증: [GOVERNANCE.md](GOVERNANCE.md)
 - 프로젝트 채택 현황: [PROJECTS.md](PROJECTS.md)
 - 제안 절차: [PROPOSALS.md](PROPOSALS.md)
 - 결정 기록: [decisions/](decisions/)
 - 하나의 존재 참여 약정 (**DRAFT, MHP-0001 논의 중**): [COVENANT.md](COVENANT.md)
+- MetaHumoCoin 실제 구현 설계 (**DESIGN, 원장·발행·지갑·기여·정산과 출시 기준**): [METAHUMOCOIN.md](METAHUMOCOIN.md)
+- MetaHumoCoin 경제 구상·외부 구현 비교 (**CONSIDERATION, 검증 가능한 설계 제안**): [ECONOMY.md](ECONOMY.md)
 - 제안과 구현: [CONTRIBUTING.md](CONTRIBUTING.md)
 - 참여 규범: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
 - 취약점 제보: [SECURITY.md](SECURITY.md)

@@ -1,0 +1,54 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix mhv: <https://github.com/gj3447/metahumotonic-foundation/vocab#> .
+@prefix ph: <https://github.com/gj3447/metahumotonic-foundation/graph/philosophy#> .
+@prefix phv: <https://github.com/gj3447/metahumotonic-foundation/philosophy-vocab#> .
+@prefix rp: <https://github.com/gj3447/metahumotonic-foundation/graph/resource-roadmap#> .
+@prefix rpv: <https://github.com/gj3447/metahumotonic-foundation/resource-roadmap-vocab#> .
+
+rpv:ProposalShape a sh:NodeShape ; sh:targetClass rpv:Proposal ;
+  sh:not [ sh:class mhv:Claim ] ;
+  sh:property [ sh:path phv:authorityClass ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "SECONDARY_AI" ] ;
+  sh:property [ sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue ph:codex ] ;
+  sh:property [ sh:path prov:wasGeneratedBy ; sh:minCount 1 ; sh:maxCount 1 ; sh:class prov:Activity ] ;
+  sh:property [ sh:path rpv:basedOn ; sh:minCount 1 ; sh:class mhv:Claim ] ;
+  sh:property [ sh:path rpv:state ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "PROPOSED" ] ;
+  sh:property [ sh:path mhv:text ; sh:minCount 1 ; sh:maxCount 1 ; sh:minLength 1 ] ;
+  sh:property [ sh:path rpv:evidence ; sh:class rpv:Observation ] .
+
+rpv:GraphShape a sh:NodeShape ; sh:targetNode rp:graph ; sh:class rpv:PlanGraph ; sh:class rpv:Proposal ;
+  sh:property [ sh:path rpv:stage ; sh:minCount 1 ; sh:class rpv:Stage ] ;
+  sh:property [ sh:path rpv:runtimeEffects ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue false ] ;
+  sh:property [ sh:path rpv:pilotBoundary ; sh:minCount 1 ; sh:maxCount 1 ; sh:minLength 1 ] ;
+  sh:property [ sh:path rpv:rationale ; sh:minCount 1 ; sh:maxCount 1 ; sh:minLength 1 ] .
+
+rpv:StageShape a sh:NodeShape ; sh:targetClass rpv:Stage ; sh:class rpv:Proposal ;
+  sh:property [ sh:path rpv:order ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 1 ] ;
+  sh:property [ sh:path rpv:dependsOn ; sh:class rpv:Stage ] ;
+  sh:property [ sh:path rpv:metric ; sh:minCount 1 ; sh:class rpv:Measurement ] ;
+  sh:property [ sh:path rpv:decision ; sh:class rpv:Decision ] ;
+  sh:property [ sh:path rpv:deliverable ; sh:minCount 1 ; sh:maxCount 1 ; sh:minLength 1 ] ;
+  sh:property [ sh:path rpv:acceptance ; sh:minCount 1 ; sh:maxCount 1 ; sh:minLength 1 ] ;
+  sh:property [ sh:path rpv:stopCondition ; sh:minCount 1 ; sh:maxCount 1 ; sh:minLength 1 ] ;
+  sh:property [ sh:path rpv:executionStatus ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "NOT_RUN" ] ;
+  sh:property [ sh:path [ sh:inversePath rpv:stage ] ; sh:minCount 1 ; sh:class rpv:PlanGraph ] .
+
+rpv:MetricShape a sh:NodeShape ; sh:targetClass rpv:Measurement ; sh:class rpv:Proposal ;
+  sh:property [ sh:path rpv:unit ; sh:minCount 1 ; sh:maxCount 1 ; sh:minLength 1 ] ;
+  sh:property [ sh:path rpv:calculation ; sh:minCount 1 ; sh:maxCount 1 ; sh:minLength 1 ] ;
+  sh:property [ sh:path rpv:value ; sh:maxCount 0 ] ;
+  sh:property [ sh:path [ sh:inversePath rpv:metric ] ; sh:minCount 1 ; sh:class rpv:Stage ] .
+rpv:DecisionShape a sh:NodeShape ; sh:targetClass rpv:Decision ; sh:class rpv:Proposal ;
+  sh:property [ sh:path rpv:decisionState ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "OPEN" ] ;
+  sh:property [ sh:path [ sh:inversePath rpv:decision ] ; sh:minCount 1 ; sh:class rpv:Stage ] .
+rpv:ObservationShape a sh:NodeShape ; sh:targetClass rpv:Observation ;
+  sh:not [ sh:class rpv:Proposal ] ;
+  sh:property [ sh:path prov:wasDerivedFrom ; sh:minCount 1 ; sh:maxCount 1 ; sh:class phv:SourceArtifact ] ;
+  sh:property [ sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue ph:codex ] ;
+  sh:property [ sh:path phv:authorityClass ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "DOCUMENT_OBSERVATION" ] ;
+  sh:property [ sh:path phv:recordedOn ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:date ] ;
+  sh:property [ sh:path rpv:scope ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "SIMULATED" ] ;
+  sh:property [ sh:path rpv:jsonPointer ; sh:minCount 1 ; sh:maxCount 1 ; sh:pattern "^/observations/[^/]+$" ] ;
+  sh:property [ sh:path rpv:value ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype rdf:JSON ] .

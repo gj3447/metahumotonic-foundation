@@ -1,0 +1,29 @@
+{
+  "schema": "metahumotonic-market-run/v1",
+  "recorded_at": "2026-10-04T08:12:56.235875+00:00",
+  "status": "LOCAL_SANDBOX_EXECUTED",
+  "execution": "actual bounded local sum; inference usage fixture; no model or chain calls",
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "platform": "Linux-7.0.14-5-pve-x86_64-with-glibc2.41",
+  "source_sha256": {
+    "graph/check_market.py": "cc45b18e30487ff6a79eccf4ec8760ecfc40405773bdad4c07ce61f173dedf9a",
+    "graph/market-vocab.ttl": "cfe1ec239c84ad3ca6eabbb474290817995aac28b010a787f42b0fe850d91f68",
+    "graph/market.shapes.ttl": "fea6172f5e88bad0f4b64cd1e1d551fc7c010ae208aebfcdda54bff651540f03",
+    "market/__init__.py": "c57eebfcf8c494a18b70beb268d0c1b7aec19a41935c7915f3bccab6e58c06bc",
+    "market/__main__.py": "1b864b854d7f6f29851c3ba548ced7b906ca437d13e8aeb2d3bbf35f5e778381",
+    "market/contracts.py": "eef17d7fa0d8f9e57e7cef590cf66314a3cad6d3fdba2108e99b453c35342cbd",
+    "market/core.py": "a73a6290c30b450187a7aefe25330d59223fa80e727be503d4424b39309305a9",
+    "market/demo.py": "b8d6f121760fdf5be069e7dcd0b0dfad4f332aa39898d39a872649e5765c6ef7",
+    "market/interop.json": "82d6e98dccc92f1dc82ca9e10eee492b894c791408b43563cdec44a769e7da12",
+    "market/projection.py": "f257154fce11805abd31773f01957dbc4952c038bfbf47a88b79f039b5761997",
+    "market/runner.py": "9b5f0479dc6cf77c5fe44b7b9d2f1fdc2b87e7ea601905c8926ed3762bb4874f",
+    "market/test_market.py": "5acdc78929b69940f58027d0116559a572b102d5601737c556ca8458d372f04a",
+    "market/worker.py": "3ef311147fe06f2930b5304baed531e59d9a4447dcd196bf172474c9d4b11f0c"
+  },
+  "artifacts": {
+    "demo.json": "fe78c1ed1d61c4fffca324dfd0100cd42454259b14c27a981a94d84e87893c82",
+    "market.json": "f3c2cd460d7fd854d127460deaa61026bd8327f421d7b3b4dda36a912c9b3cea",
+    "market.jsonld": "545d23945088cb8f6595b54abd8893167f0f2256252246b55a17747bca4509e8"
+  },
+  "reproducibility": "Wall time, resource measurements, lease, timestamps and resulting hashes vary between executions. This is a recorded observation, not a deterministic performance claim."
+}

@@ -1,0 +1,57 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix mhv: <https://github.com/gj3447/metahumotonic-foundation/vocab#> .
+@prefix phv: <https://github.com/gj3447/metahumotonic-foundation/philosophy-vocab#> .
+
+# Local G0 extension. Existing mhv terms/UIDs are reused without redefining them.
+# Every edge is subject -> object. Cardinalities are enforced in SHACL.
+# Attribution, adoption and empirical verification are separate axes.
+phv:PhilosophyGraph a rdfs:Class ; rdfs:subClassOf prov:Entity .
+phv:SourceArtifact a rdfs:Class ; rdfs:subClassOf mhv:File ; rdfs:comment "Byte-pinned local input, not a moving path as identity." .
+phv:SourceExcerpt a rdfs:Class ; rdfs:subClassOf prov:Entity ; rdfs:comment "Exact conversation source with role, record key and digest." .
+phv:DocumentExcerpt a rdfs:Class ; rdfs:subClassOf prov:Entity ; rdfs:comment "Exact text observed in a pinned document; not independent authority." .
+phv:Analysis a rdfs:Class ; rdfs:subClassOf prov:Entity ; rdfs:comment "AI-authored proposal, grounded in user claims; not user canon." .
+phv:Interpretation a rdfs:Class ; rdfs:subClassOf phv:Analysis .
+phv:ResearchHypothesis a rdfs:Class ; rdfs:subClassOf phv:Analysis .
+phv:Tension a rdfs:Class ; rdfs:subClassOf phv:Analysis ; rdfs:comment "Attributed concern; does not decide a conflict or amend a norm." .
+phv:ImplementationMapping a rdfs:Class ; rdfs:subClassOf phv:Analysis ; rdfs:comment "Design reference to existing projects/concepts; not integration evidence." .
+phv:OpenQuestion a rdfs:Class ; rdfs:subClassOf phv:Analysis .
+phv:EvaluationPlan a rdfs:Class ; rdfs:subClassOf phv:Analysis .
+phv:EvaluationCase a rdfs:Class ; rdfs:subClassOf prov:Entity .
+phv:Metric a rdfs:Class ; rdfs:subClassOf prov:Entity ; rdfs:comment "Proposed measurement definition; no measured value is asserted." .
+
+phv:inputArtifact a rdf:Property ; rdfs:domain phv:PhilosophyGraph ; rdfs:range phv:SourceArtifact ; rdfs:comment "1..n; graph -> pinned input." .
+phv:sourceClaim a rdf:Property ; rdfs:domain phv:PhilosophyGraph ; rdfs:range mhv:Claim ; rdfs:comment "1..n; graph -> existing direct-source claim. Original claim scope is retained." .
+phv:groundedIn a rdf:Property ; rdfs:domain phv:Analysis ; rdfs:range mhv:Claim ; rdfs:comment "1..n; interpretation -> motivating claim, never a ratification edge." .
+phv:discusses a rdf:Property ; rdfs:domain phv:Analysis ; rdfs:range mhv:Concept ; rdfs:comment "1..n; analysis -> subject concept, not identity." .
+phv:implementsWith a rdf:Property ; rdfs:domain phv:ImplementationMapping ; rdfs:range rdfs:Resource ; rdfs:comment "1..n; proposed mapping -> existing project/concept URI, not a deployed implementation." .
+phv:testsHypothesis a rdf:Property ; rdfs:domain phv:EvaluationPlan ; rdfs:range phv:ResearchHypothesis ; rdfs:comment "Exactly 1; plan -> research question, not proof." .
+phv:usesMetric a rdf:Property ; rdfs:domain phv:EvaluationCase ; rdfs:range phv:Metric ; rdfs:comment "1..n; case -> measurement definitions." .
+phv:openQuestion a rdf:Property ; rdfs:domain phv:Analysis ; rdfs:range phv:OpenQuestion ; rdfs:comment "0..n; analysis -> unresolved choices. Not an execution prerequisite for graph editing." .
+phv:compares a rdf:Property ; rdfs:domain phv:Tension ; rdfs:range phv:DocumentExcerpt ; rdfs:comment "0..n; tension -> exact document observations." .
+phv:artifact a rdf:Property ; rdfs:domain phv:DocumentExcerpt ; rdfs:range phv:SourceArtifact ; rdfs:comment "Exactly 1; document quote -> byte-pinned source." .
+phv:hasCase a rdf:Property ; rdfs:domain phv:EvaluationPlan ; rdfs:range phv:EvaluationCase ; rdfs:comment "1..n; experiment plan -> scenarios." .
+
+phv:authorityClass a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 on sources/assertions: USER_PRIMARY, SECONDARY_AI or DOCUMENT_OBSERVATION." .
+phv:adoptionStatus a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 PROPOSED on AI analyses, metrics and cases; never implied by user build request." .
+phv:recordKey a rdf:Property ; rdfs:domain phv:SourceExcerpt ; rdfs:range xsd:string ; rdfs:comment "Exactly 1; key within the pinned conversation artifact." .
+phv:sourceRole a rdf:Property ; rdfs:domain phv:SourceExcerpt ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 user or assistant, matched to source record." .
+phv:sourceText a rdf:Property ; rdfs:domain phv:SourceExcerpt ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 exact source string; user excerpts also retain mhv:verbatim for the existing Utterance contract." .
+phv:recordedOn a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:date ; rdfs:comment "Exactly 1 on artifacts/document observations; capture date, not an invented event time." .
+phv:artifactState a rdf:Property ; rdfs:domain phv:SourceArtifact ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 COMMITTED_SNAPSHOT or WORKTREE_SNAPSHOT; commit claim must match bytes." .
+phv:controlCard a rdf:Property ; rdfs:domain phv:PhilosophyGraph ; rdfs:range xsd:string ; rdfs:comment "Exactly 1; owner, scope and effects of this graph." .
+phv:normativeEffect a rdf:Property ; rdfs:domain phv:PhilosophyGraph ; rdfs:range xsd:boolean ; rdfs:comment "Exactly 1 false; documenting philosophy is not adoption of AI proposals." .
+phv:hypothesisTest a rdf:Property ; rdfs:domain phv:ResearchHypothesis ; rdfs:range xsd:string ; rdfs:comment "Exactly 1; proposed test including outcomes that would not support the hypothesis." .
+phv:baseline a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 on plan/case; controlled comparison condition." .
+phv:treatment a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 on plan/case; intervention while preserving declared controls." .
+phv:calculation a rdf:Property ; rdfs:domain phv:Metric ; rdfs:range xsd:string ; rdfs:comment "Exactly 1; numerator/denominator or event/time rule, including undefined cases." .
+phv:unit a rdf:Property ; rdfs:domain phv:Metric ; rdfs:range xsd:string ; rdfs:comment "Exactly 1; measurement unit, not an observed quantity." .
+phv:verificationStatus a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 NOT_RUN on plan/case; graph validation is not an experiment." .
+phv:implementationStatus a rdf:Property ; rdfs:domain phv:ImplementationMapping ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 CANDIDATE; no runtime claim." .
+phv:status a rdf:Property ; rdfs:domain phv:OpenQuestion ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 OPEN." .
+phv:excerpt a rdf:Property ; rdfs:domain phv:DocumentExcerpt ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 nonempty substring in the byte-pinned artifact." .
+phv:locator a rdf:Property ; rdfs:domain phv:SourceExcerpt ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 conversation source locator, not a fabricated retrievable URL." .
+phv:expectedEvidence a rdf:Property ; rdfs:domain phv:EvaluationPlan ; rdfs:range xsd:string ; rdfs:comment "Exactly 1; evidence that a future run must produce." .
+phv:failureCondition a rdf:Property ; rdfs:domain phv:EvaluationCase ; rdfs:range xsd:string ; rdfs:comment "Exactly 1; possible falsifying/adverse outcome, not an observation." .

@@ -1,0 +1,107 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix mhv: <https://github.com/gj3447/metahumotonic-foundation/vocab#> .
+@prefix ph: <https://github.com/gj3447/metahumotonic-foundation/graph/philosophy#> .
+@prefix phv: <https://github.com/gj3447/metahumotonic-foundation/philosophy-vocab#> .
+
+phv:GraphShape a sh:NodeShape ; sh:targetNode ph:graph ; sh:class phv:PhilosophyGraph ;
+  sh:property [ sh:path phv:authorityClass ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "SECONDARY_AI" ] ;
+  sh:property [ sh:path phv:normativeEffect ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue false ] ;
+  sh:property [ sh:path phv:controlCard ; sh:minCount 1 ; sh:maxCount 1 ; sh:minLength 20 ] ;
+  sh:property [ sh:path phv:sourceClaim ; sh:minCount 1 ; sh:class mhv:Claim ] ;
+  sh:property [ sh:path phv:inputArtifact ; sh:minCount 1 ; sh:class phv:SourceArtifact ] ;
+  sh:property [ sh:path prov:wasGeneratedBy ; sh:minCount 1 ; sh:maxCount 1 ; sh:class prov:Activity ] ;
+  sh:property [ sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:maxCount 1 ; sh:class prov:SoftwareAgent ] .
+
+phv:ArtifactShape a sh:NodeShape ; sh:targetClass phv:SourceArtifact ;
+  sh:property [ sh:path mhv:path ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path mhv:sha256 ; sh:minCount 1 ; sh:maxCount 1 ; sh:pattern "^[0-9a-f]{64}$" ] ;
+  sh:property [ sh:path phv:recordedOn ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:date ] ;
+  sh:property [ sh:path phv:artifactState ; sh:minCount 1 ; sh:maxCount 1 ; sh:in ( "COMMITTED_SNAPSHOT" "WORKTREE_SNAPSHOT" ) ] ;
+  sh:or (
+    [ sh:property [ sh:path phv:artifactState ; sh:hasValue "COMMITTED_SNAPSHOT" ] ;
+      sh:property [ sh:path mhv:gitCommit ; sh:minCount 1 ; sh:maxCount 1 ; sh:pattern "^[0-9a-f]{40}$" ] ]
+    [ sh:property [ sh:path phv:artifactState ; sh:hasValue "WORKTREE_SNAPSHOT" ] ;
+      sh:property [ sh:path mhv:gitCommit ; sh:maxCount 0 ] ]
+  ) .
+
+phv:ExcerptShape a sh:NodeShape ; sh:targetClass phv:SourceExcerpt ;
+  sh:property [ sh:path phv:sourceText ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ] ;
+  sh:property [ sh:path mhv:sha256 ; sh:minCount 1 ; sh:maxCount 1 ; sh:pattern "^[0-9a-f]{64}$" ] ;
+  sh:property [ sh:path phv:recordKey ; sh:minCount 1 ; sh:maxCount 1 ; sh:minLength 1 ] ;
+  sh:property [ sh:path phv:locator ; sh:minCount 1 ; sh:maxCount 1 ; sh:minLength 1 ] ;
+  sh:property [ sh:path dcterms:source ; sh:minCount 1 ; sh:maxCount 1 ; sh:class phv:SourceArtifact ] ;
+  sh:property [ sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path phv:sourceRole ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path phv:authorityClass ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:xone (
+    [ sh:property [ sh:path phv:sourceRole ; sh:hasValue "user" ] ;
+      sh:property [ sh:path phv:authorityClass ; sh:hasValue "USER_PRIMARY" ] ;
+      sh:property [ sh:path prov:wasAttributedTo ; sh:class prov:Person ] ]
+    [ sh:property [ sh:path phv:sourceRole ; sh:hasValue "assistant" ] ;
+      sh:property [ sh:path phv:authorityClass ; sh:hasValue "SECONDARY_AI" ] ;
+      sh:property [ sh:path prov:wasAttributedTo ; sh:class prov:SoftwareAgent ] ]
+  ) .
+
+phv:PrimaryClaimShape a sh:NodeShape ; sh:targetNode ph:C_mission, ph:C_build, ph:C_resource_purpose ; sh:class mhv:Claim ;
+  sh:property [ sh:path phv:authorityClass ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "USER_PRIMARY" ] ;
+  sh:property [ sh:path mhv:claimStatus ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue mhv:STATED ] ;
+  sh:property [ sh:path ( prov:wasDerivedFrom phv:sourceRole ) ; sh:hasValue "user" ] ;
+  sh:property [ sh:path mhv:span ; sh:minCount 1 ; sh:maxCount 1 ; sh:minLength 1 ] .
+
+phv:AnalysisShape a sh:NodeShape ; sh:targetClass phv:Analysis ;
+  sh:not [ sh:class mhv:Claim ] ;
+  sh:property [ sh:path mhv:text ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ] ;
+  sh:property [ sh:path phv:groundedIn ; sh:minCount 1 ; sh:class mhv:Claim ] ;
+  sh:property [ sh:path phv:discusses ; sh:minCount 1 ; sh:class mhv:Concept ] ;
+  sh:property [ sh:path phv:openQuestion ; sh:class phv:OpenQuestion ] .
+
+phv:AIAttributionShape a sh:NodeShape ; sh:targetClass phv:Analysis, phv:Metric, phv:EvaluationCase ;
+  sh:property [ sh:path phv:authorityClass ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "SECONDARY_AI" ] ;
+  sh:property [ sh:path phv:adoptionStatus ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "PROPOSED" ] ;
+  sh:property [ sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:maxCount 1 ; sh:class prov:SoftwareAgent ] ;
+  sh:property [ sh:path prov:wasDerivedFrom ; sh:minCount 1 ; sh:maxCount 1 ; sh:class phv:SourceExcerpt ] ;
+  sh:property [ sh:path ( prov:wasDerivedFrom phv:sourceRole ) ; sh:hasValue "assistant" ] .
+
+phv:HypothesisShape a sh:NodeShape ; sh:targetClass phv:ResearchHypothesis ; sh:class phv:Analysis ;
+  sh:property [ sh:path mhv:epistemic ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue mhv:UNVERIFIED ] ;
+  sh:property [ sh:path phv:hypothesisTest ; sh:minCount 1 ; sh:maxCount 1 ; sh:minLength 1 ] ;
+  sh:property [ sh:path [ sh:inversePath phv:testsHypothesis ] ; sh:minCount 1 ; sh:class phv:EvaluationPlan ] .
+
+phv:DocumentShape a sh:NodeShape ; sh:targetClass phv:DocumentExcerpt ;
+  sh:property [ sh:path phv:artifact ; sh:minCount 1 ; sh:maxCount 1 ; sh:class phv:SourceArtifact ] ;
+  sh:property [ sh:path phv:excerpt ; sh:minCount 1 ; sh:maxCount 1 ; sh:minLength 1 ] ;
+  sh:property [ sh:path phv:authorityClass ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "DOCUMENT_OBSERVATION" ] ;
+  sh:property [ sh:path phv:recordedOn ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:date ] .
+
+phv:TensionShape a sh:NodeShape ; sh:targetClass phv:Tension ; sh:class phv:Analysis ;
+  sh:property [ sh:path phv:compares ; sh:class phv:DocumentExcerpt ] ;
+  sh:property [ sh:path phv:openQuestion ; sh:minCount 1 ] .
+phv:MappingShape a sh:NodeShape ; sh:targetClass phv:ImplementationMapping ; sh:class phv:Analysis ;
+  sh:property [ sh:path phv:implementsWith ; sh:minCount 1 ; sh:nodeKind sh:IRI ;
+    sh:or ( [ sh:class mhv:Project ] [ sh:class mhv:Concept ] ) ] ;
+  sh:property [ sh:path phv:implementationStatus ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "CANDIDATE" ] .
+phv:QuestionShape a sh:NodeShape ; sh:targetClass phv:OpenQuestion ; sh:class phv:Analysis ;
+  sh:property [ sh:path phv:status ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "OPEN" ] .
+
+phv:PlanShape a sh:NodeShape ; sh:targetClass phv:EvaluationPlan ; sh:class phv:Analysis ;
+  sh:property [ sh:path phv:testsHypothesis ; sh:minCount 1 ; sh:maxCount 1 ; sh:class phv:ResearchHypothesis ] ;
+  sh:property [ sh:path phv:hasCase ; sh:minCount 1 ; sh:class phv:EvaluationCase ] ;
+  sh:property [ sh:path phv:expectedEvidence ; sh:minCount 1 ; sh:maxCount 1 ; sh:minLength 1 ] ;
+  sh:property [ sh:path phv:openQuestion ; sh:minCount 1 ] .
+phv:EvaluationShape a sh:NodeShape ; sh:targetClass phv:EvaluationPlan, phv:EvaluationCase ;
+  sh:property [ sh:path phv:verificationStatus ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "NOT_RUN" ] ;
+  sh:property [ sh:path phv:baseline ; sh:minCount 1 ; sh:maxCount 1 ; sh:minLength 1 ] ;
+  sh:property [ sh:path phv:treatment ; sh:minCount 1 ; sh:maxCount 1 ; sh:minLength 1 ] .
+phv:CaseShape a sh:NodeShape ; sh:targetClass phv:EvaluationCase ;
+  sh:property [ sh:path phv:usesMetric ; sh:minCount 1 ; sh:class phv:Metric ] ;
+  sh:property [ sh:path phv:failureCondition ; sh:minCount 1 ; sh:maxCount 1 ; sh:minLength 1 ] ;
+  sh:property [ sh:path [ sh:inversePath phv:hasCase ] ; sh:minCount 1 ; sh:class phv:EvaluationPlan ] .
+phv:MetricShape a sh:NodeShape ; sh:targetClass phv:Metric ;
+  sh:property [ sh:path phv:unit ; sh:minCount 1 ; sh:maxCount 1 ; sh:minLength 1 ] ;
+  sh:property [ sh:path phv:calculation ; sh:minCount 1 ; sh:maxCount 1 ; sh:minLength 1 ] ;
+  sh:property [ sh:path [ sh:inversePath phv:usesMetric ] ; sh:minCount 1 ; sh:class phv:EvaluationCase ] .

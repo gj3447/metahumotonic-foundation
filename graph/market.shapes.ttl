@@ -1,0 +1,99 @@
+@prefix mk: <https://github.com/gj3447/metahumotonic-foundation/market-vocab#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+mk:MarketSnapshotShape a sh:NodeShape ; sh:targetClass mk:MarketSnapshot ;
+  sh:property [ sh:path mk:mode ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ] ;
+  sh:property [ sh:path mk:sha256 ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ] ;
+  sh:property [ sh:path mk:asset ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mk:Asset ] ;
+  sh:property [ sh:path mk:supplyAtoms ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 0 ] ;
+  sh:property [ sh:path mk:mode ; sh:hasValue "LOCAL_SANDBOX" ] ;
+  sh:property [ sh:path prov:wasGeneratedBy ; sh:minCount 1 ; sh:maxCount 1 ; sh:class prov:Activity ] ;
+  sh:property [ sh:path mk:hasOrder ; sh:class mk:Order ] ;
+  sh:property [ sh:path mk:hasOffer ; sh:class mk:Offer ] ;
+  sh:property [ sh:path mk:hasGrant ; sh:class mk:Grant ] ;
+  sh:property [ sh:path mk:hasResource ; sh:class mk:Resource ] ;
+  sh:property [ sh:path mk:hasAccount ; sh:class mk:Account ] .
+
+mk:AssetShape a sh:NodeShape ; sh:targetClass mk:Asset ;
+  sh:property [ sh:path mk:sourceID ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ] ;
+  sh:property [ sh:path mk:mode ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ] ;
+  sh:property [ sh:path mk:mode ; sh:hasValue "LOCAL_SANDBOX" ] ;
+  sh:property [ sh:path mk:sourceID ; sh:hasValue "sandbox:SIM-MHC" ] .
+
+mk:AccountShape a sh:NodeShape ; sh:targetClass mk:Account ;
+  sh:property [ sh:path mk:sourceID ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ] ;
+  sh:property [ sh:path mk:asset ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mk:Asset ] ;
+  sh:property [ sh:path mk:balanceAtoms ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 0 ] .
+
+mk:ResourceShape a sh:NodeShape ; sh:targetClass mk:Resource ;
+  sh:property [ sh:path mk:sourceID ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ] ;
+  sh:property [ sh:path mk:owner ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mk:Account ] ;
+  sh:property [ sh:path mk:slots ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 0 ] ;
+  sh:property [ sh:path mk:memoryMiB ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 0 ] ;
+  sh:property [ sh:path mk:uslID ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ] ;
+  sh:property [ sh:path mk:state ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ] .
+
+mk:GrantShape a sh:NodeShape ; sh:targetClass mk:Grant ;
+  sh:property [ sh:path mk:sourceID ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ] ;
+  sh:property [ sh:path mk:owner ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mk:Account ] ;
+  sh:property [ sh:path mk:provider ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mk:Account ] ;
+  sh:property [ sh:path mk:resource ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mk:Resource ] ;
+  sh:property [ sh:path mk:state ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ] ;
+  sh:property [ sh:path mk:expiresAtMs ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 0 ] .
+
+mk:OfferShape a sh:NodeShape ; sh:targetClass mk:Offer ;
+  sh:property [ sh:path mk:hasPrice ; sh:minCount 4 ; sh:maxCount 4 ; sh:class mk:UnitPrice ] ;
+  sh:property [ sh:path mk:sourceID ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ] ;
+  sh:property [ sh:path mk:provider ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mk:Account ] ;
+  sh:property [ sh:path mk:grant ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mk:Grant ] ;
+  sh:property [ sh:path mk:asset ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mk:Asset ] ;
+  sh:property [ sh:path mk:backend ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ] ;
+  sh:property [ sh:path mk:state ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ] ;
+  sh:property [ sh:path mk:sha256 ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ] ;
+  sh:property [ sh:path mk:backend ; sh:in ( "local-sum" "fixture-hswm" ) ] .
+
+mk:UnitPriceShape a sh:NodeShape ; sh:targetClass mk:UnitPrice ;
+  sh:property [ sh:path mk:offer ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mk:Offer ] ;
+  sh:property [ sh:path mk:asset ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mk:Asset ] ;
+  sh:property [ sh:path mk:unit ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ;
+                sh:in ( "input_tokens" "output_tokens" "cpu_ms" "memory_mib_ms" ) ] ;
+  sh:property [ sh:path mk:priceNumerator ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 0 ] ;
+  sh:property [ sh:path mk:priceDenominator ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 1 ] .
+
+mk:OrderShape a sh:NodeShape ; sh:targetClass mk:Order ;
+  sh:property [ sh:path mk:sourceID ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ] ;
+  sh:property [ sh:path mk:offer ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mk:Offer ] ;
+  sh:property [ sh:path mk:grant ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mk:Grant ] ;
+  sh:property [ sh:path mk:requester ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mk:Account ] ;
+  sh:property [ sh:path mk:provider ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mk:Account ] ;
+  sh:property [ sh:path mk:resource ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mk:Resource ] ;
+  sh:property [ sh:path mk:asset ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mk:Asset ] ;
+  sh:property [ sh:path mk:state ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ] ;
+  sh:property [ sh:path mk:escrowAtoms ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 0 ] ;
+  sh:property [ sh:path mk:sha256 ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ] ;
+  sh:property [ sh:path mk:usage ; sh:maxCount 1 ; sh:class mk:Usage ] ;
+  sh:property [ sh:path mk:receipt ; sh:maxCount 1 ; sh:class mk:Receipt ] .
+
+mk:UsageShape a sh:NodeShape ; sh:targetClass mk:Usage ;
+  sh:property [ sh:path mk:order ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mk:Order ] ;
+  sh:property [ sh:path mk:inputTokens ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 0 ] ;
+  sh:property [ sh:path mk:outputTokens ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 0 ] ;
+  sh:property [ sh:path mk:cpuMs ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 0 ] ;
+  sh:property [ sh:path mk:memoryMiBMs ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 0 ] ;
+  sh:property [ sh:path mk:evidenceMode ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ] ;
+  sh:property [ sh:path mk:meterStatus ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ] ;
+  sh:property [ sh:path mk:sha256 ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ] ;
+  sh:property [ sh:path mk:evidenceMode ; sh:in ( "LOCAL_BUILTIN_EXECUTION" "LOCAL_COMPUTE_WITH_SIMULATED_HSWM_USAGE" ) ] .
+
+mk:ReceiptShape a sh:NodeShape ; sh:targetClass mk:Receipt ;
+  sh:property [ sh:path mk:order ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mk:Order ] ;
+  sh:property [ sh:path mk:asset ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mk:Asset ] ;
+  sh:property [ sh:path mk:state ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ] ;
+  sh:property [ sh:path mk:reservedAtoms ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 0 ] ;
+  sh:property [ sh:path mk:paidAtoms ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 0 ] ;
+  sh:property [ sh:path mk:refundAtoms ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 0 ] ;
+  sh:property [ sh:path mk:sha256 ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ] .

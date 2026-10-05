@@ -1,0 +1,37 @@
+{
+  "@context": {
+    "mhv": "https://github.com/gj3447/metahumotonic-foundation/vocab#",
+    "eco": "https://github.com/gj3447/metahumotonic-foundation/graph/economy#",
+    "ex": "https://github.com/gj3447/metahumotonic-foundation/graph/economy-example#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "@vocab": "https://github.com/gj3447/metahumotonic-foundation/vocab#",
+    "offeredBy": {"@type": "@id"}, "forOffer": {"@type": "@id"}, "requestedBy": {"@type": "@id"}, "providedBy": {"@type": "@id"},
+    "hasAssent": {"@type": "@id", "@container": "@set"}, "assentsTo": {"@type": "@id"}, "assentingParty": {"@type": "@id"},
+    "hasExecution": {"@type": "@id"}, "hasUsage": {"@type": "@id"}, "hasResultEvidence": {"@type": "@id"},
+    "settlesAgreement": {"@type": "@id"}, "basedOnUsage": {"@type": "@id"}, "denominatedIn": {"@type": "@id"},
+    "agreedCurrency": {"@type": "@id"}, "agreedUnit": {"@type": "@id"}, "observedUnit": {"@type": "@id"}, "acceptedBy": {"@type": "@id"},
+    "attributedTo": {"@id": "prov:wasAttributedTo", "@type": "@id"}, "source": {"@id": "dcterms:source", "@type": "@id"},
+    "agreementVersion": {"@id": "mhv:agreementVersion", "@type": "xsd:string"}, "acceptedVersion": {"@id": "mhv:acceptedVersion", "@type": "xsd:string"}, "settlementId": {"@id": "mhv:settlementId", "@type": "xsd:string"}, "paymentReference": {"@id": "mhv:paymentReference", "@type": "xsd:string"},
+    "meteredUnits": {"@id": "mhv:meteredUnits", "@type": "xsd:decimal"}, "agreedUnitPrice": {"@id": "mhv:agreedUnitPrice", "@type": "xsd:decimal"}, "settlementAmount": {"@id": "mhv:settlementAmount", "@type": "xsd:decimal"},
+    "simulationStatus": {"@type": "@id"}, "designStatus": {"@type": "@id"}, "assentStatus": {"@type": "@id"}, "usageStatus": {"@type": "@id"}, "resultStatus": {"@type": "@id"}
+  },
+  "@graph": [
+    {"@id": "eco:metahumocoin", "@type": ["mhv:Concept", "mhv:CurrencyDesign"], "designStatus": "mhv:PROPOSED", "dcterms:description": "Proposed MetaHumoCoin denomination design; no deployed currency, supply, minting, or payment claim."},
+    {"@id": "ex:demo_currency", "@type": "mhv:CurrencyDesign", "designStatus": "mhv:PROPOSED", "dcterms:references": {"@id": "eco:metahumocoin"}, "dcterms:description": "Simulated illustration denomination only.", "simulationStatus": "mhv:SIMULATED"},
+    {"@id": "ex:requester", "@type": "mhv:Participant", "simulationStatus": "mhv:SIMULATED"},
+    {"@id": "ex:provider", "@type": "mhv:Participant", "simulationStatus": "mhv:SIMULATED"},
+    {"@id": "ex:compute_unit", "simulationStatus": "mhv:SIMULATED", "dcterms:description": "Simulated metering unit."},
+    {"@id": "ex:offer", "@type": "mhv:ResourceOffer", "offeredBy": "ex:provider", "simulationStatus": "mhv:SIMULATED"},
+    {"@id": "ex:agreement", "@type": "mhv:BilateralAgreement", "forOffer": "ex:offer", "requestedBy": "ex:requester", "providedBy": "ex:provider", "agreementVersion": "v1", "agreedCurrency": "ex:demo_currency", "agreedUnit": "ex:compute_unit", "agreedUnitPrice": "2", "hasAssent": ["ex:requester_assent", "ex:provider_assent"], "hasExecution": "ex:execution", "simulationStatus": "mhv:SIMULATED"},
+    {"@id": "ex:requester_assent", "@type": "mhv:PartyAssent", "assentsTo": "ex:agreement", "assentingParty": "ex:requester", "acceptedVersion": "v1", "assentStatus": "mhv:ACCEPTED", "simulationStatus": "mhv:SIMULATED"},
+    {"@id": "ex:provider_assent", "@type": "mhv:PartyAssent", "assentsTo": "ex:agreement", "assentingParty": "ex:provider", "acceptedVersion": "v1", "assentStatus": "mhv:ACCEPTED", "simulationStatus": "mhv:SIMULATED"},
+    {"@id": "ex:execution", "@type": "mhv:WorkExecution", "hasUsage": "ex:usage", "hasResultEvidence": "ex:result", "simulationStatus": "mhv:SIMULATED"},
+    {"@id": "ex:usage", "@type": "mhv:UsageObservation", "meteredUnits": "3", "observedUnit": "ex:compute_unit", "attributedTo": "ex:provider", "source": "ex:usage_meter_report", "acceptedBy": "ex:requester", "usageStatus": "mhv:ACCEPTED", "simulationStatus": "mhv:SIMULATED"},
+    {"@id": "ex:usage_meter_report", "simulationStatus": "mhv:SIMULATED", "dcterms:description": "Simulated meter-report reference; it does not establish result truth."},
+    {"@id": "ex:result", "@type": "mhv:ResultEvidence", "attributedTo": "ex:provider", "source": "ex:result_report", "acceptedBy": "ex:requester", "resultStatus": "mhv:RESULT_ACCEPTED", "simulationStatus": "mhv:SIMULATED", "dcterms:description": "Status is explicit; no result-truth assertion follows from this simulated record."},
+    {"@id": "ex:result_report", "simulationStatus": "mhv:SIMULATED", "dcterms:description": "Simulated result-evidence reference."},
+    {"@id": "ex:receipt", "@type": "mhv:SettlementReceipt", "settlesAgreement": "ex:agreement", "basedOnUsage": "ex:usage", "denominatedIn": "ex:demo_currency", "settlementAmount": "6", "settlementId": "sim-settlement-001", "paymentReference": "sim-payment-001", "simulationStatus": "mhv:SIMULATED", "dcterms:description": "3 units × 2 simulated coin/unit = 6 illustrative simulated coins; no transfer occurred."}
+  ]
+}

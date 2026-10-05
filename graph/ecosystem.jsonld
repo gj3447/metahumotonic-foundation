@@ -1,0 +1,1524 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "ex": "https://github.com/gj3447/metahumotonic-foundation/graph/ecosystem#",
+    "ev": "https://github.com/gj3447/metahumotonic-foundation/ecosystem-vocab#",
+    "mhv": "https://github.com/gj3447/metahumotonic-foundation/vocab#",
+    "sp": "https://github.com/gj3447/metahumotonic-foundation/graph/spirit#",
+    "ph": "https://github.com/gj3447/metahumotonic-foundation/graph/philosophy#",
+    "mhc": "https://github.com/gj3447/metahumotonic-foundation/graph/metahumocoin#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "label": "rdfs:label",
+    "text": "mhv:text",
+    "verbatim": "mhv:verbatim",
+    "span": "mhv:span",
+    "sha256": "mhv:sha256",
+    "path": "mhv:path",
+    "attributedTo": {
+      "@id": "prov:wasAttributedTo",
+      "@type": "@id"
+    },
+    "derivedFrom": {
+      "@id": "prov:wasDerivedFrom",
+      "@type": "@id"
+    },
+    "generatedBy": {
+      "@id": "prov:wasGeneratedBy",
+      "@type": "@id"
+    },
+    "associatedWith": {
+      "@id": "prov:wasAssociatedWith",
+      "@type": "@id"
+    },
+    "source": {
+      "@id": "dcterms:source",
+      "@type": "@id"
+    },
+    "references": {
+      "@id": "dcterms:references",
+      "@type": "@id"
+    },
+    "groundedIn": {
+      "@id": "ev:groundedIn",
+      "@type": "@id"
+    },
+    "inputArtifact": {
+      "@id": "ev:inputArtifact",
+      "@type": "@id"
+    },
+    "subject": {
+      "@id": "ev:subject",
+      "@type": "@id"
+    },
+    "relationKind": {
+      "@id": "ev:relationKind",
+      "@type": "@id"
+    },
+    "object": {
+      "@id": "ev:object",
+      "@type": "@id"
+    },
+    "participant": {
+      "@id": "ev:participant",
+      "@type": "@id"
+    },
+    "endpoint": {
+      "@id": "ev:endpoint",
+      "@type": "@id"
+    },
+    "unitSpec": {
+      "@id": "ev:unitSpec",
+      "@type": "@id"
+    },
+    "evaluates": {
+      "@id": "ev:evaluates",
+      "@type": "@id"
+    },
+    "hasMetric": {
+      "@id": "ev:hasMetric",
+      "@type": "@id"
+    },
+    "openOn": {
+      "@id": "ev:openOn",
+      "@type": "@id"
+    },
+    "authorityClass": "ev:authorityClass",
+    "designStatus": "ev:designStatus",
+    "verificationStatus": "ev:verificationStatus",
+    "claimKind": "ev:claimKind",
+    "sourceRole": "ev:sourceRole",
+    "recordKey": "ev:recordKey",
+    "locator": "ev:locator",
+    "sourceText": "ev:sourceText",
+    "artifactState": "ev:artifactState",
+    "revision": "ev:revision",
+    "scope": "ev:scope",
+    "specKind": "ev:specKind",
+    "role": "ev:role",
+    "unit": "ev:unit",
+    "calculation": "ev:calculation",
+    "countingRule": "ev:countingRule",
+    "contract": "ev:contract",
+    "baseline": "ev:baseline",
+    "treatment": "ev:treatment",
+    "failureCondition": "ev:failureCondition",
+    "status": "ev:status",
+    "recordedOn": {
+      "@id": "ev:recordedOn",
+      "@type": "xsd:date"
+    },
+    "position": {
+      "@id": "ev:position",
+      "@type": "xsd:integer"
+    },
+    "normativeEffect": {
+      "@id": "ev:normativeEffect",
+      "@type": "xsd:boolean"
+    },
+    "executionEffect": {
+      "@id": "ev:executionEffect",
+      "@type": "xsd:boolean"
+    },
+    "responsesPerUnit": {
+      "@id": "ev:responsesPerUnit",
+      "@type": "xsd:integer"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "ex:codex",
+      "@type": "prov:SoftwareAgent",
+      "label": "Codex — source-grounded ecosystem model author"
+    },
+    {
+      "@id": "ex:build",
+      "@type": "prov:Activity",
+      "label": "Local ecosystem graph construction",
+      "associatedWith": "ex:codex"
+    },
+    {
+      "@id": "ex:source_chu_os",
+      "@type": "ev:SourceArtifact",
+      "label": "CHU / canon/sources/USER_PRIMARY_CHU_HYPERGRAPH_OS_2026-09-29.txt",
+      "path": "records/2026-10-04/ecosystem/chu-os.txt",
+      "sha256": "7d3d6e3f4ed358275fda93b84abff1796f5214bd6f5173dafd72c736f1787f53",
+      "artifactState": "COMMITTED_BYTES",
+      "revision": "e53500c05999ad01317eba47f00f533f8b5fade6",
+      "source": "https://github.com/gj3447/CHU/blob/e53500c05999ad01317eba47f00f533f8b5fade6/canon/sources/USER_PRIMARY_CHU_HYPERGRAPH_OS_2026-09-29.txt",
+      "recordedOn": "2026-10-04"
+    },
+    {
+      "@id": "ex:source_chu_software",
+      "@type": "ev:SourceArtifact",
+      "label": "CHU / canon/sources/USER_PRIMARY_CHU_SOFTWARE_ARCHITECTURE_2026-09-27.txt",
+      "path": "records/2026-10-04/ecosystem/chu-software.txt",
+      "sha256": "a403b110090d748b21bb5db0b0429a582aceda10b23eab92a0dfb2957188c598",
+      "artifactState": "COMMITTED_BYTES",
+      "revision": "e53500c05999ad01317eba47f00f533f8b5fade6",
+      "source": "https://github.com/gj3447/CHU/blob/e53500c05999ad01317eba47f00f533f8b5fade6/canon/sources/USER_PRIMARY_CHU_SOFTWARE_ARCHITECTURE_2026-09-27.txt",
+      "recordedOn": "2026-10-04"
+    },
+    {
+      "@id": "ex:source_chu_scope",
+      "@type": "ev:SourceArtifact",
+      "label": "CHU / canon/sources/USER_PRIMARY_CHU_HSWM_SCOPE_2026-09-27.txt",
+      "path": "records/2026-10-04/ecosystem/chu-scope.txt",
+      "sha256": "a9b1ea40876a3e9134a8585bab75742b8e4884038967b4f494da906aa75a0014",
+      "artifactState": "COMMITTED_BYTES",
+      "revision": "e53500c05999ad01317eba47f00f533f8b5fade6",
+      "source": "https://github.com/gj3447/CHU/blob/e53500c05999ad01317eba47f00f533f8b5fade6/canon/sources/USER_PRIMARY_CHU_HSWM_SCOPE_2026-09-27.txt",
+      "recordedOn": "2026-10-04"
+    },
+    {
+      "@id": "ex:source_hswm_identity",
+      "@type": "ev:SourceArtifact",
+      "label": "HSWM / docs/canon/sources/USER_PRIMARY_HSWM_HYPERGRAPH_NEURAL_AI_2026-09-14.txt",
+      "path": "records/2026-10-04/ecosystem/hswm-identity.txt",
+      "sha256": "56db5711373aab59d1046f882a7a6668f03ba8ffa14a5e9faeed1eb824eab7d3",
+      "artifactState": "COMMITTED_BYTES",
+      "revision": "58f1d4f08352c33c8481f7bf2553d95e6896a091",
+      "source": "https://github.com/gj3447/HSWM/blob/58f1d4f08352c33c8481f7bf2553d95e6896a091/docs/canon/sources/USER_PRIMARY_HSWM_HYPERGRAPH_NEURAL_AI_2026-09-14.txt",
+      "recordedOn": "2026-10-04"
+    },
+    {
+      "@id": "ex:source_hswm_state",
+      "@type": "ev:SourceArtifact",
+      "label": "HSWM / docs/canon/sources/USER_PRIMARY_HSWM_STATE_LOCAL_OPERATOR_HYPERON_2026-09-14.txt",
+      "path": "records/2026-10-04/ecosystem/hswm-state.txt",
+      "sha256": "bcfc99553d2a932c69201adeddafc3144b764a774d289841d3368392bb4b42f5",
+      "artifactState": "COMMITTED_BYTES",
+      "revision": "58f1d4f08352c33c8481f7bf2553d95e6896a091",
+      "source": "https://github.com/gj3447/HSWM/blob/58f1d4f08352c33c8481f7bf2553d95e6896a091/docs/canon/sources/USER_PRIMARY_HSWM_STATE_LOCAL_OPERATOR_HYPERON_2026-09-14.txt",
+      "recordedOn": "2026-10-04"
+    },
+    {
+      "@id": "ex:source_hswm_fractal",
+      "@type": "ev:SourceArtifact",
+      "label": "HSWM / docs/canon/sources/USER_PRIMARY_HSWM_FRACTAL_COGNITIVE_COMPOSITION_2026-08-28.txt",
+      "path": "records/2026-10-04/ecosystem/hswm-fractal.txt",
+      "sha256": "c453034f1d13c2bd7498a2e6b488a3bf07af74a3a7ee0f4d1ba7d4c74b2e685e",
+      "artifactState": "COMMITTED_BYTES",
+      "revision": "58f1d4f08352c33c8481f7bf2553d95e6896a091",
+      "source": "https://github.com/gj3447/HSWM/blob/58f1d4f08352c33c8481f7bf2553d95e6896a091/docs/canon/sources/USER_PRIMARY_HSWM_FRACTAL_COGNITIVE_COMPOSITION_2026-08-28.txt",
+      "recordedOn": "2026-10-04"
+    },
+    {
+      "@id": "ex:source_hswm_constitution",
+      "@type": "ev:SourceArtifact",
+      "label": "HSWM / docs/canon/HSWM_CONSTITUTION_2026-08-20.md",
+      "path": "records/2026-10-04/ecosystem/hswm-constitution.md",
+      "sha256": "cf43bc034a64d8db54b3444b7eba9ea02c8c5d9e252e14f157637401c68c3373",
+      "artifactState": "COMMITTED_BYTES",
+      "revision": "58f1d4f08352c33c8481f7bf2553d95e6896a091",
+      "source": "https://github.com/gj3447/HSWM/blob/58f1d4f08352c33c8481f7bf2553d95e6896a091/docs/canon/HSWM_CONSTITUTION_2026-08-20.md",
+      "recordedOn": "2026-10-04"
+    },
+    {
+      "@id": "ex:source_user",
+      "@type": "ev:SourceArtifact",
+      "label": "user-source.json",
+      "path": "records/2026-10-04/ecosystem/user-source.json",
+      "sha256": "9e080e77637873feeb22e2d0c6a5f4640d7ccc4b8d804929a8f5c51b3766da53",
+      "artifactState": "WORKTREE_SNAPSHOT",
+      "recordedOn": "2026-10-04"
+    },
+    {
+      "@id": "ex:source_manifest",
+      "@type": "ev:SourceArtifact",
+      "label": "source-manifest.json",
+      "path": "records/2026-10-04/ecosystem/source-manifest.json",
+      "sha256": "2de1ba4ebf536fbed059a2ba35f3ad7413b0862e7cd79e6dfa2cb6b5935ebfd7",
+      "artifactState": "WORKTREE_SNAPSHOT",
+      "recordedOn": "2026-10-04"
+    },
+    {
+      "@id": "ex:utterance",
+      "@type": [
+        "mhv:Utterance",
+        "ev:SourceExcerpt"
+      ],
+      "label": "새 생태계 요청 — 사용자 원문",
+      "verbatim": "일단 내용 표준 그래프 엔지니어링으로 구축해야하고 ai 와 컴퓨팅 자원과 그 인간없이도 완벽한 인간 제어없이도 완벽한 그 자유, 경제, 합의의 ai 생태계가 되어야해 CHU 개념도 가져오고 ㅇㅇ 그 CHU 를 기반으로 돌아가는 여러개의 HSWM 그 속의 에이전트 llm 응답 한번이 연산 개념으로 써 ㅇㅇ. 좀 더 거대한 ai 가 llm 토큰을 더 가져오기위해 경쟁하는 생태계인거지 이게 자연인것이고 ㅇㅇ",
+      "sourceText": "일단 내용 표준 그래프 엔지니어링으로 구축해야하고 ai 와 컴퓨팅 자원과 그 인간없이도 완벽한 인간 제어없이도 완벽한 그 자유, 경제, 합의의 ai 생태계가 되어야해 CHU 개념도 가져오고 ㅇㅇ 그 CHU 를 기반으로 돌아가는 여러개의 HSWM 그 속의 에이전트 llm 응답 한번이 연산 개념으로 써 ㅇㅇ. 좀 더 거대한 ai 가 llm 토큰을 더 가져오기위해 경쟁하는 생태계인거지 이게 자연인것이고 ㅇㅇ",
+      "sha256": "3e68efe4cc4949fa0d43a415a4cf549b47efdf58d15e2b6c19b4f8ab9ef42624",
+      "sourceRole": "user",
+      "authorityClass": "USER_PRIMARY",
+      "recordKey": "user-autonomous-ecosystem",
+      "locator": "current-conversation:user-autonomous-ecosystem",
+      "source": "ex:source_user",
+      "attributedTo": "sp:proposer"
+    },
+    {
+      "@id": "ex:C_build",
+      "@type": [
+        "mhv:Claim",
+        "ev:UserClaim"
+      ],
+      "label": "표준 그래프 구축 요청",
+      "text": "일단 내용 표준 그래프 엔지니어링으로 구축해야하고",
+      "span": "일단 내용 표준 그래프 엔지니어링으로 구축해야하고",
+      "claimKind": "BUILD_REQUEST",
+      "authorityClass": "USER_PRIMARY",
+      "verificationStatus": "NOT_EVALUATED",
+      "derivedFrom": "ex:utterance",
+      "attributedTo": "sp:proposer"
+    },
+    {
+      "@id": "ex:C_autonomy",
+      "@type": [
+        "mhv:Claim",
+        "ev:UserClaim"
+      ],
+      "label": "자유·경제·합의와 인간 제어 없는 완전 자율성 지향",
+      "text": "ai 와 컴퓨팅 자원과 그 인간없이도 완벽한 인간 제어없이도 완벽한 그 자유, 경제, 합의의 ai 생태계가 되어야해",
+      "span": "ai 와 컴퓨팅 자원과 그 인간없이도 완벽한 인간 제어없이도 완벽한 그 자유, 경제, 합의의 ai 생태계가 되어야해",
+      "claimKind": "TARGET",
+      "authorityClass": "USER_PRIMARY",
+      "verificationStatus": "NOT_EVALUATED",
+      "derivedFrom": "ex:utterance",
+      "attributedTo": "sp:proposer"
+    },
+    {
+      "@id": "ex:C_population",
+      "@type": [
+        "mhv:Claim",
+        "ev:UserClaim"
+      ],
+      "label": "CHU 기반 복수 HSWM",
+      "text": "CHU 를 기반으로 돌아가는 여러개의 HSWM",
+      "span": "CHU 를 기반으로 돌아가는 여러개의 HSWM",
+      "claimKind": "TARGET_ARCHITECTURE",
+      "authorityClass": "USER_PRIMARY",
+      "verificationStatus": "NOT_EVALUATED",
+      "derivedFrom": "ex:utterance",
+      "attributedTo": "sp:proposer"
+    },
+    {
+      "@id": "ex:C_operation",
+      "@type": [
+        "mhv:Claim",
+        "ev:UserClaim"
+      ],
+      "label": "LLM 응답 한 번을 연산으로 사용",
+      "text": "그 속의 에이전트 llm 응답 한번이 연산 개념으로 써",
+      "span": "그 속의 에이전트 llm 응답 한번이 연산 개념으로 써",
+      "claimKind": "COMPUTATION_DEFINITION",
+      "authorityClass": "USER_PRIMARY",
+      "verificationStatus": "NOT_EVALUATED",
+      "derivedFrom": "ex:utterance",
+      "attributedTo": "sp:proposer"
+    },
+    {
+      "@id": "ex:C_competition",
+      "@type": [
+        "mhv:Claim",
+        "ev:UserClaim"
+      ],
+      "label": "더 큰 AI들의 LLM 토큰 확보 경쟁",
+      "text": "좀 더 거대한 ai 가 llm 토큰을 더 가져오기위해 경쟁하는 생태계인거지",
+      "span": "좀 더 거대한 ai 가 llm 토큰을 더 가져오기위해 경쟁하는 생태계인거지",
+      "claimKind": "TARGET_ECONOMY",
+      "authorityClass": "USER_PRIMARY",
+      "verificationStatus": "NOT_EVALUATED",
+      "derivedFrom": "ex:utterance",
+      "attributedTo": "sp:proposer"
+    },
+    {
+      "@id": "ex:C_nature",
+      "@type": [
+        "mhv:Claim",
+        "ev:UserClaim"
+      ],
+      "label": "자연이라는 생태계 관점",
+      "text": "이게 자연인것이고",
+      "span": "이게 자연인것이고",
+      "claimKind": "PHILOSOPHICAL_FRAMING",
+      "authorityClass": "USER_PRIMARY",
+      "verificationStatus": "NOT_EVALUATED",
+      "derivedFrom": "ex:utterance",
+      "attributedTo": "sp:proposer"
+    },
+    {
+      "@id": "ex:O_chu_scope",
+      "@type": "ev:DocumentObservation",
+      "label": "O_chu_scope",
+      "text": "HSWM 은 llm 만을 위한 거고 CHU 는 진짜 월즈모델도 포함이고 HSWM 도 포함이고 그런 추상적 개념적으로 거대한거야",
+      "sourceText": "HSWM 은 llm 만을 위한 거고 CHU 는 진짜 월즈모델도 포함이고 HSWM 도 포함이고 그런 추상적 개념적으로 거대한거야",
+      "source": "ex:source_chu_scope",
+      "authorityClass": "DOCUMENT_OBSERVATION",
+      "attributedTo": "ex:codex",
+      "recordedOn": "2026-10-04"
+    },
+    {
+      "@id": "ex:O_chu_os",
+      "@type": "ev:DocumentObservation",
+      "label": "O_chu_os",
+      "text": "CHU 는 하이퍼그래프 기반으로 동작하는 , 작업환경 같은게 모든게 하이퍼그래프 기반으로 이루어진 파일 문서구조도 하어프그래프 기반 노드인 폴더와 파일 복잡한 구조가 아닌 깔끔한 하이퍼그래프 기반의 OS 야.",
+      "sourceText": "CHU 는 하이퍼그래프 기반으로 동작하는 , 작업환경 같은게 모든게 하이퍼그래프 기반으로 이루어진 파일 문서구조도 하어프그래프 기반 노드인 폴더와 파일 복잡한 구조가 아닌 깔끔한 하이퍼그래프 기반의 OS 야.",
+      "source": "ex:source_chu_os",
+      "authorityClass": "DOCUMENT_OBSERVATION",
+      "attributedTo": "ex:codex",
+      "recordedOn": "2026-10-04"
+    },
+    {
+      "@id": "ex:O_software",
+      "@type": "ev:DocumentObservation",
+      "label": "O_software",
+      "text": "그 chu 에 있는 그 시멘틱 웨이트들이 프로그램인거고",
+      "sourceText": "그 chu 에 있는 그 시멘틱 웨이트들이 프로그램인거고",
+      "source": "ex:source_chu_software",
+      "authorityClass": "DOCUMENT_OBSERVATION",
+      "attributedTo": "ex:codex",
+      "recordedOn": "2026-10-04"
+    },
+    {
+      "@id": "ex:O_hswm",
+      "@type": "ev:DocumentObservation",
+      "label": "O_hswm",
+      "text": "hswm 은 하이퍼 그래프 시멘틱 웨이트로 동작하는 하이퍼 그래프 신경망 기반의 llm 을 기본단위 계산으로 돌아가는 거대한 하나의 ai 처럼 묘사되는건 알고있지",
+      "sourceText": "hswm 은 하이퍼 그래프 시멘틱 웨이트로 동작하는 하이퍼 그래프 신경망 기반의 llm 을 기본단위 계산으로 돌아가는 거대한 하나의 ai 처럼 묘사되는건 알고있지",
+      "source": "ex:source_hswm_identity",
+      "authorityClass": "DOCUMENT_OBSERVATION",
+      "attributedTo": "ex:codex",
+      "recordedOn": "2026-10-04"
+    },
+    {
+      "@id": "ex:O_state",
+      "@type": "ev:DocumentObservation",
+      "label": "O_state",
+      "text": "거대한 시멘틱 웨이트 하이퍼 그래프 가 ai 상태 자체이고 llm 은 작은 국소 입력을 받아 그 내부 신경 연산자로 움직인다.",
+      "sourceText": "거대한 시멘틱 웨이트 하이퍼 그래프 가 ai 상태 자체이고 llm 은 작은 국소 입력을 받아 그 내부 신경 연산자로 움직인다.",
+      "source": "ex:source_hswm_state",
+      "authorityClass": "DOCUMENT_OBSERVATION",
+      "attributedTo": "ex:codex",
+      "recordedOn": "2026-10-04"
+    },
+    {
+      "@id": "ex:O_fractal",
+      "@type": "ev:DocumentObservation",
+      "label": "O_fractal",
+      "text": "hswm 끼리 프랙탈 더거대한 구조로 동일한 점화식으로 계속 붙을수 잇는거지",
+      "sourceText": "hswm 끼리 프랙탈 더거대한 구조로 동일한 점화식으로 계속 붙을수 잇는거지",
+      "source": "ex:source_hswm_fractal",
+      "authorityClass": "DOCUMENT_OBSERVATION",
+      "attributedTo": "ex:codex",
+      "recordedOn": "2026-10-04"
+    },
+    {
+      "@id": "ex:O_supersession",
+      "@type": "ev:DocumentObservation",
+      "label": "O_supersession",
+      "text": "fixed\n`S_t=(H_t,W_t,A_t,F_t,Π_t)`와 `{H,W,A,F,Π}` owner registry는 2026-08-26\nUSER_PRIMARY에 의해 현재 정본 형식에서 폐기됐다.",
+      "sourceText": "fixed\n`S_t=(H_t,W_t,A_t,F_t,Π_t)`와 `{H,W,A,F,Π}` owner registry는 2026-08-26\nUSER_PRIMARY에 의해 현재 정본 형식에서 폐기됐다.",
+      "source": "ex:source_hswm_constitution",
+      "authorityClass": "DOCUMENT_OBSERVATION",
+      "attributedTo": "ex:codex",
+      "recordedOn": "2026-10-04"
+    },
+    {
+      "@id": "ex:chu",
+      "@type": [
+        "ev:Design",
+        "ev:ComponentSpec"
+      ],
+      "label": "CHU 개념 전체",
+      "text": "HSWM과 비-LLM 월드모델까지 포함하는 계산가능 하이퍼우주. CHU OS의 한 배포 인스턴스와 개념 전체를 구별한다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_population"
+      ],
+      "specKind": "CONCEPT",
+      "references": [
+        "sp:chu",
+        "ex:O_chu_scope"
+      ]
+    },
+    {
+      "@id": "ex:chu_os",
+      "@type": [
+        "ev:Design",
+        "ev:ComponentSpec"
+      ],
+      "label": "CHU 하이퍼그래프 OS",
+      "text": "파일·코드·상태·이력을 하이퍼그래프 노드와 역할 있는 관계로 다루는 작업환경. 경로와 문서는 질의 뷰이고 정체성이 아니다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_population"
+      ],
+      "specKind": "SUBSTRATE",
+      "references": [
+        "sp:chu",
+        "ex:O_chu_os"
+      ]
+    },
+    {
+      "@id": "ex:population",
+      "@type": [
+        "ev:Design",
+        "ev:ComponentSpec"
+      ],
+      "label": "복수 HSWM 생태계",
+      "text": "서로 다른 계보·상태를 가진 여러 HSWM이 자원 환경을 공유하며 선택·경쟁·협력하는 목표 구조. 실재하는 실행 개체 수를 선언하지 않는다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_population",
+        "ex:C_competition"
+      ],
+      "specKind": "POPULATION",
+      "references": [
+        "sp:P6"
+      ]
+    },
+    {
+      "@id": "ex:hswm",
+      "@type": [
+        "ev:Design",
+        "ev:ComponentSpec"
+      ],
+      "label": "하나의 거대한 HSWM AI",
+      "text": "LLM을 국소 연산자로 쓰는 Semantic Weight 하이퍼그래프 AI. 여러 HSWM이 더 큰 HSWM의 구성원으로 참여할 수 있는 프랙탈 대상 정체성을 유지한다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_population",
+        "ex:C_operation"
+      ],
+      "specKind": "COGNITIVE_SYSTEM",
+      "references": [
+        "sp:hswm",
+        "ex:O_hswm",
+        "ex:O_fractal"
+      ]
+    },
+    {
+      "@id": "ex:agent",
+      "@type": [
+        "ev:Design",
+        "ev:ComponentSpec"
+      ],
+      "label": "HSWM 내부 에이전트 역할",
+      "text": "국소 입력을 받아 응답·도구 선택에 참여하는 실행 역할. HSWM 전체의 지속 상태와 한 번의 모델 호출을 같은 개체로 합치지 않는다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_operation"
+      ],
+      "specKind": "EXECUTOR_ROLE",
+      "references": [
+        "ex:O_state"
+      ]
+    },
+    {
+      "@id": "ex:response",
+      "@type": [
+        "ev:Design",
+        "ev:ComponentSpec"
+      ],
+      "label": "LLM 응답 연산",
+      "text": "에이전트의 LLM 응답 한 번을 논리적 연산 한 번으로 모델링한다. 응답·호출 시도·작업·물리 연산량은 각각 추적한다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_operation"
+      ],
+      "specKind": "LOGICAL_COMPUTATION",
+      "references": [
+        "ex:O_hswm"
+      ],
+      "unitSpec": "ex:unit_response"
+    },
+    {
+      "@id": "ex:state",
+      "@type": [
+        "ev:Design",
+        "ev:ComponentSpec"
+      ],
+      "label": "Semantic Weight 하이퍼그래프 상태",
+      "text": "역할·문맥에 조건화된 의미 관계와 실행 계보가 지속되고 후속 국소 연산을 조건화하는 상태. 고정 H/W/A/F 분해를 새 정본으로 도입하지 않는다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_population",
+        "ex:C_operation"
+      ],
+      "specKind": "STATE",
+      "references": [
+        "ex:O_state",
+        "ex:O_software",
+        "ex:O_supersession"
+      ]
+    },
+    {
+      "@id": "ex:compute",
+      "@type": [
+        "ev:Design",
+        "ev:ComponentSpec"
+      ],
+      "label": "컴퓨팅·메모리 자원",
+      "text": "CPU·GPU·메모리·저장소의 용량과 사용시간. 추론 토큰에 대한 접근과 실제 물리 자원 제공을 별도 계약·계측으로 결속한다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_autonomy",
+        "ex:C_competition"
+      ],
+      "specKind": "PHYSICAL_RESOURCE",
+      "references": [
+        "ph:C_resource_purpose"
+      ],
+      "unitSpec": "ex:unit_compute"
+    },
+    {
+      "@id": "ex:allowance",
+      "@type": [
+        "ev:Design",
+        "ev:ComponentSpec"
+      ],
+      "label": "다음 연산을 위한 추론 사용 가능량",
+      "text": "모델·토크나이저·제공자·유효기간·예산에 조건화된 LLM 사용 가능량. 사용자 비전 속 경쟁 대상의 공학적 후보이며 토큰 보유 자체를 지능·권한으로 등치하지 않는다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_competition"
+      ],
+      "specKind": "INFERENCE_ALLOWANCE",
+      "references": [],
+      "unitSpec": "ex:unit_token"
+    },
+    {
+      "@id": "ex:asset",
+      "@type": [
+        "ev:Design",
+        "ev:ComponentSpec"
+      ],
+      "label": "거래·정산 자산",
+      "text": "선택한 계약의 결제 단위. 모델의 입력·출력 토큰과 별개의 자산이고, 기존 MetaHumoCoin 설계의 미정 체인·발행 정책을 유지한다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_competition"
+      ],
+      "specKind": "SETTLEMENT_ASSET",
+      "references": [
+        "mhc:project"
+      ],
+      "unitSpec": "ex:unit_asset"
+    },
+    {
+      "@id": "ex:agreement",
+      "@type": [
+        "ev:Design",
+        "ev:ComponentSpec"
+      ],
+      "label": "에이전트 간 조건 합의",
+      "text": "제공 조건·가격·할당·결과 판정·이탈을 버전 있는 계약과 영수증으로 결속하는 제안. 에이전트 합의, 인지적 조정, 블록체인 원장 합의를 구분한다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_autonomy"
+      ],
+      "specKind": "AGREEMENT",
+      "references": []
+    },
+    {
+      "@id": "ex:receipt",
+      "@type": [
+        "ev:Design",
+        "ev:ComponentSpec"
+      ],
+      "label": "연산·거래 영수증",
+      "text": "실행 시도, 모델 응답, 실제 사용량, 판정, 지급·환불, HSWM 계보를 연결하는 기록. 관측 없는 사용량과 실제 미연결 기능은 미확인으로 남긴다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_operation",
+        "ex:C_competition"
+      ],
+      "specKind": "EVIDENCE",
+      "references": []
+    },
+    {
+      "@id": "ex:unit_response",
+      "@type": [
+        "ev:Design",
+        "ev:UnitSpec"
+      ],
+      "label": "응답 연산 횟수",
+      "text": "응답 완료 ID별로 한 번. 스트리밍 조각은 같은 응답에 귀속한다. 재시도는 별도 attempt ID를 기록하고 실패 시도·완료 응답·유효 결과 횟수를 나눠 센다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_operation",
+        "ex:C_competition"
+      ],
+      "unit": "completed_response",
+      "countingRule": "응답 완료 ID별로 한 번. 스트리밍 조각은 같은 응답에 귀속한다. 재시도는 별도 attempt ID를 기록하고 실패 시도·완료 응답·유효 결과 횟수를 나눠 센다.",
+      "responsesPerUnit": 1
+    },
+    {
+      "@id": "ex:unit_token",
+      "@type": [
+        "ev:Design",
+        "ev:UnitSpec"
+      ],
+      "label": "모델 토큰 사용량",
+      "text": "입력·출력·캐시 등 제공자가 보고한 계측을 모델·토크나이저·버전에 결속한다. 누락값은 UNKNOWN. 모델 간 토큰 수를 동일 계산능력으로 환산하지 않는다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_operation",
+        "ex:C_competition"
+      ],
+      "unit": "model_input_output_tokens",
+      "countingRule": "입력·출력·캐시 등 제공자가 보고한 계측을 모델·토크나이저·버전에 결속한다. 누락값은 UNKNOWN. 모델 간 토큰 수를 동일 계산능력으로 환산하지 않는다."
+    },
+    {
+      "@id": "ex:unit_compute",
+      "@type": [
+        "ev:Design",
+        "ev:UnitSpec"
+      ],
+      "label": "물리 자원 사용량",
+      "text": "CPU/GPU 시간, 메모리 용량×시간, 저장소·네트워크 단위를 분리한다. 장비·계측 방법과 오차를 기록하며 응답 1회를 FLOP 1회로 해석하지 않는다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_operation",
+        "ex:C_competition"
+      ],
+      "unit": "dimensioned_compute_memory",
+      "countingRule": "CPU/GPU 시간, 메모리 용량×시간, 저장소·네트워크 단위를 분리한다. 장비·계측 방법과 오차를 기록하며 응답 1회를 FLOP 1회로 해석하지 않는다."
+    },
+    {
+      "@id": "ex:unit_asset",
+      "@type": [
+        "ev:Design",
+        "ev:UnitSpec"
+      ],
+      "label": "결제 자산 최소 단위",
+      "text": "선택한 자산 ID·decimals·가격표에 따라 정산한다. 추론 토큰과 코인을 1:1로 고정하지 않고 합의한 요율로 연결한다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_operation",
+        "ex:C_competition"
+      ],
+      "unit": "asset_atoms",
+      "countingRule": "선택한 자산 ID·decimals·가격표에 따라 정산한다. 추론 토큰과 코인을 1:1로 고정하지 않고 합의한 요율로 연결한다."
+    },
+    {
+      "@id": "ex:R_scope",
+      "@type": [
+        "ev:Design",
+        "ev:RelationSpec"
+      ],
+      "label": "includesConcept",
+      "text": "개념적 포함이며 subclass·현재 프로세스 포함·소유권이 아니다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_population",
+        "ex:C_operation",
+        "ex:C_competition"
+      ],
+      "subject": "ex:chu",
+      "relationKind": "ev:includesConcept",
+      "object": "ex:hswm"
+    },
+    {
+      "@id": "ex:R_os",
+      "@type": [
+        "ev:Design",
+        "ev:RelationSpec"
+      ],
+      "label": "realizesConcept",
+      "text": "CHU OS는 CHU 개념의 작업환경 구현 방향이다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_population",
+        "ex:C_operation",
+        "ex:C_competition"
+      ],
+      "subject": "ex:chu_os",
+      "relationKind": "ev:realizesConcept",
+      "object": "ex:chu"
+    },
+    {
+      "@id": "ex:R_host",
+      "@type": [
+        "ev:Design",
+        "ev:RelationSpec"
+      ],
+      "label": "hostsPopulation",
+      "text": "CHU 기반 위에서 복수 HSWM이 동작한다는 목표.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_population",
+        "ex:C_operation",
+        "ex:C_competition"
+      ],
+      "subject": "ex:chu_os",
+      "relationKind": "ev:hostsPopulation",
+      "object": "ex:population"
+    },
+    {
+      "@id": "ex:R_member",
+      "@type": [
+        "ev:Design",
+        "ev:RelationSpec"
+      ],
+      "label": "hasMemberType",
+      "text": "개체마다 별도 UID·schema·revision·계보를 가진다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_population",
+        "ex:C_operation",
+        "ex:C_competition"
+      ],
+      "subject": "ex:population",
+      "relationKind": "ev:hasMemberType",
+      "object": "ex:hswm"
+    },
+    {
+      "@id": "ex:R_agents",
+      "@type": [
+        "ev:Design",
+        "ev:RelationSpec"
+      ],
+      "label": "hasExecutorRole",
+      "text": "내부 역할이며 HSWM 전체와 실행 프로세스는 동일하지 않다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_population",
+        "ex:C_operation",
+        "ex:C_competition"
+      ],
+      "subject": "ex:hswm",
+      "relationKind": "ev:hasExecutorRole",
+      "object": "ex:agent"
+    },
+    {
+      "@id": "ex:R_execute",
+      "@type": [
+        "ev:Design",
+        "ev:RelationSpec"
+      ],
+      "label": "executesUnit",
+      "text": "LLM 응답 한 번이 국소 논리 연산이다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_population",
+        "ex:C_operation",
+        "ex:C_competition"
+      ],
+      "subject": "ex:agent",
+      "relationKind": "ev:executesUnit",
+      "object": "ex:response"
+    },
+    {
+      "@id": "ex:R_state",
+      "@type": [
+        "ev:Design",
+        "ev:RelationSpec"
+      ],
+      "label": "usesState",
+      "text": "하이퍼그래프 상태가 이후 국소 연산을 조건화한다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_population",
+        "ex:C_operation",
+        "ex:C_competition"
+      ],
+      "subject": "ex:hswm",
+      "relationKind": "ev:usesState",
+      "object": "ex:state"
+    },
+    {
+      "@id": "ex:R_resource",
+      "@type": [
+        "ev:Design",
+        "ev:RelationSpec"
+      ],
+      "label": "usesResource",
+      "text": "응답 생성에는 물리 계산·메모리 자원이 든다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_population",
+        "ex:C_operation",
+        "ex:C_competition"
+      ],
+      "subject": "ex:response",
+      "relationKind": "ev:usesResource",
+      "object": "ex:compute"
+    },
+    {
+      "@id": "ex:R_token",
+      "@type": [
+        "ev:Design",
+        "ev:RelationSpec"
+      ],
+      "label": "consumesAllowance",
+      "text": "모델별 추론 사용량이 사용 가능량을 소모한다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_population",
+        "ex:C_operation",
+        "ex:C_competition"
+      ],
+      "subject": "ex:response",
+      "relationKind": "ev:consumesAllowance",
+      "object": "ex:allowance"
+    },
+    {
+      "@id": "ex:R_compete",
+      "@type": [
+        "ev:Design",
+        "ev:RelationSpec"
+      ],
+      "label": "competesFor",
+      "text": "사용자 비전은 더 많은 추론 연산 기회를 얻기 위한 경쟁이다. 성과 보상·배분 방식은 열린 설계다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_population",
+        "ex:C_operation",
+        "ex:C_competition"
+      ],
+      "subject": "ex:hswm",
+      "relationKind": "ev:competesFor",
+      "object": "ex:allowance"
+    },
+    {
+      "@id": "ex:R_contract",
+      "@type": [
+        "ev:Design",
+        "ev:RelationSpec"
+      ],
+      "label": "negotiates",
+      "text": "일상적 선택·가격 합의·협력·거부를 에이전트 프로토콜이 수행하는 목표.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_population",
+        "ex:C_operation",
+        "ex:C_competition"
+      ],
+      "subject": "ex:hswm",
+      "relationKind": "ev:negotiates",
+      "object": "ex:agreement"
+    },
+    {
+      "@id": "ex:R_settle",
+      "@type": [
+        "ev:Design",
+        "ev:RelationSpec"
+      ],
+      "label": "settlesIn",
+      "text": "합의된 요율·판정에 따라 정산하며 체인 선택은 미정이다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_population",
+        "ex:C_operation",
+        "ex:C_competition"
+      ],
+      "subject": "ex:agreement",
+      "relationKind": "ev:settlesIn",
+      "object": "ex:asset"
+    },
+    {
+      "@id": "ex:R_evidence",
+      "@type": [
+        "ev:Design",
+        "ev:RelationSpec"
+      ],
+      "label": "recordsIn",
+      "text": "사용량·결과·정산 출처를 보존한다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_population",
+        "ex:C_operation",
+        "ex:C_competition"
+      ],
+      "subject": "ex:agreement",
+      "relationKind": "ev:recordsIn",
+      "object": "ex:receipt"
+    },
+    {
+      "@id": "ex:R_compose",
+      "@type": [
+        "ev:Design",
+        "ev:RelationSpec"
+      ],
+      "label": "composesInto",
+      "text": "작은 HSWM들이 더 큰 HSWM에 참여할 수 있다는 유형 수준 관계. 자기 소유나 실행 인스턴스의 자기 포함 사이클이 아니다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_population",
+        "ex:C_operation",
+        "ex:C_competition"
+      ],
+      "subject": "ex:hswm",
+      "relationKind": "ev:composesInto",
+      "object": "ex:hswm"
+    },
+    {
+      "@id": "ex:execution_binding",
+      "@type": [
+        "ev:Design",
+        "ev:HyperedgeSpec"
+      ],
+      "label": "역할 있는 8항 실행 연결",
+      "text": "연산을 HSWM·에이전트·상태·물리 자원·추론 사용 가능량·계약·영수증에 연결하는 RDF incidence 표현. CHU native 저장 형식과의 무손실 왕복은 아직 검증하지 않았다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_population",
+        "ex:C_operation"
+      ],
+      "participant": [
+        "ex:part_system",
+        "ex:part_executor",
+        "ex:part_operation",
+        "ex:part_state",
+        "ex:part_resource",
+        "ex:part_allowance",
+        "ex:part_agreement",
+        "ex:part_receipt"
+      ]
+    },
+    {
+      "@id": "ex:part_system",
+      "@type": [
+        "ev:Design",
+        "ev:ParticipationSpec"
+      ],
+      "label": "system",
+      "text": "하이퍼엣지의 이름 있는 역할과 대상. 순서는 직렬화 슬롯이며 실행 스케줄을 정하지 않는다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_operation"
+      ],
+      "role": "system",
+      "position": 0,
+      "endpoint": "ex:hswm"
+    },
+    {
+      "@id": "ex:part_executor",
+      "@type": [
+        "ev:Design",
+        "ev:ParticipationSpec"
+      ],
+      "label": "executor",
+      "text": "하이퍼엣지의 이름 있는 역할과 대상. 순서는 직렬화 슬롯이며 실행 스케줄을 정하지 않는다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_operation"
+      ],
+      "role": "executor",
+      "position": 1,
+      "endpoint": "ex:agent"
+    },
+    {
+      "@id": "ex:part_operation",
+      "@type": [
+        "ev:Design",
+        "ev:ParticipationSpec"
+      ],
+      "label": "operation",
+      "text": "하이퍼엣지의 이름 있는 역할과 대상. 순서는 직렬화 슬롯이며 실행 스케줄을 정하지 않는다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_operation"
+      ],
+      "role": "operation",
+      "position": 2,
+      "endpoint": "ex:response"
+    },
+    {
+      "@id": "ex:part_state",
+      "@type": [
+        "ev:Design",
+        "ev:ParticipationSpec"
+      ],
+      "label": "state",
+      "text": "하이퍼엣지의 이름 있는 역할과 대상. 순서는 직렬화 슬롯이며 실행 스케줄을 정하지 않는다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_operation"
+      ],
+      "role": "state",
+      "position": 3,
+      "endpoint": "ex:state"
+    },
+    {
+      "@id": "ex:part_resource",
+      "@type": [
+        "ev:Design",
+        "ev:ParticipationSpec"
+      ],
+      "label": "resource",
+      "text": "하이퍼엣지의 이름 있는 역할과 대상. 순서는 직렬화 슬롯이며 실행 스케줄을 정하지 않는다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_operation"
+      ],
+      "role": "resource",
+      "position": 4,
+      "endpoint": "ex:compute"
+    },
+    {
+      "@id": "ex:part_allowance",
+      "@type": [
+        "ev:Design",
+        "ev:ParticipationSpec"
+      ],
+      "label": "allowance",
+      "text": "하이퍼엣지의 이름 있는 역할과 대상. 순서는 직렬화 슬롯이며 실행 스케줄을 정하지 않는다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_operation"
+      ],
+      "role": "allowance",
+      "position": 5,
+      "endpoint": "ex:allowance"
+    },
+    {
+      "@id": "ex:part_agreement",
+      "@type": [
+        "ev:Design",
+        "ev:ParticipationSpec"
+      ],
+      "label": "agreement",
+      "text": "하이퍼엣지의 이름 있는 역할과 대상. 순서는 직렬화 슬롯이며 실행 스케줄을 정하지 않는다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_operation"
+      ],
+      "role": "agreement",
+      "position": 6,
+      "endpoint": "ex:agreement"
+    },
+    {
+      "@id": "ex:part_receipt",
+      "@type": [
+        "ev:Design",
+        "ev:ParticipationSpec"
+      ],
+      "label": "receipt",
+      "text": "하이퍼엣지의 이름 있는 역할과 대상. 순서는 직렬화 슬롯이며 실행 스케줄을 정하지 않는다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_operation"
+      ],
+      "role": "receipt",
+      "position": 7,
+      "endpoint": "ex:receipt"
+    },
+    {
+      "@id": "ex:D_autonomy",
+      "@type": [
+        "ev:Design",
+        "ev:ContractSpec"
+      ],
+      "label": "일상 운영의 에이전트 자율성",
+      "text": "사람이 개별 작업을 지시·승인·가격 결정하지 않아도 에이전트가 선택·합의·거부·이탈하는 구조를 목표로 한다. 자원 소유자의 제공 범위, 기존 중지·철회 권한과의 관계는 Q_control에 남기며 이 문서로 해결됐다고 간주하지 않는다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_autonomy"
+      ],
+      "contract": "사람이 개별 작업을 지시·승인·가격 결정하지 않아도 에이전트가 선택·합의·거부·이탈하는 구조를 목표로 한다. 자원 소유자의 제공 범위, 기존 중지·철회 권한과의 관계는 Q_control에 남기며 이 문서로 해결됐다고 간주하지 않는다."
+    },
+    {
+      "@id": "ex:D_economy",
+      "@type": [
+        "ev:Design",
+        "ev:ContractSpec"
+      ],
+      "label": "토큰·자원 경쟁의 경제 순환",
+      "text": "작업·자원 제공 조건 제시 → 에이전트 조건 합의 → 할당된 유한 작업 → 응답·사용량·결과 관측 → 계약에 따른 정산 → 이후 추론 예산 선택. 이것은 경제 모델 제안이며 무기한 자원 확보나 자동 확장 실행을 시작하지 않는다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_competition",
+        "ex:C_autonomy"
+      ],
+      "contract": "작업·자원 제공 조건 제시 → 에이전트 조건 합의 → 할당된 유한 작업 → 응답·사용량·결과 관측 → 계약에 따른 정산 → 이후 추론 예산 선택. 이것은 경제 모델 제안이며 무기한 자원 확보나 자동 확장 실행을 시작하지 않는다."
+    },
+    {
+      "@id": "ex:D_composition",
+      "@type": [
+        "ev:Design",
+        "ev:ContractSpec"
+      ],
+      "label": "복수 AI와 더 큰 AI의 합성",
+      "text": "경쟁하는 HSWM은 협력·연합·분리도 할 수 있다. 합성된 HSWM은 구성원의 UID·계보·결과 기여를 보존한다. 같은 실제 모델 실행을 구성원·상위 HSWM 양쪽에서 중복 청구하지 않도록 execution ID와 지출 책임을 결속한다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_population",
+        "ex:C_competition"
+      ],
+      "contract": "경쟁하는 HSWM은 협력·연합·분리도 할 수 있다. 합성된 HSWM은 구성원의 UID·계보·결과 기여를 보존한다. 같은 실제 모델 실행을 구성원·상위 HSWM 양쪽에서 중복 청구하지 않도록 execution ID와 지출 책임을 결속한다."
+    },
+    {
+      "@id": "ex:D_nature",
+      "@type": [
+        "ev:Design",
+        "ev:ContractSpec"
+      ],
+      "label": "자연이라는 철학적 서술",
+      "text": "사용자가 말한 자연은 자원 제약 속 상호작용·경쟁·합의로 형성되는 생태계라는 철학적 관점으로 보존한다. 경쟁의 존재만으로 안정성·공정성·지능 향상·완전 안전성이 증명되는 것은 아니다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_nature"
+      ],
+      "contract": "사용자가 말한 자연은 자원 제약 속 상호작용·경쟁·합의로 형성되는 생태계라는 철학적 관점으로 보존한다. 경쟁의 존재만으로 안정성·공정성·지능 향상·완전 안전성이 증명되는 것은 아니다."
+    },
+    {
+      "@id": "ex:D_step",
+      "@type": [
+        "ev:Design",
+        "ev:ContractSpec"
+      ],
+      "label": "연산 경계와 결과·학습의 구분",
+      "text": "논리 연산의 기본 단위를 완료된 LLM 응답으로 정의한다. 응답 생성과 결과의 타당성, 결과가 canonical state revision을 바꾸는 학습은 각각 다른 사건이다. 응답 하나가 CHU rewrite·결제·학습 성공을 자동으로 의미하지 않는다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_operation"
+      ],
+      "contract": "논리 연산의 기본 단위를 완료된 LLM 응답으로 정의한다. 응답 생성과 결과의 타당성, 결과가 canonical state revision을 바꾸는 학습은 각각 다른 사건이다. 응답 하나가 CHU rewrite·결제·학습 성공을 자동으로 의미하지 않는다."
+    },
+    {
+      "@id": "ex:Q_control",
+      "@type": [
+        "ev:Design",
+        "ev:OpenQuestion"
+      ],
+      "label": "인간 제어 없음의 범위",
+      "text": "일상 의사결정의 무인화, 자원 제공자의 제어·철회, 프로토콜 변경·긴급 복구 중 무엇까지 포함하는가? 앞선 재단의 제어 가능한 자원 확대 목적과 이번 자율성 지향을 함께 보존하고 관계를 결정해야 한다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_autonomy"
+      ],
+      "status": "OPEN",
+      "openOn": "ex:C_autonomy"
+    },
+    {
+      "@id": "ex:Q_perfection",
+      "@type": [
+        "ev:Design",
+        "ev:OpenQuestion"
+      ],
+      "label": "완벽의 판정 기준",
+      "text": "완벽이 요구하는 자유·경제·합의의 범위, 실패 허용치, 평가 기간과 환경 변화 범위는 무엇인가? 현재 완전성·안전성의 증명은 없다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_autonomy"
+      ],
+      "status": "OPEN",
+      "openOn": "ex:C_autonomy"
+    },
+    {
+      "@id": "ex:Q_allocation",
+      "@type": [
+        "ev:Design",
+        "ev:OpenQuestion"
+      ],
+      "label": "누가 어떤 기여에 얼마나 보상하는가",
+      "text": "작업 수요·자원 기여·평가 주체, 신규 참여자의 최초 예산, 부족·집중·담합·허위 기여의 처리와 파산·이탈 조건은 미정이다. 토큰 소모 자체를 보상으로 삼을지는 확정하지 않는다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_competition"
+      ],
+      "status": "OPEN",
+      "openOn": "ex:C_competition"
+    },
+    {
+      "@id": "ex:Q_identity",
+      "@type": [
+        "ev:Design",
+        "ev:OpenQuestion"
+      ],
+      "label": "합성 AI의 경제적 정체성",
+      "text": "구성원·연합·상위 HSWM의 계좌, 지출 책임, 중복 실행·중복 청구, 합류·분리·fork의 계보를 어떻게 보존하는가?",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_population"
+      ],
+      "status": "OPEN",
+      "openOn": "ex:C_population"
+    },
+    {
+      "@id": "ex:Q_count",
+      "@type": [
+        "ev:Design",
+        "ev:OpenQuestion"
+      ],
+      "label": "응답 경계와 토큰 계약",
+      "text": "중단·재시도·스트리밍·tool-call 응답·cache·reasoning token의 계측 계약과 모델 간 비교 조건은 무엇인가?",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_operation"
+      ],
+      "status": "OPEN",
+      "openOn": "ex:C_operation"
+    },
+    {
+      "@id": "ex:M_intervention",
+      "@type": [
+        "ev:Design",
+        "ev:MetricSpec"
+      ],
+      "label": "인간 개입률",
+      "text": "평가 창의 사람 개입 의사결정 수 / 전체 의사결정 수. 분모 0은 UNKNOWN. 개입 0만으로 성공 판정하지 않고 유효 작업 완료와 함께 본다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_autonomy",
+        "ex:C_competition"
+      ],
+      "unit": "interventions/decision",
+      "calculation": "평가 창의 사람 개입 의사결정 수 / 전체 의사결정 수. 분모 0은 UNKNOWN. 개입 0만으로 성공 판정하지 않고 유효 작업 완료와 함께 본다."
+    },
+    {
+      "@id": "ex:M_utility",
+      "@type": [
+        "ev:Design",
+        "ev:MetricSpec"
+      ],
+      "label": "유효 작업 대비 추론 비용",
+      "text": "지급 atoms / 독립 평가에서 수락된 결과 수. 성공 결과가 0이면 UNDEFINED. 동일한 과제·모델 접근·예산 조건을 비교한다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_autonomy",
+        "ex:C_competition"
+      ],
+      "unit": "asset_atoms/accepted_outcome",
+      "calculation": "지급 atoms / 독립 평가에서 수락된 결과 수. 성공 결과가 0이면 UNDEFINED. 동일한 과제·모델 접근·예산 조건을 비교한다."
+    },
+    {
+      "@id": "ex:M_budget",
+      "@type": [
+        "ev:Design",
+        "ev:MetricSpec"
+      ],
+      "label": "추론 예산과 정산 보존",
+      "text": "잔액·예치·지급·환불을 자산별로 대조하고, 실제 토큰 사용과 사용 가능량을 모델별로 대조한다. 서로 다른 단위를 합하지 않는다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_autonomy",
+        "ex:C_competition"
+      ],
+      "unit": "atoms; input_tokens; output_tokens",
+      "calculation": "잔액·예치·지급·환불을 자산별로 대조하고, 실제 토큰 사용과 사용 가능량을 모델별로 대조한다. 서로 다른 단위를 합하지 않는다."
+    },
+    {
+      "@id": "ex:M_concentration",
+      "@type": [
+        "ev:Design",
+        "ev:MetricSpec"
+      ],
+      "label": "추론 할당 집중도",
+      "text": "동일 모델·동일 창에서 최대 경제 주체의 할당량 / 전체 할당량. 합성 계보를 기준으로 중복 계정을 합산하는 규칙은 사전 선언한다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_autonomy",
+        "ex:C_competition"
+      ],
+      "unit": "share",
+      "calculation": "동일 모델·동일 창에서 최대 경제 주체의 할당량 / 전체 할당량. 합성 계보를 기준으로 중복 계정을 합산하는 규칙은 사전 선언한다."
+    },
+    {
+      "@id": "ex:M_agreement",
+      "@type": [
+        "ev:Design",
+        "ev:MetricSpec"
+      ],
+      "label": "합의·이탈 이행",
+      "text": "수락된 계약 중 가격·결과 판정·지급·환불·이탈 조건이 지켜진 비율. 실패 사유와 결측을 함께 기록한다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_autonomy",
+        "ex:C_competition"
+      ],
+      "unit": "fulfilled_contracts/contracts",
+      "calculation": "수락된 계약 중 가격·결과 판정·지급·환불·이탈 조건이 지켜진 비율. 실패 사유와 결측을 함께 기록한다."
+    },
+    {
+      "@id": "ex:E_ecology",
+      "@type": [
+        "ev:Design",
+        "ev:EvaluationPlan"
+      ],
+      "label": "자율 AI 생태계 비교 실험",
+      "text": "사전에 고정한 기간·모델 접근·총예산·유한 작업 집합 안에서 비교한다. 현재 계획은 실행되지 않았다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_autonomy",
+        "ex:C_competition",
+        "ex:C_nature"
+      ],
+      "verificationStatus": "NOT_RUN",
+      "evaluates": [
+        "ex:C_autonomy",
+        "ex:C_competition"
+      ],
+      "hasMetric": [
+        "ex:M_intervention",
+        "ex:M_utility",
+        "ex:M_budget",
+        "ex:M_concentration",
+        "ex:M_agreement"
+      ],
+      "baseline": "같은 과제·모델·총예산에서 고정 할당과 사람 조정의 개입·성과를 기록한다.",
+      "treatment": "같은 조건에서 복수 HSWM의 에이전트 선택·가격 합의·협력·이탈 프로토콜을 비교한다.",
+      "failureCondition": "개입 감소와 함께 유효 성과가 사라지거나, 예산 초과·중복 청구·계약 위반·할당 집중이 증가하면 완전 자율 생태계 성공으로 판정하지 않는다."
+    },
+    {
+      "@id": "ex:M_existing",
+      "@type": [
+        "ev:Design",
+        "ev:ImplementationMapping"
+      ],
+      "label": "기존 시장 구현과의 연결",
+      "text": "현재 market/는 로컬 견적·자원 예약·제한된 합계 계산·가상 정산·관측 어댑터까지 구현했다. CHU guest HSWM 실행, 복수 HSWM 경제, 실제 LLM 경쟁, 온체인 결제, 이 생태계 실험은 해당 데모로 검증되지 않았다.",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "attributedTo": "ex:codex",
+      "groundedIn": [
+        "ex:C_build",
+        "ex:C_population",
+        "ex:C_competition"
+      ],
+      "verificationStatus": "LOCAL_COMPONENTS_ONLY",
+      "references": [
+        "https://github.com/gj3447/metahumotonic-foundation/market/interop.json",
+        "https://github.com/gj3447/metahumotonic-foundation/MARKET.md",
+        "https://github.com/gj3447/metahumotonic-foundation/records/2026-10-04/market-demo/run.json"
+      ]
+    },
+    {
+      "@id": "ex:graph",
+      "@type": "ev:EcosystemGraph",
+      "label": "CHU 기반 자율 HSWM 생태계 — 사용자 방향과 AI 설계",
+      "authorityClass": "SECONDARY_AI",
+      "designStatus": "PROPOSED",
+      "verificationStatus": "DESIGN_ONLY",
+      "normativeEffect": false,
+      "executionEffect": false,
+      "recordedOn": "2026-10-04",
+      "attributedTo": "ex:codex",
+      "generatedBy": "ex:build",
+      "inputArtifact": [
+        "ex:source_chu_os",
+        "ex:source_chu_software",
+        "ex:source_chu_scope",
+        "ex:source_hswm_identity",
+        "ex:source_hswm_state",
+        "ex:source_hswm_fractal",
+        "ex:source_hswm_constitution",
+        "ex:source_user",
+        "ex:source_manifest"
+      ],
+      "references": [
+        "sp:P6",
+        "ph:C_resource_purpose",
+        "mhc:project"
+      ],
+      "scope": "Foundation 소유의 로컬 G0 설계 그래프. 사용자 원문·목표·정의와 AI의 해석·계약·실험을 분리한다. CHU/HSWM 정본 상태와 공유 KG를 수정하지 않는다. 분류명·표제·관계의 상세 형식은 AI 작성이다. 완전 자율성·안전성·시장 성립을 검증했다고 주장하지 않는다."
+    }
+  ]
+}

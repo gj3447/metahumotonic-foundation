@@ -1,0 +1,65 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix mhv:  <https://github.com/gj3447/metahumotonic-foundation/vocab#> .
+
+# Proposed reference vocabulary for a simulated resource-to-settlement flow.
+# It declares no deployed network, token supply, minting, or payment rail.
+
+mhv:CurrencyDesign a rdfs:Class ;
+  rdfs:comment "A proposed denomination design; not a claim that a currency is deployed." .
+mhv:Participant a rdfs:Class .
+mhv:ResourceOffer a rdfs:Class .
+mhv:BilateralAgreement a rdfs:Class .
+mhv:PartyAssent a rdfs:Class .
+mhv:WorkExecution a rdfs:Class .
+mhv:UsageObservation a rdfs:Class ;
+  rdfs:comment "A meter report. It does not establish result truth." .
+mhv:ResultEvidence a rdfs:Class ;
+  rdfs:comment "An explicit result-status record. Its status is separate from metering and settlement." .
+mhv:SettlementReceipt a rdfs:Class ;
+  rdfs:comment "A simulated accounting receipt, not evidence of a blockchain payment." .
+
+mhv:offeredBy a rdf:Property ; rdfs:domain mhv:ResourceOffer ; rdfs:range mhv:Participant ;
+  rdfs:comment "offer -> provider; exactly one provider per offer." .
+mhv:forOffer a rdf:Property ; rdfs:domain mhv:BilateralAgreement ; rdfs:range mhv:ResourceOffer ;
+  rdfs:comment "agreement -> offer; exactly one offer per agreement." .
+mhv:requestedBy a rdf:Property ; rdfs:domain mhv:BilateralAgreement ; rdfs:range mhv:Participant ;
+  rdfs:comment "agreement -> requester; exactly one requester." .
+mhv:providedBy a rdf:Property ; rdfs:domain mhv:BilateralAgreement ; rdfs:range mhv:Participant ;
+  rdfs:comment "agreement -> provider; exactly one provider." .
+mhv:hasAssent a rdf:Property ; rdfs:domain mhv:BilateralAgreement ; rdfs:range mhv:PartyAssent ;
+  rdfs:comment "agreement -> assent; one accepted assent from each party is required." .
+mhv:assentsTo a rdf:Property ; rdfs:domain mhv:PartyAssent ; rdfs:range mhv:BilateralAgreement .
+mhv:assentingParty a rdf:Property ; rdfs:domain mhv:PartyAssent ; rdfs:range mhv:Participant .
+mhv:hasExecution a rdf:Property ; rdfs:domain mhv:BilateralAgreement ; rdfs:range mhv:WorkExecution .
+mhv:hasUsage a rdf:Property ; rdfs:domain mhv:WorkExecution ; rdfs:range mhv:UsageObservation .
+mhv:hasResultEvidence a rdf:Property ; rdfs:domain mhv:WorkExecution ; rdfs:range mhv:ResultEvidence .
+mhv:settlesAgreement a rdf:Property ; rdfs:domain mhv:SettlementReceipt ; rdfs:range mhv:BilateralAgreement .
+mhv:basedOnUsage a rdf:Property ; rdfs:domain mhv:SettlementReceipt ; rdfs:range mhv:UsageObservation .
+mhv:denominatedIn a rdf:Property ; rdfs:domain mhv:SettlementReceipt ; rdfs:range mhv:CurrencyDesign .
+mhv:agreedCurrency a rdf:Property ; rdfs:domain mhv:BilateralAgreement ; rdfs:range mhv:CurrencyDesign .
+mhv:agreedUnit a rdf:Property ; rdfs:domain mhv:BilateralAgreement ; rdfs:range rdfs:Resource .
+mhv:observedUnit a rdf:Property ; rdfs:domain mhv:UsageObservation ; rdfs:range rdfs:Resource .
+mhv:acceptedBy a rdf:Property ; rdfs:range mhv:Participant ;
+  rdfs:comment "An explicit acceptance actor; it is not proof that a result is true." .
+
+mhv:agreementVersion a rdf:Property ; rdfs:domain mhv:BilateralAgreement ; rdfs:range xsd:string .
+mhv:acceptedVersion a rdf:Property ; rdfs:domain mhv:PartyAssent ; rdfs:range xsd:string .
+mhv:assentStatus a rdf:Property ; rdfs:domain mhv:PartyAssent ; rdfs:range rdfs:Resource .
+mhv:usageStatus a rdf:Property ; rdfs:domain mhv:UsageObservation ; rdfs:range rdfs:Resource .
+mhv:resultStatus a rdf:Property ; rdfs:domain mhv:ResultEvidence ; rdfs:range rdfs:Resource .
+mhv:simulationStatus a rdf:Property ; rdfs:range rdfs:Resource ;
+  rdfs:comment "Runtime-like examples must explicitly be SIMULATED." .
+mhv:designStatus a rdf:Property ; rdfs:domain mhv:CurrencyDesign ; rdfs:range rdfs:Resource ;
+  rdfs:comment "A currency-design lifecycle marker, not a deployment assertion." .
+mhv:meteredUnits a rdf:Property ; rdfs:domain mhv:UsageObservation ; rdfs:range xsd:decimal .
+mhv:agreedUnitPrice a rdf:Property ; rdfs:domain mhv:BilateralAgreement ; rdfs:range xsd:decimal .
+mhv:settlementAmount a rdf:Property ; rdfs:domain mhv:SettlementReceipt ; rdfs:range xsd:decimal .
+mhv:settlementId a rdf:Property ; rdfs:domain mhv:SettlementReceipt ; rdfs:range xsd:string .
+mhv:paymentReference a rdf:Property ; rdfs:domain mhv:SettlementReceipt ; rdfs:range xsd:string .
+
+mhv:SIMULATED a rdfs:Resource .
+mhv:PROPOSED a rdfs:Resource .
+mhv:ACCEPTED a rdfs:Resource .
+mhv:RESULT_ACCEPTED a rdfs:Resource .

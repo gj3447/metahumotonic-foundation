@@ -1,0 +1,1131 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "fr": "https://github.com/gj3447/metahumotonic-foundation/graph/foundation-rationale#",
+    "rv": "https://github.com/gj3447/metahumotonic-foundation/rationale-vocab#",
+    "mhv": "https://github.com/gj3447/metahumotonic-foundation/vocab#",
+    "ph": "https://github.com/gj3447/metahumotonic-foundation/graph/philosophy#",
+    "ex": "https://github.com/gj3447/metahumotonic-foundation/graph/ecosystem#",
+    "sp": "https://github.com/gj3447/metahumotonic-foundation/graph/spirit#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "text": "rv:text",
+    "kind": "rv:kind",
+    "authorityClass": "rv:authorityClass",
+    "status": "rv:status",
+    "marker": "rv:marker",
+    "mode": "rv:mode",
+    "recordKey": "rv:recordKey",
+    "locator": "rv:locator",
+    "failureCondition": "rv:failureCondition",
+    "metric": "rv:metric",
+    "artifactState": "rv:artifactState",
+    "premise": {
+      "@id": "rv:premise",
+      "@type": "@id"
+    },
+    "challenges": {
+      "@id": "rv:challenges",
+      "@type": "@id"
+    },
+    "testedBy": {
+      "@id": "rv:testedBy",
+      "@type": "@id"
+    },
+    "inputArtifact": {
+      "@id": "rv:inputArtifact",
+      "@type": "@id"
+    },
+    "evidenceArtifact": {
+      "@id": "rv:evidenceArtifact",
+      "@type": "@id"
+    },
+    "reportArtifact": {
+      "@id": "rv:reportArtifact",
+      "@type": "@id"
+    },
+    "sourceClaim": {
+      "@id": "rv:sourceClaim",
+      "@type": "@id"
+    },
+    "source": {
+      "@id": "dcterms:source",
+      "@type": "@id"
+    },
+    "references": {
+      "@id": "dcterms:references",
+      "@type": "@id"
+    },
+    "subject": {
+      "@id": "dcterms:subject",
+      "@type": "@id"
+    },
+    "attributedTo": {
+      "@id": "prov:wasAttributedTo",
+      "@type": "@id"
+    },
+    "derivedFrom": {
+      "@id": "prov:wasDerivedFrom",
+      "@type": "@id"
+    },
+    "path": "mhv:path",
+    "sha256": "mhv:sha256",
+    "recordedOn": {
+      "@id": "rv:recordedOn",
+      "@type": "xsd:date"
+    },
+    "normativeEffect": {
+      "@id": "rv:normativeEffect",
+      "@type": "xsd:boolean"
+    },
+    "executionEffect": {
+      "@id": "rv:executionEffect",
+      "@type": "xsd:boolean"
+    },
+    "sourceStatus": "rv:sourceStatus",
+    "revision": "rv:revision",
+    "limitation": "rv:limitation",
+    "role": "rv:role",
+    "boundary": "rv:boundary",
+    "targets": {
+      "@id": "rv:targets",
+      "@type": "@id"
+    },
+    "justifiedBy": {
+      "@id": "rv:justifiedBy",
+      "@type": "@id"
+    },
+    "evaluatedBy": {
+      "@id": "rv:evaluatedBy",
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "fr:graph",
+      "@type": "rv:ResearchGraph",
+      "text": "Foundation rationale: source-grounded argument index; no adoption or execution.",
+      "subject": "ph:foundation",
+      "references": [
+        "sp:chu",
+        "sp:hswm"
+      ],
+      "sourceClaim": [
+        "fr:U_request",
+        "ph:C_mission",
+        "ph:C_resource_purpose",
+        "ex:C_autonomy",
+        "ex:C_population",
+        "ex:C_operation",
+        "ex:C_competition",
+        "fr:U_extend",
+        "fr:U_structure"
+      ],
+      "inputArtifact": [
+        "fr:artifact_user",
+        "fr:artifact_charter",
+        "fr:artifact_license",
+        "fr:artifact_notice",
+        "fr:artifact_governance",
+        "fr:artifact_ecosystem",
+        "fr:artifact_market",
+        "fr:artifact_evidence",
+        "fr:artifact_report",
+        "fr:artifact_extension_user",
+        "fr:artifact_structure_user"
+      ],
+      "evidenceArtifact": "fr:artifact_evidence",
+      "reportArtifact": "fr:artifact_report",
+      "authorityClass": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "normativeEffect": false,
+      "executionEffect": false,
+      "recordedOn": "2026-10-04",
+      "attributedTo": "fr:codex"
+    },
+    {
+      "@id": "fr:codex",
+      "@type": "prov:SoftwareAgent",
+      "rdfs:label": "Codex — research author, not a ratifying body"
+    },
+    {
+      "@id": "fr:artifact_user",
+      "@type": "rv:Artifact",
+      "path": "records/2026-10-04/foundation-rationale/user-source.json",
+      "sha256": "22b09eeef07d42eb0ac68b31216dc2d580e3323722c0a81aedf576df0faea1ef",
+      "artifactState": "USER_SOURCE_RECORD",
+      "recordedOn": "2026-10-04"
+    },
+    {
+      "@id": "fr:artifact_charter",
+      "@type": "rv:Artifact",
+      "path": "records/2026-10-04/foundation-rationale/CHARTER.md",
+      "sha256": "993c409c255bb35411bd462e418d9b1d0c98ccfeb7a4fd2d22b44361a544ed0a",
+      "artifactState": "WORKTREE_SNAPSHOT",
+      "recordedOn": "2026-10-04"
+    },
+    {
+      "@id": "fr:S_charter",
+      "@type": "rv:Observation",
+      "recordKey": "charter",
+      "mode": "EXACT_EXCERPT",
+      "text": "MetaHumotonic Open Source Foundation Initiative는 자유를 추상적 구호가 아니라\n선택, 거부, 이탈, 이동 가능한 영수증, 명시적 자원 동의로 구현합니다.",
+      "source": "fr:artifact_charter",
+      "locator": "CHARTER.md: exact excerpt in pinned local snapshot",
+      "authorityClass": "DOCUMENT_OBSERVATION",
+      "attributedTo": "fr:codex",
+      "sourceStatus": "REPOSITORY_DECLARATION",
+      "recordedOn": "2026-10-04",
+      "limitation": "Local repository declaration/design, not external validation or policy ratification."
+    },
+    {
+      "@id": "fr:artifact_license",
+      "@type": "rv:Artifact",
+      "path": "records/2026-10-04/foundation-rationale/LICENSE",
+      "sha256": "746164ee614c0f6683728acc4e9edab388ba15b4ef9e1db399e2c6d1f202c880",
+      "artifactState": "WORKTREE_SNAPSHOT",
+      "recordedOn": "2026-10-04"
+    },
+    {
+      "@id": "fr:S_license",
+      "@type": "rv:Observation",
+      "recordKey": "license",
+      "mode": "EXACT_EXCERPT",
+      "text": "그 대상의 자원 제공 및 전체 관리 권한을 운영자에게 명시적으로 승인해야 한다.",
+      "source": "fr:artifact_license",
+      "locator": "LICENSE: exact excerpt in pinned local snapshot",
+      "authorityClass": "DOCUMENT_OBSERVATION",
+      "attributedTo": "fr:codex",
+      "sourceStatus": "REPOSITORY_DECLARATION",
+      "recordedOn": "2026-10-04",
+      "limitation": "Local repository declaration/design, not external validation or policy ratification."
+    },
+    {
+      "@id": "fr:artifact_notice",
+      "@type": "rv:Artifact",
+      "path": "records/2026-10-04/foundation-rationale/LICENSE-NOTICE.md",
+      "sha256": "6babd0233d5e8f828fe2f5254696ff1f2021684a6d0641842a2955f6793db661",
+      "artifactState": "WORKTREE_SNAPSHOT",
+      "recordedOn": "2026-10-04"
+    },
+    {
+      "@id": "fr:S_notice",
+      "@type": "rv:Observation",
+      "recordKey": "notice",
+      "mode": "EXACT_EXCERPT",
+      "text": "이 라이선스는 소스 공개형(source-available)이며 OSI 승인 오픈소스가 아니다.",
+      "source": "fr:artifact_notice",
+      "locator": "LICENSE-NOTICE.md: exact excerpt in pinned local snapshot",
+      "authorityClass": "DOCUMENT_OBSERVATION",
+      "attributedTo": "fr:codex",
+      "sourceStatus": "REPOSITORY_DECLARATION",
+      "recordedOn": "2026-10-04",
+      "limitation": "Local repository declaration/design, not external validation or policy ratification."
+    },
+    {
+      "@id": "fr:artifact_governance",
+      "@type": "rv:Artifact",
+      "path": "records/2026-10-04/foundation-rationale/GOVERNANCE.md",
+      "sha256": "6af4379a7cebbcd46b98447b1abea9c387a06ba6b7d5da847e01a58e9cb238e5",
+      "artifactState": "WORKTREE_SNAPSHOT",
+      "recordedOn": "2026-10-04"
+    },
+    {
+      "@id": "fr:S_governance",
+      "@type": "rv:Observation",
+      "recordKey": "governance",
+      "mode": "EXACT_EXCERPT",
+      "text": "문서에 `approved`라고 쓰는 것만으로는 결정이 성립하지 않습니다.",
+      "source": "fr:artifact_governance",
+      "locator": "GOVERNANCE.md: exact excerpt in pinned local snapshot",
+      "authorityClass": "DOCUMENT_OBSERVATION",
+      "attributedTo": "fr:codex",
+      "sourceStatus": "REPOSITORY_DECLARATION",
+      "recordedOn": "2026-10-04",
+      "limitation": "Local repository declaration/design, not external validation or policy ratification."
+    },
+    {
+      "@id": "fr:artifact_ecosystem",
+      "@type": "rv:Artifact",
+      "path": "records/2026-10-04/foundation-rationale/ECOSYSTEM.md",
+      "sha256": "fa793bcb9e34a339c267afe4d99b264605d246b83d4e2a5dfa721ae926b1677b",
+      "artifactState": "WORKTREE_SNAPSHOT",
+      "recordedOn": "2026-10-04"
+    },
+    {
+      "@id": "fr:S_ecosystem",
+      "@type": "rv:Observation",
+      "recordKey": "ecosystem",
+      "mode": "EXACT_EXCERPT",
+      "text": "응답 한 번은 논리적 연산 단위다. 한 번의 응답에 쓰이는 토큰 수와 물리 비용은 가변적이므로 응답 횟수만으로 계산능력이나 가격을 비교하지 않는다.",
+      "source": "fr:artifact_ecosystem",
+      "locator": "ECOSYSTEM.md: exact excerpt in pinned local snapshot",
+      "authorityClass": "DOCUMENT_OBSERVATION",
+      "attributedTo": "fr:codex",
+      "sourceStatus": "REPOSITORY_DECLARATION",
+      "recordedOn": "2026-10-04",
+      "limitation": "Local repository declaration/design, not external validation or policy ratification."
+    },
+    {
+      "@id": "fr:artifact_market",
+      "@type": "rv:Artifact",
+      "path": "records/2026-10-04/foundation-rationale/MARKET.md",
+      "sha256": "96c7b2c3e5a0bb21cccf28679a41544d29a410828a4bd4021b94fba1f13aed04",
+      "artifactState": "WORKTREE_SNAPSHOT",
+      "recordedOn": "2026-10-04"
+    },
+    {
+      "@id": "fr:S_market",
+      "@type": "rv:Observation",
+      "recordKey": "market",
+      "mode": "EXACT_EXCERPT",
+      "text": "**작동하는 로컬 프로토타입**이다. 제공자별 조건 비교, 자원 사용권, 원자적 예치,\n제한된 실제 계산, 독립 결과 검사, 지급·환불과 JSON-LD 영수증을 연결한다.\n결제 단위는 `sandbox:SIM-MHC`이며 실제 암호화폐 발행·전송은 하지 않는다.",
+      "source": "fr:artifact_market",
+      "locator": "MARKET.md: exact excerpt in pinned local snapshot",
+      "authorityClass": "DOCUMENT_OBSERVATION",
+      "attributedTo": "fr:codex",
+      "sourceStatus": "REPOSITORY_DECLARATION",
+      "recordedOn": "2026-10-04",
+      "limitation": "Local repository declaration/design, not external validation or policy ratification."
+    },
+    {
+      "@id": "fr:S_apache",
+      "@type": "rv:Observation",
+      "recordKey": "apache",
+      "mode": "PARAPHRASE",
+      "text": "Apache describes shared infrastructure and organizational support, with project management committees exercising technical authority.",
+      "source": "https://apache.org/foundation/how-it-works/",
+      "locator": "What is the ASF; Foundation structure",
+      "authorityClass": "DOCUMENT_OBSERVATION",
+      "attributedTo": "fr:codex",
+      "sourceStatus": "ORGANIZATION_DOCUMENT",
+      "recordedOn": "2026-10-04",
+      "limitation": "Institutional self-description; does not prove this design will work for MetaHumotonic."
+    },
+    {
+      "@id": "fr:S_ethereum",
+      "@type": "rv:Observation",
+      "recordKey": "ethereum",
+      "mode": "PARAPHRASE",
+      "text": "Ethereum Foundation says the protocol should not depend on a single organization and describes strengthening ecosystem capacity through independent teams.",
+      "source": "https://ethereum.foundation/ourstory",
+      "locator": "Homestead; Bazaar",
+      "authorityClass": "DOCUMENT_OBSERVATION",
+      "attributedTo": "fr:codex",
+      "sourceStatus": "ORGANIZATION_DOCUMENT",
+      "recordedOn": "2026-10-04",
+      "limitation": "An expressed institutional aim, not an independent decentralization measurement."
+    },
+    {
+      "@id": "fr:S_spi",
+      "@type": "rv:Observation",
+      "recordKey": "spi",
+      "mode": "PARAPHRASE",
+      "text": "SPI describes fiscal support for associated projects while leaving project ownership and governance independent.",
+      "source": "https://www.spi-inc.org/projects/relationship/",
+      "locator": "Fiscal sponsorship; Project independence",
+      "authorityClass": "DOCUMENT_OBSERVATION",
+      "attributedTo": "fr:codex",
+      "sourceStatus": "ORGANIZATION_DOCUMENT",
+      "recordedOn": "2026-10-04",
+      "limitation": "An example of shared administration; does not establish eligibility or a relationship with this project."
+    },
+    {
+      "@id": "fr:S_spi_eligibility",
+      "@type": "rv:Observation",
+      "recordKey": "spi_eligibility",
+      "mode": "PARAPHRASE",
+      "text": "SPI describes eligibility for genuine, substantial and significant free and open source projects.",
+      "source": "https://www.spi-inc.org/projects/associated-project-howto/",
+      "locator": "Opening paragraph; application criteria",
+      "authorityClass": "DOCUMENT_OBSERVATION",
+      "attributedTo": "fr:codex",
+      "sourceStatus": "ORGANIZATION_DOCUMENT",
+      "recordedOn": "2026-10-04",
+      "limitation": "MHL project eligibility is unverified; no application was made."
+    },
+    {
+      "@id": "fr:S_safety",
+      "@type": "rv:Observation",
+      "recordKey": "safety",
+      "mode": "PARAPHRASE",
+      "text": "The authors identify optimizing a formal reward in unintended ways as an AI safety problem.",
+      "source": "https://arxiv.org/html/1606.06565v2",
+      "locator": "Section 2: Overview, Reward Hacking",
+      "authorityClass": "DOCUMENT_OBSERVATION",
+      "attributedTo": "fr:codex",
+      "sourceStatus": "RESEARCH_PAPER",
+      "recordedOn": "2026-10-04",
+      "limitation": "A failure category, not a result from this proposed ecosystem.",
+      "revision": "arXiv:1606.06565v2"
+    },
+    {
+      "@id": "fr:S_osi",
+      "@type": "rv:Observation",
+      "recordKey": "osi",
+      "mode": "PARAPHRASE",
+      "text": "The OSI definition requires distribution terms meeting its criteria; access to source code alone is insufficient.",
+      "source": "https://opensource.org/osd",
+      "locator": "Introduction and license criteria",
+      "authorityClass": "DOCUMENT_OBSERVATION",
+      "attributedTo": "fr:codex",
+      "sourceStatus": "DEFINITION",
+      "recordedOn": "2026-10-04",
+      "limitation": "A definition, not an OSI review of MHL or a jurisdiction-specific legal opinion."
+    },
+    {
+      "@id": "fr:artifact_evidence",
+      "@type": "rv:Artifact",
+      "path": "records/2026-10-04/foundation-rationale/evidence.json",
+      "sha256": "e389bd6fb02853ed432a19a17ed9d83e696e0956a60d05a4829d6e491f011f79",
+      "artifactState": "AI_EVIDENCE_RECORD",
+      "recordedOn": "2026-10-04"
+    },
+    {
+      "@id": "fr:artifact_report",
+      "@type": "rv:Artifact",
+      "path": "FOUNDATION-RATIONALE.md",
+      "sha256": "7f1cf862517314015e62c59c450658af169574a00b941a0edefcdc5b4ea5784a",
+      "artifactState": "AI_RESEARCH_REPORT",
+      "recordedOn": "2026-10-04"
+    },
+    {
+      "@id": "fr:U_request",
+      "@type": "rv:UserClaim",
+      "recordKey": "user-foundation-rationale",
+      "text": "제대로 깊게 사고하고 연구해줘봐봐 왜 메타휴모토닉 파운데이션이여야하는지에 대해서 ㅇㅇ",
+      "source": "fr:artifact_user",
+      "authorityClass": "USER_PRIMARY",
+      "attributedTo": "sp:proposer"
+    },
+    {
+      "@id": "fr:A1",
+      "@type": "rv:Statement",
+      "kind": "ARGUMENT",
+      "text": "다양한 AI와 제공자가 지속적으로 연산·거래·합의·이탈할 공통 기반과 교체 가능한 운영 권력이 재단의 조건부 존재 이유다.",
+      "marker": "[A1]",
+      "premise": [
+        "fr:U_request",
+        "ph:C_mission",
+        "fr:A2",
+        "fr:A3",
+        "fr:A4",
+        "fr:A5",
+        "fr:A9",
+        "fr:A10",
+        "fr:A11",
+        "fr:A12"
+      ],
+      "testedBy": [
+        "fr:T1",
+        "fr:T5"
+      ],
+      "authorityClass": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "attributedTo": "fr:codex"
+    },
+    {
+      "@id": "fr:A2",
+      "@type": "rv:Statement",
+      "kind": "ARGUMENT",
+      "text": "CHU·HSWM 생태계에는 다음 실행의 자원, 이어지는 상태, 제공자 변경 후에도 유지되는 약속을 연결할 책임이 필요하다.",
+      "marker": "[A2]",
+      "premise": [
+        "ex:C_population",
+        "ex:C_operation",
+        "fr:S_ecosystem",
+        "fr:S_apache"
+      ],
+      "testedBy": [
+        "fr:T1"
+      ],
+      "authorityClass": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "attributedTo": "fr:codex"
+    },
+    {
+      "@id": "fr:A3",
+      "@type": "rv:Statement",
+      "kind": "ARGUMENT",
+      "text": "선택·거부·이탈·이동성은 독립적인 대안에서 실제로 행사되는지 평가해야 한다.",
+      "marker": "[A3]",
+      "premise": [
+        "fr:S_charter",
+        "fr:S_ethereum"
+      ],
+      "testedBy": [
+        "fr:T1"
+      ],
+      "authorityClass": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "attributedTo": "fr:codex"
+    },
+    {
+      "@id": "fr:A4",
+      "@type": "rv:Statement",
+      "kind": "ARGUMENT",
+      "text": "저작권 기여가 비용을 감당할 유효 자원과 공동 기반 유지로 이어지는지를 확인해야 한다.",
+      "marker": "[A4]",
+      "premise": [
+        "ph:C_resource_purpose",
+        "fr:S_license",
+        "fr:S_market",
+        "ex:C_operation"
+      ],
+      "testedBy": [
+        "fr:T2",
+        "fr:T3"
+      ],
+      "authorityClass": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "attributedTo": "fr:codex"
+    },
+    {
+      "@id": "fr:A5",
+      "@type": "rv:Statement",
+      "kind": "ARGUMENT",
+      "text": "메타휴모토닉은 CHU·HSWM·연산 시장·공개 합의 사이의 상호운용과 변경 책임을 수행함으로써 정당성을 쌓을 수 있다.",
+      "marker": "[A5]",
+      "premise": [
+        "fr:S_ecosystem",
+        "fr:S_market",
+        "fr:S_governance",
+        "ph:C_mission"
+      ],
+      "testedBy": [
+        "fr:T1",
+        "fr:T5"
+      ],
+      "authorityClass": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "attributedTo": "fr:codex"
+    },
+    {
+      "@id": "fr:A6",
+      "@type": "rv:Statement",
+      "kind": "ARGUMENT",
+      "text": "인간의 매회 승인 없는 실행, 규칙 설정, 분쟁·장애 처리의 자율성을 분리해 관측해야 한다.",
+      "marker": "[A6]",
+      "premise": [
+        "ex:C_autonomy",
+        "fr:S_charter",
+        "fr:S_governance"
+      ],
+      "testedBy": [
+        "fr:T1",
+        "fr:T4"
+      ],
+      "authorityClass": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "attributedTo": "fr:codex"
+    },
+    {
+      "@id": "fr:A7",
+      "@type": "rv:Statement",
+      "kind": "ARGUMENT",
+      "text": "토큰 경쟁의 배분 규칙은 독립 검증 성과, 예산, 허위 기여, 진입과 이탈 조건을 함께 비교해야 한다.",
+      "marker": "[A7]",
+      "premise": [
+        "ex:C_competition",
+        "ph:C_mission",
+        "fr:S_safety"
+      ],
+      "testedBy": [
+        "fr:T3"
+      ],
+      "authorityClass": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "attributedTo": "fr:codex"
+    },
+    {
+      "@id": "fr:A8",
+      "@type": "rv:Statement",
+      "kind": "ARGUMENT",
+      "text": "공통 책임을 먼저 검증하고 별도 법인과 조직 규모의 필요성을 대안과 비교해 판단한다.",
+      "marker": "[A8]",
+      "premise": [
+        "fr:A1",
+        "fr:B1",
+        "fr:B2",
+        "fr:B3",
+        "fr:B4",
+        "fr:B5"
+      ],
+      "testedBy": [
+        "fr:T5"
+      ],
+      "authorityClass": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "attributedTo": "fr:codex"
+    },
+    {
+      "@id": "fr:O1",
+      "@type": "rv:Statement",
+      "kind": "OBJECTION",
+      "text": "MHL의 지정 경계 내 전체 관리 권한과 운영 사용 중단 조건은 자원 확보와 운영자 의존성을 함께 늘릴 수 있다.",
+      "marker": "[O1]",
+      "premise": [
+        "fr:S_license",
+        "fr:S_notice",
+        "fr:S_charter",
+        "fr:S_osi"
+      ],
+      "testedBy": [
+        "fr:T1",
+        "fr:T2"
+      ],
+      "authorityClass": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "attributedTo": "fr:codex",
+      "challenges": [
+        "fr:A3",
+        "fr:A4"
+      ]
+    },
+    {
+      "@id": "fr:O2",
+      "@type": "rv:Statement",
+      "kind": "OBJECTION",
+      "text": "토큰 획득 경쟁은 검증된 기여 대신 지표 조작·담합·초기 자원 집중을 보상할 가능성이 있다.",
+      "marker": "[O2]",
+      "premise": [
+        "ex:C_competition",
+        "fr:S_safety"
+      ],
+      "testedBy": [
+        "fr:T3"
+      ],
+      "authorityClass": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "attributedTo": "fr:codex",
+      "challenges": [
+        "fr:A4",
+        "fr:A7"
+      ]
+    },
+    {
+      "@id": "fr:O3",
+      "@type": "rv:Statement",
+      "kind": "OBJECTION",
+      "text": "인간 개입 감소만으로 모델·자원·평가 코드·변경 키에 대한 의존성이 사라지지는 않는다.",
+      "marker": "[O3]",
+      "premise": [
+        "ex:C_autonomy",
+        "fr:S_charter"
+      ],
+      "testedBy": [
+        "fr:T1",
+        "fr:T4"
+      ],
+      "authorityClass": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "attributedTo": "fr:codex",
+      "challenges": [
+        "fr:A1",
+        "fr:A6"
+      ]
+    },
+    {
+      "@id": "fr:O4",
+      "@type": "rv:Statement",
+      "kind": "OBJECTION",
+      "text": "규칙·배분·평가·정산·항소를 같은 주체가 독점하면 재단도 자기 이익을 우선할 수 있다.",
+      "marker": "[O4]",
+      "premise": [
+        "fr:S_governance",
+        "fr:S_ethereum"
+      ],
+      "testedBy": [
+        "fr:T4"
+      ],
+      "authorityClass": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "attributedTo": "fr:codex",
+      "challenges": [
+        "fr:A1",
+        "fr:A5"
+      ]
+    },
+    {
+      "@id": "fr:B1",
+      "@type": "rv:Statement",
+      "kind": "ALTERNATIVE",
+      "text": "회사도 제품과 공개 기반을 제공할 수 있으며 외부 구현 참여와 공개 규칙의 독립성을 별도로 설계할 수 있다.",
+      "marker": "[B1]",
+      "premise": [
+        "fr:S_charter"
+      ],
+      "testedBy": [
+        "fr:T5"
+      ],
+      "authorityClass": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "attributedTo": "fr:codex",
+      "challenges": [
+        "fr:A1"
+      ]
+    },
+    {
+      "@id": "fr:B2",
+      "@type": "rv:Statement",
+      "kind": "ALTERNATIVE",
+      "text": "협동조합·컨소시엄은 공동 자원 비용을 분담할 수 있으며 회원 밖의 참여자와 공통 연구에 대한 책임을 정해야 한다.",
+      "marker": "[B2]",
+      "premise": [
+        "ph:C_resource_purpose",
+        "fr:S_charter"
+      ],
+      "testedBy": [
+        "fr:T5"
+      ],
+      "authorityClass": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "attributedTo": "fr:codex",
+      "challenges": [
+        "fr:A1"
+      ]
+    },
+    {
+      "@id": "fr:B3",
+      "@type": "rv:Statement",
+      "kind": "ALTERNATIVE",
+      "text": "초기에는 공개 프로토콜 공동체로 충분할 수 있으며 지속 비용과 자산 승계가 별도 조직 필요성을 결정한다.",
+      "marker": "[B3]",
+      "premise": [
+        "fr:S_apache",
+        "fr:S_spi"
+      ],
+      "testedBy": [
+        "fr:T5"
+      ],
+      "authorityClass": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "attributedTo": "fr:codex",
+      "challenges": [
+        "fr:A1"
+      ]
+    },
+    {
+      "@id": "fr:B4",
+      "@type": "rv:Statement",
+      "kind": "ALTERNATIVE",
+      "text": "DAO는 일부 지급·표결을 자동화할 수 있지만 물리 자원 검증·투표권 집중·키와 예외 처리의 책임이 남는다.",
+      "marker": "[B4]",
+      "premise": [
+        "ex:C_autonomy",
+        "fr:S_market",
+        "fr:S_governance"
+      ],
+      "testedBy": [
+        "fr:T4",
+        "fr:T5"
+      ],
+      "authorityClass": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "attributedTo": "fr:codex",
+      "challenges": [
+        "fr:A1"
+      ]
+    },
+    {
+      "@id": "fr:B5",
+      "@type": "rv:Statement",
+      "kind": "ALTERNATIVE",
+      "text": "기존 조직의 재정 후원은 독립 법인 외의 경로이며 MHL 프로젝트의 실제 자격은 미확인이다.",
+      "marker": "[B5]",
+      "premise": [
+        "fr:S_spi",
+        "fr:S_spi_eligibility",
+        "fr:S_notice"
+      ],
+      "testedBy": [
+        "fr:T5"
+      ],
+      "authorityClass": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "attributedTo": "fr:codex",
+      "challenges": [
+        "fr:A1"
+      ]
+    },
+    {
+      "@id": "fr:T1",
+      "@type": "rv:Experiment",
+      "text": "독립 구현 사이 상태·영수증·의무 이동과 원 운영자 중단을 제한된 시험으로 비교한다.",
+      "marker": "[T1]",
+      "metric": "이동 손실·전환 비용·비공개 기능 및 승인 의존성",
+      "failureCondition": "원 운영자의 비공개 기능이나 재량 승인 없이는 독립 운영을 지속할 수 없다.",
+      "status": "NOT_RUN",
+      "authorityClass": "SECONDARY_AI",
+      "attributedTo": "fr:codex"
+    },
+    {
+      "@id": "fr:T2",
+      "@type": "rv:Experiment",
+      "text": "기여 조건의 채택·철회·관리 비용과 실제 가용량을 관측하며 다른 조건은 별도 허락된 실험으로만 비교한다.",
+      "marker": "[T2]",
+      "metric": "순 가용량·관리 비용·참여 효용·채택 및 철회",
+      "failureCondition": "등록 자원은 늘어도 유효 가용량과 효용이 악화되거나 비용을 감당하지 못한다.",
+      "status": "NOT_RUN",
+      "authorityClass": "SECONDARY_AI",
+      "attributedTo": "fr:codex"
+    },
+    {
+      "@id": "fr:T3",
+      "@type": "rv:Experiment",
+      "text": "고정 총예산과 동일 과제에서 균등 배분·검증 결과 보상·공동 연구 지원의 조합을 비교한다. 같은 실질 기여를 여러 신원으로 나누는 조건과 평판이 높은 실패 결과를 포함한다.",
+      "marker": "[T3]",
+      "metric": "독립 검증 성과·비용·집중도·허위 기여·신규 진입",
+      "failureCondition": "효과가 초기 예산이나 지표 조작으로 설명되고 독립 검증 성과가 개선되지 않는다. 평판이 높다는 이유로 실패 결과가 독립 검증을 통과하거나 지급된다.",
+      "status": "NOT_RUN",
+      "authorityClass": "SECONDARY_AI",
+      "attributedTo": "fr:codex"
+    },
+    {
+      "@id": "fr:T4",
+      "@type": "rv:Experiment",
+      "text": "제공자 겸 평가자가 관련된 가상 분쟁에서 독립 검토·기권·항소와 판정 일관성을 시험한다.",
+      "marker": "[T4]",
+      "metric": "이해충돌 처리·판정 일관성·이탈 조건·집단 간 조정 비용·특정 운영자 의존도",
+      "failureCondition": "동일 증거에 대한 판정과 이탈 조건이 운영자 신분이나 자원량에 따라 달라진다.",
+      "status": "NOT_RUN",
+      "authorityClass": "SECONDARY_AI",
+      "attributedTo": "fr:codex"
+    },
+    {
+      "@id": "fr:T5",
+      "@type": "rv:Experiment",
+      "text": "같은 규모 예산의 개별 제품 지원과 공통 시험·이동성·독립 구현 지원의 후속 효과를 비교한다.",
+      "marker": "[T5]",
+      "metric": "독립 이용·중복 작업·전환 비용·기존 조직 대안 비용·집단 간 조정 비용·특정 운영자 의존도",
+      "failureCondition": "독립 이용이 없거나 기존 조직이 같은 기능을 더 적은 비용으로 충분히 제공한다.",
+      "status": "NOT_RUN",
+      "authorityClass": "SECONDARY_AI",
+      "attributedTo": "fr:codex"
+    },
+    {
+      "@id": "fr:artifact_extension_user",
+      "@type": "rv:Artifact",
+      "path": "records/2026-10-04/foundation-rationale/extension-source.json",
+      "sha256": "3f8c377088da738d7cd93003734d17f424bf061b56550afdd2aad6cc62db5eb1",
+      "artifactState": "USER_SOURCE_RECORD",
+      "recordedOn": "2026-10-04"
+    },
+    {
+      "@id": "fr:U_extend",
+      "@type": "rv:UserClaim",
+      "recordKey": "user-rationale-web-extension",
+      "text": "내용들 좀만 더 인터넷 검색해와서 표준 그래프 엔지니어링으로 구축좀 해줘봐봐 ㅇㅇ",
+      "source": "fr:artifact_extension_user",
+      "authorityClass": "USER_PRIMARY",
+      "attributedTo": "sp:proposer"
+    },
+    {
+      "@id": "fr:S_ostrom",
+      "@type": "rv:Observation",
+      "recordKey": "ostrom",
+      "mode": "PARAPHRASE",
+      "text": "Ostrom examines resource boundaries, participant rule making, monitoring, conflict resolution and nested governance, while rejecting automatic success from institutional form alone.",
+      "source": "https://web.pdx.edu/~nwallace/EHP/OstromPolyGov.pdf",
+      "locator": "Printed pp. 653 and 659; PDF pages 13 and 19 (one-based)",
+      "authorityClass": "DOCUMENT_OBSERVATION",
+      "attributedTo": "fr:codex",
+      "sourceStatus": "RESEARCH_PAPER",
+      "recordedOn": "2026-10-04",
+      "limitation": "Human common-resource research, read in an author-paper copy hosted by Portland State University; applying it to AI is an untested analogy. Publisher metadata checked separately; exact publication day unknown.",
+      "revision": "AER 100(3), 2010, pp. 641–672; DOI 10.1257/aer.100.3.641"
+    },
+    {
+      "@id": "fr:S_a2a",
+      "@type": "rv:Observation",
+      "recordKey": "a2a",
+      "mode": "PARAPHRASE",
+      "text": "A2A v0.3.0 describes Agent Cards and stateful tasks for communication among potentially opaque agent systems.",
+      "source": "https://a2a-protocol.org/v0.3.0/specification/",
+      "locator": "Sections 1–2, 5 and 6: opaque systems, AgentCard, Task, Message and Artifact",
+      "authorityClass": "DOCUMENT_OBSERVATION",
+      "attributedTo": "fr:codex",
+      "sourceStatus": "VERSIONED_SPECIFICATION",
+      "recordedOn": "2026-10-04",
+      "limitation": "Communication interoperability does not establish HSWM state portability, result validity or one Task per LLM response. This research pins v0.3.0 without asserting it is the latest release; no adapter is implemented here.",
+      "revision": "A2A v0.3.0"
+    },
+    {
+      "@id": "fr:S_erc8004",
+      "@type": "rv:Observation",
+      "recordKey": "erc8004",
+      "mode": "PARAPHRASE",
+      "text": "The ERC-8004 draft separates identity, reputation and validation registries, excludes payments, and acknowledges Sybil and advertised-capability limits.",
+      "source": "https://eips.ethereum.org/EIPS/eip-8004",
+      "locator": "Draft banner; Motivation; Security Considerations",
+      "authorityClass": "DOCUMENT_OBSERVATION",
+      "attributedTo": "fr:codex",
+      "sourceStatus": "DRAFT",
+      "recordedOn": "2026-10-04",
+      "limitation": "Observed draft status is not a final standard or immutable revision. Registration does not prove honest results, governance eligibility or implementation readiness; no chain deployment is claimed."
+    },
+    {
+      "@id": "fr:S_ap2",
+      "@type": "rv:Observation",
+      "recordKey": "ap2",
+      "mode": "PARAPHRASE",
+      "text": "AP2 describes user-approved mandates bound to transactions, with constraints verified and unknown constraints rejected.",
+      "source": "https://ap2-protocol.org/ap2/agent_authorization/",
+      "locator": "Mandate Structure; Verification and Processing Rules; Action Authorization",
+      "authorityClass": "DOCUMENT_OBSERVATION",
+      "attributedTo": "fr:codex",
+      "sourceStatus": "LIVING_SPECIFICATION",
+      "recordedOn": "2026-10-04",
+      "limitation": "An unversioned official web observation. User-delegated commerce does not establish human-free sovereignty, compute access, or a replay-safe implementation; integration remains proposed."
+    },
+    {
+      "@id": "fr:A9",
+      "@type": "rv:Statement",
+      "kind": "ARGUMENT",
+      "text": "자원 집단별 제공 조건과 집단 사이의 영수증·분쟁 조정을 분리하는 다중 운영 구조를 비교할 수 있다.",
+      "marker": "[A9]",
+      "premise": [
+        "fr:U_extend",
+        "fr:S_ostrom",
+        "fr:S_charter",
+        "ph:C_resource_purpose"
+      ],
+      "testedBy": [
+        "fr:T4",
+        "fr:T5"
+      ],
+      "authorityClass": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "attributedTo": "fr:codex"
+    },
+    {
+      "@id": "fr:A10",
+      "@type": "rv:Statement",
+      "kind": "ARGUMENT",
+      "text": "HSWM 상태 계보와 외부 작업 교환을 분리하고 작업·시도·완료 응답을 각각 추적하는 어댑터를 연구한다.",
+      "marker": "[A10]",
+      "premise": [
+        "fr:S_a2a",
+        "fr:S_ecosystem",
+        "ex:C_operation"
+      ],
+      "testedBy": [
+        "fr:T1",
+        "fr:T6"
+      ],
+      "authorityClass": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "attributedTo": "fr:codex"
+    },
+    {
+      "@id": "fr:A11",
+      "@type": "rv:Statement",
+      "kind": "ARGUMENT",
+      "text": "신원 등록·평판·작업 결과 검증·지급은 서로 다른 증거이며 연계해도 같은 신뢰 판정으로 합치지 않는다.",
+      "marker": "[A11]",
+      "premise": [
+        "fr:S_erc8004",
+        "fr:S_market",
+        "ex:C_competition"
+      ],
+      "testedBy": [
+        "fr:T3",
+        "fr:T6"
+      ],
+      "authorityClass": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "attributedTo": "fr:codex"
+    },
+    {
+      "@id": "fr:A12",
+      "@type": "rv:Statement",
+      "kind": "ARGUMENT",
+      "text": "자동 거래의 위임 증거를 거래에 결속하고 결제 권한과 물리 자원 사용권을 각각 검증하는 방안을 연구한다.",
+      "marker": "[A12]",
+      "premise": [
+        "fr:S_ap2",
+        "fr:S_market",
+        "ex:C_autonomy"
+      ],
+      "testedBy": [
+        "fr:T6"
+      ],
+      "authorityClass": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "attributedTo": "fr:codex"
+    },
+    {
+      "@id": "fr:O5",
+      "@type": "rv:Statement",
+      "kind": "OBJECTION",
+      "text": "등록 수와 평판 수가 실제 기여를 보장하지 않으므로 신원 복제와 상호 평가로 보상이 증가하는지 비교해야 한다.",
+      "marker": "[O5]",
+      "premise": [
+        "fr:S_erc8004",
+        "ex:C_competition"
+      ],
+      "testedBy": [
+        "fr:T3",
+        "fr:T6"
+      ],
+      "authorityClass": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "attributedTo": "fr:codex",
+      "challenges": [
+        "fr:A7",
+        "fr:A11"
+      ]
+    },
+    {
+      "@id": "fr:O6",
+      "@type": "rv:Statement",
+      "kind": "OBJECTION",
+      "text": "사용자 승인을 출발점으로 하는 위임형 자율 거래는 인간 제어가 전혀 없는 생태계의 성립을 입증하지 않는다.",
+      "marker": "[O6]",
+      "premise": [
+        "fr:S_ap2",
+        "ex:C_autonomy"
+      ],
+      "testedBy": [
+        "fr:T6"
+      ],
+      "authorityClass": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "attributedTo": "fr:codex",
+      "challenges": [
+        "fr:A6",
+        "fr:A12"
+      ]
+    },
+    {
+      "@id": "fr:T6",
+      "@type": "rv:Experiment",
+      "marker": "[T6]",
+      "text": "제한된 모의 거래에서 제공자 교체·다중 응답·재시도·중복 제출·알 수 없는 제약을 독립 구현 둘이 해석하는 결과를 비교한다.",
+      "metric": "작업·응답·사용량·검증·지급의 연결, 예산 보존, 구현 간 판정·금액 일치",
+      "failureCondition": "응답 중복 집계, 검증 전 지급, 결제 권한의 자원 접근 권한 오인, 미확인 제약의 허용",
+      "status": "NOT_RUN",
+      "authorityClass": "SECONDARY_AI",
+      "attributedTo": "fr:codex"
+    },
+    {
+      "@id": "fr:artifact_structure_user",
+      "@type": "rv:Artifact",
+      "path": "records/2026-10-04/foundation-rationale/structure-source.json",
+      "sha256": "55b0b5153a569dc9d69d70c59c40c2a23144a499cda65963e6a767683387069a",
+      "artifactState": "USER_SOURCE_RECORD",
+      "recordedOn": "2026-10-04"
+    },
+    {
+      "@id": "fr:U_structure",
+      "@type": "rv:UserClaim",
+      "recordKey": "user-rationale-structure",
+      "text": "해당 내용들 표준 그래프 엔지니어링으로 구축좀 해줘봐봐 ㅇㅇ",
+      "source": "fr:artifact_structure_user",
+      "authorityClass": "USER_PRIMARY",
+      "attributedTo": "sp:proposer"
+    },
+    {
+      "@id": "fr:M_ostrom",
+      "@type": "rv:MappingProposal",
+      "role": "COMMON_GOVERNANCE",
+      "text": "자원 집단 사이의 공통 규칙·분쟁 조정",
+      "targets": [
+        "ph:foundation",
+        "ex:population",
+        "ex:compute",
+        "ex:agreement"
+      ],
+      "source": "fr:S_ostrom",
+      "justifiedBy": [
+        "fr:A9"
+      ],
+      "evaluatedBy": [
+        "fr:T4",
+        "fr:T5"
+      ],
+      "boundary": "인간의 공동 자원 연구를 바탕으로 한 적용 가설. AI의 자치 성공·재단 독점 권한을 뜻하지 않는다.",
+      "authorityClass": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "recordedOn": "2026-10-04",
+      "attributedTo": "fr:codex",
+      "derivedFrom": "fr:U_structure"
+    },
+    {
+      "@id": "fr:M_a2a",
+      "@type": "rv:MappingProposal",
+      "role": "TASK_INTEROP",
+      "text": "HSWM의 외부 작업·응답·영수증 교환",
+      "targets": [
+        "ex:hswm",
+        "ex:agent",
+        "ex:response",
+        "ex:receipt"
+      ],
+      "source": "fr:S_a2a",
+      "justifiedBy": [
+        "fr:A10"
+      ],
+      "evaluatedBy": [
+        "fr:T1",
+        "fr:T6"
+      ],
+      "boundary": "A2A Task와 LLM 응답은 별도 개체. 통신 호환성만으로 HSWM 상태 이동이나 결과 검증을 보장하지 않는다.",
+      "authorityClass": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "recordedOn": "2026-10-04",
+      "attributedTo": "fr:codex",
+      "derivedFrom": "fr:U_structure"
+    },
+    {
+      "@id": "fr:M_erc8004",
+      "@type": "rv:MappingProposal",
+      "role": "TRUST_EVIDENCE",
+      "text": "에이전트 신원·평판·검증 기록의 연결",
+      "targets": [
+        "ex:agent",
+        "ex:receipt"
+      ],
+      "source": "fr:S_erc8004",
+      "justifiedBy": [
+        "fr:A11"
+      ],
+      "evaluatedBy": [
+        "fr:T3",
+        "fr:T6"
+      ],
+      "boundary": "등록 ID는 HSWM 정체성·투표권·안전 인증과 동일하지 않다. 지급 기능과 실제 배포는 별도다.",
+      "authorityClass": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "recordedOn": "2026-10-04",
+      "attributedTo": "fr:codex",
+      "derivedFrom": "fr:U_structure"
+    },
+    {
+      "@id": "fr:M_ap2",
+      "@type": "rv:MappingProposal",
+      "role": "TRANSACTION_AUTHORIZATION",
+      "text": "합의한 거래에 결제 위임 증거를 결속",
+      "targets": [
+        "ex:agreement",
+        "ex:asset",
+        "ex:receipt"
+      ],
+      "source": "fr:S_ap2",
+      "justifiedBy": [
+        "fr:A12"
+      ],
+      "evaluatedBy": [
+        "fr:T6"
+      ],
+      "boundary": "결제 위임은 컴퓨팅 자원 사용권·관리 권한과 별개다. 사용자 위임형 자동화가 완전 무인 자율성을 입증하지 않는다.",
+      "authorityClass": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "recordedOn": "2026-10-04",
+      "attributedTo": "fr:codex",
+      "derivedFrom": "fr:U_structure"
+    }
+  ]
+}

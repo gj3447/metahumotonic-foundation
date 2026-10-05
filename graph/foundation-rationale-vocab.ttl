@@ -1,0 +1,48 @@
+@prefix rv: <https://github.com/gj3447/metahumotonic-foundation/rationale-vocab#> .
+@prefix fr: <https://github.com/gj3447/metahumotonic-foundation/graph/foundation-rationale#> .
+@prefix mhv: <https://github.com/gj3447/metahumotonic-foundation/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix sp: <https://github.com/gj3447/metahumotonic-foundation/graph/spirit#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+rv:ResearchGraph a rdfs:Class ; rdfs:comment "Owner-scoped, unratified research index. Its claims do not authorize execution." .
+rv:Artifact a rdfs:Class ; rdfs:comment "Repository-local bytes with an observed digest; not ownership of the referred project." .
+rv:Observation a rdfs:Class ; rdfs:comment "Attributed exact local excerpt or short external paraphrase, not empirical verification." .
+rv:UserClaim a rdfs:Class ; rdfs:comment "Exact user request in its identified original source record." .
+rv:Statement a rdfs:Class ; rdfs:comment "AI inference, objection or organizational alternative; grounds are not logical entailment." .
+rv:Experiment a rdfs:Class ; rdfs:comment "Proposed bounded comparison with metrics and failure conditions, not a completed run." .
+rv:MappingProposal a rdfs:Class ; rdfs:comment "AI-proposed application of an observed source to existing ecosystem entities. A mapping is neither identity nor a deployed integration." .
+
+rv:text a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "1. Human-readable content on each claim, observation, experiment and graph." .
+rv:kind a rdf:Property ; rdfs:domain rv:Statement ; rdfs:range xsd:string ; rdfs:comment "1. ARGUMENT, OBJECTION or ALTERNATIVE." .
+rv:authorityClass a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "1 on attributed content. Keep user, document observation and AI authority separate." .
+rv:status a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "1 on graph/statements/experiments. PROPOSED or NOT_RUN according to class." .
+rv:marker a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "1 on statements/experiments. Unique literal marker in the research report." .
+rv:mode a rdf:Property ; rdfs:domain rv:Observation ; rdfs:range xsd:string ; rdfs:comment "1. EXACT_EXCERPT or PARAPHRASE; never treat the latter as quoted source text." .
+rv:recordKey a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "1 on observation/user claim. Key within the pinned evidence or user record." .
+rv:locator a rdf:Property ; rdfs:domain rv:Observation ; rdfs:range xsd:string ; rdfs:comment "1. Source section or local excerpt locator." .
+rv:sourceStatus a rdf:Property ; rdfs:domain rv:Observation ; rdfs:range xsd:string ; rdfs:comment "1. Observed document category or specification status; distinct from adoption of the research claim." .
+rv:revision a rdf:Property ; rdfs:domain rv:Observation ; rdfs:range xsd:string ; rdfs:comment "0..1. Identified edition/version; omit when unknown. A date of reading is not an immutable source revision." .
+rv:limitation a rdf:Property ; rdfs:domain rv:Observation ; rdfs:range xsd:string ; rdfs:comment "1. Scope limits on applying this observation to the proposed ecosystem." .
+rv:failureCondition a rdf:Property ; rdfs:domain rv:Experiment ; rdfs:range xsd:string ; rdfs:comment "1. Result that weakens the proposed rationale; not an observed outcome." .
+rv:metric a rdf:Property ; rdfs:domain rv:Experiment ; rdfs:range xsd:string ; rdfs:comment "1. Variables to observe; numeric thresholds still require preregistration." .
+rv:artifactState a rdf:Property ; rdfs:domain rv:Artifact ; rdfs:range xsd:string ; rdfs:comment "1. Snapshot or record provenance category; not legal ownership or adoption." .
+rv:recordedOn a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:date ; rdfs:comment "1 on graph/artifacts. Record date, not unknown event or publication time." .
+rv:normativeEffect a rdf:Property ; rdfs:domain rv:ResearchGraph ; rdfs:range xsd:boolean ; rdfs:comment "1, false. Research does not ratify norms." .
+rv:executionEffect a rdf:Property ; rdfs:domain rv:ResearchGraph ; rdfs:range xsd:boolean ; rdfs:comment "1, false. Research does not execute or grant resources." .
+rv:premise a rdf:Property ; rdfs:domain rv:Statement ; rdfs:range rdfs:Resource ; rdfs:comment "1..*. Statement -> observation, user claim or prior inference. Attribution remains at endpoints. Statement dependencies must be acyclic." .
+rv:challenges a rdf:Property ; rdfs:domain rv:Statement ; rdfs:range rv:Statement ; rdfs:comment "0..* for arguments, 1..* for objections/alternatives. Source -> challenged claim. No acyclicity requirement." .
+rv:testedBy a rdf:Property ; rdfs:domain rv:Statement ; rdfs:range rv:Experiment ; rdfs:comment "1..*. Claim -> proposed comparison; relation does not imply confirmation." .
+rv:inputArtifact a rdf:Property ; rdfs:domain rv:ResearchGraph ; rdfs:range rv:Artifact ; rdfs:comment "1..*. Graph -> all its local source and report byte artifacts." .
+rv:evidenceArtifact a rdf:Property ; rdfs:domain rv:ResearchGraph ; rdfs:range rv:Artifact ; rdfs:comment "1. Graph -> pinned observation metadata record." .
+rv:reportArtifact a rdf:Property ; rdfs:domain rv:ResearchGraph ; rdfs:range rv:Artifact ; rdfs:comment "1. Graph -> authored research report; report is not generated from the graph." .
+rv:sourceClaim a rdf:Property ; rdfs:domain rv:ResearchGraph ; rdfs:range rdfs:Resource ; rdfs:comment "1..*. Graph -> identified user statements; references do not redefine their owner UIDs." .
+rv:role a rdf:Property ; rdfs:domain rv:MappingProposal ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 controlled application role; not a runtime permission or organizational appointment." .
+rv:targets a rdf:Property ; rdfs:domain rv:MappingProposal ; rdfs:range rdfs:Resource ; rdfs:comment "1..*. Mapping -> existing foundation or ecosystem ComponentSpec IDs. Does not imply identity, ownership or installed support." .
+rv:justifiedBy a rdf:Property ; rdfs:domain rv:MappingProposal ; rdfs:range rv:Statement ; rdfs:comment "1..*. Mapping -> proposed arguments. Each argument must directly cite the mapping's observed source as a premise." .
+rv:evaluatedBy a rdf:Property ; rdfs:domain rv:MappingProposal ; rdfs:range rv:Experiment ; rdfs:comment "1..*. Mapping -> proposed tests; equals the union of its arguments' testedBy values, not test results." .
+rv:boundary a rdf:Property ; rdfs:domain rv:MappingProposal ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 explicit limit on what the proposed application establishes." .

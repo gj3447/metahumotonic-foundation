@@ -1,0 +1,47 @@
+@prefix cc: <https://github.com/gj3447/metahumotonic-foundation/graph/compute-coin#> .
+@prefix cv: <https://github.com/gj3447/metahumotonic-foundation/compute-coin-vocab#> .
+@prefix mhv: <https://github.com/gj3447/metahumotonic-foundation/vocab#> .
+@prefix mhc: <https://github.com/gj3447/metahumotonic-foundation/graph/metahumocoin#> .
+@prefix ex: <https://github.com/gj3447/metahumotonic-foundation/graph/ecosystem#> .
+@prefix ph: <https://github.com/gj3447/metahumotonic-foundation/graph/philosophy#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+cv:ResearchGraph a rdfs:Class .
+cv:UserClaim a rdfs:Class .
+cv:Observation a rdfs:Class .
+cv:Proposal a rdfs:Class .
+cv:Risk a rdfs:Class .
+cv:Question a rdfs:Class .
+cv:Component a rdfs:Class .
+cv:Artifact a rdfs:Class .
+
+cv:text a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "1 on attributed nodes. Content separate from its authority." .
+cv:authority a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "1 on attributed nodes. USER_PRIMARY, DOCUMENT_OBSERVATION or SECONDARY_AI." .
+cv:status a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "1 on attributed nodes. Class-specific observation/proposal/question status; not authority." .
+cv:observedOn a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:date ; rdfs:comment "1 on research root and observations. Date of observation, not publication." .
+cv:key a rdf:Property ; rdfs:domain cv:Observation ; rdfs:range xsd:string ; rdfs:comment "1. Key in the pinned local source catalog." .
+cv:revision a rdf:Property ; rdfs:domain cv:Observation ; rdfs:range xsd:string ; rdfs:comment "0..1. Identified edition; absent if unknown. Reading date is not a revision." .
+cv:limitation a rdf:Property ; rdfs:domain cv:Observation ; rdfs:range xsd:string ; rdfs:comment "1. Limit on source applicability." .
+cv:locator a rdf:Property ; rdfs:domain cv:Observation ; rdfs:range xsd:string ; rdfs:comment "1. Source section locating the observed mechanism." .
+cv:sourceStatus a rdf:Property ; rdfs:domain cv:Observation ; rdfs:range xsd:string ; rdfs:comment "1. Category of source, separate from deployment state." .
+cv:mode a rdf:Property ; rdfs:domain cv:Observation ; rdfs:range xsd:string ; rdfs:comment "1. PARAPHRASE; no verbatim remote full-text copy." .
+cv:basis a rdf:Property ; rdfs:domain cv:Proposal ; rdfs:range rdfs:Resource ; rdfs:comment "1..*. Proposal -> user claim, source observation or prior proposal. Inference dependencies acyclic; no entailment asserted." .
+cv:challenges a rdf:Property ; rdfs:domain cv:Risk ; rdfs:range cv:Proposal ; rdfs:comment "1..*. Risk -> challenged proposal. Does not revoke a user statement." .
+cv:targets a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range rdfs:Resource ; rdfs:comment "1..* on proposals/questions. Refers to existing owner entities/decisions; never identity or permission." .
+cv:affects a rdf:Property ; rdfs:domain cv:Question ; rdfs:range cv:Proposal ; rdfs:comment "1..*. Open question -> proposals depending on its answer." .
+cv:kind a rdf:Property ; rdfs:domain cv:Component ; rdfs:range xsd:string ; rdfs:comment "1. Controlled design role. No deployed entity asserted." .
+cv:implements a rdf:Property ; rdfs:domain cv:Component ; rdfs:range cv:Proposal ; rdfs:comment "1. Component spec -> proposal it models; not implementation status." .
+cv:forUnit a rdf:Property ; rdfs:domain cv:Component ; rdfs:range cv:Component ; rdfs:comment "1 on CAPACITY only. Capacity spec -> UNIT spec." .
+cv:boundsMint a rdf:Property ; rdfs:domain cv:Component ; rdfs:range cv:Component ; rdfs:comment "1 on CAPACITY only. Capacity spec -> MINT spec." .
+cv:createsLiability a rdf:Property ; rdfs:domain cv:Component ; rdfs:range cv:Component ; rdfs:comment "1 on MINT only. Issuance spec -> LIABILITY spec." .
+cv:settles a rdf:Property ; rdfs:domain cv:Component ; rdfs:range cv:Component ; rdfs:comment "1 on REDEMPTION only. Redemption spec -> LIABILITY spec." .
+cv:requiresReceipt a rdf:Property ; rdfs:domain cv:Component ; rdfs:range cv:Component ; rdfs:comment "1 on REDEMPTION only. Redemption spec -> RECEIPT spec." .
+cv:inputArtifact a rdf:Property ; rdfs:domain cv:ResearchGraph ; rdfs:range cv:Artifact ; rdfs:comment "1..*. Root -> all pinned repository artifacts." .
+cv:sourceClaim a rdf:Property ; rdfs:domain cv:ResearchGraph ; rdfs:range rdfs:Resource ; rdfs:comment "1..*. Root -> identified user claims, including imported original claims." .
+cv:normativeEffect a rdf:Property ; rdfs:domain cv:ResearchGraph ; rdfs:range xsd:boolean ; rdfs:comment "1, false. Research cannot ratify policy." .
+cv:executionEffect a rdf:Property ; rdfs:domain cv:ResearchGraph ; rdfs:range xsd:boolean ; rdfs:comment "1, false. Graph confers no runtime authority." .

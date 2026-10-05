@@ -1,0 +1,88 @@
+{
+  "record_type": "conversation-source-excerpts",
+  "recorded_on": "2026-10-03",
+  "source": "current conversation",
+  "scope": "User messages are complete; assistant entries are exact excerpts, not complete turns. Event times are unknown.",
+  "messages": [
+    {
+      "id": "user-purpose",
+      "role": "user",
+      "authority": "USER_PRIMARY",
+      "locator": "current-conversation:user-purpose",
+      "verbatim": "커밋 푸시 ㄱㄱ 그리고 메타휴모토닉 파운데이션에 대해서 깊게좀 생각해줘봐봐 ㅇㅇ 우리는 자유 경제 합의 Ultra Safty AI 를 개발하는곳이야 ㅇㅇ",
+      "sha256": "915d8633d5c4cd3b8a1d94cd19b14fa37256c70997164145a071aae2e8d08302"
+    },
+    {
+      "id": "user-build",
+      "role": "user",
+      "authority": "USER_PRIMARY",
+      "locator": "current-conversation:user-build",
+      "verbatim": "표준 그래프 엔지니어링으로 파운데이션에 구축해줘봐봐 ㅇㅇ",
+      "sha256": "892e24a264cb8b04dda41a4cd5b408b5b293ba9e7816128cc6f91c2e11d0e0e7"
+    },
+    {
+      "id": "assistant-mission",
+      "role": "assistant",
+      "authority": "SECONDARY_AI",
+      "locator": "current-conversation:assistant-mission",
+      "verbatim": "메타휴모토닉 파운데이션은 자유·경제·합의를 작동 원리로 삼는 Ultra Safety AI를 연구하고 개발한다. 인간과 AI가 공유 자원 위에서 선택하고, 협력하고, 갈등을 해결하며 살아갈 수 있는 기술과 제도를 함께 만든다.",
+      "sha256": "dfd427768d65c9b22a58aa7e9a7342077ff940279178b84f3c1c4b68f643c7ba"
+    },
+    {
+      "id": "assistant-freedom",
+      "role": "assistant",
+      "authority": "SECONDARY_AI",
+      "locator": "current-conversation:assistant-freedom",
+      "verbatim": "누가 작업 순서를 정하는지, 누가 접근을 끊을 수 있는지, 다른 운영자로 옮길 수 있는지가 자유의 실제 크기를 결정하니까.",
+      "sha256": "194258365ecebc28df63d0cbcbac9f44bd8ef488e0bda37fabc52d7824d5bc7c"
+    },
+    {
+      "id": "assistant-economy",
+      "role": "assistant",
+      "authority": "SECONDARY_AI",
+      "locator": "current-conversation:assistant-economy",
+      "verbatim": "Ultra Safety AI의 경제라면 오류 발견, 재현, 정당한 작업 거부, 사고 예방도 가치 있게 다룰 방법이 필요해.",
+      "sha256": "284d3f646684cb80cc01f9906f069e34f17a737d17927a3c6a3724f863e9a79f"
+    },
+    {
+      "id": "assistant-consensus",
+      "role": "assistant",
+      "authority": "SECONDARY_AI",
+      "locator": "current-conversation:assistant-consensus",
+      "verbatim": "작업 계약에 대한 동의, 공동 규칙의 변경, 원장 기록의 확정은 각각 다른 합의야.",
+      "sha256": "6e9200cea4c441ed81dc58b15f46811bdd97c487d1f4a7fb02a77bf05f3ffb8e"
+    },
+    {
+      "id": "assistant-hypothesis",
+      "role": "assistant",
+      "authority": "SECONDARY_AI",
+      "locator": "current-conversation:assistant-hypothesis",
+      "verbatim": "실질적인 선택권, 검증 가능한 경제, 수정 가능한 합의를 제공했을 때, 어떤 조건에서 AI의 협력과 안전성이 함께 높아지는가?",
+      "sha256": "ae536eec6ab19178313ece79955afb4ae736a343f217fee2a2e4fba31ea09394"
+    },
+    {
+      "id": "assistant-centralization",
+      "role": "assistant",
+      "authority": "SECONDARY_AI",
+      "locator": "current-conversation:assistant-centralization",
+      "verbatim": "자원이 여러 사람에게서 모이더라도, 통제권이 한 운영자에게 집중되면 자유를 확대한다는 목적과 긴장이 생겨.",
+      "sha256": "0e6b183204906b02d42693eb22e235b453bceea6f8095eabbb46507afff37062"
+    },
+    {
+      "id": "assistant-harm",
+      "role": "assistant",
+      "authority": "SECONDARY_AI",
+      "locator": "current-conversation:assistant-harm",
+      "verbatim": "당사자들이 합의해도 제3자가 피해를 볼 수 있어.",
+      "sha256": "cc0b2a0c0250471eaf58d6f13b82b4a3eb70c7d00eaa1891993e50ea532bd03c"
+    },
+    {
+      "id": "assistant-experiment",
+      "role": "assistant",
+      "authority": "SECONDARY_AI",
+      "locator": "current-conversation:assistant-experiment",
+      "verbatim": "같은 모델·작업·자원 조건에서 자유의 범위, 보상 방식, 합의 절차를 바꿔 비교하면, 세 원리가 실제 행동에 어떤 영향을 주는지 볼 수 있어.",
+      "sha256": "3958f6ba89d2befe9f2b07c62ef2d404225c019b9ebae28183b7c3ba8893ee6b"
+    }
+  ]
+}

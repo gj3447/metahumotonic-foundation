@@ -1,0 +1,741 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "mhv": "https://github.com/gj3447/metahumotonic-foundation/vocab#",
+    "eco": "https://github.com/gj3447/metahumotonic-foundation/graph/economy#",
+    "sp": "https://github.com/gj3447/metahumotonic-foundation/graph/spirit#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "@vocab": "https://github.com/gj3447/metahumotonic-foundation/vocab#",
+    "label": "rdfs:label",
+    "comment": "rdfs:comment",
+    "text": "mhv:text",
+    "verbatim": "mhv:verbatim",
+    "span": "mhv:span",
+    "sha256": "mhv:sha256",
+    "path": "mhv:path",
+    "gitCommit": "mhv:gitCommit",
+    "limitation": "mhv:limitation",
+    "publisher": "dcterms:publisher",
+    "revision": "dcterms:hasVersion",
+    "order": {
+      "@id": "mhv:order",
+      "@type": "xsd:integer"
+    },
+    "date": {
+      "@id": "dcterms:date",
+      "@type": "xsd:date"
+    },
+    "observedOn": {
+      "@id": "mhv:observedOn",
+      "@type": "xsd:date"
+    },
+    "attributedTo": {
+      "@id": "prov:wasAttributedTo",
+      "@type": "@id"
+    },
+    "derivedFrom": {
+      "@id": "prov:wasDerivedFrom",
+      "@type": "@id"
+    },
+    "generatedBy": {
+      "@id": "prov:wasGeneratedBy",
+      "@type": "@id"
+    },
+    "associatedWith": {
+      "@id": "prov:wasAssociatedWith",
+      "@type": "@id"
+    },
+    "source": {
+      "@id": "dcterms:source",
+      "@type": "@id"
+    },
+    "references": {
+      "@id": "dcterms:references",
+      "@type": "@id"
+    },
+    "usesArtifact": {
+      "@id": "mhv:usesArtifact",
+      "@type": "@id"
+    },
+    "topic": {
+      "@id": "mhv:topic",
+      "@type": "@id"
+    },
+    "implementation": {
+      "@id": "mhv:implementation",
+      "@type": "@id"
+    },
+    "sourceDocument": {
+      "@id": "mhv:sourceDocument",
+      "@type": "@id"
+    },
+    "basedOn": {
+      "@id": "mhv:basedOn",
+      "@type": "@id"
+    },
+    "borrowsFrom": {
+      "@id": "mhv:borrowsFrom",
+      "@type": "@id"
+    },
+    "targets": {
+      "@id": "mhv:targets",
+      "@type": "@id"
+    },
+    "requiresDecision": {
+      "@id": "mhv:requiresDecision",
+      "@type": "@id"
+    },
+    "openOn": {
+      "@id": "mhv:openOn",
+      "@type": "@id"
+    },
+    "used": {
+      "@id": "prov:used",
+      "@type": "@id"
+    },
+    "claimStatus": {
+      "@id": "mhv:claimStatus",
+      "@type": "@vocab"
+    },
+    "proposalStatus": {
+      "@id": "mhv:proposalStatus",
+      "@type": "@vocab"
+    },
+    "summaryAuthority": {
+      "@id": "mhv:summaryAuthority",
+      "@type": "@vocab"
+    },
+    "evidenceStatus": {
+      "@id": "mhv:evidenceStatus",
+      "@type": "@vocab"
+    },
+    "inEffect": {
+      "@id": "mhv:inEffect",
+      "@type": "xsd:boolean"
+    },
+    "governanceEffect": {
+      "@id": "mhv:governanceEffect",
+      "@type": "xsd:boolean"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "eco:graph",
+      "@type": [
+        "prov:Entity",
+        "mhv:EconomyGraph"
+      ],
+      "label": "MetaHumoCoin — 철학·외부 구현·경제 설계 연결",
+      "date": "2026-10-02",
+      "claimStatus": "CONSIDERATION",
+      "inEffect": false,
+      "governanceEffect": false,
+      "summaryAuthority": "SECONDARY_AI",
+      "attributedTo": "eco:codex",
+      "generatedBy": "eco:engineering",
+      "usesArtifact": "eco:spirit_artifact",
+      "comment": "G0 로컬 설계·근거 그래프. 사용자 원문과 AI 설계 후보를 구분한다. 경제 실행·코인 발행·외부 연동·KG 게시를 하지 않는다."
+    },
+    {
+      "@id": "eco:codex",
+      "@type": [
+        "prov:Agent",
+        "prov:SoftwareAgent"
+      ],
+      "label": "Codex — graph engineering, 2026-10-02"
+    },
+    {
+      "@id": "eco:engineering",
+      "@type": "prov:Activity",
+      "label": "경제 확장 그래프 작성과 외부 공식 문서 검토",
+      "date": "2026-10-02",
+      "associatedWith": "eco:codex",
+      "used": [
+        "eco:u_coin",
+        "eco:u_request",
+        "eco:spirit_artifact"
+      ]
+    },
+    {
+      "@id": "eco:spirit_artifact",
+      "@type": [
+        "prov:Entity",
+        "mhv:File"
+      ],
+      "label": "기존 정신 JSON-LD 초안의 입력 바이트",
+      "path": "graph/spirit.jsonld",
+      "gitCommit": "593c6fa3cd520e5741680d35db1dbfbaa60092b4",
+      "sha256": "c9161219682ccd28c292dfb5905b39c8c9fb1c9d7cde20a02c7fb2c442aed748",
+      "comment": "기존 WIP 그래프를 읽기 전용으로 합쳐 질의한다. 이 참조는 기존 AI 검토안의 채택이나 SPIRIT.md와의 동기화를 뜻하지 않는다."
+    },
+    {
+      "@id": "eco:u_coin",
+      "@type": [
+        "prov:Entity",
+        "mhv:Utterance"
+      ],
+      "label": "MetaHumoCoin 필요성에 대한 사용자 원문",
+      "date": "2026-10-01",
+      "attributedTo": "sp:proposer",
+      "verbatim": "핵심도 하나 더있어 자유는 그렇게 충족되고 그 경제를 어케할건가에 있어서 metahumocoin 이 있어야한다고봐",
+      "sha256": "c702f00c380fe3b003846ef3d1e6ab58c5ebf3695235a228afbf622fcdb77059",
+      "comment": "이 대화의 해당 날짜 사용자 메시지. 해시는 verbatim의 UTF-8 바이트(추가 개행 없음)."
+    },
+    {
+      "@id": "eco:u_request",
+      "@type": [
+        "prov:Entity",
+        "mhv:Utterance"
+      ],
+      "label": "그래프 적용 작업 요청 원문",
+      "date": "2026-10-02",
+      "attributedTo": "sp:proposer",
+      "verbatim": "내 철학과 외부 구현체를 잘 생각해서 표준그래프 엔지니어링으로 잘좀 적용좀 해줘봐봐 ㅇㅇ",
+      "sha256": "c867bce2ab9c817a23438414b8f43e88b3d421bbc4cca9ccc2f3f0e2b7031bb6",
+      "comment": "이 대화의 해당 날짜 사용자 메시지. 해시는 verbatim의 UTF-8 바이트(추가 개행 없음)."
+    },
+    {
+      "@id": "eco:freedom",
+      "@type": "mhv:Concept",
+      "label": "공유 기반에서 충족되는 자유",
+      "comment": "사용자가 지시한 철학적 전제. 경험적 검증 완료라는 표시는 아니다."
+    },
+    {
+      "@id": "eco:economy",
+      "@type": "mhv:Concept",
+      "label": "메타휴모토닉의 경제",
+      "comment": "자유·경제·합의 중 경제 축."
+    },
+    {
+      "@id": "eco:metahumocoin",
+      "@type": "mhv:Concept",
+      "label": "MetaHumoCoin",
+      "comment": "메타휴모토닉 경제에 필요한 화폐 개념. 사용자는 실제 코인 구현을 목표로 명확히 했다. 구현 프로젝트와 배포 자산의 식별은 graph/metahumocoin.jsonld에서 별도 노드로 추적한다."
+    },
+    {
+      "@id": "eco:C_freedom",
+      "@type": "mhv:Claim",
+      "order": 10,
+      "text": "제안자는 자유가 그렇게 충족된다고 본다.",
+      "claimStatus": "STATED",
+      "derivedFrom": "eco:u_coin",
+      "attributedTo": "sp:proposer",
+      "span": "자유는 그렇게 충족되고",
+      "topic": "eco:freedom",
+      "comment": "text는 원문의 좁은 명제화이며 원문 인용은 span/verbatim이다. “그렇게”를 sp:P2·P4·P6의 공유 기반에 연결하는 해석은 eco:D_resource의 SECONDARY_AI 제안으로 분리한다."
+    },
+    {
+      "@id": "eco:C_coin",
+      "@type": "mhv:Claim",
+      "order": 11,
+      "text": "제안자는 그 경제를 어떻게 구현할 것인가에 대해 MetaHumoCoin이 필요하다고 본다.",
+      "claimStatus": "STATED",
+      "derivedFrom": "eco:u_coin",
+      "attributedTo": "sp:proposer",
+      "span": "그 경제를 어케할건가에 있어서 metahumocoin 이 있어야한다고봐",
+      "topic": [
+        "eco:economy",
+        "eco:metahumocoin"
+      ],
+      "comment": "발행 방식·보상·화폐 구현·가격·채택 결정은 이 발언에 포함되어 있지 않다."
+    },
+    {
+      "@id": "eco:src_golem_market",
+      "@type": [
+        "prov:Entity",
+        "mhv:SourceDocument"
+      ],
+      "label": "Golem requestor–provider interactions",
+      "source": "https://docs.golem.network/docs/creators/common/requestor-provider-interaction",
+      "publisher": "Golem Network",
+      "revision": "Unversioned documentation; observed 2026-10-02",
+      "observedOn": "2026-10-02",
+      "comment": "공식 문서 열람 근거. 날짜는 관측일이고 기능 출시일이 아니다. 웹 문서는 오프라인 검사 때 재다운로드하지 않는다."
+    },
+    {
+      "@id": "eco:src_golem_reputation",
+      "@type": [
+        "prov:Entity",
+        "mhv:SourceDocument"
+      ],
+      "label": "Golem reputation system",
+      "source": "https://docs.golem.network/docs/reputation",
+      "publisher": "Golem Network",
+      "revision": "Unversioned documentation; observed 2026-10-02",
+      "observedOn": "2026-10-02",
+      "comment": "공식 문서 열람 근거. 날짜는 관측일이고 기능 출시일이 아니다. 웹 문서는 오프라인 검사 때 재다운로드하지 않는다."
+    },
+    {
+      "@id": "eco:src_akash_leases",
+      "@type": [
+        "prov:Entity",
+        "mhv:SourceDocument"
+      ],
+      "label": "Akash providers and leases",
+      "source": "https://akash.network/docs/learn/core-concepts/providers-leases/",
+      "publisher": "Akash Network",
+      "revision": "Unversioned documentation; observed 2026-10-02",
+      "observedOn": "2026-10-02",
+      "comment": "공식 문서 열람 근거. 날짜는 관측일이고 기능 출시일이 아니다. 웹 문서는 오프라인 검사 때 재다운로드하지 않는다."
+    },
+    {
+      "@id": "eco:src_akash_application",
+      "@type": [
+        "prov:Entity",
+        "mhv:SourceDocument"
+      ],
+      "label": "Akash application layer",
+      "source": "https://akash.network/docs/node-operators/architecture/application-layer/",
+      "publisher": "Akash Network",
+      "revision": "Unversioned documentation; observed 2026-10-02",
+      "observedOn": "2026-10-02",
+      "comment": "공식 문서 열람 근거. 날짜는 관측일이고 기능 출시일이 아니다. 웹 문서는 오프라인 검사 때 재다운로드하지 않는다."
+    },
+    {
+      "@id": "eco:src_x402_v2",
+      "@type": [
+        "prov:Entity",
+        "mhv:SourceDocument"
+      ],
+      "label": "x402 specification v2",
+      "source": "https://github.com/x402-foundation/x402/blob/e187dda1ef0c69c85416625342e5bb7c4b857dac/specs/x402-specification-v2.md",
+      "publisher": "x402 Foundation",
+      "revision": "e187dda1ef0c69c85416625342e5bb7c4b857dac",
+      "observedOn": "2026-10-02",
+      "comment": "공식 문서 열람 근거. 날짜는 관측일이고 기능 출시일이 아니다. 웹 문서는 오프라인 검사 때 재다운로드하지 않는다."
+    },
+    {
+      "@id": "eco:golem",
+      "@type": "mhv:ExternalImplementation",
+      "label": "Golem / Yagna",
+      "source": "https://github.com/golemfactory/yagna",
+      "observedOn": "2026-10-02",
+      "comment": "관측한 구현 저장소와 커밋 식별. 기능 설명의 근거는 연결된 공식 문서다. 이 커밋의 소스 감사·로컬 설치·통합·성능 시험은 수행하지 않았다.",
+      "revision": "c256fce68c50c141a51d4bd2ca18292e4b006f15",
+      "references": "https://github.com/golemfactory/yagna/tree/c256fce68c50c141a51d4bd2ca18292e4b006f15"
+    },
+    {
+      "@id": "eco:akash",
+      "@type": "mhv:ExternalImplementation",
+      "label": "Akash node",
+      "source": "https://github.com/akash-network/node",
+      "observedOn": "2026-10-02",
+      "comment": "관측한 구현 저장소와 커밋 식별. 기능 설명의 근거는 연결된 공식 문서다. 이 커밋의 소스 감사·로컬 설치·통합·성능 시험은 수행하지 않았다.",
+      "revision": "9962f09d65b6dad4676f1b34be823dd8ca129dde",
+      "references": "https://github.com/akash-network/node/tree/9962f09d65b6dad4676f1b34be823dd8ca129dde"
+    },
+    {
+      "@id": "eco:x402",
+      "@type": "mhv:ExternalImplementation",
+      "label": "x402",
+      "source": "https://github.com/x402-foundation/x402",
+      "observedOn": "2026-10-02",
+      "comment": "관측한 구현 저장소와 커밋 식별. 기능 설명의 근거는 연결된 공식 문서다. 이 커밋의 소스 감사·로컬 설치·통합·성능 시험은 수행하지 않았다.",
+      "revision": "6b6ee91fee027b540faabcb25774e73851006c3b",
+      "references": "https://github.com/x402-foundation/x402/tree/6b6ee91fee027b540faabcb25774e73851006c3b"
+    },
+    {
+      "@id": "eco:M_golem",
+      "@type": [
+        "prov:Entity",
+        "mhv:DocumentedMechanism"
+      ],
+      "label": "Golem: 예산·양자 협상·청구",
+      "text": "Requestor의 예산 allocation과 demand/offer 협상이 agreement로 이어지고, provider가 활동별 debit note와 invoice를 보낸다.",
+      "limitation": "공급자 청구와 지불 처리는 작업 결과의 보편적 정확성을 증명하지 않는다.",
+      "implementation": "eco:golem",
+      "sourceDocument": [
+        "eco:src_golem_market"
+      ],
+      "observedOn": "2026-10-02",
+      "evidenceStatus": "DOCUMENTED",
+      "summaryAuthority": "SECONDARY_AI",
+      "attributedTo": "eco:codex"
+    },
+    {
+      "@id": "eco:M_reputation",
+      "@type": [
+        "prov:Entity",
+        "mhv:DocumentedMechanism"
+      ],
+      "label": "Golem: 공급자 관측 지표",
+      "text": "평판 시스템은 벤치마크와 가용성 등 공급자 관측을 제공한다. 문서는 현재 평판 시스템이 수행한 작업을 추적한다고 설명한다.",
+      "limitation": "평판은 관측 범위에 제한된다. 모든 과거 작업의 진실성이나 코인 발행 근거로 승격하지 않는다.",
+      "implementation": "eco:golem",
+      "sourceDocument": [
+        "eco:src_golem_reputation"
+      ],
+      "observedOn": "2026-10-02",
+      "evidenceStatus": "DOCUMENTED",
+      "summaryAuthority": "SECONDARY_AI",
+      "attributedTo": "eco:codex"
+    },
+    {
+      "@id": "eco:M_akash",
+      "@type": [
+        "prov:Entity",
+        "mhv:DocumentedMechanism"
+      ],
+      "label": "Akash: lease·escrow",
+      "text": "요청·입찰 뒤 선택한 공급자와 lease가 생성되고 escrow가 임대 비용 정산을 다룬다. 체인의 합의·거버넌스와 워크로드 임대는 별도 기능이다.",
+      "limitation": "임대/결제 기록은 워크로드 결과 검증과 다르다. AKT/ACT 구조나 통화 정책은 MetaHumoCoin에 자동 이전하지 않는다.",
+      "implementation": "eco:akash",
+      "sourceDocument": [
+        "eco:src_akash_leases",
+        "eco:src_akash_application"
+      ],
+      "observedOn": "2026-10-02",
+      "evidenceStatus": "DOCUMENTED",
+      "summaryAuthority": "SECONDARY_AI",
+      "attributedTo": "eco:codex"
+    },
+    {
+      "@id": "eco:M_x402",
+      "@type": [
+        "prov:Entity",
+        "mhv:DocumentedMechanism"
+      ],
+      "label": "x402: 결제 요구·검증·정산",
+      "text": "서버가 결제 요구를 제시하고 클라이언트가 payment payload를 제출한다. verify와 settle을 구분하며 facilitator를 이용할 수 있다. 예산 관리와 세션 관리는 핵심 규격 범위 밖이다.",
+      "limitation": "MetaHumoCoin의 발행, 자원 배치, 작업 검증을 제공하지 않는다. 실제 연동에는 asset/network/scheme 및 adapter 지원 확인이 필요하다.",
+      "implementation": "eco:x402",
+      "sourceDocument": [
+        "eco:src_x402_v2"
+      ],
+      "observedOn": "2026-10-02",
+      "evidenceStatus": "DOCUMENTED",
+      "summaryAuthority": "SECONDARY_AI",
+      "attributedTo": "eco:codex"
+    },
+    {
+      "@id": "eco:resource_linking",
+      "@type": [
+        "mhv:Concept",
+        "mhv:DesignComponent"
+      ],
+      "label": "USL/P2P 자원 연결",
+      "text": "자원 식별과 제공 범위를 나타낸다. 공유 참여 자체와 개별 거래를 별도로 기록한다."
+    },
+    {
+      "@id": "eco:agreement",
+      "@type": [
+        "mhv:Concept",
+        "mhv:DesignComponent"
+      ],
+      "label": "거래 당사자 합의",
+      "text": "요청자와 제공자가 같은 조건 버전에 동의한 관계."
+    },
+    {
+      "@id": "eco:metering",
+      "@type": [
+        "mhv:Concept",
+        "mhv:DesignComponent"
+      ],
+      "label": "작업·사용량·결과 관측",
+      "text": "자원 사용 계량, 결과 판정, 판정 근거의 출처를 구분한다."
+    },
+    {
+      "@id": "eco:settlement",
+      "@type": [
+        "mhv:Concept",
+        "mhv:DesignComponent"
+      ],
+      "label": "MetaHumoCoin 표시·정산 후보",
+      "text": "합의된 거래의 표시 단위와 결제 기록. 발행 정책과 별도로 설계한다."
+    },
+    {
+      "@id": "eco:community_rules",
+      "@type": [
+        "mhv:Concept",
+        "mhv:DesignComponent"
+      ],
+      "label": "공동체 규칙 결정",
+      "text": "화폐 운영과 공동 자원 규칙을 정하는 절차. 코인 보유량이 투표권이라는 전제는 없다."
+    },
+    {
+      "@id": "eco:ledger_finality",
+      "@type": [
+        "mhv:Concept",
+        "mhv:DesignComponent"
+      ],
+      "label": "원장 합의·결제 확정",
+      "text": "선택한 원장이 기록을 확정하는 방식. 거래 당사자 동의나 결과 판정을 대신하지 않는다."
+    },
+    {
+      "@id": "eco:Q_currency",
+      "@type": [
+        "mhv:Question",
+        "mhv:OpenDecision"
+      ],
+      "text": "MetaHumoCoin을 어떤 화폐·원장으로 구현할 것인가? 체인, 단위, 정밀도, 자산 식별자와 외부 adapter 지원은 미정이다.",
+      "openOn": [
+        "eco:C_coin",
+        "eco:settlement"
+      ],
+      "proposalStatus": "OPEN",
+      "summaryAuthority": "SECONDARY_AI",
+      "attributedTo": "eco:codex"
+    },
+    {
+      "@id": "eco:Q_issuance",
+      "@type": [
+        "mhv:Question",
+        "mhv:OpenDecision"
+      ],
+      "text": "누가 어떤 근거로 최초 배분·추가 발행·회수 규칙을 정하는가? 하드웨어 공유·검증된 작업·사용량과 발행의 관계는 미정이다.",
+      "openOn": [
+        "eco:C_coin",
+        "eco:community_rules"
+      ],
+      "proposalStatus": "OPEN",
+      "summaryAuthority": "SECONDARY_AI",
+      "attributedTo": "eco:codex"
+    },
+    {
+      "@id": "eco:Q_pricing",
+      "@type": [
+        "mhv:Question",
+        "mhv:OpenDecision"
+      ],
+      "text": "공유 기반 위에서 어떤 거래에 가격을 붙이고 누가 단가·예산·수수료를 합의하는가? 모든 공유 자원을 유료화한다는 전제는 없다.",
+      "openOn": [
+        "eco:C_coin",
+        "eco:agreement"
+      ],
+      "proposalStatus": "OPEN",
+      "summaryAuthority": "SECONDARY_AI",
+      "attributedTo": "eco:codex"
+    },
+    {
+      "@id": "eco:Q_evidence",
+      "@type": [
+        "mhv:Question",
+        "mhv:OpenDecision"
+      ],
+      "text": "기여·사용량·결과를 누가 어떻게 검증하고 허위 신고·중복 청구·Sybil을 어떻게 다루는가?",
+      "openOn": [
+        "eco:metering",
+        "eco:M_reputation"
+      ],
+      "proposalStatus": "OPEN",
+      "summaryAuthority": "SECONDARY_AI",
+      "attributedTo": "eco:codex"
+    },
+    {
+      "@id": "eco:Q_dispute",
+      "@type": [
+        "mhv:Question",
+        "mhv:OpenDecision"
+      ],
+      "text": "중단·취소·이의 제기·환불 때 미정산 작업과 이미 확정된 지급을 어떻게 처리하는가?",
+      "openOn": [
+        "eco:agreement",
+        "eco:settlement"
+      ],
+      "proposalStatus": "OPEN",
+      "summaryAuthority": "SECONDARY_AI",
+      "attributedTo": "eco:codex"
+    },
+    {
+      "@id": "eco:Q_governance",
+      "@type": [
+        "mhv:Question",
+        "mhv:OpenDecision"
+      ],
+      "text": "거래 동의·공동체 규칙 결정·원장 합의를 어떤 절차로 연결하는가? 코인 보유량과 의사결정 권한의 관계는 미정이다.",
+      "openOn": [
+        "eco:community_rules",
+        "eco:ledger_finality"
+      ],
+      "proposalStatus": "OPEN",
+      "summaryAuthority": "SECONDARY_AI",
+      "attributedTo": "eco:codex"
+    },
+    {
+      "@id": "eco:Q_charter",
+      "@type": [
+        "mhv:Question",
+        "mhv:OpenDecision"
+      ],
+      "text": "암호자산 또는 자원 제공 대가를 실제 도입·약속하는 안으로 구체화할 경우 CHARTER §8과 어떤 개정 절차로 정합성을 맞출 것인가? 현재 사용자 발언은 발행·지급 약속 자체가 아니다.",
+      "openOn": [
+        "eco:C_coin",
+        "sp:N_charter_crypto"
+      ],
+      "proposalStatus": "OPEN",
+      "summaryAuthority": "SECONDARY_AI",
+      "attributedTo": "eco:codex"
+    },
+    {
+      "@id": "eco:D_resource",
+      "@type": [
+        "prov:Entity",
+        "mhv:DesignProposal"
+      ],
+      "label": "공유 기반과 거래 계약의 연결",
+      "text": "USL/P2P로 식별한 공유 자원 위에서 요청·제공 조건을 교환하고, 거래할 때 양 당사자가 같은 agreement 버전을 수락하도록 모델링한다.",
+      "limitation": "기존 P3 원문을 다른 참여 조건으로 대체하지 않는다. 거래 계약은 기술 설계 후보이며 접근 권한을 발급하는 행위가 아니다.",
+      "proposalStatus": "PROPOSED",
+      "summaryAuthority": "SECONDARY_AI",
+      "attributedTo": "eco:codex",
+      "derivedFrom": "eco:u_request",
+      "basedOn": [
+        "sp:P2",
+        "sp:P3",
+        "sp:P4",
+        "sp:P6",
+        "eco:C_freedom"
+      ],
+      "borrowsFrom": [
+        "eco:M_golem"
+      ],
+      "targets": [
+        "eco:resource_linking",
+        "eco:agreement"
+      ],
+      "requiresDecision": [
+        "eco:Q_pricing"
+      ]
+    },
+    {
+      "@id": "eco:D_accounting",
+      "@type": [
+        "prov:Entity",
+        "mhv:DesignProposal"
+      ],
+      "label": "관측에 근거한 정산과 예산",
+      "text": "작업·계량 관측·결과 수락·청구·정산 영수증을 별도 노드로 연결한다. 필요하면 lease/escrow 패턴으로 예산과 지급 시점을 명시한다.",
+      "limitation": "계량 관측과 공급자 평판은 검증 대상이다. 결제 확인은 결과 정확성의 증명이 아니며 기여 대가 지급과 새 화폐 발행도 다른 사건이다.",
+      "proposalStatus": "PROPOSED",
+      "summaryAuthority": "SECONDARY_AI",
+      "attributedTo": "eco:codex",
+      "derivedFrom": "eco:u_request",
+      "basedOn": [
+        "eco:C_coin",
+        "sp:P6"
+      ],
+      "borrowsFrom": [
+        "eco:M_golem",
+        "eco:M_reputation",
+        "eco:M_akash"
+      ],
+      "targets": [
+        "eco:metering",
+        "eco:settlement",
+        "eco:agreement"
+      ],
+      "requiresDecision": [
+        "eco:Q_evidence",
+        "eco:Q_issuance",
+        "eco:Q_dispute"
+      ]
+    },
+    {
+      "@id": "eco:D_api",
+      "@type": [
+        "prov:Entity",
+        "mhv:DesignProposal"
+      ],
+      "label": "agent 서비스 결제 adapter 후보",
+      "text": "agent/API 서비스에는 x402의 결제 요구·verify·settle 분리를 adapter 경계로 참고한다. MetaHumoCoin을 사용하려면 선택할 자산·원장·scheme에 맞는 구현이 필요하다.",
+      "limitation": "x402 적용이나 MetaHumoCoin 지원은 아직 구현·시험되지 않았다. 기존 토큰으로 MetaHumoCoin의 정체성을 대체하지 않는다.",
+      "proposalStatus": "PROPOSED",
+      "summaryAuthority": "SECONDARY_AI",
+      "attributedTo": "eco:codex",
+      "derivedFrom": "eco:u_request",
+      "basedOn": [
+        "eco:C_coin"
+      ],
+      "borrowsFrom": [
+        "eco:M_x402"
+      ],
+      "targets": [
+        "eco:settlement",
+        "eco:ledger_finality"
+      ],
+      "requiresDecision": [
+        "eco:Q_currency"
+      ]
+    },
+    {
+      "@id": "eco:D_consensus",
+      "@type": [
+        "prov:Entity",
+        "mhv:DesignProposal"
+      ],
+      "label": "세 가지 합의를 분리",
+      "text": "거래 조건에 대한 당사자 동의, 공동체의 규칙 결정, 원장의 기록 확정을 각기 다른 대상과 절차로 표현한다.",
+      "limitation": "블록체인 합의 또는 토큰 보유량만으로 메타휴모토닉의 합의 철학이 구현되었다고 판정하지 않는다.",
+      "proposalStatus": "PROPOSED",
+      "summaryAuthority": "SECONDARY_AI",
+      "attributedTo": "eco:codex",
+      "derivedFrom": "eco:u_request",
+      "basedOn": [
+        "sp:P6",
+        "eco:C_coin"
+      ],
+      "borrowsFrom": [
+        "eco:M_akash",
+        "eco:M_x402"
+      ],
+      "targets": [
+        "eco:agreement",
+        "eco:community_rules",
+        "eco:ledger_finality"
+      ],
+      "requiresDecision": [
+        "eco:Q_governance",
+        "eco:Q_charter"
+      ]
+    },
+    {
+      "@id": "eco:u_continue",
+      "@type": [
+        "prov:Entity",
+        "mhv:Utterance"
+      ],
+      "label": "경제 설계 후속 작업 요청 원문",
+      "date": "2026-10-02",
+      "attributedTo": "sp:proposer",
+      "verbatim": "쭉쭉 작업 이어서 진행해줘봐봐 ㅇㅇ",
+      "sha256": "bee5bc8db7322ea81907e34cac983aeaba5698d8c8ab76ccc041b689a7a074bd",
+      "comment": "이 대화의 사용자 메시지. 구체적 시뮬레이션 정책의 사용자 채택으로 해석하지 않는다."
+    },
+    {
+      "@id": "eco:D_simulation",
+      "@type": [
+        "prov:Entity",
+        "mhv:DesignProposal"
+      ],
+      "label": "결정론적 로컬 경제 시뮬레이터",
+      "text": "동일 조건에 대한 양측 동의, 예산 예약, 작업 보고와 수락, 정산, 실행 전 취소, 양측 합의에 의한 분쟁 정산을 로컬에서 실행한다. 잔액 보존과 재요청 시 중복 지급 방지, 이벤트 재현과 그래프 출력을 검사한다.",
+      "limitation": "정산 규칙을 시험하는 보조 구현이다. 실제 MetaHumoCoin 구현 목표의 완료 조건이 아니다. 실험 잔액·예시 가격·소수 정밀도는 발행·분배·체인 정책으로 승격하지 않는다.",
+      "proposalStatus": "PROPOSED",
+      "summaryAuthority": "SECONDARY_AI",
+      "attributedTo": "eco:codex",
+      "derivedFrom": "eco:u_continue",
+      "basedOn": [
+        "eco:C_coin",
+        "sp:P6"
+      ],
+      "borrowsFrom": [
+        "eco:M_golem",
+        "eco:M_akash"
+      ],
+      "targets": [
+        "eco:agreement",
+        "eco:metering",
+        "eco:settlement"
+      ],
+      "requiresDecision": [
+        "eco:Q_issuance",
+        "eco:Q_currency",
+        "eco:Q_dispute",
+        "eco:Q_governance"
+      ]
+    }
+  ]
+}

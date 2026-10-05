@@ -1,0 +1,69 @@
+@prefix cc: <https://github.com/gj3447/metahumotonic-foundation/graph/compute-coin#> .
+@prefix cv: <https://github.com/gj3447/metahumotonic-foundation/compute-coin-vocab#> .
+@prefix mhv: <https://github.com/gj3447/metahumotonic-foundation/vocab#> .
+@prefix mhc: <https://github.com/gj3447/metahumotonic-foundation/graph/metahumocoin#> .
+@prefix ex: <https://github.com/gj3447/metahumotonic-foundation/graph/ecosystem#> .
+@prefix ph: <https://github.com/gj3447/metahumotonic-foundation/graph/philosophy#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+cc:AttributedShape a sh:NodeShape ; sh:targetSubjectsOf cv:authority ;
+sh:property [ sh:path cv:text ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+sh:property [ sh:path rdfs:label ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+sh:property [ sh:path cv:authority ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+sh:property [ sh:path cv:status ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] .
+cc:UserClaimShape a sh:NodeShape ; sh:targetClass cv:UserClaim ;
+sh:property [ sh:path cv:authority ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "USER_PRIMARY" ] ;
+sh:property [ sh:path cv:status ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "RECORDED" ] .
+cc:ObservationShape a sh:NodeShape ; sh:targetClass cv:Observation ;
+sh:property [ sh:path cv:authority ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "DOCUMENT_OBSERVATION" ] ;
+sh:property [ sh:path cv:status ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "DOCUMENTED" ] ;
+sh:property [ sh:path cv:key ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+sh:property [ sh:path cv:limitation ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+sh:property [ sh:path cv:locator ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+sh:property [ sh:path cv:sourceStatus ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+sh:property [ sh:path cv:mode ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+sh:property [ sh:path dcterms:source ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] ;
+sh:property [ sh:path cv:observedOn ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:date ] ;
+sh:property [ sh:path cv:revision ; sh:maxCount 1 ; sh:datatype xsd:string ] .
+cc:ProposalShape a sh:NodeShape ; sh:targetClass cv:Proposal ;
+sh:property [ sh:path cv:authority ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "SECONDARY_AI" ] ;
+sh:property [ sh:path cv:status ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "PROPOSED" ] ;
+sh:property [ sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue cc:analyst ] ;
+sh:property [ sh:path cv:basis ; sh:minCount 1 ; sh:nodeKind sh:IRI ] ;
+sh:property [ sh:path cv:targets ; sh:minCount 1 ; sh:nodeKind sh:IRI ] .
+cc:RiskShape a sh:NodeShape ; sh:targetClass cv:Risk ;
+sh:property [ sh:path cv:authority ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "SECONDARY_AI" ] ;
+sh:property [ sh:path cv:status ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "OPEN" ] ;
+sh:property [ sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue cc:analyst ] ;
+sh:property [ sh:path cv:challenges ; sh:minCount 1 ; sh:class cv:Proposal ] .
+cc:QuestionShape a sh:NodeShape ; sh:targetClass cv:Question ;
+sh:property [ sh:path cv:authority ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "SECONDARY_AI" ] ;
+sh:property [ sh:path cv:status ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "OPEN" ] ;
+sh:property [ sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue cc:analyst ] ;
+sh:property [ sh:path cv:affects ; sh:minCount 1 ; sh:class cv:Proposal ] ;
+sh:property [ sh:path cv:targets ; sh:minCount 1 ; sh:nodeKind sh:IRI ] .
+cc:ComponentShape a sh:NodeShape ; sh:targetClass cv:Component ;
+sh:property [ sh:path cv:authority ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "SECONDARY_AI" ] ;
+sh:property [ sh:path cv:status ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "SPEC_PROPOSED" ] ;
+sh:property [ sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue cc:analyst ] ;
+sh:property [ sh:path cv:kind ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+sh:property [ sh:path cv:implements ; sh:minCount 1 ; sh:maxCount 1 ; sh:class cv:Proposal ] .
+cc:ResearchGraphShape a sh:NodeShape ; sh:targetClass cv:ResearchGraph ;
+sh:property [ sh:path cv:authority ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "SECONDARY_AI" ] ;
+sh:property [ sh:path cv:status ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "PROPOSED" ] ;
+sh:property [ sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue cc:analyst ] ;
+sh:property [ sh:path cv:normativeEffect ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue false ] ;
+sh:property [ sh:path cv:executionEffect ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue false ] .
+cc:ArtifactShape a sh:NodeShape ; sh:targetClass cv:Artifact ;
+sh:property [ sh:path mhv:path ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+sh:property [ sh:path mhv:sha256 ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:pattern "^[0-9a-f]{64}$" ] .
+cc:forUnitShape a sh:NodeShape ; sh:targetSubjectsOf cv:forUnit ; sh:property [ sh:path cv:forUnit ; sh:minCount 1 ; sh:maxCount 1 ; sh:class cv:Component ] .
+cc:boundsMintShape a sh:NodeShape ; sh:targetSubjectsOf cv:boundsMint ; sh:property [ sh:path cv:boundsMint ; sh:minCount 1 ; sh:maxCount 1 ; sh:class cv:Component ] .
+cc:createsLiabilityShape a sh:NodeShape ; sh:targetSubjectsOf cv:createsLiability ; sh:property [ sh:path cv:createsLiability ; sh:minCount 1 ; sh:maxCount 1 ; sh:class cv:Component ] .
+cc:settlesShape a sh:NodeShape ; sh:targetSubjectsOf cv:settles ; sh:property [ sh:path cv:settles ; sh:minCount 1 ; sh:maxCount 1 ; sh:class cv:Component ] .
+cc:requiresReceiptShape a sh:NodeShape ; sh:targetSubjectsOf cv:requiresReceipt ; sh:property [ sh:path cv:requiresReceipt ; sh:minCount 1 ; sh:maxCount 1 ; sh:class cv:Component ] .

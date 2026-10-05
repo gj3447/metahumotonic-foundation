@@ -1,0 +1,46 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix mhv: <https://github.com/gj3447/metahumotonic-foundation/vocab#> .
+
+# Additive simulation projection. All relationships point subject -> object.
+# Semantics and cardinalities are enforced by SHACL plus deterministic replay.
+
+mhv:SimulationRun a rdfs:Class ; rdfs:comment "A deterministic local run, with illustrative balances and policies." .
+mhv:SimulationSource a rdfs:Class ; rdfs:comment "Source bytes used by the run." .
+mhv:SimulationAccount a rdfs:Class ; rdfs:comment "A synthetic account; an actor ID is not a verified identity." .
+mhv:SimulationAgreement a rdfs:Class ; rdfs:comment "Lifecycle state and immutable proposed terms. Unlike the completed-flow fixture it can be pending or cancelled." .
+mhv:SimulationEvent a rdfs:Class ; rdfs:comment "A sequenced hash-chain journal entry, not a signature." .
+mhv:SimulationReceipt a rdfs:Class ; rdfs:comment "A simulated settlement or mutually agreed dispute resolution." .
+mhv:hasSimAccount a rdf:Property ; rdfs:domain mhv:SimulationRun ; rdfs:range mhv:SimulationAccount ; rdfs:comment "1..n accounts belonging to this run." .
+mhv:hasSimAgreement a rdf:Property ; rdfs:domain mhv:SimulationRun ; rdfs:range mhv:SimulationAgreement ; rdfs:comment "0..n agreements in the run." .
+mhv:hasSimReceipt a rdf:Property ; rdfs:domain mhv:SimulationRun ; rdfs:range mhv:SimulationReceipt ; rdfs:comment "0..n receipts in the run." .
+mhv:hasSimEvent a rdf:Property ; rdfs:domain mhv:SimulationRun ; rdfs:range mhv:SimulationEvent ; rdfs:comment "0..n events, ordered by eventSequence." .
+mhv:simSourceArtifact a rdf:Property ; rdfs:domain mhv:SimulationRun ; rdfs:range mhv:SimulationSource ; rdfs:comment "1..n source files used for reproducibility." .
+mhv:simActor a rdf:Property ; rdfs:domain mhv:SimulationEvent ; rdfs:range mhv:SimulationAccount ; rdfs:comment "Exactly 1 acting party." .
+mhv:simAgreement a rdf:Property ; rdfs:range mhv:SimulationAgreement ; rdfs:comment "Exactly 1 agreement per event or receipt." .
+mhv:simRequester a rdf:Property ; rdfs:domain mhv:SimulationAgreement ; rdfs:range mhv:SimulationAccount ; rdfs:comment "Exactly 1 requester." .
+mhv:simProvider a rdf:Property ; rdfs:domain mhv:SimulationAgreement ; rdfs:range mhv:SimulationAccount ; rdfs:comment "Exactly 1 provider, distinct from requester." .
+mhv:previousSimEvent a rdf:Property ; rdfs:domain mhv:SimulationEvent ; rdfs:range mhv:SimulationEvent ; rdfs:comment "0 on first event, exactly 1 otherwise. Acyclic sequence predecessor." .
+mhv:simState a rdf:Property ; rdfs:domain mhv:SimulationAgreement ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 lifecycle state." .
+mhv:simAccountId a rdf:Property ; rdfs:domain mhv:SimulationAccount ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 identifier, scoped to the run." .
+mhv:simAgreementId a rdf:Property ; rdfs:domain mhv:SimulationAgreement ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 identifier, scoped to the run." .
+mhv:simOperationId a rdf:Property ; rdfs:domain mhv:SimulationReceipt ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 idempotency identifier, unique within a run." .
+mhv:simReceiptKind a rdf:Property ; rdfs:domain mhv:SimulationReceipt ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 SETTLE or RESOLVE." .
+mhv:sourcePath a rdf:Property ; rdfs:domain mhv:SimulationSource ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 repository-relative source path." .
+mhv:eventSequence a rdf:Property ; rdfs:domain mhv:SimulationEvent ; rdfs:range xsd:integer ; rdfs:comment "Exactly 1 sequence number, starting at 1." .
+mhv:eventOperation a rdf:Property ; rdfs:domain mhv:SimulationEvent ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 command kind." .
+mhv:eventHash a rdf:Property ; rdfs:domain mhv:SimulationEvent ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 SHA-256 of canonical event JSON excluding event_hash." .
+mhv:previousEventHash a rdf:Property ; rdfs:domain mhv:SimulationEvent ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 predecessor hash or 64 zeroes at genesis." .
+mhv:termsHash a rdf:Property ; rdfs:domain mhv:SimulationAgreement ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 SHA-256 of canonical immutable terms." .
+mhv:simInitialBalance a rdf:Property ; rdfs:domain mhv:SimulationAccount ; rdfs:range xsd:decimal ; rdfs:comment "Exactly 1 illustrative starting balance." .
+mhv:simAvailableBalance a rdf:Property ; rdfs:domain mhv:SimulationAccount ; rdfs:range xsd:decimal ; rdfs:comment "Exactly 1 available balance." .
+mhv:simEscrow a rdf:Property ; rdfs:range xsd:decimal ; rdfs:comment "Exactly 1 held balance on a run or agreement." .
+mhv:simTotal a rdf:Property ; rdfs:domain mhv:SimulationRun ; rdfs:range xsd:decimal ; rdfs:comment "Exactly 1 initial total conserved by this experimental simulation." .
+mhv:simPaid a rdf:Property ; rdfs:domain mhv:SimulationReceipt ; rdfs:range xsd:decimal ; rdfs:comment "Exactly 1 amount credited to provider." .
+mhv:simRefund a rdf:Property ; rdfs:domain mhv:SimulationReceipt ; rdfs:range xsd:decimal ; rdfs:comment "Exactly 1 unused reserved amount returned to requester." .
+mhv:simSnapshot a rdf:Property ; rdfs:domain mhv:SimulationRun ; rdfs:range rdf:JSON ; rdfs:comment "Exactly 1 snapshot JSON, checked against replay." .
+mhv:simEventPayload a rdf:Property ; rdfs:domain mhv:SimulationEvent ; rdfs:range rdf:JSON ; rdfs:comment "Exactly 1 event payload JSON." .
+mhv:simAgreementPayload a rdf:Property ; rdfs:domain mhv:SimulationAgreement ; rdfs:range rdf:JSON ; rdfs:comment "Exactly 1 agreement state JSON." .
+mhv:simReceiptPayload a rdf:Property ; rdfs:domain mhv:SimulationReceipt ; rdfs:range rdf:JSON ; rdfs:comment "Exactly 1 receipt JSON." .

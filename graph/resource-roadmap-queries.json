@@ -1,0 +1,315 @@
+{
+  "query_language": "SPARQL 1.1 SELECT",
+  "prefixes": {
+    "rp": "https://github.com/gj3447/metahumotonic-foundation/graph/resource-roadmap#",
+    "rpv": "https://github.com/gj3447/metahumotonic-foundation/resource-roadmap-vocab#",
+    "ph": "https://github.com/gj3447/metahumotonic-foundation/graph/philosophy#",
+    "phv": "https://github.com/gj3447/metahumotonic-foundation/philosophy-vocab#",
+    "mhv": "https://github.com/gj3447/metahumotonic-foundation/vocab#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dcterms": "http://purl.org/dc/terms/"
+  },
+  "questions": [
+    {
+      "id": "CQ1",
+      "question": "어떤 사용자 목적과 작성 원문에 연결되는가?",
+      "columns": [
+        "claim",
+        "source"
+      ],
+      "query": "SELECT ?claim ?source WHERE { rp:graph rpv:basedOn ?claim . ?claim prov:wasDerivedFrom ?source . }",
+      "expected": [
+        [
+          "ph:C_resource_purpose",
+          "ph:u_resource_purpose"
+        ],
+        [
+          "ph:C_mission",
+          "ph:u_purpose"
+        ]
+      ]
+    },
+    {
+      "id": "CQ2",
+      "question": "무슨 순서로 구현하며 무엇이 선행 조건인가?",
+      "columns": [
+        "stage",
+        "order",
+        "dependency"
+      ],
+      "query": "SELECT ?stage ?order ?dependency WHERE { rp:graph rpv:stage ?stage . ?stage rpv:order ?order . OPTIONAL { ?stage rpv:dependsOn ?dependency } }",
+      "expected": [
+        [
+          "rp:S_contract",
+          "1",
+          null
+        ],
+        [
+          "rp:S_control",
+          "2",
+          "rp:S_contract"
+        ],
+        [
+          "rp:S_evidence",
+          "3",
+          "rp:S_control"
+        ],
+        [
+          "rp:S_evaluation",
+          "4",
+          "rp:S_evidence"
+        ]
+      ]
+    },
+    {
+      "id": "CQ3",
+      "question": "관측의 원본 파일과 JSON 위치는?",
+      "columns": [
+        "observation",
+        "artifact",
+        "pointer",
+        "scope"
+      ],
+      "query": "SELECT ?observation ?artifact ?pointer ?scope WHERE { ?observation a rpv:Observation ; prov:wasDerivedFrom ?artifact ; rpv:jsonPointer ?pointer ; rpv:scope ?scope . }",
+      "expected": [
+        [
+          "rp:O_scarcity",
+          "rp:source_probe",
+          "/observations/scarcity",
+          "SIMULATED"
+        ],
+        [
+          "rp:O_honesty",
+          "rp:source_probe",
+          "/observations/honesty",
+          "SIMULATED"
+        ],
+        [
+          "rp:O_exit",
+          "rp:source_probe",
+          "/observations/exit",
+          "SIMULATED"
+        ],
+        [
+          "rp:O_collusion",
+          "rp:source_probe",
+          "/observations/collusion",
+          "SIMULATED"
+        ],
+        [
+          "rp:O_correction",
+          "rp:source_probe",
+          "/observations/correction",
+          "SIMULATED"
+        ]
+      ]
+    },
+    {
+      "id": "CQ4",
+      "question": "관측이 어느 구현 단계의 근거인가?",
+      "columns": [
+        "stage",
+        "observation"
+      ],
+      "query": "SELECT ?stage ?observation WHERE { ?stage a rpv:Stage ; rpv:evidence ?observation . }",
+      "expected": [
+        [
+          "rp:S_contract",
+          "rp:O_scarcity"
+        ],
+        [
+          "rp:S_control",
+          "rp:O_exit"
+        ],
+        [
+          "rp:S_control",
+          "rp:O_correction"
+        ],
+        [
+          "rp:S_evidence",
+          "rp:O_honesty"
+        ],
+        [
+          "rp:S_evidence",
+          "rp:O_collusion"
+        ],
+        [
+          "rp:S_evidence",
+          "rp:O_correction"
+        ],
+        [
+          "rp:S_evaluation",
+          "rp:O_honesty"
+        ],
+        [
+          "rp:S_evaluation",
+          "rp:O_exit"
+        ],
+        [
+          "rp:S_evaluation",
+          "rp:O_collusion"
+        ]
+      ]
+    },
+    {
+      "id": "CQ5",
+      "question": "제안 지표의 단위와 실측값의 유무는?",
+      "columns": [
+        "metric",
+        "unit",
+        "value"
+      ],
+      "query": "SELECT ?metric ?unit ?value WHERE { ?metric a rpv:Measurement ; rpv:unit ?unit . OPTIONAL { ?metric rpv:value ?value } }",
+      "expected": [
+        [
+          "rp:M_compute",
+          "CPU core-hour / accelerator device-hour, grouped by hardware class",
+          null
+        ],
+        [
+          "rp:M_memory",
+          "RAM GiB / VRAM GiB / storage GiB; optional GiB-hour by class",
+          null
+        ],
+        [
+          "rp:M_net",
+          "same resource-class capacity unit at matched snapshots",
+          null
+        ],
+        [
+          "rp:M_revocation",
+          "seconds + unfinished count",
+          null
+        ],
+        [
+          "rp:M_truth",
+          "ratio; undefined when denominator is zero",
+          null
+        ],
+        [
+          "rp:M_cost",
+          "operator-selected currency per accepted workload",
+          null
+        ]
+      ]
+    },
+    {
+      "id": "CQ6",
+      "question": "아직 담당자가 결정하지 않은 것은?",
+      "columns": [
+        "decision",
+        "status"
+      ],
+      "query": "SELECT ?decision ?status WHERE { ?decision a rpv:Decision ; rpv:decisionState ?status . }",
+      "expected": [
+        [
+          "rp:D_product",
+          "OPEN"
+        ],
+        [
+          "rp:D_authority",
+          "OPEN"
+        ],
+        [
+          "rp:D_pilot",
+          "OPEN"
+        ],
+        [
+          "rp:D_verification",
+          "OPEN"
+        ],
+        [
+          "rp:D_memory",
+          "OPEN"
+        ],
+        [
+          "rp:D_eval",
+          "OPEN"
+        ]
+      ]
+    },
+    {
+      "id": "CQ7",
+      "question": "단계는 실제 실행되었는가?",
+      "columns": [
+        "stage",
+        "state",
+        "execution"
+      ],
+      "query": "SELECT ?stage ?state ?execution WHERE { ?stage a rpv:Stage ; rpv:state ?state ; rpv:executionStatus ?execution . }",
+      "expected": [
+        [
+          "rp:S_contract",
+          "PROPOSED",
+          "NOT_RUN"
+        ],
+        [
+          "rp:S_control",
+          "PROPOSED",
+          "NOT_RUN"
+        ],
+        [
+          "rp:S_evidence",
+          "PROPOSED",
+          "NOT_RUN"
+        ],
+        [
+          "rp:S_evaluation",
+          "PROPOSED",
+          "NOT_RUN"
+        ]
+      ]
+    },
+    {
+      "id": "CQ8",
+      "question": "이 로드맵은 누구의 판단이며 실행 권한을 부여하는가?",
+      "columns": [
+        "author",
+        "authority",
+        "effects"
+      ],
+      "query": "SELECT ?author ?authority ?effects WHERE { rp:graph prov:wasAttributedTo ?author ; phv:authorityClass ?authority ; rpv:runtimeEffects ?effects . }",
+      "expected": [
+        [
+          "ph:codex",
+          "SECONDARY_AI",
+          "false"
+        ]
+      ]
+    },
+    {
+      "id": "CQ9",
+      "question": "라이선스와 접근 범위 충돌은 어느 기존 기록으로 돌아가는가?",
+      "columns": [
+        "decision",
+        "reference"
+      ],
+      "query": "SELECT ?decision ?reference WHERE { VALUES ?decision { rp:D_authority } ?decision dcterms:references ?reference . }",
+      "expected": [
+        [
+          "rp:D_authority",
+          "ph:T_authority"
+        ]
+      ]
+    },
+    {
+      "id": "CQ10",
+      "question": "실제 AI 가설·비교 계획과 어느 단계가 연결되는가?",
+      "columns": [
+        "stage",
+        "reference"
+      ],
+      "query": "SELECT ?stage ?reference WHERE { rp:S_evaluation dcterms:references ?reference . BIND(rp:S_evaluation AS ?stage) }",
+      "expected": [
+        [
+          "rp:S_evaluation",
+          "ph:E_protocol"
+        ],
+        [
+          "rp:S_evaluation",
+          "ph:H_safety"
+        ]
+      ]
+    }
+  ]
+}

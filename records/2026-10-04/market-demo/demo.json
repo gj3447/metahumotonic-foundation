@@ -1,0 +1,285 @@
+{
+  "quotes": [
+    {
+      "requester": "buyer",
+      "offer_id": "provider-b:offer",
+      "offer_sha256": "23faf5dd4ab0e7444fa910648d76be9b09e6b62f3b64d051df668898374a9d00",
+      "task": {
+        "kind": "sum",
+        "n": 10000,
+        "delay_ms": 0
+      },
+      "limits": {
+        "input_tokens": 100,
+        "output_tokens": 20,
+        "cpu_ms": 1000,
+        "memory_mib_ms": 128000
+      },
+      "memory_mib": 128,
+      "wall_ms": 1000,
+      "expires_at_ms": 1791101418596,
+      "maximum_charge": {
+        "asset": "sandbox:SIM-MHC",
+        "atoms": 508,
+        "rounding": "CEIL_TOTAL_ONCE",
+        "lines": {
+          "input_tokens": {
+            "quantity": 100,
+            "rate": [
+              2,
+              1
+            ],
+            "exact_atoms": [
+              200,
+              1
+            ]
+          },
+          "output_tokens": {
+            "quantity": 20,
+            "rate": [
+              4,
+              1
+            ],
+            "exact_atoms": [
+              80,
+              1
+            ]
+          },
+          "cpu_ms": {
+            "quantity": 1000,
+            "rate": [
+              1,
+              10
+            ],
+            "exact_atoms": [
+              100,
+              1
+            ]
+          },
+          "memory_mib_ms": {
+            "quantity": 128000,
+            "rate": [
+              1,
+              1000
+            ],
+            "exact_atoms": [
+              128,
+              1
+            ]
+          }
+        }
+      },
+      "sha256": "ae1e42e971cdc027172f1fac59bb0e7ce1728574e928c7dcd8e8794a1f07fa8d"
+    },
+    {
+      "requester": "buyer",
+      "offer_id": "provider-a:offer",
+      "offer_sha256": "0ea1bfde1d81016d2b57682eeffd9681d6d49c745c73a317be048af5e9cdaad6",
+      "task": {
+        "kind": "sum",
+        "n": 10000,
+        "delay_ms": 0
+      },
+      "limits": {
+        "input_tokens": 100,
+        "output_tokens": 20,
+        "cpu_ms": 1000,
+        "memory_mib_ms": 128000
+      },
+      "memory_mib": 128,
+      "wall_ms": 1000,
+      "expires_at_ms": 1791101418596,
+      "maximum_charge": {
+        "asset": "sandbox:SIM-MHC",
+        "atoms": 648,
+        "rounding": "CEIL_TOTAL_ONCE",
+        "lines": {
+          "input_tokens": {
+            "quantity": 100,
+            "rate": [
+              3,
+              1
+            ],
+            "exact_atoms": [
+              300,
+              1
+            ]
+          },
+          "output_tokens": {
+            "quantity": 20,
+            "rate": [
+              6,
+              1
+            ],
+            "exact_atoms": [
+              120,
+              1
+            ]
+          },
+          "cpu_ms": {
+            "quantity": 1000,
+            "rate": [
+              1,
+              10
+            ],
+            "exact_atoms": [
+              100,
+              1
+            ]
+          },
+          "memory_mib_ms": {
+            "quantity": 128000,
+            "rate": [
+              1,
+              1000
+            ],
+            "exact_atoms": [
+              128,
+              1
+            ]
+          }
+        }
+      },
+      "sha256": "24251b4cb39c7909224d28dd7a688de7e10adb077b675cc4771084ea6f206ebe"
+    }
+  ],
+  "chosen_offer": "provider-b:offer",
+  "receipt": {
+    "order_id": "demo-completed",
+    "asset": "sandbox:SIM-MHC",
+    "state": "SETTLED",
+    "paid_atoms": 281,
+    "refund_atoms": 227,
+    "reserved_atoms": 508,
+    "reason": "verified bounded workload",
+    "quote_sha256": "ae1e42e971cdc027172f1fac59bb0e7ce1728574e928c7dcd8e8794a1f07fa8d",
+    "offer_sha256": "23faf5dd4ab0e7444fa910648d76be9b09e6b62f3b64d051df668898374a9d00",
+    "usage": {
+      "input_tokens": 100,
+      "output_tokens": 20,
+      "cpu_ms": 1,
+      "memory_mib_ms": 20
+    },
+    "evidence": {
+      "mode": "LOCAL_COMPUTE_WITH_SIMULATED_HSWM_USAGE",
+      "worker_source_sha256": "3ef311147fe06f2930b5304baed531e59d9a4447dcd196bf172474c9d4b11f0c",
+      "meter": "process_time_ns+ru_maxrss/v1",
+      "wall_ms": 1,
+      "peak_rss_mib": 20,
+      "model_calls": 0,
+      "hswm": {
+        "input_tokens": 100,
+        "output_tokens": 20,
+        "meter_status": "PROVIDER_REPORTED",
+        "source_sha256": "cdf98ce4c30e8a4ae108f6e2adf827bc3d7f3a44335f40a098c2ea1e50e0c0e3",
+        "model": "fixture-model-v1",
+        "cell_id": "fixture-cell",
+        "configuration_sha256": "396a6ed3961f08b2151b56cf5e679a782f708be204090410c639c9ab07bfc849",
+        "output": "{\"sum\":50005000}",
+        "output_sha256": "4fc8a2b2af5d6ad58e83ad4f6a0c7f3f82a852cf185ff95eb5ba7ae435783f65"
+      },
+      "hswm_execution": {
+        "status": "SUCCEEDED",
+        "success": null,
+        "durationSeconds": 0,
+        "output": "{\"sum\":50005000}",
+        "outputDigest": "4fc8a2b2af5d6ad58e83ad4f6a0c7f3f82a852cf185ff95eb5ba7ae435783f65",
+        "metadata": {
+          "execution_observation_v1": {
+            "schema_version": "hswm-adaptive-execution-observation/v1",
+            "executor_schema": "hswm-adaptive-executor/v1",
+            "kind": "llm",
+            "cell_id": "fixture-cell",
+            "configured_model": "fixture-model-v1",
+            "configuration_sha256": "396a6ed3961f08b2151b56cf5e679a782f708be204090410c639c9ab07bfc849",
+            "output_digest": "4fc8a2b2af5d6ad58e83ad4f6a0c7f3f82a852cf185ff95eb5ba7ae435783f65",
+            "provider_usage": {
+              "status": "REPORTED",
+              "prompt_tokens": 100,
+              "completion_tokens": 20,
+              "total_tokens": 120,
+              "reported_model": "fixture-model-v1"
+            }
+          }
+        }
+      },
+      "request_sha256": "17ca00a412e9df3b89654dc8838d55a3f5b8fea0fe03518889d02d1151044a5f",
+      "order_id": "demo-completed",
+      "inference_token_origin": "FIXTURE_NOT_MODEL_RUN",
+      "output_sha256": "4fc8a2b2af5d6ad58e83ad4f6a0c7f3f82a852cf185ff95eb5ba7ae435783f65",
+      "verifier": "sum-closed-form/v1",
+      "result_status": "VERIFIED_FOR_SUM_ONLY"
+    },
+    "invoice": {
+      "asset": "sandbox:SIM-MHC",
+      "atoms": 281,
+      "rounding": "CEIL_TOTAL_ONCE",
+      "lines": {
+        "input_tokens": {
+          "quantity": 100,
+          "rate": [
+            2,
+            1
+          ],
+          "exact_atoms": [
+            200,
+            1
+          ]
+        },
+        "output_tokens": {
+          "quantity": 20,
+          "rate": [
+            4,
+            1
+          ],
+          "exact_atoms": [
+            80,
+            1
+          ]
+        },
+        "cpu_ms": {
+          "quantity": 1,
+          "rate": [
+            1,
+            10
+          ],
+          "exact_atoms": [
+            1,
+            10
+          ]
+        },
+        "memory_mib_ms": {
+          "quantity": 20,
+          "rate": [
+            1,
+            1000
+          ],
+          "exact_atoms": [
+            1,
+            50
+          ]
+        }
+      }
+    },
+    "settlement": "LOCAL_SANDBOX_ONLY",
+    "at_ms": 1791101388630,
+    "sha256": "41236eca31abf2f8e180fb289a525562144f9dde203002dfc3bcfec595f35b3b"
+  },
+  "live_hswm": {
+    "status": "NOT_READY",
+    "reason": "No owner-authorized registered HSWM transport is installed",
+    "required": [
+      "USL resource/workspace mapping",
+      "owner-selected scope and recipient",
+      "expiry and revocation",
+      "bounded authorized reachability check",
+      "HSWM runtime-owned execution/admission capability"
+    ]
+  },
+  "live_crypto": {
+    "status": "NOT_CONFIGURED",
+    "asset": null
+  },
+  "mode": "LOCAL_SANDBOX",
+  "model_calls": 0
+}

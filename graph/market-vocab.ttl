@@ -1,0 +1,60 @@
+@prefix mk: <https://github.com/gj3447/metahumotonic-foundation/market-vocab#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+# Local sandbox exchange profile, not a canonical HSWM/coin-state mutation.
+mk:MarketSnapshot a rdfs:Class ; rdfs:subClassOf prov:Entity .
+mk:Asset a rdfs:Class ; rdfs:subClassOf prov:Entity .
+mk:Account a rdfs:Class ; rdfs:subClassOf prov:Entity .
+mk:Resource a rdfs:Class ; rdfs:subClassOf prov:Entity .
+mk:Grant a rdfs:Class ; rdfs:subClassOf prov:Entity .
+mk:Offer a rdfs:Class ; rdfs:subClassOf prov:Entity .
+mk:UnitPrice a rdfs:Class ; rdfs:subClassOf prov:Entity .
+mk:hasPrice a rdf:Property ; rdfs:domain mk:Offer ; rdfs:range mk:UnitPrice ; rdfs:comment "Exactly 4 distinct unit prices; offer to quoted asset-atoms/unit rates. Zero is an explicitly uncharged unit." .
+mk:unit a rdf:Property ; rdfs:domain mk:UnitPrice ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 of input_tokens, output_tokens, cpu_ms, memory_mib_ms." .
+mk:priceNumerator a rdf:Property ; rdfs:domain mk:UnitPrice ; rdfs:range xsd:integer ; rdfs:comment "Exactly 1 nonnegative numerator of asset atoms per stated unit." .
+mk:priceDenominator a rdf:Property ; rdfs:domain mk:UnitPrice ; rdfs:range xsd:integer ; rdfs:comment "Exactly 1 positive denominator; total charge is rounded once after summing exact rational lines." .
+mk:Order a rdfs:Class ; rdfs:subClassOf prov:Entity .
+mk:Usage a rdfs:Class ; rdfs:subClassOf prov:Entity .
+mk:Receipt a rdfs:Class ; rdfs:subClassOf prov:Entity .
+mk:hasOrder a rdf:Property ; rdfs:domain mk:MarketSnapshot ; rdfs:range mk:Order ; rdfs:comment "0..n; subject to object; descriptive linkage, never access authorization." .
+mk:hasOffer a rdf:Property ; rdfs:domain mk:MarketSnapshot ; rdfs:range mk:Offer ; rdfs:comment "0..n; subject to object; descriptive linkage, never access authorization." .
+mk:hasGrant a rdf:Property ; rdfs:domain mk:MarketSnapshot ; rdfs:range mk:Grant ; rdfs:comment "0..n; subject to object; descriptive linkage, never access authorization." .
+mk:hasResource a rdf:Property ; rdfs:domain mk:MarketSnapshot ; rdfs:range mk:Resource ; rdfs:comment "0..n; subject to object; descriptive linkage, never access authorization." .
+mk:hasAccount a rdf:Property ; rdfs:domain mk:MarketSnapshot ; rdfs:range mk:Account ; rdfs:comment "1..n; subject to object; descriptive linkage, never access authorization." .
+mk:asset a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range mk:Asset ; rdfs:comment "exactly 1 on priced entities; subject to object; descriptive linkage, never access authorization." .
+mk:owner a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range mk:Account ; rdfs:comment "exactly 1 on resources/grants; subject to object; descriptive linkage, never access authorization." .
+mk:provider a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range mk:Account ; rdfs:comment "exactly 1 on grants/offers/orders; subject to object; descriptive linkage, never access authorization." .
+mk:requester a rdf:Property ; rdfs:domain mk:Order ; rdfs:range mk:Account ; rdfs:comment "exactly 1; subject to object; descriptive linkage, never access authorization." .
+mk:resource a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range mk:Resource ; rdfs:comment "exactly 1 on grants/orders; subject to object; descriptive linkage, never access authorization." .
+mk:grant a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range mk:Grant ; rdfs:comment "exactly 1 on offers/orders; subject to object; descriptive linkage, never access authorization." .
+mk:offer a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range mk:Offer ; rdfs:comment "exactly 1 on orders/unit prices; subject to object; descriptive linkage, never access authorization." .
+mk:usage a rdf:Property ; rdfs:domain mk:Order ; rdfs:range mk:Usage ; rdfs:comment "0..1; subject to object; descriptive linkage, never access authorization." .
+mk:receipt a rdf:Property ; rdfs:domain mk:Order ; rdfs:range mk:Receipt ; rdfs:comment "0..1; subject to object; descriptive linkage, never access authorization." .
+mk:order a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range mk:Order ; rdfs:comment "exactly 1 on usage/receipts; subject to object; descriptive linkage, never access authorization." .
+mk:mode a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "0..1, required on relevant shapes; mode is descriptive metadata." .
+mk:state a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "0..1, required on relevant shapes; state is descriptive metadata." .
+mk:sha256 a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "0..1, required on relevant shapes; sha256 is descriptive metadata." .
+mk:sourceID a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "0..1, required on relevant shapes; sourceID is descriptive metadata." .
+mk:backend a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "0..1, required on relevant shapes; backend is descriptive metadata." .
+mk:model a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "0..1, required on relevant shapes; model is descriptive metadata." .
+mk:tokenizer a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "0..1, required on relevant shapes; tokenizer is descriptive metadata." .
+mk:meterStatus a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "0..1, required on relevant shapes; meterStatus is descriptive metadata." .
+mk:evidenceMode a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "0..1, required on relevant shapes; evidenceMode is descriptive metadata." .
+mk:uslID a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "0..1, required on relevant shapes; uslID is descriptive metadata." .
+mk:balanceAtoms a rdf:Property ; rdfs:domain mk:Account ; rdfs:range xsd:integer ; rdfs:comment "Exactly 1 nonnegative integer; unit is explicit in the property name. Atoms are sandbox asset units; tokens are inference counts." .
+mk:supplyAtoms a rdf:Property ; rdfs:domain mk:MarketSnapshot ; rdfs:range xsd:integer ; rdfs:comment "Exactly 1 nonnegative integer; unit is explicit in the property name. Atoms are sandbox asset units; tokens are inference counts." .
+mk:reservedAtoms a rdf:Property ; rdfs:domain mk:Receipt ; rdfs:range xsd:integer ; rdfs:comment "Exactly 1 nonnegative integer; unit is explicit in the property name. Atoms are sandbox asset units; tokens are inference counts." .
+mk:paidAtoms a rdf:Property ; rdfs:domain mk:Receipt ; rdfs:range xsd:integer ; rdfs:comment "Exactly 1 nonnegative integer; unit is explicit in the property name. Atoms are sandbox asset units; tokens are inference counts." .
+mk:refundAtoms a rdf:Property ; rdfs:domain mk:Receipt ; rdfs:range xsd:integer ; rdfs:comment "Exactly 1 nonnegative integer; unit is explicit in the property name. Atoms are sandbox asset units; tokens are inference counts." .
+mk:escrowAtoms a rdf:Property ; rdfs:domain mk:Order ; rdfs:range xsd:integer ; rdfs:comment "Exactly 1 nonnegative integer; unit is explicit in the property name. Atoms are sandbox asset units; tokens are inference counts." .
+mk:inputTokens a rdf:Property ; rdfs:domain mk:Usage ; rdfs:range xsd:integer ; rdfs:comment "Exactly 1 nonnegative integer; unit is explicit in the property name. Atoms are sandbox asset units; tokens are inference counts." .
+mk:outputTokens a rdf:Property ; rdfs:domain mk:Usage ; rdfs:range xsd:integer ; rdfs:comment "Exactly 1 nonnegative integer; unit is explicit in the property name. Atoms are sandbox asset units; tokens are inference counts." .
+mk:cpuMs a rdf:Property ; rdfs:domain mk:Usage ; rdfs:range xsd:integer ; rdfs:comment "Exactly 1 nonnegative integer; unit is explicit in the property name. Atoms are sandbox asset units; tokens are inference counts." .
+mk:memoryMiBMs a rdf:Property ; rdfs:domain mk:Usage ; rdfs:range xsd:integer ; rdfs:comment "Exactly 1 nonnegative integer; unit is explicit in the property name. Atoms are sandbox asset units; tokens are inference counts." .
+mk:slots a rdf:Property ; rdfs:domain mk:Resource ; rdfs:range xsd:integer ; rdfs:comment "Exactly 1 nonnegative integer; unit is explicit in the property name. Atoms are sandbox asset units; tokens are inference counts." .
+mk:memoryMiB a rdf:Property ; rdfs:domain mk:Resource ; rdfs:range xsd:integer ; rdfs:comment "Exactly 1 nonnegative integer; unit is explicit in the property name. Atoms are sandbox asset units; tokens are inference counts." .
+mk:expiresAtMs a rdf:Property ; rdfs:domain mk:Grant ; rdfs:range xsd:integer ; rdfs:comment "Exactly 1 nonnegative integer; unit is explicit in the property name. Atoms are sandbox asset units; tokens are inference counts." .

@@ -1,0 +1,526 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "mk": "https://github.com/gj3447/metahumotonic-foundation/market-vocab#",
+    "run": "urn:metahumotonic:market:38f1b34b56ca5c2b6dc862e5188d5eaef39089a6cb089fefd9de22b4cd93e659:",
+    "prov": "http://www.w3.org/ns/prov#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "label": "rdfs:label",
+    "hasOrder": {
+      "@id": "mk:hasOrder",
+      "@type": "@id"
+    },
+    "hasOffer": {
+      "@id": "mk:hasOffer",
+      "@type": "@id"
+    },
+    "hasGrant": {
+      "@id": "mk:hasGrant",
+      "@type": "@id"
+    },
+    "hasResource": {
+      "@id": "mk:hasResource",
+      "@type": "@id"
+    },
+    "hasAccount": {
+      "@id": "mk:hasAccount",
+      "@type": "@id"
+    },
+    "asset": {
+      "@id": "mk:asset",
+      "@type": "@id"
+    },
+    "owner": {
+      "@id": "mk:owner",
+      "@type": "@id"
+    },
+    "provider": {
+      "@id": "mk:provider",
+      "@type": "@id"
+    },
+    "requester": {
+      "@id": "mk:requester",
+      "@type": "@id"
+    },
+    "resource": {
+      "@id": "mk:resource",
+      "@type": "@id"
+    },
+    "grant": {
+      "@id": "mk:grant",
+      "@type": "@id"
+    },
+    "offer": {
+      "@id": "mk:offer",
+      "@type": "@id"
+    },
+    "usage": {
+      "@id": "mk:usage",
+      "@type": "@id"
+    },
+    "receipt": {
+      "@id": "mk:receipt",
+      "@type": "@id"
+    },
+    "order": {
+      "@id": "mk:order",
+      "@type": "@id"
+    },
+    "hasPrice": {
+      "@id": "mk:hasPrice",
+      "@type": "@id"
+    },
+    "mode": "mk:mode",
+    "state": "mk:state",
+    "sha256": "mk:sha256",
+    "sourceID": "mk:sourceID",
+    "backend": "mk:backend",
+    "model": "mk:model",
+    "tokenizer": "mk:tokenizer",
+    "meterStatus": "mk:meterStatus",
+    "evidenceMode": "mk:evidenceMode",
+    "uslID": "mk:uslID",
+    "unit": "mk:unit",
+    "balanceAtoms": {
+      "@id": "mk:balanceAtoms",
+      "@type": "xsd:integer"
+    },
+    "supplyAtoms": {
+      "@id": "mk:supplyAtoms",
+      "@type": "xsd:integer"
+    },
+    "reservedAtoms": {
+      "@id": "mk:reservedAtoms",
+      "@type": "xsd:integer"
+    },
+    "paidAtoms": {
+      "@id": "mk:paidAtoms",
+      "@type": "xsd:integer"
+    },
+    "refundAtoms": {
+      "@id": "mk:refundAtoms",
+      "@type": "xsd:integer"
+    },
+    "escrowAtoms": {
+      "@id": "mk:escrowAtoms",
+      "@type": "xsd:integer"
+    },
+    "inputTokens": {
+      "@id": "mk:inputTokens",
+      "@type": "xsd:integer"
+    },
+    "outputTokens": {
+      "@id": "mk:outputTokens",
+      "@type": "xsd:integer"
+    },
+    "cpuMs": {
+      "@id": "mk:cpuMs",
+      "@type": "xsd:integer"
+    },
+    "memoryMiBMs": {
+      "@id": "mk:memoryMiBMs",
+      "@type": "xsd:integer"
+    },
+    "slots": {
+      "@id": "mk:slots",
+      "@type": "xsd:integer"
+    },
+    "memoryMiB": {
+      "@id": "mk:memoryMiB",
+      "@type": "xsd:integer"
+    },
+    "expiresAtMs": {
+      "@id": "mk:expiresAtMs",
+      "@type": "xsd:integer"
+    },
+    "priceNumerator": {
+      "@id": "mk:priceNumerator",
+      "@type": "xsd:integer"
+    },
+    "priceDenominator": {
+      "@id": "mk:priceDenominator",
+      "@type": "xsd:integer"
+    },
+    "references": {
+      "@id": "http://purl.org/dc/terms/references",
+      "@type": "@id"
+    },
+    "generatedBy": {
+      "@id": "prov:wasGeneratedBy",
+      "@type": "@id"
+    },
+    "associatedWith": {
+      "@id": "prov:wasAssociatedWith",
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "run:Asset:sandbox",
+      "@type": [
+        "mk:Asset",
+        "prov:Entity"
+      ],
+      "label": "SIM-MHC sandbox atoms",
+      "sourceID": "sandbox:SIM-MHC",
+      "mode": "LOCAL_SANDBOX"
+    },
+    {
+      "@id": "run:projection",
+      "@type": "prov:Activity",
+      "associatedWith": "run:operator",
+      "label": "Local market snapshot projection; no HSWM admission or chain settlement"
+    },
+    {
+      "@id": "run:operator",
+      "@type": "prov:SoftwareAgent",
+      "label": "metahumotonic-market/v1"
+    },
+    {
+      "@id": "run:MarketSnapshot:root",
+      "@type": [
+        "mk:MarketSnapshot",
+        "prov:Entity"
+      ],
+      "mode": "LOCAL_SANDBOX",
+      "sha256": "38f1b34b56ca5c2b6dc862e5188d5eaef39089a6cb089fefd9de22b4cd93e659",
+      "asset": "run:Asset:sandbox",
+      "supplyAtoms": 100000,
+      "generatedBy": "run:projection",
+      "references": [
+        "https://github.com/gj3447/metahumotonic-foundation/graph/resource-roadmap#S_contract",
+        "https://github.com/gj3447/metahumotonic-foundation/graph/resource-roadmap#S_control",
+        "https://github.com/gj3447/metahumotonic-foundation/graph/resource-roadmap#S_evidence",
+        "https://github.com/gj3447/metahumotonic-foundation/graph/philosophy#C_resource_purpose",
+        "https://github.com/gj3447/metahumotonic-foundation/market/interop.json",
+        "https://github.com/gj3447/metahumotonic-foundation/records/2026-10-04/market-source.json"
+      ],
+      "hasOrder": [
+        "run:Order:demo-cancelled",
+        "run:Order:demo-completed"
+      ],
+      "hasOffer": [
+        "run:Offer:provider-a%3Aoffer",
+        "run:Offer:provider-b%3Aoffer"
+      ],
+      "hasGrant": [
+        "run:Grant:provider-a%3Agrant",
+        "run:Grant:provider-b%3Agrant"
+      ],
+      "hasResource": [
+        "run:Resource:provider-a%3Acpu",
+        "run:Resource:provider-b%3Acpu"
+      ],
+      "hasAccount": [
+        "run:Account:buyer",
+        "run:Account:provider-a",
+        "run:Account:provider-b"
+      ]
+    },
+    {
+      "@id": "run:Account:buyer",
+      "@type": [
+        "mk:Account",
+        "prov:Entity"
+      ],
+      "sourceID": "buyer",
+      "balanceAtoms": 99719,
+      "asset": "run:Asset:sandbox"
+    },
+    {
+      "@id": "run:Account:provider-a",
+      "@type": [
+        "mk:Account",
+        "prov:Entity"
+      ],
+      "sourceID": "provider-a",
+      "balanceAtoms": 0,
+      "asset": "run:Asset:sandbox"
+    },
+    {
+      "@id": "run:Account:provider-b",
+      "@type": [
+        "mk:Account",
+        "prov:Entity"
+      ],
+      "sourceID": "provider-b",
+      "balanceAtoms": 281,
+      "asset": "run:Asset:sandbox"
+    },
+    {
+      "@id": "run:Resource:provider-a%3Acpu",
+      "@type": [
+        "mk:Resource",
+        "prov:Entity"
+      ],
+      "sourceID": "provider-a:cpu",
+      "owner": "run:Account:provider-a",
+      "slots": 1,
+      "memoryMiB": 256,
+      "uslID": "usl:demo:provider-a",
+      "state": "OPERATOR_DECLARED_LOCAL_POOL"
+    },
+    {
+      "@id": "run:Resource:provider-b%3Acpu",
+      "@type": [
+        "mk:Resource",
+        "prov:Entity"
+      ],
+      "sourceID": "provider-b:cpu",
+      "owner": "run:Account:provider-b",
+      "slots": 1,
+      "memoryMiB": 256,
+      "uslID": "usl:demo:provider-b",
+      "state": "OPERATOR_DECLARED_LOCAL_POOL"
+    },
+    {
+      "@id": "run:Grant:provider-a%3Agrant",
+      "@type": [
+        "mk:Grant",
+        "prov:Entity"
+      ],
+      "sourceID": "provider-a:grant",
+      "owner": "run:Account:provider-a",
+      "provider": "run:Account:provider-a",
+      "resource": "run:Resource:provider-a%3Acpu",
+      "state": "ACTIVE",
+      "expiresAtMs": 1791101448593
+    },
+    {
+      "@id": "run:Grant:provider-b%3Agrant",
+      "@type": [
+        "mk:Grant",
+        "prov:Entity"
+      ],
+      "sourceID": "provider-b:grant",
+      "owner": "run:Account:provider-b",
+      "provider": "run:Account:provider-b",
+      "resource": "run:Resource:provider-b%3Acpu",
+      "state": "ACTIVE",
+      "expiresAtMs": 1791101448594
+    },
+    {
+      "@id": "run:UnitPrice:provider-a%3Aoffer%3Acpu_ms",
+      "@type": [
+        "mk:UnitPrice",
+        "prov:Entity"
+      ],
+      "offer": "run:Offer:provider-a%3Aoffer",
+      "asset": "run:Asset:sandbox",
+      "unit": "cpu_ms",
+      "priceNumerator": 1,
+      "priceDenominator": 10
+    },
+    {
+      "@id": "run:UnitPrice:provider-a%3Aoffer%3Ainput_tokens",
+      "@type": [
+        "mk:UnitPrice",
+        "prov:Entity"
+      ],
+      "offer": "run:Offer:provider-a%3Aoffer",
+      "asset": "run:Asset:sandbox",
+      "unit": "input_tokens",
+      "priceNumerator": 3,
+      "priceDenominator": 1
+    },
+    {
+      "@id": "run:UnitPrice:provider-a%3Aoffer%3Amemory_mib_ms",
+      "@type": [
+        "mk:UnitPrice",
+        "prov:Entity"
+      ],
+      "offer": "run:Offer:provider-a%3Aoffer",
+      "asset": "run:Asset:sandbox",
+      "unit": "memory_mib_ms",
+      "priceNumerator": 1,
+      "priceDenominator": 1000
+    },
+    {
+      "@id": "run:UnitPrice:provider-a%3Aoffer%3Aoutput_tokens",
+      "@type": [
+        "mk:UnitPrice",
+        "prov:Entity"
+      ],
+      "offer": "run:Offer:provider-a%3Aoffer",
+      "asset": "run:Asset:sandbox",
+      "unit": "output_tokens",
+      "priceNumerator": 6,
+      "priceDenominator": 1
+    },
+    {
+      "@id": "run:Offer:provider-a%3Aoffer",
+      "@type": [
+        "mk:Offer",
+        "prov:Entity"
+      ],
+      "sourceID": "provider-a:offer",
+      "provider": "run:Account:provider-a",
+      "grant": "run:Grant:provider-a%3Agrant",
+      "asset": "run:Asset:sandbox",
+      "backend": "fixture-hswm",
+      "state": "OPEN",
+      "sha256": "0ea1bfde1d81016d2b57682eeffd9681d6d49c745c73a317be048af5e9cdaad6",
+      "hasPrice": [
+        "run:UnitPrice:provider-a%3Aoffer%3Acpu_ms",
+        "run:UnitPrice:provider-a%3Aoffer%3Ainput_tokens",
+        "run:UnitPrice:provider-a%3Aoffer%3Amemory_mib_ms",
+        "run:UnitPrice:provider-a%3Aoffer%3Aoutput_tokens"
+      ],
+      "model": "fixture-model-v1",
+      "tokenizer": "fixture-tokenizer-v1"
+    },
+    {
+      "@id": "run:UnitPrice:provider-b%3Aoffer%3Acpu_ms",
+      "@type": [
+        "mk:UnitPrice",
+        "prov:Entity"
+      ],
+      "offer": "run:Offer:provider-b%3Aoffer",
+      "asset": "run:Asset:sandbox",
+      "unit": "cpu_ms",
+      "priceNumerator": 1,
+      "priceDenominator": 10
+    },
+    {
+      "@id": "run:UnitPrice:provider-b%3Aoffer%3Ainput_tokens",
+      "@type": [
+        "mk:UnitPrice",
+        "prov:Entity"
+      ],
+      "offer": "run:Offer:provider-b%3Aoffer",
+      "asset": "run:Asset:sandbox",
+      "unit": "input_tokens",
+      "priceNumerator": 2,
+      "priceDenominator": 1
+    },
+    {
+      "@id": "run:UnitPrice:provider-b%3Aoffer%3Amemory_mib_ms",
+      "@type": [
+        "mk:UnitPrice",
+        "prov:Entity"
+      ],
+      "offer": "run:Offer:provider-b%3Aoffer",
+      "asset": "run:Asset:sandbox",
+      "unit": "memory_mib_ms",
+      "priceNumerator": 1,
+      "priceDenominator": 1000
+    },
+    {
+      "@id": "run:UnitPrice:provider-b%3Aoffer%3Aoutput_tokens",
+      "@type": [
+        "mk:UnitPrice",
+        "prov:Entity"
+      ],
+      "offer": "run:Offer:provider-b%3Aoffer",
+      "asset": "run:Asset:sandbox",
+      "unit": "output_tokens",
+      "priceNumerator": 4,
+      "priceDenominator": 1
+    },
+    {
+      "@id": "run:Offer:provider-b%3Aoffer",
+      "@type": [
+        "mk:Offer",
+        "prov:Entity"
+      ],
+      "sourceID": "provider-b:offer",
+      "provider": "run:Account:provider-b",
+      "grant": "run:Grant:provider-b%3Agrant",
+      "asset": "run:Asset:sandbox",
+      "backend": "fixture-hswm",
+      "state": "OPEN",
+      "sha256": "23faf5dd4ab0e7444fa910648d76be9b09e6b62f3b64d051df668898374a9d00",
+      "hasPrice": [
+        "run:UnitPrice:provider-b%3Aoffer%3Acpu_ms",
+        "run:UnitPrice:provider-b%3Aoffer%3Ainput_tokens",
+        "run:UnitPrice:provider-b%3Aoffer%3Amemory_mib_ms",
+        "run:UnitPrice:provider-b%3Aoffer%3Aoutput_tokens"
+      ],
+      "model": "fixture-model-v1",
+      "tokenizer": "fixture-tokenizer-v1"
+    },
+    {
+      "@id": "run:Receipt:demo-cancelled",
+      "@type": [
+        "mk:Receipt",
+        "prov:Entity"
+      ],
+      "order": "run:Order:demo-cancelled",
+      "asset": "run:Asset:sandbox",
+      "state": "CANCELLED",
+      "reservedAtoms": 648,
+      "paidAtoms": 0,
+      "refundAtoms": 648,
+      "sha256": "b0d6420da42abd912b5bb349b7e2e30b7a6173b5e62a040499f0c4411cafa2b1"
+    },
+    {
+      "@id": "run:Order:demo-cancelled",
+      "@type": [
+        "mk:Order",
+        "prov:Entity"
+      ],
+      "sourceID": "demo-cancelled",
+      "offer": "run:Offer:provider-a%3Aoffer",
+      "grant": "run:Grant:provider-a%3Agrant",
+      "requester": "run:Account:buyer",
+      "provider": "run:Account:provider-a",
+      "resource": "run:Resource:provider-a%3Acpu",
+      "asset": "run:Asset:sandbox",
+      "state": "CANCELLED",
+      "escrowAtoms": 0,
+      "sha256": "a0c2c3a5912569ef29abcc25964d85db56ec04035ff050b0346ea613278a784a",
+      "receipt": "run:Receipt:demo-cancelled"
+    },
+    {
+      "@id": "run:Usage:demo-completed",
+      "@type": [
+        "mk:Usage",
+        "prov:Entity"
+      ],
+      "order": "run:Order:demo-completed",
+      "inputTokens": 100,
+      "outputTokens": 20,
+      "cpuMs": 1,
+      "memoryMiBMs": 20,
+      "evidenceMode": "LOCAL_COMPUTE_WITH_SIMULATED_HSWM_USAGE",
+      "sha256": "c1ca0cc1a4875beb0dd0ea2eea70d0748fa76d6b2ed67b103ba1af8483ef054e",
+      "model": "fixture-model-v1",
+      "tokenizer": "fixture-tokenizer-v1",
+      "meterStatus": "PROVIDER_REPORTED"
+    },
+    {
+      "@id": "run:Receipt:demo-completed",
+      "@type": [
+        "mk:Receipt",
+        "prov:Entity"
+      ],
+      "order": "run:Order:demo-completed",
+      "asset": "run:Asset:sandbox",
+      "state": "SETTLED",
+      "reservedAtoms": 508,
+      "paidAtoms": 281,
+      "refundAtoms": 227,
+      "sha256": "41236eca31abf2f8e180fb289a525562144f9dde203002dfc3bcfec595f35b3b"
+    },
+    {
+      "@id": "run:Order:demo-completed",
+      "@type": [
+        "mk:Order",
+        "prov:Entity"
+      ],
+      "sourceID": "demo-completed",
+      "offer": "run:Offer:provider-b%3Aoffer",
+      "grant": "run:Grant:provider-b%3Agrant",
+      "requester": "run:Account:buyer",
+      "provider": "run:Account:provider-b",
+      "resource": "run:Resource:provider-b%3Acpu",
+      "asset": "run:Asset:sandbox",
+      "state": "SETTLED",
+      "escrowAtoms": 0,
+      "sha256": "ae1e42e971cdc027172f1fac59bb0e7ce1728574e928c7dcd8e8794a1f07fa8d",
+      "usage": "run:Usage:demo-completed",
+      "receipt": "run:Receipt:demo-completed"
+    }
+  ]
+}

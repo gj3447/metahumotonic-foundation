@@ -1,0 +1,36 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix mhv: <https://github.com/gj3447/metahumotonic-foundation/vocab#> .
+@prefix rpv: <https://github.com/gj3447/metahumotonic-foundation/resource-roadmap-vocab#> .
+
+# G0 owner-scoped proposal. Edges read subject -> object; no permission edges.
+rpv:Proposal a rdfs:Class ; rdfs:subClassOf prov:Entity .
+rpv:PlanGraph a rdfs:Class ; rdfs:subClassOf rpv:Proposal .
+rpv:Stage a rdfs:Class ; rdfs:subClassOf rpv:Proposal .
+rpv:Measurement a rdfs:Class ; rdfs:subClassOf rpv:Proposal .
+rpv:Decision a rdfs:Class ; rdfs:subClassOf rpv:Proposal .
+rpv:Observation a rdfs:Class ; rdfs:subClassOf prov:Entity ; rdfs:comment "Exact JSON subtree in a pinned simulated run; no real capacity or AI safety measurement." .
+
+rpv:basedOn a rdf:Property ; rdfs:domain rpv:Proposal ; rdfs:range mhv:Claim ; rdfs:comment "1..n; proposal -> motivating user claim; does not confer adoption." .
+rpv:evidence a rdf:Property ; rdfs:domain rpv:Proposal ; rdfs:range rpv:Observation ; rdfs:comment "0..n; proposal -> relevant observed protocol behavior." .
+rpv:stage a rdf:Property ; rdfs:domain rpv:PlanGraph ; rdfs:range rpv:Stage ; rdfs:comment "1..n; roadmap -> bounded work packages." .
+rpv:dependsOn a rdf:Property ; rdfs:domain rpv:Stage ; rdfs:range rpv:Stage ; rdfs:comment "0..n; dependent -> prerequisite; acyclic, lower order first." .
+rpv:metric a rdf:Property ; rdfs:domain rpv:Stage ; rdfs:range rpv:Measurement ; rdfs:comment "1..n; stage -> proposed measurement definition, never a value." .
+rpv:decision a rdf:Property ; rdfs:domain rpv:Stage ; rdfs:range rpv:Decision ; rdfs:comment "0..n; stage -> open owner decision for that implementation." .
+rpv:state a rdf:Property ; rdfs:domain rpv:Proposal ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 PROPOSED; source authority is separate." .
+rpv:executionStatus a rdf:Property ; rdfs:domain rpv:Stage ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 NOT_RUN for this design revision." .
+rpv:decisionState a rdf:Property ; rdfs:domain rpv:Decision ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 OPEN; no inferred user selection." .
+rpv:order a rdf:Property ; rdfs:domain rpv:Stage ; rdfs:range xsd:integer ; rdfs:comment "Exactly 1 positive unique display/dependency order." .
+rpv:deliverable a rdf:Property ; rdfs:domain rpv:Stage ; rdfs:range xsd:string ; rdfs:comment "Exactly 1; concrete artifact to implement." .
+rpv:acceptance a rdf:Property ; rdfs:domain rpv:Stage ; rdfs:range xsd:string ; rdfs:comment "Exactly 1; falsifiable completion conditions; not a completed check." .
+rpv:stopCondition a rdf:Property ; rdfs:domain rpv:Stage ; rdfs:range xsd:string ; rdfs:comment "Exactly 1; when the bounded pilot stops or excludes a resource." .
+rpv:calculation a rdf:Property ; rdfs:domain rpv:Measurement ; rdfs:range xsd:string ; rdfs:comment "Exactly 1; definition with units, grouping and unknown handling." .
+rpv:unit a rdf:Property ; rdfs:domain rpv:Measurement ; rdfs:range xsd:string ; rdfs:comment "Exactly 1; dimension or explicit vector of dimensions." .
+rpv:jsonPointer a rdf:Property ; rdfs:domain rpv:Observation ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 RFC 6901 pointer into prov:wasDerivedFrom; exact subtree checked." .
+rpv:value a rdf:Property ; rdfs:domain rpv:Observation ; rdfs:range rdf:JSON ; rdfs:comment "Exactly 1 JSON literal; must equal the pinned subtree including types." .
+rpv:scope a rdf:Property ; rdfs:domain rpv:Observation ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 SIMULATED; not real hardware or live model evidence." .
+rpv:runtimeEffects a rdf:Property ; rdfs:domain rpv:PlanGraph ; rdfs:range xsd:boolean ; rdfs:comment "Exactly 1 false; writing/checking this graph does not execute its work packages." .
+rpv:pilotBoundary a rdf:Property ; rdfs:domain rpv:PlanGraph ; rdfs:range xsd:string ; rdfs:comment "Exactly 1; finite, operator-authorized scope of the future pilot." .
+rpv:rationale a rdf:Property ; rdfs:domain rpv:PlanGraph ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 AI strategic reasoning, not measured economic causality." .

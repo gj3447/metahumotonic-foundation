@@ -1,0 +1,21 @@
+{
+  "schema": "metahumotonic-market-interop/v1",
+  "status": "LOCAL_ADAPTER_IMPLEMENTED_LIVE_NOT_READY",
+  "native_repository": "https://github.com/gj3447/HSWM",
+  "source_path": "src/hswm/effect-runtime/src/adaptive-executor.ts",
+  "source_commit": "58f1d4f08352c33c8481f7bf2553d95e6896a091",
+  "source_sha256": "fb19126f63b8071539d1bdbb4b60fb8a9a30416e4e6d9ffa572ec92e0c988c0b",
+  "observed_on": "2026-10-04",
+  "native_schema": "hswm-adaptive-execution-observation/v1",
+  "native_executor": "hswm-adaptive-executor/v1",
+  "usage_path": "metadata.execution_observation_v1.provider_usage",
+  "semantics": "Provider reported inference usage is distinct from independent outcome validation, HSWM admission and cryptocurrency settlement. No native runtime code is copied or modified.",
+  "fields": {
+    "prompt_tokens": "input_tokens",
+    "completion_tokens": "output_tokens",
+    "total_tokens": "validated_sum_not_billed_again"
+  },
+  "unknown_physical_usage": "UNKNOWN_NOT_ZERO",
+  "user_source": "records/2026-10-04/market-source.json",
+  "user_source_sha256": "98d6a511a7c75c7ece0c085e46a463e1ff5985a383b75e4f0ecd1afa3be326a1"
+}

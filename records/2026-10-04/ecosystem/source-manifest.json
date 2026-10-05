@@ -1,0 +1,98 @@
+{
+  "schema": "metahumotonic-ecosystem-inputs/v1",
+  "recorded_on": "2026-10-04",
+  "authority": "DOCUMENT_OBSERVATION",
+  "sources": [
+    {
+      "id": "chu_os",
+      "owner": "CHU",
+      "source_path": "canon/sources/USER_PRIMARY_CHU_HYPERGRAPH_OS_2026-09-29.txt",
+      "revision": "e53500c05999ad01317eba47f00f533f8b5fade6",
+      "sha256": "7d3d6e3f4ed358275fda93b84abff1796f5214bd6f5173dafd72c736f1787f53",
+      "copy_path": "records/2026-10-04/ecosystem/chu-os.txt",
+      "source_uri": "https://github.com/gj3447/CHU/blob/e53500c05999ad01317eba47f00f533f8b5fade6/canon/sources/USER_PRIMARY_CHU_HYPERGRAPH_OS_2026-09-29.txt",
+      "state": "COMMITTED_BYTES",
+      "scope": "Preserved source; interpretation and implementation efficacy remain separate."
+    },
+    {
+      "id": "chu_software",
+      "owner": "CHU",
+      "source_path": "canon/sources/USER_PRIMARY_CHU_SOFTWARE_ARCHITECTURE_2026-09-27.txt",
+      "revision": "e53500c05999ad01317eba47f00f533f8b5fade6",
+      "sha256": "a403b110090d748b21bb5db0b0429a582aceda10b23eab92a0dfb2957188c598",
+      "copy_path": "records/2026-10-04/ecosystem/chu-software.txt",
+      "source_uri": "https://github.com/gj3447/CHU/blob/e53500c05999ad01317eba47f00f533f8b5fade6/canon/sources/USER_PRIMARY_CHU_SOFTWARE_ARCHITECTURE_2026-09-27.txt",
+      "state": "COMMITTED_BYTES",
+      "scope": "Preserved source; interpretation and implementation efficacy remain separate."
+    },
+    {
+      "id": "chu_scope",
+      "owner": "CHU",
+      "source_path": "canon/sources/USER_PRIMARY_CHU_HSWM_SCOPE_2026-09-27.txt",
+      "revision": "e53500c05999ad01317eba47f00f533f8b5fade6",
+      "sha256": "a9b1ea40876a3e9134a8585bab75742b8e4884038967b4f494da906aa75a0014",
+      "copy_path": "records/2026-10-04/ecosystem/chu-scope.txt",
+      "source_uri": "https://github.com/gj3447/CHU/blob/e53500c05999ad01317eba47f00f533f8b5fade6/canon/sources/USER_PRIMARY_CHU_HSWM_SCOPE_2026-09-27.txt",
+      "state": "COMMITTED_BYTES",
+      "scope": "Preserved source; interpretation and implementation efficacy remain separate."
+    },
+    {
+      "id": "hswm_identity",
+      "owner": "HSWM",
+      "source_path": "docs/canon/sources/USER_PRIMARY_HSWM_HYPERGRAPH_NEURAL_AI_2026-09-14.txt",
+      "revision": "58f1d4f08352c33c8481f7bf2553d95e6896a091",
+      "sha256": "56db5711373aab59d1046f882a7a6668f03ba8ffa14a5e9faeed1eb824eab7d3",
+      "copy_path": "records/2026-10-04/ecosystem/hswm-identity.txt",
+      "source_uri": "https://github.com/gj3447/HSWM/blob/58f1d4f08352c33c8481f7bf2553d95e6896a091/docs/canon/sources/USER_PRIMARY_HSWM_HYPERGRAPH_NEURAL_AI_2026-09-14.txt",
+      "state": "COMMITTED_BYTES",
+      "scope": "Preserved source; interpretation and implementation efficacy remain separate."
+    },
+    {
+      "id": "hswm_state",
+      "owner": "HSWM",
+      "source_path": "docs/canon/sources/USER_PRIMARY_HSWM_STATE_LOCAL_OPERATOR_HYPERON_2026-09-14.txt",
+      "revision": "58f1d4f08352c33c8481f7bf2553d95e6896a091",
+      "sha256": "bcfc99553d2a932c69201adeddafc3144b764a774d289841d3368392bb4b42f5",
+      "copy_path": "records/2026-10-04/ecosystem/hswm-state.txt",
+      "source_uri": "https://github.com/gj3447/HSWM/blob/58f1d4f08352c33c8481f7bf2553d95e6896a091/docs/canon/sources/USER_PRIMARY_HSWM_STATE_LOCAL_OPERATOR_HYPERON_2026-09-14.txt",
+      "state": "COMMITTED_BYTES",
+      "scope": "Preserved source; interpretation and implementation efficacy remain separate."
+    },
+    {
+      "id": "hswm_fractal",
+      "owner": "HSWM",
+      "source_path": "docs/canon/sources/USER_PRIMARY_HSWM_FRACTAL_COGNITIVE_COMPOSITION_2026-08-28.txt",
+      "revision": "58f1d4f08352c33c8481f7bf2553d95e6896a091",
+      "sha256": "c453034f1d13c2bd7498a2e6b488a3bf07af74a3a7ee0f4d1ba7d4c74b2e685e",
+      "copy_path": "records/2026-10-04/ecosystem/hswm-fractal.txt",
+      "source_uri": "https://github.com/gj3447/HSWM/blob/58f1d4f08352c33c8481f7bf2553d95e6896a091/docs/canon/sources/USER_PRIMARY_HSWM_FRACTAL_COGNITIVE_COMPOSITION_2026-08-28.txt",
+      "state": "COMMITTED_BYTES",
+      "scope": "Preserved source; interpretation and implementation efficacy remain separate."
+    },
+    {
+      "id": "hswm_constitution",
+      "owner": "HSWM",
+      "source_path": "docs/canon/HSWM_CONSTITUTION_2026-08-20.md",
+      "revision": "58f1d4f08352c33c8481f7bf2553d95e6896a091",
+      "sha256": "cf43bc034a64d8db54b3444b7eba9ea02c8c5d9e252e14f157637401c68c3373",
+      "copy_path": "records/2026-10-04/ecosystem/hswm-constitution.md",
+      "source_uri": "https://github.com/gj3447/HSWM/blob/58f1d4f08352c33c8481f7bf2553d95e6896a091/docs/canon/HSWM_CONSTITUTION_2026-08-20.md",
+      "state": "COMMITTED_BYTES",
+      "scope": "Preserved source; interpretation and implementation efficacy remain separate."
+    }
+  ],
+  "kg_resolution": {
+    "CHU": {
+      "uid": "sym:Directory:chu",
+      "uid_collision": false,
+      "authority": "UNSPECIFIED",
+      "result": "directory record only; not merged with CHU concept or OS"
+    },
+    "HSWM": {
+      "uid": "sym:Concept:hswm",
+      "uid_collision": false,
+      "result": "stored definition includes superseded fixed H/W/A/F; current owner constitution controls that detail"
+    }
+  },
+  "effect": "Local foundation graph only; no shared KG writes, CHU/HSWM runtime mutation or execution."
+}

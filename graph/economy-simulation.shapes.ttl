@@ -1,0 +1,107 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix mhv: <https://github.com/gj3447/metahumotonic-foundation/vocab#> .
+
+# This is a lifecycle projection, not the separate completed-settlement fixture.
+# Replay validates JSON payloads and exact accounting; SHACL validates the RDF.
+mhv:SimulationStatusShape a sh:NodeShape ;
+  sh:targetClass mhv:SimulationRun, mhv:SimulationSource, mhv:SimulationAccount,
+                 mhv:SimulationAgreement, mhv:SimulationEvent, mhv:SimulationReceipt ;
+  sh:property [ sh:path mhv:simulationStatus ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue mhv:SIMULATED ] .
+
+mhv:SimulationRunShape a sh:NodeShape ; sh:targetClass mhv:SimulationRun ;
+  sh:property [ sh:path mhv:summaryAuthority ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue mhv:SECONDARY_AI ] ;
+  sh:property [ sh:path mhv:proposalStatus ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue mhv:PROPOSED ] ;
+  sh:property [ sh:path prov:wasAssociatedWith ; sh:minCount 1 ; sh:maxCount 1 ; sh:class prov:SoftwareAgent ] ;
+  sh:property [ sh:path prov:used ; sh:minCount 1 ; sh:class mhv:DesignProposal ] ;
+  sh:property [ sh:path mhv:hasSimAccount ; sh:minCount 1 ; sh:class mhv:SimulationAccount ] ;
+  sh:property [ sh:path mhv:hasSimAgreement ; sh:class mhv:SimulationAgreement ] ;
+  sh:property [ sh:path mhv:hasSimReceipt ; sh:class mhv:SimulationReceipt ] ;
+  sh:property [ sh:path mhv:hasSimEvent ; sh:class mhv:SimulationEvent ] ;
+  sh:property [ sh:path mhv:simSourceArtifact ; sh:minCount 1 ; sh:class mhv:SimulationSource ] ;
+  sh:property [ sh:path mhv:simSnapshot ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype rdf:JSON ] ;
+  sh:property [ sh:path mhv:sha256 ; sh:minCount 1 ; sh:maxCount 1 ; sh:pattern "^[0-9a-f]{64}$" ] ;
+  sh:property [ sh:path mhv:simTotal ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:decimal ; sh:minInclusive 0 ] ;
+  sh:property [ sh:path mhv:simEscrow ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:decimal ; sh:minInclusive 0 ] ;
+  sh:sparql [ sh:message "Available balances plus escrow must equal the run's initial total." ;
+    sh:select """
+      PREFIX mhv: <https://github.com/gj3447/metahumotonic-foundation/vocab#>
+      SELECT $this WHERE {
+        $this mhv:simTotal ?total ; mhv:simEscrow ?held .
+        { SELECT $this (SUM(?balance) AS ?available) WHERE {
+            $this mhv:hasSimAccount ?account . ?account mhv:simAvailableBalance ?balance .
+          } GROUP BY $this }
+        FILTER(?available + ?held != ?total)
+      }
+    """ ] .
+
+mhv:SimulationSourceShape a sh:NodeShape ; sh:targetClass mhv:SimulationSource ;
+  sh:property [ sh:path mhv:sourcePath ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path mhv:sha256 ; sh:minCount 1 ; sh:maxCount 1 ; sh:pattern "^[0-9a-f]{64}$" ] .
+
+mhv:SimulationAccountShape a sh:NodeShape ; sh:targetClass mhv:SimulationAccount ;
+  sh:property [ sh:path mhv:simAccountId ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path mhv:simInitialBalance ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:decimal ; sh:minInclusive 0 ] ;
+  sh:property [ sh:path mhv:simAvailableBalance ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:decimal ; sh:minInclusive 0 ] .
+
+mhv:SimulationAgreementShape a sh:NodeShape ; sh:targetClass mhv:SimulationAgreement ;
+  sh:property [ sh:path mhv:simAgreementId ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path mhv:simState ; sh:minCount 1 ; sh:maxCount 1 ;
+    sh:in ( "DRAFT" "FUNDED" "RUNNING" "SUBMITTED" "ACCEPTED" "DISPUTED" "SETTLED" "CANCELLED" "RESOLVED" ) ] ;
+  sh:property [ sh:path mhv:simRequester ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mhv:SimulationAccount ; sh:disjoint mhv:simProvider ] ;
+  sh:property [ sh:path mhv:simProvider ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mhv:SimulationAccount ] ;
+  sh:property [ sh:path mhv:termsHash ; sh:minCount 1 ; sh:maxCount 1 ; sh:pattern "^[0-9a-f]{64}$" ] ;
+  sh:property [ sh:path mhv:simEscrow ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:decimal ; sh:minInclusive 0 ] ;
+  sh:property [ sh:path mhv:simAgreementPayload ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype rdf:JSON ] .
+
+mhv:SimulationEventShape a sh:NodeShape ; sh:targetClass mhv:SimulationEvent ;
+  sh:property [ sh:path mhv:eventSequence ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 1 ] ;
+  sh:property [ sh:path mhv:eventOperation ; sh:minCount 1 ; sh:maxCount 1 ;
+    sh:in ( "PROPOSE" "ASSENT" "FUND" "START" "SUBMIT" "ACCEPT" "SETTLE" "CANCEL" "DISPUTE" "PROPOSE_RESOLUTION" "ASSENT_RESOLUTION" "RESOLVE" ) ] ;
+  sh:property [ sh:path mhv:simActor ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mhv:SimulationAccount ] ;
+  sh:property [ sh:path mhv:simAgreement ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mhv:SimulationAgreement ] ;
+  sh:property [ sh:path mhv:eventHash ; sh:minCount 1 ; sh:maxCount 1 ; sh:pattern "^[0-9a-f]{64}$" ] ;
+  sh:property [ sh:path mhv:previousEventHash ; sh:minCount 1 ; sh:maxCount 1 ; sh:pattern "^[0-9a-f]{64}$" ] ;
+  sh:property [ sh:path mhv:previousSimEvent ; sh:maxCount 1 ; sh:class mhv:SimulationEvent ] ;
+  sh:property [ sh:path mhv:simEventPayload ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype rdf:JSON ] ;
+  sh:sparql [ sh:message "Event predecessor, sequence, hash or acting party is inconsistent." ;
+    sh:select """
+      PREFIX mhv: <https://github.com/gj3447/metahumotonic-foundation/vocab#>
+      SELECT $this WHERE {
+        { $this mhv:eventSequence 1 ; mhv:previousSimEvent ?prev }
+        UNION
+        { $this mhv:eventSequence 1 ; mhv:previousEventHash ?hash .
+          FILTER(?hash != "0000000000000000000000000000000000000000000000000000000000000000") }
+        UNION
+        { $this mhv:eventSequence ?seq ; mhv:previousEventHash ?hash . FILTER(?seq > 1)
+          FILTER NOT EXISTS { $this mhv:previousSimEvent ?prev . ?prev mhv:eventSequence ?pseq ; mhv:eventHash ?hash . FILTER(?pseq + 1 = ?seq) } }
+        UNION
+        { $this mhv:simActor ?actor ; mhv:simAgreement ?agreement .
+          FILTER NOT EXISTS { ?agreement (mhv:simRequester|mhv:simProvider) ?actor } }
+        UNION
+        { ?run mhv:hasSimEvent $this, ?other . $this mhv:eventSequence ?seq . ?other mhv:eventSequence ?seq . FILTER(?other != $this) }
+      }
+    """ ] .
+
+mhv:SimulationReceiptShape a sh:NodeShape ; sh:targetClass mhv:SimulationReceipt ;
+  sh:property [ sh:path mhv:simOperationId ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path mhv:simReceiptKind ; sh:minCount 1 ; sh:maxCount 1 ; sh:in ( "SETTLE" "RESOLVE" ) ] ;
+  sh:property [ sh:path mhv:simAgreement ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mhv:SimulationAgreement ] ;
+  sh:property [ sh:path mhv:simPaid ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:decimal ; sh:minInclusive 0 ] ;
+  sh:property [ sh:path mhv:simRefund ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:decimal ; sh:minInclusive 0 ] ;
+  sh:property [ sh:path mhv:simReceiptPayload ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype rdf:JSON ] ;
+  sh:sparql [ sh:message "A receipt must close the matching agreement exactly once per run." ;
+    sh:select """
+      PREFIX mhv: <https://github.com/gj3447/metahumotonic-foundation/vocab#>
+      SELECT $this WHERE {
+        { $this mhv:simAgreement ?a ; mhv:simReceiptKind "SETTLE" . FILTER NOT EXISTS { ?a mhv:simState "SETTLED" } }
+        UNION
+        { $this mhv:simAgreement ?a ; mhv:simReceiptKind "RESOLVE" . FILTER NOT EXISTS { ?a mhv:simState "RESOLVED" } }
+        UNION
+        { ?run mhv:hasSimReceipt $this, ?other . $this mhv:simOperationId ?id . ?other mhv:simOperationId ?id . FILTER(?other != $this) }
+        UNION
+        { ?run mhv:hasSimReceipt $this, ?other . $this mhv:simAgreement ?a . ?other mhv:simAgreement ?a . FILTER(?other != $this) }
+      }
+    """ ] .

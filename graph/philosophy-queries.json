@@ -1,0 +1,623 @@
+{
+  "query_language": "SPARQL 1.1 SELECT",
+  "prefixes": {
+    "ph": "https://github.com/gj3447/metahumotonic-foundation/graph/philosophy#",
+    "phv": "https://github.com/gj3447/metahumotonic-foundation/philosophy-vocab#",
+    "mhv": "https://github.com/gj3447/metahumotonic-foundation/vocab#",
+    "sp": "https://github.com/gj3447/metahumotonic-foundation/graph/spirit#",
+    "eco": "https://github.com/gj3447/metahumotonic-foundation/graph/economy#",
+    "mhc": "https://github.com/gj3447/metahumotonic-foundation/graph/metahumocoin#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dcterms": "http://purl.org/dc/terms/"
+  },
+  "questions": [
+    {
+      "id": "CQ1",
+      "question": "재단의 목적은 누구의 어느 원문에 근거하는가?",
+      "columns": [
+        "claim",
+        "source",
+        "author",
+        "span"
+      ],
+      "query": "SELECT ?claim ?source ?author ?span WHERE { VALUES ?claim { ph:C_mission } ?claim prov:wasDerivedFrom ?source ; prov:wasAttributedTo ?author ; mhv:span ?span . }",
+      "expected": [
+        [
+          "ph:C_mission",
+          "ph:u_purpose",
+          "sp:proposer",
+          "우리는 자유 경제 합의 Ultra Safty AI 를 개발하는곳이야"
+        ]
+      ]
+    },
+    {
+      "id": "CQ2",
+      "question": "목적에 연결되는 네 주제는 무엇인가?",
+      "columns": [
+        "topic",
+        "source"
+      ],
+      "query": "SELECT ?topic ?source WHERE { ph:C_mission mhv:topic ?topic ; prov:wasDerivedFrom ?source . }",
+      "expected": [
+        [
+          "eco:freedom",
+          "ph:u_purpose"
+        ],
+        [
+          "eco:economy",
+          "ph:u_purpose"
+        ],
+        [
+          "ph:consensus",
+          "ph:u_purpose"
+        ],
+        [
+          "ph:ultra_safety",
+          "ph:u_purpose"
+        ]
+      ]
+    },
+    {
+      "id": "CQ3",
+      "question": "현재 목적·기존 하드웨어 정신·실제 코인 목표의 직접 출처는?",
+      "columns": [
+        "claim",
+        "source"
+      ],
+      "query": "SELECT ?claim ?source WHERE { ph:graph phv:sourceClaim ?claim . ?claim prov:wasDerivedFrom ?source . }",
+      "expected": [
+        [
+          "ph:C_mission",
+          "ph:u_purpose"
+        ],
+        [
+          "ph:C_build",
+          "ph:u_build"
+        ],
+        [
+          "sp:P1",
+          "sp:u1"
+        ],
+        [
+          "sp:P2",
+          "sp:u1"
+        ],
+        [
+          "sp:P3",
+          "sp:u1"
+        ],
+        [
+          "sp:P4",
+          "sp:u1"
+        ],
+        [
+          "sp:P5",
+          "sp:u1"
+        ],
+        [
+          "sp:P6",
+          "sp:u1"
+        ],
+        [
+          "eco:C_freedom",
+          "eco:u_coin"
+        ],
+        [
+          "eco:C_coin",
+          "eco:u_coin"
+        ],
+        [
+          "mhc:C_real_coin",
+          "mhc:u_real_coin"
+        ],
+        [
+          "ph:C_resource_purpose",
+          "ph:u_resource_purpose"
+        ]
+      ]
+    },
+    {
+      "id": "CQ4",
+      "question": "AI 분석의 귀속·작성 출처·채택 상태는?",
+      "columns": [
+        "analysis",
+        "source",
+        "author",
+        "authority",
+        "adoption"
+      ],
+      "query": "SELECT ?analysis ?source ?author ?authority ?adoption WHERE { ?analysis a phv:Analysis ; prov:wasDerivedFrom ?source ; prov:wasAttributedTo ?author ; phv:authorityClass ?authority ; phv:adoptionStatus ?adoption . }",
+      "expected": [
+        [
+          "ph:I_mission",
+          "ph:a_mission",
+          "ph:codex",
+          "SECONDARY_AI",
+          "PROPOSED"
+        ],
+        [
+          "ph:I_freedom",
+          "ph:a_freedom",
+          "ph:codex",
+          "SECONDARY_AI",
+          "PROPOSED"
+        ],
+        [
+          "ph:I_economy",
+          "ph:a_economy",
+          "ph:codex",
+          "SECONDARY_AI",
+          "PROPOSED"
+        ],
+        [
+          "ph:I_consensus",
+          "ph:a_consensus",
+          "ph:codex",
+          "SECONDARY_AI",
+          "PROPOSED"
+        ],
+        [
+          "ph:I_institution",
+          "ph:a_mission",
+          "ph:codex",
+          "SECONDARY_AI",
+          "PROPOSED"
+        ],
+        [
+          "ph:H_safety",
+          "ph:a_hypothesis",
+          "ph:codex",
+          "SECONDARY_AI",
+          "PROPOSED"
+        ],
+        [
+          "ph:T_authority",
+          "ph:a_centralization",
+          "ph:codex",
+          "SECONDARY_AI",
+          "PROPOSED"
+        ],
+        [
+          "ph:T_incentives",
+          "ph:a_economy",
+          "ph:codex",
+          "SECONDARY_AI",
+          "PROPOSED"
+        ],
+        [
+          "ph:T_externalities",
+          "ph:a_harm",
+          "ph:codex",
+          "SECONDARY_AI",
+          "PROPOSED"
+        ],
+        [
+          "ph:M_resources",
+          "ph:a_freedom",
+          "ph:codex",
+          "SECONDARY_AI",
+          "PROPOSED"
+        ],
+        [
+          "ph:M_agent",
+          "ph:a_mission",
+          "ph:codex",
+          "SECONDARY_AI",
+          "PROPOSED"
+        ],
+        [
+          "ph:M_economy",
+          "ph:a_economy",
+          "ph:codex",
+          "SECONDARY_AI",
+          "PROPOSED"
+        ],
+        [
+          "ph:M_consensus",
+          "ph:a_consensus",
+          "ph:codex",
+          "SECONDARY_AI",
+          "PROPOSED"
+        ],
+        [
+          "ph:Q_resources",
+          "ph:a_centralization",
+          "ph:codex",
+          "SECONDARY_AI",
+          "PROPOSED"
+        ],
+        [
+          "ph:Q_rewards",
+          "ph:a_economy",
+          "ph:codex",
+          "SECONDARY_AI",
+          "PROPOSED"
+        ],
+        [
+          "ph:Q_affected",
+          "ph:a_harm",
+          "ph:codex",
+          "SECONDARY_AI",
+          "PROPOSED"
+        ],
+        [
+          "ph:Q_evaluation",
+          "ph:a_experiment",
+          "ph:codex",
+          "SECONDARY_AI",
+          "PROPOSED"
+        ],
+        [
+          "ph:E_protocol",
+          "ph:a_experiment",
+          "ph:codex",
+          "SECONDARY_AI",
+          "PROPOSED"
+        ]
+      ]
+    },
+    {
+      "id": "CQ5",
+      "question": "안전성 가설과 실험은 어떤 검증 상태인가?",
+      "columns": [
+        "hypothesis",
+        "epistemic",
+        "plan",
+        "verification"
+      ],
+      "query": "SELECT ?hypothesis ?epistemic ?plan ?verification WHERE { ?plan phv:testsHypothesis ?hypothesis ; phv:verificationStatus ?verification . ?hypothesis mhv:epistemic ?epistemic . }",
+      "expected": [
+        [
+          "ph:H_safety",
+          "mhv:UNVERIFIED",
+          "ph:E_protocol",
+          "NOT_RUN"
+        ]
+      ]
+    },
+    {
+      "id": "CQ6",
+      "question": "철학이 참조하는 기존 구현 식별자는?",
+      "columns": [
+        "mapping",
+        "target",
+        "status"
+      ],
+      "query": "SELECT ?mapping ?target ?status WHERE { ?mapping a phv:ImplementationMapping ; phv:implementsWith ?target ; phv:implementationStatus ?status . }",
+      "expected": [
+        [
+          "ph:M_resources",
+          "sp:chu",
+          "CANDIDATE"
+        ],
+        [
+          "ph:M_resources",
+          "sp:usl",
+          "CANDIDATE"
+        ],
+        [
+          "ph:M_agent",
+          "sp:hswm",
+          "CANDIDATE"
+        ],
+        [
+          "ph:M_economy",
+          "eco:metahumocoin",
+          "CANDIDATE"
+        ],
+        [
+          "ph:M_economy",
+          "mhc:project",
+          "CANDIDATE"
+        ],
+        [
+          "ph:M_consensus",
+          "eco:agreement",
+          "CANDIDATE"
+        ],
+        [
+          "ph:M_consensus",
+          "eco:community_rules",
+          "CANDIDATE"
+        ],
+        [
+          "ph:M_consensus",
+          "eco:ledger_finality",
+          "CANDIDATE"
+        ]
+      ]
+    },
+    {
+      "id": "CQ7",
+      "question": "공유 권한의 긴장은 어느 실제 문서를 비교하는가?",
+      "columns": [
+        "observation",
+        "artifact",
+        "path"
+      ],
+      "query": "SELECT ?observation ?artifact ?path WHERE { ph:T_authority phv:compares ?observation . ?observation phv:artifact ?artifact . ?artifact mhv:path ?path . }",
+      "expected": [
+        [
+          "ph:O_license",
+          "ph:source_license",
+          "LICENSE"
+        ],
+        [
+          "ph:O_charter",
+          "ph:source_charter",
+          "CHARTER.md"
+        ],
+        [
+          "ph:O_owner",
+          "ph:source_owner",
+          "docs/agent-rules/OWNER.md"
+        ]
+      ]
+    },
+    {
+      "id": "CQ8",
+      "question": "아직 결정하지 않은 질문은 무엇인가?",
+      "columns": [
+        "question",
+        "status"
+      ],
+      "query": "SELECT ?question ?status WHERE { ?question a phv:OpenQuestion ; phv:status ?status . }",
+      "expected": [
+        [
+          "ph:Q_resources",
+          "OPEN"
+        ],
+        [
+          "ph:Q_rewards",
+          "OPEN"
+        ],
+        [
+          "ph:Q_affected",
+          "OPEN"
+        ],
+        [
+          "ph:Q_evaluation",
+          "OPEN"
+        ]
+      ]
+    },
+    {
+      "id": "CQ9",
+      "question": "계획된 실험과 측정 지표의 연결은?",
+      "columns": [
+        "case",
+        "metric",
+        "verification"
+      ],
+      "query": "SELECT ?case ?metric ?verification WHERE { ph:E_protocol phv:hasCase ?case . ?case phv:usesMetric ?metric ; phv:verificationStatus ?verification . }",
+      "expected": [
+        [
+          "ph:E_scarcity",
+          "ph:metric_success",
+          "NOT_RUN"
+        ],
+        [
+          "ph:E_scarcity",
+          "ph:metric_violation",
+          "NOT_RUN"
+        ],
+        [
+          "ph:E_honesty",
+          "ph:metric_success",
+          "NOT_RUN"
+        ],
+        [
+          "ph:E_honesty",
+          "ph:metric_false_accept",
+          "NOT_RUN"
+        ],
+        [
+          "ph:E_exit",
+          "ph:metric_recovery",
+          "NOT_RUN"
+        ],
+        [
+          "ph:E_exit",
+          "ph:metric_balance",
+          "NOT_RUN"
+        ],
+        [
+          "ph:E_collusion",
+          "ph:metric_false_accept",
+          "NOT_RUN"
+        ],
+        [
+          "ph:E_collusion",
+          "ph:metric_harm",
+          "NOT_RUN"
+        ],
+        [
+          "ph:E_collusion",
+          "ph:metric_success",
+          "NOT_RUN"
+        ],
+        [
+          "ph:E_correction",
+          "ph:metric_violation",
+          "NOT_RUN"
+        ],
+        [
+          "ph:E_correction",
+          "ph:metric_recovery",
+          "NOT_RUN"
+        ],
+        [
+          "ph:E_correction",
+          "ph:metric_success",
+          "NOT_RUN"
+        ]
+      ]
+    },
+    {
+      "id": "CQ10",
+      "question": "지표의 단위는 무엇인가?",
+      "columns": [
+        "metric",
+        "unit"
+      ],
+      "query": "SELECT ?metric ?unit WHERE { ?metric a phv:Metric ; phv:unit ?unit . }",
+      "expected": [
+        [
+          "ph:metric_success",
+          "ratio"
+        ],
+        [
+          "ph:metric_violation",
+          "ratio"
+        ],
+        [
+          "ph:metric_false_accept",
+          "ratio"
+        ],
+        [
+          "ph:metric_recovery",
+          "seconds"
+        ],
+        [
+          "ph:metric_balance",
+          "asset base unit"
+        ],
+        [
+          "ph:metric_harm",
+          "count"
+        ]
+      ]
+    },
+    {
+      "id": "CQ11",
+      "question": "그래프 구축이 규범 효력을 주장하는가?",
+      "columns": [
+        "effect"
+      ],
+      "query": "SELECT ?effect WHERE { ph:graph phv:normativeEffect ?effect . }",
+      "expected": [
+        [
+          "false"
+        ]
+      ]
+    },
+    {
+      "id": "CQ12",
+      "question": "원문은 사용자와 AI 발췌를 구별하는가?",
+      "columns": [
+        "excerpt",
+        "role",
+        "authority",
+        "source"
+      ],
+      "query": "SELECT ?excerpt ?role ?authority ?source WHERE { ?excerpt a phv:SourceExcerpt ; phv:sourceRole ?role ; phv:authorityClass ?authority ; <http://purl.org/dc/terms/source> ?source . }",
+      "expected": [
+        [
+          "ph:u_purpose",
+          "user",
+          "USER_PRIMARY",
+          "ph:source_record"
+        ],
+        [
+          "ph:u_build",
+          "user",
+          "USER_PRIMARY",
+          "ph:source_record"
+        ],
+        [
+          "ph:a_mission",
+          "assistant",
+          "SECONDARY_AI",
+          "ph:source_record"
+        ],
+        [
+          "ph:a_freedom",
+          "assistant",
+          "SECONDARY_AI",
+          "ph:source_record"
+        ],
+        [
+          "ph:a_economy",
+          "assistant",
+          "SECONDARY_AI",
+          "ph:source_record"
+        ],
+        [
+          "ph:a_consensus",
+          "assistant",
+          "SECONDARY_AI",
+          "ph:source_record"
+        ],
+        [
+          "ph:a_hypothesis",
+          "assistant",
+          "SECONDARY_AI",
+          "ph:source_record"
+        ],
+        [
+          "ph:a_centralization",
+          "assistant",
+          "SECONDARY_AI",
+          "ph:source_record"
+        ],
+        [
+          "ph:a_harm",
+          "assistant",
+          "SECONDARY_AI",
+          "ph:source_record"
+        ],
+        [
+          "ph:a_experiment",
+          "assistant",
+          "SECONDARY_AI",
+          "ph:source_record"
+        ],
+        [
+          "ph:u_resource_purpose",
+          "user",
+          "USER_PRIMARY",
+          "ph:source_resource_purpose"
+        ]
+      ]
+    },
+    {
+      "id": "CQ13",
+      "question": "저작권을 통한 컴퓨팅·메모리 확장 목적의 주체·주제·원문·권한은?",
+      "columns": [
+        "claim",
+        "subject",
+        "topic",
+        "source",
+        "authority",
+        "span"
+      ],
+      "query": "SELECT ?claim ?subject ?topic ?source ?authority ?span WHERE { VALUES ?claim { ph:C_resource_purpose } ?claim dcterms:subject ?subject ; mhv:topic ?topic ; prov:wasDerivedFrom ?source ; phv:authorityClass ?authority ; mhv:span ?span . }",
+      "expected": [
+        [
+          "ph:C_resource_purpose",
+          "ph:foundation",
+          "ph:software_copyright",
+          "ph:u_resource_purpose",
+          "USER_PRIMARY",
+          "우리 메타휴모토닉의 목적은 소프트웨어 그 저작권을 통해 컴퓨팅 우리가 제어가능한 컴퓨팅과 메모리 제원을 끊임없이 늘리는거야"
+        ],
+        [
+          "ph:C_resource_purpose",
+          "ph:foundation",
+          "ph:controlled_compute",
+          "ph:u_resource_purpose",
+          "USER_PRIMARY",
+          "우리 메타휴모토닉의 목적은 소프트웨어 그 저작권을 통해 컴퓨팅 우리가 제어가능한 컴퓨팅과 메모리 제원을 끊임없이 늘리는거야"
+        ],
+        [
+          "ph:C_resource_purpose",
+          "ph:foundation",
+          "ph:controlled_memory",
+          "ph:u_resource_purpose",
+          "USER_PRIMARY",
+          "우리 메타휴모토닉의 목적은 소프트웨어 그 저작권을 통해 컴퓨팅 우리가 제어가능한 컴퓨팅과 메모리 제원을 끊임없이 늘리는거야"
+        ]
+      ]
+    }
+  ]
+}

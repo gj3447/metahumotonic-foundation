@@ -1,0 +1,61 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix mhv: <https://github.com/gj3447/metahumotonic-foundation/vocab#> .
+@prefix mhc: <https://github.com/gj3447/metahumotonic-foundation/graph/metahumocoin#> .
+@prefix eco: <https://github.com/gj3447/metahumotonic-foundation/graph/economy#> .
+
+# Additive production engineering vocabulary. Cardinalities and direction are explicit.
+
+mhv:CoinBuildGraph a rdfs:Class ; rdfs:comment "Design baseline for a real coin; not an execution/release observation." .
+mhv:CurrencyProject a rdfs:Class ; rdfs:comment "Project to implement a currency concept; distinct from a deployed asset." .
+mhv:CoinRequirement a rdfs:Class ; rdfs:comment "AI-derived engineering requirement with motivating user claims." .
+mhv:EngineeringDecision a rdfs:Class ; rdfs:comment "Explicit choice register; recommendations do not constitute decisions." .
+mhv:EngineeringOption a rdfs:Class ; rdfs:comment "An alternative belonging to exactly one engineering decision." .
+mhv:DecisionReceipt a rdfs:Class ; rdfs:comment "Attributed decision artifact. Not inferred from silence or recommendations." .
+mhv:CoinPolicy a rdfs:Class ; rdfs:comment "Candidate policy boundary controlled by explicit decisions." .
+mhv:CoinComponent a rdfs:Class ; rdfs:comment "Planned production component implementing requirements and policies." .
+mhv:InterfaceContract a rdfs:Class ; rdfs:comment "Candidate payload field contract; encoding and executable schema remain implementation work." .
+mhv:WorkPackage a rdfs:Class ; rdfs:comment "Dependency-ordered planned implementation work with acceptance specifications." .
+mhv:AcceptanceCriterion a rdfs:Class ; rdfs:comment "Acceptance specification, not test-result evidence. Current profile is NOT_RUN." .
+mhv:ReleaseTarget a rdfs:Class ; rdfs:comment "Planned environment target, not a release or asset instance." .
+mhv:SupportingImplementation a rdfs:Class ; rdfs:comment "Existing local tool that exercises one component; cannot certify production acceptance." .
+mhv:implementsConcept a rdf:Property ; rdfs:domain mhv:CurrencyProject ; rdfs:range mhv:Concept ; rdfs:comment "exactly 1; project -> currency concept" .
+mhv:intentClaim a rdf:Property ; rdfs:domain mhv:CurrencyProject ; rdfs:range mhv:Claim ; rdfs:comment "1..n; project -> direct user intent" .
+mhv:hasRequirement a rdf:Property ; rdfs:domain mhv:CurrencyProject ; rdfs:range mhv:CoinRequirement ; rdfs:comment "1..n; project -> requirements" .
+mhv:hasDecision a rdf:Property ; rdfs:domain mhv:CurrencyProject ; rdfs:range mhv:EngineeringDecision ; rdfs:comment "1..n; project -> decision register" .
+mhv:hasWork a rdf:Property ; rdfs:domain mhv:CurrencyProject ; rdfs:range mhv:WorkPackage ; rdfs:comment "1..n; project -> work register" .
+mhv:hasRelease a rdf:Property ; rdfs:domain mhv:CurrencyProject ; rdfs:range mhv:ReleaseTarget ; rdfs:comment "1..n; project -> intended environments" .
+mhv:motivatedBy a rdf:Property ; rdfs:domain mhv:CoinRequirement ; rdfs:range mhv:Claim ; rdfs:comment "1..n; engineering interpretation -> motivating source claims" .
+mhv:option a rdf:Property ; rdfs:domain mhv:EngineeringDecision ; rdfs:range mhv:EngineeringOption ; rdfs:comment "2..n; decision -> alternatives" .
+mhv:optionFor a rdf:Property ; rdfs:domain mhv:EngineeringOption ; rdfs:range mhv:EngineeringDecision ; rdfs:comment "exactly 1; alternative -> owning decision" .
+mhv:recommendedOption a rdf:Property ; rdfs:domain mhv:EngineeringDecision ; rdfs:range mhv:EngineeringOption ; rdfs:comment "0..1; proposal only, condition required" .
+mhv:selectedOption a rdf:Property ; rdfs:domain mhv:EngineeringDecision ; rdfs:range mhv:EngineeringOption ; rdfs:comment "0..1; only DECIDED with receipt" .
+mhv:decisionReceipt a rdf:Property ; rdfs:domain mhv:EngineeringDecision ; rdfs:range mhv:DecisionReceipt ; rdfs:comment "0..1; mandatory for DECIDED" .
+mhv:policyDecision a rdf:Property ; rdfs:domain mhv:CoinPolicy ; rdfs:range mhv:EngineeringDecision ; rdfs:comment "1..n; candidate policy -> governing choices" .
+mhv:implementsPolicy a rdf:Property ; rdfs:domain mhv:CoinComponent ; rdfs:range mhv:CoinPolicy ; rdfs:comment "1..n; component -> policy boundaries" .
+mhv:implementsRequirement a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range mhv:CoinRequirement ; rdfs:comment "1..n on component/work; subject -> requirement" .
+mhv:hasInterface a rdf:Property ; rdfs:domain mhv:CoinComponent ; rdfs:range mhv:InterfaceContract ; rdfs:comment "1..n; component -> payload contract" .
+mhv:dependsOnWork a rdf:Property ; rdfs:domain mhv:WorkPackage ; rdfs:range mhv:WorkPackage ; rdfs:comment "0..n; work -> prerequisite; acyclic" .
+mhv:producesComponent a rdf:Property ; rdfs:domain mhv:WorkPackage ; rdfs:range mhv:CoinComponent ; rdfs:comment "1..n; work -> deliverable component" .
+mhv:blockedByDecision a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range mhv:EngineeringDecision ; rdfs:comment "0..n work, 1..n release; subject -> unresolved prerequisite" .
+mhv:acceptanceCriterion a rdf:Property ; rdfs:domain mhv:WorkPackage ; rdfs:range mhv:AcceptanceCriterion ; rdfs:comment "1..n; work -> required acceptance specs" .
+mhv:releaseCriterion a rdf:Property ; rdfs:domain mhv:ReleaseTarget ; rdfs:range mhv:AcceptanceCriterion ; rdfs:comment "1..n; release -> required criteria; never vacuously complete" .
+mhv:dependsOnRelease a rdf:Property ; rdfs:domain mhv:ReleaseTarget ; rdfs:range mhv:ReleaseTarget ; rdfs:comment "0..1; mainnet -> testnet, no cycle" .
+mhv:exercises a rdf:Property ; rdfs:domain mhv:SupportingImplementation ; rdfs:range mhv:CoinComponent ; rdfs:comment "exactly 1; supporting tool -> component" .
+mhv:projectStage a rdf:Property ; rdfs:domain mhv:CurrencyProject ; rdfs:range xsd:string ; rdfs:comment "exactly 1 DESIGN in this profile" .
+mhv:decisionStatus a rdf:Property ; rdfs:domain mhv:EngineeringDecision ; rdfs:range xsd:string ; rdfs:comment "exactly 1 OPEN or DECIDED; receipt required for latter" .
+mhv:recommendationCondition a rdf:Property ; rdfs:domain mhv:EngineeringDecision ; rdfs:range xsd:string ; rdfs:comment "exactly 1 iff a recommendedOption exists" .
+mhv:tradeoff a rdf:Property ; rdfs:domain mhv:EngineeringOption ; rdfs:range xsd:string ; rdfs:comment "exactly 1; implications/limits of this alternative" .
+mhv:boundary a rdf:Property ; rdfs:domain mhv:CoinPolicy ; rdfs:range xsd:string ; rdfs:comment "exactly 1; what the policy does and does not decide" .
+mhv:fields a rdf:Property ; rdfs:domain mhv:InterfaceContract ; rdfs:range rdf:JSON ; rdfs:comment "exactly 1 nonempty field-name -> type/meaning object; no runtime conformance implied" .
+mhv:workStatus a rdf:Property ; rdfs:domain mhv:WorkPackage ; rdfs:range xsd:string ; rdfs:comment "exactly 1 PLANNED in this design baseline" .
+mhv:plannedPath a rdf:Property ; rdfs:domain mhv:WorkPackage ; rdfs:range xsd:string ; rdfs:comment "1..n portable planned output paths; not existing artifacts" .
+mhv:verificationStatus a rdf:Property ; rdfs:domain mhv:AcceptanceCriterion ; rdfs:range xsd:string ; rdfs:comment "exactly 1 NOT_RUN in this design-only profile" .
+mhv:checkProcedure a rdf:Property ; rdfs:domain mhv:AcceptanceCriterion ; rdfs:range xsd:string ; rdfs:comment "exactly 1; behavior/evidence required for future execution" .
+mhv:evidenceKind a rdf:Property ; rdfs:domain mhv:AcceptanceCriterion ; rdfs:range xsd:string ; rdfs:comment "exactly 1; expected evidence, not an observed artifact" .
+mhv:criterionScope a rdf:Property ; rdfs:domain mhv:AcceptanceCriterion ; rdfs:range xsd:string ; rdfs:comment "exactly 1 COMMON, TESTNET or MAINNET" .
+mhv:releaseStage a rdf:Property ; rdfs:domain mhv:ReleaseTarget ; rdfs:range xsd:string ; rdfs:comment "exactly 1 TESTNET or MAINNET" .

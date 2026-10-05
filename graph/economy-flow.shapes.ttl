@@ -1,0 +1,103 @@
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix mhv:  <https://github.com/gj3447/metahumotonic-foundation/vocab#> .
+
+# SHACL validates graph structure. It cannot prove that a measured workload ran,
+# that a result is true, or that an accounting receipt caused an on-chain payment.
+
+mhv:ParticipantShape a sh:NodeShape ; sh:targetClass mhv:Participant ;
+  sh:property [ sh:path mhv:simulationStatus ; sh:minCount 1 ; sh:in ( mhv:SIMULATED ) ] .
+
+mhv:CurrencyDesignShape a sh:NodeShape ; sh:targetClass mhv:CurrencyDesign ;
+  sh:closed true ;
+  sh:ignoredProperties ( rdf:type rdfs:label rdfs:comment dcterms:description dcterms:references mhv:designStatus mhv:simulationStatus ) ;
+  sh:property [ sh:path mhv:designStatus ; sh:minCount 1 ; sh:maxCount 1 ; sh:in ( mhv:PROPOSED ) ] ;
+  sh:property [ sh:path mhv:simulationStatus ; sh:maxCount 1 ; sh:in ( mhv:SIMULATED ) ] .
+
+mhv:OfferShape a sh:NodeShape ; sh:targetClass mhv:ResourceOffer ;
+  sh:property [ sh:path mhv:offeredBy ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mhv:Participant ] ;
+  sh:property [ sh:path mhv:simulationStatus ; sh:minCount 1 ; sh:in ( mhv:SIMULATED ) ] .
+
+mhv:AgreementShape a sh:NodeShape ; sh:targetClass mhv:BilateralAgreement ;
+  sh:property [ sh:path mhv:forOffer ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mhv:ResourceOffer ] ;
+  sh:property [ sh:path mhv:requestedBy ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mhv:Participant ] ;
+  sh:property [ sh:path mhv:providedBy ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mhv:Participant ] ;
+  sh:property [ sh:path mhv:agreementVersion ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path mhv:hasExecution ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mhv:WorkExecution ] ;
+  sh:property [ sh:path mhv:agreedCurrency ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mhv:CurrencyDesign ] ;
+  sh:property [ sh:path mhv:agreedUnit ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path mhv:agreedUnitPrice ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:decimal ; sh:minInclusive 0 ] ;
+  sh:property [ sh:path mhv:simulationStatus ; sh:minCount 1 ; sh:in ( mhv:SIMULATED ) ] ;
+  sh:sparql [ sh:message "Each requester and provider must accept this agreement at its exact version." ;
+    sh:prefixes [ sh:declare [ sh:prefix "mhv" ; sh:namespace "https://github.com/gj3447/metahumotonic-foundation/vocab#"^^xsd:anyURI ] ] ;
+    sh:select """SELECT $this WHERE {
+      { $this mhv:requestedBy ?requester ; mhv:agreementVersion ?version .
+        FILTER NOT EXISTS { $this mhv:hasAssent ?a . ?a mhv:assentsTo $this ; mhv:assentingParty ?requester ; mhv:acceptedVersion ?version ; mhv:assentStatus mhv:ACCEPTED } }
+      UNION
+      { $this mhv:providedBy ?provider ; mhv:agreementVersion ?version .
+        FILTER NOT EXISTS { $this mhv:hasAssent ?a . ?a mhv:assentsTo $this ; mhv:assentingParty ?provider ; mhv:acceptedVersion ?version ; mhv:assentStatus mhv:ACCEPTED } }
+    }""" ] ;
+  sh:sparql [ sh:message "The agreement provider must be the provider of its offer." ;
+    sh:prefixes [ sh:declare [ sh:prefix "mhv" ; sh:namespace "https://github.com/gj3447/metahumotonic-foundation/vocab#"^^xsd:anyURI ] ] ;
+    sh:select """SELECT $this WHERE { $this mhv:forOffer ?offer ; mhv:providedBy ?provider . FILTER NOT EXISTS { ?offer mhv:offeredBy ?provider } }""" ] .
+
+mhv:AssentShape a sh:NodeShape ; sh:targetClass mhv:PartyAssent ;
+  sh:property [ sh:path mhv:assentsTo ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mhv:BilateralAgreement ] ;
+  sh:property [ sh:path mhv:assentingParty ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mhv:Participant ] ;
+  sh:property [ sh:path mhv:acceptedVersion ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path mhv:assentStatus ; sh:minCount 1 ; sh:in ( mhv:ACCEPTED ) ] ;
+  sh:property [ sh:path mhv:simulationStatus ; sh:minCount 1 ; sh:in ( mhv:SIMULATED ) ] .
+
+mhv:ExecutionShape a sh:NodeShape ; sh:targetClass mhv:WorkExecution ;
+  sh:property [ sh:path mhv:hasUsage ; sh:minCount 1 ; sh:class mhv:UsageObservation ] ;
+  sh:property [ sh:path mhv:hasResultEvidence ; sh:minCount 1 ; sh:class mhv:ResultEvidence ] ;
+  sh:property [ sh:path mhv:simulationStatus ; sh:minCount 1 ; sh:in ( mhv:SIMULATED ) ] .
+
+mhv:UsageShape a sh:NodeShape ; sh:targetClass mhv:UsageObservation ;
+  sh:property [ sh:path mhv:meteredUnits ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:decimal ; sh:minInclusive 0 ] ;
+  sh:property [ sh:path mhv:observedUnit ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path <http://www.w3.org/ns/prov#wasAttributedTo> ; sh:minCount 1 ; sh:class mhv:Participant ] ;
+  sh:property [ sh:path <http://purl.org/dc/terms/source> ; sh:minCount 1 ] ;
+  sh:property [ sh:path mhv:acceptedBy ; sh:minCount 1 ; sh:class mhv:Participant ] ;
+  sh:property [ sh:path mhv:usageStatus ; sh:minCount 1 ; sh:in ( mhv:ACCEPTED ) ] ;
+  sh:property [ sh:path mhv:simulationStatus ; sh:minCount 1 ; sh:in ( mhv:SIMULATED ) ] .
+
+mhv:ResultShape a sh:NodeShape ; sh:targetClass mhv:ResultEvidence ;
+  sh:property [ sh:path mhv:resultStatus ; sh:minCount 1 ; sh:in ( mhv:RESULT_ACCEPTED ) ] ;
+  sh:property [ sh:path <http://www.w3.org/ns/prov#wasAttributedTo> ; sh:minCount 1 ; sh:class mhv:Participant ] ;
+  sh:property [ sh:path <http://purl.org/dc/terms/source> ; sh:minCount 1 ] ;
+  sh:property [ sh:path mhv:acceptedBy ; sh:minCount 1 ; sh:class mhv:Participant ] ;
+  sh:property [ sh:path mhv:simulationStatus ; sh:minCount 1 ; sh:in ( mhv:SIMULATED ) ] .
+
+mhv:SettlementShape a sh:NodeShape ; sh:targetClass mhv:SettlementReceipt ;
+  sh:property [ sh:path mhv:settlesAgreement ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mhv:BilateralAgreement ] ;
+  sh:property [ sh:path mhv:basedOnUsage ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mhv:UsageObservation ] ;
+  sh:property [ sh:path mhv:denominatedIn ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mhv:CurrencyDesign ] ;
+  sh:property [ sh:path mhv:settlementAmount ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:decimal ; sh:minInclusive 0 ] ;
+  sh:property [ sh:path mhv:settlementId ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path mhv:paymentReference ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path mhv:simulationStatus ; sh:minCount 1 ; sh:in ( mhv:SIMULATED ) ] ;
+  sh:sparql [ sh:message "settlementId must be unique among receipts." ;
+    sh:prefixes [ sh:declare [ sh:prefix "mhv" ; sh:namespace "https://github.com/gj3447/metahumotonic-foundation/vocab#"^^xsd:anyURI ] ] ;
+    sh:select """SELECT $this WHERE {
+      $this mhv:settlementId ?v . ?other a mhv:SettlementReceipt ; mhv:settlementId ?v . FILTER(?other != $this)
+    }""" ] ;
+  sh:sparql [ sh:message "paymentReference must be unique among receipts." ;
+    sh:prefixes [ sh:declare [ sh:prefix "mhv" ; sh:namespace "https://github.com/gj3447/metahumotonic-foundation/vocab#"^^xsd:anyURI ] ] ;
+    sh:select """SELECT $this WHERE {
+      $this mhv:paymentReference ?v . ?other a mhv:SettlementReceipt ; mhv:paymentReference ?v . FILTER(?other != $this)
+    }""" ] ;
+  sh:sparql [ sh:message "A full-settlement receipt must use its agreement's execution, unit, and currency; one usage has one receipt in this profile." ;
+    sh:prefixes [ sh:declare [ sh:prefix "mhv" ; sh:namespace "https://github.com/gj3447/metahumotonic-foundation/vocab#"^^xsd:anyURI ] ] ;
+    sh:select """SELECT $this WHERE {
+      { $this mhv:settlesAgreement ?agreement ; mhv:basedOnUsage ?usage . FILTER NOT EXISTS { ?agreement mhv:hasExecution ?execution . ?execution mhv:hasUsage ?usage } }
+      UNION
+      { $this mhv:settlesAgreement ?agreement ; mhv:denominatedIn ?currency . FILTER NOT EXISTS { ?agreement mhv:agreedCurrency ?currency } }
+      UNION
+      { $this mhv:settlesAgreement ?agreement ; mhv:basedOnUsage ?usage . ?usage mhv:observedUnit ?unit . FILTER NOT EXISTS { ?agreement mhv:agreedUnit ?unit } }
+      UNION
+      { $this mhv:basedOnUsage ?usage . ?other a mhv:SettlementReceipt ; mhv:basedOnUsage ?usage . FILTER(?other != $this) }
+    }""" ] .

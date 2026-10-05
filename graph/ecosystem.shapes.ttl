@@ -1,0 +1,108 @@
+@prefix ev: <https://github.com/gj3447/metahumotonic-foundation/ecosystem-vocab#> .
+@prefix mhv: <https://github.com/gj3447/metahumotonic-foundation/vocab#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+ev:ResponseUnitShape a sh:NodeShape ;
+  sh:targetNode <https://github.com/gj3447/metahumotonic-foundation/graph/ecosystem#unit_response> ;
+  sh:property [ sh:path ev:responsesPerUnit ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:hasValue 1 ] .
+ev:EcosystemGraphShape a sh:NodeShape ; sh:targetClass ev:EcosystemGraph ;
+  sh:property [ sh:path ev:authorityClass ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "SECONDARY_AI" ] ;
+  sh:property [ sh:path ev:designStatus ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "PROPOSED" ] ;
+  sh:property [ sh:path ev:verificationStatus ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "DESIGN_ONLY" ] ;
+  sh:property [ sh:path ev:normativeEffect ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue false ] ;
+  sh:property [ sh:path ev:executionEffect ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue false ] ;
+  sh:property [ sh:path ev:scope ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path ev:recordedOn ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:date ] ;
+  sh:property [ sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:maxCount 1 ; sh:class prov:SoftwareAgent ] ;
+  sh:property [ sh:path prov:wasGeneratedBy ; sh:minCount 1 ; sh:maxCount 1 ; sh:class prov:Activity ] ;
+  sh:property [ sh:path ev:inputArtifact ; sh:minCount 1 ; sh:class ev:SourceArtifact ] .
+
+ev:SourceArtifactShape a sh:NodeShape ; sh:targetClass ev:SourceArtifact ;
+  sh:property [ sh:path mhv:path ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path mhv:sha256 ; sh:minCount 1 ; sh:maxCount 1 ; sh:pattern "^[0-9a-f]{64}$" ] ;
+  sh:property [ sh:path ev:recordedOn ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:date ] ;
+  sh:property [ sh:path ev:artifactState ; sh:minCount 1 ; sh:maxCount 1 ; sh:in ( "COMMITTED_BYTES" "WORKTREE_SNAPSHOT" ) ] .
+
+ev:SourceExcerptShape a sh:NodeShape ; sh:targetClass ev:SourceExcerpt ;
+  sh:property [ sh:path ev:authorityClass ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "USER_PRIMARY" ] ;
+  sh:property [ sh:path ev:sourceRole ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "user" ] ;
+  sh:property [ sh:path ev:sourceText ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path mhv:verbatim ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path mhv:sha256 ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path ev:recordKey ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path ev:locator ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path dcterms:source ; sh:minCount 1 ; sh:maxCount 1 ; sh:class ev:SourceArtifact ] ;
+  sh:property [ sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:maxCount 1 ; sh:class prov:Person ] .
+
+ev:UserClaimShape a sh:NodeShape ; sh:targetClass ev:UserClaim ;
+  sh:property [ sh:path ev:authorityClass ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "USER_PRIMARY" ] ;
+  sh:property [ sh:path ev:verificationStatus ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "NOT_EVALUATED" ] ;
+  sh:property [ sh:path mhv:span ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path mhv:text ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path ev:claimKind ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path prov:wasDerivedFrom ; sh:minCount 1 ; sh:maxCount 1 ; sh:class ev:SourceExcerpt ] ;
+  sh:property [ sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:maxCount 1 ; sh:class prov:Person ] .
+
+ev:DocumentObservationShape a sh:NodeShape ; sh:targetClass ev:DocumentObservation ;
+  sh:property [ sh:path ev:authorityClass ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "DOCUMENT_OBSERVATION" ] ;
+  sh:property [ sh:path ev:sourceText ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path dcterms:source ; sh:minCount 1 ; sh:maxCount 1 ; sh:class ev:SourceArtifact ] ;
+  sh:property [ sh:path ev:recordedOn ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:date ] ;
+  sh:property [ sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:maxCount 1 ; sh:class prov:SoftwareAgent ] .
+
+ev:DesignShape a sh:NodeShape ; sh:targetClass ev:Design ;
+  sh:property [ sh:path ev:authorityClass ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "SECONDARY_AI" ] ;
+  sh:property [ sh:path ev:designStatus ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "PROPOSED" ] ;
+  sh:property [ sh:path mhv:text ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path rdfs:label ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:maxCount 1 ; sh:class prov:SoftwareAgent ] ;
+  sh:property [ sh:path ev:groundedIn ; sh:minCount 1 ; sh:class ev:UserClaim ] ;
+  sh:not [ sh:class ev:UserClaim ] .
+
+ev:ComponentSpecShape a sh:NodeShape ; sh:targetClass ev:ComponentSpec ;
+  sh:property [ sh:path ev:specKind ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path ev:unitSpec ; sh:maxCount 1 ; sh:class ev:UnitSpec ] .
+
+ev:RelationSpecShape a sh:NodeShape ; sh:targetClass ev:RelationSpec ;
+  sh:property [ sh:path ev:subject ; sh:minCount 1 ; sh:maxCount 1 ; sh:class ev:ComponentSpec ] ;
+  sh:property [ sh:path ev:relationKind ; sh:minCount 1 ; sh:maxCount 1 ; sh:class rdf:Property ] ;
+  sh:property [ sh:path ev:object ; sh:minCount 1 ; sh:maxCount 1 ; sh:class ev:ComponentSpec ] .
+
+ev:HyperedgeSpecShape a sh:NodeShape ; sh:targetClass ev:HyperedgeSpec ;
+  sh:property [ sh:path ev:participant ; sh:minCount 2 ; sh:class ev:ParticipationSpec ] .
+
+ev:ParticipationSpecShape a sh:NodeShape ; sh:targetClass ev:ParticipationSpec ;
+  sh:property [ sh:path ev:role ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path ev:endpoint ; sh:minCount 1 ; sh:maxCount 1 ; sh:class ev:ComponentSpec ] ;
+  sh:property [ sh:path ev:position ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 0 ] .
+
+ev:UnitSpecShape a sh:NodeShape ; sh:targetClass ev:UnitSpec ;
+  sh:property [ sh:path ev:unit ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path ev:countingRule ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] .
+
+ev:ContractSpecShape a sh:NodeShape ; sh:targetClass ev:ContractSpec ;
+  sh:property [ sh:path ev:contract ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] .
+
+ev:OpenQuestionShape a sh:NodeShape ; sh:targetClass ev:OpenQuestion ;
+  sh:property [ sh:path ev:status ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "OPEN" ] ;
+  sh:property [ sh:path ev:openOn ; sh:minCount 1 ; sh:maxCount 1 ; sh:class ev:UserClaim ] .
+
+ev:MetricSpecShape a sh:NodeShape ; sh:targetClass ev:MetricSpec ;
+  sh:property [ sh:path ev:unit ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path ev:calculation ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] .
+
+ev:EvaluationPlanShape a sh:NodeShape ; sh:targetClass ev:EvaluationPlan ;
+  sh:property [ sh:path ev:verificationStatus ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "NOT_RUN" ] ;
+  sh:property [ sh:path ev:baseline ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path ev:treatment ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path ev:failureCondition ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path ev:evaluates ; sh:minCount 1 ; sh:class ev:UserClaim ] ;
+  sh:property [ sh:path ev:hasMetric ; sh:minCount 1 ; sh:class ev:MetricSpec ] .
+
+ev:ImplementationMappingShape a sh:NodeShape ; sh:targetClass ev:ImplementationMapping ;
+  sh:property [ sh:path ev:verificationStatus ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "LOCAL_COMPONENTS_ONLY" ] .

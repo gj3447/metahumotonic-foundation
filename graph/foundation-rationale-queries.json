@@ -1,0 +1,764 @@
+{
+  "prefixes": {
+    "fr": "https://github.com/gj3447/metahumotonic-foundation/graph/foundation-rationale#",
+    "rv": "https://github.com/gj3447/metahumotonic-foundation/rationale-vocab#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "ph": "https://github.com/gj3447/metahumotonic-foundation/graph/philosophy#",
+    "ex": "https://github.com/gj3447/metahumotonic-foundation/graph/ecosystem#",
+    "sp": "https://github.com/gj3447/metahumotonic-foundation/graph/spirit#",
+    "dcterms": "http://purl.org/dc/terms/"
+  },
+  "questions": [
+    {
+      "id": "thesis-premises",
+      "question": "핵심 논증의 근거는 무엇인가?",
+      "query": "SELECT ?argument ?premise WHERE { VALUES ?argument { fr:A1 } ?argument rv:premise ?premise }",
+      "columns": [
+        "argument",
+        "premise"
+      ],
+      "expected": [
+        [
+          "fr:A1",
+          "fr:U_request"
+        ],
+        [
+          "fr:A1",
+          "ph:C_mission"
+        ],
+        [
+          "fr:A1",
+          "fr:A2"
+        ],
+        [
+          "fr:A1",
+          "fr:A3"
+        ],
+        [
+          "fr:A1",
+          "fr:A4"
+        ],
+        [
+          "fr:A1",
+          "fr:A5"
+        ],
+        [
+          "fr:A1",
+          "fr:A9"
+        ],
+        [
+          "fr:A1",
+          "fr:A10"
+        ],
+        [
+          "fr:A1",
+          "fr:A11"
+        ],
+        [
+          "fr:A1",
+          "fr:A12"
+        ]
+      ]
+    },
+    {
+      "id": "resource-tension",
+      "question": "자원 확대와 자유 사이 반론은 무엇을 근거로 어느 논증에 제기되는가?",
+      "query": "SELECT ?objection ?source ?target WHERE { VALUES ?objection { fr:O1 } ?objection rv:premise ?source ; rv:challenges ?target }",
+      "columns": [
+        "objection",
+        "source",
+        "target"
+      ],
+      "expected": [
+        [
+          "fr:O1",
+          "fr:S_license",
+          "fr:A3"
+        ],
+        [
+          "fr:O1",
+          "fr:S_license",
+          "fr:A4"
+        ],
+        [
+          "fr:O1",
+          "fr:S_notice",
+          "fr:A3"
+        ],
+        [
+          "fr:O1",
+          "fr:S_notice",
+          "fr:A4"
+        ],
+        [
+          "fr:O1",
+          "fr:S_charter",
+          "fr:A3"
+        ],
+        [
+          "fr:O1",
+          "fr:S_charter",
+          "fr:A4"
+        ],
+        [
+          "fr:O1",
+          "fr:S_osi",
+          "fr:A3"
+        ],
+        [
+          "fr:O1",
+          "fr:S_osi",
+          "fr:A4"
+        ]
+      ]
+    },
+    {
+      "id": "autonomy-provenance",
+      "question": "자율성 해석은 어느 사용자 목적을 근거로 누가 작성했는가?",
+      "query": "SELECT ?claim ?source ?author WHERE { VALUES ?claim { fr:A6 } ?claim rv:premise ?source ; prov:wasAttributedTo ?author . FILTER(?source = ex:C_autonomy) }",
+      "columns": [
+        "claim",
+        "source",
+        "author"
+      ],
+      "expected": [
+        [
+          "fr:A6",
+          "ex:C_autonomy",
+          "fr:codex"
+        ]
+      ]
+    },
+    {
+      "id": "alternatives",
+      "question": "다른 조직 방식과 그 근거는 무엇인가?",
+      "query": "SELECT ?alternative ?source WHERE { ?alternative a rv:Statement ; rv:kind \"ALTERNATIVE\" ; rv:premise ?source }",
+      "columns": [
+        "alternative",
+        "source"
+      ],
+      "expected": [
+        [
+          "fr:B1",
+          "fr:S_charter"
+        ],
+        [
+          "fr:B2",
+          "ph:C_resource_purpose"
+        ],
+        [
+          "fr:B2",
+          "fr:S_charter"
+        ],
+        [
+          "fr:B3",
+          "fr:S_apache"
+        ],
+        [
+          "fr:B3",
+          "fr:S_spi"
+        ],
+        [
+          "fr:B4",
+          "ex:C_autonomy"
+        ],
+        [
+          "fr:B4",
+          "fr:S_market"
+        ],
+        [
+          "fr:B4",
+          "fr:S_governance"
+        ],
+        [
+          "fr:B5",
+          "fr:S_spi"
+        ],
+        [
+          "fr:B5",
+          "fr:S_spi_eligibility"
+        ],
+        [
+          "fr:B5",
+          "fr:S_notice"
+        ]
+      ]
+    },
+    {
+      "id": "competition-test",
+      "question": "경쟁의 실패 가설은 어떤 근거와 미실행 실험에 연결되는가?",
+      "query": "SELECT ?objection ?source ?test ?status WHERE { VALUES ?objection { fr:O2 } ?objection rv:premise ?source ; rv:testedBy ?test . ?test rv:status ?status }",
+      "columns": [
+        "objection",
+        "source",
+        "test",
+        "status"
+      ],
+      "expected": [
+        [
+          "fr:O2",
+          "ex:C_competition",
+          "fr:T3",
+          "NOT_RUN"
+        ],
+        [
+          "fr:O2",
+          "fr:S_safety",
+          "fr:T3",
+          "NOT_RUN"
+        ]
+      ]
+    },
+    {
+      "id": "evidence-kinds",
+      "question": "외부 사례와 로컬 관측은 어떤 출처와 읽기 방식으로 기록되는가?",
+      "query": "SELECT ?observation ?source ?mode WHERE { ?observation a rv:Observation ; dcterms:source ?source ; rv:mode ?mode }",
+      "columns": [
+        "observation",
+        "source",
+        "mode"
+      ],
+      "expected": [
+        [
+          "fr:S_charter",
+          "fr:artifact_charter",
+          "EXACT_EXCERPT"
+        ],
+        [
+          "fr:S_license",
+          "fr:artifact_license",
+          "EXACT_EXCERPT"
+        ],
+        [
+          "fr:S_notice",
+          "fr:artifact_notice",
+          "EXACT_EXCERPT"
+        ],
+        [
+          "fr:S_governance",
+          "fr:artifact_governance",
+          "EXACT_EXCERPT"
+        ],
+        [
+          "fr:S_ecosystem",
+          "fr:artifact_ecosystem",
+          "EXACT_EXCERPT"
+        ],
+        [
+          "fr:S_market",
+          "fr:artifact_market",
+          "EXACT_EXCERPT"
+        ],
+        [
+          "fr:S_apache",
+          "https://apache.org/foundation/how-it-works/",
+          "PARAPHRASE"
+        ],
+        [
+          "fr:S_ethereum",
+          "https://ethereum.foundation/ourstory",
+          "PARAPHRASE"
+        ],
+        [
+          "fr:S_spi",
+          "https://www.spi-inc.org/projects/relationship/",
+          "PARAPHRASE"
+        ],
+        [
+          "fr:S_spi_eligibility",
+          "https://www.spi-inc.org/projects/associated-project-howto/",
+          "PARAPHRASE"
+        ],
+        [
+          "fr:S_safety",
+          "https://arxiv.org/html/1606.06565v2",
+          "PARAPHRASE"
+        ],
+        [
+          "fr:S_osi",
+          "https://opensource.org/osd",
+          "PARAPHRASE"
+        ],
+        [
+          "fr:S_ostrom",
+          "https://web.pdx.edu/~nwallace/EHP/OstromPolyGov.pdf",
+          "PARAPHRASE"
+        ],
+        [
+          "fr:S_a2a",
+          "https://a2a-protocol.org/v0.3.0/specification/",
+          "PARAPHRASE"
+        ],
+        [
+          "fr:S_erc8004",
+          "https://eips.ethereum.org/EIPS/eip-8004",
+          "PARAPHRASE"
+        ],
+        [
+          "fr:S_ap2",
+          "https://ap2-protocol.org/ap2/agent_authorization/",
+          "PARAPHRASE"
+        ]
+      ]
+    },
+    {
+      "id": "experiment-status",
+      "question": "실험이 실행되었다고 주장하는가?",
+      "query": "SELECT ?test ?status ?author WHERE { ?test a rv:Experiment ; rv:status ?status ; prov:wasAttributedTo ?author }",
+      "columns": [
+        "test",
+        "status",
+        "author"
+      ],
+      "expected": [
+        [
+          "fr:T1",
+          "NOT_RUN",
+          "fr:codex"
+        ],
+        [
+          "fr:T2",
+          "NOT_RUN",
+          "fr:codex"
+        ],
+        [
+          "fr:T3",
+          "NOT_RUN",
+          "fr:codex"
+        ],
+        [
+          "fr:T4",
+          "NOT_RUN",
+          "fr:codex"
+        ],
+        [
+          "fr:T5",
+          "NOT_RUN",
+          "fr:codex"
+        ],
+        [
+          "fr:T6",
+          "NOT_RUN",
+          "fr:codex"
+        ]
+      ]
+    },
+    {
+      "id": "research-authority",
+      "question": "연구는 규범 채택이나 실행 권한을 부여하는가?",
+      "query": "SELECT ?graph ?status ?authority ?normative ?execution WHERE { ?graph a rv:ResearchGraph ; rv:status ?status ; rv:authorityClass ?authority ; rv:normativeEffect ?normative ; rv:executionEffect ?execution }",
+      "columns": [
+        "graph",
+        "status",
+        "authority",
+        "normative",
+        "execution"
+      ],
+      "expected": [
+        [
+          "fr:graph",
+          "PROPOSED",
+          "SECONDARY_AI",
+          "false",
+          "false"
+        ]
+      ]
+    },
+    {
+      "id": "source-version-status",
+      "question": "추가 외부 자료의 버전·상태와 관측 시점은 무엇인가?",
+      "query": "SELECT ?source ?status ?revision ?date WHERE { VALUES ?source { fr:S_ostrom fr:S_a2a fr:S_erc8004 fr:S_ap2 } ?source rv:sourceStatus ?status ; rv:recordedOn ?date . OPTIONAL { ?source rv:revision ?r } BIND(COALESCE(?r, \"UNKNOWN\") AS ?revision) }",
+      "columns": [
+        "source",
+        "status",
+        "revision",
+        "date"
+      ],
+      "expected": [
+        [
+          "fr:S_ostrom",
+          "RESEARCH_PAPER",
+          "AER 100(3), 2010, pp. 641–672; DOI 10.1257/aer.100.3.641",
+          "2026-10-04"
+        ],
+        [
+          "fr:S_a2a",
+          "VERSIONED_SPECIFICATION",
+          "A2A v0.3.0",
+          "2026-10-04"
+        ],
+        [
+          "fr:S_erc8004",
+          "DRAFT",
+          "UNKNOWN",
+          "2026-10-04"
+        ],
+        [
+          "fr:S_ap2",
+          "LIVING_SPECIFICATION",
+          "UNKNOWN",
+          "2026-10-04"
+        ]
+      ]
+    },
+    {
+      "id": "new-evidence-to-arguments",
+      "question": "추가 논증은 어떤 외부 근거와 실험으로 연결되는가?",
+      "query": "SELECT ?argument ?source ?test WHERE { VALUES (?argument ?source) { (fr:A9 fr:S_ostrom) (fr:A10 fr:S_a2a) (fr:A11 fr:S_erc8004) (fr:A12 fr:S_ap2) } ?argument rv:premise ?source ; rv:testedBy ?test }",
+      "columns": [
+        "argument",
+        "source",
+        "test"
+      ],
+      "expected": [
+        [
+          "fr:A9",
+          "fr:S_ostrom",
+          "fr:T4"
+        ],
+        [
+          "fr:A9",
+          "fr:S_ostrom",
+          "fr:T5"
+        ],
+        [
+          "fr:A10",
+          "fr:S_a2a",
+          "fr:T1"
+        ],
+        [
+          "fr:A10",
+          "fr:S_a2a",
+          "fr:T6"
+        ],
+        [
+          "fr:A11",
+          "fr:S_erc8004",
+          "fr:T3"
+        ],
+        [
+          "fr:A11",
+          "fr:S_erc8004",
+          "fr:T6"
+        ],
+        [
+          "fr:A12",
+          "fr:S_ap2",
+          "fr:T6"
+        ]
+      ]
+    },
+    {
+      "id": "delegation-is-not-sovereignty",
+      "question": "위임형 자동화를 완전 자율성으로 확대하지 않는 반론의 근거는 무엇인가?",
+      "query": "SELECT ?objection ?source ?target ?authority WHERE { VALUES ?objection { fr:O6 } ?objection rv:premise ?source ; rv:challenges ?target ; rv:authorityClass ?authority }",
+      "columns": [
+        "objection",
+        "source",
+        "target",
+        "authority"
+      ],
+      "expected": [
+        [
+          "fr:O6",
+          "fr:S_ap2",
+          "fr:A6",
+          "SECONDARY_AI"
+        ],
+        [
+          "fr:O6",
+          "fr:S_ap2",
+          "fr:A12",
+          "SECONDARY_AI"
+        ],
+        [
+          "fr:O6",
+          "ex:C_autonomy",
+          "fr:A6",
+          "SECONDARY_AI"
+        ],
+        [
+          "fr:O6",
+          "ex:C_autonomy",
+          "fr:A12",
+          "SECONDARY_AI"
+        ]
+      ]
+    },
+    {
+      "id": "reputation-counterexample",
+      "question": "등록·평판에 대한 반론은 어느 논증·실험과 연결되는가?",
+      "query": "SELECT ?objection ?source ?target ?test WHERE { VALUES ?objection { fr:O5 } ?objection rv:premise ?source ; rv:challenges ?target ; rv:testedBy ?test }",
+      "columns": [
+        "objection",
+        "source",
+        "target",
+        "test"
+      ],
+      "expected": [
+        [
+          "fr:O5",
+          "fr:S_erc8004",
+          "fr:A7",
+          "fr:T3"
+        ],
+        [
+          "fr:O5",
+          "fr:S_erc8004",
+          "fr:A7",
+          "fr:T6"
+        ],
+        [
+          "fr:O5",
+          "fr:S_erc8004",
+          "fr:A11",
+          "fr:T3"
+        ],
+        [
+          "fr:O5",
+          "fr:S_erc8004",
+          "fr:A11",
+          "fr:T6"
+        ],
+        [
+          "fr:O5",
+          "ex:C_competition",
+          "fr:A7",
+          "fr:T3"
+        ],
+        [
+          "fr:O5",
+          "ex:C_competition",
+          "fr:A7",
+          "fr:T6"
+        ],
+        [
+          "fr:O5",
+          "ex:C_competition",
+          "fr:A11",
+          "fr:T3"
+        ],
+        [
+          "fr:O5",
+          "ex:C_competition",
+          "fr:A11",
+          "fr:T6"
+        ]
+      ]
+    },
+    {
+      "id": "mapping-role-source",
+      "question": "각 외부 근거는 어떤 역할의 적용 제안으로 연결되는가?",
+      "query": "SELECT ?mapping ?role ?source WHERE { ?mapping a rv:MappingProposal ; rv:role ?role ; dcterms:source ?source }",
+      "columns": [
+        "mapping",
+        "role",
+        "source"
+      ],
+      "expected": [
+        [
+          "fr:M_ostrom",
+          "COMMON_GOVERNANCE",
+          "fr:S_ostrom"
+        ],
+        [
+          "fr:M_a2a",
+          "TASK_INTEROP",
+          "fr:S_a2a"
+        ],
+        [
+          "fr:M_erc8004",
+          "TRUST_EVIDENCE",
+          "fr:S_erc8004"
+        ],
+        [
+          "fr:M_ap2",
+          "TRANSACTION_AUTHORIZATION",
+          "fr:S_ap2"
+        ]
+      ]
+    },
+    {
+      "id": "mapping-targets",
+      "question": "적용 제안은 재단과 CHU/HSWM 생태계의 어떤 기존 ID에 연결되는가?",
+      "query": "SELECT ?mapping ?role ?target WHERE { ?mapping a rv:MappingProposal ; rv:role ?role ; rv:targets ?target }",
+      "columns": [
+        "mapping",
+        "role",
+        "target"
+      ],
+      "expected": [
+        [
+          "fr:M_ostrom",
+          "COMMON_GOVERNANCE",
+          "ph:foundation"
+        ],
+        [
+          "fr:M_ostrom",
+          "COMMON_GOVERNANCE",
+          "ex:population"
+        ],
+        [
+          "fr:M_ostrom",
+          "COMMON_GOVERNANCE",
+          "ex:compute"
+        ],
+        [
+          "fr:M_ostrom",
+          "COMMON_GOVERNANCE",
+          "ex:agreement"
+        ],
+        [
+          "fr:M_a2a",
+          "TASK_INTEROP",
+          "ex:hswm"
+        ],
+        [
+          "fr:M_a2a",
+          "TASK_INTEROP",
+          "ex:agent"
+        ],
+        [
+          "fr:M_a2a",
+          "TASK_INTEROP",
+          "ex:response"
+        ],
+        [
+          "fr:M_a2a",
+          "TASK_INTEROP",
+          "ex:receipt"
+        ],
+        [
+          "fr:M_erc8004",
+          "TRUST_EVIDENCE",
+          "ex:agent"
+        ],
+        [
+          "fr:M_erc8004",
+          "TRUST_EVIDENCE",
+          "ex:receipt"
+        ],
+        [
+          "fr:M_ap2",
+          "TRANSACTION_AUTHORIZATION",
+          "ex:agreement"
+        ],
+        [
+          "fr:M_ap2",
+          "TRANSACTION_AUTHORIZATION",
+          "ex:asset"
+        ],
+        [
+          "fr:M_ap2",
+          "TRANSACTION_AUTHORIZATION",
+          "ex:receipt"
+        ]
+      ]
+    },
+    {
+      "id": "mapping-experiments",
+      "question": "구성 요소 적용에서 출처가 있는 논증과 미실행 시험까지 추적할 수 있는가?",
+      "query": "SELECT ?mapping ?argument ?source ?test ?status WHERE { ?mapping a rv:MappingProposal ; dcterms:source ?source ; rv:justifiedBy ?argument ; rv:evaluatedBy ?test . ?argument rv:premise ?source ; rv:testedBy ?test . ?test rv:status ?status }",
+      "columns": [
+        "mapping",
+        "argument",
+        "source",
+        "test",
+        "status"
+      ],
+      "expected": [
+        [
+          "fr:M_ostrom",
+          "fr:A9",
+          "fr:S_ostrom",
+          "fr:T4",
+          "NOT_RUN"
+        ],
+        [
+          "fr:M_ostrom",
+          "fr:A9",
+          "fr:S_ostrom",
+          "fr:T5",
+          "NOT_RUN"
+        ],
+        [
+          "fr:M_a2a",
+          "fr:A10",
+          "fr:S_a2a",
+          "fr:T1",
+          "NOT_RUN"
+        ],
+        [
+          "fr:M_a2a",
+          "fr:A10",
+          "fr:S_a2a",
+          "fr:T6",
+          "NOT_RUN"
+        ],
+        [
+          "fr:M_erc8004",
+          "fr:A11",
+          "fr:S_erc8004",
+          "fr:T3",
+          "NOT_RUN"
+        ],
+        [
+          "fr:M_erc8004",
+          "fr:A11",
+          "fr:S_erc8004",
+          "fr:T6",
+          "NOT_RUN"
+        ],
+        [
+          "fr:M_ap2",
+          "fr:A12",
+          "fr:S_ap2",
+          "fr:T6",
+          "NOT_RUN"
+        ]
+      ]
+    },
+    {
+      "id": "mapping-provenance",
+      "question": "이 연결은 누구의 요청으로 누가 작성했으며 적용 권위와 상태는 무엇인가?",
+      "query": "SELECT ?mapping ?request ?author ?authority ?status WHERE { ?mapping a rv:MappingProposal ; prov:wasDerivedFrom ?request ; prov:wasAttributedTo ?author ; rv:authorityClass ?authority ; rv:status ?status }",
+      "columns": [
+        "mapping",
+        "request",
+        "author",
+        "authority",
+        "status"
+      ],
+      "expected": [
+        [
+          "fr:M_ostrom",
+          "fr:U_structure",
+          "fr:codex",
+          "SECONDARY_AI",
+          "PROPOSED"
+        ],
+        [
+          "fr:M_a2a",
+          "fr:U_structure",
+          "fr:codex",
+          "SECONDARY_AI",
+          "PROPOSED"
+        ],
+        [
+          "fr:M_erc8004",
+          "fr:U_structure",
+          "fr:codex",
+          "SECONDARY_AI",
+          "PROPOSED"
+        ],
+        [
+          "fr:M_ap2",
+          "fr:U_structure",
+          "fr:codex",
+          "SECONDARY_AI",
+          "PROPOSED"
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+@prefix rv: <https://github.com/gj3447/metahumotonic-foundation/rationale-vocab#> .
+@prefix fr: <https://github.com/gj3447/metahumotonic-foundation/graph/foundation-rationale#> .
+@prefix mhv: <https://github.com/gj3447/metahumotonic-foundation/vocab#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix sp: <https://github.com/gj3447/metahumotonic-foundation/graph/spirit#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+rv:ArtifactShape a sh:NodeShape ; sh:targetClass rv:Artifact ;
+  sh:closed true ; sh:ignoredProperties (rdf:type) ;
+  sh:property [ sh:path mhv:path ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ],
+    [ sh:path mhv:sha256 ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:pattern "^[a-f0-9]{64}$" ; sh:minLength 1 ],
+    [ sh:path rv:artifactState ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:in ("USER_SOURCE_RECORD" "WORKTREE_SNAPSHOT" "AI_EVIDENCE_RECORD" "AI_RESEARCH_REPORT") ; sh:minLength 1 ],
+    [ sh:path rv:recordedOn ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:date ] .
+
+rv:ObservationShape a sh:NodeShape ; sh:targetClass rv:Observation ;
+  sh:closed true ; sh:ignoredProperties (rdf:type) ;
+  sh:property [ sh:path rv:text ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ],
+    [ sh:path rv:recordKey ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ],
+    [ sh:path rv:locator ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ],
+    [ sh:path rv:sourceStatus ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:in ("REPOSITORY_DECLARATION" "ORGANIZATION_DOCUMENT" "DEFINITION" "RESEARCH_PAPER" "DRAFT" "VERSIONED_SPECIFICATION" "LIVING_SPECIFICATION") ],
+    [ sh:path rv:revision ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ],
+    [ sh:path rv:limitation ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ],
+    [ sh:path rv:recordedOn ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:date ],
+    [ sh:path rv:mode ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:in ("EXACT_EXCERPT" "PARAPHRASE") ; sh:minLength 1 ],
+    [ sh:path dcterms:source ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ],
+    [ sh:path rv:authorityClass ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:hasValue "DOCUMENT_OBSERVATION" ; sh:minLength 1 ],
+    [ sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ; sh:hasValue fr:codex ] .
+
+rv:UserClaimShape a sh:NodeShape ; sh:targetClass rv:UserClaim ;
+  sh:closed true ; sh:ignoredProperties (rdf:type) ;
+  sh:property [ sh:path rv:text ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ],
+    [ sh:path rv:recordKey ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ],
+    [ sh:path dcterms:source ; sh:minCount 1 ; sh:maxCount 1 ; sh:class rv:Artifact ],
+    [ sh:path rv:authorityClass ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:hasValue "USER_PRIMARY" ; sh:minLength 1 ],
+    [ sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ; sh:hasValue sp:proposer ] .
+
+rv:StatementShape a sh:NodeShape ; sh:targetClass rv:Statement ;
+  sh:closed true ; sh:ignoredProperties (rdf:type) ;
+  sh:property [ sh:path rv:text ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ],
+    [ sh:path rv:kind ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:in ("ARGUMENT" "OBJECTION" "ALTERNATIVE") ; sh:minLength 1 ],
+    [ sh:path rv:marker ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:pattern "^\\[[AOB][1-9][0-9]*\\]$" ; sh:minLength 1 ],
+    [ sh:path rv:authorityClass ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:hasValue "SECONDARY_AI" ; sh:minLength 1 ],
+    [ sh:path rv:status ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:hasValue "PROPOSED" ; sh:minLength 1 ],
+    [ sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ; sh:hasValue fr:codex ],
+    [ sh:path rv:premise ; sh:minCount 1 ; sh:nodeKind sh:IRI ],
+    [ sh:path rv:challenges ; sh:minCount 0 ; sh:class rv:Statement ],
+    [ sh:path rv:testedBy ; sh:minCount 1 ; sh:class rv:Experiment ] .
+
+rv:ExperimentShape a sh:NodeShape ; sh:targetClass rv:Experiment ;
+  sh:closed true ; sh:ignoredProperties (rdf:type) ;
+  sh:property [ sh:path rv:text ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ],
+    [ sh:path rv:marker ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:pattern "^\\[T[1-9][0-9]*\\]$" ; sh:minLength 1 ],
+    [ sh:path rv:metric ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ],
+    [ sh:path rv:failureCondition ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ],
+    [ sh:path rv:authorityClass ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:hasValue "SECONDARY_AI" ; sh:minLength 1 ],
+    [ sh:path rv:status ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:hasValue "NOT_RUN" ; sh:minLength 1 ],
+    [ sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ; sh:hasValue fr:codex ] .
+
+rv:MappingProposalShape a sh:NodeShape ; sh:targetClass rv:MappingProposal ;
+  sh:closed true ; sh:ignoredProperties (rdf:type) ;
+  sh:property [ sh:path rv:text ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ],
+    [ sh:path rv:role ; sh:minCount 1 ; sh:maxCount 1 ; sh:in ("COMMON_GOVERNANCE" "TASK_INTEROP" "TRUST_EVIDENCE" "TRANSACTION_AUTHORIZATION") ],
+    [ sh:path rv:targets ; sh:minCount 1 ; sh:nodeKind sh:IRI ],
+    [ sh:path dcterms:source ; sh:minCount 1 ; sh:maxCount 1 ; sh:class rv:Observation ],
+    [ sh:path rv:justifiedBy ; sh:minCount 1 ; sh:class rv:Statement ],
+    [ sh:path rv:evaluatedBy ; sh:minCount 1 ; sh:class rv:Experiment ],
+    [ sh:path rv:boundary ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ],
+    [ sh:path rv:authorityClass ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "SECONDARY_AI" ],
+    [ sh:path rv:status ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "PROPOSED" ],
+    [ sh:path rv:recordedOn ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:date ],
+    [ sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue fr:codex ],
+    [ sh:path prov:wasDerivedFrom ; sh:minCount 1 ; sh:maxCount 1 ; sh:class rv:UserClaim ; sh:hasValue fr:U_structure ] .
+
+rv:ResearchGraphShape a sh:NodeShape ; sh:targetClass rv:ResearchGraph ;
+  sh:closed true ; sh:ignoredProperties (rdf:type) ;
+  sh:property [ sh:path rv:text ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ],
+    [ sh:path rv:authorityClass ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:hasValue "SECONDARY_AI" ; sh:minLength 1 ],
+    [ sh:path rv:status ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:hasValue "PROPOSED" ; sh:minLength 1 ],
+    [ sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ; sh:hasValue fr:codex ],
+    [ sh:path rv:recordedOn ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:date ],
+    [ sh:path dcterms:subject ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ],
+    [ sh:path dcterms:references ; sh:minCount 1 ; sh:nodeKind sh:IRI ],
+    [ sh:path rv:sourceClaim ; sh:minCount 1 ; sh:nodeKind sh:IRI ],
+    [ sh:path rv:inputArtifact ; sh:minCount 1 ; sh:class rv:Artifact ],
+    [ sh:path rv:evidenceArtifact ; sh:minCount 1 ; sh:maxCount 1 ; sh:class rv:Artifact ],
+    [ sh:path rv:reportArtifact ; sh:minCount 1 ; sh:maxCount 1 ; sh:class rv:Artifact ],
+    [ sh:path rv:normativeEffect ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:boolean ; sh:hasValue false ],
+    [ sh:path rv:executionEffect ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:boolean ; sh:hasValue false ] .

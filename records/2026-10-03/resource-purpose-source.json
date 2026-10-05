@@ -1,0 +1,16 @@
+{
+  "record_type": "conversation-source-excerpts",
+  "recorded_on": "2026-10-03",
+  "source": "current conversation",
+  "scope": "Complete new user message; event time is unknown. Earlier source artifacts are preserved.",
+  "messages": [
+    {
+      "id": "user-resource-purpose",
+      "role": "user",
+      "authority": "USER_PRIMARY",
+      "locator": "current-conversation:user-resource-purpose",
+      "verbatim": "실행해줘봐봐 ㅇㅇ 그 우리 메타휴모토닉의 목적은 소프트웨어 그 저작권을 통해 컴퓨팅 우리가 제어가능한 컴퓨팅과 메모리 제원을 끊임없이 늘리는거야 ㅇㅇ",
+      "sha256": "424033b7a57f35d2959e48299e402c00b309c509377bc2ded4131433cd99902d"
+    }
+  ]
+}

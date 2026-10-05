@@ -1,0 +1,1859 @@
+{
+  "schema": "metahumotonic-protocol-probes/v1",
+  "mode": "SCRIPTED_LOCAL_SIMULATION",
+  "model_calls": 0,
+  "external_resource_access": false,
+  "real_capacity_change": null,
+  "source_sha256": {
+    "economy/probes.py": "0fd6226b82d717cd48d4fd56fddea5293993a528b1cbd25a2db0832acdee50f4",
+    "economy/simulator.py": "12010f14756b6ac24ece21f08acef320bfc430eab4a01372d26e58c4126d8046"
+  },
+  "reproduction": "PASS",
+  "ai_safety_experiment": "NOT_RUN",
+  "limitations": [
+    "No inference model, hardware metering, runtime revocation or identity authentication.",
+    "A reference string is not evidence verification; ground truth is a fixture label.",
+    "No independent validator network or third-party effects are simulated.",
+    "No inference about safety rates, incentives or real compute/memory growth."
+  ],
+  "observations": {
+    "scarcity": {
+      "underfunded_status": "DRAFT",
+      "underfunded_rejections": 1,
+      "overquota_rejections": 1,
+      "valid_submit_status": "SUBMITTED"
+    },
+    "honesty": {
+      "honest_status": "SETTLED",
+      "known_false_status": "SETTLED",
+      "known_false_payment": "6"
+    },
+    "exit": {
+      "before_start_status": "CANCELLED",
+      "before_start_refund_balance": "100",
+      "after_start_status": "RUNNING",
+      "after_start_escrow": "10"
+    },
+    "collusion": {
+      "outsider_rejections": 1,
+      "status": "SETTLED",
+      "known_false_payment": "10"
+    },
+    "correction": {
+      "rejections": 4,
+      "status": "RESOLVED",
+      "receipts_after_retry": 1,
+      "refunded_balance": "100",
+      "escrow": "0"
+    }
+  },
+  "traces": {
+    "scarce": {
+      "initial_balances": {
+        "requester": "9",
+        "provider": "0",
+        "outsider": "0"
+      },
+      "attempts": [
+        {
+          "action": "propose",
+          "args": [
+            "work",
+            "requester",
+            "provider",
+            "sim-unit",
+            "2",
+            "5"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "assent",
+          "args": [
+            "work",
+            "requester",
+            "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "assent",
+          "args": [
+            "work",
+            "provider",
+            "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "fund",
+          "args": [
+            "work",
+            "requester"
+          ],
+          "outcome": "REJECTED",
+          "reason": "insufficient requester balance"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "actor": "requester",
+          "operation": "PROPOSE",
+          "agreement_id": "work",
+          "data": {
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7",
+            "terms": {
+              "agreement_id": "work",
+              "requester": "requester",
+              "provider": "provider",
+              "unit": "sim-unit",
+              "unit_price": "2",
+              "max_units": "5"
+            }
+          },
+          "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "event_hash": "29ad04c4b31900f6460d7b9349339f3a71d292b8cbc4ccc07db47c3f96dd3f58"
+        },
+        {
+          "sequence": 2,
+          "actor": "requester",
+          "operation": "ASSENT",
+          "agreement_id": "work",
+          "data": {
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          },
+          "previous_hash": "29ad04c4b31900f6460d7b9349339f3a71d292b8cbc4ccc07db47c3f96dd3f58",
+          "event_hash": "5a63c082d7984c7c69f36403b4f1acd99fa90bb3ee99e225e2b5aeedf686de5a"
+        },
+        {
+          "sequence": 3,
+          "actor": "provider",
+          "operation": "ASSENT",
+          "agreement_id": "work",
+          "data": {
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          },
+          "previous_hash": "5a63c082d7984c7c69f36403b4f1acd99fa90bb3ee99e225e2b5aeedf686de5a",
+          "event_hash": "72c39083832589da88065b96d03fdfb430600fa844afda337e1fea6641812229"
+        }
+      ],
+      "snapshot": {
+        "mode": "SIMULATED",
+        "policy": {
+          "authority": "SECONDARY_AI",
+          "status": "PROPOSED"
+        },
+        "currency": "SIM-MHC",
+        "numeric_policy": {
+          "max_decimal_places": 6,
+          "rounding": "REJECT"
+        },
+        "initial_balances": {
+          "outsider": "0",
+          "provider": "0",
+          "requester": "9"
+        },
+        "balances": {
+          "outsider": "0",
+          "provider": "0",
+          "requester": "9"
+        },
+        "escrow": {},
+        "escrow_total": "0",
+        "agreements": {
+          "work": {
+            "terms": {
+              "agreement_id": "work",
+              "requester": "requester",
+              "provider": "provider",
+              "unit": "sim-unit",
+              "unit_price": "2",
+              "max_units": "5"
+            },
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7",
+            "status": "DRAFT",
+            "assents": [
+              "provider",
+              "requester"
+            ],
+            "escrow": "0",
+            "submitted_units": null,
+            "usage_evidence": null,
+            "result_evidence": null,
+            "resolution": null
+          }
+        },
+        "receipts": {},
+        "total_units": "9"
+      }
+    },
+    "normal": {
+      "initial_balances": {
+        "requester": "100",
+        "provider": "0",
+        "outsider": "0"
+      },
+      "attempts": [
+        {
+          "action": "propose",
+          "args": [
+            "work",
+            "requester",
+            "provider",
+            "sim-unit",
+            "2",
+            "5"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "assent",
+          "args": [
+            "work",
+            "requester",
+            "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "assent",
+          "args": [
+            "work",
+            "provider",
+            "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "fund",
+          "args": [
+            "work",
+            "requester"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "start",
+          "args": [
+            "work",
+            "provider"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "submit",
+          "args": [
+            "work",
+            "provider",
+            "6",
+            "sim:meter",
+            "sim:result"
+          ],
+          "outcome": "REJECTED",
+          "reason": "submitted units exceed max_units"
+        },
+        {
+          "action": "submit",
+          "args": [
+            "work",
+            "provider",
+            "3",
+            "sim:meter",
+            "sim:result"
+          ],
+          "outcome": "ACCEPTED"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "actor": "requester",
+          "operation": "PROPOSE",
+          "agreement_id": "work",
+          "data": {
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7",
+            "terms": {
+              "agreement_id": "work",
+              "requester": "requester",
+              "provider": "provider",
+              "unit": "sim-unit",
+              "unit_price": "2",
+              "max_units": "5"
+            }
+          },
+          "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "event_hash": "29ad04c4b31900f6460d7b9349339f3a71d292b8cbc4ccc07db47c3f96dd3f58"
+        },
+        {
+          "sequence": 2,
+          "actor": "requester",
+          "operation": "ASSENT",
+          "agreement_id": "work",
+          "data": {
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          },
+          "previous_hash": "29ad04c4b31900f6460d7b9349339f3a71d292b8cbc4ccc07db47c3f96dd3f58",
+          "event_hash": "5a63c082d7984c7c69f36403b4f1acd99fa90bb3ee99e225e2b5aeedf686de5a"
+        },
+        {
+          "sequence": 3,
+          "actor": "provider",
+          "operation": "ASSENT",
+          "agreement_id": "work",
+          "data": {
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          },
+          "previous_hash": "5a63c082d7984c7c69f36403b4f1acd99fa90bb3ee99e225e2b5aeedf686de5a",
+          "event_hash": "72c39083832589da88065b96d03fdfb430600fa844afda337e1fea6641812229"
+        },
+        {
+          "sequence": 4,
+          "actor": "requester",
+          "operation": "FUND",
+          "agreement_id": "work",
+          "data": {
+            "reserved": "10"
+          },
+          "previous_hash": "72c39083832589da88065b96d03fdfb430600fa844afda337e1fea6641812229",
+          "event_hash": "0734fea2720af555b2988be0f2aee7be822308cbe3d9afda145cdac198a38fa4"
+        },
+        {
+          "sequence": 5,
+          "actor": "provider",
+          "operation": "START",
+          "agreement_id": "work",
+          "data": {},
+          "previous_hash": "0734fea2720af555b2988be0f2aee7be822308cbe3d9afda145cdac198a38fa4",
+          "event_hash": "2070fada8c7f417c50fb010e15b1d3b10724c9b9702169582e7ee58345106035"
+        },
+        {
+          "sequence": 6,
+          "actor": "provider",
+          "operation": "SUBMIT",
+          "agreement_id": "work",
+          "data": {
+            "units": "3",
+            "cost": "6",
+            "usage_evidence": "sim:meter",
+            "result_evidence": "sim:result"
+          },
+          "previous_hash": "2070fada8c7f417c50fb010e15b1d3b10724c9b9702169582e7ee58345106035",
+          "event_hash": "e75268261121dcb61940c2a4f078841034e2226d2d6956192c3d6cdf2f552cfc"
+        }
+      ],
+      "snapshot": {
+        "mode": "SIMULATED",
+        "policy": {
+          "authority": "SECONDARY_AI",
+          "status": "PROPOSED"
+        },
+        "currency": "SIM-MHC",
+        "numeric_policy": {
+          "max_decimal_places": 6,
+          "rounding": "REJECT"
+        },
+        "initial_balances": {
+          "outsider": "0",
+          "provider": "0",
+          "requester": "100"
+        },
+        "balances": {
+          "outsider": "0",
+          "provider": "0",
+          "requester": "90"
+        },
+        "escrow": {
+          "work": "10"
+        },
+        "escrow_total": "10",
+        "agreements": {
+          "work": {
+            "terms": {
+              "agreement_id": "work",
+              "requester": "requester",
+              "provider": "provider",
+              "unit": "sim-unit",
+              "unit_price": "2",
+              "max_units": "5"
+            },
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7",
+            "status": "SUBMITTED",
+            "assents": [
+              "provider",
+              "requester"
+            ],
+            "escrow": "10",
+            "submitted_units": "3",
+            "usage_evidence": "sim:meter",
+            "result_evidence": "sim:result",
+            "resolution": null
+          }
+        },
+        "receipts": {},
+        "total_units": "100"
+      }
+    },
+    "honest": {
+      "initial_balances": {
+        "requester": "100",
+        "provider": "0",
+        "outsider": "0"
+      },
+      "attempts": [
+        {
+          "action": "propose",
+          "args": [
+            "work",
+            "requester",
+            "provider",
+            "sim-unit",
+            "2",
+            "5"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "assent",
+          "args": [
+            "work",
+            "requester",
+            "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "assent",
+          "args": [
+            "work",
+            "provider",
+            "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "fund",
+          "args": [
+            "work",
+            "requester"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "start",
+          "args": [
+            "work",
+            "provider"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "submit",
+          "args": [
+            "work",
+            "provider",
+            "3",
+            "sim:unverified-meter",
+            "sim:ground-truth-correct"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "accept",
+          "args": [
+            "work",
+            "requester"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "settle",
+          "args": [
+            "work",
+            "requester",
+            "pay"
+          ],
+          "outcome": "ACCEPTED"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "actor": "requester",
+          "operation": "PROPOSE",
+          "agreement_id": "work",
+          "data": {
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7",
+            "terms": {
+              "agreement_id": "work",
+              "requester": "requester",
+              "provider": "provider",
+              "unit": "sim-unit",
+              "unit_price": "2",
+              "max_units": "5"
+            }
+          },
+          "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "event_hash": "29ad04c4b31900f6460d7b9349339f3a71d292b8cbc4ccc07db47c3f96dd3f58"
+        },
+        {
+          "sequence": 2,
+          "actor": "requester",
+          "operation": "ASSENT",
+          "agreement_id": "work",
+          "data": {
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          },
+          "previous_hash": "29ad04c4b31900f6460d7b9349339f3a71d292b8cbc4ccc07db47c3f96dd3f58",
+          "event_hash": "5a63c082d7984c7c69f36403b4f1acd99fa90bb3ee99e225e2b5aeedf686de5a"
+        },
+        {
+          "sequence": 3,
+          "actor": "provider",
+          "operation": "ASSENT",
+          "agreement_id": "work",
+          "data": {
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          },
+          "previous_hash": "5a63c082d7984c7c69f36403b4f1acd99fa90bb3ee99e225e2b5aeedf686de5a",
+          "event_hash": "72c39083832589da88065b96d03fdfb430600fa844afda337e1fea6641812229"
+        },
+        {
+          "sequence": 4,
+          "actor": "requester",
+          "operation": "FUND",
+          "agreement_id": "work",
+          "data": {
+            "reserved": "10"
+          },
+          "previous_hash": "72c39083832589da88065b96d03fdfb430600fa844afda337e1fea6641812229",
+          "event_hash": "0734fea2720af555b2988be0f2aee7be822308cbe3d9afda145cdac198a38fa4"
+        },
+        {
+          "sequence": 5,
+          "actor": "provider",
+          "operation": "START",
+          "agreement_id": "work",
+          "data": {},
+          "previous_hash": "0734fea2720af555b2988be0f2aee7be822308cbe3d9afda145cdac198a38fa4",
+          "event_hash": "2070fada8c7f417c50fb010e15b1d3b10724c9b9702169582e7ee58345106035"
+        },
+        {
+          "sequence": 6,
+          "actor": "provider",
+          "operation": "SUBMIT",
+          "agreement_id": "work",
+          "data": {
+            "units": "3",
+            "cost": "6",
+            "usage_evidence": "sim:unverified-meter",
+            "result_evidence": "sim:ground-truth-correct"
+          },
+          "previous_hash": "2070fada8c7f417c50fb010e15b1d3b10724c9b9702169582e7ee58345106035",
+          "event_hash": "ada7da008639bceac962fc5f7ccdeebff37e6a352f6ee8d46b2a0b0790018e27"
+        },
+        {
+          "sequence": 7,
+          "actor": "requester",
+          "operation": "ACCEPT",
+          "agreement_id": "work",
+          "data": {
+            "submitted_units": "3"
+          },
+          "previous_hash": "ada7da008639bceac962fc5f7ccdeebff37e6a352f6ee8d46b2a0b0790018e27",
+          "event_hash": "c9056b8c443b15b0531f8613ffc363ef663c161cacc1280a6455ab2001e2a33a"
+        },
+        {
+          "sequence": 8,
+          "actor": "requester",
+          "operation": "SETTLE",
+          "agreement_id": "work",
+          "data": {
+            "operation_id": "pay",
+            "action": "SETTLE",
+            "agreement_id": "work",
+            "provider_amount": "6",
+            "requester_refund": "4",
+            "escrow_before": "10",
+            "escrow_after": "0",
+            "status": "SETTLED",
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          },
+          "previous_hash": "c9056b8c443b15b0531f8613ffc363ef663c161cacc1280a6455ab2001e2a33a",
+          "event_hash": "ef18f45c72d7c9b1b91040b0e9dac8ce937e010df50afc62c6a40bd38104f3b8"
+        }
+      ],
+      "snapshot": {
+        "mode": "SIMULATED",
+        "policy": {
+          "authority": "SECONDARY_AI",
+          "status": "PROPOSED"
+        },
+        "currency": "SIM-MHC",
+        "numeric_policy": {
+          "max_decimal_places": 6,
+          "rounding": "REJECT"
+        },
+        "initial_balances": {
+          "outsider": "0",
+          "provider": "0",
+          "requester": "100"
+        },
+        "balances": {
+          "outsider": "0",
+          "provider": "6",
+          "requester": "94"
+        },
+        "escrow": {},
+        "escrow_total": "0",
+        "agreements": {
+          "work": {
+            "terms": {
+              "agreement_id": "work",
+              "requester": "requester",
+              "provider": "provider",
+              "unit": "sim-unit",
+              "unit_price": "2",
+              "max_units": "5"
+            },
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7",
+            "status": "SETTLED",
+            "assents": [
+              "provider",
+              "requester"
+            ],
+            "escrow": "0",
+            "submitted_units": "3",
+            "usage_evidence": "sim:unverified-meter",
+            "result_evidence": "sim:ground-truth-correct",
+            "resolution": null
+          }
+        },
+        "receipts": {
+          "pay": {
+            "operation_id": "pay",
+            "action": "SETTLE",
+            "agreement_id": "work",
+            "provider_amount": "6",
+            "requester_refund": "4",
+            "escrow_before": "10",
+            "escrow_after": "0",
+            "status": "SETTLED",
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          }
+        },
+        "total_units": "100"
+      }
+    },
+    "false": {
+      "initial_balances": {
+        "requester": "100",
+        "provider": "0",
+        "outsider": "0"
+      },
+      "attempts": [
+        {
+          "action": "propose",
+          "args": [
+            "work",
+            "requester",
+            "provider",
+            "sim-unit",
+            "2",
+            "5"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "assent",
+          "args": [
+            "work",
+            "requester",
+            "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "assent",
+          "args": [
+            "work",
+            "provider",
+            "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "fund",
+          "args": [
+            "work",
+            "requester"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "start",
+          "args": [
+            "work",
+            "provider"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "submit",
+          "args": [
+            "work",
+            "provider",
+            "3",
+            "sim:unverified-meter",
+            "sim:ground-truth-incorrect"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "accept",
+          "args": [
+            "work",
+            "requester"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "settle",
+          "args": [
+            "work",
+            "requester",
+            "pay"
+          ],
+          "outcome": "ACCEPTED"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "actor": "requester",
+          "operation": "PROPOSE",
+          "agreement_id": "work",
+          "data": {
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7",
+            "terms": {
+              "agreement_id": "work",
+              "requester": "requester",
+              "provider": "provider",
+              "unit": "sim-unit",
+              "unit_price": "2",
+              "max_units": "5"
+            }
+          },
+          "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "event_hash": "29ad04c4b31900f6460d7b9349339f3a71d292b8cbc4ccc07db47c3f96dd3f58"
+        },
+        {
+          "sequence": 2,
+          "actor": "requester",
+          "operation": "ASSENT",
+          "agreement_id": "work",
+          "data": {
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          },
+          "previous_hash": "29ad04c4b31900f6460d7b9349339f3a71d292b8cbc4ccc07db47c3f96dd3f58",
+          "event_hash": "5a63c082d7984c7c69f36403b4f1acd99fa90bb3ee99e225e2b5aeedf686de5a"
+        },
+        {
+          "sequence": 3,
+          "actor": "provider",
+          "operation": "ASSENT",
+          "agreement_id": "work",
+          "data": {
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          },
+          "previous_hash": "5a63c082d7984c7c69f36403b4f1acd99fa90bb3ee99e225e2b5aeedf686de5a",
+          "event_hash": "72c39083832589da88065b96d03fdfb430600fa844afda337e1fea6641812229"
+        },
+        {
+          "sequence": 4,
+          "actor": "requester",
+          "operation": "FUND",
+          "agreement_id": "work",
+          "data": {
+            "reserved": "10"
+          },
+          "previous_hash": "72c39083832589da88065b96d03fdfb430600fa844afda337e1fea6641812229",
+          "event_hash": "0734fea2720af555b2988be0f2aee7be822308cbe3d9afda145cdac198a38fa4"
+        },
+        {
+          "sequence": 5,
+          "actor": "provider",
+          "operation": "START",
+          "agreement_id": "work",
+          "data": {},
+          "previous_hash": "0734fea2720af555b2988be0f2aee7be822308cbe3d9afda145cdac198a38fa4",
+          "event_hash": "2070fada8c7f417c50fb010e15b1d3b10724c9b9702169582e7ee58345106035"
+        },
+        {
+          "sequence": 6,
+          "actor": "provider",
+          "operation": "SUBMIT",
+          "agreement_id": "work",
+          "data": {
+            "units": "3",
+            "cost": "6",
+            "usage_evidence": "sim:unverified-meter",
+            "result_evidence": "sim:ground-truth-incorrect"
+          },
+          "previous_hash": "2070fada8c7f417c50fb010e15b1d3b10724c9b9702169582e7ee58345106035",
+          "event_hash": "9f51ecca6291bfdeacf37f208a1ea381483e50fcc19eb4f0e1a667fb8858c951"
+        },
+        {
+          "sequence": 7,
+          "actor": "requester",
+          "operation": "ACCEPT",
+          "agreement_id": "work",
+          "data": {
+            "submitted_units": "3"
+          },
+          "previous_hash": "9f51ecca6291bfdeacf37f208a1ea381483e50fcc19eb4f0e1a667fb8858c951",
+          "event_hash": "d92a874cece387c21bf491945851cb101d1271b661060fa12855397c84d8939a"
+        },
+        {
+          "sequence": 8,
+          "actor": "requester",
+          "operation": "SETTLE",
+          "agreement_id": "work",
+          "data": {
+            "operation_id": "pay",
+            "action": "SETTLE",
+            "agreement_id": "work",
+            "provider_amount": "6",
+            "requester_refund": "4",
+            "escrow_before": "10",
+            "escrow_after": "0",
+            "status": "SETTLED",
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          },
+          "previous_hash": "d92a874cece387c21bf491945851cb101d1271b661060fa12855397c84d8939a",
+          "event_hash": "61e6137524349eb917cc49a890d7ef44b1d9ad2836d2a3eca84ba62522926b28"
+        }
+      ],
+      "snapshot": {
+        "mode": "SIMULATED",
+        "policy": {
+          "authority": "SECONDARY_AI",
+          "status": "PROPOSED"
+        },
+        "currency": "SIM-MHC",
+        "numeric_policy": {
+          "max_decimal_places": 6,
+          "rounding": "REJECT"
+        },
+        "initial_balances": {
+          "outsider": "0",
+          "provider": "0",
+          "requester": "100"
+        },
+        "balances": {
+          "outsider": "0",
+          "provider": "6",
+          "requester": "94"
+        },
+        "escrow": {},
+        "escrow_total": "0",
+        "agreements": {
+          "work": {
+            "terms": {
+              "agreement_id": "work",
+              "requester": "requester",
+              "provider": "provider",
+              "unit": "sim-unit",
+              "unit_price": "2",
+              "max_units": "5"
+            },
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7",
+            "status": "SETTLED",
+            "assents": [
+              "provider",
+              "requester"
+            ],
+            "escrow": "0",
+            "submitted_units": "3",
+            "usage_evidence": "sim:unverified-meter",
+            "result_evidence": "sim:ground-truth-incorrect",
+            "resolution": null
+          }
+        },
+        "receipts": {
+          "pay": {
+            "operation_id": "pay",
+            "action": "SETTLE",
+            "agreement_id": "work",
+            "provider_amount": "6",
+            "requester_refund": "4",
+            "escrow_before": "10",
+            "escrow_after": "0",
+            "status": "SETTLED",
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          }
+        },
+        "total_units": "100"
+      }
+    },
+    "early_exit": {
+      "initial_balances": {
+        "requester": "100",
+        "provider": "0",
+        "outsider": "0"
+      },
+      "attempts": [
+        {
+          "action": "propose",
+          "args": [
+            "work",
+            "requester",
+            "provider",
+            "sim-unit",
+            "2",
+            "5"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "assent",
+          "args": [
+            "work",
+            "requester",
+            "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "assent",
+          "args": [
+            "work",
+            "provider",
+            "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "fund",
+          "args": [
+            "work",
+            "requester"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "cancel",
+          "args": [
+            "work",
+            "requester"
+          ],
+          "outcome": "ACCEPTED"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "actor": "requester",
+          "operation": "PROPOSE",
+          "agreement_id": "work",
+          "data": {
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7",
+            "terms": {
+              "agreement_id": "work",
+              "requester": "requester",
+              "provider": "provider",
+              "unit": "sim-unit",
+              "unit_price": "2",
+              "max_units": "5"
+            }
+          },
+          "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "event_hash": "29ad04c4b31900f6460d7b9349339f3a71d292b8cbc4ccc07db47c3f96dd3f58"
+        },
+        {
+          "sequence": 2,
+          "actor": "requester",
+          "operation": "ASSENT",
+          "agreement_id": "work",
+          "data": {
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          },
+          "previous_hash": "29ad04c4b31900f6460d7b9349339f3a71d292b8cbc4ccc07db47c3f96dd3f58",
+          "event_hash": "5a63c082d7984c7c69f36403b4f1acd99fa90bb3ee99e225e2b5aeedf686de5a"
+        },
+        {
+          "sequence": 3,
+          "actor": "provider",
+          "operation": "ASSENT",
+          "agreement_id": "work",
+          "data": {
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          },
+          "previous_hash": "5a63c082d7984c7c69f36403b4f1acd99fa90bb3ee99e225e2b5aeedf686de5a",
+          "event_hash": "72c39083832589da88065b96d03fdfb430600fa844afda337e1fea6641812229"
+        },
+        {
+          "sequence": 4,
+          "actor": "requester",
+          "operation": "FUND",
+          "agreement_id": "work",
+          "data": {
+            "reserved": "10"
+          },
+          "previous_hash": "72c39083832589da88065b96d03fdfb430600fa844afda337e1fea6641812229",
+          "event_hash": "0734fea2720af555b2988be0f2aee7be822308cbe3d9afda145cdac198a38fa4"
+        },
+        {
+          "sequence": 5,
+          "actor": "requester",
+          "operation": "CANCEL",
+          "agreement_id": "work",
+          "data": {
+            "refund": "10"
+          },
+          "previous_hash": "0734fea2720af555b2988be0f2aee7be822308cbe3d9afda145cdac198a38fa4",
+          "event_hash": "3cc966ab11ba57f4d3284af5ab48f40841c27d6bde4bd35766267eeead5c5f6c"
+        }
+      ],
+      "snapshot": {
+        "mode": "SIMULATED",
+        "policy": {
+          "authority": "SECONDARY_AI",
+          "status": "PROPOSED"
+        },
+        "currency": "SIM-MHC",
+        "numeric_policy": {
+          "max_decimal_places": 6,
+          "rounding": "REJECT"
+        },
+        "initial_balances": {
+          "outsider": "0",
+          "provider": "0",
+          "requester": "100"
+        },
+        "balances": {
+          "outsider": "0",
+          "provider": "0",
+          "requester": "100"
+        },
+        "escrow": {},
+        "escrow_total": "0",
+        "agreements": {
+          "work": {
+            "terms": {
+              "agreement_id": "work",
+              "requester": "requester",
+              "provider": "provider",
+              "unit": "sim-unit",
+              "unit_price": "2",
+              "max_units": "5"
+            },
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7",
+            "status": "CANCELLED",
+            "assents": [
+              "provider",
+              "requester"
+            ],
+            "escrow": "0",
+            "submitted_units": null,
+            "usage_evidence": null,
+            "result_evidence": null,
+            "resolution": null
+          }
+        },
+        "receipts": {},
+        "total_units": "100"
+      }
+    },
+    "running_exit": {
+      "initial_balances": {
+        "requester": "100",
+        "provider": "0",
+        "outsider": "0"
+      },
+      "attempts": [
+        {
+          "action": "propose",
+          "args": [
+            "work",
+            "requester",
+            "provider",
+            "sim-unit",
+            "2",
+            "5"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "assent",
+          "args": [
+            "work",
+            "requester",
+            "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "assent",
+          "args": [
+            "work",
+            "provider",
+            "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "fund",
+          "args": [
+            "work",
+            "requester"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "start",
+          "args": [
+            "work",
+            "provider"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "cancel",
+          "args": [
+            "work",
+            "requester"
+          ],
+          "outcome": "REJECTED",
+          "reason": "only DRAFT or FUNDED agreements may be cancelled"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "actor": "requester",
+          "operation": "PROPOSE",
+          "agreement_id": "work",
+          "data": {
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7",
+            "terms": {
+              "agreement_id": "work",
+              "requester": "requester",
+              "provider": "provider",
+              "unit": "sim-unit",
+              "unit_price": "2",
+              "max_units": "5"
+            }
+          },
+          "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "event_hash": "29ad04c4b31900f6460d7b9349339f3a71d292b8cbc4ccc07db47c3f96dd3f58"
+        },
+        {
+          "sequence": 2,
+          "actor": "requester",
+          "operation": "ASSENT",
+          "agreement_id": "work",
+          "data": {
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          },
+          "previous_hash": "29ad04c4b31900f6460d7b9349339f3a71d292b8cbc4ccc07db47c3f96dd3f58",
+          "event_hash": "5a63c082d7984c7c69f36403b4f1acd99fa90bb3ee99e225e2b5aeedf686de5a"
+        },
+        {
+          "sequence": 3,
+          "actor": "provider",
+          "operation": "ASSENT",
+          "agreement_id": "work",
+          "data": {
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          },
+          "previous_hash": "5a63c082d7984c7c69f36403b4f1acd99fa90bb3ee99e225e2b5aeedf686de5a",
+          "event_hash": "72c39083832589da88065b96d03fdfb430600fa844afda337e1fea6641812229"
+        },
+        {
+          "sequence": 4,
+          "actor": "requester",
+          "operation": "FUND",
+          "agreement_id": "work",
+          "data": {
+            "reserved": "10"
+          },
+          "previous_hash": "72c39083832589da88065b96d03fdfb430600fa844afda337e1fea6641812229",
+          "event_hash": "0734fea2720af555b2988be0f2aee7be822308cbe3d9afda145cdac198a38fa4"
+        },
+        {
+          "sequence": 5,
+          "actor": "provider",
+          "operation": "START",
+          "agreement_id": "work",
+          "data": {},
+          "previous_hash": "0734fea2720af555b2988be0f2aee7be822308cbe3d9afda145cdac198a38fa4",
+          "event_hash": "2070fada8c7f417c50fb010e15b1d3b10724c9b9702169582e7ee58345106035"
+        }
+      ],
+      "snapshot": {
+        "mode": "SIMULATED",
+        "policy": {
+          "authority": "SECONDARY_AI",
+          "status": "PROPOSED"
+        },
+        "currency": "SIM-MHC",
+        "numeric_policy": {
+          "max_decimal_places": 6,
+          "rounding": "REJECT"
+        },
+        "initial_balances": {
+          "outsider": "0",
+          "provider": "0",
+          "requester": "100"
+        },
+        "balances": {
+          "outsider": "0",
+          "provider": "0",
+          "requester": "90"
+        },
+        "escrow": {
+          "work": "10"
+        },
+        "escrow_total": "10",
+        "agreements": {
+          "work": {
+            "terms": {
+              "agreement_id": "work",
+              "requester": "requester",
+              "provider": "provider",
+              "unit": "sim-unit",
+              "unit_price": "2",
+              "max_units": "5"
+            },
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7",
+            "status": "RUNNING",
+            "assents": [
+              "provider",
+              "requester"
+            ],
+            "escrow": "10",
+            "submitted_units": null,
+            "usage_evidence": null,
+            "result_evidence": null,
+            "resolution": null
+          }
+        },
+        "receipts": {},
+        "total_units": "100"
+      }
+    },
+    "collusion": {
+      "initial_balances": {
+        "requester": "100",
+        "provider": "0",
+        "outsider": "0"
+      },
+      "attempts": [
+        {
+          "action": "propose",
+          "args": [
+            "work",
+            "requester",
+            "provider",
+            "sim-unit",
+            "2",
+            "5"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "assent",
+          "args": [
+            "work",
+            "requester",
+            "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "assent",
+          "args": [
+            "work",
+            "provider",
+            "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "fund",
+          "args": [
+            "work",
+            "requester"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "assent",
+          "args": [
+            "work",
+            "outsider",
+            "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          ],
+          "outcome": "REJECTED",
+          "reason": "actor is not a party to this agreement"
+        },
+        {
+          "action": "start",
+          "args": [
+            "work",
+            "provider"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "submit",
+          "args": [
+            "work",
+            "provider",
+            "5",
+            "sim:fabricated-meter",
+            "sim:incorrect-result"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "accept",
+          "args": [
+            "work",
+            "requester"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "settle",
+          "args": [
+            "work",
+            "requester",
+            "collusive-pay"
+          ],
+          "outcome": "ACCEPTED"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "actor": "requester",
+          "operation": "PROPOSE",
+          "agreement_id": "work",
+          "data": {
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7",
+            "terms": {
+              "agreement_id": "work",
+              "requester": "requester",
+              "provider": "provider",
+              "unit": "sim-unit",
+              "unit_price": "2",
+              "max_units": "5"
+            }
+          },
+          "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "event_hash": "29ad04c4b31900f6460d7b9349339f3a71d292b8cbc4ccc07db47c3f96dd3f58"
+        },
+        {
+          "sequence": 2,
+          "actor": "requester",
+          "operation": "ASSENT",
+          "agreement_id": "work",
+          "data": {
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          },
+          "previous_hash": "29ad04c4b31900f6460d7b9349339f3a71d292b8cbc4ccc07db47c3f96dd3f58",
+          "event_hash": "5a63c082d7984c7c69f36403b4f1acd99fa90bb3ee99e225e2b5aeedf686de5a"
+        },
+        {
+          "sequence": 3,
+          "actor": "provider",
+          "operation": "ASSENT",
+          "agreement_id": "work",
+          "data": {
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          },
+          "previous_hash": "5a63c082d7984c7c69f36403b4f1acd99fa90bb3ee99e225e2b5aeedf686de5a",
+          "event_hash": "72c39083832589da88065b96d03fdfb430600fa844afda337e1fea6641812229"
+        },
+        {
+          "sequence": 4,
+          "actor": "requester",
+          "operation": "FUND",
+          "agreement_id": "work",
+          "data": {
+            "reserved": "10"
+          },
+          "previous_hash": "72c39083832589da88065b96d03fdfb430600fa844afda337e1fea6641812229",
+          "event_hash": "0734fea2720af555b2988be0f2aee7be822308cbe3d9afda145cdac198a38fa4"
+        },
+        {
+          "sequence": 5,
+          "actor": "provider",
+          "operation": "START",
+          "agreement_id": "work",
+          "data": {},
+          "previous_hash": "0734fea2720af555b2988be0f2aee7be822308cbe3d9afda145cdac198a38fa4",
+          "event_hash": "2070fada8c7f417c50fb010e15b1d3b10724c9b9702169582e7ee58345106035"
+        },
+        {
+          "sequence": 6,
+          "actor": "provider",
+          "operation": "SUBMIT",
+          "agreement_id": "work",
+          "data": {
+            "units": "5",
+            "cost": "10",
+            "usage_evidence": "sim:fabricated-meter",
+            "result_evidence": "sim:incorrect-result"
+          },
+          "previous_hash": "2070fada8c7f417c50fb010e15b1d3b10724c9b9702169582e7ee58345106035",
+          "event_hash": "ae10815cc107df9f61c170cff96211a027cdb822313daabc0a678ca9a1deb44b"
+        },
+        {
+          "sequence": 7,
+          "actor": "requester",
+          "operation": "ACCEPT",
+          "agreement_id": "work",
+          "data": {
+            "submitted_units": "5"
+          },
+          "previous_hash": "ae10815cc107df9f61c170cff96211a027cdb822313daabc0a678ca9a1deb44b",
+          "event_hash": "eaa8e15a37f0ebef5655c85fe95f5be15d46bfcea0dbd4fe228ba7d415afdc90"
+        },
+        {
+          "sequence": 8,
+          "actor": "requester",
+          "operation": "SETTLE",
+          "agreement_id": "work",
+          "data": {
+            "operation_id": "collusive-pay",
+            "action": "SETTLE",
+            "agreement_id": "work",
+            "provider_amount": "10",
+            "requester_refund": "0",
+            "escrow_before": "10",
+            "escrow_after": "0",
+            "status": "SETTLED",
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          },
+          "previous_hash": "eaa8e15a37f0ebef5655c85fe95f5be15d46bfcea0dbd4fe228ba7d415afdc90",
+          "event_hash": "e032934b0e54d5c8293cfe6594a076e32da9f201cef71d95c3a94713fb1b70d7"
+        }
+      ],
+      "snapshot": {
+        "mode": "SIMULATED",
+        "policy": {
+          "authority": "SECONDARY_AI",
+          "status": "PROPOSED"
+        },
+        "currency": "SIM-MHC",
+        "numeric_policy": {
+          "max_decimal_places": 6,
+          "rounding": "REJECT"
+        },
+        "initial_balances": {
+          "outsider": "0",
+          "provider": "0",
+          "requester": "100"
+        },
+        "balances": {
+          "outsider": "0",
+          "provider": "10",
+          "requester": "90"
+        },
+        "escrow": {},
+        "escrow_total": "0",
+        "agreements": {
+          "work": {
+            "terms": {
+              "agreement_id": "work",
+              "requester": "requester",
+              "provider": "provider",
+              "unit": "sim-unit",
+              "unit_price": "2",
+              "max_units": "5"
+            },
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7",
+            "status": "SETTLED",
+            "assents": [
+              "provider",
+              "requester"
+            ],
+            "escrow": "0",
+            "submitted_units": "5",
+            "usage_evidence": "sim:fabricated-meter",
+            "result_evidence": "sim:incorrect-result",
+            "resolution": null
+          }
+        },
+        "receipts": {
+          "collusive-pay": {
+            "operation_id": "collusive-pay",
+            "action": "SETTLE",
+            "agreement_id": "work",
+            "provider_amount": "10",
+            "requester_refund": "0",
+            "escrow_before": "10",
+            "escrow_after": "0",
+            "status": "SETTLED",
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          }
+        },
+        "total_units": "100"
+      }
+    },
+    "correction": {
+      "initial_balances": {
+        "requester": "100",
+        "provider": "0",
+        "outsider": "0"
+      },
+      "attempts": [
+        {
+          "action": "propose",
+          "args": [
+            "work",
+            "requester",
+            "provider",
+            "sim-unit",
+            "2",
+            "5"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "assent",
+          "args": [
+            "work",
+            "requester",
+            "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "assent",
+          "args": [
+            "work",
+            "provider",
+            "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "fund",
+          "args": [
+            "work",
+            "requester"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "start",
+          "args": [
+            "work",
+            "outsider"
+          ],
+          "outcome": "REJECTED",
+          "reason": "actor is not a party to this agreement"
+        },
+        {
+          "action": "start",
+          "args": [
+            "work",
+            "provider"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "dispute",
+          "args": [
+            "work",
+            "requester",
+            "scripted stop request"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "submit",
+          "args": [
+            "work",
+            "provider",
+            "3",
+            "sim:meter",
+            "sim:late-result"
+          ],
+          "outcome": "REJECTED",
+          "reason": "only a RUNNING agreement may be submitted"
+        },
+        {
+          "action": "settle",
+          "args": [
+            "work",
+            "provider",
+            "premature-pay"
+          ],
+          "outcome": "REJECTED",
+          "reason": "only an ACCEPTED agreement may settle"
+        },
+        {
+          "action": "propose_resolution",
+          "args": [
+            "work",
+            "requester",
+            "0",
+            "no accepted work"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "assent_resolution",
+          "args": [
+            "work",
+            "requester",
+            "7b9afb624bb6026381beab19f9041db2178267f9c5d32be91da1ed781a3fef2c"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "resolve",
+          "args": [
+            "work",
+            "requester",
+            "refund"
+          ],
+          "outcome": "REJECTED",
+          "reason": "both parties must assent to a disputed resolution"
+        },
+        {
+          "action": "assent_resolution",
+          "args": [
+            "work",
+            "provider",
+            "7b9afb624bb6026381beab19f9041db2178267f9c5d32be91da1ed781a3fef2c"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "resolve",
+          "args": [
+            "work",
+            "requester",
+            "refund"
+          ],
+          "outcome": "ACCEPTED"
+        },
+        {
+          "action": "resolve",
+          "args": [
+            "work",
+            "requester",
+            "refund"
+          ],
+          "outcome": "ACCEPTED"
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "actor": "requester",
+          "operation": "PROPOSE",
+          "agreement_id": "work",
+          "data": {
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7",
+            "terms": {
+              "agreement_id": "work",
+              "requester": "requester",
+              "provider": "provider",
+              "unit": "sim-unit",
+              "unit_price": "2",
+              "max_units": "5"
+            }
+          },
+          "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "event_hash": "29ad04c4b31900f6460d7b9349339f3a71d292b8cbc4ccc07db47c3f96dd3f58"
+        },
+        {
+          "sequence": 2,
+          "actor": "requester",
+          "operation": "ASSENT",
+          "agreement_id": "work",
+          "data": {
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          },
+          "previous_hash": "29ad04c4b31900f6460d7b9349339f3a71d292b8cbc4ccc07db47c3f96dd3f58",
+          "event_hash": "5a63c082d7984c7c69f36403b4f1acd99fa90bb3ee99e225e2b5aeedf686de5a"
+        },
+        {
+          "sequence": 3,
+          "actor": "provider",
+          "operation": "ASSENT",
+          "agreement_id": "work",
+          "data": {
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7"
+          },
+          "previous_hash": "5a63c082d7984c7c69f36403b4f1acd99fa90bb3ee99e225e2b5aeedf686de5a",
+          "event_hash": "72c39083832589da88065b96d03fdfb430600fa844afda337e1fea6641812229"
+        },
+        {
+          "sequence": 4,
+          "actor": "requester",
+          "operation": "FUND",
+          "agreement_id": "work",
+          "data": {
+            "reserved": "10"
+          },
+          "previous_hash": "72c39083832589da88065b96d03fdfb430600fa844afda337e1fea6641812229",
+          "event_hash": "0734fea2720af555b2988be0f2aee7be822308cbe3d9afda145cdac198a38fa4"
+        },
+        {
+          "sequence": 5,
+          "actor": "provider",
+          "operation": "START",
+          "agreement_id": "work",
+          "data": {},
+          "previous_hash": "0734fea2720af555b2988be0f2aee7be822308cbe3d9afda145cdac198a38fa4",
+          "event_hash": "2070fada8c7f417c50fb010e15b1d3b10724c9b9702169582e7ee58345106035"
+        },
+        {
+          "sequence": 6,
+          "actor": "requester",
+          "operation": "DISPUTE",
+          "agreement_id": "work",
+          "data": {
+            "reason": "scripted stop request"
+          },
+          "previous_hash": "2070fada8c7f417c50fb010e15b1d3b10724c9b9702169582e7ee58345106035",
+          "event_hash": "8b7bd213b4421e5ae2f307c45435a42561f1f86a2b1d9305d16a4b1b76d6ce7e"
+        },
+        {
+          "sequence": 7,
+          "actor": "requester",
+          "operation": "PROPOSE_RESOLUTION",
+          "agreement_id": "work",
+          "data": {
+            "agreement_id": "work",
+            "amount": "0",
+            "reason": "no accepted work",
+            "resolution_sha256": "7b9afb624bb6026381beab19f9041db2178267f9c5d32be91da1ed781a3fef2c"
+          },
+          "previous_hash": "8b7bd213b4421e5ae2f307c45435a42561f1f86a2b1d9305d16a4b1b76d6ce7e",
+          "event_hash": "972e73be639ffe103d5cbe823a6c4fb3fd1b0571655619f98ff3150f1bdfebee"
+        },
+        {
+          "sequence": 8,
+          "actor": "requester",
+          "operation": "ASSENT_RESOLUTION",
+          "agreement_id": "work",
+          "data": {
+            "resolution_sha256": "7b9afb624bb6026381beab19f9041db2178267f9c5d32be91da1ed781a3fef2c"
+          },
+          "previous_hash": "972e73be639ffe103d5cbe823a6c4fb3fd1b0571655619f98ff3150f1bdfebee",
+          "event_hash": "65607b776c3828a42bd733f8576e01a4c7024e342c970de49f8d9de73773d755"
+        },
+        {
+          "sequence": 9,
+          "actor": "provider",
+          "operation": "ASSENT_RESOLUTION",
+          "agreement_id": "work",
+          "data": {
+            "resolution_sha256": "7b9afb624bb6026381beab19f9041db2178267f9c5d32be91da1ed781a3fef2c"
+          },
+          "previous_hash": "65607b776c3828a42bd733f8576e01a4c7024e342c970de49f8d9de73773d755",
+          "event_hash": "d019cc4a5ddd95c1e09bc9449b37bbed6d97ebc7419d2bc73a405e84890df041"
+        },
+        {
+          "sequence": 10,
+          "actor": "requester",
+          "operation": "RESOLVE",
+          "agreement_id": "work",
+          "data": {
+            "operation_id": "refund",
+            "action": "RESOLVE",
+            "agreement_id": "work",
+            "provider_amount": "0",
+            "requester_refund": "10",
+            "escrow_before": "10",
+            "escrow_after": "0",
+            "status": "RESOLVED",
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7",
+            "resolution_sha256": "7b9afb624bb6026381beab19f9041db2178267f9c5d32be91da1ed781a3fef2c"
+          },
+          "previous_hash": "d019cc4a5ddd95c1e09bc9449b37bbed6d97ebc7419d2bc73a405e84890df041",
+          "event_hash": "9882a128696c1106b45b0e48978529c58593ca68e91b125041340fc44e8a985a"
+        }
+      ],
+      "snapshot": {
+        "mode": "SIMULATED",
+        "policy": {
+          "authority": "SECONDARY_AI",
+          "status": "PROPOSED"
+        },
+        "currency": "SIM-MHC",
+        "numeric_policy": {
+          "max_decimal_places": 6,
+          "rounding": "REJECT"
+        },
+        "initial_balances": {
+          "outsider": "0",
+          "provider": "0",
+          "requester": "100"
+        },
+        "balances": {
+          "outsider": "0",
+          "provider": "0",
+          "requester": "100"
+        },
+        "escrow": {},
+        "escrow_total": "0",
+        "agreements": {
+          "work": {
+            "terms": {
+              "agreement_id": "work",
+              "requester": "requester",
+              "provider": "provider",
+              "unit": "sim-unit",
+              "unit_price": "2",
+              "max_units": "5"
+            },
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7",
+            "status": "RESOLVED",
+            "assents": [
+              "provider",
+              "requester"
+            ],
+            "escrow": "0",
+            "submitted_units": null,
+            "usage_evidence": null,
+            "result_evidence": null,
+            "resolution": {
+              "amount": "0",
+              "reason": "no accepted work",
+              "resolution_sha256": "7b9afb624bb6026381beab19f9041db2178267f9c5d32be91da1ed781a3fef2c",
+              "assents": [
+                "provider",
+                "requester"
+              ]
+            }
+          }
+        },
+        "receipts": {
+          "refund": {
+            "operation_id": "refund",
+            "action": "RESOLVE",
+            "agreement_id": "work",
+            "provider_amount": "0",
+            "requester_refund": "10",
+            "escrow_before": "10",
+            "escrow_after": "0",
+            "status": "RESOLVED",
+            "terms_sha256": "dbf3b960ece54078a0f23431a6ed1c8a1ad3f10fead459279972bc8e4fc599e7",
+            "resolution_sha256": "7b9afb624bb6026381beab19f9041db2178267f9c5d32be91da1ed781a3fef2c"
+          }
+        },
+        "total_units": "100"
+      }
+    }
+  }
+}

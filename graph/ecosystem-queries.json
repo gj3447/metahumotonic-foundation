@@ -1,0 +1,396 @@
+{
+  "prefixes": {
+    "ex": "https://github.com/gj3447/metahumotonic-foundation/graph/ecosystem#",
+    "ev": "https://github.com/gj3447/metahumotonic-foundation/ecosystem-vocab#",
+    "mhv": "https://github.com/gj3447/metahumotonic-foundation/vocab#",
+    "sp": "https://github.com/gj3447/metahumotonic-foundation/graph/spirit#",
+    "ph": "https://github.com/gj3447/metahumotonic-foundation/graph/philosophy#",
+    "mhc": "https://github.com/gj3447/metahumotonic-foundation/graph/metahumocoin#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "questions": [
+    {
+      "id": "user-source",
+      "query": "SELECT ?claim ?kind ?source ?actor WHERE { ?claim a ev:UserClaim ; ev:claimKind ?kind ; prov:wasDerivedFrom ?source ; prov:wasAttributedTo ?actor . }",
+      "columns": [
+        "claim",
+        "kind",
+        "source",
+        "actor"
+      ],
+      "expected": [
+        [
+          "ex:C_build",
+          "BUILD_REQUEST",
+          "ex:utterance",
+          "sp:proposer"
+        ],
+        [
+          "ex:C_autonomy",
+          "TARGET",
+          "ex:utterance",
+          "sp:proposer"
+        ],
+        [
+          "ex:C_population",
+          "TARGET_ARCHITECTURE",
+          "ex:utterance",
+          "sp:proposer"
+        ],
+        [
+          "ex:C_operation",
+          "COMPUTATION_DEFINITION",
+          "ex:utterance",
+          "sp:proposer"
+        ],
+        [
+          "ex:C_competition",
+          "TARGET_ECONOMY",
+          "ex:utterance",
+          "sp:proposer"
+        ],
+        [
+          "ex:C_nature",
+          "PHILOSOPHICAL_FRAMING",
+          "ex:utterance",
+          "sp:proposer"
+        ]
+      ]
+    },
+    {
+      "id": "chu-hswm-population",
+      "query": "SELECT ?relation ?subject ?kind ?object WHERE { VALUES ?relation { ex:R_scope ex:R_os ex:R_host ex:R_member } ?relation ev:subject ?subject ; ev:relationKind ?kind ; ev:object ?object . }",
+      "columns": [
+        "relation",
+        "subject",
+        "kind",
+        "object"
+      ],
+      "expected": [
+        [
+          "ex:R_scope",
+          "ex:chu",
+          "ev:includesConcept",
+          "ex:hswm"
+        ],
+        [
+          "ex:R_os",
+          "ex:chu_os",
+          "ev:realizesConcept",
+          "ex:chu"
+        ],
+        [
+          "ex:R_host",
+          "ex:chu_os",
+          "ev:hostsPopulation",
+          "ex:population"
+        ],
+        [
+          "ex:R_member",
+          "ex:population",
+          "ev:hasMemberType",
+          "ex:hswm"
+        ]
+      ]
+    },
+    {
+      "id": "response-is-logical-computation",
+      "query": "SELECT ?agent ?response ?unit ?count WHERE { ex:R_execute ev:subject ?agent ; ev:object ?response . ?response ev:unitSpec ?u . ?u ev:unit ?unit ; ev:responsesPerUnit ?count . }",
+      "columns": [
+        "agent",
+        "response",
+        "unit",
+        "count"
+      ],
+      "expected": [
+        [
+          "ex:agent",
+          "ex:response",
+          "completed_response",
+          "1"
+        ]
+      ]
+    },
+    {
+      "id": "four-dimensions",
+      "query": "SELECT ?component ?unitSpec ?unit WHERE { ?component ev:unitSpec ?unitSpec . ?unitSpec ev:unit ?unit . }",
+      "columns": [
+        "component",
+        "unitSpec",
+        "unit"
+      ],
+      "expected": [
+        [
+          "ex:response",
+          "ex:unit_response",
+          "completed_response"
+        ],
+        [
+          "ex:allowance",
+          "ex:unit_token",
+          "model_input_output_tokens"
+        ],
+        [
+          "ex:compute",
+          "ex:unit_compute",
+          "dimensioned_compute_memory"
+        ],
+        [
+          "ex:asset",
+          "ex:unit_asset",
+          "asset_atoms"
+        ]
+      ]
+    },
+    {
+      "id": "competition-and-composition",
+      "query": "SELECT ?r ?subject ?kind ?object WHERE { VALUES ?r { ex:R_compete ex:R_compose } ?r ev:subject ?subject ; ev:relationKind ?kind ; ev:object ?object . }",
+      "columns": [
+        "r",
+        "subject",
+        "kind",
+        "object"
+      ],
+      "expected": [
+        [
+          "ex:R_compete",
+          "ex:hswm",
+          "ev:competesFor",
+          "ex:allowance"
+        ],
+        [
+          "ex:R_compose",
+          "ex:hswm",
+          "ev:composesInto",
+          "ex:hswm"
+        ]
+      ]
+    },
+    {
+      "id": "nary-execution-binding",
+      "query": "SELECT ?role ?position ?endpoint WHERE { ex:execution_binding ev:participant ?p . ?p ev:role ?role ; ev:position ?position ; ev:endpoint ?endpoint . }",
+      "columns": [
+        "role",
+        "position",
+        "endpoint"
+      ],
+      "expected": [
+        [
+          "system",
+          "0",
+          "ex:hswm"
+        ],
+        [
+          "executor",
+          "1",
+          "ex:agent"
+        ],
+        [
+          "operation",
+          "2",
+          "ex:response"
+        ],
+        [
+          "state",
+          "3",
+          "ex:state"
+        ],
+        [
+          "resource",
+          "4",
+          "ex:compute"
+        ],
+        [
+          "allowance",
+          "5",
+          "ex:allowance"
+        ],
+        [
+          "agreement",
+          "6",
+          "ex:agreement"
+        ],
+        [
+          "receipt",
+          "7",
+          "ex:receipt"
+        ]
+      ]
+    },
+    {
+      "id": "open-decisions",
+      "query": "SELECT ?q ?claim ?status WHERE { ?q a ev:OpenQuestion ; ev:openOn ?claim ; ev:status ?status . }",
+      "columns": [
+        "q",
+        "claim",
+        "status"
+      ],
+      "expected": [
+        [
+          "ex:Q_control",
+          "ex:C_autonomy",
+          "OPEN"
+        ],
+        [
+          "ex:Q_perfection",
+          "ex:C_autonomy",
+          "OPEN"
+        ],
+        [
+          "ex:Q_allocation",
+          "ex:C_competition",
+          "OPEN"
+        ],
+        [
+          "ex:Q_identity",
+          "ex:C_population",
+          "OPEN"
+        ],
+        [
+          "ex:Q_count",
+          "ex:C_operation",
+          "OPEN"
+        ]
+      ]
+    },
+    {
+      "id": "no-perfection-or-runtime-promotion",
+      "query": "SELECT ?design ?experiment ?norm ?execution WHERE { ex:graph ev:verificationStatus ?design ; ev:normativeEffect ?norm ; ev:executionEffect ?execution . ex:E_ecology ev:verificationStatus ?experiment . }",
+      "columns": [
+        "design",
+        "experiment",
+        "norm",
+        "execution"
+      ],
+      "expected": [
+        [
+          "DESIGN_ONLY",
+          "NOT_RUN",
+          "false",
+          "false"
+        ]
+      ]
+    },
+    {
+      "id": "experiment-has-defined-metrics",
+      "query": "SELECT ?metric ?unit WHERE { ex:E_ecology ev:hasMetric ?metric . ?metric ev:unit ?unit . }",
+      "columns": [
+        "metric",
+        "unit"
+      ],
+      "expected": [
+        [
+          "ex:M_intervention",
+          "interventions/decision"
+        ],
+        [
+          "ex:M_utility",
+          "asset_atoms/accepted_outcome"
+        ],
+        [
+          "ex:M_budget",
+          "atoms; input_tokens; output_tokens"
+        ],
+        [
+          "ex:M_concentration",
+          "share"
+        ],
+        [
+          "ex:M_agreement",
+          "fulfilled_contracts/contracts"
+        ]
+      ]
+    },
+    {
+      "id": "existing-projects-keep-identity",
+      "query": "SELECT ?spec ?project WHERE { VALUES ?spec { ex:chu ex:chu_os ex:hswm ex:asset } ?spec dcterms:references ?project . ?project a mhv:Project . }",
+      "columns": [
+        "spec",
+        "project"
+      ],
+      "expected": [
+        [
+          "ex:chu",
+          "sp:chu"
+        ],
+        [
+          "ex:chu_os",
+          "sp:chu"
+        ],
+        [
+          "ex:hswm",
+          "sp:hswm"
+        ],
+        [
+          "ex:asset",
+          "mhc:project"
+        ]
+      ]
+    },
+    {
+      "id": "nature-is-source-framing",
+      "query": "SELECT ?claim ?kind ?status WHERE { ex:C_nature ev:claimKind ?kind ; ev:verificationStatus ?status . BIND(ex:C_nature AS ?claim) }",
+      "columns": [
+        "claim",
+        "kind",
+        "status"
+      ],
+      "expected": [
+        [
+          "ex:C_nature",
+          "PHILOSOPHICAL_FRAMING",
+          "NOT_EVALUATED"
+        ]
+      ]
+    },
+    {
+      "id": "owner-source-observations",
+      "query": "SELECT ?observation ?source ?authority WHERE { ?observation a ev:DocumentObservation ; dcterms:source ?source ; ev:authorityClass ?authority . }",
+      "columns": [
+        "observation",
+        "source",
+        "authority"
+      ],
+      "expected": [
+        [
+          "ex:O_chu_scope",
+          "ex:source_chu_scope",
+          "DOCUMENT_OBSERVATION"
+        ],
+        [
+          "ex:O_chu_os",
+          "ex:source_chu_os",
+          "DOCUMENT_OBSERVATION"
+        ],
+        [
+          "ex:O_software",
+          "ex:source_chu_software",
+          "DOCUMENT_OBSERVATION"
+        ],
+        [
+          "ex:O_hswm",
+          "ex:source_hswm_identity",
+          "DOCUMENT_OBSERVATION"
+        ],
+        [
+          "ex:O_state",
+          "ex:source_hswm_state",
+          "DOCUMENT_OBSERVATION"
+        ],
+        [
+          "ex:O_fractal",
+          "ex:source_hswm_fractal",
+          "DOCUMENT_OBSERVATION"
+        ],
+        [
+          "ex:O_supersession",
+          "ex:source_hswm_constitution",
+          "DOCUMENT_OBSERVATION"
+        ]
+      ]
+    }
+  ]
+}

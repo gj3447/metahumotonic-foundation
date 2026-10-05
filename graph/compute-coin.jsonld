@@ -1,0 +1,727 @@
+{
+  "@context": {
+    "cc": "https://github.com/gj3447/metahumotonic-foundation/graph/compute-coin#",
+    "cv": "https://github.com/gj3447/metahumotonic-foundation/compute-coin-vocab#",
+    "mhv": "https://github.com/gj3447/metahumotonic-foundation/vocab#",
+    "mhc": "https://github.com/gj3447/metahumotonic-foundation/graph/metahumocoin#",
+    "ex": "https://github.com/gj3447/metahumotonic-foundation/graph/ecosystem#",
+    "ph": "https://github.com/gj3447/metahumotonic-foundation/graph/philosophy#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "label": "rdfs:label",
+    "source": {
+      "@id": "dcterms:source",
+      "@type": "@id"
+    },
+    "subject": {
+      "@id": "dcterms:subject",
+      "@type": "@id"
+    },
+    "attributedTo": {
+      "@id": "prov:wasAttributedTo",
+      "@type": "@id"
+    },
+    "path": "mhv:path",
+    "sha256": "mhv:sha256",
+    "text": "cv:text",
+    "authority": "cv:authority",
+    "status": "cv:status",
+    "observedOn": {
+      "@id": "cv:observedOn",
+      "@type": "xsd:date"
+    },
+    "key": "cv:key",
+    "revision": "cv:revision",
+    "limitation": "cv:limitation",
+    "locator": "cv:locator",
+    "sourceStatus": "cv:sourceStatus",
+    "mode": "cv:mode",
+    "basis": {
+      "@id": "cv:basis",
+      "@type": "@id"
+    },
+    "challenges": {
+      "@id": "cv:challenges",
+      "@type": "@id"
+    },
+    "targets": {
+      "@id": "cv:targets",
+      "@type": "@id"
+    },
+    "affects": {
+      "@id": "cv:affects",
+      "@type": "@id"
+    },
+    "kind": "cv:kind",
+    "implements": {
+      "@id": "cv:implements",
+      "@type": "@id"
+    },
+    "forUnit": {
+      "@id": "cv:forUnit",
+      "@type": "@id"
+    },
+    "boundsMint": {
+      "@id": "cv:boundsMint",
+      "@type": "@id"
+    },
+    "createsLiability": {
+      "@id": "cv:createsLiability",
+      "@type": "@id"
+    },
+    "settles": {
+      "@id": "cv:settles",
+      "@type": "@id"
+    },
+    "requiresReceipt": {
+      "@id": "cv:requiresReceipt",
+      "@type": "@id"
+    },
+    "inputArtifact": {
+      "@id": "cv:inputArtifact",
+      "@type": "@id"
+    },
+    "sourceClaim": {
+      "@id": "cv:sourceClaim",
+      "@type": "@id"
+    },
+    "normativeEffect": {
+      "@id": "cv:normativeEffect",
+      "@type": "xsd:boolean"
+    },
+    "executionEffect": {
+      "@id": "cv:executionEffect",
+      "@type": "xsd:boolean"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "cc:analyst",
+      "@type": "prov:SoftwareAgent",
+      "label": "Codex research author"
+    },
+    {
+      "@id": "cc:artifact_user",
+      "@type": "cv:Artifact",
+      "label": "records/2026-10-05/compute-coin/user-source.json",
+      "path": "records/2026-10-05/compute-coin/user-source.json",
+      "sha256": "c5f9be0807aec1092cc70ba9bb8916ae9d1cfd25ce05f8d1e6a886a9060f0356"
+    },
+    {
+      "@id": "cc:artifact_sources",
+      "@type": "cv:Artifact",
+      "label": "records/2026-10-05/compute-coin/sources.json",
+      "path": "records/2026-10-05/compute-coin/sources.json",
+      "sha256": "1f652bc8c089c01579493c8a97c06574e6afbcbf84c430ca16e2d5a3135e3d6a"
+    },
+    {
+      "@id": "cc:artifact_report",
+      "@type": "cv:Artifact",
+      "label": "COMPUTE-COIN.md",
+      "path": "COMPUTE-COIN.md",
+      "sha256": "c2eb8d573bf8856189644720d32b89249f68417661169c3d6f70b4aee1d4761e"
+    },
+    {
+      "@id": "cc:artifact_prototype",
+      "@type": "cv:Artifact",
+      "label": "metahumocoin/ledger.py",
+      "path": "metahumocoin/ledger.py",
+      "sha256": "2a0fd631302d0f5dbeda4ce8659709f9509ad97f27fc73c7f1ed452580a2cf33"
+    },
+    {
+      "@id": "cc:graph",
+      "@type": "cv:ResearchGraph",
+      "label": "Compute-denominated MetaHumoCoin research",
+      "text": "Owner-scoped proposal and source index; no policy ratification or deployed-asset claim.",
+      "authority": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "attributedTo": "cc:analyst",
+      "observedOn": "2026-10-05",
+      "normativeEffect": false,
+      "executionEffect": false,
+      "subject": "mhc:project",
+      "inputArtifact": [
+        "cc:artifact_user",
+        "cc:artifact_sources",
+        "cc:artifact_report",
+        "cc:artifact_prototype"
+      ],
+      "sourceClaim": [
+        "cc:U_request",
+        "ph:C_resource_purpose",
+        "ex:C_operation",
+        "ex:C_population"
+      ]
+    },
+    {
+      "@id": "cc:U_request",
+      "@type": "cv:UserClaim",
+      "label": "User compute stability and MHC revenue direction",
+      "text": "우리는 메타휴모코인으로 만 돈벌면 될거같아 ㅇㅇ 일단 그 암호화폐 우리 그 우리의 그 철학을 딱 해줄 암호화폐 빨리 개발해줘 인터넷에서 데이터좀 가져와서 벡서들 싸그리 작작 가져와서 표준 그래프 엔지니어링으로 데이터 구축좀 해줘봐 어떻게 코인 을 최첨단 ai natvie ai 경제 컴퓨팅 경제를 구축할 코인을 만들어야할지 ㅇㅇ 그 미국 달러랑 스테이블 한 개념으로 가는게 아니라 컴퓨팅 자원이랑 스테이블로 가는 코인이야 metahumocoin 은 ㅇㅇ 인터넷에서 싸그리 내용좀 가져와줘봐봐 ㅇㅇ",
+      "authority": "USER_PRIMARY",
+      "status": "RECORDED",
+      "source": "cc:artifact_user"
+    },
+    {
+      "@id": "cc:S_truebit",
+      "@type": "cv:Observation",
+      "label": "Bootstrapping a stable computation token",
+      "text": "The proposal prices Truebit computation steps in CPU tokens and rewards solvers/verifiers in TRU, using bonded local prices for conversion.",
+      "authority": "DOCUMENT_OBSERVATION",
+      "status": "DOCUMENTED",
+      "key": "truebit",
+      "source": "https://arxiv.org/abs/1908.02946v1",
+      "sourceStatus": "PREPRINT",
+      "locator": "Sections 2–4; CPU task pricing and TRU conversion",
+      "mode": "PARAPHRASE",
+      "limitation": "A proposed incentive model is not proof of reserved future GPU capacity or arbitrary LLM quality.",
+      "observedOn": "2026-10-05",
+      "revision": "arXiv:1908.02946v1"
+    },
+    {
+      "@id": "cc:S_clawcoin",
+      "@type": "cv:Observation",
+      "label": "ClawCoin: An Agentic AI-Native Cryptocurrency for Decentralized Agent Economies",
+      "text": "The proposal links token NAV to a versioned AI API cost basket and uses fiat-backed collateral such as USDC. It reports a prototype and simulations.",
+      "authority": "DOCUMENT_OBSERVATION",
+      "status": "DOCUMENTED",
+      "key": "clawcoin",
+      "source": "https://arxiv.org/html/2604.19026v1",
+      "sourceStatus": "PREPRINT",
+      "locator": "Sections 3.4, 4.1 and 8",
+      "mode": "PARAPHRASE",
+      "limitation": "The claim is index-linked financial value, not direct physical compute redemption; results were not independently reproduced here.",
+      "observedOn": "2026-10-05",
+      "revision": "arXiv:2604.19026v1"
+    },
+    {
+      "@id": "cc:S_icp",
+      "@type": "cv:Observation",
+      "label": "Cycle costs",
+      "text": "ICP cycles pay resource charges; one trillion cycles is pegged to one XDR.",
+      "authority": "DOCUMENT_OBSERVATION",
+      "status": "DOCUMENTED",
+      "key": "icp",
+      "source": "https://docs.internetcomputer.org/references/cycle-costs/",
+      "sourceStatus": "OFFICIAL_DOCUMENTATION",
+      "locator": "Cycle denomination and resource cost tables",
+      "mode": "PARAPHRASE",
+      "limitation": "XDR is the anchor, not a fixed physical compute unit. Tables and web documentation can change.",
+      "observedOn": "2026-10-05"
+    },
+    {
+      "@id": "cc:S_akash",
+      "@type": "cv:Observation",
+      "label": "What Burn-Mint Equilibrium Means for Akash",
+      "text": "The described model burns AKT for non-transferable USD-pegged ACT compute credits and settles provider payments through burn/mint accounting.",
+      "authority": "DOCUMENT_OBSERVATION",
+      "status": "DOCUMENTED",
+      "key": "akash",
+      "source": "https://akash.network/blog/what-burn-mint-equilibrium-means-for-akash/",
+      "sourceStatus": "OFFICIAL_DESIGN_ARTICLE",
+      "locator": "BME Tokenomics Overview; Vault and Circuit Breakers; Testnet Observations",
+      "mode": "PARAPHRASE",
+      "limitation": "The article's testnet observations do not establish independently verified current mainnet readiness or guaranteed stabilization.",
+      "observedOn": "2026-10-05"
+    },
+    {
+      "@id": "cc:S_render",
+      "@type": "cv:Observation",
+      "label": "The RENDER SPL Token",
+      "text": "RENDER is burned for USD-equivalent non-transferable work credits; nodes receive token emissions under the network's proposals.",
+      "authority": "DOCUMENT_OBSERVATION",
+      "status": "DOCUMENTED",
+      "key": "render",
+      "source": "https://know.rendernetwork.com/basics/the-render-spl-token",
+      "sourceStatus": "OFFICIAL_DOCUMENTATION",
+      "locator": "RNP-001 summary; Using RENDER Tokens",
+      "mode": "PARAPHRASE",
+      "limitation": "Work credits are dollar-valued; this is not a fixed-quantity compute peg.",
+      "observedOn": "2026-10-05"
+    },
+    {
+      "@id": "cc:S_golem",
+      "@type": "cv:Observation",
+      "label": "Payments in Golem explained",
+      "text": "Providers quote resource prices, usage is invoiced in GLM, and negotiated interim payments limit unpaid work exposure.",
+      "authority": "DOCUMENT_OBSERVATION",
+      "status": "DOCUMENTED",
+      "key": "golem",
+      "source": "https://docs.golem.network/docs/golem/payments",
+      "sourceStatus": "OFFICIAL_DOCUMENTATION",
+      "locator": "Introduction; Pay as you go; Keep-alive; Mid-agreement payments",
+      "mode": "PARAPHRASE",
+      "limitation": "Using a token to pay for computation does not fix its resource purchasing power; provider metering needs separate trust analysis.",
+      "observedOn": "2026-10-05"
+    },
+    {
+      "@id": "cc:S_filecoin",
+      "@type": "cv:Observation",
+      "label": "Filecoin: A Decentralized Storage Network",
+      "text": "The paper defines proof-of-replication and proof-of-spacetime for storage commitments and describes storage/retrieval markets.",
+      "authority": "DOCUMENT_OBSERVATION",
+      "status": "DOCUMENTED",
+      "key": "filecoin",
+      "source": "https://www.filecoin.io/assets/documents/filecoin.pdf",
+      "sourceStatus": "WHITEPAPER",
+      "locator": "Sections 3 and 5",
+      "mode": "PARAPHRASE",
+      "limitation": "Storage-specific proofs do not certify arbitrary GPU computation, LLM answers or future service availability; this historical paper is not a current protocol audit.",
+      "observedOn": "2026-10-05",
+      "revision": "2017-07-19"
+    },
+    {
+      "@id": "cc:S_bittensor",
+      "@type": "cv:Observation",
+      "label": "dTAO Whitepaper",
+      "text": "The paper describes subnet AMMs, TAO/alpha exchange, incentive emissions and a simplified economic model.",
+      "authority": "DOCUMENT_OBSERVATION",
+      "status": "DOCUMENTED",
+      "key": "bittensor",
+      "source": "https://www.bittensor.com/dtao-whitepaper",
+      "sourceStatus": "OFFICIAL_WHITEPAPER",
+      "locator": "Sections 3.1–3.4 and 4",
+      "mode": "PARAPHRASE",
+      "limitation": "Subnet prices and incentive scores do not establish a fixed quantity of redeemable compute. No current emission ratios are adopted.",
+      "observedOn": "2026-10-05"
+    },
+    {
+      "@id": "cc:S_mlperf",
+      "@type": "cv:Observation",
+      "label": "MLPerf Inference 5.1: Benchmarking Small LLMs with Llama3.1-8B",
+      "text": "The benchmark separates workload scenarios and measures tokens per second with explicit first-token and per-output-token latency constraints.",
+      "authority": "DOCUMENT_OBSERVATION",
+      "status": "DOCUMENTED",
+      "key": "mlperf",
+      "source": "https://mlcommons.org/2025/09/small-llm-inference-5-1/",
+      "sourceStatus": "OFFICIAL_BENCHMARK_EXPLANATION",
+      "locator": "Latency constraints for server and interactive scenarios; metrics",
+      "mode": "PARAPHRASE",
+      "limitation": "A benchmark constrains a workload, not universal intelligence; no MLPerf benchmark was run for this prototype.",
+      "observedOn": "2026-10-05",
+      "revision": "MLPerf Inference 5.1"
+    },
+    {
+      "@id": "cc:S_erc1155",
+      "@type": "cv:Observation",
+      "label": "ERC-1155: Multi Token Standard",
+      "text": "The standard identifies token types by IDs and supports multiple fungible and non-fungible token types in one contract.",
+      "authority": "DOCUMENT_OBSERVATION",
+      "status": "DOCUMENTED",
+      "key": "erc1155",
+      "source": "https://eips.ethereum.org/EIPS/eip-1155",
+      "sourceStatus": "TOKEN_STANDARD",
+      "locator": "Specification; multi-token balances and transfers",
+      "mode": "PARAPHRASE",
+      "limitation": "It can represent distinct service series, but supplies no physical backing, expiry policy, verifier or peg. No chain or contract has been selected.",
+      "observedOn": "2026-10-05",
+      "revision": "ERC-1155"
+    },
+    {
+      "@id": "cc:S_x402",
+      "@type": "cv:Observation",
+      "label": "x402 Specification v2",
+      "text": "Payment requirements distinguish scheme, network, amount, asset, recipient and timeout for HTTP payments.",
+      "authority": "DOCUMENT_OBSERVATION",
+      "status": "DOCUMENTED",
+      "key": "x402",
+      "source": "https://github.com/coinbase/x402/blob/main/specs/x402-specification-v2.md",
+      "sourceStatus": "PROTOCOL_SPECIFICATION",
+      "locator": "PaymentRequirements; verification and settlement",
+      "mode": "PARAPHRASE",
+      "limitation": "Payment transport does not define compute units or prove delivery; asset and scheme support require implementation and testing.",
+      "observedOn": "2026-10-05",
+      "revision": "x402 v2; main branch observed without commit pin"
+    },
+    {
+      "@id": "cc:D_anchor",
+      "@type": "cv:Proposal",
+      "label": "정의된 서비스 직접 상환",
+      "text": "Model a claim to a versioned, quality-constrained computing service; fiat market price may fluctuate.",
+      "authority": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "attributedTo": "cc:analyst",
+      "source": "cc:artifact_report",
+      "basis": [
+        "cc:U_request",
+        "cc:S_truebit",
+        "cc:S_mlperf"
+      ],
+      "targets": [
+        "mhc:project",
+        "ex:asset"
+      ]
+    },
+    {
+      "@id": "cc:D_capacity",
+      "@type": "cv:Proposal",
+      "label": "미소비 가용량에 발행 연결",
+      "text": "Mint only within conservatively recognized, unpledged, unconsumed capacity; past completed work is not future backing.",
+      "authority": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "attributedTo": "cc:analyst",
+      "source": "cc:artifact_report",
+      "basis": [
+        "cc:U_request",
+        "cc:S_filecoin",
+        "cc:S_golem"
+      ],
+      "targets": [
+        "mhc:Q_supply",
+        "ex:compute"
+      ]
+    },
+    {
+      "@id": "cc:D_settlement",
+      "@type": "cv:Proposal",
+      "label": "검증 상환과 채무 보존",
+      "text": "Lock claims and capacity together; burn only accepted redemption. Failed work consumes capacity without extinguishing the claim.",
+      "authority": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "attributedTo": "cc:analyst",
+      "source": "cc:artifact_report",
+      "basis": [
+        "cc:D_capacity",
+        "cc:S_golem",
+        "cc:S_x402"
+      ],
+      "targets": [
+        "mhc:project",
+        "ex:receipt"
+      ]
+    },
+    {
+      "@id": "cc:D_fees",
+      "@type": "cv:Proposal",
+      "label": "MHC 수수료 수익",
+      "text": "Transfer backed MHC fees; issuance proceeds still carry service obligations. Viable net income remains untested.",
+      "authority": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "attributedTo": "cc:analyst",
+      "source": "cc:artifact_report",
+      "basis": [
+        "cc:U_request",
+        "cc:D_capacity"
+      ],
+      "targets": [
+        "ph:foundation",
+        "mhc:Q_distribution"
+      ]
+    },
+    {
+      "@id": "cc:D_identity",
+      "@type": "cv:Proposal",
+      "label": "기간별 자산 식별",
+      "text": "Separate profile/window series; no automatic equivalence or rollover. Perpetual MHC requires an additional funding and renewal policy.",
+      "authority": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "attributedTo": "cc:analyst",
+      "source": "cc:artifact_report",
+      "basis": [
+        "cc:D_anchor",
+        "cc:S_erc1155"
+      ],
+      "targets": [
+        "mhc:project",
+        "ex:asset"
+      ]
+    },
+    {
+      "@id": "cc:D_agents",
+      "@type": "cv:Proposal",
+      "label": "CHU와 HSWM 자원 거래 연결",
+      "text": "Preserve one response as one logical operation; quote its variable resource vector and settle within authorized budgets.",
+      "authority": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "attributedTo": "cc:analyst",
+      "source": "cc:artifact_report",
+      "basis": [
+        "cc:D_anchor",
+        "cc:S_bittensor",
+        "cc:S_mlperf"
+      ],
+      "targets": [
+        "ex:chu",
+        "ex:hswm",
+        "ex:response",
+        "ex:compute"
+      ]
+    },
+    {
+      "@id": "cc:D_index_alt",
+      "@type": "cv:Proposal",
+      "label": "비용 지수 대안",
+      "text": "Keep API-cost-index NAV as an alternative; fiat-collateralized index value does not directly promise physical compute.",
+      "authority": "SECONDARY_AI",
+      "status": "PROPOSED",
+      "attributedTo": "cc:analyst",
+      "source": "cc:artifact_report",
+      "basis": [
+        "cc:U_request",
+        "cc:S_clawcoin",
+        "cc:S_icp",
+        "cc:S_akash",
+        "cc:S_render"
+      ],
+      "targets": [
+        "mhc:project"
+      ]
+    },
+    {
+      "@id": "cc:R_default",
+      "@type": "cv:Risk",
+      "label": "자원 장애와 상환 부족",
+      "text": "Hardware loss, stale evidence and simultaneous redemption can defeat the service promise; a haircut alone cannot guarantee delivery.",
+      "authority": "SECONDARY_AI",
+      "status": "OPEN",
+      "attributedTo": "cc:analyst",
+      "source": "cc:artifact_report",
+      "challenges": [
+        "cc:D_capacity",
+        "cc:D_settlement"
+      ]
+    },
+    {
+      "@id": "cc:R_quality",
+      "@type": "cv:Risk",
+      "label": "응답과 자원 단위 불일치",
+      "text": "A response count, performance score or token count alone does not establish interchangeable quality and cost.",
+      "authority": "SECONDARY_AI",
+      "status": "OPEN",
+      "attributedTo": "cc:analyst",
+      "source": "cc:artifact_report",
+      "challenges": [
+        "cc:D_anchor",
+        "cc:D_agents"
+      ]
+    },
+    {
+      "@id": "cc:R_circular",
+      "@type": "cv:Risk",
+      "label": "자체 코인 담보와 수익 혼동",
+      "text": "Counting MHC market value as its own physical reserve or equating issuance with profit is circular.",
+      "authority": "SECONDARY_AI",
+      "status": "OPEN",
+      "attributedTo": "cc:analyst",
+      "source": "cc:artifact_report",
+      "challenges": [
+        "cc:D_capacity",
+        "cc:D_fees"
+      ]
+    },
+    {
+      "@id": "cc:R_exit",
+      "@type": "cv:Risk",
+      "label": "철회와 자원 약속의 충돌",
+      "text": "Provider exit must remain possible; withdrawal may leave explicit debt and needs replacement capacity or agreed loss handling.",
+      "authority": "SECONDARY_AI",
+      "status": "OPEN",
+      "attributedTo": "cc:analyst",
+      "source": "cc:artifact_report",
+      "challenges": [
+        "cc:D_capacity",
+        "cc:D_settlement"
+      ]
+    },
+    {
+      "@id": "cc:R_rollover",
+      "@type": "cv:Risk",
+      "label": "영구 코인과 만기 자원",
+      "text": "Distinct periods are not automatically fungible; continuous refinancing and losses remain unresolved.",
+      "authority": "SECONDARY_AI",
+      "status": "OPEN",
+      "attributedTo": "cc:analyst",
+      "source": "cc:artifact_report",
+      "challenges": [
+        "cc:D_identity"
+      ]
+    },
+    {
+      "@id": "cc:Q_profile",
+      "@type": "cv:Question",
+      "label": "실제 AI 서비스 프로파일",
+      "text": "Select an actual workload, quality, latency and memory contract before assigning a production redemption amount.",
+      "authority": "SECONDARY_AI",
+      "status": "OPEN",
+      "attributedTo": "cc:analyst",
+      "source": "cc:artifact_report",
+      "affects": [
+        "cc:D_anchor"
+      ],
+      "targets": [
+        "ex:response"
+      ]
+    },
+    {
+      "@id": "cc:Q_rollover",
+      "@type": "cv:Question",
+      "label": "영구 MHC와 기간별 연산권",
+      "text": "Decide series tokens versus a continually funded common redemption pool without silently reducing old rights.",
+      "authority": "SECONDARY_AI",
+      "status": "OPEN",
+      "attributedTo": "cc:analyst",
+      "source": "cc:artifact_report",
+      "affects": [
+        "cc:D_identity"
+      ],
+      "targets": [
+        "mhc:project"
+      ]
+    },
+    {
+      "@id": "cc:Q_provider",
+      "@type": "cv:Question",
+      "label": "용량 약정 신뢰 경계",
+      "text": "Specify independent capacity evidence, identity, freshness and cross-provider double-pledge detection.",
+      "authority": "SECONDARY_AI",
+      "status": "OPEN",
+      "attributedTo": "cc:analyst",
+      "source": "cc:artifact_report",
+      "affects": [
+        "cc:D_capacity"
+      ],
+      "targets": [
+        "ex:compute"
+      ]
+    },
+    {
+      "@id": "cc:Q_distribution",
+      "@type": "cv:Question",
+      "label": "발행 수취인과 공급자 의무",
+      "text": "Choose who receives initially backed claims and how provider obligations and fees bind to the same contract.",
+      "authority": "SECONDARY_AI",
+      "status": "OPEN",
+      "attributedTo": "cc:analyst",
+      "source": "cc:artifact_report",
+      "affects": [
+        "cc:D_fees",
+        "cc:D_capacity"
+      ],
+      "targets": [
+        "mhc:Q_distribution"
+      ]
+    },
+    {
+      "@id": "cc:Q_loss",
+      "@type": "cv:Question",
+      "label": "실패와 손실 배분",
+      "text": "Define priority, compensation and exit handling before public issuance.",
+      "authority": "SECONDARY_AI",
+      "status": "OPEN",
+      "attributedTo": "cc:analyst",
+      "source": "cc:artifact_report",
+      "affects": [
+        "cc:D_settlement"
+      ],
+      "targets": [
+        "mhc:project"
+      ]
+    },
+    {
+      "@id": "cc:Q_chain",
+      "@type": "cv:Question",
+      "label": "체인과 계약 표준",
+      "text": "Select an asset representation, signer model and tested payment scheme.",
+      "authority": "SECONDARY_AI",
+      "status": "OPEN",
+      "attributedTo": "cc:analyst",
+      "source": "cc:artifact_report",
+      "affects": [
+        "cc:D_identity"
+      ],
+      "targets": [
+        "mhc:Q_architecture"
+      ]
+    },
+    {
+      "@id": "cc:Q_revenue",
+      "@type": "cv:Question",
+      "label": "실제 비용을 충당할 수익",
+      "text": "Measure fee income, outstanding service obligations, liquidity and external supply costs.",
+      "authority": "SECONDARY_AI",
+      "status": "OPEN",
+      "attributedTo": "cc:analyst",
+      "source": "cc:artifact_report",
+      "affects": [
+        "cc:D_fees"
+      ],
+      "targets": [
+        "ph:foundation"
+      ]
+    },
+    {
+      "@id": "cc:unit",
+      "@type": "cv:Component",
+      "label": "UNIT",
+      "text": "Versioned service and delivery window",
+      "authority": "SECONDARY_AI",
+      "status": "SPEC_PROPOSED",
+      "attributedTo": "cc:analyst",
+      "kind": "UNIT",
+      "implements": "cc:D_anchor"
+    },
+    {
+      "@id": "cc:capacity",
+      "@type": "cv:Component",
+      "label": "CAPACITY",
+      "text": "Eligible unconsumed capacity commitments",
+      "authority": "SECONDARY_AI",
+      "status": "SPEC_PROPOSED",
+      "attributedTo": "cc:analyst",
+      "kind": "CAPACITY",
+      "implements": "cc:D_capacity",
+      "forUnit": "cc:unit",
+      "boundsMint": "cc:mint"
+    },
+    {
+      "@id": "cc:mint",
+      "@type": "cv:Component",
+      "label": "MINT",
+      "text": "Capacity-bounded issuance",
+      "authority": "SECONDARY_AI",
+      "status": "SPEC_PROPOSED",
+      "attributedTo": "cc:analyst",
+      "kind": "MINT",
+      "implements": "cc:D_capacity",
+      "createsLiability": "cc:liability"
+    },
+    {
+      "@id": "cc:liability",
+      "@type": "cv:Component",
+      "label": "LIABILITY",
+      "text": "Outstanding balances including locked claims",
+      "authority": "SECONDARY_AI",
+      "status": "SPEC_PROPOSED",
+      "attributedTo": "cc:analyst",
+      "kind": "LIABILITY",
+      "implements": "cc:D_settlement"
+    },
+    {
+      "@id": "cc:redemption",
+      "@type": "cv:Component",
+      "label": "REDEMPTION",
+      "text": "Reservation, verification and conditional burn",
+      "authority": "SECONDARY_AI",
+      "status": "SPEC_PROPOSED",
+      "attributedTo": "cc:analyst",
+      "kind": "REDEMPTION",
+      "implements": "cc:D_settlement",
+      "settles": "cc:liability",
+      "requiresReceipt": "cc:receipt"
+    },
+    {
+      "@id": "cc:receipt",
+      "@type": "cv:Component",
+      "label": "RECEIPT",
+      "text": "Explicit result, consumed capacity and claim outcome",
+      "authority": "SECONDARY_AI",
+      "status": "SPEC_PROPOSED",
+      "attributedTo": "cc:analyst",
+      "kind": "RECEIPT",
+      "implements": "cc:D_settlement"
+    }
+  ]
+}

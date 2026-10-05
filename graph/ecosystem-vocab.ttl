@@ -1,0 +1,75 @@
+@prefix ev: <https://github.com/gj3447/metahumotonic-foundation/ecosystem-vocab#> .
+@prefix mhv: <https://github.com/gj3447/metahumotonic-foundation/vocab#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+# Local owner vocabulary; RDF/SHACL interoperability, not a universal ontology.
+ev:responsesPerUnit a rdf:Property ; rdfs:domain ev:UnitSpec ; rdfs:range xsd:integer ; rdfs:comment "Exactly 1 on the logical response unit; value 1 means one completed LLM response per logical computation. No fixed token or physical cost follows." .
+ev:EcosystemGraph a rdfs:Class ; rdfs:subClassOf prov:Entity .
+ev:SourceArtifact a rdfs:Class ; rdfs:subClassOf prov:Entity .
+ev:SourceExcerpt a rdfs:Class ; rdfs:subClassOf prov:Entity .
+ev:UserClaim a rdfs:Class ; rdfs:subClassOf prov:Entity .
+ev:DocumentObservation a rdfs:Class ; rdfs:subClassOf prov:Entity .
+ev:Design a rdfs:Class ; rdfs:subClassOf prov:Entity .
+ev:ComponentSpec a rdfs:Class ; rdfs:subClassOf prov:Entity .
+ev:RelationSpec a rdfs:Class ; rdfs:subClassOf prov:Entity .
+ev:HyperedgeSpec a rdfs:Class ; rdfs:subClassOf prov:Entity .
+ev:ParticipationSpec a rdfs:Class ; rdfs:subClassOf prov:Entity .
+ev:UnitSpec a rdfs:Class ; rdfs:subClassOf prov:Entity .
+ev:ContractSpec a rdfs:Class ; rdfs:subClassOf prov:Entity .
+ev:OpenQuestion a rdfs:Class ; rdfs:subClassOf prov:Entity .
+ev:MetricSpec a rdfs:Class ; rdfs:subClassOf prov:Entity .
+ev:EvaluationPlan a rdfs:Class ; rdfs:subClassOf prov:Entity .
+ev:ImplementationMapping a rdfs:Class ; rdfs:subClassOf prov:Entity .
+ev:groundedIn a rdf:Property ; rdfs:domain ev:Design ; rdfs:range ev:UserClaim ; rdfs:comment "1..n; design -> current user statement; not ratification." .
+ev:inputArtifact a rdf:Property ; rdfs:domain ev:EcosystemGraph ; rdfs:range ev:SourceArtifact ; rdfs:comment "1..n; graph -> byte-pinned input." .
+ev:subject a rdf:Property ; rdfs:domain ev:RelationSpec ; rdfs:range ev:ComponentSpec ; rdfs:comment "Exactly 1 source component of a proposed typed relation." .
+ev:relationKind a rdf:Property ; rdfs:domain ev:RelationSpec ; rdfs:range rdf:Property ; rdfs:comment "Exactly 1 registered logical relation predicate." .
+ev:object a rdf:Property ; rdfs:domain ev:RelationSpec ; rdfs:range ev:ComponentSpec ; rdfs:comment "Exactly 1 target component of a proposed typed relation." .
+ev:participant a rdf:Property ; rdfs:domain ev:HyperedgeSpec ; rdfs:range ev:ParticipationSpec ; rdfs:comment "2..n; hyperedge -> role-bearing incidence; positions unique." .
+ev:endpoint a rdf:Property ; rdfs:domain ev:ParticipationSpec ; rdfs:range ev:ComponentSpec ; rdfs:comment "Exactly 1; incidence -> participating component." .
+ev:unitSpec a rdf:Property ; rdfs:domain ev:ComponentSpec ; rdfs:range ev:UnitSpec ; rdfs:comment "0..1; component -> accounting definition; no conversion implied." .
+ev:evaluates a rdf:Property ; rdfs:domain ev:EvaluationPlan ; rdfs:range ev:UserClaim ; rdfs:comment "1..n; plan -> user target being evaluated." .
+ev:hasMetric a rdf:Property ; rdfs:domain ev:EvaluationPlan ; rdfs:range ev:MetricSpec ; rdfs:comment "1..n; plan -> measurement definition, not observed result." .
+ev:openOn a rdf:Property ; rdfs:domain ev:OpenQuestion ; rdfs:range ev:UserClaim ; rdfs:comment "Exactly 1; question -> unresolved aspect of a user statement." .
+ev:includesConcept a rdf:Property ; rdfs:domain ev:ComponentSpec ; rdfs:range ev:ComponentSpec ; rdfs:comment "Logical subject -> object; exactly one endpoint pair per RelationSpec; PROPOSED type-level relation, never runtime authority." .
+ev:realizesConcept a rdf:Property ; rdfs:domain ev:ComponentSpec ; rdfs:range ev:ComponentSpec ; rdfs:comment "Logical subject -> object; exactly one endpoint pair per RelationSpec; PROPOSED type-level relation, never runtime authority." .
+ev:hostsPopulation a rdf:Property ; rdfs:domain ev:ComponentSpec ; rdfs:range ev:ComponentSpec ; rdfs:comment "Logical subject -> object; exactly one endpoint pair per RelationSpec; PROPOSED type-level relation, never runtime authority." .
+ev:hasMemberType a rdf:Property ; rdfs:domain ev:ComponentSpec ; rdfs:range ev:ComponentSpec ; rdfs:comment "Logical subject -> object; exactly one endpoint pair per RelationSpec; PROPOSED type-level relation, never runtime authority." .
+ev:hasExecutorRole a rdf:Property ; rdfs:domain ev:ComponentSpec ; rdfs:range ev:ComponentSpec ; rdfs:comment "Logical subject -> object; exactly one endpoint pair per RelationSpec; PROPOSED type-level relation, never runtime authority." .
+ev:executesUnit a rdf:Property ; rdfs:domain ev:ComponentSpec ; rdfs:range ev:ComponentSpec ; rdfs:comment "Logical subject -> object; exactly one endpoint pair per RelationSpec; PROPOSED type-level relation, never runtime authority." .
+ev:usesState a rdf:Property ; rdfs:domain ev:ComponentSpec ; rdfs:range ev:ComponentSpec ; rdfs:comment "Logical subject -> object; exactly one endpoint pair per RelationSpec; PROPOSED type-level relation, never runtime authority." .
+ev:usesResource a rdf:Property ; rdfs:domain ev:ComponentSpec ; rdfs:range ev:ComponentSpec ; rdfs:comment "Logical subject -> object; exactly one endpoint pair per RelationSpec; PROPOSED type-level relation, never runtime authority." .
+ev:consumesAllowance a rdf:Property ; rdfs:domain ev:ComponentSpec ; rdfs:range ev:ComponentSpec ; rdfs:comment "Logical subject -> object; exactly one endpoint pair per RelationSpec; PROPOSED type-level relation, never runtime authority." .
+ev:competesFor a rdf:Property ; rdfs:domain ev:ComponentSpec ; rdfs:range ev:ComponentSpec ; rdfs:comment "Logical subject -> object; exactly one endpoint pair per RelationSpec; PROPOSED type-level relation, never runtime authority." .
+ev:negotiates a rdf:Property ; rdfs:domain ev:ComponentSpec ; rdfs:range ev:ComponentSpec ; rdfs:comment "Logical subject -> object; exactly one endpoint pair per RelationSpec; PROPOSED type-level relation, never runtime authority." .
+ev:settlesIn a rdf:Property ; rdfs:domain ev:ComponentSpec ; rdfs:range ev:ComponentSpec ; rdfs:comment "Logical subject -> object; exactly one endpoint pair per RelationSpec; PROPOSED type-level relation, never runtime authority." .
+ev:recordsIn a rdf:Property ; rdfs:domain ev:ComponentSpec ; rdfs:range ev:ComponentSpec ; rdfs:comment "Logical subject -> object; exactly one endpoint pair per RelationSpec; PROPOSED type-level relation, never runtime authority." .
+ev:composesInto a rdf:Property ; rdfs:domain ev:ComponentSpec ; rdfs:range ev:ComponentSpec ; rdfs:comment "Logical subject -> object; exactly one endpoint pair per RelationSpec; PROPOSED type-level relation, never runtime authority." .
+ev:authorityClass a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "0..1, required by applicable shape; authorityClass metadata, no authority inferred." .
+ev:designStatus a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "0..1, required by applicable shape; designStatus metadata, no authority inferred." .
+ev:verificationStatus a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "0..1, required by applicable shape; verificationStatus metadata, no authority inferred." .
+ev:claimKind a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "0..1, required by applicable shape; claimKind metadata, no authority inferred." .
+ev:sourceRole a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "0..1, required by applicable shape; sourceRole metadata, no authority inferred." .
+ev:recordKey a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "0..1, required by applicable shape; recordKey metadata, no authority inferred." .
+ev:locator a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "0..1, required by applicable shape; locator metadata, no authority inferred." .
+ev:sourceText a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "0..1, required by applicable shape; sourceText metadata, no authority inferred." .
+ev:artifactState a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "0..1, required by applicable shape; artifactState metadata, no authority inferred." .
+ev:revision a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "0..1, required by applicable shape; revision metadata, no authority inferred." .
+ev:scope a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "0..1, required by applicable shape; scope metadata, no authority inferred." .
+ev:specKind a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "0..1, required by applicable shape; specKind metadata, no authority inferred." .
+ev:role a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "0..1, required by applicable shape; role metadata, no authority inferred." .
+ev:unit a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "0..1, required by applicable shape; unit metadata, no authority inferred." .
+ev:calculation a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "0..1, required by applicable shape; calculation metadata, no authority inferred." .
+ev:countingRule a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "0..1, required by applicable shape; countingRule metadata, no authority inferred." .
+ev:contract a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "0..1, required by applicable shape; contract metadata, no authority inferred." .
+ev:baseline a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "0..1, required by applicable shape; baseline metadata, no authority inferred." .
+ev:treatment a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "0..1, required by applicable shape; treatment metadata, no authority inferred." .
+ev:failureCondition a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "0..1, required by applicable shape; failureCondition metadata, no authority inferred." .
+ev:status a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "0..1, required by applicable shape; status metadata, no authority inferred." .
+ev:position a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:integer ; rdfs:comment "Exactly 1 on applicable shape; position orders incidence slots, date records observation only." .
+ev:normativeEffect a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:boolean ; rdfs:comment "Exactly 1 on applicable shape; position orders incidence slots, date records observation only." .
+ev:executionEffect a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:boolean ; rdfs:comment "Exactly 1 on applicable shape; position orders incidence slots, date records observation only." .
+ev:recordedOn a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:date ; rdfs:comment "Exactly 1 on applicable shape; position orders incidence slots, date records observation only." .
