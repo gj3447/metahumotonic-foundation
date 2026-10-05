@@ -10,7 +10,9 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "prov": "http://www.w3.org/ns/prov#",
-    "dcterms": "http://purl.org/dc/terms/"
+    "dcterms": "http://purl.org/dc/terms/",
+    "sp": "https://github.com/gj3447/metahumotonic-foundation/graph/spirit#",
+    "eco": "https://github.com/gj3447/metahumotonic-foundation/graph/economy#"
   },
   "questions": [
     {
@@ -33,6 +35,10 @@
         [
           "cc:D_anchor",
           "cc:S_mlperf"
+        ],
+        [
+          "cc:D_anchor",
+          "cc:U_core"
         ]
       ]
     },
@@ -310,6 +316,69 @@
         [
           "cc:R_rollover",
           "cc:D_identity"
+        ]
+      ]
+    },
+    {
+      "id": "foundation-core",
+      "question": "재단의 핵심으로 묶은 하드웨어 공유와 화폐의 기존 ID는?",
+      "query": "SELECT ?direction ?foundation ?hardware ?currency WHERE { ?direction a cv:CoreDirection ; dcterms:subject ?foundation ; cv:hardwareSharingBasis ?hardware ; cv:currency ?currency }",
+      "columns": [
+        "direction",
+        "foundation",
+        "hardware",
+        "currency"
+      ],
+      "expected": [
+        [
+          "cc:core_direction",
+          "ph:foundation",
+          "sp:P2",
+          "eco:metahumocoin"
+        ]
+      ]
+    },
+    {
+      "id": "core-stability-resources",
+      "question": "안정성의 지향 기준은 어떤 컴퓨팅·추론 자원이며 명시적으로 제외한 기준은?",
+      "query": "SELECT ?resource ?excluded WHERE { cc:core_direction cv:stabilityResource ?resource ; cv:excludedAnchor ?excluded }",
+      "columns": [
+        "resource",
+        "excluded"
+      ],
+      "expected": [
+        [
+          "ex:compute",
+          "USD"
+        ],
+        [
+          "ex:allowance",
+          "USD"
+        ]
+      ]
+    },
+    {
+      "id": "core-direction-provenance",
+      "question": "핵심 방향 해석과 사용자 원문의 권위·상태·출처는 구분되는가?",
+      "query": "SELECT ?direction ?authority ?status ?claim ?sourceAuthority ?sourceStatus ?path WHERE { ?direction a cv:CoreDirection ; cv:authority ?authority ; cv:status ?status ; prov:wasDerivedFrom ?claim . ?claim cv:authority ?sourceAuthority ; cv:status ?sourceStatus ; dcterms:source/mhv:path ?path }",
+      "columns": [
+        "direction",
+        "authority",
+        "status",
+        "claim",
+        "sourceAuthority",
+        "sourceStatus",
+        "path"
+      ],
+      "expected": [
+        [
+          "cc:core_direction",
+          "SECONDARY_AI",
+          "USER_DIRECTION_SUMMARY",
+          "cc:U_core",
+          "USER_PRIMARY",
+          "RECORDED",
+          "records/2026-10-05/compute-coin/core-source.json"
         ]
       ]
     }

@@ -4,6 +4,8 @@
 @prefix mhc: <https://github.com/gj3447/metahumotonic-foundation/graph/metahumocoin#> .
 @prefix ex: <https://github.com/gj3447/metahumotonic-foundation/graph/ecosystem#> .
 @prefix ph: <https://github.com/gj3447/metahumotonic-foundation/graph/philosophy#> .
+@prefix sp: <https://github.com/gj3447/metahumotonic-foundation/graph/spirit#> .
+@prefix eco: <https://github.com/gj3447/metahumotonic-foundation/graph/economy#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -19,6 +21,18 @@ sh:property [ sh:path cv:status ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xs
 cc:UserClaimShape a sh:NodeShape ; sh:targetClass cv:UserClaim ;
 sh:property [ sh:path cv:authority ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "USER_PRIMARY" ] ;
 sh:property [ sh:path cv:status ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "RECORDED" ] .
+cc:CoreDirectionShape a sh:NodeShape ; sh:targetClass cv:CoreDirection ;
+sh:property [ sh:path cv:authority ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "SECONDARY_AI" ] ;
+sh:property [ sh:path cv:status ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "USER_DIRECTION_SUMMARY" ] ;
+sh:property [ sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue cc:analyst ] ;
+sh:property [ sh:path prov:wasDerivedFrom ; sh:minCount 1 ; sh:maxCount 1 ; sh:class cv:UserClaim ; sh:hasValue cc:U_core ] ;
+sh:property [ sh:path dcterms:source ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue cc:artifact_report ] ;
+sh:property [ sh:path dcterms:subject ; sh:minCount 1 ; sh:maxCount 1 ; sh:class prov:Organization ; sh:hasValue ph:foundation ] ;
+sh:property [ sh:path cv:observedOn ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:date ] ;
+sh:property [ sh:path cv:hardwareSharingBasis ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mhv:Claim ; sh:hasValue sp:P2 ] ;
+sh:property [ sh:path cv:currency ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mhv:Concept ; sh:hasValue eco:metahumocoin ] ;
+sh:property [ sh:path cv:stabilityResource ; sh:minCount 2 ; sh:maxCount 2 ; sh:in ( ex:compute ex:allowance ) ] ;
+sh:property [ sh:path cv:excludedAnchor ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "USD" ] .
 cc:ObservationShape a sh:NodeShape ; sh:targetClass cv:Observation ;
 sh:property [ sh:path cv:authority ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "DOCUMENT_OBSERVATION" ] ;
 sh:property [ sh:path cv:status ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "DOCUMENTED" ] ;

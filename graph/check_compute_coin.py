@@ -39,7 +39,8 @@ def load():
 
 def check_integrity(graph, vocab):
     subjects = set(graph.subjects())
-    standard = {RDF.type, RDFS.label, DCTERMS.source, DCTERMS.subject, PROV.wasAttributedTo}
+    standard = {RDF.type, RDFS.label, DCTERMS.source, DCTERMS.subject,
+                PROV.wasAttributedTo, PROV.wasDerivedFrom}
     for subject, predicate, obj in graph:
         if not str(subject).startswith(str(CC)):
             continue
@@ -61,6 +62,7 @@ def check_integrity(graph, vocab):
             require(obj in subjects, "dangling endpoint")
 
     paths = {"user": "records/2026-10-05/compute-coin/user-source.json",
+             "core": "records/2026-10-05/compute-coin/core-source.json",
              "sources": "records/2026-10-05/compute-coin/sources.json",
              "report": "COMPUTE-COIN.md", "prototype": "metahumocoin/ledger.py"}
     raw = {}
@@ -72,12 +74,18 @@ def check_integrity(graph, vocab):
         require(relative == expected, "artifact path mismatch")
         raw[key] = philosophy.safe_path(relative).read_bytes()
         require(hashlib.sha256(raw[key]).hexdigest() == str(graph.value(node, base.MHV.sha256)), "artifact hash mismatch")
-    user = json.loads(raw["user"], object_pairs_hook=base.unique_keys)
-    require(user["role"] == "user" and user["authority"] == "USER_PRIMARY", "user authority")
-    require(str(graph.value(CC.U_request, CV.text)) == user["verbatim"] and
-            graph.value(CC.U_request, DCTERMS.source) == CC.artifact_user, "user source changed")
-    require(set(graph.subjects(RDF.type, CV.UserClaim)) == {CC.U_request}, "extra user claim")
-    expected_claims = {CC.U_request, URIRef(base.BASE + "graph/philosophy#C_resource_purpose"),
+    user_claims = {"user": CC.U_request, "core": CC.U_core}
+    for key, claim in user_claims.items():
+        user = json.loads(raw[key], object_pairs_hook=base.unique_keys)
+        require(user["role"] == "user" and user["authority"] == "USER_PRIMARY", "user authority")
+        require(str(graph.value(claim, CV.text)) == user["verbatim"] and
+                graph.value(claim, DCTERMS.source) == CC["artifact_" + key], "user source changed")
+    core_source = json.loads(raw["core"], object_pairs_hook=base.unique_keys)
+    for node in [CC.U_core, CC.core_direction]:
+        require(str(graph.value(node, CV.observedOn)) == core_source["recorded_on"], "core recording date changed")
+    require(set(graph.subjects(RDF.type, CV.UserClaim)) == set(user_claims.values()), "extra user claim")
+    require(set(graph.subjects(RDF.type, CV.CoreDirection)) == {CC.core_direction}, "core direction coverage")
+    expected_claims = {CC.U_request, CC.U_core, URIRef(base.BASE + "graph/philosophy#C_resource_purpose"),
                        URIRef(base.BASE + "graph/ecosystem#C_operation"), URIRef(base.BASE + "graph/ecosystem#C_population")}
     require(set(graph.objects(CC.graph, CV.sourceClaim)) == expected_claims, "source claim scope")
 
@@ -100,7 +108,7 @@ def check_integrity(graph, vocab):
 
     proposals = set(graph.subjects(RDF.type, CV.Proposal))
     observations = set(graph.subjects(RDF.type, CV.Observation))
-    allowed_basis = proposals | observations | {CC.U_request}
+    allowed_basis = proposals | observations | set(user_claims.values())
     for proposal in proposals:
         require(set(graph.objects(proposal, CV.basis)) <= allowed_basis, "invalid inference basis")
     for kind in [CV.Proposal, CV.Risk, CV.Question]:
@@ -158,7 +166,13 @@ def negative_checks(docs, graph, shapes, vocab):
                    (CC.graph, CV.executionEffect, Literal(True)),
                    (CC.graph, CV.normativeEffect, Literal(True)),
                    (CC.S_clawcoin, CV.authority, Literal("EMPIRICALLY_VERIFIED")),
-                   (CC.unit, CV.status, Literal("DEPLOYED"))]
+                   (CC.unit, CV.status, Literal("DEPLOYED")),
+                   (CC.core_direction, CV.authority, Literal("USER_PRIMARY")),
+                   (CC.core_direction, CV.status, Literal("EMPIRICALLY_VERIFIED")),
+                   (CC.core_direction, CV.excludedAnchor, Literal("COMPUTE")),
+                   (CC.core_direction, CV.hardwareSharingBasis, URIRef(base.BASE + "graph/spirit#P1")),
+                   (CC.core_direction, CV.stabilityResource, URIRef(base.BASE + "graph/ecosystem#asset")),
+                   (CC.core_direction, PROV.wasDerivedFrom, CC.U_request)]
     for subject, predicate, obj in shape_cases:
         bad = copy.deepcopy(graph)
         bad.set((subject, predicate, obj))
@@ -170,6 +184,10 @@ def negative_checks(docs, graph, shapes, vocab):
         lambda g: g.set((CC.artifact_report, base.MHV.sha256, Literal("0" * 64))),
         lambda g: g.set((CC.artifact_user, base.MHV.path, Literal("../outside"))),
         lambda g: g.set((CC.U_request, CV.text, Literal("AI rewrite"))),
+        lambda g: g.set((CC.U_core, CV.text, Literal("USD-stable coin"))),
+        lambda g: g.set((CC.U_core, DCTERMS.source, CC.artifact_user)),
+        lambda g: g.remove((CC.core_direction, RDF.type, CV.CoreDirection)),
+        lambda g: g.set((CC.core_direction, CV.observedOn, Literal("2026-10-04", datatype=XSD.date))),
         lambda g: g.set((CC.S_clawcoin, DCTERMS.source, URIRef("https://example.invalid"))),
         lambda g: g.set((CC.S_icp, CV.revision, Literal("invented revision"))),
         lambda g: g.set((CC.S_truebit, CV.sourceStatus, Literal("DEPLOYED"))),

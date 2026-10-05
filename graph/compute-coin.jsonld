@@ -95,7 +95,26 @@
     "executionEffect": {
       "@id": "cv:executionEffect",
       "@type": "xsd:boolean"
-    }
+    },
+    "sp": "https://github.com/gj3447/metahumotonic-foundation/graph/spirit#",
+    "eco": "https://github.com/gj3447/metahumotonic-foundation/graph/economy#",
+    "derivedFrom": {
+      "@id": "prov:wasDerivedFrom",
+      "@type": "@id"
+    },
+    "hardwareSharingBasis": {
+      "@id": "cv:hardwareSharingBasis",
+      "@type": "@id"
+    },
+    "currency": {
+      "@id": "cv:currency",
+      "@type": "@id"
+    },
+    "stabilityResource": {
+      "@id": "cv:stabilityResource",
+      "@type": "@id"
+    },
+    "excludedAnchor": "cv:excludedAnchor"
   },
   "@graph": [
     {
@@ -122,7 +141,7 @@
       "@type": "cv:Artifact",
       "label": "COMPUTE-COIN.md",
       "path": "COMPUTE-COIN.md",
-      "sha256": "c2eb8d573bf8856189644720d32b89249f68417661169c3d6f70b4aee1d4761e"
+      "sha256": "518ae1aed046523981814cdad3d060c202dcb5fed9ca0859a6a0828bd5fc30cd"
     },
     {
       "@id": "cc:artifact_prototype",
@@ -147,13 +166,15 @@
         "cc:artifact_user",
         "cc:artifact_sources",
         "cc:artifact_report",
-        "cc:artifact_prototype"
+        "cc:artifact_prototype",
+        "cc:artifact_core"
       ],
       "sourceClaim": [
         "cc:U_request",
         "ph:C_resource_purpose",
         "ex:C_operation",
-        "ex:C_population"
+        "ex:C_population",
+        "cc:U_core"
       ]
     },
     {
@@ -164,6 +185,43 @@
       "authority": "USER_PRIMARY",
       "status": "RECORDED",
       "source": "cc:artifact_user"
+    },
+    {
+      "@id": "cc:artifact_core",
+      "@type": "cv:Artifact",
+      "label": "records/2026-10-05/compute-coin/core-source.json",
+      "path": "records/2026-10-05/compute-coin/core-source.json",
+      "sha256": "952036a02629981825d06445d231c250652a0a27d1e574391c9d9055a06812cd"
+    },
+    {
+      "@id": "cc:U_core",
+      "@type": "cv:UserClaim",
+      "label": "User core direction: hardware sharing and compute-stable MetaHumoCoin",
+      "text": "그 메타휴모토닉 파운데이션의 가장 핵심은 하드웨어 공유와 그 컴퓨팅, ai 토큰 기반 스테이블(달러스테이블 아니고 컴퓨팅 자원 스테이블) metahumocoin 인것같음 ㅇㅇ 이 내용 머릿속에 표준그래프 엔지니어링으로 박아줘봐",
+      "authority": "USER_PRIMARY",
+      "status": "RECORDED",
+      "observedOn": "2026-10-05",
+      "source": "cc:artifact_core"
+    },
+    {
+      "@id": "cc:core_direction",
+      "@type": "cv:CoreDirection",
+      "label": "파운데이션의 핵심: 하드웨어 공유와 컴퓨팅 자원 기준 MetaHumoCoin",
+      "text": "사용자는 재단의 가장 핵심으로 하드웨어 공유와 컴퓨팅·AI 토큰 자원 기준의 MetaHumoCoin을 강조한다. 달러 기준 스테이블은 제외한다. 기존 추론 사용 가능량으로의 연결은 AI의 구조화이며, 실제 안정성 검증이나 단위 간 고정 환율을 뜻하지 않는다.",
+      "authority": "SECONDARY_AI",
+      "status": "USER_DIRECTION_SUMMARY",
+      "attributedTo": "cc:analyst",
+      "derivedFrom": "cc:U_core",
+      "observedOn": "2026-10-05",
+      "source": "cc:artifact_report",
+      "subject": "ph:foundation",
+      "hardwareSharingBasis": "sp:P2",
+      "currency": "eco:metahumocoin",
+      "stabilityResource": [
+        "ex:compute",
+        "ex:allowance"
+      ],
+      "excludedAnchor": "USD"
     },
     {
       "@id": "cc:S_truebit",
@@ -348,7 +406,8 @@
       "basis": [
         "cc:U_request",
         "cc:S_truebit",
-        "cc:S_mlperf"
+        "cc:S_mlperf",
+        "cc:U_core"
       ],
       "targets": [
         "mhc:project",

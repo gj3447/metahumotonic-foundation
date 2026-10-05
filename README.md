@@ -10,6 +10,12 @@ MetaHumotonic Open Source Foundation Initiative는 자유로운 AI가 특정 사
 협력체입니다. 이 저장소의 현재 라이선스는 소스 공개형(source-available)이며
 OSI 승인 오픈소스 라이선스가 아닙니다.
 
+**파운데이션의 핵심은 하드웨어 공유와, 컴퓨팅·AI 토큰 자원을 기준으로 안정성을
+추구하는 MetaHumoCoin입니다. 달러에 고정하는 스테이블코인이 아닙니다.**
+이는 2026-10-05 사용자가 강조한 방향입니다. [원문](records/2026-10-05/compute-coin/core-source.json)과
+[핵심 관계 그래프](graph/compute-coin.jsonld)의 `cc:core_direction`에 기록합니다.
+자원 단위·상환 조건의 구체화와 안정성 검증은 [코인 연구](COMPUTE-COIN.md)에서 이어갑니다.
+
 우리는 **자유·경제·합의를 바탕으로 Ultra Safety AI를 연구하고 개발합니다.**
 또한 **소프트웨어 저작권을 통해 재단 운영 주체가 제어할 수 있는 컴퓨팅·메모리
 자원을 지속적으로 늘리는 것**을 목적으로 합니다. 이는 사용자가 밝힌 조직의 지향점이며,

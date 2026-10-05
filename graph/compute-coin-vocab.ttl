@@ -19,6 +19,12 @@ cv:Risk a rdfs:Class .
 cv:Question a rdfs:Class .
 cv:Component a rdfs:Class .
 cv:Artifact a rdfs:Class .
+cv:CoreDirection a rdfs:Class ; rdfs:comment "AI normalization of an explicit user emphasis; not a stability observation or ratified economic policy. Exactly one subject organization and source UserClaim via dcterms:subject and prov:wasDerivedFrom." .
+
+cv:hardwareSharingBasis a rdf:Property ; rdfs:domain cv:CoreDirection ; rdfs:range mhv:Claim ; rdfs:comment "1. Direction -> existing hardware-sharing claim. Reuses its meaning; does not grant hardware access." .
+cv:currency a rdf:Property ; rdfs:domain cv:CoreDirection ; rdfs:range mhv:Concept ; rdfs:comment "1. Direction -> existing currency concept. Not a deployed asset assertion." .
+cv:stabilityResource a rdf:Property ; rdfs:domain cv:CoreDirection ; rdfs:range rdfs:Resource ; rdfs:comment "2 in this record. Direction -> physical compute and model-specific inference allowance. Intended reference resources, not equivalent units or proof of backing." .
+cv:excludedAnchor a rdf:Property ; rdfs:domain cv:CoreDirection ; rdfs:range xsd:string ; rdfs:comment "1 in this record: USD. Direction -> explicitly excluded price anchor, not a ban on external price quotations." .
 
 cv:text a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "1 on attributed nodes. Content separate from its authority." .
 cv:authority a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "1 on attributed nodes. USER_PRIMARY, DOCUMENT_OBSERVATION or SECONDARY_AI." .
