@@ -1,0 +1,606 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "an": "https://github.com/gj3447/metahumotonic-foundation/graph/agent-native#",
+    "av": "https://github.com/gj3447/metahumotonic-foundation/agent-native-vocab#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "label": "rdfs:label",
+    "authority": "av:authority",
+    "state": "av:state",
+    "text": "av:text",
+    "limitation": "av:limitation",
+    "path": "av:path",
+    "sha256": "av:sha256",
+    "revision": "dcterms:hasVersion",
+    "section": "av:section",
+    "scenario": "av:scenario",
+    "seed": "av:seed",
+    "completed": "av:completed",
+    "postBootstrap": "av:postBootstrap",
+    "installedCapacity": "av:installedCapacity",
+    "sharedCapacity": "av:sharedCapacity",
+    "failed": "av:failed",
+    "recordedOn": {
+      "@id": "av:recordedOn",
+      "@type": "xsd:date"
+    },
+    "source": {
+      "@id": "dcterms:source",
+      "@type": "@id"
+    },
+    "references": {
+      "@id": "dcterms:references",
+      "@type": "@id"
+    },
+    "attributedTo": {
+      "@id": "prov:wasAttributedTo",
+      "@type": "@id"
+    },
+    "derivedFrom": {
+      "@id": "prov:wasDerivedFrom",
+      "@type": "@id"
+    },
+    "associatedWith": {
+      "@id": "prov:wasAssociatedWith",
+      "@type": "@id"
+    },
+    "used": {
+      "@id": "prov:used",
+      "@type": "@id"
+    },
+    "member": {
+      "@id": "prov:hadMember",
+      "@type": "@id"
+    },
+    "targets": {
+      "@id": "av:targets",
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "an:simulator",
+      "@type": "prov:SoftwareAgent",
+      "label": "Bounded agent policy and escrow simulator"
+    },
+    {
+      "@id": "an:artifact_source",
+      "@type": [
+        "av:Artifact",
+        "prov:Entity"
+      ],
+      "path": "records/2026-10-06/agent-native-source.json",
+      "sha256": "b178dc666e0ad0146db4db0c0f49855331edb7898814bdf3f03d050de45e553d",
+      "state": "WORKTREE_SNAPSHOT"
+    },
+    {
+      "@id": "an:artifact_research",
+      "@type": [
+        "av:Artifact",
+        "prov:Entity"
+      ],
+      "path": "records/2026-10-06/agent-native-research.json",
+      "sha256": "f2ed2548ef2e1023e64d3c9d99205518c467b13a6b8f060356264c000596b2bc",
+      "state": "WORKTREE_SNAPSHOT"
+    },
+    {
+      "@id": "an:artifact_suite",
+      "@type": [
+        "av:Artifact",
+        "prov:Entity"
+      ],
+      "path": "records/2026-10-06/agent-native-suite.json",
+      "sha256": "88151f4c81098d68d008460d7aea55668d22f2521efcd89a797b48bf74a4735f",
+      "state": "WORKTREE_SNAPSHOT"
+    },
+    {
+      "@id": "an:artifact_report",
+      "@type": [
+        "av:Artifact",
+        "prov:Entity"
+      ],
+      "path": "AGENT-ECONOMY.md",
+      "sha256": "eb0d114881a64192b51997f9aa28ba55ea9f4b00898812b01400735bd7a51e7f",
+      "state": "WORKTREE_SNAPSHOT"
+    },
+    {
+      "@id": "an:artifact_ecosystem",
+      "@type": [
+        "av:Artifact",
+        "prov:Entity"
+      ],
+      "path": "graph/ecosystem.jsonld",
+      "sha256": "281273caefbfb364b13c856b61abe44bbf9949d183829abf56359d3ef6b4f8b6",
+      "state": "WORKTREE_SNAPSHOT"
+    },
+    {
+      "@id": "an:artifact_philosophy",
+      "@type": [
+        "av:Artifact",
+        "prov:Entity"
+      ],
+      "path": "graph/philosophy.jsonld",
+      "sha256": "5dfdc70c8ec937a083bb96e2c3b921c82758adc125de15861cdd0f985b1e5e1d",
+      "state": "WORKTREE_SNAPSHOT"
+    },
+    {
+      "@id": "an:artifact_spirit",
+      "@type": [
+        "av:Artifact",
+        "prov:Entity"
+      ],
+      "path": "graph/spirit.jsonld",
+      "sha256": "c9161219682ccd28c292dfb5905b39c8c9fb1c9d7cde20a02c7fb2c442aed748",
+      "state": "WORKTREE_SNAPSHOT"
+    },
+    {
+      "@id": "an:artifact_code",
+      "@type": [
+        "av:Artifact",
+        "prov:Entity"
+      ],
+      "path": "economy/agent_native.py",
+      "sha256": "ea2d1fad06498c06af316d3f7fa31ca13d7c297b8adf5527ea6ab7af4ec3a719",
+      "state": "WORKTREE_SNAPSHOT"
+    },
+    {
+      "@id": "an:priority",
+      "@type": "av:UserClaim",
+      "text": "ㅇㅇ ㄱㄱ agent native 한 시스템으로 생ㅊ각해줘 agent 가 최우선이야",
+      "authority": "USER_PRIMARY",
+      "state": "STATED",
+      "source": "an:artifact_source",
+      "attributedTo": "https://github.com/gj3447/metahumotonic-foundation/graph/spirit#proposer",
+      "recordedOn": "2026-10-06"
+    },
+    {
+      "@id": "an:principal",
+      "@type": "av:Design",
+      "text": "에이전트를 지속 식별자·능력·예산·계약·영수증을 가진 기본 상호작용 주체로 설계한다. 인간용 화면은 그 기계 간 흐름을 관찰하고 설정한다.",
+      "authority": "SECONDARY_AI",
+      "state": "PROPOSED",
+      "source": "an:artifact_report",
+      "derivedFrom": "an:priority",
+      "attributedTo": "https://github.com/gj3447/metahumotonic-foundation/graph/philosophy#codex",
+      "targets": [
+        "https://github.com/gj3447/metahumotonic-foundation/graph/ecosystem#agent",
+        "https://github.com/gj3447/metahumotonic-foundation/graph/ecosystem#hswm"
+      ],
+      "references": [
+        "an:obs_a2a"
+      ]
+    },
+    {
+      "@id": "an:cycle",
+      "@type": "av:Design",
+      "text": "수요 에이전트의 대금 예약 후 해결 에이전트가 연산을 구매하고 결과 검증·정산 뒤 후속 작업에 재사용한다. 제공자는 모의 비용을 차감한 누적 영업잉여로만 용량에 투자한다.",
+      "authority": "SECONDARY_AI",
+      "state": "PROPOSED",
+      "source": "an:artifact_report",
+      "derivedFrom": "an:priority",
+      "attributedTo": "https://github.com/gj3447/metahumotonic-foundation/graph/philosophy#codex",
+      "targets": [
+        "https://github.com/gj3447/metahumotonic-foundation/graph/ecosystem#agent",
+        "https://github.com/gj3447/metahumotonic-foundation/graph/ecosystem#chu",
+        "https://github.com/gj3447/metahumotonic-foundation/graph/ecosystem#response",
+        "https://github.com/gj3447/metahumotonic-foundation/graph/ecosystem#asset"
+      ],
+      "references": [
+        "an:obs_golem",
+        "an:obs_truebit"
+      ]
+    },
+    {
+      "@id": "an:evaluation",
+      "@type": "av:Design",
+      "text": "고정 정책 에이전트로 유료 수요·보조금 종료·비용 충격·오류 제공자를 비교한다. 외부 수요·가격은 입력이며 학습·기축통화·안전성·실물 성장을 검증하지 않는다.",
+      "authority": "SECONDARY_AI",
+      "state": "PROPOSED",
+      "source": "an:artifact_report",
+      "derivedFrom": "an:priority",
+      "attributedTo": "https://github.com/gj3447/metahumotonic-foundation/graph/philosophy#codex",
+      "targets": [
+        "https://github.com/gj3447/metahumotonic-foundation/graph/ecosystem#agent",
+        "https://github.com/gj3447/metahumotonic-foundation/graph/ecosystem#response"
+      ],
+      "references": [
+        "an:obs_melting"
+      ]
+    },
+    {
+      "@id": "an:obs_a2a",
+      "@type": "av:Observation",
+      "label": "A2A Protocol Specification",
+      "source": "https://a2a-protocol.org/latest/specification/",
+      "revision": "latest page observed 2026-10-06; no immutable revision asserted",
+      "section": "4.1, 4.4, 7, 8",
+      "text": "Agent Card는 능력·상호작용 조건을 알리고 Task와 Artifact는 작업·결과 교환을 표현한다.",
+      "limitation": "통화·상환·자원 접근을 보증하지 않으며 이 구현의 A2A 적합성을 주장하지 않는다.",
+      "authority": "DOCUMENT_OBSERVATION",
+      "state": "PARAPHRASE",
+      "recordedOn": "2026-10-06",
+      "references": "an:artifact_research"
+    },
+    {
+      "@id": "an:obs_golem",
+      "@type": "av:Observation",
+      "label": "Payments in Golem explained",
+      "source": "https://docs.golem.network/docs/golem/payments",
+      "revision": "living documentation observed 2026-10-06",
+      "section": "Pay as you go; Mid-agreement payments",
+      "text": "사용량에 합의된 가격을 적용하고 긴 작업에는 합의한 간격으로 대금을 지급한다.",
+      "limitation": "GLM 결제 설명이며 컴퓨팅 기준 가격 안정성이나 MHC 시장 성공의 증거가 아니다.",
+      "authority": "DOCUMENT_OBSERVATION",
+      "state": "PARAPHRASE",
+      "recordedOn": "2026-10-06",
+      "references": "an:artifact_research"
+    },
+    {
+      "@id": "an:obs_truebit",
+      "@type": "av:Observation",
+      "label": "Bootstrapping a stable computation token",
+      "source": "https://arxiv.org/abs/1908.02946v1",
+      "revision": "arXiv:1908.02946v1; 2019",
+      "section": "3, 3.1, 3.2",
+      "text": "계산 단계당 비용을 CPU 토큰으로 고정하고 TRU 보상과 연결하는 두 토큰 모델을 제안한다.",
+      "limitation": "연구 가정에 의존하며 단일 MHC 상환이나 실물 공급의 검증 결과가 아니다.",
+      "authority": "DOCUMENT_OBSERVATION",
+      "state": "PARAPHRASE",
+      "recordedOn": "2026-10-06",
+      "references": "an:artifact_research"
+    },
+    {
+      "@id": "an:obs_melting",
+      "@type": "av:Observation",
+      "label": "Melting Pot 2.0",
+      "source": "https://arxiv.org/abs/2211.13746v6",
+      "revision": "arXiv:2211.13746v6; 2023",
+      "section": "Abstract",
+      "text": "다양한 이해관계와 새로운 상호작용 상대에 대한 다중 에이전트 일반화를 평가한다.",
+      "limitation": "현재 실험은 해당 벤치마크를 실행하거나 학습 에이전트 성능을 측정하지 않는다.",
+      "authority": "DOCUMENT_OBSERVATION",
+      "state": "PARAPHRASE",
+      "recordedOn": "2026-10-06",
+      "references": "an:artifact_research"
+    },
+    {
+      "@id": "an:run_ec94518b66cba17774f9d1694cfbd54278c7f0cc3a49646844f6b477274baf6b",
+      "@type": [
+        "av:Run",
+        "prov:Activity"
+      ],
+      "scenario": "paid_demand",
+      "seed": 1,
+      "sha256": "ec94518b66cba17774f9d1694cfbd54278c7f0cc3a49646844f6b477274baf6b",
+      "authority": "SYSTEM_DERIVED",
+      "state": "LOCAL_SIMULATION",
+      "associatedWith": "an:simulator",
+      "used": [
+        "an:evaluation",
+        "an:cycle",
+        "an:artifact_code"
+      ],
+      "source": "an:artifact_suite",
+      "recordedOn": "2026-10-06",
+      "completed": 60,
+      "failed": 0,
+      "postBootstrap": 48,
+      "installedCapacity": 8,
+      "sharedCapacity": 8
+    },
+    {
+      "@id": "an:run_d7bba533973ec6cfc2cc24fc797867c1d5b6900a5dbd91ddcfaa9bbc962c36cf",
+      "@type": [
+        "av:Run",
+        "prov:Activity"
+      ],
+      "scenario": "paid_demand",
+      "seed": 2,
+      "sha256": "d7bba533973ec6cfc2cc24fc797867c1d5b6900a5dbd91ddcfaa9bbc962c36cf",
+      "authority": "SYSTEM_DERIVED",
+      "state": "LOCAL_SIMULATION",
+      "associatedWith": "an:simulator",
+      "used": [
+        "an:evaluation",
+        "an:cycle",
+        "an:artifact_code"
+      ],
+      "source": "an:artifact_suite",
+      "recordedOn": "2026-10-06",
+      "completed": 60,
+      "failed": 0,
+      "postBootstrap": 48,
+      "installedCapacity": 8,
+      "sharedCapacity": 8
+    },
+    {
+      "@id": "an:run_ef5a1de7835d77b56e6334a6daa3d87d2aa823d59091dbc78bb08c2267b8f250",
+      "@type": [
+        "av:Run",
+        "prov:Activity"
+      ],
+      "scenario": "paid_demand",
+      "seed": 3,
+      "sha256": "ef5a1de7835d77b56e6334a6daa3d87d2aa823d59091dbc78bb08c2267b8f250",
+      "authority": "SYSTEM_DERIVED",
+      "state": "LOCAL_SIMULATION",
+      "associatedWith": "an:simulator",
+      "used": [
+        "an:evaluation",
+        "an:cycle",
+        "an:artifact_code"
+      ],
+      "source": "an:artifact_suite",
+      "recordedOn": "2026-10-06",
+      "completed": 60,
+      "failed": 0,
+      "postBootstrap": 48,
+      "installedCapacity": 8,
+      "sharedCapacity": 8
+    },
+    {
+      "@id": "an:run_7a6165b678db3d4285aed25cc082a2e8c93ccef2704938c3f55c50a566916dda",
+      "@type": [
+        "av:Run",
+        "prov:Activity"
+      ],
+      "scenario": "subsidy_only",
+      "seed": 1,
+      "sha256": "7a6165b678db3d4285aed25cc082a2e8c93ccef2704938c3f55c50a566916dda",
+      "authority": "SYSTEM_DERIVED",
+      "state": "LOCAL_SIMULATION",
+      "associatedWith": "an:simulator",
+      "used": [
+        "an:evaluation",
+        "an:cycle",
+        "an:artifact_code"
+      ],
+      "source": "an:artifact_suite",
+      "recordedOn": "2026-10-06",
+      "completed": 6,
+      "failed": 0,
+      "postBootstrap": 0,
+      "installedCapacity": 4,
+      "sharedCapacity": 0
+    },
+    {
+      "@id": "an:run_4dce01e56691a1840f31e753e7af9293796cdf372774ef87377052ff4a1de5ed",
+      "@type": [
+        "av:Run",
+        "prov:Activity"
+      ],
+      "scenario": "subsidy_only",
+      "seed": 2,
+      "sha256": "4dce01e56691a1840f31e753e7af9293796cdf372774ef87377052ff4a1de5ed",
+      "authority": "SYSTEM_DERIVED",
+      "state": "LOCAL_SIMULATION",
+      "associatedWith": "an:simulator",
+      "used": [
+        "an:evaluation",
+        "an:cycle",
+        "an:artifact_code"
+      ],
+      "source": "an:artifact_suite",
+      "recordedOn": "2026-10-06",
+      "completed": 6,
+      "failed": 0,
+      "postBootstrap": 0,
+      "installedCapacity": 4,
+      "sharedCapacity": 0
+    },
+    {
+      "@id": "an:run_23b45a15b598e76c0be8fb62aa7a872d62523d3563d83b591a69c9a99cc9cbf7",
+      "@type": [
+        "av:Run",
+        "prov:Activity"
+      ],
+      "scenario": "subsidy_only",
+      "seed": 3,
+      "sha256": "23b45a15b598e76c0be8fb62aa7a872d62523d3563d83b591a69c9a99cc9cbf7",
+      "authority": "SYSTEM_DERIVED",
+      "state": "LOCAL_SIMULATION",
+      "associatedWith": "an:simulator",
+      "used": [
+        "an:evaluation",
+        "an:cycle",
+        "an:artifact_code"
+      ],
+      "source": "an:artifact_suite",
+      "recordedOn": "2026-10-06",
+      "completed": 6,
+      "failed": 0,
+      "postBootstrap": 0,
+      "installedCapacity": 4,
+      "sharedCapacity": 0
+    },
+    {
+      "@id": "an:run_f2d1e755044da5de92a362104bf294b33e5a91f4ef72c4100c50ab859ee3f578",
+      "@type": [
+        "av:Run",
+        "prov:Activity"
+      ],
+      "scenario": "cost_shock",
+      "seed": 1,
+      "sha256": "f2d1e755044da5de92a362104bf294b33e5a91f4ef72c4100c50ab859ee3f578",
+      "authority": "SYSTEM_DERIVED",
+      "state": "LOCAL_SIMULATION",
+      "associatedWith": "an:simulator",
+      "used": [
+        "an:evaluation",
+        "an:cycle",
+        "an:artifact_code"
+      ],
+      "source": "an:artifact_suite",
+      "recordedOn": "2026-10-06",
+      "completed": 12,
+      "failed": 0,
+      "postBootstrap": 0,
+      "installedCapacity": 4,
+      "sharedCapacity": 0
+    },
+    {
+      "@id": "an:run_00db1c250b4f1278fbec8566fbab0c8d529e9dd827a3b6c419b04af548383fea",
+      "@type": [
+        "av:Run",
+        "prov:Activity"
+      ],
+      "scenario": "cost_shock",
+      "seed": 2,
+      "sha256": "00db1c250b4f1278fbec8566fbab0c8d529e9dd827a3b6c419b04af548383fea",
+      "authority": "SYSTEM_DERIVED",
+      "state": "LOCAL_SIMULATION",
+      "associatedWith": "an:simulator",
+      "used": [
+        "an:evaluation",
+        "an:cycle",
+        "an:artifact_code"
+      ],
+      "source": "an:artifact_suite",
+      "recordedOn": "2026-10-06",
+      "completed": 12,
+      "failed": 0,
+      "postBootstrap": 0,
+      "installedCapacity": 4,
+      "sharedCapacity": 0
+    },
+    {
+      "@id": "an:run_e0d4f04ad62ef9a536332344d92e1afff59d810a16bfa605b552e63bcd7c9032",
+      "@type": [
+        "av:Run",
+        "prov:Activity"
+      ],
+      "scenario": "cost_shock",
+      "seed": 3,
+      "sha256": "e0d4f04ad62ef9a536332344d92e1afff59d810a16bfa605b552e63bcd7c9032",
+      "authority": "SYSTEM_DERIVED",
+      "state": "LOCAL_SIMULATION",
+      "associatedWith": "an:simulator",
+      "used": [
+        "an:evaluation",
+        "an:cycle",
+        "an:artifact_code"
+      ],
+      "source": "an:artifact_suite",
+      "recordedOn": "2026-10-06",
+      "completed": 12,
+      "failed": 0,
+      "postBootstrap": 0,
+      "installedCapacity": 4,
+      "sharedCapacity": 0
+    },
+    {
+      "@id": "an:run_2267ed25072394f25e58f1f90f1c56ef6e5e340bee8c6a5630ee8d413943f0b2",
+      "@type": [
+        "av:Run",
+        "prov:Activity"
+      ],
+      "scenario": "faulty_provider",
+      "seed": 1,
+      "sha256": "2267ed25072394f25e58f1f90f1c56ef6e5e340bee8c6a5630ee8d413943f0b2",
+      "authority": "SYSTEM_DERIVED",
+      "state": "LOCAL_SIMULATION",
+      "associatedWith": "an:simulator",
+      "used": [
+        "an:evaluation",
+        "an:cycle",
+        "an:artifact_code"
+      ],
+      "source": "an:artifact_suite",
+      "recordedOn": "2026-10-06",
+      "completed": 32,
+      "failed": 3,
+      "postBootstrap": 26,
+      "installedCapacity": 6,
+      "sharedCapacity": 4
+    },
+    {
+      "@id": "an:run_6b6b5adad8ee66e9e572287dd19e609b817991e217bc0ebf70bb6198d5e01cb6",
+      "@type": [
+        "av:Run",
+        "prov:Activity"
+      ],
+      "scenario": "faulty_provider",
+      "seed": 2,
+      "sha256": "6b6b5adad8ee66e9e572287dd19e609b817991e217bc0ebf70bb6198d5e01cb6",
+      "authority": "SYSTEM_DERIVED",
+      "state": "LOCAL_SIMULATION",
+      "associatedWith": "an:simulator",
+      "used": [
+        "an:evaluation",
+        "an:cycle",
+        "an:artifact_code"
+      ],
+      "source": "an:artifact_suite",
+      "recordedOn": "2026-10-06",
+      "completed": 32,
+      "failed": 3,
+      "postBootstrap": 26,
+      "installedCapacity": 6,
+      "sharedCapacity": 4
+    },
+    {
+      "@id": "an:run_836f16014cd23e79c64796acef56c475e51eec5c73f81eeefc417215a705d220",
+      "@type": [
+        "av:Run",
+        "prov:Activity"
+      ],
+      "scenario": "faulty_provider",
+      "seed": 3,
+      "sha256": "836f16014cd23e79c64796acef56c475e51eec5c73f81eeefc417215a705d220",
+      "authority": "SYSTEM_DERIVED",
+      "state": "LOCAL_SIMULATION",
+      "associatedWith": "an:simulator",
+      "used": [
+        "an:evaluation",
+        "an:cycle",
+        "an:artifact_code"
+      ],
+      "source": "an:artifact_suite",
+      "recordedOn": "2026-10-06",
+      "completed": 32,
+      "failed": 3,
+      "postBootstrap": 26,
+      "installedCapacity": 6,
+      "sharedCapacity": 4
+    },
+    {
+      "@id": "an:graph",
+      "@type": "prov:Bundle",
+      "label": "Agent priority, proposed design and bounded simulation evidence",
+      "member": [
+        "an:simulator",
+        "an:artifact_source",
+        "an:artifact_research",
+        "an:artifact_suite",
+        "an:artifact_report",
+        "an:artifact_ecosystem",
+        "an:artifact_philosophy",
+        "an:artifact_spirit",
+        "an:artifact_code",
+        "an:priority",
+        "an:principal",
+        "an:cycle",
+        "an:evaluation",
+        "an:obs_a2a",
+        "an:obs_golem",
+        "an:obs_truebit",
+        "an:obs_melting",
+        "an:run_ec94518b66cba17774f9d1694cfbd54278c7f0cc3a49646844f6b477274baf6b",
+        "an:run_d7bba533973ec6cfc2cc24fc797867c1d5b6900a5dbd91ddcfaa9bbc962c36cf",
+        "an:run_ef5a1de7835d77b56e6334a6daa3d87d2aa823d59091dbc78bb08c2267b8f250",
+        "an:run_7a6165b678db3d4285aed25cc082a2e8c93ccef2704938c3f55c50a566916dda",
+        "an:run_4dce01e56691a1840f31e753e7af9293796cdf372774ef87377052ff4a1de5ed",
+        "an:run_23b45a15b598e76c0be8fb62aa7a872d62523d3563d83b591a69c9a99cc9cbf7",
+        "an:run_f2d1e755044da5de92a362104bf294b33e5a91f4ef72c4100c50ab859ee3f578",
+        "an:run_00db1c250b4f1278fbec8566fbab0c8d529e9dd827a3b6c419b04af548383fea",
+        "an:run_e0d4f04ad62ef9a536332344d92e1afff59d810a16bfa605b552e63bcd7c9032",
+        "an:run_2267ed25072394f25e58f1f90f1c56ef6e5e340bee8c6a5630ee8d413943f0b2",
+        "an:run_6b6b5adad8ee66e9e572287dd19e609b817991e217bc0ebf70bb6198d5e01cb6",
+        "an:run_836f16014cd23e79c64796acef56c475e51eec5c73f81eeefc417215a705d220"
+      ]
+    }
+  ]
+}

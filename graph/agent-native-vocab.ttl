@@ -1,0 +1,31 @@
+@prefix av: <https://github.com/gj3447/metahumotonic-foundation/agent-native-vocab#> .
+@prefix an: <https://github.com/gj3447/metahumotonic-foundation/graph/agent-native#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+av:Artifact a rdfs:Class .
+av:UserClaim a rdfs:Class .
+av:Design a rdfs:Class .
+av:Observation a rdfs:Class .
+av:Run a rdfs:Class .
+av:authority a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 on each applicable node; subject -> recorded value. Run counts and capacity are simulated only." .
+av:state a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 on each applicable node; subject -> recorded value. Run counts and capacity are simulated only." .
+av:text a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 on each applicable node; subject -> recorded value. Run counts and capacity are simulated only." .
+av:limitation a rdf:Property ; rdfs:domain av:Observation ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 on each applicable node; subject -> recorded value. Run counts and capacity are simulated only." .
+av:path a rdf:Property ; rdfs:domain av:Artifact ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 on each applicable node; subject -> recorded value. Run counts and capacity are simulated only." .
+av:sha256 a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 on each applicable node; subject -> recorded value. Run counts and capacity are simulated only." .
+av:section a rdf:Property ; rdfs:domain av:Observation ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 on each applicable node; subject -> recorded value. Run counts and capacity are simulated only." .
+av:recordedOn a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:date ; rdfs:comment "Exactly 1 on each applicable node; subject -> recorded value. Run counts and capacity are simulated only." .
+av:targets a rdf:Property ; rdfs:domain av:Design ; rdfs:range rdfs:Resource ; rdfs:comment "1..n; design -> existing ecosystem component; reference, not identity or deployment" .
+av:scenario a rdf:Property ; rdfs:domain av:Run ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 on each applicable node; subject -> recorded value. Run counts and capacity are simulated only." .
+av:seed a rdf:Property ; rdfs:domain av:Run ; rdfs:range xsd:integer ; rdfs:comment "Exactly 1 on each applicable node; subject -> recorded value. Run counts and capacity are simulated only." .
+av:completed a rdf:Property ; rdfs:domain av:Run ; rdfs:range xsd:integer ; rdfs:comment "Exactly 1 on each applicable node; subject -> recorded value. Run counts and capacity are simulated only." .
+av:failed a rdf:Property ; rdfs:domain av:Run ; rdfs:range xsd:integer ; rdfs:comment "Exactly 1 on each applicable node; subject -> recorded value. Run counts and capacity are simulated only." .
+av:postBootstrap a rdf:Property ; rdfs:domain av:Run ; rdfs:range xsd:integer ; rdfs:comment "Exactly 1 on each applicable node; subject -> recorded value. Run counts and capacity are simulated only." .
+av:installedCapacity a rdf:Property ; rdfs:domain av:Run ; rdfs:range xsd:integer ; rdfs:comment "Exactly 1 on each applicable node; subject -> recorded value. Run counts and capacity are simulated only." .
+av:sharedCapacity a rdf:Property ; rdfs:domain av:Run ; rdfs:range xsd:integer ; rdfs:comment "Exactly 1 on each applicable node; subject -> recorded value. Run counts and capacity are simulated only." .
+av:Design rdfs:comment "Exactly one prov:wasDerivedFrom UserClaim, one report dcterms:source Artifact, and one prov:wasAttributedTo author; 1..n dcterms:references Observations." .
+av:Run rdfs:comment "Exactly one dcterms:source suite Artifact and one prov:wasAssociatedWith SoftwareAgent; prov:used links policies and implementation. Identity includes full run digest." .

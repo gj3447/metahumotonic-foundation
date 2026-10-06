@@ -1,0 +1,9 @@
+{
+  "role": "user",
+  "authority": "USER_PRIMARY",
+  "verbatim": "ㅇㅇ ㄱㄱ agent native 한 시스템으로 생ㅊ각해줘 agent 가 최우선이야",
+  "recorded_on": "2026-10-06",
+  "event_time": null,
+  "locator": "current-conversation:user-agent-priority",
+  "sha256": "bee00ebb75949a4e320e8f479b0cb971952ea694ff6edce8213a114ef5189b47"
+}

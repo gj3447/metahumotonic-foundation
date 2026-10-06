@@ -282,6 +282,7 @@ def main():
                    + (["--write-view"] if args.write_view else []), check=True)
     subprocess.run([sys.executable, str(HERE / "check_foundation_rationale.py")], check=True)
     subprocess.run([sys.executable, str(HERE / "check_compute_coin.py")], check=True)
+    subprocess.run([sys.executable, str(HERE / "check_agent_native.py")], check=True)
 
 
 if __name__ == "__main__":

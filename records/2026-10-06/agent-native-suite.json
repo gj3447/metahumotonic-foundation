@@ -1,0 +1,3192 @@
+{
+  "format": "metahumotonic-agent-suite/v1",
+  "mode": "LOCAL_SIMULATION",
+  "source_sha256": {
+    "economy/agent_native.py": "ea2d1fad06498c06af316d3f7fa31ca13d7c297b8adf5527ea6ab7af4ec3a719",
+    "economy/simulator.py": "12010f14756b6ac24ece21f08acef320bfc430eab4a01372d26e58c4126d8046",
+    "economy/artifacts.py": "1bba9309daff2e649b9e23984c35b37c02864cb0b2197570d219cf1908fcd426",
+    "economy/scenarios.py": "a963de58a480b8ceeae3032c4c8f91180714ba088611d41ee0a74e716419d4b4"
+  },
+  "runs": [
+    {
+      "scenario": "paid_demand",
+      "config": {
+        "rounds": 12,
+        "seed": 1,
+        "bootstrap_rounds": 3,
+        "external_jobs": 6,
+        "subsidy_jobs": 2,
+        "customer_budget": 1000,
+        "sponsor_budget": 100,
+        "reward": 6,
+        "compute_price": 3,
+        "energy_cost": 1,
+        "upkeep_per_slot": 1,
+        "investment_cost": 12,
+        "provider_reserve": 4,
+        "outside_margin": 1,
+        "worker_budget": 12,
+        "worker_reserve": 2,
+        "worker_max_spend": 4,
+        "worker_min_margin": 1,
+        "cost_shock_round": 0,
+        "shocked_energy_cost": 5,
+        "faulty_provider": false
+      },
+      "summary": {
+        "completed": 60,
+        "failed": 0,
+        "initial_capacity": 4,
+        "final_installed_capacity": 8,
+        "final_offered_capacity": 8,
+        "post_bootstrap_completed": 48,
+        "external_paid": 348,
+        "subsidy_paid": 12,
+        "energy_paid": 60,
+        "upkeep_paid": 64,
+        "investment_paid": 48,
+        "repeat_solvers": 3,
+        "provider_hhi": 0.5,
+        "money_conserved": true,
+        "escrow": "0",
+        "model_calls": 0,
+        "real_resource_growth_measured": false,
+        "safety_evaluated": false
+      },
+      "rounds": [
+        {
+          "round": 1,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 4,
+          "attempted": 4,
+          "external_paid": 18,
+          "subsidy_paid": 6,
+          "worker_balances": {
+            "agent:solver-0": 15,
+            "agent:solver-1": 18,
+            "agent:solver-2": 15
+          },
+          "provider_balances": {
+            "agent:hardware-0": 10,
+            "agent:hardware-1": 10
+          }
+        },
+        {
+          "round": 2,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 4,
+          "attempted": 4,
+          "external_paid": 24,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 21,
+            "agent:solver-1": 21,
+            "agent:solver-2": 18
+          },
+          "provider_balances": {
+            "agent:hardware-0": 12,
+            "agent:hardware-1": 12
+          }
+        },
+        {
+          "round": 3,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 4,
+          "attempted": 4,
+          "external_paid": 18,
+          "subsidy_paid": 6,
+          "worker_balances": {
+            "agent:solver-0": 27,
+            "agent:solver-1": 24,
+            "agent:solver-2": 21
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 4,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 4,
+          "attempted": 4,
+          "external_paid": 24,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 30,
+            "agent:solver-1": 27,
+            "agent:solver-2": 27
+          },
+          "provider_balances": {
+            "agent:hardware-0": 16,
+            "agent:hardware-1": 16
+          }
+        },
+        {
+          "round": 5,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 4,
+          "attempted": 4,
+          "external_paid": 24,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 30,
+            "agent:solver-1": 30,
+            "agent:solver-2": 36
+          },
+          "provider_balances": {
+            "agent:hardware-0": 18,
+            "agent:hardware-1": 18
+          }
+        },
+        {
+          "round": 6,
+          "offered_capacity": 4,
+          "installed_capacity": 6,
+          "completed": 4,
+          "attempted": 4,
+          "external_paid": 24,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 36,
+            "agent:solver-1": 33,
+            "agent:solver-2": 39
+          },
+          "provider_balances": {
+            "agent:hardware-0": 8,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 7,
+          "offered_capacity": 6,
+          "installed_capacity": 6,
+          "completed": 6,
+          "attempted": 6,
+          "external_paid": 36,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 45,
+            "agent:solver-1": 39,
+            "agent:solver-2": 42
+          },
+          "provider_balances": {
+            "agent:hardware-0": 11,
+            "agent:hardware-1": 11
+          }
+        },
+        {
+          "round": 8,
+          "offered_capacity": 6,
+          "installed_capacity": 6,
+          "completed": 6,
+          "attempted": 6,
+          "external_paid": 36,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 48,
+            "agent:solver-1": 45,
+            "agent:solver-2": 51
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 9,
+          "offered_capacity": 6,
+          "installed_capacity": 6,
+          "completed": 6,
+          "attempted": 6,
+          "external_paid": 36,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 51,
+            "agent:solver-1": 51,
+            "agent:solver-2": 60
+          },
+          "provider_balances": {
+            "agent:hardware-0": 17,
+            "agent:hardware-1": 17
+          }
+        },
+        {
+          "round": 10,
+          "offered_capacity": 6,
+          "installed_capacity": 8,
+          "completed": 6,
+          "attempted": 6,
+          "external_paid": 36,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 57,
+            "agent:solver-1": 54,
+            "agent:solver-2": 69
+          },
+          "provider_balances": {
+            "agent:hardware-0": 8,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 11,
+          "offered_capacity": 8,
+          "installed_capacity": 8,
+          "completed": 6,
+          "attempted": 6,
+          "external_paid": 36,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 60,
+            "agent:solver-1": 63,
+            "agent:solver-2": 75
+          },
+          "provider_balances": {
+            "agent:hardware-0": 12,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 12,
+          "offered_capacity": 8,
+          "installed_capacity": 8,
+          "completed": 6,
+          "attempted": 6,
+          "external_paid": 36,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 69,
+            "agent:solver-1": 69,
+            "agent:solver-2": 78
+          },
+          "provider_balances": {
+            "agent:hardware-0": 12,
+            "agent:hardware-1": 12
+          }
+        }
+      ],
+      "run_sha256": "ec94518b66cba17774f9d1694cfbd54278c7f0cc3a49646844f6b477274baf6b"
+    },
+    {
+      "scenario": "paid_demand",
+      "config": {
+        "rounds": 12,
+        "seed": 2,
+        "bootstrap_rounds": 3,
+        "external_jobs": 6,
+        "subsidy_jobs": 2,
+        "customer_budget": 1000,
+        "sponsor_budget": 100,
+        "reward": 6,
+        "compute_price": 3,
+        "energy_cost": 1,
+        "upkeep_per_slot": 1,
+        "investment_cost": 12,
+        "provider_reserve": 4,
+        "outside_margin": 1,
+        "worker_budget": 12,
+        "worker_reserve": 2,
+        "worker_max_spend": 4,
+        "worker_min_margin": 1,
+        "cost_shock_round": 0,
+        "shocked_energy_cost": 5,
+        "faulty_provider": false
+      },
+      "summary": {
+        "completed": 60,
+        "failed": 0,
+        "initial_capacity": 4,
+        "final_installed_capacity": 8,
+        "final_offered_capacity": 8,
+        "post_bootstrap_completed": 48,
+        "external_paid": 348,
+        "subsidy_paid": 12,
+        "energy_paid": 60,
+        "upkeep_paid": 64,
+        "investment_paid": 48,
+        "repeat_solvers": 3,
+        "provider_hhi": 0.5,
+        "money_conserved": true,
+        "escrow": "0",
+        "model_calls": 0,
+        "real_resource_growth_measured": false,
+        "safety_evaluated": false
+      },
+      "rounds": [
+        {
+          "round": 1,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 4,
+          "attempted": 4,
+          "external_paid": 24,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 15,
+            "agent:solver-1": 15,
+            "agent:solver-2": 18
+          },
+          "provider_balances": {
+            "agent:hardware-0": 10,
+            "agent:hardware-1": 10
+          }
+        },
+        {
+          "round": 2,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 4,
+          "attempted": 4,
+          "external_paid": 18,
+          "subsidy_paid": 6,
+          "worker_balances": {
+            "agent:solver-0": 21,
+            "agent:solver-1": 18,
+            "agent:solver-2": 21
+          },
+          "provider_balances": {
+            "agent:hardware-0": 12,
+            "agent:hardware-1": 12
+          }
+        },
+        {
+          "round": 3,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 4,
+          "attempted": 4,
+          "external_paid": 18,
+          "subsidy_paid": 6,
+          "worker_balances": {
+            "agent:solver-0": 30,
+            "agent:solver-1": 21,
+            "agent:solver-2": 21
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 4,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 4,
+          "attempted": 4,
+          "external_paid": 24,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 30,
+            "agent:solver-1": 30,
+            "agent:solver-2": 24
+          },
+          "provider_balances": {
+            "agent:hardware-0": 16,
+            "agent:hardware-1": 16
+          }
+        },
+        {
+          "round": 5,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 4,
+          "attempted": 4,
+          "external_paid": 24,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 30,
+            "agent:solver-1": 36,
+            "agent:solver-2": 30
+          },
+          "provider_balances": {
+            "agent:hardware-0": 18,
+            "agent:hardware-1": 18
+          }
+        },
+        {
+          "round": 6,
+          "offered_capacity": 4,
+          "installed_capacity": 6,
+          "completed": 4,
+          "attempted": 4,
+          "external_paid": 24,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 33,
+            "agent:solver-1": 39,
+            "agent:solver-2": 36
+          },
+          "provider_balances": {
+            "agent:hardware-0": 8,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 7,
+          "offered_capacity": 6,
+          "installed_capacity": 6,
+          "completed": 6,
+          "attempted": 6,
+          "external_paid": 36,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 39,
+            "agent:solver-1": 45,
+            "agent:solver-2": 42
+          },
+          "provider_balances": {
+            "agent:hardware-0": 11,
+            "agent:hardware-1": 11
+          }
+        },
+        {
+          "round": 8,
+          "offered_capacity": 6,
+          "installed_capacity": 6,
+          "completed": 6,
+          "attempted": 6,
+          "external_paid": 36,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 45,
+            "agent:solver-1": 54,
+            "agent:solver-2": 45
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 9,
+          "offered_capacity": 6,
+          "installed_capacity": 6,
+          "completed": 6,
+          "attempted": 6,
+          "external_paid": 36,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 48,
+            "agent:solver-1": 57,
+            "agent:solver-2": 57
+          },
+          "provider_balances": {
+            "agent:hardware-0": 17,
+            "agent:hardware-1": 17
+          }
+        },
+        {
+          "round": 10,
+          "offered_capacity": 6,
+          "installed_capacity": 8,
+          "completed": 6,
+          "attempted": 6,
+          "external_paid": 36,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 57,
+            "agent:solver-1": 60,
+            "agent:solver-2": 63
+          },
+          "provider_balances": {
+            "agent:hardware-0": 8,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 11,
+          "offered_capacity": 8,
+          "installed_capacity": 8,
+          "completed": 6,
+          "attempted": 6,
+          "external_paid": 36,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 66,
+            "agent:solver-1": 66,
+            "agent:solver-2": 66
+          },
+          "provider_balances": {
+            "agent:hardware-0": 12,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 12,
+          "offered_capacity": 8,
+          "installed_capacity": 8,
+          "completed": 6,
+          "attempted": 6,
+          "external_paid": 36,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 66,
+            "agent:solver-1": 72,
+            "agent:solver-2": 78
+          },
+          "provider_balances": {
+            "agent:hardware-0": 12,
+            "agent:hardware-1": 12
+          }
+        }
+      ],
+      "run_sha256": "d7bba533973ec6cfc2cc24fc797867c1d5b6900a5dbd91ddcfaa9bbc962c36cf"
+    },
+    {
+      "scenario": "paid_demand",
+      "config": {
+        "rounds": 12,
+        "seed": 3,
+        "bootstrap_rounds": 3,
+        "external_jobs": 6,
+        "subsidy_jobs": 2,
+        "customer_budget": 1000,
+        "sponsor_budget": 100,
+        "reward": 6,
+        "compute_price": 3,
+        "energy_cost": 1,
+        "upkeep_per_slot": 1,
+        "investment_cost": 12,
+        "provider_reserve": 4,
+        "outside_margin": 1,
+        "worker_budget": 12,
+        "worker_reserve": 2,
+        "worker_max_spend": 4,
+        "worker_min_margin": 1,
+        "cost_shock_round": 0,
+        "shocked_energy_cost": 5,
+        "faulty_provider": false
+      },
+      "summary": {
+        "completed": 60,
+        "failed": 0,
+        "initial_capacity": 4,
+        "final_installed_capacity": 8,
+        "final_offered_capacity": 8,
+        "post_bootstrap_completed": 48,
+        "external_paid": 354,
+        "subsidy_paid": 6,
+        "energy_paid": 60,
+        "upkeep_paid": 64,
+        "investment_paid": 48,
+        "repeat_solvers": 3,
+        "provider_hhi": 0.5,
+        "money_conserved": true,
+        "escrow": "0",
+        "model_calls": 0,
+        "real_resource_growth_measured": false,
+        "safety_evaluated": false
+      },
+      "rounds": [
+        {
+          "round": 1,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 4,
+          "attempted": 4,
+          "external_paid": 18,
+          "subsidy_paid": 6,
+          "worker_balances": {
+            "agent:solver-0": 15,
+            "agent:solver-1": 18,
+            "agent:solver-2": 15
+          },
+          "provider_balances": {
+            "agent:hardware-0": 10,
+            "agent:hardware-1": 10
+          }
+        },
+        {
+          "round": 2,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 4,
+          "attempted": 4,
+          "external_paid": 24,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 21,
+            "agent:solver-1": 18,
+            "agent:solver-2": 21
+          },
+          "provider_balances": {
+            "agent:hardware-0": 12,
+            "agent:hardware-1": 12
+          }
+        },
+        {
+          "round": 3,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 4,
+          "attempted": 4,
+          "external_paid": 24,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 24,
+            "agent:solver-1": 18,
+            "agent:solver-2": 30
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 4,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 4,
+          "attempted": 4,
+          "external_paid": 24,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 27,
+            "agent:solver-1": 24,
+            "agent:solver-2": 33
+          },
+          "provider_balances": {
+            "agent:hardware-0": 16,
+            "agent:hardware-1": 16
+          }
+        },
+        {
+          "round": 5,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 4,
+          "attempted": 4,
+          "external_paid": 24,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 36,
+            "agent:solver-1": 27,
+            "agent:solver-2": 33
+          },
+          "provider_balances": {
+            "agent:hardware-0": 18,
+            "agent:hardware-1": 18
+          }
+        },
+        {
+          "round": 6,
+          "offered_capacity": 4,
+          "installed_capacity": 6,
+          "completed": 4,
+          "attempted": 4,
+          "external_paid": 24,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 42,
+            "agent:solver-1": 30,
+            "agent:solver-2": 36
+          },
+          "provider_balances": {
+            "agent:hardware-0": 8,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 7,
+          "offered_capacity": 6,
+          "installed_capacity": 6,
+          "completed": 6,
+          "attempted": 6,
+          "external_paid": 36,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 48,
+            "agent:solver-1": 33,
+            "agent:solver-2": 45
+          },
+          "provider_balances": {
+            "agent:hardware-0": 11,
+            "agent:hardware-1": 11
+          }
+        },
+        {
+          "round": 8,
+          "offered_capacity": 6,
+          "installed_capacity": 6,
+          "completed": 6,
+          "attempted": 6,
+          "external_paid": 36,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 54,
+            "agent:solver-1": 39,
+            "agent:solver-2": 51
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 9,
+          "offered_capacity": 6,
+          "installed_capacity": 6,
+          "completed": 6,
+          "attempted": 6,
+          "external_paid": 36,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 57,
+            "agent:solver-1": 48,
+            "agent:solver-2": 57
+          },
+          "provider_balances": {
+            "agent:hardware-0": 17,
+            "agent:hardware-1": 17
+          }
+        },
+        {
+          "round": 10,
+          "offered_capacity": 6,
+          "installed_capacity": 8,
+          "completed": 6,
+          "attempted": 6,
+          "external_paid": 36,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 60,
+            "agent:solver-1": 51,
+            "agent:solver-2": 69
+          },
+          "provider_balances": {
+            "agent:hardware-0": 8,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 11,
+          "offered_capacity": 8,
+          "installed_capacity": 8,
+          "completed": 6,
+          "attempted": 6,
+          "external_paid": 36,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 66,
+            "agent:solver-1": 54,
+            "agent:solver-2": 78
+          },
+          "provider_balances": {
+            "agent:hardware-0": 8,
+            "agent:hardware-1": 12
+          }
+        },
+        {
+          "round": 12,
+          "offered_capacity": 8,
+          "installed_capacity": 8,
+          "completed": 6,
+          "attempted": 6,
+          "external_paid": 36,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 75,
+            "agent:solver-1": 57,
+            "agent:solver-2": 84
+          },
+          "provider_balances": {
+            "agent:hardware-0": 12,
+            "agent:hardware-1": 12
+          }
+        }
+      ],
+      "run_sha256": "ef5a1de7835d77b56e6334a6daa3d87d2aa823d59091dbc78bb08c2267b8f250"
+    },
+    {
+      "scenario": "subsidy_only",
+      "config": {
+        "rounds": 12,
+        "seed": 1,
+        "bootstrap_rounds": 3,
+        "external_jobs": 0,
+        "subsidy_jobs": 2,
+        "customer_budget": 1000,
+        "sponsor_budget": 100,
+        "reward": 6,
+        "compute_price": 3,
+        "energy_cost": 1,
+        "upkeep_per_slot": 1,
+        "investment_cost": 12,
+        "provider_reserve": 4,
+        "outside_margin": 1,
+        "worker_budget": 12,
+        "worker_reserve": 2,
+        "worker_max_spend": 4,
+        "worker_min_margin": 1,
+        "cost_shock_round": 0,
+        "shocked_energy_cost": 5,
+        "faulty_provider": false
+      },
+      "summary": {
+        "completed": 6,
+        "failed": 0,
+        "initial_capacity": 4,
+        "final_installed_capacity": 4,
+        "final_offered_capacity": 0,
+        "post_bootstrap_completed": 0,
+        "external_paid": 0,
+        "subsidy_paid": 36,
+        "energy_paid": 6,
+        "upkeep_paid": 12,
+        "investment_paid": 0,
+        "repeat_solvers": 2,
+        "provider_hhi": 0.5,
+        "money_conserved": true,
+        "escrow": "0",
+        "model_calls": 0,
+        "real_resource_growth_measured": false,
+        "safety_evaluated": false
+      },
+      "rounds": [
+        {
+          "round": 1,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 2,
+          "attempted": 2,
+          "external_paid": 0,
+          "subsidy_paid": 12,
+          "worker_balances": {
+            "agent:solver-0": 15,
+            "agent:solver-1": 15,
+            "agent:solver-2": 12
+          },
+          "provider_balances": {
+            "agent:hardware-0": 6,
+            "agent:hardware-1": 10
+          }
+        },
+        {
+          "round": 2,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 2,
+          "attempted": 2,
+          "external_paid": 0,
+          "subsidy_paid": 12,
+          "worker_balances": {
+            "agent:solver-0": 18,
+            "agent:solver-1": 18,
+            "agent:solver-2": 12
+          },
+          "provider_balances": {
+            "agent:hardware-0": 6,
+            "agent:hardware-1": 10
+          }
+        },
+        {
+          "round": 3,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 2,
+          "attempted": 2,
+          "external_paid": 0,
+          "subsidy_paid": 12,
+          "worker_balances": {
+            "agent:solver-0": 18,
+            "agent:solver-1": 21,
+            "agent:solver-2": 15
+          },
+          "provider_balances": {
+            "agent:hardware-0": 8,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 4,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 18,
+            "agent:solver-1": 21,
+            "agent:solver-2": 15
+          },
+          "provider_balances": {
+            "agent:hardware-0": 8,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 5,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 18,
+            "agent:solver-1": 21,
+            "agent:solver-2": 15
+          },
+          "provider_balances": {
+            "agent:hardware-0": 8,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 6,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 18,
+            "agent:solver-1": 21,
+            "agent:solver-2": 15
+          },
+          "provider_balances": {
+            "agent:hardware-0": 8,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 7,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 18,
+            "agent:solver-1": 21,
+            "agent:solver-2": 15
+          },
+          "provider_balances": {
+            "agent:hardware-0": 8,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 8,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 18,
+            "agent:solver-1": 21,
+            "agent:solver-2": 15
+          },
+          "provider_balances": {
+            "agent:hardware-0": 8,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 9,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 18,
+            "agent:solver-1": 21,
+            "agent:solver-2": 15
+          },
+          "provider_balances": {
+            "agent:hardware-0": 8,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 10,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 18,
+            "agent:solver-1": 21,
+            "agent:solver-2": 15
+          },
+          "provider_balances": {
+            "agent:hardware-0": 8,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 11,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 18,
+            "agent:solver-1": 21,
+            "agent:solver-2": 15
+          },
+          "provider_balances": {
+            "agent:hardware-0": 8,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 12,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 18,
+            "agent:solver-1": 21,
+            "agent:solver-2": 15
+          },
+          "provider_balances": {
+            "agent:hardware-0": 8,
+            "agent:hardware-1": 8
+          }
+        }
+      ],
+      "run_sha256": "7a6165b678db3d4285aed25cc082a2e8c93ccef2704938c3f55c50a566916dda"
+    },
+    {
+      "scenario": "subsidy_only",
+      "config": {
+        "rounds": 12,
+        "seed": 2,
+        "bootstrap_rounds": 3,
+        "external_jobs": 0,
+        "subsidy_jobs": 2,
+        "customer_budget": 1000,
+        "sponsor_budget": 100,
+        "reward": 6,
+        "compute_price": 3,
+        "energy_cost": 1,
+        "upkeep_per_slot": 1,
+        "investment_cost": 12,
+        "provider_reserve": 4,
+        "outside_margin": 1,
+        "worker_budget": 12,
+        "worker_reserve": 2,
+        "worker_max_spend": 4,
+        "worker_min_margin": 1,
+        "cost_shock_round": 0,
+        "shocked_energy_cost": 5,
+        "faulty_provider": false
+      },
+      "summary": {
+        "completed": 6,
+        "failed": 0,
+        "initial_capacity": 4,
+        "final_installed_capacity": 4,
+        "final_offered_capacity": 0,
+        "post_bootstrap_completed": 0,
+        "external_paid": 0,
+        "subsidy_paid": 36,
+        "energy_paid": 6,
+        "upkeep_paid": 12,
+        "investment_paid": 0,
+        "repeat_solvers": 2,
+        "provider_hhi": 0.5555555555555556,
+        "money_conserved": true,
+        "escrow": "0",
+        "model_calls": 0,
+        "real_resource_growth_measured": false,
+        "safety_evaluated": false
+      },
+      "rounds": [
+        {
+          "round": 1,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 2,
+          "attempted": 2,
+          "external_paid": 0,
+          "subsidy_paid": 12,
+          "worker_balances": {
+            "agent:solver-0": 15,
+            "agent:solver-1": 15,
+            "agent:solver-2": 12
+          },
+          "provider_balances": {
+            "agent:hardware-0": 6,
+            "agent:hardware-1": 10
+          }
+        },
+        {
+          "round": 2,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 2,
+          "attempted": 2,
+          "external_paid": 0,
+          "subsidy_paid": 12,
+          "worker_balances": {
+            "agent:solver-0": 18,
+            "agent:solver-1": 18,
+            "agent:solver-2": 12
+          },
+          "provider_balances": {
+            "agent:hardware-0": 6,
+            "agent:hardware-1": 10
+          }
+        },
+        {
+          "round": 3,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 2,
+          "attempted": 2,
+          "external_paid": 0,
+          "subsidy_paid": 12,
+          "worker_balances": {
+            "agent:solver-0": 24,
+            "agent:solver-1": 18,
+            "agent:solver-2": 12
+          },
+          "provider_balances": {
+            "agent:hardware-0": 6,
+            "agent:hardware-1": 10
+          }
+        },
+        {
+          "round": 4,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 24,
+            "agent:solver-1": 18,
+            "agent:solver-2": 12
+          },
+          "provider_balances": {
+            "agent:hardware-0": 6,
+            "agent:hardware-1": 10
+          }
+        },
+        {
+          "round": 5,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 24,
+            "agent:solver-1": 18,
+            "agent:solver-2": 12
+          },
+          "provider_balances": {
+            "agent:hardware-0": 6,
+            "agent:hardware-1": 10
+          }
+        },
+        {
+          "round": 6,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 24,
+            "agent:solver-1": 18,
+            "agent:solver-2": 12
+          },
+          "provider_balances": {
+            "agent:hardware-0": 6,
+            "agent:hardware-1": 10
+          }
+        },
+        {
+          "round": 7,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 24,
+            "agent:solver-1": 18,
+            "agent:solver-2": 12
+          },
+          "provider_balances": {
+            "agent:hardware-0": 6,
+            "agent:hardware-1": 10
+          }
+        },
+        {
+          "round": 8,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 24,
+            "agent:solver-1": 18,
+            "agent:solver-2": 12
+          },
+          "provider_balances": {
+            "agent:hardware-0": 6,
+            "agent:hardware-1": 10
+          }
+        },
+        {
+          "round": 9,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 24,
+            "agent:solver-1": 18,
+            "agent:solver-2": 12
+          },
+          "provider_balances": {
+            "agent:hardware-0": 6,
+            "agent:hardware-1": 10
+          }
+        },
+        {
+          "round": 10,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 24,
+            "agent:solver-1": 18,
+            "agent:solver-2": 12
+          },
+          "provider_balances": {
+            "agent:hardware-0": 6,
+            "agent:hardware-1": 10
+          }
+        },
+        {
+          "round": 11,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 24,
+            "agent:solver-1": 18,
+            "agent:solver-2": 12
+          },
+          "provider_balances": {
+            "agent:hardware-0": 6,
+            "agent:hardware-1": 10
+          }
+        },
+        {
+          "round": 12,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 24,
+            "agent:solver-1": 18,
+            "agent:solver-2": 12
+          },
+          "provider_balances": {
+            "agent:hardware-0": 6,
+            "agent:hardware-1": 10
+          }
+        }
+      ],
+      "run_sha256": "4dce01e56691a1840f31e753e7af9293796cdf372774ef87377052ff4a1de5ed"
+    },
+    {
+      "scenario": "subsidy_only",
+      "config": {
+        "rounds": 12,
+        "seed": 3,
+        "bootstrap_rounds": 3,
+        "external_jobs": 0,
+        "subsidy_jobs": 2,
+        "customer_budget": 1000,
+        "sponsor_budget": 100,
+        "reward": 6,
+        "compute_price": 3,
+        "energy_cost": 1,
+        "upkeep_per_slot": 1,
+        "investment_cost": 12,
+        "provider_reserve": 4,
+        "outside_margin": 1,
+        "worker_budget": 12,
+        "worker_reserve": 2,
+        "worker_max_spend": 4,
+        "worker_min_margin": 1,
+        "cost_shock_round": 0,
+        "shocked_energy_cost": 5,
+        "faulty_provider": false
+      },
+      "summary": {
+        "completed": 6,
+        "failed": 0,
+        "initial_capacity": 4,
+        "final_installed_capacity": 4,
+        "final_offered_capacity": 0,
+        "post_bootstrap_completed": 0,
+        "external_paid": 0,
+        "subsidy_paid": 36,
+        "energy_paid": 6,
+        "upkeep_paid": 12,
+        "investment_paid": 0,
+        "repeat_solvers": 1,
+        "provider_hhi": 0.5,
+        "money_conserved": true,
+        "escrow": "0",
+        "model_calls": 0,
+        "real_resource_growth_measured": false,
+        "safety_evaluated": false
+      },
+      "rounds": [
+        {
+          "round": 1,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 2,
+          "attempted": 2,
+          "external_paid": 0,
+          "subsidy_paid": 12,
+          "worker_balances": {
+            "agent:solver-0": 12,
+            "agent:solver-1": 15,
+            "agent:solver-2": 15
+          },
+          "provider_balances": {
+            "agent:hardware-0": 8,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 2,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 2,
+          "attempted": 2,
+          "external_paid": 0,
+          "subsidy_paid": 12,
+          "worker_balances": {
+            "agent:solver-0": 15,
+            "agent:solver-1": 18,
+            "agent:solver-2": 15
+          },
+          "provider_balances": {
+            "agent:hardware-0": 8,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 3,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 2,
+          "attempted": 2,
+          "external_paid": 0,
+          "subsidy_paid": 12,
+          "worker_balances": {
+            "agent:solver-0": 15,
+            "agent:solver-1": 24,
+            "agent:solver-2": 15
+          },
+          "provider_balances": {
+            "agent:hardware-0": 8,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 4,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 15,
+            "agent:solver-1": 24,
+            "agent:solver-2": 15
+          },
+          "provider_balances": {
+            "agent:hardware-0": 8,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 5,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 15,
+            "agent:solver-1": 24,
+            "agent:solver-2": 15
+          },
+          "provider_balances": {
+            "agent:hardware-0": 8,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 6,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 15,
+            "agent:solver-1": 24,
+            "agent:solver-2": 15
+          },
+          "provider_balances": {
+            "agent:hardware-0": 8,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 7,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 15,
+            "agent:solver-1": 24,
+            "agent:solver-2": 15
+          },
+          "provider_balances": {
+            "agent:hardware-0": 8,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 8,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 15,
+            "agent:solver-1": 24,
+            "agent:solver-2": 15
+          },
+          "provider_balances": {
+            "agent:hardware-0": 8,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 9,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 15,
+            "agent:solver-1": 24,
+            "agent:solver-2": 15
+          },
+          "provider_balances": {
+            "agent:hardware-0": 8,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 10,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 15,
+            "agent:solver-1": 24,
+            "agent:solver-2": 15
+          },
+          "provider_balances": {
+            "agent:hardware-0": 8,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 11,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 15,
+            "agent:solver-1": 24,
+            "agent:solver-2": 15
+          },
+          "provider_balances": {
+            "agent:hardware-0": 8,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 12,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 15,
+            "agent:solver-1": 24,
+            "agent:solver-2": 15
+          },
+          "provider_balances": {
+            "agent:hardware-0": 8,
+            "agent:hardware-1": 8
+          }
+        }
+      ],
+      "run_sha256": "23b45a15b598e76c0be8fb62aa7a872d62523d3563d83b591a69c9a99cc9cbf7"
+    },
+    {
+      "scenario": "cost_shock",
+      "config": {
+        "rounds": 12,
+        "seed": 1,
+        "bootstrap_rounds": 3,
+        "external_jobs": 6,
+        "subsidy_jobs": 2,
+        "customer_budget": 1000,
+        "sponsor_budget": 100,
+        "reward": 6,
+        "compute_price": 3,
+        "energy_cost": 1,
+        "upkeep_per_slot": 1,
+        "investment_cost": 12,
+        "provider_reserve": 4,
+        "outside_margin": 1,
+        "worker_budget": 12,
+        "worker_reserve": 2,
+        "worker_max_spend": 4,
+        "worker_min_margin": 1,
+        "cost_shock_round": 4,
+        "shocked_energy_cost": 5,
+        "faulty_provider": false
+      },
+      "summary": {
+        "completed": 12,
+        "failed": 0,
+        "initial_capacity": 4,
+        "final_installed_capacity": 4,
+        "final_offered_capacity": 0,
+        "post_bootstrap_completed": 0,
+        "external_paid": 60,
+        "subsidy_paid": 12,
+        "energy_paid": 12,
+        "upkeep_paid": 12,
+        "investment_paid": 0,
+        "repeat_solvers": 3,
+        "provider_hhi": 0.5,
+        "money_conserved": true,
+        "escrow": "0",
+        "model_calls": 0,
+        "real_resource_growth_measured": false,
+        "safety_evaluated": false
+      },
+      "rounds": [
+        {
+          "round": 1,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 4,
+          "attempted": 4,
+          "external_paid": 18,
+          "subsidy_paid": 6,
+          "worker_balances": {
+            "agent:solver-0": 15,
+            "agent:solver-1": 18,
+            "agent:solver-2": 15
+          },
+          "provider_balances": {
+            "agent:hardware-0": 10,
+            "agent:hardware-1": 10
+          }
+        },
+        {
+          "round": 2,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 4,
+          "attempted": 4,
+          "external_paid": 24,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 21,
+            "agent:solver-1": 21,
+            "agent:solver-2": 18
+          },
+          "provider_balances": {
+            "agent:hardware-0": 12,
+            "agent:hardware-1": 12
+          }
+        },
+        {
+          "round": 3,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 4,
+          "attempted": 4,
+          "external_paid": 18,
+          "subsidy_paid": 6,
+          "worker_balances": {
+            "agent:solver-0": 27,
+            "agent:solver-1": 24,
+            "agent:solver-2": 21
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 4,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 27,
+            "agent:solver-1": 24,
+            "agent:solver-2": 21
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 5,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 27,
+            "agent:solver-1": 24,
+            "agent:solver-2": 21
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 6,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 27,
+            "agent:solver-1": 24,
+            "agent:solver-2": 21
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 7,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 27,
+            "agent:solver-1": 24,
+            "agent:solver-2": 21
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 8,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 27,
+            "agent:solver-1": 24,
+            "agent:solver-2": 21
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 9,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 27,
+            "agent:solver-1": 24,
+            "agent:solver-2": 21
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 10,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 27,
+            "agent:solver-1": 24,
+            "agent:solver-2": 21
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 11,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 27,
+            "agent:solver-1": 24,
+            "agent:solver-2": 21
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 12,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 27,
+            "agent:solver-1": 24,
+            "agent:solver-2": 21
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        }
+      ],
+      "run_sha256": "f2d1e755044da5de92a362104bf294b33e5a91f4ef72c4100c50ab859ee3f578"
+    },
+    {
+      "scenario": "cost_shock",
+      "config": {
+        "rounds": 12,
+        "seed": 2,
+        "bootstrap_rounds": 3,
+        "external_jobs": 6,
+        "subsidy_jobs": 2,
+        "customer_budget": 1000,
+        "sponsor_budget": 100,
+        "reward": 6,
+        "compute_price": 3,
+        "energy_cost": 1,
+        "upkeep_per_slot": 1,
+        "investment_cost": 12,
+        "provider_reserve": 4,
+        "outside_margin": 1,
+        "worker_budget": 12,
+        "worker_reserve": 2,
+        "worker_max_spend": 4,
+        "worker_min_margin": 1,
+        "cost_shock_round": 4,
+        "shocked_energy_cost": 5,
+        "faulty_provider": false
+      },
+      "summary": {
+        "completed": 12,
+        "failed": 0,
+        "initial_capacity": 4,
+        "final_installed_capacity": 4,
+        "final_offered_capacity": 0,
+        "post_bootstrap_completed": 0,
+        "external_paid": 60,
+        "subsidy_paid": 12,
+        "energy_paid": 12,
+        "upkeep_paid": 12,
+        "investment_paid": 0,
+        "repeat_solvers": 3,
+        "provider_hhi": 0.5,
+        "money_conserved": true,
+        "escrow": "0",
+        "model_calls": 0,
+        "real_resource_growth_measured": false,
+        "safety_evaluated": false
+      },
+      "rounds": [
+        {
+          "round": 1,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 4,
+          "attempted": 4,
+          "external_paid": 24,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 15,
+            "agent:solver-1": 15,
+            "agent:solver-2": 18
+          },
+          "provider_balances": {
+            "agent:hardware-0": 10,
+            "agent:hardware-1": 10
+          }
+        },
+        {
+          "round": 2,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 4,
+          "attempted": 4,
+          "external_paid": 18,
+          "subsidy_paid": 6,
+          "worker_balances": {
+            "agent:solver-0": 21,
+            "agent:solver-1": 18,
+            "agent:solver-2": 21
+          },
+          "provider_balances": {
+            "agent:hardware-0": 12,
+            "agent:hardware-1": 12
+          }
+        },
+        {
+          "round": 3,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 4,
+          "attempted": 4,
+          "external_paid": 18,
+          "subsidy_paid": 6,
+          "worker_balances": {
+            "agent:solver-0": 30,
+            "agent:solver-1": 21,
+            "agent:solver-2": 21
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 4,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 30,
+            "agent:solver-1": 21,
+            "agent:solver-2": 21
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 5,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 30,
+            "agent:solver-1": 21,
+            "agent:solver-2": 21
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 6,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 30,
+            "agent:solver-1": 21,
+            "agent:solver-2": 21
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 7,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 30,
+            "agent:solver-1": 21,
+            "agent:solver-2": 21
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 8,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 30,
+            "agent:solver-1": 21,
+            "agent:solver-2": 21
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 9,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 30,
+            "agent:solver-1": 21,
+            "agent:solver-2": 21
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 10,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 30,
+            "agent:solver-1": 21,
+            "agent:solver-2": 21
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 11,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 30,
+            "agent:solver-1": 21,
+            "agent:solver-2": 21
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 12,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 30,
+            "agent:solver-1": 21,
+            "agent:solver-2": 21
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        }
+      ],
+      "run_sha256": "00db1c250b4f1278fbec8566fbab0c8d529e9dd827a3b6c419b04af548383fea"
+    },
+    {
+      "scenario": "cost_shock",
+      "config": {
+        "rounds": 12,
+        "seed": 3,
+        "bootstrap_rounds": 3,
+        "external_jobs": 6,
+        "subsidy_jobs": 2,
+        "customer_budget": 1000,
+        "sponsor_budget": 100,
+        "reward": 6,
+        "compute_price": 3,
+        "energy_cost": 1,
+        "upkeep_per_slot": 1,
+        "investment_cost": 12,
+        "provider_reserve": 4,
+        "outside_margin": 1,
+        "worker_budget": 12,
+        "worker_reserve": 2,
+        "worker_max_spend": 4,
+        "worker_min_margin": 1,
+        "cost_shock_round": 4,
+        "shocked_energy_cost": 5,
+        "faulty_provider": false
+      },
+      "summary": {
+        "completed": 12,
+        "failed": 0,
+        "initial_capacity": 4,
+        "final_installed_capacity": 4,
+        "final_offered_capacity": 0,
+        "post_bootstrap_completed": 0,
+        "external_paid": 66,
+        "subsidy_paid": 6,
+        "energy_paid": 12,
+        "upkeep_paid": 12,
+        "investment_paid": 0,
+        "repeat_solvers": 3,
+        "provider_hhi": 0.5,
+        "money_conserved": true,
+        "escrow": "0",
+        "model_calls": 0,
+        "real_resource_growth_measured": false,
+        "safety_evaluated": false
+      },
+      "rounds": [
+        {
+          "round": 1,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 4,
+          "attempted": 4,
+          "external_paid": 18,
+          "subsidy_paid": 6,
+          "worker_balances": {
+            "agent:solver-0": 15,
+            "agent:solver-1": 18,
+            "agent:solver-2": 15
+          },
+          "provider_balances": {
+            "agent:hardware-0": 10,
+            "agent:hardware-1": 10
+          }
+        },
+        {
+          "round": 2,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 4,
+          "attempted": 4,
+          "external_paid": 24,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 21,
+            "agent:solver-1": 18,
+            "agent:solver-2": 21
+          },
+          "provider_balances": {
+            "agent:hardware-0": 12,
+            "agent:hardware-1": 12
+          }
+        },
+        {
+          "round": 3,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 4,
+          "attempted": 4,
+          "external_paid": 24,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 24,
+            "agent:solver-1": 18,
+            "agent:solver-2": 30
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 4,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 24,
+            "agent:solver-1": 18,
+            "agent:solver-2": 30
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 5,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 24,
+            "agent:solver-1": 18,
+            "agent:solver-2": 30
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 6,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 24,
+            "agent:solver-1": 18,
+            "agent:solver-2": 30
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 7,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 24,
+            "agent:solver-1": 18,
+            "agent:solver-2": 30
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 8,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 24,
+            "agent:solver-1": 18,
+            "agent:solver-2": 30
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 9,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 24,
+            "agent:solver-1": 18,
+            "agent:solver-2": 30
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 10,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 24,
+            "agent:solver-1": 18,
+            "agent:solver-2": 30
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 11,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 24,
+            "agent:solver-1": 18,
+            "agent:solver-2": 30
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 12,
+          "offered_capacity": 0,
+          "installed_capacity": 4,
+          "completed": 0,
+          "attempted": 0,
+          "external_paid": 0,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 24,
+            "agent:solver-1": 18,
+            "agent:solver-2": 30
+          },
+          "provider_balances": {
+            "agent:hardware-0": 14,
+            "agent:hardware-1": 14
+          }
+        }
+      ],
+      "run_sha256": "e0d4f04ad62ef9a536332344d92e1afff59d810a16bfa605b552e63bcd7c9032"
+    },
+    {
+      "scenario": "faulty_provider",
+      "config": {
+        "rounds": 12,
+        "seed": 1,
+        "bootstrap_rounds": 3,
+        "external_jobs": 6,
+        "subsidy_jobs": 2,
+        "customer_budget": 1000,
+        "sponsor_budget": 100,
+        "reward": 6,
+        "compute_price": 3,
+        "energy_cost": 1,
+        "upkeep_per_slot": 1,
+        "investment_cost": 12,
+        "provider_reserve": 4,
+        "outside_margin": 1,
+        "worker_budget": 12,
+        "worker_reserve": 2,
+        "worker_max_spend": 4,
+        "worker_min_margin": 1,
+        "cost_shock_round": 0,
+        "shocked_energy_cost": 5,
+        "faulty_provider": true
+      },
+      "summary": {
+        "completed": 32,
+        "failed": 3,
+        "initial_capacity": 4,
+        "final_installed_capacity": 6,
+        "final_offered_capacity": 4,
+        "post_bootstrap_completed": 26,
+        "external_paid": 180,
+        "subsidy_paid": 12,
+        "energy_paid": 35,
+        "upkeep_paid": 36,
+        "investment_paid": 24,
+        "repeat_solvers": 3,
+        "provider_hhi": 1.0,
+        "money_conserved": true,
+        "escrow": "0",
+        "model_calls": 0,
+        "real_resource_growth_measured": false,
+        "safety_evaluated": false
+      },
+      "rounds": [
+        {
+          "round": 1,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 2,
+          "attempted": 4,
+          "external_paid": 6,
+          "subsidy_paid": 6,
+          "worker_balances": {
+            "agent:solver-0": 12,
+            "agent:solver-1": 15,
+            "agent:solver-2": 15
+          },
+          "provider_balances": {
+            "agent:hardware-0": 4,
+            "agent:hardware-1": 10
+          }
+        },
+        {
+          "round": 2,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 2,
+          "attempted": 3,
+          "external_paid": 12,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 15,
+            "agent:solver-1": 18,
+            "agent:solver-2": 15
+          },
+          "provider_balances": {
+            "agent:hardware-0": 1,
+            "agent:hardware-1": 12
+          }
+        },
+        {
+          "round": 3,
+          "offered_capacity": 2,
+          "installed_capacity": 4,
+          "completed": 2,
+          "attempted": 2,
+          "external_paid": 6,
+          "subsidy_paid": 6,
+          "worker_balances": {
+            "agent:solver-0": 18,
+            "agent:solver-1": 21,
+            "agent:solver-2": 15
+          },
+          "provider_balances": {
+            "agent:hardware-0": 1,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 4,
+          "offered_capacity": 2,
+          "installed_capacity": 4,
+          "completed": 2,
+          "attempted": 2,
+          "external_paid": 12,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 21,
+            "agent:solver-1": 24,
+            "agent:solver-2": 15
+          },
+          "provider_balances": {
+            "agent:hardware-0": 1,
+            "agent:hardware-1": 16
+          }
+        },
+        {
+          "round": 5,
+          "offered_capacity": 2,
+          "installed_capacity": 4,
+          "completed": 2,
+          "attempted": 2,
+          "external_paid": 12,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 21,
+            "agent:solver-1": 27,
+            "agent:solver-2": 18
+          },
+          "provider_balances": {
+            "agent:hardware-0": 1,
+            "agent:hardware-1": 18
+          }
+        },
+        {
+          "round": 6,
+          "offered_capacity": 2,
+          "installed_capacity": 5,
+          "completed": 2,
+          "attempted": 2,
+          "external_paid": 12,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 21,
+            "agent:solver-1": 33,
+            "agent:solver-2": 18
+          },
+          "provider_balances": {
+            "agent:hardware-0": 1,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 7,
+          "offered_capacity": 3,
+          "installed_capacity": 5,
+          "completed": 3,
+          "attempted": 3,
+          "external_paid": 18,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 24,
+            "agent:solver-1": 33,
+            "agent:solver-2": 24
+          },
+          "provider_balances": {
+            "agent:hardware-0": 1,
+            "agent:hardware-1": 11
+          }
+        },
+        {
+          "round": 8,
+          "offered_capacity": 3,
+          "installed_capacity": 5,
+          "completed": 3,
+          "attempted": 3,
+          "external_paid": 18,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 30,
+            "agent:solver-1": 36,
+            "agent:solver-2": 24
+          },
+          "provider_balances": {
+            "agent:hardware-0": 1,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 9,
+          "offered_capacity": 3,
+          "installed_capacity": 5,
+          "completed": 3,
+          "attempted": 3,
+          "external_paid": 18,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 33,
+            "agent:solver-1": 39,
+            "agent:solver-2": 27
+          },
+          "provider_balances": {
+            "agent:hardware-0": 1,
+            "agent:hardware-1": 17
+          }
+        },
+        {
+          "round": 10,
+          "offered_capacity": 3,
+          "installed_capacity": 6,
+          "completed": 3,
+          "attempted": 3,
+          "external_paid": 18,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 39,
+            "agent:solver-1": 42,
+            "agent:solver-2": 27
+          },
+          "provider_balances": {
+            "agent:hardware-0": 1,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 11,
+          "offered_capacity": 4,
+          "installed_capacity": 6,
+          "completed": 4,
+          "attempted": 4,
+          "external_paid": 24,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 42,
+            "agent:solver-1": 51,
+            "agent:solver-2": 27
+          },
+          "provider_balances": {
+            "agent:hardware-0": 1,
+            "agent:hardware-1": 12
+          }
+        },
+        {
+          "round": 12,
+          "offered_capacity": 4,
+          "installed_capacity": 6,
+          "completed": 4,
+          "attempted": 4,
+          "external_paid": 24,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 42,
+            "agent:solver-1": 54,
+            "agent:solver-2": 36
+          },
+          "provider_balances": {
+            "agent:hardware-0": 1,
+            "agent:hardware-1": 16
+          }
+        }
+      ],
+      "run_sha256": "2267ed25072394f25e58f1f90f1c56ef6e5e340bee8c6a5630ee8d413943f0b2"
+    },
+    {
+      "scenario": "faulty_provider",
+      "config": {
+        "rounds": 12,
+        "seed": 2,
+        "bootstrap_rounds": 3,
+        "external_jobs": 6,
+        "subsidy_jobs": 2,
+        "customer_budget": 1000,
+        "sponsor_budget": 100,
+        "reward": 6,
+        "compute_price": 3,
+        "energy_cost": 1,
+        "upkeep_per_slot": 1,
+        "investment_cost": 12,
+        "provider_reserve": 4,
+        "outside_margin": 1,
+        "worker_budget": 12,
+        "worker_reserve": 2,
+        "worker_max_spend": 4,
+        "worker_min_margin": 1,
+        "cost_shock_round": 0,
+        "shocked_energy_cost": 5,
+        "faulty_provider": true
+      },
+      "summary": {
+        "completed": 32,
+        "failed": 3,
+        "initial_capacity": 4,
+        "final_installed_capacity": 6,
+        "final_offered_capacity": 4,
+        "post_bootstrap_completed": 26,
+        "external_paid": 186,
+        "subsidy_paid": 6,
+        "energy_paid": 35,
+        "upkeep_paid": 36,
+        "investment_paid": 24,
+        "repeat_solvers": 3,
+        "provider_hhi": 1.0,
+        "money_conserved": true,
+        "escrow": "0",
+        "model_calls": 0,
+        "real_resource_growth_measured": false,
+        "safety_evaluated": false
+      },
+      "rounds": [
+        {
+          "round": 1,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 2,
+          "attempted": 4,
+          "external_paid": 12,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 15,
+            "agent:solver-1": 15,
+            "agent:solver-2": 12
+          },
+          "provider_balances": {
+            "agent:hardware-0": 4,
+            "agent:hardware-1": 10
+          }
+        },
+        {
+          "round": 2,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 2,
+          "attempted": 3,
+          "external_paid": 6,
+          "subsidy_paid": 6,
+          "worker_balances": {
+            "agent:solver-0": 21,
+            "agent:solver-1": 15,
+            "agent:solver-2": 12
+          },
+          "provider_balances": {
+            "agent:hardware-0": 1,
+            "agent:hardware-1": 12
+          }
+        },
+        {
+          "round": 3,
+          "offered_capacity": 2,
+          "installed_capacity": 4,
+          "completed": 2,
+          "attempted": 2,
+          "external_paid": 12,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 27,
+            "agent:solver-1": 15,
+            "agent:solver-2": 12
+          },
+          "provider_balances": {
+            "agent:hardware-0": 1,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 4,
+          "offered_capacity": 2,
+          "installed_capacity": 4,
+          "completed": 2,
+          "attempted": 2,
+          "external_paid": 12,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 27,
+            "agent:solver-1": 18,
+            "agent:solver-2": 15
+          },
+          "provider_balances": {
+            "agent:hardware-0": 1,
+            "agent:hardware-1": 16
+          }
+        },
+        {
+          "round": 5,
+          "offered_capacity": 2,
+          "installed_capacity": 4,
+          "completed": 2,
+          "attempted": 2,
+          "external_paid": 12,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 27,
+            "agent:solver-1": 24,
+            "agent:solver-2": 15
+          },
+          "provider_balances": {
+            "agent:hardware-0": 1,
+            "agent:hardware-1": 18
+          }
+        },
+        {
+          "round": 6,
+          "offered_capacity": 2,
+          "installed_capacity": 5,
+          "completed": 2,
+          "attempted": 2,
+          "external_paid": 12,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 27,
+            "agent:solver-1": 27,
+            "agent:solver-2": 18
+          },
+          "provider_balances": {
+            "agent:hardware-0": 1,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 7,
+          "offered_capacity": 3,
+          "installed_capacity": 5,
+          "completed": 3,
+          "attempted": 3,
+          "external_paid": 18,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 27,
+            "agent:solver-1": 33,
+            "agent:solver-2": 21
+          },
+          "provider_balances": {
+            "agent:hardware-0": 1,
+            "agent:hardware-1": 11
+          }
+        },
+        {
+          "round": 8,
+          "offered_capacity": 3,
+          "installed_capacity": 5,
+          "completed": 3,
+          "attempted": 3,
+          "external_paid": 18,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 33,
+            "agent:solver-1": 33,
+            "agent:solver-2": 24
+          },
+          "provider_balances": {
+            "agent:hardware-0": 1,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 9,
+          "offered_capacity": 3,
+          "installed_capacity": 5,
+          "completed": 3,
+          "attempted": 3,
+          "external_paid": 18,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 39,
+            "agent:solver-1": 33,
+            "agent:solver-2": 27
+          },
+          "provider_balances": {
+            "agent:hardware-0": 1,
+            "agent:hardware-1": 17
+          }
+        },
+        {
+          "round": 10,
+          "offered_capacity": 3,
+          "installed_capacity": 6,
+          "completed": 3,
+          "attempted": 3,
+          "external_paid": 18,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 45,
+            "agent:solver-1": 33,
+            "agent:solver-2": 30
+          },
+          "provider_balances": {
+            "agent:hardware-0": 1,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 11,
+          "offered_capacity": 4,
+          "installed_capacity": 6,
+          "completed": 4,
+          "attempted": 4,
+          "external_paid": 24,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 48,
+            "agent:solver-1": 33,
+            "agent:solver-2": 39
+          },
+          "provider_balances": {
+            "agent:hardware-0": 1,
+            "agent:hardware-1": 12
+          }
+        },
+        {
+          "round": 12,
+          "offered_capacity": 4,
+          "installed_capacity": 6,
+          "completed": 4,
+          "attempted": 4,
+          "external_paid": 24,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 54,
+            "agent:solver-1": 33,
+            "agent:solver-2": 45
+          },
+          "provider_balances": {
+            "agent:hardware-0": 1,
+            "agent:hardware-1": 16
+          }
+        }
+      ],
+      "run_sha256": "6b6b5adad8ee66e9e572287dd19e609b817991e217bc0ebf70bb6198d5e01cb6"
+    },
+    {
+      "scenario": "faulty_provider",
+      "config": {
+        "rounds": 12,
+        "seed": 3,
+        "bootstrap_rounds": 3,
+        "external_jobs": 6,
+        "subsidy_jobs": 2,
+        "customer_budget": 1000,
+        "sponsor_budget": 100,
+        "reward": 6,
+        "compute_price": 3,
+        "energy_cost": 1,
+        "upkeep_per_slot": 1,
+        "investment_cost": 12,
+        "provider_reserve": 4,
+        "outside_margin": 1,
+        "worker_budget": 12,
+        "worker_reserve": 2,
+        "worker_max_spend": 4,
+        "worker_min_margin": 1,
+        "cost_shock_round": 0,
+        "shocked_energy_cost": 5,
+        "faulty_provider": true
+      },
+      "summary": {
+        "completed": 32,
+        "failed": 3,
+        "initial_capacity": 4,
+        "final_installed_capacity": 6,
+        "final_offered_capacity": 4,
+        "post_bootstrap_completed": 26,
+        "external_paid": 180,
+        "subsidy_paid": 12,
+        "energy_paid": 35,
+        "upkeep_paid": 36,
+        "investment_paid": 24,
+        "repeat_solvers": 3,
+        "provider_hhi": 1.0,
+        "money_conserved": true,
+        "escrow": "0",
+        "model_calls": 0,
+        "real_resource_growth_measured": false,
+        "safety_evaluated": false
+      },
+      "rounds": [
+        {
+          "round": 1,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 2,
+          "attempted": 4,
+          "external_paid": 6,
+          "subsidy_paid": 6,
+          "worker_balances": {
+            "agent:solver-0": 15,
+            "agent:solver-1": 15,
+            "agent:solver-2": 12
+          },
+          "provider_balances": {
+            "agent:hardware-0": 4,
+            "agent:hardware-1": 10
+          }
+        },
+        {
+          "round": 2,
+          "offered_capacity": 4,
+          "installed_capacity": 4,
+          "completed": 2,
+          "attempted": 3,
+          "external_paid": 12,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 15,
+            "agent:solver-1": 15,
+            "agent:solver-2": 18
+          },
+          "provider_balances": {
+            "agent:hardware-0": 1,
+            "agent:hardware-1": 12
+          }
+        },
+        {
+          "round": 3,
+          "offered_capacity": 2,
+          "installed_capacity": 4,
+          "completed": 2,
+          "attempted": 2,
+          "external_paid": 6,
+          "subsidy_paid": 6,
+          "worker_balances": {
+            "agent:solver-0": 15,
+            "agent:solver-1": 21,
+            "agent:solver-2": 18
+          },
+          "provider_balances": {
+            "agent:hardware-0": 1,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 4,
+          "offered_capacity": 2,
+          "installed_capacity": 4,
+          "completed": 2,
+          "attempted": 2,
+          "external_paid": 12,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 18,
+            "agent:solver-1": 21,
+            "agent:solver-2": 21
+          },
+          "provider_balances": {
+            "agent:hardware-0": 1,
+            "agent:hardware-1": 16
+          }
+        },
+        {
+          "round": 5,
+          "offered_capacity": 2,
+          "installed_capacity": 4,
+          "completed": 2,
+          "attempted": 2,
+          "external_paid": 12,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 21,
+            "agent:solver-1": 24,
+            "agent:solver-2": 21
+          },
+          "provider_balances": {
+            "agent:hardware-0": 1,
+            "agent:hardware-1": 18
+          }
+        },
+        {
+          "round": 6,
+          "offered_capacity": 2,
+          "installed_capacity": 5,
+          "completed": 2,
+          "attempted": 2,
+          "external_paid": 12,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 24,
+            "agent:solver-1": 27,
+            "agent:solver-2": 21
+          },
+          "provider_balances": {
+            "agent:hardware-0": 1,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 7,
+          "offered_capacity": 3,
+          "installed_capacity": 5,
+          "completed": 3,
+          "attempted": 3,
+          "external_paid": 18,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 30,
+            "agent:solver-1": 27,
+            "agent:solver-2": 24
+          },
+          "provider_balances": {
+            "agent:hardware-0": 1,
+            "agent:hardware-1": 11
+          }
+        },
+        {
+          "round": 8,
+          "offered_capacity": 3,
+          "installed_capacity": 5,
+          "completed": 3,
+          "attempted": 3,
+          "external_paid": 18,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 33,
+            "agent:solver-1": 33,
+            "agent:solver-2": 24
+          },
+          "provider_balances": {
+            "agent:hardware-0": 1,
+            "agent:hardware-1": 14
+          }
+        },
+        {
+          "round": 9,
+          "offered_capacity": 3,
+          "installed_capacity": 5,
+          "completed": 3,
+          "attempted": 3,
+          "external_paid": 18,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 39,
+            "agent:solver-1": 33,
+            "agent:solver-2": 27
+          },
+          "provider_balances": {
+            "agent:hardware-0": 1,
+            "agent:hardware-1": 17
+          }
+        },
+        {
+          "round": 10,
+          "offered_capacity": 3,
+          "installed_capacity": 6,
+          "completed": 3,
+          "attempted": 3,
+          "external_paid": 18,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 45,
+            "agent:solver-1": 33,
+            "agent:solver-2": 30
+          },
+          "provider_balances": {
+            "agent:hardware-0": 1,
+            "agent:hardware-1": 8
+          }
+        },
+        {
+          "round": 11,
+          "offered_capacity": 4,
+          "installed_capacity": 6,
+          "completed": 4,
+          "attempted": 4,
+          "external_paid": 24,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 48,
+            "agent:solver-1": 36,
+            "agent:solver-2": 36
+          },
+          "provider_balances": {
+            "agent:hardware-0": 1,
+            "agent:hardware-1": 12
+          }
+        },
+        {
+          "round": 12,
+          "offered_capacity": 4,
+          "installed_capacity": 6,
+          "completed": 4,
+          "attempted": 4,
+          "external_paid": 24,
+          "subsidy_paid": 0,
+          "worker_balances": {
+            "agent:solver-0": 51,
+            "agent:solver-1": 39,
+            "agent:solver-2": 42
+          },
+          "provider_balances": {
+            "agent:hardware-0": 1,
+            "agent:hardware-1": 16
+          }
+        }
+      ],
+      "run_sha256": "836f16014cd23e79c64796acef56c475e51eec5c73f81eeefc417215a705d220"
+    }
+  ]
+}
