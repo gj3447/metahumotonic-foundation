@@ -142,7 +142,7 @@ flowchart LR
 
 | 고정 입력 | SHA-256 |
 |---|---|
-| [graph/philosophy.jsonld](graph/philosophy.jsonld) | `b3bd9662275c31d42cd7a5da1b52883c0ef478eaac4d1b64a5feacf5d0a1f045` |
+| [graph/philosophy.jsonld](graph/philosophy.jsonld) | `5dfdc70c8ec937a083bb96e2c3b921c82758adc125de15861cdd0f985b1e5e1d` |
 | [records/2026-10-03/protocol-probes.json](records/2026-10-03/protocol-probes.json) | `8694636f1dfa01b92f72c6487cf4c3159f2a53373397a71998effb270d709d63` |
 
 ```sh

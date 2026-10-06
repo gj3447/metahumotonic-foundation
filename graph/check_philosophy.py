@@ -29,6 +29,8 @@ DATA = HERE / "philosophy.jsonld"
 VIEW = REPO / "PHILOSOPHY.md"
 QUERIES = HERE / "philosophy-queries.json"
 require = base.require
+IDEAL_CLAIMS = (PH.C_mhc_reserve, PH.C_network_sharing,
+                PH.C_autonomous_ideal, PH.C_intervention_safety)
 
 
 def as_list(value):
@@ -189,9 +191,30 @@ def check_integrity(graph, vocab):
         text = str(graph.value(observation, PHV.excerpt))
         require(artifact in artifacts and text and text in artifacts[artifact].decode(),
                 f"document quote differs: {observation}")
-    for claim in (PH.C_mission, PH.C_build, PH.C_resource_purpose):
+    for claim in (PH.C_mission, PH.C_build, PH.C_resource_purpose, *IDEAL_CLAIMS):
         require(graph.value(claim, MHV.text) == graph.value(claim, MHV.span),
                 f"primary claim wording must be an exact quote: {claim}")
+    for claim in IDEAL_CLAIMS:
+        require(graph.value(claim, PROV.wasDerivedFrom) == PH.u_mhc_ideal,
+                "ideal claim lost its current user source")
+    catalog = json.loads(artifacts[PH.source_ideal_research], object_pairs_hook=base.unique_keys)
+    rows = catalog["sources"]
+    observations = {PH[row["id"].removeprefix("ph:")]: row for row in rows}
+    require(len(observations) == len(rows), "duplicate research observation")
+    require(set(graph.subjects(RDF.type, PHV.ResearchObservation)) == set(observations),
+            "research observation coverage changed")
+    for node, row in observations.items():
+        source = PH[row["source_id"].removeprefix("ph:")]
+        require(graph.value(node, DCTERMS.source) == source, "research source changed")
+        for predicate, key in [(MHV.text, "summary"), (MHV.limitation, "limitation"),
+                               (PHV.sourceSection, "section"), (PHV.recordedOn, "observed_on"),
+                               (PHV.authorityClass, "authority"), (PHV.observationMode, "mode")]:
+            require(str(graph.value(node, predicate)) == row[key], "research observation differs from catalog")
+        for predicate, key in [(DCTERMS.source, "url"), (RDFS.label, "title"),
+                               (DCTERMS.publisher, "publisher"), (DCTERMS.hasVersion, "revision")]:
+            require(str(graph.value(source, predicate)) == row[key], "external source metadata changed")
+        require(row["mode"] == "PARAPHRASE" and row["full_text_archived"] is False
+                and row["remote_content_sha256"] is None, "research archival scope promoted")
     # Neither a legacy AI summary nor an AI restatement becomes a direct source.
     claims = set(graph.objects(PH.graph, PHV.sourceClaim))
     claims.update(graph.objects(None, PHV.groundedIn))
@@ -253,6 +276,16 @@ def negative_checks(graph, shapes, vocab, documents):
          lambda g: g.remove((PH.u_purpose, PHV.locator, None))),
         ("resource purpose assigned to AI", PH.C_resource_purpose, PHV.authorityClass,
          lambda g: g.set((PH.C_resource_purpose, PHV.authorityClass, Literal("SECONDARY_AI")))),
+        ("ideal quote assigned to AI", PH.C_intervention_safety, PHV.authorityClass,
+         lambda g: g.set((PH.C_intervention_safety, PHV.authorityClass, Literal("SECONDARY_AI")))),
+        ("adoption hypothesis presented as proven", PH.H_mhc_adoption, MHV.epistemic,
+         lambda g: g.set((PH.H_mhc_adoption, MHV.epistemic, MHV.PROVEN))),
+        ("autonomy experiment presented as run", PH.E_intervention_compare, PHV.verificationStatus,
+         lambda g: g.set((PH.E_intervention_compare, PHV.verificationStatus, Literal("PASS")))),
+        ("research observation presented as safety proof", PH.O_research_risks, PHV.authorityClass,
+         lambda g: g.set((PH.O_research_risks, PHV.authorityClass, Literal("EMPIRICALLY_VERIFIED")))),
+        ("research limitation removed", PH.O_research_compute, MHV.limitation,
+         lambda g: g.remove((PH.O_research_compute, MHV.limitation, None))),
     ]
     for name, focus, path, mutate in cases:
         bad = copy.deepcopy(graph)
@@ -278,6 +311,14 @@ def negative_checks(graph, shapes, vocab, documents):
         ("unknown standard predicate", lambda g: g.add((PH.I_mission, PROV.unknownProperty, PH.foundation))),
         ("resource statement assigned to old artifact", lambda g: g.set(
             (PH.u_resource_purpose, DCTERMS.source, PH.source_record))),
+        ("ideal wording softened into voluntary participation", lambda g: g.set(
+            (PH.C_network_sharing, MHV.text, Literal("모두 자발적으로 공유한다")))),
+        ("new user source overwritten", lambda g: g.set(
+            (PH.u_mhc_ideal, PHV.sourceText, Literal("AI rewrite")))),
+        ("reserve currency source URL changed", lambda g: g.set(
+            (PH.paper_dollar, DCTERMS.source, URIRef("https://example.invalid")))),
+        ("missing research observation", lambda g: g.remove(
+            (PH.O_research_bitcoin, RDF.type, PHV.ResearchObservation))),
     ]
     for name, mutate in integrity_cases:
         bad = copy.deepcopy(graph)
@@ -314,7 +355,7 @@ def render(document, documents):
     kind = lambda name: [n for n in nodes if "phv:" + name in as_list(n.get("@type", []))]
     refs = lambda n: ", ".join(f"`{v}`" for v in as_list(n.get("groundedIn", [])))
     out = ["# MetaHumotonic Foundation — 자유·경제·합의와 Ultra Safety AI", "",
-           "> 사용자 직접 출처 + AI 해석·연구 설계 · G0 · 2026-10-03", "",
+           "> 사용자 직접 출처 + AI 해석·연구 설계 · G0 · 최초 2026-10-03 / 확장 2026-10-06", "",
            "정본 데이터는 [philosophy.jsonld](graph/philosophy.jsonld)이며 이 문서는 그 생성 뷰다. "
            "사용자가 밝힌 목적과 AI가 제안한 의미·실험을 구분한다. 그래프 구축 요청은 AI 세부안 전체의 비준으로 해석하지 않는다.", "",
            "## 사용자가 밝힌 목적", "", "> " + index["ph:C_mission"]["span"], "",
@@ -333,10 +374,40 @@ def render(document, documents):
            '  C --> I[AI 해석 · 제안]', '  I --> M[기존 구현 프로젝트 참조]',
            '  I --> H[미검증 연구 가설]', '  H --> E[미실행 비교 실험]',
            '  I --> Q[열린 질문 · 긴장]', "```", "",
-           "## 철학의 서술과 개발 방향", "",
-           "다음 서술은 **SECONDARY_AI / PROPOSED**다. 원문에 연결된 해석이며 사용자 발언 자체나 검증된 성과가 아니다.", ""]
+           "## MHC·하드웨어 공유·자율 경제의 이상향 — 2026-10-06", "",
+           "[새 사용자 원문과 별도로 작성한 AI 분석](records/2026-10-06/philosophy-sources.json)을 보존한다. "
+           "다음은 직접 인용이며, 안전성에 관한 발언도 사용자의 철학적 주장으로 기록한다. "
+           "USER_PRIMARY는 발언의 출처를 뜻하며 경험적 검증 등급이 아니다.", ""]
+    for ident in IDEAL_CLAIMS:
+        n = index["ph:" + str(ident).removeprefix(str(PH))]
+        out += [f"- **{n['label']}** (`{n['@id']}`): “{n['span']}”"]
+    out += ["", "아래의 연결 서술은 **SECONDARY_AI / PROPOSED**다. 기존 헌장·라이선스를 "
+            "변경하거나 미결정 정책을 비준한 문장이 아니다.", ""]
+    def interpretation(n):
+        result = [f"### {n['label']}", "", n["text"], "", f"출처: {refs(n)} · 분석 원문: `{n['derivedFrom']}`.", ""]
+        research = [index[ref] for ref in as_list(n.get("references", []))
+                    if "phv:ResearchObservation" in as_list(index.get(ref, {}).get("@type", []))]
+        if research:
+            result += ["문헌 관측: " + ", ".join(
+                f"[{index[o['source']]['label']}]({index[o['source']]['source']}) (`{o['@id']}`)" for o in research) + ".", ""]
+        return result
     for n in kind("Interpretation"):
-        out += [f"### {n['label']}", "", n["text"], "", f"출처: {refs(n)} · 분석 원문: `{n['derivedFrom']}`.", ""]
+        if n["derivedFrom"] == "ph:a_mhc_ideal":
+            out += interpretation(n)
+    out += ["```mermaid", "flowchart LR",
+            '  useful[소프트웨어·AI 서비스 유용성] --> demand[MHC 표시·결제·예산 보유]',
+            '  demand --> terms[참여 조건과 하드웨어 공유 약정]',
+            '  terms --> capacity[확인된 가용 컴퓨팅]',
+            '  capacity --> agents[에이전트 자율 실행·검증·정산]',
+            '  agents --> useful',
+            '  demand -. 통화 의존·이탈 비용 .-> tension[자유와의 긴장]',
+            "```", "", "화살표는 **검증할 인과 가설**이다. MHC 채택이 실제 공유나 안전성을 자동 보장하지 않는다. "
+            "[기존 코인 연구](COMPUTE-COIN.md)의 컴퓨팅 기준·서비스 단위·미결정 상환 정책과 함께 읽는다.", "",
+            "## 기존 철학의 서술과 개발 방향", "",
+            "다음 서술도 **SECONDARY_AI / PROPOSED**다. 앞선 원문과 해석을 보존한다.", ""]
+    for n in kind("Interpretation"):
+        if n["derivedFrom"] != "ph:a_mhc_ideal":
+            out += interpretation(n)
     out += ["## 기존 정신·경제 그래프와의 연결", "",
             "하드웨어의 중요성·공유 조건·USL/P2P·CHU/HSWM 안의 자유·경제·합의는 기존 `sp:P1`–`sp:P6`와 "
             "`sp:u1`을 재사용한다. MetaHumoCoin 필요성은 `eco:C_coin` → `eco:u_coin`, 실제 구현 요청은 "
@@ -374,6 +445,14 @@ def render(document, documents):
     out += ["", "## 열린 결정", ""]
     for n in kind("OpenQuestion"):
         out.append(f"- **{n['@id']} · {n['label']} — OPEN:** {n['text']}")
+    out += ["", "## 기축통화·자율 협력에 관한 문헌 관측", "",
+            "2026-10-06 확인. [출처 목록](records/2026-10-06/philosophy-research.json)은 "
+            "원문 URL·판본·문헌 위치·요약·한계를 보존한다. 원격 전문의 복제나 해시를 주장하지 않는다. "
+            "아래는 문헌의 관측이며 MHC에 대한 보증이 아니다.", "",
+            "| 원문 | 관측한 내용 | 적용 한계 |", "|---|---|---|"]
+    for n in kind("ResearchObservation"):
+        source = index[n["source"]]
+        out.append(f"| [{source['label']}]({source['source']}) — {source['dcterms:hasVersion']} | {n['text']} | {n['limitation']} |")
     out += ["", "## 출처와 그래프 계약", "", index["ph:graph"]["controlCard"], "",
             "[어휘](graph/philosophy-vocab.ttl)는 관계별 방향·domain/range·카디널리티를 정의하고 "
             "[SHACL 제약](graph/philosophy.shapes.ttl)이 적용한다. "
@@ -386,7 +465,7 @@ def render(document, documents):
             "공식 표준과 연구 참고 자료:", ""]
     for n in nodes:
         if n.get("@type") == "mhv:SourceDocument":
-            out.append(f"- [{n['label']}]({n['source']}) — {n['dcterms:hasVersion']}; 확인일 2026-10-03.")
+            out.append(f"- [{n['label']}]({n['source']}) — {n['dcterms:hasVersion']}; 등록 관측일 {n['mhv:observedOn']['@value']}.")
     out += ["", "연구 문헌은 협력과 다중 에이전트 위험을 고려할 참고 근거다. 메타휴모토닉의 안전성을 입증한 실험으로 쓰지 않는다.", "",
             "## 재현", "", "```sh", "python3 -m venv /tmp/metahumotonic-graph-venv",
             "/tmp/metahumotonic-graph-venv/bin/python -m pip install -r graph/requirements.txt",

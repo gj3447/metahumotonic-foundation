@@ -21,6 +21,9 @@ phv:OpenQuestion a rdfs:Class ; rdfs:subClassOf phv:Analysis .
 phv:EvaluationPlan a rdfs:Class ; rdfs:subClassOf phv:Analysis .
 phv:EvaluationCase a rdfs:Class ; rdfs:subClassOf prov:Entity .
 phv:Metric a rdfs:Class ; rdfs:subClassOf prov:Entity ; rdfs:comment "Proposed measurement definition; no measured value is asserted." .
+phv:ResearchObservation a rdfs:Class ; rdfs:subClassOf prov:Entity ; rdfs:comment "Dated paraphrase of an external document, not its endorsement of this project. Exactly one dcterms:source -> mhv:SourceDocument and one dcterms:references -> phv:SourceArtifact catalog; AI analyses may reference observations via dcterms:references." .
+phv:sourceSection a rdf:Property ; rdfs:domain phv:ResearchObservation ; rdfs:range xsd:string ; rdfs:comment "Exactly 1; observation -> section locator in the external source. Not an archived full-text claim." .
+phv:observationMode a rdf:Property ; rdfs:domain phv:ResearchObservation ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 PARAPHRASE; observation -> recording mode. No verbatim remote passage." .
 
 phv:inputArtifact a rdf:Property ; rdfs:domain phv:PhilosophyGraph ; rdfs:range phv:SourceArtifact ; rdfs:comment "1..n; graph -> pinned input." .
 phv:sourceClaim a rdf:Property ; rdfs:domain phv:PhilosophyGraph ; rdfs:range mhv:Claim ; rdfs:comment "1..n; graph -> existing direct-source claim. Original claim scope is retained." .

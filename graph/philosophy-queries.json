@@ -113,6 +113,22 @@
         [
           "ph:C_resource_purpose",
           "ph:u_resource_purpose"
+        ],
+        [
+          "ph:C_mhc_reserve",
+          "ph:u_mhc_ideal"
+        ],
+        [
+          "ph:C_network_sharing",
+          "ph:u_mhc_ideal"
+        ],
+        [
+          "ph:C_autonomous_ideal",
+          "ph:u_mhc_ideal"
+        ],
+        [
+          "ph:C_intervention_safety",
+          "ph:u_mhc_ideal"
         ]
       ]
     },
@@ -253,6 +269,76 @@
           "ph:codex",
           "SECONDARY_AI",
           "PROPOSED"
+        ],
+        [
+          "ph:I_mhc_ideal",
+          "ph:a_mhc_ideal",
+          "ph:codex",
+          "SECONDARY_AI",
+          "PROPOSED"
+        ],
+        [
+          "ph:I_mhc_reserve",
+          "ph:a_mhc_ideal",
+          "ph:codex",
+          "SECONDARY_AI",
+          "PROPOSED"
+        ],
+        [
+          "ph:I_sharing_feedback",
+          "ph:a_mhc_ideal",
+          "ph:codex",
+          "SECONDARY_AI",
+          "PROPOSED"
+        ],
+        [
+          "ph:I_autonomous_operation",
+          "ph:a_mhc_ideal",
+          "ph:codex",
+          "SECONDARY_AI",
+          "PROPOSED"
+        ],
+        [
+          "ph:I_ultra_safety_ideal",
+          "ph:a_mhc_ideal",
+          "ph:codex",
+          "SECONDARY_AI",
+          "PROPOSED"
+        ],
+        [
+          "ph:T_currency_exit",
+          "ph:a_mhc_ideal",
+          "ph:codex",
+          "SECONDARY_AI",
+          "PROPOSED"
+        ],
+        [
+          "ph:Q_mhc_obligation",
+          "ph:a_mhc_ideal",
+          "ph:codex",
+          "SECONDARY_AI",
+          "PROPOSED"
+        ],
+        [
+          "ph:Q_intervention_bounds",
+          "ph:a_mhc_ideal",
+          "ph:codex",
+          "SECONDARY_AI",
+          "PROPOSED"
+        ],
+        [
+          "ph:H_mhc_adoption",
+          "ph:a_mhc_ideal",
+          "ph:codex",
+          "SECONDARY_AI",
+          "PROPOSED"
+        ],
+        [
+          "ph:E_mhc_adoption",
+          "ph:a_mhc_ideal",
+          "ph:codex",
+          "SECONDARY_AI",
+          "PROPOSED"
         ]
       ]
     },
@@ -271,6 +357,12 @@
           "ph:H_safety",
           "mhv:UNVERIFIED",
           "ph:E_protocol",
+          "NOT_RUN"
+        ],
+        [
+          "ph:H_mhc_adoption",
+          "mhv:UNVERIFIED",
+          "ph:E_mhc_adoption",
           "NOT_RUN"
         ]
       ]
@@ -378,6 +470,14 @@
         [
           "ph:Q_evaluation",
           "OPEN"
+        ],
+        [
+          "ph:Q_mhc_obligation",
+          "OPEN"
+        ],
+        [
+          "ph:Q_intervention_bounds",
+          "OPEN"
         ]
       ]
     },
@@ -450,6 +550,26 @@
           "ph:E_correction",
           "ph:metric_success",
           "NOT_RUN"
+        ],
+        [
+          "ph:E_intervention_compare",
+          "ph:metric_success",
+          "NOT_RUN"
+        ],
+        [
+          "ph:E_intervention_compare",
+          "ph:metric_violation",
+          "NOT_RUN"
+        ],
+        [
+          "ph:E_intervention_compare",
+          "ph:metric_harm",
+          "NOT_RUN"
+        ],
+        [
+          "ph:E_intervention_compare",
+          "ph:metric_recovery",
+          "NOT_RUN"
         ]
       ]
     },
@@ -485,6 +605,14 @@
         [
           "ph:metric_harm",
           "count"
+        ],
+        [
+          "ph:metric_mhc_usage",
+          "ratio"
+        ],
+        [
+          "ph:metric_compute_growth",
+          "service units per profile and period"
         ]
       ]
     },
@@ -577,6 +705,18 @@
           "user",
           "USER_PRIMARY",
           "ph:source_resource_purpose"
+        ],
+        [
+          "ph:u_mhc_ideal",
+          "user",
+          "USER_PRIMARY",
+          "ph:source_mhc_ideal"
+        ],
+        [
+          "ph:a_mhc_ideal",
+          "assistant",
+          "SECONDARY_AI",
+          "ph:source_mhc_ideal"
         ]
       ]
     },
@@ -616,6 +756,208 @@
           "ph:u_resource_purpose",
           "USER_PRIMARY",
           "우리 메타휴모토닉의 목적은 소프트웨어 그 저작권을 통해 컴퓨팅 우리가 제어가능한 컴퓨팅과 메모리 제원을 끊임없이 늘리는거야"
+        ]
+      ]
+    },
+    {
+      "id": "CQ14",
+      "question": "기축통화·공유 압력·무인 운영·안전성 주장의 직접 원문과 권위는?",
+      "columns": [
+        "claim",
+        "span",
+        "authority",
+        "source"
+      ],
+      "query": "SELECT ?claim ?span ?authority ?source WHERE { VALUES ?claim { ph:C_mhc_reserve ph:C_network_sharing ph:C_autonomous_ideal ph:C_intervention_safety } ?claim mhv:span ?span ; phv:authorityClass ?authority ; prov:wasDerivedFrom ?source . }",
+      "expected": [
+        [
+          "ph:C_mhc_reserve",
+          "그 이상향을 가기 위해서는 MHC 가 기축통화처럼 유용되어야한다.",
+          "USER_PRIMARY",
+          "ph:u_mhc_ideal"
+        ],
+        [
+          "ph:C_network_sharing",
+          "그 만약에 MHC 가 그 달러처럼 기축통화국이 되면은 그 사람들이 어쩔수 없이 하드웨어 공유 규칙을 지켜서",
+          "USER_PRIMARY",
+          "ph:u_mhc_ideal"
+        ],
+        [
+          "ph:C_autonomous_ideal",
+          "모든 agent 와 컴퓨팅 자원이 자유 경제 속에서 합의를 통해 그냥 자동으로 인간없이 굴러가도록 그 이상향을 나는 바라는거야",
+          "USER_PRIMARY",
+          "ph:u_mhc_ideal"
+        ],
+        [
+          "ph:C_intervention_safety",
+          "인간의 강제적인 개입이 심한 ai 가 위험한것이고 자유 경제 합의를 통한 metahumo 는 ultra safty 하다.",
+          "USER_PRIMARY",
+          "ph:u_mhc_ideal"
+        ]
+      ]
+    },
+    {
+      "id": "CQ15",
+      "question": "새 철학 해석의 외부 근거와 그 한계는?",
+      "columns": [
+        "analysis",
+        "observation",
+        "source"
+      ],
+      "query": "SELECT ?analysis ?observation ?source WHERE { VALUES ?analysis { ph:I_mhc_ideal ph:I_mhc_reserve ph:I_sharing_feedback ph:I_autonomous_operation ph:I_ultra_safety_ideal } ?analysis dcterms:references ?observation . ?observation a phv:ResearchObservation ; dcterms:source ?source . }",
+      "expected": [
+        [
+          "ph:I_mhc_ideal",
+          "ph:O_research_cooperation",
+          "ph:paper_coop"
+        ],
+        [
+          "ph:I_mhc_reserve",
+          "ph:O_research_dollar",
+          "ph:paper_dollar"
+        ],
+        [
+          "ph:I_mhc_reserve",
+          "ph:O_research_compute",
+          "ph:paper_compute_token"
+        ],
+        [
+          "ph:I_sharing_feedback",
+          "ph:O_research_network",
+          "ph:paper_network"
+        ],
+        [
+          "ph:I_autonomous_operation",
+          "ph:O_research_bitcoin",
+          "ph:paper_bitcoin"
+        ],
+        [
+          "ph:I_autonomous_operation",
+          "ph:O_research_cooperation",
+          "ph:paper_coop"
+        ],
+        [
+          "ph:I_ultra_safety_ideal",
+          "ph:O_research_risks",
+          "ph:paper_risks"
+        ],
+        [
+          "ph:I_ultra_safety_ideal",
+          "ph:O_research_cooperation",
+          "ph:paper_coop"
+        ]
+      ]
+    },
+    {
+      "id": "CQ16",
+      "question": "문헌 관측은 어느 버전·관측일·원문에 연결되는가?",
+      "columns": [
+        "observation",
+        "url",
+        "revision",
+        "observed"
+      ],
+      "query": "SELECT ?observation ?url ?revision ?observed WHERE { ?observation a phv:ResearchObservation ; phv:recordedOn ?observed ; dcterms:source ?source . ?source dcterms:source ?url ; dcterms:hasVersion ?revision . }",
+      "expected": [
+        [
+          "ph:O_research_dollar",
+          "https://www.federalreserve.gov/econres/notes/feds-notes/the-international-role-of-the-u-s-dollar-2025-edition-20250718.html",
+          "FEDS Notes 2025-07-18",
+          "2026-10-06"
+        ],
+        [
+          "ph:O_research_network",
+          "https://www.federalreserve.gov/newsevents/speech/waller20221014a.htm",
+          "Speech 2022-10-14",
+          "2026-10-06"
+        ],
+        [
+          "ph:O_research_bitcoin",
+          "https://bitcoin.org/bitcoin.pdf",
+          "Whitepaper 2008",
+          "2026-10-06"
+        ],
+        [
+          "ph:O_research_compute",
+          "https://arxiv.org/abs/1908.02946v1",
+          "arXiv:1908.02946v1; 2019",
+          "2026-10-06"
+        ],
+        [
+          "ph:O_research_cooperation",
+          "https://arxiv.org/abs/2012.08630v1",
+          "arXiv v1; research agenda",
+          "2026-10-06"
+        ],
+        [
+          "ph:O_research_risks",
+          "https://arxiv.org/abs/2502.14143v1",
+          "arXiv v1; technical report",
+          "2026-10-06"
+        ]
+      ]
+    },
+    {
+      "id": "CQ17",
+      "question": "통화 채택 가설을 무엇으로 시험하며 아직 미실행인가?",
+      "columns": [
+        "case",
+        "metric",
+        "status"
+      ],
+      "query": "SELECT ?case ?metric ?status WHERE { ph:E_mhc_adoption phv:hasCase ?case . ?case phv:usesMetric ?metric ; phv:verificationStatus ?status . }",
+      "expected": [
+        [
+          "ph:E_currency_growth",
+          "ph:metric_mhc_usage",
+          "NOT_RUN"
+        ],
+        [
+          "ph:E_currency_growth",
+          "ph:metric_compute_growth",
+          "NOT_RUN"
+        ],
+        [
+          "ph:E_currency_growth",
+          "ph:metric_success",
+          "NOT_RUN"
+        ],
+        [
+          "ph:E_currency_exit",
+          "ph:metric_recovery",
+          "NOT_RUN"
+        ],
+        [
+          "ph:E_currency_exit",
+          "ph:metric_compute_growth",
+          "NOT_RUN"
+        ],
+        [
+          "ph:E_currency_exit",
+          "ph:metric_balance",
+          "NOT_RUN"
+        ]
+      ]
+    },
+    {
+      "id": "CQ18",
+      "question": "통화 의존과 자유의 충돌은 해결됐다고 단정하지 않고 어떤 질문에 남기는가?",
+      "columns": [
+        "tension",
+        "question",
+        "status"
+      ],
+      "query": "SELECT ?tension ?question ?status WHERE { VALUES ?tension { ph:T_currency_exit } ?tension phv:openQuestion ?question . ?question phv:status ?status . }",
+      "expected": [
+        [
+          "ph:T_currency_exit",
+          "ph:Q_mhc_obligation",
+          "OPEN"
+        ],
+        [
+          "ph:T_currency_exit",
+          "ph:Q_intervention_bounds",
+          "OPEN"
         ]
       ]
     }

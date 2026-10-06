@@ -47,7 +47,8 @@ phv:ExcerptShape a sh:NodeShape ; sh:targetClass phv:SourceExcerpt ;
       sh:property [ sh:path prov:wasAttributedTo ; sh:class prov:SoftwareAgent ] ]
   ) .
 
-phv:PrimaryClaimShape a sh:NodeShape ; sh:targetNode ph:C_mission, ph:C_build, ph:C_resource_purpose ; sh:class mhv:Claim ;
+phv:PrimaryClaimShape a sh:NodeShape ; sh:targetNode ph:C_mission, ph:C_build, ph:C_resource_purpose,
+  ph:C_mhc_reserve, ph:C_network_sharing, ph:C_autonomous_ideal, ph:C_intervention_safety ; sh:class mhv:Claim ;
   sh:property [ sh:path phv:authorityClass ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "USER_PRIMARY" ] ;
   sh:property [ sh:path mhv:claimStatus ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue mhv:STATED ] ;
   sh:property [ sh:path ( prov:wasDerivedFrom phv:sourceRole ) ; sh:hasValue "user" ] ;
@@ -77,6 +78,17 @@ phv:DocumentShape a sh:NodeShape ; sh:targetClass phv:DocumentExcerpt ;
   sh:property [ sh:path phv:excerpt ; sh:minCount 1 ; sh:maxCount 1 ; sh:minLength 1 ] ;
   sh:property [ sh:path phv:authorityClass ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "DOCUMENT_OBSERVATION" ] ;
   sh:property [ sh:path phv:recordedOn ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:date ] .
+
+phv:ResearchObservationShape a sh:NodeShape ; sh:targetClass phv:ResearchObservation ;
+  sh:property [ sh:path mhv:text ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ] ;
+  sh:property [ sh:path mhv:limitation ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ] ;
+  sh:property [ sh:path phv:authorityClass ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "DOCUMENT_OBSERVATION" ] ;
+  sh:property [ sh:path phv:recordedOn ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:date ] ;
+  sh:property [ sh:path phv:sourceSection ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ] ;
+  sh:property [ sh:path phv:observationMode ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "PARAPHRASE" ] ;
+  sh:property [ sh:path dcterms:source ; sh:minCount 1 ; sh:maxCount 1 ; sh:class mhv:SourceDocument ] ;
+  sh:property [ sh:path dcterms:references ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue ph:source_ideal_research ; sh:class phv:SourceArtifact ] ;
+  sh:property [ sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue ph:codex ] .
 
 phv:TensionShape a sh:NodeShape ; sh:targetClass phv:Tension ; sh:class phv:Analysis ;
   sh:property [ sh:path phv:compares ; sh:class phv:DocumentExcerpt ] ;

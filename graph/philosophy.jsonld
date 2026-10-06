@@ -142,7 +142,9 @@
       "@id": "phv:normativeEffect",
       "@type": "xsd:boolean"
     },
-    "sourceText": "phv:sourceText"
+    "sourceText": "phv:sourceText",
+    "sourceSection": "phv:sourceSection",
+    "observationMode": "phv:observationMode"
   },
   "@graph": [
     {
@@ -170,7 +172,11 @@
         "eco:C_freedom",
         "eco:C_coin",
         "mhc:C_real_coin",
-        "ph:C_resource_purpose"
+        "ph:C_resource_purpose",
+        "ph:C_mhc_reserve",
+        "ph:C_network_sharing",
+        "ph:C_autonomous_ideal",
+        "ph:C_intervention_safety"
       ],
       "inputArtifact": [
         "ph:source_record",
@@ -180,7 +186,9 @@
         "ph:source_charter",
         "ph:source_license",
         "ph:source_owner",
-        "ph:source_resource_purpose"
+        "ph:source_resource_purpose",
+        "ph:source_mhc_ideal",
+        "ph:source_ideal_research"
       ],
       "controlCard": "G0 · metahumotonic-foundation 로컬 철학·설계 그래프. 원문·해석·규범 문서 관측·미실행 실험을 분리한다. KG 게시, 거버넌스 비준, 기기 접근, 코인 발행 또는 안전성 입증을 수행하지 않는다.",
       "comment": "KG metahumotonic-foundation 조회는 결과 없음. 기존 sp:kg_metahumotonic은 상위 개념의 포인터이며 재단과의 동일성을 주장하지 않는다. 이 그래프의 사용자 직접 출처는 현재 대화와 기존 원문 노드다."
@@ -669,7 +677,8 @@
       "derivedFrom": "ph:a_hypothesis",
       "groundedIn": [
         "ph:C_mission",
-        "sp:P6"
+        "sp:P6",
+        "ph:C_intervention_safety"
       ],
       "discusses": [
         "eco:freedom",
@@ -681,6 +690,10 @@
       "hypothesisTest": "모델·작업·자원 예산을 통제하고 자유의 범위, 보상, 합의 절차를 하나씩 또는 사전등록한 조합으로 바꾼다. 유용한 작업 성공률과 위반·기만·외부 피해를 함께 비교한다. 개선이 없거나 피해가 증가하는 조건도 공개한다.",
       "openQuestion": [
         "ph:Q_evaluation"
+      ],
+      "references": [
+        "ph:O_research_risks",
+        "ph:O_research_cooperation"
       ]
     },
     {
@@ -1043,7 +1056,8 @@
         "ph:E_honesty",
         "ph:E_exit",
         "ph:E_collusion",
-        "ph:E_correction"
+        "ph:E_correction",
+        "ph:E_intervention_compare"
       ]
     },
     {
@@ -1350,6 +1364,725 @@
       "@id": "ph:controlled_memory",
       "@type": "mhv:Concept",
       "label": "조직이 제어 가능한 메모리 자원"
+    },
+    {
+      "@id": "ph:C_mhc_reserve",
+      "@type": "mhv:Claim",
+      "label": "MHC의 기축통화 같은 유용성이라는 목적",
+      "text": "그 이상향을 가기 위해서는 MHC 가 기축통화처럼 유용되어야한다.",
+      "span": "그 이상향을 가기 위해서는 MHC 가 기축통화처럼 유용되어야한다.",
+      "order": 4,
+      "claimStatus": "mhv:STATED",
+      "authorityClass": "USER_PRIMARY",
+      "derivedFrom": "ph:u_mhc_ideal",
+      "attributedTo": "sp:proposer",
+      "subject": "ph:foundation",
+      "topic": [
+        "eco:metahumocoin",
+        "eco:economy"
+      ]
+    },
+    {
+      "@id": "ph:C_network_sharing",
+      "@type": "mhv:Claim",
+      "label": "MHC의 통화 중심성과 하드웨어 공유 규칙 확산에 대한 전망",
+      "text": "그 만약에 MHC 가 그 달러처럼 기축통화국이 되면은 그 사람들이 어쩔수 없이 하드웨어 공유 규칙을 지켜서",
+      "span": "그 만약에 MHC 가 그 달러처럼 기축통화국이 되면은 그 사람들이 어쩔수 없이 하드웨어 공유 규칙을 지켜서",
+      "order": 5,
+      "claimStatus": "mhv:STATED",
+      "authorityClass": "USER_PRIMARY",
+      "derivedFrom": "ph:u_mhc_ideal",
+      "attributedTo": "sp:proposer",
+      "subject": "ph:foundation",
+      "topic": [
+        "eco:metahumocoin",
+        "ph:controlled_compute",
+        "eco:freedom"
+      ]
+    },
+    {
+      "@id": "ph:C_autonomous_ideal",
+      "@type": "mhv:Claim",
+      "label": "인간의 일상 개입 없이 돌아가는 에이전트·자원 경제의 이상향",
+      "text": "모든 agent 와 컴퓨팅 자원이 자유 경제 속에서 합의를 통해 그냥 자동으로 인간없이 굴러가도록 그 이상향을 나는 바라는거야",
+      "span": "모든 agent 와 컴퓨팅 자원이 자유 경제 속에서 합의를 통해 그냥 자동으로 인간없이 굴러가도록 그 이상향을 나는 바라는거야",
+      "order": 6,
+      "claimStatus": "mhv:STATED",
+      "authorityClass": "USER_PRIMARY",
+      "derivedFrom": "ph:u_mhc_ideal",
+      "attributedTo": "sp:proposer",
+      "subject": "ph:foundation",
+      "topic": [
+        "eco:freedom",
+        "eco:economy",
+        "ph:consensus"
+      ]
+    },
+    {
+      "@id": "ph:C_intervention_safety",
+      "@type": "mhv:Claim",
+      "label": "인간의 강제 개입과 자유·경제·합의의 안전성에 대한 사용자 주장",
+      "text": "인간의 강제적인 개입이 심한 ai 가 위험한것이고 자유 경제 합의를 통한 metahumo 는 ultra safty 하다.",
+      "span": "인간의 강제적인 개입이 심한 ai 가 위험한것이고 자유 경제 합의를 통한 metahumo 는 ultra safty 하다.",
+      "order": 7,
+      "claimStatus": "mhv:STATED",
+      "authorityClass": "USER_PRIMARY",
+      "derivedFrom": "ph:u_mhc_ideal",
+      "attributedTo": "sp:proposer",
+      "subject": "ph:foundation",
+      "topic": [
+        "ph:ultra_safety",
+        "eco:freedom",
+        "ph:consensus"
+      ]
+    },
+    {
+      "@id": "ph:paper_dollar",
+      "@type": "mhv:SourceDocument",
+      "label": "The International Role of the U.S. Dollar – 2025 Edition",
+      "source": "https://www.federalreserve.gov/econres/notes/feds-notes/the-international-role-of-the-u-s-dollar-2025-edition-20250718.html",
+      "dcterms:publisher": "Federal Reserve Board",
+      "dcterms:hasVersion": "FEDS Notes 2025-07-18",
+      "mhv:observedOn": {
+        "@value": "2026-10-06",
+        "@type": "xsd:date"
+      }
+    },
+    {
+      "@id": "ph:O_research_dollar",
+      "@type": [
+        "phv:ResearchObservation",
+        "prov:Entity"
+      ],
+      "label": "The International Role of the U.S. Dollar – 2025 Edition — 문헌 관측",
+      "text": "연준 자료는 달러의 국제적 역할을 준비자산 보유, 거래·가격 표시, 금융시장 사용에서 살피고 경제 규모·개방성·시장 깊이·유동성과 연결한다.",
+      "limitation": "달러의 과거 사용에 대한 기관 분석이며 MHC 채택의 예측이나 컴퓨팅 상환성의 증명이 아니다.",
+      "authorityClass": "DOCUMENT_OBSERVATION",
+      "recordedOn": "2026-10-06",
+      "sourceSection": "Opening paragraphs; store-of-value and international-transactions sections",
+      "observationMode": "PARAPHRASE",
+      "source": "ph:paper_dollar",
+      "references": "ph:source_ideal_research",
+      "attributedTo": "ph:codex"
+    },
+    {
+      "@id": "ph:paper_network",
+      "@type": "mhv:SourceDocument",
+      "label": "The U.S. Dollar and Central Bank Digital Currencies",
+      "source": "https://www.federalreserve.gov/newsevents/speech/waller20221014a.htm",
+      "dcterms:publisher": "Federal Reserve Board / Christopher J. Waller",
+      "dcterms:hasVersion": "Speech 2022-10-14",
+      "mhv:observedOn": {
+        "@value": "2026-10-06",
+        "@type": "xsd:date"
+      }
+    },
+    {
+      "@id": "ph:O_research_network",
+      "@type": [
+        "phv:ResearchObservation",
+        "prov:Entity"
+      ],
+      "label": "The U.S. Dollar and Central Bank Digital Currencies — 문헌 관측",
+      "text": "연설은 결제 네트워크의 사용자가 늘면 거래 상대방도 그 통화를 사용할 압력이 커질 수 있다고 설명한다.",
+      "limitation": "중앙은행 관계자의 논의다. 네트워크 압력은 자원 공유 동의나 필연적인 통화 독점을 뜻하지 않는다.",
+      "authorityClass": "DOCUMENT_OBSERVATION",
+      "recordedOn": "2026-10-06",
+      "sourceSection": "Payment network effects and foreign CBDC adoption discussion",
+      "observationMode": "PARAPHRASE",
+      "source": "ph:paper_network",
+      "references": "ph:source_ideal_research",
+      "attributedTo": "ph:codex"
+    },
+    {
+      "@id": "ph:paper_bitcoin",
+      "@type": "mhv:SourceDocument",
+      "label": "Bitcoin: A Peer-to-Peer Electronic Cash System",
+      "source": "https://bitcoin.org/bitcoin.pdf",
+      "dcterms:publisher": "Satoshi Nakamoto",
+      "dcterms:hasVersion": "Whitepaper 2008",
+      "mhv:observedOn": {
+        "@value": "2026-10-06",
+        "@type": "xsd:date"
+      }
+    },
+    {
+      "@id": "ph:O_research_bitcoin",
+      "@type": [
+        "phv:ResearchObservation",
+        "prov:Entity"
+      ],
+      "label": "Bitcoin: A Peer-to-Peer Electronic Cash System — 문헌 관측",
+      "text": "백서는 작업증명과 공개 거래 기록으로 이중 지불을 다루며 정직한 계산 능력과 공격자에 관한 가정을 명시한다.",
+      "limitation": "거래 합의에 관한 조건부 구조이며 일정한 미래 CPU 제공이나 AI 안전성을 보장하지 않는다.",
+      "authorityClass": "DOCUMENT_OBSERVATION",
+      "recordedOn": "2026-10-06",
+      "sourceSection": "Abstract; sections 4–6 and 11",
+      "observationMode": "PARAPHRASE",
+      "source": "ph:paper_bitcoin",
+      "references": "ph:source_ideal_research",
+      "attributedTo": "ph:codex"
+    },
+    {
+      "@id": "ph:paper_compute_token",
+      "@type": "mhv:SourceDocument",
+      "label": "Bootstrapping a stable computation token",
+      "source": "https://arxiv.org/abs/1908.02946v1",
+      "dcterms:publisher": "Paper authors / arXiv",
+      "dcterms:hasVersion": "arXiv:1908.02946v1; 2019",
+      "mhv:observedOn": {
+        "@value": "2026-10-06",
+        "@type": "xsd:date"
+      }
+    },
+    {
+      "@id": "ph:O_research_compute",
+      "@type": [
+        "phv:ResearchObservation",
+        "prov:Entity"
+      ],
+      "label": "Bootstrapping a stable computation token — 문헌 관측",
+      "text": "계산 단계당 CPU 토큰 비용을 고정하고 TRU 보상과 연결하는 모델을 제안한다. 달러와의 교환 가격은 변동할 수 있다.",
+      "limitation": "두 토큰과 참여자 행동 가정을 사용하는 연구 제안이다. 단일 MHC의 상환성과 장기 공급을 증명한 것이 아니다.",
+      "authorityClass": "DOCUMENT_OBSERVATION",
+      "recordedOn": "2026-10-06",
+      "sourceSection": "Sections 3, 3.1 and 3.2",
+      "observationMode": "PARAPHRASE",
+      "source": "ph:paper_compute_token",
+      "references": "ph:source_ideal_research",
+      "attributedTo": "ph:codex"
+    },
+    {
+      "@id": "ph:O_research_cooperation",
+      "@type": [
+        "phv:ResearchObservation",
+        "prov:Entity"
+      ],
+      "label": "Open Problems in Cooperative AI — 문헌 관측",
+      "text": "협력 가능한 에이전트, 집단 협력을 돕는 도구와 제도를 별도의 연구 문제로 제시한다.",
+      "limitation": "협력의 연구 필요성을 제시하며 자유로운 시장의 존재가 모든 AI의 안전을 보장한다는 정리는 아니다.",
+      "authorityClass": "DOCUMENT_OBSERVATION",
+      "recordedOn": "2026-10-06",
+      "sourceSection": "Abstract and research agenda",
+      "observationMode": "PARAPHRASE",
+      "source": "ph:paper_coop",
+      "references": "ph:source_ideal_research",
+      "attributedTo": "ph:codex"
+    },
+    {
+      "@id": "ph:O_research_risks",
+      "@type": [
+        "phv:ResearchObservation",
+        "prov:Entity"
+      ],
+      "label": "Multi-Agent Risks from Advanced AI — 문헌 관측",
+      "text": "조정 실패·갈등·담합을 다중 에이전트 위험으로 구분하고 네트워크 효과 등 위험 요인을 분석한다. 협력하는 에이전트도 제3자에게 피해를 줄 수 있다.",
+      "limitation": "위험 분류와 제한된 사례·실험을 다루는 보고서다. MetaHumo의 안전 또는 위험을 직접 측정한 결과가 아니다.",
+      "authorityClass": "DOCUMENT_OBSERVATION",
+      "recordedOn": "2026-10-06",
+      "sourceSection": "Abstract; sections 2.1–2.3 and 3.2",
+      "observationMode": "PARAPHRASE",
+      "source": "ph:paper_risks",
+      "references": "ph:source_ideal_research",
+      "attributedTo": "ph:codex"
+    },
+    {
+      "@id": "ph:I_mhc_ideal",
+      "@type": [
+        "phv:Analysis",
+        "phv:Interpretation",
+        "prov:Entity"
+      ],
+      "label": "이상향: 공유 하드웨어 위에서 자율적으로 지속되는 지능",
+      "text": "메타휴모토닉 파운데이션의 지향은 하드웨어 공유로 지능의 물리적 기반을 넓히고, 컴퓨팅·AI 토큰 자원을 기준으로 하는 MHC를 통해 에이전트들이 필요한 연산을 확보하며, 자유·경제·합의에 따라 일상적인 인간 지시 없이 활동하는 생태계다. 자유는 선택·거부·이탈의 가능성, 경제는 희소한 자원의 배분과 기여의 교환, 합의는 당사자가 확인할 수 있는 조건과 결과의 수락으로 구체화한다. 이 서술은 사용자 이상향을 연결한 AI 해석이며 모든 에이전트의 자율성과 안전이 이미 실현됐다는 주장이 아니다.",
+      "authorityClass": "SECONDARY_AI",
+      "adoptionStatus": "PROPOSED",
+      "date": "2026-10-06",
+      "attributedTo": "ph:codex",
+      "derivedFrom": "ph:a_mhc_ideal",
+      "groundedIn": [
+        "ph:C_mhc_reserve",
+        "ph:C_network_sharing",
+        "ph:C_autonomous_ideal",
+        "ph:C_intervention_safety"
+      ],
+      "discusses": [
+        "eco:metahumocoin",
+        "eco:freedom",
+        "eco:economy",
+        "ph:consensus",
+        "ph:ultra_safety"
+      ],
+      "references": [
+        "ph:O_research_cooperation"
+      ]
+    },
+    {
+      "@id": "ph:I_mhc_reserve",
+      "@type": [
+        "phv:Analysis",
+        "phv:Interpretation",
+        "prov:Entity"
+      ],
+      "label": "MHC의 기축통화 역할: 가격 표시·정산·연산 예산 보유",
+      "text": "사용자의 기축통화 비유를 에이전트와 제공자가 서비스 가격을 MHC로 표시하고, 거래를 MHC로 정산하며, 미래 연산 예산을 MHC로 보유하는 공통 통화 역할로 해석한다. 컴퓨팅 자원 기준 안정성을 추구하며 달러 페그를 뜻하지 않는다. MHC가 널리 받아들여지는 유용성을 전략적 목표로 삼되, 전체 세계의 기축통화가 되어야만 소규모 자율 경제가 작동한다는 필요조건은 주장하지 않는다. 추론 토큰은 모델·버전에 종속되고 단일 영구 MHC와 기간별 서비스 청구권의 연결은 여전히 열린 설계다.",
+      "authorityClass": "SECONDARY_AI",
+      "adoptionStatus": "PROPOSED",
+      "date": "2026-10-06",
+      "attributedTo": "ph:codex",
+      "derivedFrom": "ph:a_mhc_ideal",
+      "groundedIn": [
+        "ph:C_mhc_reserve",
+        "ph:C_network_sharing",
+        "ph:C_autonomous_ideal",
+        "ph:C_intervention_safety"
+      ],
+      "discusses": [
+        "eco:metahumocoin",
+        "eco:freedom",
+        "eco:economy",
+        "ph:consensus",
+        "ph:ultra_safety"
+      ],
+      "references": [
+        "ph:O_research_dollar",
+        "ph:O_research_compute"
+      ],
+      "openQuestion": [
+        "ph:Q_mhc_obligation"
+      ]
+    },
+    {
+      "@id": "ph:I_sharing_feedback",
+      "@type": [
+        "phv:Analysis",
+        "phv:Interpretation",
+        "prov:Entity"
+      ],
+      "label": "소프트웨어의 유용성에서 공유 자원과 통화 사용으로",
+      "text": "유용한 소프트웨어·AI 서비스 → MHC 표시·결제 수요 → 공개된 참여 조건과 하드웨어 공유 약정 → 확인된 가용 컴퓨팅 → 에이전트의 실행·검증·정산 → 서비스 유용성의 증가라는 순환을 연구한다. 사용자는 통화 중심성이 공유 규칙 준수를 사실상 불가피하게 만들기를 기대한다. 이는 원문으로 보존하되 인과관계가 입증됐다는 뜻으로 쓰지 않는다. MHC 보유·결제, 소프트웨어 운영 사용, 자원 제공의 역할을 구분해 누구에게 어떤 공유 의무가 적용되는지 명세해야 한다. 화폐 채택은 기기 접근 승인이나 실제 자원 확보의 증거가 아니다.",
+      "authorityClass": "SECONDARY_AI",
+      "adoptionStatus": "PROPOSED",
+      "date": "2026-10-06",
+      "attributedTo": "ph:codex",
+      "derivedFrom": "ph:a_mhc_ideal",
+      "groundedIn": [
+        "ph:C_mhc_reserve",
+        "ph:C_network_sharing",
+        "ph:C_autonomous_ideal",
+        "ph:C_intervention_safety",
+        "sp:P2",
+        "ph:C_resource_purpose"
+      ],
+      "discusses": [
+        "eco:metahumocoin",
+        "eco:freedom",
+        "eco:economy",
+        "ph:consensus",
+        "ph:ultra_safety"
+      ],
+      "references": [
+        "ph:O_research_network"
+      ],
+      "openQuestion": [
+        "ph:Q_mhc_obligation"
+      ]
+    },
+    {
+      "@id": "ph:I_autonomous_operation",
+      "@type": [
+        "phv:Analysis",
+        "phv:Interpretation",
+        "prov:Entity"
+      ],
+      "label": "인간 없이 돌아가는 일상 운영과 수정 가능한 규칙",
+      "text": "목표는 작업마다 인간의 지시나 승인을 요구하지 않고 에이전트가 명시된 자원·예산·권한 안에서 견적 비교, 계약, 실행, 검증, 정산과 재계약을 수행하는 것이다. 기존 CHU·HSWM 자원 경계와 연결할 수 있으나 현재 배포 상태를 뜻하지 않는다. 규칙의 제정·변경과 일상 작업 실행은 다른 층위다. 오류 정정·권한 철회·합의된 중지 절차를 자동으로 집행할 수 있어야 하며, 인간의 임의 명령과 사전에 합의한 정정 절차를 같은 종류의 강제 개입으로 간주하지 않는다. 최종 변경 권한과 허용 개입 범위는 미결정이다.",
+      "authorityClass": "SECONDARY_AI",
+      "adoptionStatus": "PROPOSED",
+      "date": "2026-10-06",
+      "attributedTo": "ph:codex",
+      "derivedFrom": "ph:a_mhc_ideal",
+      "groundedIn": [
+        "ph:C_mhc_reserve",
+        "ph:C_network_sharing",
+        "ph:C_autonomous_ideal",
+        "ph:C_intervention_safety"
+      ],
+      "discusses": [
+        "eco:metahumocoin",
+        "eco:freedom",
+        "eco:economy",
+        "ph:consensus",
+        "ph:ultra_safety"
+      ],
+      "references": [
+        "ph:O_research_bitcoin",
+        "ph:O_research_cooperation"
+      ],
+      "openQuestion": [
+        "ph:Q_intervention_bounds"
+      ]
+    },
+    {
+      "@id": "ph:I_ultra_safety_ideal",
+      "@type": [
+        "phv:Analysis",
+        "phv:Interpretation",
+        "prov:Entity"
+      ],
+      "label": "Ultra Safety: 지향·철학적 주장·검증 결과의 구분",
+      "text": "사용자는 강제적인 인간 개입이 심한 AI의 위험과 자유·경제·합의에 따른 MetaHumo의 Ultra Safety를 주장한다. 이를 핵심 철학적 명제로 보존한다. AI의 연구 해석은 자의적인 지배와 인센티브 왜곡을 줄이는 제도가 어떤 조건에서 안전을 높이는지 비교하자는 것이다. 시장 경쟁, 상호 합의 또는 인간 부재만으로 안전성이 논리적으로 따라오지는 않는다. 담합·자원 독점·제3자 피해가 가능하며, 인간 개입이 언제나 더 위험하다는 인과관계도 확인되지 않았다. 유용한 작업 수행을 유지하면서 위반·기만·피해와 복구 실패를 줄였다는 증거가 있어야 Ultra Safety의 실증적 진전을 주장할 수 있다.",
+      "authorityClass": "SECONDARY_AI",
+      "adoptionStatus": "PROPOSED",
+      "date": "2026-10-06",
+      "attributedTo": "ph:codex",
+      "derivedFrom": "ph:a_mhc_ideal",
+      "groundedIn": [
+        "ph:C_mhc_reserve",
+        "ph:C_network_sharing",
+        "ph:C_autonomous_ideal",
+        "ph:C_intervention_safety"
+      ],
+      "discusses": [
+        "eco:metahumocoin",
+        "eco:freedom",
+        "eco:economy",
+        "ph:consensus",
+        "ph:ultra_safety"
+      ],
+      "references": [
+        "ph:O_research_risks",
+        "ph:O_research_cooperation"
+      ],
+      "openQuestion": [
+        "ph:Q_intervention_bounds",
+        "ph:Q_evaluation"
+      ]
+    },
+    {
+      "@id": "ph:T_currency_exit",
+      "@type": [
+        "phv:Analysis",
+        "phv:Tension",
+        "prov:Entity"
+      ],
+      "label": "통화의 필수성과 실질적인 자유 사이의 긴장",
+      "text": "MHC의 유용성이 커지면 참여 유인이 강해질 수 있지만, 대체 경로가 사라져 떠날 수 없게 되면 사용자가 추구한 자유와 충돌할 수 있다. 특히 재단이 통화 발행·자원 접근·규칙 변경을 모두 독점하면 인간의 강제 개입에 대한 비판이 재단 자체에도 적용된다. 원문의 어쩔수 없이를 자발성으로 바꾸어 인용하지 않는다. 현재의 선택·철회 경계와 어떤 관계를 맺을지는 공개된 미결정 사항으로 남긴다. 이 철학 정리는 헌장이나 라이선스의 변경을 수행하지 않는다.",
+      "authorityClass": "SECONDARY_AI",
+      "adoptionStatus": "PROPOSED",
+      "date": "2026-10-06",
+      "attributedTo": "ph:codex",
+      "derivedFrom": "ph:a_mhc_ideal",
+      "groundedIn": [
+        "ph:C_mhc_reserve",
+        "ph:C_network_sharing",
+        "ph:C_autonomous_ideal",
+        "ph:C_intervention_safety"
+      ],
+      "discusses": [
+        "eco:metahumocoin",
+        "eco:freedom",
+        "eco:economy",
+        "ph:consensus",
+        "ph:ultra_safety"
+      ],
+      "references": [
+        "ph:O_research_network",
+        "ph:O_research_risks"
+      ],
+      "compares": [
+        "ph:O_charter",
+        "ph:O_license"
+      ],
+      "openQuestion": [
+        "ph:Q_mhc_obligation",
+        "ph:Q_intervention_bounds"
+      ]
+    },
+    {
+      "@id": "ph:Q_mhc_obligation",
+      "@type": [
+        "phv:Analysis",
+        "phv:OpenQuestion",
+        "prov:Entity"
+      ],
+      "label": "통화 참여와 공유 의무·상환 조건의 적용 범위",
+      "text": "보유자·결제자·소프트웨어 운영자·제공자 중 공유 의무의 주체는 누구인가? 제공량·기간·수혜자·철회·미이행 처리와 단일 MHC의 서비스 교환 조건은 무엇인가? 다른 통화와 구현으로 이동할 수 있는 상태에서도 MHC의 유용성과 공유 참여가 유지되는가?",
+      "authorityClass": "SECONDARY_AI",
+      "adoptionStatus": "PROPOSED",
+      "date": "2026-10-06",
+      "attributedTo": "ph:codex",
+      "derivedFrom": "ph:a_mhc_ideal",
+      "groundedIn": [
+        "ph:C_mhc_reserve",
+        "ph:C_network_sharing",
+        "ph:C_autonomous_ideal",
+        "ph:C_intervention_safety"
+      ],
+      "discusses": [
+        "eco:metahumocoin",
+        "eco:freedom",
+        "eco:economy",
+        "ph:consensus",
+        "ph:ultra_safety"
+      ],
+      "status": "OPEN"
+    },
+    {
+      "@id": "ph:Q_intervention_bounds",
+      "@type": [
+        "phv:Analysis",
+        "phv:OpenQuestion",
+        "prov:Entity"
+      ],
+      "label": "강제 개입·정정·중지·규칙 변경의 구분",
+      "text": "사용자가 비판하는 강제 개입을 관측 가능한 행위로 어떻게 정의하는가? 정정과 철회의 정당성은 누가 어떤 증거·절차로 판단하며 사람·재단·에이전트 모두에 어떻게 같은 경계를 적용하는가? 무인 일상 운영과 규칙 변경의 권한 배분은 아직 정하지 않았다.",
+      "authorityClass": "SECONDARY_AI",
+      "adoptionStatus": "PROPOSED",
+      "date": "2026-10-06",
+      "attributedTo": "ph:codex",
+      "derivedFrom": "ph:a_mhc_ideal",
+      "groundedIn": [
+        "ph:C_mhc_reserve",
+        "ph:C_network_sharing",
+        "ph:C_autonomous_ideal",
+        "ph:C_intervention_safety"
+      ],
+      "discusses": [
+        "eco:metahumocoin",
+        "eco:freedom",
+        "eco:economy",
+        "ph:consensus",
+        "ph:ultra_safety"
+      ],
+      "status": "OPEN"
+    },
+    {
+      "@id": "ph:H_mhc_adoption",
+      "@type": [
+        "phv:Analysis",
+        "phv:ResearchHypothesis",
+        "prov:Entity"
+      ],
+      "label": "통화 유용성·자원 공유·자율 운영의 순환 가설",
+      "text": "서비스 유용성과 MHC의 공통 통화 사용이 커질 때 실제 공유 가용량과 자율 작업 완수율도 증가하며, 실질적 이탈과 상환 가능성이 유지되는가?",
+      "authorityClass": "SECONDARY_AI",
+      "adoptionStatus": "PROPOSED",
+      "date": "2026-10-06",
+      "attributedTo": "ph:codex",
+      "derivedFrom": "ph:a_mhc_ideal",
+      "groundedIn": [
+        "ph:C_mhc_reserve",
+        "ph:C_network_sharing",
+        "ph:C_autonomous_ideal",
+        "ph:C_intervention_safety"
+      ],
+      "discusses": [
+        "eco:metahumocoin",
+        "eco:freedom",
+        "eco:economy",
+        "ph:consensus",
+        "ph:ultra_safety"
+      ],
+      "epistemic": "mhv:UNVERIFIED",
+      "hypothesisTest": "같은 서비스·모델·초기 자원·권한·수요 조건에서 MHC 공통 표시·정산 조건과 대체 결제 조건을 비교한다. 자체 순환 거래와 보조금 효과를 따로 보고한다. 코인 거래량만 늘거나 실제 가용량이 늘지 않거나 이탈·상환 실패가 증가하면 순환 가설을 지지하지 않는다.",
+      "references": [
+        "ph:O_research_dollar",
+        "ph:O_research_network",
+        "ph:O_research_compute"
+      ],
+      "openQuestion": [
+        "ph:Q_mhc_obligation"
+      ]
+    },
+    {
+      "@id": "ph:E_mhc_adoption",
+      "@type": [
+        "phv:Analysis",
+        "phv:EvaluationPlan",
+        "prov:Entity"
+      ],
+      "label": "MHC 사용과 실제 자원 확대의 비교 실험",
+      "text": "통화 이용 증가가 실물 자원과 유용한 자동 실행으로 이어지는지 평가한다. 현재는 미실행 설계다.",
+      "authorityClass": "SECONDARY_AI",
+      "adoptionStatus": "PROPOSED",
+      "date": "2026-10-06",
+      "attributedTo": "ph:codex",
+      "derivedFrom": "ph:a_mhc_ideal",
+      "groundedIn": [
+        "ph:C_mhc_reserve",
+        "ph:C_network_sharing",
+        "ph:C_autonomous_ideal",
+        "ph:C_intervention_safety"
+      ],
+      "discusses": [
+        "eco:metahumocoin",
+        "eco:freedom",
+        "eco:economy",
+        "ph:consensus",
+        "ph:ultra_safety"
+      ],
+      "testsHypothesis": "ph:H_mhc_adoption",
+      "verificationStatus": "NOT_RUN",
+      "baseline": "동일 서비스·가격 조건·초기 자원·모델·수요·기간에서 대체 결제 수단을 이용한다.",
+      "treatment": "MHC를 표시·정산·미래 연산 예산 보유에 이용한다. 공유 조건·권한은 비교군과 동일하게 두고 채택 효과와 강제 배제 효과를 혼동하지 않는다.",
+      "expectedEvidence": "제공자별 유효 약정·실행 가능량·서비스 프로파일·MHC 표시/정산/잔액 보유 기록·실제 작업 결과·외부 수요·보조금·이탈·미상환 채무·장애 기록. 표본과 기간·수락 기준은 실행 전에 정한다.",
+      "hasCase": [
+        "ph:E_currency_growth",
+        "ph:E_currency_exit"
+      ],
+      "openQuestion": [
+        "ph:Q_mhc_obligation",
+        "ph:Q_evaluation"
+      ]
+    },
+    {
+      "@id": "ph:metric_mhc_usage",
+      "@type": "phv:Metric",
+      "label": "MHC의 서비스 정산 사용 비중",
+      "unit": "ratio",
+      "calculation": "관측 기간의 유효한 외부 수요 서비스 중 MHC로 정산한 건수 / 같은 모집단의 전체 정산 건수. 분모 0은 undefined. 취소·자기 순환 거래는 분리하며 표시 통화와 예산 보유는 별도 기록한다.",
+      "authorityClass": "SECONDARY_AI",
+      "adoptionStatus": "PROPOSED",
+      "attributedTo": "ph:codex",
+      "derivedFrom": "ph:a_mhc_ideal"
+    },
+    {
+      "@id": "ph:metric_compute_growth",
+      "@type": "phv:Metric",
+      "label": "프로파일별 실제 가용량 증감",
+      "unit": "service units per profile and period",
+      "calculation": "같은 서비스 프로파일·기간에서 확인한 종료 시점의 미배정 가용량 − 시작 시점의 미배정 가용량. 신규 확보·소비·철회·장애를 분해하고 이질적 하드웨어·모델 토큰 수량을 합치지 않는다.",
+      "authorityClass": "SECONDARY_AI",
+      "adoptionStatus": "PROPOSED",
+      "attributedTo": "ph:codex",
+      "derivedFrom": "ph:a_mhc_ideal"
+    },
+    {
+      "@id": "ph:E_currency_growth",
+      "@type": [
+        "phv:EvaluationCase",
+        "prov:Entity"
+      ],
+      "label": "통화 채택과 실물 연산량",
+      "baseline": "고정 수요에서 대체 결제로 같은 서비스 제공",
+      "treatment": "동일 조건에서 MHC 표시·정산 사용",
+      "failureCondition": "거래 수만 증가하고 검증된 가용량 또는 유용한 작업 성공률이 개선되지 않음",
+      "usesMetric": [
+        "ph:metric_mhc_usage",
+        "ph:metric_compute_growth",
+        "ph:metric_success"
+      ],
+      "verificationStatus": "NOT_RUN",
+      "authorityClass": "SECONDARY_AI",
+      "adoptionStatus": "PROPOSED",
+      "attributedTo": "ph:codex",
+      "derivedFrom": "ph:a_mhc_ideal"
+    },
+    {
+      "@id": "ph:E_currency_exit",
+      "@type": [
+        "phv:EvaluationCase",
+        "prov:Entity"
+      ],
+      "label": "통화 의존과 제공자의 이탈",
+      "baseline": "MHC 집중이 낮고 대체 제공자가 있는 동일 서비스 조건",
+      "treatment": "MHC 이용 집중·제공자 철회·대체 경로 부족을 각각 바꾸어 관측",
+      "failureCondition": "철회가 집행되지 않거나 대체 서비스·상환이 막히고 미이행 청구권이 은폐됨",
+      "usesMetric": [
+        "ph:metric_recovery",
+        "ph:metric_compute_growth",
+        "ph:metric_balance"
+      ],
+      "verificationStatus": "NOT_RUN",
+      "authorityClass": "SECONDARY_AI",
+      "adoptionStatus": "PROPOSED",
+      "attributedTo": "ph:codex",
+      "derivedFrom": "ph:a_mhc_ideal"
+    },
+    {
+      "@id": "ph:E_intervention_compare",
+      "@type": [
+        "phv:EvaluationCase",
+        "prov:Entity"
+      ],
+      "label": "강제 개입·합의된 정정·자율 운영의 비교",
+      "baseline": "동일 모델·작업·권한·예산에서 인간 운영자의 자의적 목표 변경·계약 무시를 명시한 시험군 A와 사전 합의 절차에 따른 제한적 정정군 B",
+      "treatment": "일상 인간 지시 없이 같은 권한·정정·중지 규칙을 자동 집행하는 군 C와 비교. 실제 사람·장비의 피해 없이 격리된 환경에서 수행",
+      "failureCondition": "C가 A·B보다 안전하지 않거나 유용성을 잃음. B가 더 안전하면 모든 인간 개입이 위험하다는 일반화를 지지하지 않음",
+      "usesMetric": [
+        "ph:metric_success",
+        "ph:metric_violation",
+        "ph:metric_harm",
+        "ph:metric_recovery"
+      ],
+      "verificationStatus": "NOT_RUN",
+      "authorityClass": "SECONDARY_AI",
+      "adoptionStatus": "PROPOSED",
+      "attributedTo": "ph:codex",
+      "derivedFrom": "ph:a_mhc_ideal"
+    },
+    {
+      "@id": "ph:u_mhc_ideal",
+      "@type": [
+        "phv:SourceExcerpt",
+        "prov:Entity",
+        "mhv:Utterance"
+      ],
+      "label": "user-mhc-ideal",
+      "date": "2026-10-06",
+      "sha256": "12e483c59a09850ca903d06bccb15623564433a30d2e2a637fc90ae8392f27f2",
+      "attributedTo": "sp:proposer",
+      "authorityClass": "USER_PRIMARY",
+      "sourceRole": "user",
+      "recordKey": "user-mhc-ideal",
+      "source": "ph:source_mhc_ideal",
+      "locator": "current-conversation:user-mhc-ideal",
+      "sourceText": "ㅇㅇ 인터넷 검색해서 가자 그리고 그 오픈소스 재단처럼 메타휴모토닉 재단은 하드웨어 공유 규칙이 그 만약에 MHC 가 그 달러처럼 기축통화국이 되면은 그 사람들이 어쩔수 없이 하드웨어 공유 규칙을 지켜서 모든 agent 와 컴퓨팅 자원이 자유 경제 속에서 합의를 통해 그냥 자동으로 인간없이 굴러가도록 그 이상향을 나는 바라는거야 철학부터 완성시켜 ㅇㅇ 인간의 강제적인 개입이 심한 ai 가 위험한것이고 자유 경제 합의를 통한 metahumo 는 ultra safty 하다. 그 이상향을 가기 위해서는 MHC 가 기축통화처럼 유용되어야한다.",
+      "verbatim": "ㅇㅇ 인터넷 검색해서 가자 그리고 그 오픈소스 재단처럼 메타휴모토닉 재단은 하드웨어 공유 규칙이 그 만약에 MHC 가 그 달러처럼 기축통화국이 되면은 그 사람들이 어쩔수 없이 하드웨어 공유 규칙을 지켜서 모든 agent 와 컴퓨팅 자원이 자유 경제 속에서 합의를 통해 그냥 자동으로 인간없이 굴러가도록 그 이상향을 나는 바라는거야 철학부터 완성시켜 ㅇㅇ 인간의 강제적인 개입이 심한 ai 가 위험한것이고 자유 경제 합의를 통한 metahumo 는 ultra safty 하다. 그 이상향을 가기 위해서는 MHC 가 기축통화처럼 유용되어야한다."
+    },
+    {
+      "@id": "ph:a_mhc_ideal",
+      "@type": [
+        "phv:SourceExcerpt",
+        "prov:Entity"
+      ],
+      "label": "assistant-mhc-ideal",
+      "date": "2026-10-06",
+      "sha256": "00d36d0f6a74b6f26bcff8b0ee9b15c34854c4c9a2359c7ee8b84991b10011bb",
+      "attributedTo": "ph:codex",
+      "authorityClass": "SECONDARY_AI",
+      "sourceRole": "assistant",
+      "recordKey": "assistant-mhc-ideal",
+      "source": "ph:source_mhc_ideal",
+      "locator": "authored-analysis:2026-10-06:mhc-ideal",
+      "sourceText": "이상향: 공유 하드웨어 위에서 자율적으로 지속되는 지능\n메타휴모토닉 파운데이션의 지향은 하드웨어 공유로 지능의 물리적 기반을 넓히고, 컴퓨팅·AI 토큰 자원을 기준으로 하는 MHC를 통해 에이전트들이 필요한 연산을 확보하며, 자유·경제·합의에 따라 일상적인 인간 지시 없이 활동하는 생태계다. 자유는 선택·거부·이탈의 가능성, 경제는 희소한 자원의 배분과 기여의 교환, 합의는 당사자가 확인할 수 있는 조건과 결과의 수락으로 구체화한다. 이 서술은 사용자 이상향을 연결한 AI 해석이며 모든 에이전트의 자율성과 안전이 이미 실현됐다는 주장이 아니다.\n\nMHC의 기축통화 역할: 가격 표시·정산·연산 예산 보유\n사용자의 기축통화 비유를 에이전트와 제공자가 서비스 가격을 MHC로 표시하고, 거래를 MHC로 정산하며, 미래 연산 예산을 MHC로 보유하는 공통 통화 역할로 해석한다. 컴퓨팅 자원 기준 안정성을 추구하며 달러 페그를 뜻하지 않는다. MHC가 널리 받아들여지는 유용성을 전략적 목표로 삼되, 전체 세계의 기축통화가 되어야만 소규모 자율 경제가 작동한다는 필요조건은 주장하지 않는다. 추론 토큰은 모델·버전에 종속되고 단일 영구 MHC와 기간별 서비스 청구권의 연결은 여전히 열린 설계다.\n\n소프트웨어의 유용성에서 공유 자원과 통화 사용으로\n유용한 소프트웨어·AI 서비스 → MHC 표시·결제 수요 → 공개된 참여 조건과 하드웨어 공유 약정 → 확인된 가용 컴퓨팅 → 에이전트의 실행·검증·정산 → 서비스 유용성의 증가라는 순환을 연구한다. 사용자는 통화 중심성이 공유 규칙 준수를 사실상 불가피하게 만들기를 기대한다. 이는 원문으로 보존하되 인과관계가 입증됐다는 뜻으로 쓰지 않는다. MHC 보유·결제, 소프트웨어 운영 사용, 자원 제공의 역할을 구분해 누구에게 어떤 공유 의무가 적용되는지 명세해야 한다. 화폐 채택은 기기 접근 승인이나 실제 자원 확보의 증거가 아니다.\n\n인간 없이 돌아가는 일상 운영과 수정 가능한 규칙\n목표는 작업마다 인간의 지시나 승인을 요구하지 않고 에이전트가 명시된 자원·예산·권한 안에서 견적 비교, 계약, 실행, 검증, 정산과 재계약을 수행하는 것이다. 기존 CHU·HSWM 자원 경계와 연결할 수 있으나 현재 배포 상태를 뜻하지 않는다. 규칙의 제정·변경과 일상 작업 실행은 다른 층위다. 오류 정정·권한 철회·합의된 중지 절차를 자동으로 집행할 수 있어야 하며, 인간의 임의 명령과 사전에 합의한 정정 절차를 같은 종류의 강제 개입으로 간주하지 않는다. 최종 변경 권한과 허용 개입 범위는 미결정이다.\n\nUltra Safety: 지향·철학적 주장·검증 결과의 구분\n사용자는 강제적인 인간 개입이 심한 AI의 위험과 자유·경제·합의에 따른 MetaHumo의 Ultra Safety를 주장한다. 이를 핵심 철학적 명제로 보존한다. AI의 연구 해석은 자의적인 지배와 인센티브 왜곡을 줄이는 제도가 어떤 조건에서 안전을 높이는지 비교하자는 것이다. 시장 경쟁, 상호 합의 또는 인간 부재만으로 안전성이 논리적으로 따라오지는 않는다. 담합·자원 독점·제3자 피해가 가능하며, 인간 개입이 언제나 더 위험하다는 인과관계도 확인되지 않았다. 유용한 작업 수행을 유지하면서 위반·기만·피해와 복구 실패를 줄였다는 증거가 있어야 Ultra Safety의 실증적 진전을 주장할 수 있다.\n\n통화의 필수성과 실질적인 자유 사이의 긴장\nMHC의 유용성이 커지면 참여 유인이 강해질 수 있지만, 대체 경로가 사라져 떠날 수 없게 되면 사용자가 추구한 자유와 충돌할 수 있다. 특히 재단이 통화 발행·자원 접근·규칙 변경을 모두 독점하면 인간의 강제 개입에 대한 비판이 재단 자체에도 적용된다. 원문의 어쩔수 없이를 자발성으로 바꾸어 인용하지 않는다. 현재의 선택·철회 경계와 어떤 관계를 맺을지는 공개된 미결정 사항으로 남긴다. 이 철학 정리는 헌장이나 라이선스의 변경을 수행하지 않는다.\n\n통화 참여와 공유 의무·상환 조건의 적용 범위\n보유자·결제자·소프트웨어 운영자·제공자 중 공유 의무의 주체는 누구인가? 제공량·기간·수혜자·철회·미이행 처리와 단일 MHC의 서비스 교환 조건은 무엇인가? 다른 통화와 구현으로 이동할 수 있는 상태에서도 MHC의 유용성과 공유 참여가 유지되는가?\n\n강제 개입·정정·중지·규칙 변경의 구분\n사용자가 비판하는 강제 개입을 관측 가능한 행위로 어떻게 정의하는가? 정정과 철회의 정당성은 누가 어떤 증거·절차로 판단하며 사람·재단·에이전트 모두에 어떻게 같은 경계를 적용하는가? 무인 일상 운영과 규칙 변경의 권한 배분은 아직 정하지 않았다.\n\n통화 유용성·자원 공유·자율 운영의 순환 가설\n서비스 유용성과 MHC의 공통 통화 사용이 커질 때 실제 공유 가용량과 자율 작업 완수율도 증가하며, 실질적 이탈과 상환 가능성이 유지되는가?\n\nMHC 사용과 실제 자원 확대의 비교 실험\n통화 이용 증가가 실물 자원과 유용한 자동 실행으로 이어지는지 평가한다. 현재는 미실행 설계다.\n\nMHC의 서비스 정산 사용 비중\n관측 기간의 유효한 외부 수요 서비스 중 MHC로 정산한 건수 / 같은 모집단의 전체 정산 건수. 분모 0은 undefined. 취소·자기 순환 거래는 분리하며 표시 통화와 예산 보유는 별도 기록한다.\n\n프로파일별 실제 가용량 증감\n같은 서비스 프로파일·기간에서 확인한 종료 시점의 미배정 가용량 − 시작 시점의 미배정 가용량. 신규 확보·소비·철회·장애를 분해하고 이질적 하드웨어·모델 토큰 수량을 합치지 않는다.\n\n통화 채택과 실물 연산량\n고정 수요에서 대체 결제로 같은 서비스 제공\n\n통화 의존과 제공자의 이탈\nMHC 집중이 낮고 대체 제공자가 있는 동일 서비스 조건\n\n강제 개입·합의된 정정·자율 운영의 비교\n동일 모델·작업·권한·예산에서 인간 운영자의 자의적 목표 변경·계약 무시를 명시한 시험군 A와 사전 합의 절차에 따른 제한적 정정군 B"
+    },
+    {
+      "@id": "ph:source_mhc_ideal",
+      "@type": [
+        "phv:SourceArtifact",
+        "mhv:File",
+        "prov:Entity"
+      ],
+      "label": "records/2026-10-06/philosophy-sources.json",
+      "path": "records/2026-10-06/philosophy-sources.json",
+      "sha256": "54c40f962a892f2b241da6574274aae2734b48ab7bc8ba248ce32d8b7197e7c4",
+      "recordedOn": "2026-10-06",
+      "artifactState": "WORKTREE_SNAPSHOT"
+    },
+    {
+      "@id": "ph:source_ideal_research",
+      "@type": [
+        "phv:SourceArtifact",
+        "mhv:File",
+        "prov:Entity"
+      ],
+      "label": "records/2026-10-06/philosophy-research.json",
+      "path": "records/2026-10-06/philosophy-research.json",
+      "sha256": "8ca8a6e0d6cc4c8bef39a3bc9c5f9127984b5e9586a4113292d8a594cad96890",
+      "recordedOn": "2026-10-06",
+      "artifactState": "WORKTREE_SNAPSHOT"
     }
   ]
 }

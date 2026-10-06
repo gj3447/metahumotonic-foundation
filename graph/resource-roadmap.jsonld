@@ -166,9 +166,9 @@
       ],
       "label": "graph/philosophy.jsonld",
       "path": "graph/philosophy.jsonld",
-      "sha256": "b3bd9662275c31d42cd7a5da1b52883c0ef478eaac4d1b64a5feacf5d0a1f045",
+      "sha256": "5dfdc70c8ec937a083bb96e2c3b921c82758adc125de15861cdd0f985b1e5e1d",
       "artifactState": "WORKTREE_SNAPSHOT",
-      "recordedOn": "2026-10-04"
+      "recordedOn": "2026-10-06"
     },
     {
       "@id": "rp:source_probe",
