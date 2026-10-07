@@ -16,6 +16,16 @@
   "actual_access_granted": false,
   "governance_ratification": "NOT_COMPLETED",
   "legal_review": "NOT_PERFORMED",
-  "rollout_status": "PREPARED",
-  "publication_tracking": "Subsequent repository commits and verified remote revisions are recorded in records/2026-10-07/public-license-rollout."
+  "rollout_status": "APPLIED_AND_REMOTE_VERIFIED",
+  "publication_tracking": "Subsequent repository commits and verified remote revisions are recorded in records/2026-10-07/public-license-rollout.",
+  "public_repositories": 63,
+  "root_license_adoptions": 59,
+  "scoped_new_works_adoptions": 2,
+  "existing_mhl_repositories_verified": 2,
+  "manifest": "records/2026-10-07/public-license-rollout/manifest.json",
+  "verification_limitations": [
+    "ooptdd-loop full gate stopped at two unchanged E402 findings; six targeted tests passed",
+    "No exhaustive copyright audit or legal review",
+    "No all-repository runtime/CI suite or package-registry release"
+  ]
 }

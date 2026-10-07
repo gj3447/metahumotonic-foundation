@@ -121,15 +121,15 @@ METAHUMOTONIC COMPANY
 
 | Project | 역할 | 공개 상태 |
 |---|---|---|
-| [333](https://github.com/gj3447/333) | 검증 가능한 분산 compute protocol | Public · AGPL-3.0 · protocol alpha |
-| [HSWM](https://github.com/gj3447/HSWM) | 세계모델 연구와 실험 | Public · AGPL-3.0 · research |
-| LakatoTree | 사전등록·판결·재현 영수증 연구 설계 | Candidate · source/license 미확정 |
-| [metahumotonic-web](https://github.com/gj3447/metahumotonic-web) | 공개 웹·연구 surface | Public · MIT |
-| [metahumotonic_web_back](https://github.com/gj3447/metahumotonic_web_back) | 공개 API·feedback backend | Public · AGPL-3.0 |
+| [333](https://github.com/gj3447/333) | 검증 가능한 분산 compute protocol | Public · 기존 AGPL 결합물 유지 · 독립 새 저작물만 MHL |
+| [HSWM](https://github.com/gj3447/HSWM) | 세계모델 연구와 실험 | Public · MHL 1.2 · 기존 허락 보존 |
+| [LakatoTree](https://github.com/gj3447/lakatotree) | 사전등록·판결·재현 영수증 연구 설계 | Public · MHL 1.2 · Foundation Candidate |
+| [metahumotonic-web](https://github.com/gj3447/metahumotonic-web) | 공개 웹·연구 surface | Public · MHL 1.2 · 기존 MIT·CC 등 보존 |
+| [metahumotonic_web_back](https://github.com/gj3447/metahumotonic_web_back) | 공개 API·feedback backend | Public · 기존 AGPL 결합물 유지 · 독립 새 저작물만 MHL |
 
 정확한 채택 상태와 라이선스 검증 근거는 [PROJECTS.md](PROJECTS.md)에 기록합니다.
-각 프로젝트의 라이선스는 해당 저장소가 최종 권위이며, 이 저장소의
-MetaHumotonic License가 다른 프로젝트의 라이선스를 대체하지 않습니다.
+각 프로젝트의 LICENSE와 LICENSE-NOTICE가 실제 적용 범위를 정합니다.
+이번 공개 저장소 적용은 저장소별 별도 커밋으로 기록했으며, 기존 권리와 제3자 조건을 유지합니다.
 
 ## 제안해 주십시오
 

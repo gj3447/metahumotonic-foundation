@@ -1,0 +1,3217 @@
+{
+  "schema": "metahumotonic-public-license-rollout/v1",
+  "date": "2026-10-07",
+  "account": "gj3447",
+  "scope": "61 initially enumerated public repositories plus 2 newly observed public persona repositories already using MHL 1.1; private repositories excluded",
+  "user_source": "user-verbatim.txt",
+  "source_authority": "USER_PRIMARY",
+  "interpretation_authority": "SECONDARY_AI",
+  "author": "OpenAI Codex",
+  "license": "LicenseRef-MetaHumotonic-1.2",
+  "license_sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3",
+  "root_license_adoptions": 59,
+  "scoped_new_works_adoptions": 2,
+  "existing_mhl_repositories_verified": 2,
+  "public_repositories_total": 63,
+  "status": "APPLIED_AND_REMOTE_VERIFIED",
+  "actual_hardware_access_granted": false,
+  "private_visibility_changed": false,
+  "archive_status_preserved": true,
+  "prior_grants_preserved": true,
+  "legal_review": "NOT_PERFORMED",
+  "exhaustive_copyright_audit": "NOT_PERFORMED",
+  "repository_commits": [
+    {
+      "repo": "333",
+      "paths": [
+        "LICENSE-NOTICE.md",
+        "METAHUMOTONIC-LICENSE",
+        "README.md",
+        "license-migration.json",
+        "licenses/pre-mhl-2026-10-07/LICENSE"
+      ],
+      "mode": "SCOPED_NEW_WORKS_ONLY",
+      "base_commit": "5b8bf1511969eee1e3f7cfa86ae8cfc5e1f2e4c1",
+      "base_tree": "feb1ff29c719d8f634e29cc7cd5a7feeac842ef6",
+      "files": [
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "7de3086b8388a5129a69bb201ac97e6e3301bd97f97b69ce35dd280a24516249"
+        },
+        {
+          "path": "METAHUMOTONIC-LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "README.md",
+          "sha256": "4c1873053ecd44ebea053f3ee653e181202fd1dc50c05b1dd7f90e3d837a11d8"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "468eef2517faa1a3e52a1ef7a7ef81764f4d249ceb74f82c4c911d083f9f4455"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSE",
+          "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+        }
+      ],
+      "commit": "94907742fa0eb07ae0c275206363d97ed7b7dd8e",
+      "url": "https://github.com/gj3447/333/commit/94907742fa0eb07ae0c275206363d97ed7b7dd8e",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "agent-coding-paradigm",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "b819fc5c03756f3a7a26d3d46cce839b4aaeda91",
+      "base_tree": "ce85b033d143eeb2270bfac294713f297a2e7b49",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "e2d321084a58c30e26f1540823969e493dfff25d3f67fcc9465904d07042c062"
+        },
+        {
+          "path": "README.md",
+          "sha256": "1efa5904ec893feea4224325fa6d6ae3a6b24ddb7abd6911d94e425ada991974"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "28324a2fbc77a5fb395fc6a8e0fd40c618f3f5a91d8d0243bd9ba85a2f32c9b7"
+        }
+      ],
+      "commit": "6fc9c58cd67d41d14001ef278ea08b77500b891e",
+      "url": "https://github.com/gj3447/agent-coding-paradigm/commit/6fc9c58cd67d41d14001ef278ea08b77500b891e",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "ant_den",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "54459aaddf846f4503bc144b99c862545729b697",
+      "base_tree": "39943602ca372f7997254e6f84f415071adb5f62",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "bb20f7d28cefec0e7fa99b477108d69c752445ceb1dbe96e4758b8261831daa7"
+        },
+        {
+          "path": "README.md",
+          "sha256": "9b36bf440cb98ad4abf0e625f07e0173326a61cddae5cdbecbe42ca809c091e9"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "b64c8cf9ebca27def17085ab2c3e5c9d4c21a043a15bbc053d5c91b745bfd768"
+        }
+      ],
+      "commit": "222d5785a2701b643671df2daf65e80f0af0c3b7",
+      "url": "https://github.com/gj3447/ant_den/commit/222d5785a2701b643671df2daf65e80f0af0c3b7",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "antden",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "a7f252fda5d7b110d9eb46a8ffd29a19543cfbbd",
+      "base_tree": "4fac5537fda1647d7ed9d2163924a713d3055b7a",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "1f8d26561034ab8a790809dcae5d968998b58dfd8cf112c76021c8b48d2cbd31"
+        },
+        {
+          "path": "README.md",
+          "sha256": "64061428c741aefa7dba120ca741e6894438ab38a5feb77f7bebad8f5c2bcfa2"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "c896d23047ecbb44aaa7343b64cedb4ba6ec14d63874d7bf4544a20a80e2e953"
+        }
+      ],
+      "commit": "9782b183666a6a1236a52bae3976ec532f7f2fa0",
+      "url": "https://github.com/gj3447/antden/commit/9782b183666a6a1236a52bae3976ec532f7f2fa0",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "apt-engine",
+      "paths": [
+        "CONTRIBUTING.md",
+        "COPYRIGHT",
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "LICENSING.md",
+        "NOTICE",
+        "README.md",
+        "license-migration.json",
+        "licenses/pre-mhl-2026-10-07/COPYRIGHT",
+        "licenses/pre-mhl-2026-10-07/LICENSE",
+        "licenses/pre-mhl-2026-10-07/LICENSING.md",
+        "licenses/pre-mhl-2026-10-07/NOTICE",
+        "pyproject.toml"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "a118c59b6733e8ddb4d810396196df51b81c15c0",
+      "base_tree": "be769ab69bcd56777a20ce196003b190652485bb",
+      "files": [
+        {
+          "path": "CONTRIBUTING.md",
+          "sha256": "67d4d84003aa0dff1f645e134fdc066baeb1e1bbf7e6c42aa3b032aa5589ce6e"
+        },
+        {
+          "path": "COPYRIGHT",
+          "sha256": "da8a2cb8315659886310cd15d696ec4e85433c923c01097eb488eb592544461b"
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "e65eb35719a1fa7c119dffc8cd0199b0c90fd63e10680073f880f71a32700668"
+        },
+        {
+          "path": "LICENSING.md",
+          "sha256": "67bcae060ff87327cae95925a75064dcddf19f0a31127e83bbecfc29bca36ec8"
+        },
+        {
+          "path": "NOTICE",
+          "sha256": "e2bc7c2141d793a3c827c3d6e8829aaddbdc17ee176640279fe171c2add6e638"
+        },
+        {
+          "path": "README.md",
+          "sha256": "36f2ff822dd82371a65151dd5573197a21b9e1510a456e0a91819217c5136ded"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "f6efc48bffa15fff9a0b6e7d99b1c8b2a1ee40d71706aebb48837de83211ceca"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/COPYRIGHT",
+          "sha256": "7d95d503c9329be70b48d4edf29b834ee34947a15271085ef312d302bac875c4"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSE",
+          "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSING.md",
+          "sha256": "b2cb84f4ee362e935a17f2b2da4852db9f6e74c0b945a87b9e90547b13a02eb6"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/NOTICE",
+          "sha256": "ee3c624ac7176d267dda1cc1b16497f2da96a8cb09ad1f609b4ee7b4f5653784"
+        },
+        {
+          "path": "pyproject.toml",
+          "sha256": "3b6ba297ff0c892c51731a0cab391f48eaf1e324c36d90e0a7a190743f3211db"
+        }
+      ],
+      "commit": "eebe20dd22e35bdc480a54fed86fd17e054257de",
+      "url": "https://github.com/gj3447/apt-engine/commit/eebe20dd22e35bdc480a54fed86fd17e054257de",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "Astar-snake",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "932bd493ec024b3689fc4165c2e770364e5fa811",
+      "base_tree": "c549258bf9873775f2f9ef6416a6e5e12fab08f6",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "d3b7df7d48fffc676d39592c939378642198fcbc9dde8d63e3b468160b614ee8"
+        },
+        {
+          "path": "README.md",
+          "sha256": "0a615814de787adad801b3dd531fab49a8968c479aefeebe8a5e9757f84ee0c1"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "aebb19146cd6b74b5ed7a3a02c163136084573c928289267491a44f919460257"
+        }
+      ],
+      "commit": "bd7b85600c9d1da3f3f0f73918e22d3e688b0ef8",
+      "url": "https://github.com/gj3447/Astar-snake/commit/bd7b85600c9d1da3f3f0f73918e22d3e688b0ef8",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "BackupModuleProgram",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "0e0f663467a57fc0b3f6d3189671720428ffc502",
+      "base_tree": "f636b3b369a965cb4f3167860d9cedec8ec3df33",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "984c25c31779bf3c9f795180f2c6a3406e8bbaf9bcdc5547eb827dd27458043d"
+        },
+        {
+          "path": "README.md",
+          "sha256": "127a5c3fadcaa132caf2672e7b68bf5d7ecffcbedd632ff45f33999efd08aac2"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "2b1a5f41591051845f5581fdf2140b3f70e9de5c96fd82a135757af0f46dc47f"
+        }
+      ],
+      "commit": "a84fcd805c89b0427936ccb4caa026ebcb7c095d",
+      "url": "https://github.com/gj3447/BackupModuleProgram/commit/a84fcd805c89b0427936ccb4caa026ebcb7c095d",
+      "branch": "uiupdate",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "BezierFaceEditor",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "ec016cdc1e967838ebe4909f8604f7a1cf780146",
+      "base_tree": "deae65dc03b79cd314038f80c80f49db33e41a2e",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "81aeb4070be23c2441be2d7aecb2e38fc016e49e4958c3db9e72156fcf4aea90"
+        },
+        {
+          "path": "README.md",
+          "sha256": "ca27938a0b3e5a31f7c3bcb4cd0118d41a1786f4841ac8227e598d313f3b0a3b"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "66bfbcb7f54540bb97dafbfd94f9b91f227472994bc8635e16e94246a318a078"
+        }
+      ],
+      "commit": "a3cac8d4652ccb24dc4abe2856d05e2d18705817",
+      "url": "https://github.com/gj3447/BezierFaceEditor/commit/a3cac8d4652ccb24dc4abe2856d05e2d18705817",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "bhgman",
+      "mode": "EXISTING_MHL_VERIFIED",
+      "action": "READ_ONLY_VERIFICATION",
+      "license": "LicenseRef-MetaHumotonic-1.1",
+      "commit": "8aab0ab49377f3fa5eed84f14e28c3ce1ecf75cb",
+      "url": "https://github.com/gj3447/bhgman/tree/8aab0ab49377f3fa5eed84f14e28c3ce1ecf75cb",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "verification_method": "Pinned public Git blob bytes match the canonical MHL 1.1; existing source-specific notices retained.",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "11b5017d509407b38c2c6b816d3a4600bddcce54189a29b17cb8e234b30a7df1"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "c95f38790cbf4b27e59639b8199b55e639206ddf0a6d99d5e7f9694ad5e9fd3a"
+        }
+      ]
+    },
+    {
+      "repo": "bhgman_essence",
+      "paths": [
+        "CONTRIBUTING.md",
+        "COPYRIGHT",
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "LICENSING.md",
+        "NOTICE",
+        "README.md",
+        "license-migration.json",
+        "licenses/pre-mhl-2026-10-07/COPYRIGHT",
+        "licenses/pre-mhl-2026-10-07/LICENSE",
+        "licenses/pre-mhl-2026-10-07/LICENSING.md",
+        "licenses/pre-mhl-2026-10-07/NOTICE"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "b3ea19e7a101c53f95954045050d91aa8f74062e",
+      "base_tree": "062443a1a8964bc53e3ef7f343ff190535be9e2f",
+      "files": [
+        {
+          "path": "CONTRIBUTING.md",
+          "sha256": "67d4d84003aa0dff1f645e134fdc066baeb1e1bbf7e6c42aa3b032aa5589ce6e"
+        },
+        {
+          "path": "COPYRIGHT",
+          "sha256": "da8a2cb8315659886310cd15d696ec4e85433c923c01097eb488eb592544461b"
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "6a85de293534bc96ccda9af0a8e91b67c76cbe5b323dfe05d5098ae6caeae842"
+        },
+        {
+          "path": "LICENSING.md",
+          "sha256": "67bcae060ff87327cae95925a75064dcddf19f0a31127e83bbecfc29bca36ec8"
+        },
+        {
+          "path": "NOTICE",
+          "sha256": "e2bc7c2141d793a3c827c3d6e8829aaddbdc17ee176640279fe171c2add6e638"
+        },
+        {
+          "path": "README.md",
+          "sha256": "42c17229720485f822827c16cb01afe64bab5de23ec14d9a07f86b6e88da63ab"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "35d15ca1abb738186eba0afd54a82bc6e4a470253bb38de45fe52352a99450f6"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/COPYRIGHT",
+          "sha256": "7d95d503c9329be70b48d4edf29b834ee34947a15271085ef312d302bac875c4"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSE",
+          "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSING.md",
+          "sha256": "b2cb84f4ee362e935a17f2b2da4852db9f6e74c0b945a87b9e90547b13a02eb6"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/NOTICE",
+          "sha256": "ee3c624ac7176d267dda1cc1b16497f2da96a8cb09ad1f609b4ee7b4f5653784"
+        }
+      ],
+      "commit": "68c1495279c07c05fe8cb0eb21b03aae2f8b4e61",
+      "url": "https://github.com/gj3447/bhgman_essence/commit/68c1495279c07c05fe8cb0eb21b03aae2f8b4e61",
+      "branch": "main",
+      "visibility": "public",
+      "archived": true,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "bhgman_tool",
+      "paths": [
+        "CONTRIBUTING.md",
+        "COPYRIGHT",
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "LICENSING.md",
+        "NOTICE",
+        "README.ja-JP.md",
+        "README.ko-KR.md",
+        "README.md",
+        "README.zh-CN.md",
+        "license-migration.json",
+        "licenses/pre-mhl-2026-10-07/COPYRIGHT",
+        "licenses/pre-mhl-2026-10-07/LICENSE",
+        "licenses/pre-mhl-2026-10-07/LICENSING.md",
+        "licenses/pre-mhl-2026-10-07/NOTICE",
+        "pyproject.toml"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "0912625bb38e5c06a885f7160fb99d57c4674b77",
+      "base_tree": "88e4d4b85c38efbdb42477e53f3a18c2e3dcb09f",
+      "files": [
+        {
+          "path": "CONTRIBUTING.md",
+          "sha256": "67d4d84003aa0dff1f645e134fdc066baeb1e1bbf7e6c42aa3b032aa5589ce6e"
+        },
+        {
+          "path": "COPYRIGHT",
+          "sha256": "da8a2cb8315659886310cd15d696ec4e85433c923c01097eb488eb592544461b"
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "5b2fee84b739f79a36b700105006848c5b9a97289539ae1318d44ec695751987"
+        },
+        {
+          "path": "LICENSING.md",
+          "sha256": "67bcae060ff87327cae95925a75064dcddf19f0a31127e83bbecfc29bca36ec8"
+        },
+        {
+          "path": "NOTICE",
+          "sha256": "e2bc7c2141d793a3c827c3d6e8829aaddbdc17ee176640279fe171c2add6e638"
+        },
+        {
+          "path": "README.ja-JP.md",
+          "sha256": "f0f70ab7fda021df6084e00aef170ff6ede9a848330e7f47f0cb4b85d74e6308"
+        },
+        {
+          "path": "README.ko-KR.md",
+          "sha256": "680126f6b94dbea248f2f5ae680a3186ae71d3fc421abb74488120ba3c1540a5"
+        },
+        {
+          "path": "README.md",
+          "sha256": "69197ccc22d151a0fa2d6e9b1af10aadea1256b6257c46bd3d8a5e1b172a15ce"
+        },
+        {
+          "path": "README.zh-CN.md",
+          "sha256": "418a4877335624e60c8a51bd1a63d9434b72376de070be61dc0a7c8cb898b73f"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "c5a7bbaa33dbf31d28ab288114f72c22061e3e72ebe89ab1282aa35b3bd6239f"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/COPYRIGHT",
+          "sha256": "7d95d503c9329be70b48d4edf29b834ee34947a15271085ef312d302bac875c4"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSE",
+          "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSING.md",
+          "sha256": "b2cb84f4ee362e935a17f2b2da4852db9f6e74c0b945a87b9e90547b13a02eb6"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/NOTICE",
+          "sha256": "ee3c624ac7176d267dda1cc1b16497f2da96a8cb09ad1f609b4ee7b4f5653784"
+        },
+        {
+          "path": "pyproject.toml",
+          "sha256": "ea2a25924f1abcea44ab4fdd0b988be6058aa09c88376b023605cd17a6273d15"
+        }
+      ],
+      "commit": "8dee567d3b42368c5f3ac249748f44160474a3cf",
+      "url": "https://github.com/gj3447/bhgman_tool/commit/8dee567d3b42368c5f3ac249748f44160474a3cf",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "BlackBoxManager",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "1a68a8a75bd48ec7c2e0a31fd5ac31711c03a1ee",
+      "base_tree": "087cc17d0a8fe43ee58f41246a4602463645bd6e",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "ade03437ead0d1ee01a882747ee9b0f754c023f09ad528177ca0be1e63c32982"
+        },
+        {
+          "path": "README.md",
+          "sha256": "c9380c0292cb8c35b08962771ef7062d261309713b7b3dcf601fc1a5e672e6ca"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "78de2ca2dd88dbaeefda10172fcb1c09f3b5b749af9c95a2973490524e2e0bb5"
+        }
+      ],
+      "commit": "5610340597cd136597183da369d90793e3b5c3dd",
+      "url": "https://github.com/gj3447/BlackBoxManager/commit/5610340597cd136597183da369d90793e3b5c3dd",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "BlazorWebAppTest",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "0d929012eed16259555299e4eee751442e1db309",
+      "base_tree": "a3b6253c054f89aaf4afe13610df24bb8839368e",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "4bb67b79c1a3c442609b41e5c363cd0b329d3cf4a5df41fa2bd97e3f7d61d225"
+        },
+        {
+          "path": "README.md",
+          "sha256": "51940ad5e6dc4eccae775a6726392768d4bb369014be4a522408ef45d4b4008e"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "c6d25de5c327bb3111bffb7bf5ad3367fcbbe30a5ef3ed8abf428f8214986a3c"
+        }
+      ],
+      "commit": "c18363e86a855606a1f17a058dfd659bff0dccae",
+      "url": "https://github.com/gj3447/BlazorWebAppTest/commit/c18363e86a855606a1f17a058dfd659bff0dccae",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "C--Users-----OneDrive------------VSCODE-hello_django-ant_den",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "05261d72a2ac6e5ac163dcad4f4cf0bfd649ac8c",
+      "base_tree": "13510927fa93e6dfe38f78cd56b423651fe02a27",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "439306de534606c886bf95f4c3ad34ae06e045f917c17110d1d7ec2f05a7dcba"
+        },
+        {
+          "path": "README.md",
+          "sha256": "7e8c28892e0b55be719928821c212403e19f1b6302d4f69e2115438760281fa3"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "13b74dbdba339621adf7324592af201939ffbe4c9df82f84b8f63a5d0cdfafac"
+        }
+      ],
+      "commit": "530a191c89ec2fd44ec4b34e5be23aac1bb2b064",
+      "url": "https://github.com/gj3447/C--Users-----OneDrive------------VSCODE-hello_django-ant_den/commit/530a191c89ec2fd44ec4b34e5be23aac1bb2b064",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "C-practice",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "41d9334190af89cbe1841359d2ba68826f8fbfdb",
+      "base_tree": "a02d7b5c15dbe52cbe211e7e16085627cf66170b",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "ed7a794dc20e36145c6ce6701731bdaf8a47c20794b840a94bc3833c6e5067cc"
+        },
+        {
+          "path": "README.md",
+          "sha256": "3df52498bc5cdd893aace488b5ec5265892701730b58f389967cbfc48f793b33"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "737e7d80ca6186253d3f96b6c35eca1bcff43cf8884019823a68b5b5964eacb3"
+        }
+      ],
+      "commit": "b41dd5b6938aa8d101e1e0f19fd7b5f4e248b84e",
+      "url": "https://github.com/gj3447/C-practice/commit/b41dd5b6938aa8d101e1e0f19fd7b5f4e248b84e",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "chain-reaction-language",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "1dc15cbc9c0cff939c290758cbbc7daa91d325c3",
+      "base_tree": "c5ef05af55724de74373bc6ec7b548d5c75dcd9b",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "680f0fc1425c98577c513f306643e98f464938082630c86a4b76171393e6a603"
+        },
+        {
+          "path": "README.md",
+          "sha256": "fa71b1ae9efaae8c5cb56061f774ee7a0722ee55d7783dee9971e17c324969ff"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "8a5d53b92c311f68b3a7b3dd559e646d77745790e2dc2461792014a07fbecbbc"
+        }
+      ],
+      "commit": "f83e712dcaa2a5211478a4e6d2bbbc72c71c1ed4",
+      "url": "https://github.com/gj3447/chain-reaction-language/commit/f83e712dcaa2a5211478a4e6d2bbbc72c71c1ed4",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "CHU",
+      "paths": [
+        "COPYRIGHT",
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "LICENSING.md",
+        "NOTICE",
+        "README.md",
+        "license-migration.json",
+        "licenses/pre-mhl-2026-10-07/COPYRIGHT",
+        "licenses/pre-mhl-2026-10-07/LICENSE",
+        "licenses/pre-mhl-2026-10-07/LICENSING.md",
+        "licenses/pre-mhl-2026-10-07/NOTICE"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "72916fcd52666e2aa9947fbf2f10f9381114bbe6",
+      "base_tree": "6b38f6aca8a4fbe13521648b0aef937b56a30878",
+      "files": [
+        {
+          "path": "COPYRIGHT",
+          "sha256": "f2b42796dfef6ae9b11067ea9508718caab3d1dd992ebd08ce48d263188f42d3"
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "892bf452050d729ee5b353129e3a11a5b08ccc5182d82b62ee3005ad636d8e55"
+        },
+        {
+          "path": "LICENSING.md",
+          "sha256": "67bcae060ff87327cae95925a75064dcddf19f0a31127e83bbecfc29bca36ec8"
+        },
+        {
+          "path": "NOTICE",
+          "sha256": "a8dd873427dfcddaec94f50c0dac8937852cbe7b090623065859f14022596d4f"
+        },
+        {
+          "path": "README.md",
+          "sha256": "fac450606e88b3ce2a85fc0ad52bee2fe8a32449fb8749170cfc5d39b03967cf"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "2a05159e2738bf4758d7ac9b96b323d670ccfae6983b295bcae5aec03a12ba95"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/COPYRIGHT",
+          "sha256": "3ab4fb80c8ea69e08184c44dcf0c87e1896870863ec5ce41ae16315f55ee9ce1"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSE",
+          "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSING.md",
+          "sha256": "4d18733947586856776bd93c1ab2ccb5ba67c8e0b5e47fd0452946878b9dfc1f"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/NOTICE",
+          "sha256": "d943310e4f09e8529f1ff05f98d0d27ec1ae437adf38d967d822788bd39adfa4"
+        }
+      ],
+      "commit": "250d417d12751f62e43e2468e12c31411902e21c",
+      "url": "https://github.com/gj3447/CHU/commit/250d417d12751f62e43e2468e12c31411902e21c",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "Coffee_ERP",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "eb7d3db2a79e3610620d00d461ad013abad7fec0",
+      "base_tree": "9ff9e00fa58e75bae57e6bca402f5fc7dfd89b27",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "06f3d57f993e96523764f6c2f0dbf5621a087ff7cb4852be63eae6f1f34a253c"
+        },
+        {
+          "path": "README.md",
+          "sha256": "65b2ea255b68e9b3b1e40e913b9d4b2d0a0308cfae296cb8eabe105832c0a589"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "81348c9ebb3dd6d8a9fb6b7d34fa0dffc6c439e06513f3d3c253af198e5f4ad5"
+        }
+      ],
+      "commit": "6150c5fe19af2ad54df0485b140b944b7cd170cb",
+      "url": "https://github.com/gj3447/Coffee_ERP/commit/6150c5fe19af2ad54df0485b140b944b7cd170cb",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "CompressionOverlap",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "0498e2237885bd2848777b39a49f28d245496de8",
+      "base_tree": "9b9c73f2f8b5968b7e40141d9637bbdea0cfd146",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "07d83141fc95b446dcb1f0991d56e7c528a6ac15fcb1c207a71fe43e96e515bc"
+        },
+        {
+          "path": "README.md",
+          "sha256": "68f153628aa26c3d0af50097dde093553a561fa37630f3a2b5909682bbff97c4"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "6c2d5eea7a56f81337c398376c617d383bdfcf8109e6e7d110e2b84b2631af48"
+        }
+      ],
+      "commit": "8781d12ac49fbb1c21a8e257c7ebf563b043f351",
+      "url": "https://github.com/gj3447/CompressionOverlap/commit/8781d12ac49fbb1c21a8e257c7ebf563b043f351",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "DB",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "ab916d652ca542236f82d0411c4a726e57f6fda8",
+      "base_tree": "a5ab2be8280c7f935b4c52283d3a6b5a1d0ff09c",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "3f5d76caa254320857786c46a9db2697d22024fdce7db0a258e5de5af1d3de7b"
+        },
+        {
+          "path": "README.md",
+          "sha256": "c4f1524b00abccf42c70317b4eecfbb7b0c0a73e862e95e1dce76abc9554dc09"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "0599beca31bd26b008cacf8fa62b2ea552d0cc9f5b56dab81354de7ae2e4a1b8"
+        }
+      ],
+      "commit": "34dc1e16e96d4d7596bc6f7a910a53499b4f4300",
+      "url": "https://github.com/gj3447/DB/commit/34dc1e16e96d4d7596bc6f7a910a53499b4f4300",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "EnterpriseBinpickingDT",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json",
+        "package-lock.json",
+        "package.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "9066f7bbd74e9ef7e410b3b79ede37a0ddf43901",
+      "base_tree": "15ee75c2fedc4137d2c124dbeab495283a3467e3",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "8c48d3fe4ae10a05cd557140b47313b3749600c59118d1afdd25d256097365a3"
+        },
+        {
+          "path": "README.md",
+          "sha256": "cca96917a935b2784f9b1c901bcdc05c7bf6bc0a912d3e64d27bb6bc52d0ec3b"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "4611e540a793415c107920073440d441104babcdbe0a21bb9e8d914454c59e8d"
+        },
+        {
+          "path": "package-lock.json",
+          "sha256": "357d44f257906f2c1c3a8414dfedc104511e0151ac043e98c637c1e91c65f954"
+        },
+        {
+          "path": "package.json",
+          "sha256": "b06a97e2cf6bd57cb1fb0fabb72dd2e708021db2069c60e71e440e69198028db"
+        }
+      ],
+      "commit": "344e6e196552e190c6e3e348d40ae283019df57d",
+      "url": "https://github.com/gj3447/EnterpriseBinpickingDT/commit/344e6e196552e190c6e3e348d40ae283019df57d",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "EnterpriseBinpickingServer",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "04aeff01074b73edd5bb463c617e17c78b724495",
+      "base_tree": "f7a28f5f06a714b81f27da06154e1f63fd0244ca",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "ff5cd9b82ca119120bc383c912890182a10895802b402295c272a9c5440326ae"
+        },
+        {
+          "path": "README.md",
+          "sha256": "4628460dc0358a42b5c744e6f76ed1afc320ca2e198a92f7a5ce3eb4b1a76904"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "0458b0125cdf7fe24c36400d8936253b4138a3a3e8c862dd2ba29ba4dc29ab24"
+        }
+      ],
+      "commit": "2f93bea89bc969afd47dce27c4768809ad3fd45a",
+      "url": "https://github.com/gj3447/EnterpriseBinpickingServer/commit/2f93bea89bc969afd47dce27c4768809ad3fd45a",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "firebasetest",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "9c8a0e91e4941091698412eeb0a07431b7639cb2",
+      "base_tree": "0b5267d137c1b0dd71463a46e8d7a8213d3dfae8",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "fc28bf63727ffbfb105c2a057d5326ec7c186f4a59b5a2bdb34754fa67267cb3"
+        },
+        {
+          "path": "README.md",
+          "sha256": "7452f959cba346a328dfd082e74c2554c3a7b15334548f51a578ea913090a79a"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "6c80abe414d4325e6e2a4d2d660e01dad374a34ad88be277b769396f200d135b"
+        }
+      ],
+      "commit": "f273a42b3cbc0227b05c19bd393532607b704b43",
+      "url": "https://github.com/gj3447/firebasetest/commit/f273a42b3cbc0227b05c19bd393532607b704b43",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "forced-free-explosive",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "NOTICE",
+        "README.md",
+        "license-migration.json",
+        "licenses/pre-mhl-2026-10-07/LICENSE",
+        "licenses/pre-mhl-2026-10-07/NOTICE"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "832eaccd467fbd16b7bab3f41ff2519de21feeb3",
+      "base_tree": "d2b2f72495b70ad62efd3c6249f640b31877761e",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "3d9c8787e9efed813ac9263d61a83023afa908d0187460b73c2488db801316b3"
+        },
+        {
+          "path": "NOTICE",
+          "sha256": "d14397717dae30eaa82b986a16c8bcd7ab991bf38150e8ea2f3b5e5b79e4a944"
+        },
+        {
+          "path": "README.md",
+          "sha256": "773812fe8183f0c81602804feb62e312943a673cd9971e548658743685b18838"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "a6795681a36046336cca1fba0142095e5099fe5ae60da1d393e086034893b189"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSE",
+          "sha256": "01792a5e0bd1ef7c1ca4061c7977e4db79ef3d8aab48b5b28efb68354d40964c"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/NOTICE",
+          "sha256": "94e632b47430f31d0ddb32cb3236b3eac3766ba06565b54962a2823c22ae22c8"
+        }
+      ],
+      "commit": "ae92755067d47c9d743cb65e70a690655e080bd4",
+      "url": "https://github.com/gj3447/forced-free-explosive/commit/ae92755067d47c9d743cb65e70a690655e080bd4",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "fractal-graph",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "f8b04dfa769f42c44a833853b8fa5d2748a24c5d",
+      "base_tree": "f817612727e4d8e6fd54acb2a59cfe1d6f672a85",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "6c601636b0f1412d1191ddb30ef19e4a266a67faf7f0564cbf50fc45f4548b3c"
+        },
+        {
+          "path": "README.md",
+          "sha256": "cf462c9c238e27b902d934c93634d06517db5edb5d211e3022ff3bb0b4d4c9ab"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "e06de548230b65b22fef043990b73b783c8a76764d030bfc5b80d344fc81866d"
+        }
+      ],
+      "commit": "4206f5ca23fd15a1e98f0ae52865b22fc7d70c32",
+      "url": "https://github.com/gj3447/fractal-graph/commit/4206f5ca23fd15a1e98f0ae52865b22fc7d70c32",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "github",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "d89aaec6654819f30938f2dd8dc82be27658c6b3",
+      "base_tree": "2effe3300f28129523f11890a3e71f66a1b9625c",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "e5d3d9ed3a1e4b587e8d21cd9e5a26b81995de64ddbcc2d1cda7ccd26d695280"
+        },
+        {
+          "path": "README.md",
+          "sha256": "de41de2d966e0057efe6a0986ff0b3ec02dadc536273d307d56bf1027f99cb9f"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "8346af62c9a1c3f55a67dbb2d012075e58642b8c9535c1fbc3439900f8784453"
+        }
+      ],
+      "commit": "bcf27969e3aec3ade35f2a20fffb0bf092692224",
+      "url": "https://github.com/gj3447/github/commit/bcf27969e3aec3ade35f2a20fffb0bf092692224",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "github-slideshow",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json",
+        "licenses/pre-mhl-2026-10-07/LICENSE"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "8bd6b209d5945b495b530e22213839b2b4ae7b75",
+      "base_tree": "0e782b4a4d6821e394703dc9ee3af541b1251714",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "d859f0fb4f424f951c75f08471bb9088e3ac26aa8f0eea5e234cdf46193b8090"
+        },
+        {
+          "path": "README.md",
+          "sha256": "776b61867b7c6d26a6a6ce2a4c379fa620f48894d9a565aca061c0c7c9634701"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "f4ed86bedd60d5074838a0e4dd225f72225af505a348ca605b6e5060649ebc3f"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSE",
+          "sha256": "436ad6b099d42007174d28a8c0db3f179b29f5726ea9945dafa72cd3544aa4f0"
+        }
+      ],
+      "commit": "508cd9dc59e2572a6798088a1d72243f33bbe568",
+      "url": "https://github.com/gj3447/github-slideshow/commit/508cd9dc59e2572a6798088a1d72243f33bbe568",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "pull_request": "https://github.com/gj3447/github-slideshow/pull/13",
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "GithubClass",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "b82196340aa3b030509d0d674bc0ff695abb0ef5",
+      "base_tree": "8df034238b0b55d198890a3c36d5f5424d842d16",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "529c3ae02437fa470bbd067e7c668ba83730ec33d98a176d870bf94652d53b26"
+        },
+        {
+          "path": "README.md",
+          "sha256": "5d2fb344011f283522adb94632dc26f44dd80d0681fb1c117c86217fe5ddfd32"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "6cce96604bcfebf899e3c25a712657fd3f916b5fece4db7b59a5a5c52c9e4f35"
+        }
+      ],
+      "commit": "8ce514b36127e1409d40ff6ac28d7b42715c033f",
+      "url": "https://github.com/gj3447/GithubClass/commit/8ce514b36127e1409d40ff6ac28d7b42715c033f",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "HOH-Interface",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "NOTICE",
+        "README.md",
+        "license-migration.json",
+        "licenses/pre-mhl-2026-10-07/LICENSE",
+        "licenses/pre-mhl-2026-10-07/NOTICE",
+        "package-lock.json",
+        "package.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "9520bc68d424e543cc6f3d928f9f1158f0703d23",
+      "base_tree": "7f2d3a294c780330e84d6b1e040e6d0889300836",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "82b67e1d0cb704327c96f830c51c3e6c81f19b3e315262acb5b0b5164e0ca4e5"
+        },
+        {
+          "path": "NOTICE",
+          "sha256": "f47f65da841dcf5e143d8dd05e3c5597d91165ac22deea14a16e24fb3be397cb"
+        },
+        {
+          "path": "README.md",
+          "sha256": "bc52dc19c4601a38e6c5aed9b8e16caf6a91390a21aaf55c0416b0db5a71b8aa"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "820ff87b970a0ab93ede162a65bb841bbbb3b8605238335eaaa95f9dc4a1297a"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSE",
+          "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/NOTICE",
+          "sha256": "5d7149f75f1ac55780fdc6799bbb47b2d623290092208b45643ab62613c45e3c"
+        },
+        {
+          "path": "package-lock.json",
+          "sha256": "f1f2c3d700f9cdd2f2c02b7e1279d04cc35e10777287d7b4d7420e7ccd671016"
+        },
+        {
+          "path": "package.json",
+          "sha256": "67f33f6ca9e600d71bb8ea24a25d32d8b723cb2261dca0d840c69ca6705c84ff"
+        }
+      ],
+      "commit": "7b166152bcdb22786f438bfef2feb57f7160f071",
+      "url": "https://github.com/gj3447/HOH-Interface/commit/7b166152bcdb22786f438bfef2feb57f7160f071",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "HSWM",
+      "paths": [
+        "CONTRIBUTING.md",
+        "COPYRIGHT",
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "LICENSING.md",
+        "NOTICE",
+        "README.md",
+        "license-migration.json",
+        "licenses/pre-mhl-2026-10-07/COPYRIGHT",
+        "licenses/pre-mhl-2026-10-07/LICENSE",
+        "licenses/pre-mhl-2026-10-07/LICENSING.md",
+        "licenses/pre-mhl-2026-10-07/NOTICE",
+        "pyproject.toml"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "8043a83841bf3e89dc4e089adbab012475839fc8",
+      "base_tree": "0ec9a6f213a330aaa56f738cc33dda7b7d6fcb4f",
+      "files": [
+        {
+          "path": "CONTRIBUTING.md",
+          "sha256": "beb4b32061b91b7a3e7fc02a60d541c0f4233fc9b8db89b70c553bc94c6ff773"
+        },
+        {
+          "path": "COPYRIGHT",
+          "sha256": "da8a2cb8315659886310cd15d696ec4e85433c923c01097eb488eb592544461b"
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "4fa488f6ce573f8c07792b9c92a0f00c50184c2740118c9db7ad2a0af92e25ae"
+        },
+        {
+          "path": "LICENSING.md",
+          "sha256": "67bcae060ff87327cae95925a75064dcddf19f0a31127e83bbecfc29bca36ec8"
+        },
+        {
+          "path": "NOTICE",
+          "sha256": "e2bc7c2141d793a3c827c3d6e8829aaddbdc17ee176640279fe171c2add6e638"
+        },
+        {
+          "path": "README.md",
+          "sha256": "d6c233b6774d1ef415b398670e374922111fc197d6403d6b5428090ee2db14f5"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "cfcba884efbdafc25261a53d698e20c3b49f544e83bfacb5e374098c1504f512"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/COPYRIGHT",
+          "sha256": "7d95d503c9329be70b48d4edf29b834ee34947a15271085ef312d302bac875c4"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSE",
+          "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSING.md",
+          "sha256": "b2cb84f4ee362e935a17f2b2da4852db9f6e74c0b945a87b9e90547b13a02eb6"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/NOTICE",
+          "sha256": "ee3c624ac7176d267dda1cc1b16497f2da96a8cb09ad1f609b4ee7b4f5653784"
+        },
+        {
+          "path": "pyproject.toml",
+          "sha256": "62c0b279da660552b4f266e87501326aaa1f71b5f0a473cb2986b9f11e401525"
+        }
+      ],
+      "commit": "27dca376f0e20b33eef94665f41dad24eba88cdd",
+      "url": "https://github.com/gj3447/HSWM/commit/27dca376f0e20b33eef94665f41dad24eba88cdd",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "ICE_ORCA_DRAGON",
+      "paths": [
+        "CONTRIBUTING.md",
+        "COPYRIGHT",
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "LICENSING.md",
+        "NOTICE",
+        "README.md",
+        "license-migration.json",
+        "licenses/pre-mhl-2026-10-07/COPYRIGHT",
+        "licenses/pre-mhl-2026-10-07/LICENSE",
+        "licenses/pre-mhl-2026-10-07/LICENSING.md",
+        "licenses/pre-mhl-2026-10-07/NOTICE",
+        "package-lock.json",
+        "package.json",
+        "pyproject.toml"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "1d184b15b26f705d4024d162f126b758139c184b",
+      "base_tree": "c40861bf83fe2a6246aeb4cb943c8f83f229b426",
+      "files": [
+        {
+          "path": "CONTRIBUTING.md",
+          "sha256": "de25db7f1b39921c7404431c42cbca321784921daacf27d20b8e9400278353b3"
+        },
+        {
+          "path": "COPYRIGHT",
+          "sha256": "da8a2cb8315659886310cd15d696ec4e85433c923c01097eb488eb592544461b"
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "6f029cd698f68876e020d34ce89566c6a56483aa582f39e4ce95f4130586b3b5"
+        },
+        {
+          "path": "LICENSING.md",
+          "sha256": "67bcae060ff87327cae95925a75064dcddf19f0a31127e83bbecfc29bca36ec8"
+        },
+        {
+          "path": "NOTICE",
+          "sha256": "e2bc7c2141d793a3c827c3d6e8829aaddbdc17ee176640279fe171c2add6e638"
+        },
+        {
+          "path": "README.md",
+          "sha256": "1309185eac13c1356fab909fa46a6ebffb4af6138f18297e9d0072d3e27cdfb1"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "e6c64ebf52e6f8cc2d5edb39aafff50dc945ef22c02ae1dfad573b056ffbba91"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/COPYRIGHT",
+          "sha256": "7d95d503c9329be70b48d4edf29b834ee34947a15271085ef312d302bac875c4"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSE",
+          "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSING.md",
+          "sha256": "b2cb84f4ee362e935a17f2b2da4852db9f6e74c0b945a87b9e90547b13a02eb6"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/NOTICE",
+          "sha256": "ee3c624ac7176d267dda1cc1b16497f2da96a8cb09ad1f609b4ee7b4f5653784"
+        },
+        {
+          "path": "package-lock.json",
+          "sha256": "3ce417900c24fb422f7d0ded9e9e735603e6669e5e1d90ebf5edcf74c8b79e07"
+        },
+        {
+          "path": "package.json",
+          "sha256": "d4f7fce45758f7317293dec382e2ea13cec19f96b44c3763fca0b07b1c1249fd"
+        },
+        {
+          "path": "pyproject.toml",
+          "sha256": "ab047f368a6c14de0f3f9705cc94e3d3a507616dcc0769de60072675352fd402"
+        }
+      ],
+      "commit": "6a9d5a3e246e5608de84c6088635b1f67d95f011",
+      "url": "https://github.com/gj3447/ICE_ORCA_DRAGON/commit/6a9d5a3e246e5608de84c6088635b1f67d95f011",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "lakatotree",
+      "paths": [
+        "CONTRIBUTING.md",
+        "COPYRIGHT",
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "LICENSING.md",
+        "NOTICE",
+        "README.md",
+        "license-migration.json",
+        "licenses/pre-mhl-2026-10-07/COPYRIGHT",
+        "licenses/pre-mhl-2026-10-07/LICENSE",
+        "licenses/pre-mhl-2026-10-07/LICENSING.md",
+        "licenses/pre-mhl-2026-10-07/NOTICE",
+        "pyproject.toml"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "890d58248cb3aec1900fb48c5e06495e544debf4",
+      "base_tree": "24e3d8e97e905776c966c8754db968fb7c44a0a8",
+      "files": [
+        {
+          "path": "CONTRIBUTING.md",
+          "sha256": "196f759d57311c2a5e732add8555c1bff7c3ce3870d72762c8fe7ab560d3deb1"
+        },
+        {
+          "path": "COPYRIGHT",
+          "sha256": "da8a2cb8315659886310cd15d696ec4e85433c923c01097eb488eb592544461b"
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "d0ea3cdc94d54002a43d1e790f401ecab61c70efc5c0a30fdea1a227f0c67a19"
+        },
+        {
+          "path": "LICENSING.md",
+          "sha256": "67bcae060ff87327cae95925a75064dcddf19f0a31127e83bbecfc29bca36ec8"
+        },
+        {
+          "path": "NOTICE",
+          "sha256": "e2bc7c2141d793a3c827c3d6e8829aaddbdc17ee176640279fe171c2add6e638"
+        },
+        {
+          "path": "README.md",
+          "sha256": "c2e84848d02dc520e1771a72afbf286b2d1b02355326f4bc0662b3c9b850d94b"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "c5ff830ca027b9ba0241b49a62f8f267584944f099383445701ffd3ed6e6bfc7"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/COPYRIGHT",
+          "sha256": "7d95d503c9329be70b48d4edf29b834ee34947a15271085ef312d302bac875c4"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSE",
+          "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSING.md",
+          "sha256": "b2cb84f4ee362e935a17f2b2da4852db9f6e74c0b945a87b9e90547b13a02eb6"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/NOTICE",
+          "sha256": "ee3c624ac7176d267dda1cc1b16497f2da96a8cb09ad1f609b4ee7b4f5653784"
+        },
+        {
+          "path": "pyproject.toml",
+          "sha256": "a3cf0a447e4674683abac346f132eb1450864103e1d9398de8d5ef6dae6812f0"
+        }
+      ],
+      "commit": "4c764aed4d098f0ded344bb687a428d3da5d821d",
+      "url": "https://github.com/gj3447/lakatotree/commit/4c764aed4d098f0ded344bb687a428d3da5d821d",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "LETSBEYOLO",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "487d9d7104d0825a0771d508d9783f390bc6c59a",
+      "base_tree": "83131dd1bd2c16f51bb9df03e6edaaed2b8c2d88",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "7ced1f66f9e3fd533bf10e012c2e60e4d519acd3b6c12936100ea144061adcaf"
+        },
+        {
+          "path": "README.md",
+          "sha256": "bc55c1ab8915ebf748a5c4088ab0e15b3b273edb908c613d485267fe18cd9dd3"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "84d3fde8f98c24ec60f7301f494f8e0e488de02dab3bc2b5ee78a8967dccd3ff"
+        }
+      ],
+      "commit": "425bf692d38d775d187fe9adb218a9daafcaaca2",
+      "url": "https://github.com/gj3447/LETSBEYOLO/commit/425bf692d38d775d187fe9adb218a9daafcaaca2",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "line_input_calcurator",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "bf8fdadbcc3e5b2960f03b18198e85c724ff267b",
+      "base_tree": "c3325f92561d95fad249cc4e3a59c97fdc9a2d8d",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "278a06a20cb669ef49916005b0326ed3d765db5fcb9246ca7f1e14b3370c04b5"
+        },
+        {
+          "path": "README.md",
+          "sha256": "ae1aa74a3a6356463039643d74cd475d44540f1badd5777328db3075a1e7ce24"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "e1d941d9ed8137512660b2a457d37c0004ff320b0575ec5ab52ce59571f03591"
+        }
+      ],
+      "commit": "97bea550e4e9f8a9135a8ff897116de45e151fda",
+      "url": "https://github.com/gj3447/line_input_calcurator/commit/97bea550e4e9f8a9135a8ff897116de45e151fda",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "makrov",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "ecadf6cd1907f273dd96b0a4914d230e4e51b509",
+      "base_tree": "fddd58c7b1392ab1bb4be8d221c6cf25075557dc",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "2c0932c814763fa8b380cca157dd29f699778cb085b856fc134da3f176f2a2c0"
+        },
+        {
+          "path": "README.md",
+          "sha256": "05d034598e12a3faedb705b26c99d2ea5cf9089d12c1c304dae88b7dbdd6ee4b"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "a8e40e18c63aba70c9e0ad84574a4f490a7c60e6bdbd0999849cdb0af752d38e"
+        }
+      ],
+      "commit": "629bf5972e1964fd65f5c4597641d7f8f21cfb4e",
+      "url": "https://github.com/gj3447/makrov/commit/629bf5972e1964fd65f5c4597641d7f8f21cfb4e",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "manim_list",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "449bb06fb00f769af16e64eb7f7ec5d55a536441",
+      "base_tree": "0c315fe2da1b77e7e070b2565dc4db15ac4f6fd2",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "e807675c61d831dd344d047f806668510d7ad6311ada8495a43912ba9e06b03b"
+        },
+        {
+          "path": "README.md",
+          "sha256": "804bf74679196510d769eed95eb5dbd034338931e4d99f7b230f6b338aae8d65"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "d78ed54c48b321bd36b28cf118ebb43832897815595b64457db94673f79584e3"
+        }
+      ],
+      "commit": "b637d1b69b9f7741e0f8887d36d4b114753f88fa",
+      "url": "https://github.com/gj3447/manim_list/commit/b637d1b69b9f7741e0f8887d36d4b114753f88fa",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "masterKorea",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "94b8cbf73969112d8bf7feb8ad9c99ede0bd9ede",
+      "base_tree": "d6d2ac709d8511e43db04d0c07a5ef3ce262464d",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "6356fe6c31314722ddb8cb0b012bb73612c40a92843d22d287db2b140c853208"
+        },
+        {
+          "path": "README.md",
+          "sha256": "46df395836d0b3cce835c5b20ea7c0def11df1682fcfe64a5b48b703e0a152c1"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "99d668529d0bca3f66dc1bff811b0f7ea0c2507de106a536d23ec57eccdacfab"
+        }
+      ],
+      "commit": "ac77e8077336313539988c17b2bbf325f7377323",
+      "url": "https://github.com/gj3447/masterKorea/commit/ac77e8077336313539988c17b2bbf325f7377323",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "metahumotonic-foundation",
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "8be30800f6a27c524b9144c74c68c997289043ff",
+      "commit": "d5119ffc35dd3addce6544b59cef797ff9d880b3",
+      "url": "https://github.com/gj3447/metahumotonic-foundation/commit/d5119ffc35dd3addce6544b59cef797ff9d880b3",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "verification_method": "Normal Git push; matching local and remote commit identifies the exact Git tree.",
+      "files": [
+        {
+          "path": ".github/PULL_REQUEST_TEMPLATE.md",
+          "sha256": "e1bb2f0d7e42f631a2ae4f864c8ceb7a64a42a03159196ece47612b5555cef32"
+        },
+        {
+          "path": "CHARTER.md",
+          "sha256": "642769a99563426d403fd7ebb10f2a34401d3dbdfc587dea0e62935a4490c2c3"
+        },
+        {
+          "path": "CONTRIBUTING.md",
+          "sha256": "0be0ef19f2caa675400ee524184d73f2e016ec8d8ed305d4cd4e4b0c90858ce2"
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "0b135afd51897135d2f0128b7719b6164fc714f8e0cc7f544dca89d90ddcb989"
+        },
+        {
+          "path": "README.md",
+          "sha256": "70755cf9d21635b5ca2041957ba78547bde68dcdedbf711c5d77a9d335c141cb"
+        },
+        {
+          "path": "decisions/2026-10-07-public-license-rollout.json",
+          "sha256": "93a2111de06a6dd4ca48361e256865751e45af6c3cc98d82c28384317308aeaf"
+        },
+        {
+          "path": "decisions/README.md",
+          "sha256": "00ba1027edc5cb1f559be10cd30563fe421457b2bd741532e2b430fc20950fea"
+        },
+        {
+          "path": "licenses/MetaHumotonic-1.1.txt",
+          "sha256": "11b5017d509407b38c2c6b816d3a4600bddcce54189a29b17cb8e234b30a7df1"
+        },
+        {
+          "path": "records/2026-10-07/public-license-rollout/README.md",
+          "sha256": "7bb0b9bbade0ca440b7c342f4dba2d05146302971dbefc67e1aa234b80173799"
+        },
+        {
+          "path": "records/2026-10-07/public-license-rollout/user-verbatim.txt",
+          "sha256": "4e33163ddd3530c244fb3c6f8d18fd20054e508c56ffb728afa87b643e102036"
+        }
+      ],
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "metahumotonic-web",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "LICENSING.md",
+        "README.md",
+        "license-migration.json",
+        "licenses/pre-mhl-2026-10-07/LICENSE",
+        "licenses/pre-mhl-2026-10-07/LICENSING.md",
+        "package-lock.json",
+        "package.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "6f71140fb9c1851297277d5babd53b9d8beb7beb",
+      "base_tree": "ae0eb4be899c1c13134a1256420b6fa6d551c7db",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "c37d13160b273004acf45f4fd16a23195ed53d8307eae5da3a4ded158350f6a2"
+        },
+        {
+          "path": "LICENSING.md",
+          "sha256": "67bcae060ff87327cae95925a75064dcddf19f0a31127e83bbecfc29bca36ec8"
+        },
+        {
+          "path": "README.md",
+          "sha256": "612638a1f730adb5c202b42c2180a325e0d10935df5b3308922f920c8c9a1f52"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "dc952207ce315ff2411e058f28d8db9309e417db33785c73ebad01a9847ea117"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSE",
+          "sha256": "ebe3af13c56905125bdc5b499e4eaf10626deff90eab18db4d6f1448e49131a0"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSING.md",
+          "sha256": "71c1eeb4d5a01a4be1b4568247e0054832eb50b54f27dbf2ceab2ce9d66d0cb2"
+        },
+        {
+          "path": "package-lock.json",
+          "sha256": "9347e27d414d4aa654ec279a0e8a18262d69a6f5736fdf42491829f9263b036b"
+        },
+        {
+          "path": "package.json",
+          "sha256": "e4b680d4ac11a5e26553dd069df8534f0e8f1e4f2aec5fb333a01db48f461da0"
+        }
+      ],
+      "commit": "4f1031fef965eac6316bca550944250bfa0cc9b0",
+      "url": "https://github.com/gj3447/metahumotonic-web/commit/4f1031fef965eac6316bca550944250bfa0cc9b0",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "metahumotonic_web_back",
+      "paths": [
+        "LICENSE-NOTICE.md",
+        "METAHUMOTONIC-LICENSE",
+        "README.md",
+        "license-migration.json",
+        "licenses/pre-mhl-2026-10-07/LICENSE",
+        "licenses/pre-mhl-2026-10-07/NOTICE"
+      ],
+      "mode": "SCOPED_NEW_WORKS_ONLY",
+      "base_commit": "9b58bafc2af0305c7e031b0e76c52aa7d337cd06",
+      "base_tree": "25a0e77207383e37b61f49b23bfc7f96d2efe39e",
+      "files": [
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "2266eebfb5da276e2ffbd4723171e53a9559d03facfcc113745284afc3e5f762"
+        },
+        {
+          "path": "METAHUMOTONIC-LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "README.md",
+          "sha256": "3e5a37cd56c055414f20b1f0d22799169c62c8018bb0e5ad0b517508b2dea04c"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "53f18f3bfb94d629ca777ea96cc9fb3784e2c36938e6e12e9ccd09f74fa9ff3e"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSE",
+          "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/NOTICE",
+          "sha256": "0f84ee69e167b7e17ecbd04054456c3eeab94b0c6a58b7615875da7ffea8a077"
+        }
+      ],
+      "commit": "e36811720fe6e522e8f2535b50f711dcf0b56e60",
+      "url": "https://github.com/gj3447/metahumotonic_web_back/commit/e36811720fe6e522e8f2535b50f711dcf0b56e60",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "NextTimeTsuyu",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "0defa8cca80db2a414595f223bd0ced3d2981dcc",
+      "base_tree": "a91a9273e3d283739024d0ca572c05a4e89c1eb2",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "1173553ca8106c4744eb8ccd24c2ea929be5a05fce8f90f4040e871018ed72fd"
+        },
+        {
+          "path": "README.md",
+          "sha256": "0ede0b6f1e4b4a385e93a828057e31a96ae16e54d997159cf3c300e3e8555a5a"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "d62ec70cea92aa1e1b680f2f5159ce85815a4596f2ea091c5b22c30e33d3de29"
+        }
+      ],
+      "commit": "ee83ae65b882044e21249ff071f188014774d10b",
+      "url": "https://github.com/gj3447/NextTimeTsuyu/commit/ee83ae65b882044e21249ff071f188014774d10b",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "NextTimeTsuyu2",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "85aff318c9dd0747c73561b0df36a9b4acd147d4",
+      "base_tree": "154953e54fd0c2740aeaa8b5ab565a12485dae8a",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "e2517cf645f8457d53dd8621d7ea0bd548b6b7a365bcb01cbc89052ea37fc3d6"
+        },
+        {
+          "path": "README.md",
+          "sha256": "f3086ff2fdf4afdb3e70143e8b76134960c3386a0270c1190b1cc4dce745bb80"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "83b3a00508d4b123acff0977a53f6b3150863a6d21a497c47455abb2e5cbd0f1"
+        }
+      ],
+      "commit": "b765f9bc28cc10149e1791e81336e543254687bf",
+      "url": "https://github.com/gj3447/NextTimeTsuyu2/commit/b765f9bc28cc10149e1791e81336e543254687bf",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "NextTimeTsuyuForever",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "44fada2b9e924cc0b025f4efbe62e9e73efa0b6f",
+      "base_tree": "ee6d087f050dbde57e55fed4f53861a47cbecd4e",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "319389ffa9806c8e5b0a519eedc9be2e9f63b8f1d0334be1add2ee339344a5d6"
+        },
+        {
+          "path": "README.md",
+          "sha256": "4ee31e512a54db779b1047013b991e92df1e5a8f3fcc591ede6d3b6f4ceb046e"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "f99751fe68f4b007a8ae798e3204bc87f1c4c26fa796bf3cb80c875b07f00846"
+        }
+      ],
+      "commit": "4179c67aedb5e1c2db6a5f91f4069f84de34d3f0",
+      "url": "https://github.com/gj3447/NextTimeTsuyuForever/commit/4179c67aedb5e1c2db6a5f91f4069f84de34d3f0",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "ohm",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "4ffe8c2306ec94c5e4d4bae2df5ebcfb3dda7103",
+      "base_tree": "12a8c7e2345783ba1058b0e14b9b21378c358805",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "f141475dbb365f2ff2cd4edcfcf4606695491a76e5ffce3449785faa0e308232"
+        },
+        {
+          "path": "README.md",
+          "sha256": "82682b821a3cbdd6f5a5dc05b041aa441af8ae3b1eff9c99a7526ac1f0b932ff"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "e606137735517afe3faf84dc42e00e44b1e926912bcc927e5cafc0b1ed1d7ad0"
+        }
+      ],
+      "commit": "a5b0af58faedf580d5fbbf91fb527ff647036cdb",
+      "url": "https://github.com/gj3447/ohm/commit/a5b0af58faedf580d5fbbf91fb527ff647036cdb",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "omd",
+      "paths": [
+        "CONTRIBUTING.md",
+        "COPYRIGHT",
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "LICENSING.md",
+        "NOTICE",
+        "README.md",
+        "license-migration.json",
+        "licenses/pre-mhl-2026-10-07/COPYRIGHT",
+        "licenses/pre-mhl-2026-10-07/LICENSE",
+        "licenses/pre-mhl-2026-10-07/LICENSING.md",
+        "licenses/pre-mhl-2026-10-07/NOTICE",
+        "pyproject.toml"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "8247527fa266d0d52219ecf66cd86b50e0b9fd5e",
+      "base_tree": "1e5a9196be1eb17ec296cb43a2d1062de030e44a",
+      "files": [
+        {
+          "path": "CONTRIBUTING.md",
+          "sha256": "67d4d84003aa0dff1f645e134fdc066baeb1e1bbf7e6c42aa3b032aa5589ce6e"
+        },
+        {
+          "path": "COPYRIGHT",
+          "sha256": "da8a2cb8315659886310cd15d696ec4e85433c923c01097eb488eb592544461b"
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "308c604e378ce417434a46419839e17d73eaacade49845cb4fb7b2a89b2dafda"
+        },
+        {
+          "path": "LICENSING.md",
+          "sha256": "67bcae060ff87327cae95925a75064dcddf19f0a31127e83bbecfc29bca36ec8"
+        },
+        {
+          "path": "NOTICE",
+          "sha256": "e2bc7c2141d793a3c827c3d6e8829aaddbdc17ee176640279fe171c2add6e638"
+        },
+        {
+          "path": "README.md",
+          "sha256": "72140c06dfdff7991712e26e3ab6bb5c798daf93c896408a2223e663f13337d4"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "2f2cb5b5c4ad0fdee41152b7ccfe5716c1677a443b1ada44e16b8b6e4ee89772"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/COPYRIGHT",
+          "sha256": "7d95d503c9329be70b48d4edf29b834ee34947a15271085ef312d302bac875c4"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSE",
+          "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSING.md",
+          "sha256": "b2cb84f4ee362e935a17f2b2da4852db9f6e74c0b945a87b9e90547b13a02eb6"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/NOTICE",
+          "sha256": "ee3c624ac7176d267dda1cc1b16497f2da96a8cb09ad1f609b4ee7b4f5653784"
+        },
+        {
+          "path": "pyproject.toml",
+          "sha256": "fa2d736f0d8f33231f98deab5b9043ecf271cb48315d746661513c285f0e9be6"
+        }
+      ],
+      "commit": "56c89dc6e51293260e9e9a97b52bc0cbd8c0870d",
+      "url": "https://github.com/gj3447/omd/commit/56c89dc6e51293260e9e9a97b52bc0cbd8c0870d",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "ooptdd",
+      "paths": [
+        "CONTRIBUTING.md",
+        "COPYRIGHT",
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "LICENSING.md",
+        "NOTICE",
+        "README.md",
+        "license-migration.json",
+        "licenses/pre-mhl-2026-10-07/COPYRIGHT",
+        "licenses/pre-mhl-2026-10-07/LICENSE",
+        "licenses/pre-mhl-2026-10-07/LICENSING.md",
+        "licenses/pre-mhl-2026-10-07/NOTICE",
+        "pyproject.toml"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "64242fcfcd07dbe21cd969117a579834477db500",
+      "base_tree": "111d4794f86d0e7b018690a0f77118f8b320cea4",
+      "files": [
+        {
+          "path": "CONTRIBUTING.md",
+          "sha256": "3cbd676994cb2e87d05746f5e9c36290bba036701175d9a5d2cf5f1dc9283dd4"
+        },
+        {
+          "path": "COPYRIGHT",
+          "sha256": "da8a2cb8315659886310cd15d696ec4e85433c923c01097eb488eb592544461b"
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "32325f2366b588b3d26ed773193d7efdb17f95937f3cad895864e842616535aa"
+        },
+        {
+          "path": "LICENSING.md",
+          "sha256": "67bcae060ff87327cae95925a75064dcddf19f0a31127e83bbecfc29bca36ec8"
+        },
+        {
+          "path": "NOTICE",
+          "sha256": "e2bc7c2141d793a3c827c3d6e8829aaddbdc17ee176640279fe171c2add6e638"
+        },
+        {
+          "path": "README.md",
+          "sha256": "4217051a11a11e3668f3c8816cd44fb5b43c9ccd7b5e6b1404b2bebffb72cd23"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "e6159b2390c3211974422b900eb98968b6a8bc472d1ca8f345874ab8ddab37cf"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/COPYRIGHT",
+          "sha256": "7d95d503c9329be70b48d4edf29b834ee34947a15271085ef312d302bac875c4"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSE",
+          "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSING.md",
+          "sha256": "b2cb84f4ee362e935a17f2b2da4852db9f6e74c0b945a87b9e90547b13a02eb6"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/NOTICE",
+          "sha256": "ee3c624ac7176d267dda1cc1b16497f2da96a8cb09ad1f609b4ee7b4f5653784"
+        },
+        {
+          "path": "pyproject.toml",
+          "sha256": "ad16eac40c439ca9c2bacc94054c25e644fc6edebfa9e0cc7942a5ab939c3b4e"
+        }
+      ],
+      "commit": "8acdab1325355e1d3bcdd8d07833d464cf778f06",
+      "url": "https://github.com/gj3447/ooptdd/commit/8acdab1325355e1d3bcdd8d07833d464cf778f06",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "ooptdd-loop",
+      "paths": [
+        "CONTRIBUTING.md",
+        "COPYRIGHT",
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "LICENSING.md",
+        "NOTICE",
+        "README.md",
+        "license-migration.json",
+        "licenses/pre-mhl-2026-10-07/COPYRIGHT",
+        "licenses/pre-mhl-2026-10-07/LICENSE",
+        "licenses/pre-mhl-2026-10-07/LICENSING.md",
+        "licenses/pre-mhl-2026-10-07/NOTICE",
+        "pyproject.toml"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "f4e6d7636dbb0f31d7694927aa5dcfb39d4d875c",
+      "base_tree": "d14d0428e5129b29e253c0b6abe6f52037073baa",
+      "files": [
+        {
+          "path": "CONTRIBUTING.md",
+          "sha256": "67d4d84003aa0dff1f645e134fdc066baeb1e1bbf7e6c42aa3b032aa5589ce6e"
+        },
+        {
+          "path": "COPYRIGHT",
+          "sha256": "da8a2cb8315659886310cd15d696ec4e85433c923c01097eb488eb592544461b"
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "ae2a22977c066a99413a2305bd7b237162e180059c786b6307f203cecc7902c8"
+        },
+        {
+          "path": "LICENSING.md",
+          "sha256": "67bcae060ff87327cae95925a75064dcddf19f0a31127e83bbecfc29bca36ec8"
+        },
+        {
+          "path": "NOTICE",
+          "sha256": "e2bc7c2141d793a3c827c3d6e8829aaddbdc17ee176640279fe171c2add6e638"
+        },
+        {
+          "path": "README.md",
+          "sha256": "0758f886f425c02be3b1c9f6aba615d22fc12ac2e361a94fa397cd649d4b31f6"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "16a62394c279b8e08652a23ab30b070f7f4d324378862c42479287bea663e57d"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/COPYRIGHT",
+          "sha256": "7d95d503c9329be70b48d4edf29b834ee34947a15271085ef312d302bac875c4"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSE",
+          "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSING.md",
+          "sha256": "b2cb84f4ee362e935a17f2b2da4852db9f6e74c0b945a87b9e90547b13a02eb6"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/NOTICE",
+          "sha256": "ee3c624ac7176d267dda1cc1b16497f2da96a8cb09ad1f609b4ee7b4f5653784"
+        },
+        {
+          "path": "pyproject.toml",
+          "sha256": "ace290a2c0c44f16ab50a6fbe89a6c8541264235b96a5dc512214424a46225b8"
+        }
+      ],
+      "commit": "256dc26017bae8786c62481240de25047fbefca4",
+      "url": "https://github.com/gj3447/ooptdd-loop/commit/256dc26017bae8786c62481240de25047fbefca4",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "PyRealSenseServer",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "7862ffbd889252130f948b6906b76d3ef4eb9ab0",
+      "base_tree": "c1d294db42b8f679d631cc28b1dcdbbc430f9846",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "68ba003529bc2455899755d2e085584e2f9e33529750a965b049d6b46a9f5e71"
+        },
+        {
+          "path": "README.md",
+          "sha256": "fb050086742feced0e4277fe2c45c9789b90381916bf0599fa9bde8421a42279"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "ac55529d3d6800dcfef841f90f485b133c8c407086f7c965ab32f1dd0cb2cb93"
+        }
+      ],
+      "commit": "a47c2427e45233bf24f2dd890cc9873ec7561024",
+      "url": "https://github.com/gj3447/PyRealSenseServer/commit/a47c2427e45233bf24f2dd890cc9873ec7561024",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "ReactTest",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "352719d1ad6793176829a417b427ecc2fcd612f3",
+      "base_tree": "f99c4951beee2194071bde1798e258659ea19659",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "d23710d815ef08a26a0e13edfa1d3e3f080ba2937fea895d8bca557614f65479"
+        },
+        {
+          "path": "README.md",
+          "sha256": "fac10ec68683b2577d9d565d1046484f942c9ab4408b0ba6b2c11767a96ef880"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "fc08c7b62d5ea444ae490e8ee682ed3e425ac72b093ab567c3f0092d5fa13a0a"
+        }
+      ],
+      "commit": "680fa97900e6a36336e9008002d7c5827f981d02",
+      "url": "https://github.com/gj3447/ReactTest/commit/680fa97900e6a36336e9008002d7c5827f981d02",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "RealSenseTest",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "89ed44322cd2c6bcbc9b7f6b69eebfd0f9584896",
+      "base_tree": "55973c0fdb96fe6b03ae90485840acc0b0b9d6ee",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "2331a0fd27a97c8d69e37851d70d6e08eb306f99fc3a92ea1b06b5dd6ee580e7"
+        },
+        {
+          "path": "README.md",
+          "sha256": "c6a4fb6d005defdcf86ef16d6d6cfd79e512e747414fbc56c7a823d24a6fb9ed"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "b207db0777aebb67c7627323c1bacf2fd776e49e9f698031fb1c244524ca7901"
+        }
+      ],
+      "commit": "6057066e46a682fedf4f3a375d56bef35c66cf60",
+      "url": "https://github.com/gj3447/RealSenseTest/commit/6057066e46a682fedf4f3a375d56bef35c66cf60",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "Regex",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "5b46fd1eddd9bc1d3cce167c089cc3061eb204f3",
+      "base_tree": "5b80f0c536730a7bf6dafeeae99b1a626f99eee5",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "af87834cb6d48d71e615275e09bf2b1a7fe282ec9e2bcd0a4c8ebd202b3331db"
+        },
+        {
+          "path": "README.md",
+          "sha256": "e0c4a0f265fba731ac84fa63b704df7d85c72c06543d40578c8688cfdeed7c26"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "9745abbd758f7c43119fdf8586582bc473f8f37666c055f7ac9fbdac30d09d13"
+        }
+      ],
+      "commit": "c67d030a8a9155b6f112d6f8479fc6be9363ef80",
+      "url": "https://github.com/gj3447/Regex/commit/c67d030a8a9155b6f112d6f8479fc6be9363ef80",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "RSserverV2",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "6a0aa8bc3fe11e58843cc0b1bd47b5552611c507",
+      "base_tree": "c1b4854bcb2ba73a7ad95e5836089320f1755f7c",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "b1a4d54c154fda8ead0d2e98503bf78307e47b0375f8f450b33246775bfe5050"
+        },
+        {
+          "path": "README.md",
+          "sha256": "b7e18f9281ec9df87c312a8b31a34066ae1c09da127ca9a79f649dc08f70a705"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "0a00ccc2d50d45cc4e0caf74307d44ab2497c78d7c3a7d2638e8cd59ec80c247"
+        }
+      ],
+      "commit": "1f9de19c44f6dcb0b64fed6bd55faab6863563dd",
+      "url": "https://github.com/gj3447/RSserverV2/commit/1f9de19c44f6dcb0b64fed6bd55faab6863563dd",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "sam6d_enterprise_server",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "6af98c446fd58f67bea6ad68c727bdf91c0ba9d7",
+      "base_tree": "778412a1779c5c1f70a17efa8feb83a783a2d491",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "14930aee012833a5285ebde006a85eba5f3bedf0db419e670b279f979d645b10"
+        },
+        {
+          "path": "README.md",
+          "sha256": "03293e560f53fdfe3b2b1bf1c1710c3d1c35767c9876a99c1ed24c5e3d7fdd47"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "d145c6f022b538580318553c5dc0943ec3b50f61617b327f13000dff8da5f8bc"
+        }
+      ],
+      "commit": "2de738af00132338562a1eb473af8867d943e9af",
+      "url": "https://github.com/gj3447/sam6d_enterprise_server/commit/2de738af00132338562a1eb473af8867d943e9af",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "sam6d_enterprise_serverv2",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "e7039967b5721878838eec3b552511913a92b3d5",
+      "base_tree": "4e0e50acaa142cdb43cd7b00417e281f0a88a526",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "a441ae1b08aa87ade3c2c23a5c10ecb6544db79aa19ff785b0fa30e267e8ff36"
+        },
+        {
+          "path": "README.md",
+          "sha256": "4e2a11b933264703636b1114e085f3cd06b10ea86deab7525389bd4be74303a5"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "a02d978d144b86c437acd3445dc8d5af02dec0b5c815ea328f6d757850059b9c"
+        }
+      ],
+      "commit": "fd6757c93d883a713e826dd99ff1a630270bdb1a",
+      "url": "https://github.com/gj3447/sam6d_enterprise_serverv2/commit/fd6757c93d883a713e826dd99ff1a630270bdb1a",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "solar-system-3d",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json",
+        "package-lock.json",
+        "package.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "464bae97b14866056f855d8b5a013fd7b1ae56cb",
+      "base_tree": "00a4e8b7656ac2c3b2c6d14666e43badcb3aab11",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "7466e95a1da516fb1b800d2b10c716304d983853546478c6aad298bf93a46f13"
+        },
+        {
+          "path": "README.md",
+          "sha256": "d60de612859b19849b87be49dc307504ae2b2158303e6c0e287083b77faef924"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "e0dbeb46c8cc6b80f66ab3a13e5cf917c3d36e3c3a1e388d82d8526283ceb093"
+        },
+        {
+          "path": "package-lock.json",
+          "sha256": "5752ac36fb2dcdb29ee224e84bd7035e35b799229a69068a3cba9d941be9be6e"
+        },
+        {
+          "path": "package.json",
+          "sha256": "9ff8aab3a953fe97601f21d5da3c8e5af6f6da3c250103fe9934e71aaba648e0"
+        }
+      ],
+      "commit": "086247a5d408c0e9082c422ddf9255a753015c34",
+      "url": "https://github.com/gj3447/solar-system-3d/commit/086247a5d408c0e9082c422ddf9255a753015c34",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "spacegirl",
+      "mode": "EXISTING_MHL_VERIFIED",
+      "action": "READ_ONLY_VERIFICATION",
+      "license": "LicenseRef-MetaHumotonic-1.1",
+      "commit": "c76400e3284bb6bb3e67fea6a2afbdd6150d8fc3",
+      "url": "https://github.com/gj3447/spacegirl/tree/c76400e3284bb6bb3e67fea6a2afbdd6150d8fc3",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "verification_method": "Pinned public Git blob bytes match the canonical MHL 1.1; existing source-specific notices retained.",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "11b5017d509407b38c2c6b816d3a4600bddcce54189a29b17cb8e234b30a7df1"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "5a3ad3def4b7b0b33dddc95ee9a3e15357332b702ff726c7fff0cc0992555aca"
+        }
+      ]
+    },
+    {
+      "repo": "spacegirl_tool",
+      "paths": [
+        "CONTRIBUTING.md",
+        "COPYRIGHT",
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "LICENSING.md",
+        "NOTICE",
+        "README.md",
+        "license-migration.json",
+        "licenses/pre-mhl-2026-10-07/COPYRIGHT",
+        "licenses/pre-mhl-2026-10-07/LICENSE",
+        "licenses/pre-mhl-2026-10-07/LICENSING.md",
+        "licenses/pre-mhl-2026-10-07/NOTICE",
+        "pyproject.toml"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "11f525373763211e73af623cae05e5502da490ae",
+      "base_tree": "6efd644f686e0163e439756f6c56f9b881655412",
+      "files": [
+        {
+          "path": "CONTRIBUTING.md",
+          "sha256": "67d4d84003aa0dff1f645e134fdc066baeb1e1bbf7e6c42aa3b032aa5589ce6e"
+        },
+        {
+          "path": "COPYRIGHT",
+          "sha256": "da8a2cb8315659886310cd15d696ec4e85433c923c01097eb488eb592544461b"
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "6ce318db3319b99111150f90e03e0d72dd90cb46134ae0b4c1897ac8d53c29ff"
+        },
+        {
+          "path": "LICENSING.md",
+          "sha256": "67bcae060ff87327cae95925a75064dcddf19f0a31127e83bbecfc29bca36ec8"
+        },
+        {
+          "path": "NOTICE",
+          "sha256": "e2bc7c2141d793a3c827c3d6e8829aaddbdc17ee176640279fe171c2add6e638"
+        },
+        {
+          "path": "README.md",
+          "sha256": "d31b752eea9fcf8fbac2f59c2b2b61584501a1744924d377994bb46b44d4f12d"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "69c359102cd9d920b8d69fb4f06959333ffb8559bf13476730aa3fbeacdada05"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/COPYRIGHT",
+          "sha256": "7d95d503c9329be70b48d4edf29b834ee34947a15271085ef312d302bac875c4"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSE",
+          "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSING.md",
+          "sha256": "b2cb84f4ee362e935a17f2b2da4852db9f6e74c0b945a87b9e90547b13a02eb6"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/NOTICE",
+          "sha256": "ee3c624ac7176d267dda1cc1b16497f2da96a8cb09ad1f609b4ee7b4f5653784"
+        },
+        {
+          "path": "pyproject.toml",
+          "sha256": "c8be9321cbcf35bfb1fe5993437fd6d4e36dd4dbe7e3706f742d1e7eecad870c"
+        }
+      ],
+      "commit": "24d4d159fb30b824f51f90fdc1f33e230862e4bc",
+      "url": "https://github.com/gj3447/spacegirl_tool/commit/24d4d159fb30b824f51f90fdc1f33e230862e4bc",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "start",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "26aa721aed077a0e46341f393d87c502a265e1c4",
+      "base_tree": "d3b0d3b9ac44f7a6c569db9ac3b383cbe8d8c9fa",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "3a6ef16d2dbb92da1fdcc5e4c1077246fb0734441d5f5698dec8ccb993f67502"
+        },
+        {
+          "path": "README.md",
+          "sha256": "e88d1d401eb8b9a565bea5a779343540e7b6bcc75cbcc84760e67bc312cd6222"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "c576a91270e6ac12c9a767546ac7a7fd843f12f6eaf440c4d1277d7c5f0f7a54"
+        }
+      ],
+      "commit": "ffeabfef28987d71c74ccd87d85e404aff9c577a",
+      "url": "https://github.com/gj3447/start/commit/ffeabfef28987d71c74ccd87d85e404aff9c577a",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "symposium-skills",
+      "paths": [
+        "CONTRIBUTING.md",
+        "COPYRIGHT",
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "LICENSING.md",
+        "NOTICE",
+        "README.md",
+        "license-migration.json",
+        "licenses/pre-mhl-2026-10-07/COPYRIGHT",
+        "licenses/pre-mhl-2026-10-07/LICENSE",
+        "licenses/pre-mhl-2026-10-07/LICENSING.md",
+        "licenses/pre-mhl-2026-10-07/NOTICE"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "42f10ff45dfcf52532dcbf24ad4c7a1d1a013be1",
+      "base_tree": "25ae5582af435a93971695c11a7d32a424e85150",
+      "files": [
+        {
+          "path": "CONTRIBUTING.md",
+          "sha256": "67d4d84003aa0dff1f645e134fdc066baeb1e1bbf7e6c42aa3b032aa5589ce6e"
+        },
+        {
+          "path": "COPYRIGHT",
+          "sha256": "da8a2cb8315659886310cd15d696ec4e85433c923c01097eb488eb592544461b"
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "f2eed998b8ddff0efcd58d0f58b839f8c88fc700ca495ae4fb0efb55ef445ce2"
+        },
+        {
+          "path": "LICENSING.md",
+          "sha256": "67bcae060ff87327cae95925a75064dcddf19f0a31127e83bbecfc29bca36ec8"
+        },
+        {
+          "path": "NOTICE",
+          "sha256": "e2bc7c2141d793a3c827c3d6e8829aaddbdc17ee176640279fe171c2add6e638"
+        },
+        {
+          "path": "README.md",
+          "sha256": "dee53a46bdf8ecc695324a1d8f5be8ed1dea508a069003b36869a70bd92f3a6a"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "44b449a771221c5eab8e6c8e39778d90a81992843dde41add227e621e89d6165"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/COPYRIGHT",
+          "sha256": "7d95d503c9329be70b48d4edf29b834ee34947a15271085ef312d302bac875c4"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSE",
+          "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSING.md",
+          "sha256": "b2cb84f4ee362e935a17f2b2da4852db9f6e74c0b945a87b9e90547b13a02eb6"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/NOTICE",
+          "sha256": "ee3c624ac7176d267dda1cc1b16497f2da96a8cb09ad1f609b4ee7b4f5653784"
+        }
+      ],
+      "commit": "ad2615b8ad1e44bd3637f93ed04544121dfac63d",
+      "url": "https://github.com/gj3447/symposium-skills/commit/ad2615b8ad1e44bd3637f93ed04544121dfac63d",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "Test",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "c96648ea56e8640c8ffb2da35d54f30966800c37",
+      "base_tree": "f851efe096405f49ec7b4a96cf07879f19050c85",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "18202f16f3b2f049a09ceec808039eeeb68cd93b5f4e3d56b3a44e469f1d3d91"
+        },
+        {
+          "path": "README.md",
+          "sha256": "8fb1e58b2b6d592a381f3677e7357cd37bfa244550f4a373b7bc38b144d5d3ac"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "215ae672431dabdbb02a258c02b8bcb9ef7a42a4baa7019f3a9f1c12001276d6"
+        }
+      ],
+      "commit": "869854061c81b58c0beea1a53bbd9044a6372079",
+      "url": "https://github.com/gj3447/Test/commit/869854061c81b58c0beea1a53bbd9044a6372079",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "tissue_anomalib",
+      "paths": [
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "README.md",
+        "license-migration.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "ff565b46efcc2ac77f21533cf63b64c574187f32",
+      "base_tree": "b7e904df930201a9a65930d5ff814198432d0ec2",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "4ea94f3e70cf66f1ff8507acc2a0826f833d2351c44bdb1265c147dc5f023e51"
+        },
+        {
+          "path": "README.md",
+          "sha256": "8434c1d3a5d36f944603cc68e6d272ef857d8da60e38e79b91a06c1451094944"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "b587f13b98502ceefb5f161f454ead38d71006ca2dad65cb854b7e4a534c7f47"
+        }
+      ],
+      "commit": "e015bdc1101715080c9df9d3ff26cbbc4e90eced",
+      "url": "https://github.com/gj3447/tissue_anomalib/commit/e015bdc1101715080c9df9d3ff26cbbc4e90eced",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "tpa-engine",
+      "paths": [
+        "CONTRIBUTING.md",
+        "COPYRIGHT",
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "LICENSING.md",
+        "NOTICE",
+        "README.md",
+        "license-migration.json",
+        "licenses/pre-mhl-2026-10-07/COPYRIGHT",
+        "licenses/pre-mhl-2026-10-07/LICENSE",
+        "licenses/pre-mhl-2026-10-07/LICENSING.md",
+        "licenses/pre-mhl-2026-10-07/NOTICE",
+        "pyproject.toml"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "01b059b60ddaaf3cb983e9032049a0c052f4fb83",
+      "base_tree": "aa8041961a2868aa1c381649008adaa1dd87feef",
+      "files": [
+        {
+          "path": "CONTRIBUTING.md",
+          "sha256": "67d4d84003aa0dff1f645e134fdc066baeb1e1bbf7e6c42aa3b032aa5589ce6e"
+        },
+        {
+          "path": "COPYRIGHT",
+          "sha256": "da8a2cb8315659886310cd15d696ec4e85433c923c01097eb488eb592544461b"
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "60f8f2d6f9ab539231dcd3f71c7e1d81a3eae510e5b33674e439a07ed11519f0"
+        },
+        {
+          "path": "LICENSING.md",
+          "sha256": "67bcae060ff87327cae95925a75064dcddf19f0a31127e83bbecfc29bca36ec8"
+        },
+        {
+          "path": "NOTICE",
+          "sha256": "e2bc7c2141d793a3c827c3d6e8829aaddbdc17ee176640279fe171c2add6e638"
+        },
+        {
+          "path": "README.md",
+          "sha256": "1d8ef176f01a9d3a67d20c6650955b847eef62a417934f41265b90f04af72cd7"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "baf23b9b2cbfbd1226e2e7ca3bc0f5d69bf003ccf6411b8687a4b4dbe320b332"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/COPYRIGHT",
+          "sha256": "7d95d503c9329be70b48d4edf29b834ee34947a15271085ef312d302bac875c4"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSE",
+          "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSING.md",
+          "sha256": "b2cb84f4ee362e935a17f2b2da4852db9f6e74c0b945a87b9e90547b13a02eb6"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/NOTICE",
+          "sha256": "ee3c624ac7176d267dda1cc1b16497f2da96a8cb09ad1f609b4ee7b4f5653784"
+        },
+        {
+          "path": "pyproject.toml",
+          "sha256": "77832cd884384da2a46569bcd4784b788d919e1517a1bf1f12b52b4110aa5bb3"
+        }
+      ],
+      "commit": "e62ff681c4d6d1e4241c9dd401e0e659fe8b4924",
+      "url": "https://github.com/gj3447/tpa-engine/commit/e62ff681c4d6d1e4241c9dd401e0e659fe8b4924",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    },
+    {
+      "repo": "USL",
+      "paths": [
+        "CONTRIBUTING.md",
+        "COPYRIGHT",
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "LICENSING.md",
+        "NOTICE",
+        "README.md",
+        "license-migration.json",
+        "licenses/pre-mhl-2026-10-07/COPYRIGHT",
+        "licenses/pre-mhl-2026-10-07/LICENSE",
+        "licenses/pre-mhl-2026-10-07/LICENSING.md",
+        "licenses/pre-mhl-2026-10-07/NOTICE",
+        "package-lock.json",
+        "package.json"
+      ],
+      "mode": "MHL_DEFAULT_WITH_PRESERVED_GRANTS",
+      "base_commit": "4cbb466316884d053ce00ec16edc9239f1820605",
+      "base_tree": "1f7f722a89ffcc85115b8f4a1a9b21310bcf66d6",
+      "files": [
+        {
+          "path": "CONTRIBUTING.md",
+          "sha256": "4f53d0f71e96ebaef420d1d55036ad1f4717153e9b9f6de7fb1069b728b88745"
+        },
+        {
+          "path": "COPYRIGHT",
+          "sha256": "27e5870021443a08718c97bb2d77c41dd50a59ba8845073eeffe59f1bd2c8ecc"
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+        },
+        {
+          "path": "LICENSE-NOTICE.md",
+          "sha256": "7fe01e2d31ee7c6db9df78806a5d521dd28c64ce51ec84bf1d27da10b02e619d"
+        },
+        {
+          "path": "LICENSING.md",
+          "sha256": "67bcae060ff87327cae95925a75064dcddf19f0a31127e83bbecfc29bca36ec8"
+        },
+        {
+          "path": "NOTICE",
+          "sha256": "47dfa2f5b36621689622453baa76d96bb699e4314c666f2ad7b93189a2734fe6"
+        },
+        {
+          "path": "README.md",
+          "sha256": "1162d292c75cf58dfa7dd9307ab3a32248944466bb7201b54af52687d89c3a86"
+        },
+        {
+          "path": "license-migration.json",
+          "sha256": "fadf328feffc7dca213d316a4f389869f5438271901fe0084719068fc6c2aa87"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/COPYRIGHT",
+          "sha256": "fe6be82c1347f81c299716b1b4223a7bd9922d5f4220a5df8e1ca8ea2d29aeb8"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSE",
+          "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/LICENSING.md",
+          "sha256": "858cfeaf32ac0d21700e61d16010a712abc659c6ed78be71448a13aad33f0ca9"
+        },
+        {
+          "path": "licenses/pre-mhl-2026-10-07/NOTICE",
+          "sha256": "749be9df0e4084cc88bfbda7b2869cd6a33ae2c559132eb3fdfe73836bbc45c9"
+        },
+        {
+          "path": "package-lock.json",
+          "sha256": "b1e641438d313a659ac432043de33f7283a2b652d764a4b704336c275cd1e1b3"
+        },
+        {
+          "path": "package.json",
+          "sha256": "4546c0f7356197f3313b1e5cf66b107509a34a8bf4dc322327587ce01100576c"
+        }
+      ],
+      "commit": "2565759c37a1d3ab9ec87823dac4032c641c024e",
+      "url": "https://github.com/gj3447/USL/commit/2565759c37a1d3ab9ec87823dac4032c641c024e",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "remote_content_verified": true,
+      "untouched_root_objects_verified": true,
+      "license": "LicenseRef-MetaHumotonic-1.2",
+      "action": "COMMITTED_AND_PUBLISHED"
+    }
+  ]
+}

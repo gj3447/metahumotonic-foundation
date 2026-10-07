@@ -1,0 +1,510 @@
+{
+  "checked_at": "2026-10-07T07:40:06.715895+00:00",
+  "repositories": [
+    {
+      "repository": "333",
+      "commit": "94907742fa0eb07ae0c275206363d97ed7b7dd8e",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "agent-coding-paradigm",
+      "commit": "6fc9c58cd67d41d14001ef278ea08b77500b891e",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "ant_den",
+      "commit": "222d5785a2701b643671df2daf65e80f0af0c3b7",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "antden",
+      "commit": "9782b183666a6a1236a52bae3976ec532f7f2fa0",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "apt-engine",
+      "commit": "eebe20dd22e35bdc480a54fed86fd17e054257de",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "Astar-snake",
+      "commit": "bd7b85600c9d1da3f3f0f73918e22d3e688b0ef8",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "BackupModuleProgram",
+      "commit": "a84fcd805c89b0427936ccb4caa026ebcb7c095d",
+      "branch": "uiupdate",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "BezierFaceEditor",
+      "commit": "a3cac8d4652ccb24dc4abe2856d05e2d18705817",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "bhgman",
+      "commit": "8aab0ab49377f3fa5eed84f14e28c3ce1ecf75cb",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "bhgman_essence",
+      "commit": "68c1495279c07c05fe8cb0eb21b03aae2f8b4e61",
+      "branch": "main",
+      "visibility": "public",
+      "archived": true,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "bhgman_tool",
+      "commit": "8dee567d3b42368c5f3ac249748f44160474a3cf",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "BlackBoxManager",
+      "commit": "5610340597cd136597183da369d90793e3b5c3dd",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "BlazorWebAppTest",
+      "commit": "c18363e86a855606a1f17a058dfd659bff0dccae",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "C--Users-----OneDrive------------VSCODE-hello_django-ant_den",
+      "commit": "530a191c89ec2fd44ec4b34e5be23aac1bb2b064",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "C-practice",
+      "commit": "b41dd5b6938aa8d101e1e0f19fd7b5f4e248b84e",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "chain-reaction-language",
+      "commit": "f83e712dcaa2a5211478a4e6d2bbbc72c71c1ed4",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "CHU",
+      "commit": "250d417d12751f62e43e2468e12c31411902e21c",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "Coffee_ERP",
+      "commit": "6150c5fe19af2ad54df0485b140b944b7cd170cb",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "CompressionOverlap",
+      "commit": "8781d12ac49fbb1c21a8e257c7ebf563b043f351",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "DB",
+      "commit": "34dc1e16e96d4d7596bc6f7a910a53499b4f4300",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "EnterpriseBinpickingDT",
+      "commit": "344e6e196552e190c6e3e348d40ae283019df57d",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "EnterpriseBinpickingServer",
+      "commit": "2f93bea89bc969afd47dce27c4768809ad3fd45a",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "firebasetest",
+      "commit": "f273a42b3cbc0227b05c19bd393532607b704b43",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "forced-free-explosive",
+      "commit": "ae92755067d47c9d743cb65e70a690655e080bd4",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "fractal-graph",
+      "commit": "4206f5ca23fd15a1e98f0ae52865b22fc7d70c32",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "github",
+      "commit": "bcf27969e3aec3ade35f2a20fffb0bf092692224",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "github-slideshow",
+      "commit": "508cd9dc59e2572a6798088a1d72243f33bbe568",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "GithubClass",
+      "commit": "8ce514b36127e1409d40ff6ac28d7b42715c033f",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "HOH-Interface",
+      "commit": "7b166152bcdb22786f438bfef2feb57f7160f071",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "HSWM",
+      "commit": "27dca376f0e20b33eef94665f41dad24eba88cdd",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "ICE_ORCA_DRAGON",
+      "commit": "6a9d5a3e246e5608de84c6088635b1f67d95f011",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "lakatotree",
+      "commit": "4c764aed4d098f0ded344bb687a428d3da5d821d",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "LETSBEYOLO",
+      "commit": "425bf692d38d775d187fe9adb218a9daafcaaca2",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "line_input_calcurator",
+      "commit": "97bea550e4e9f8a9135a8ff897116de45e151fda",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "makrov",
+      "commit": "629bf5972e1964fd65f5c4597641d7f8f21cfb4e",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "manim_list",
+      "commit": "b637d1b69b9f7741e0f8887d36d4b114753f88fa",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "masterKorea",
+      "commit": "ac77e8077336313539988c17b2bbf325f7377323",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "metahumotonic-foundation",
+      "commit": "d5119ffc35dd3addce6544b59cef797ff9d880b3",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "metahumotonic-web",
+      "commit": "4f1031fef965eac6316bca550944250bfa0cc9b0",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "metahumotonic_web_back",
+      "commit": "e36811720fe6e522e8f2535b50f711dcf0b56e60",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "NextTimeTsuyu",
+      "commit": "ee83ae65b882044e21249ff071f188014774d10b",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "NextTimeTsuyu2",
+      "commit": "b765f9bc28cc10149e1791e81336e543254687bf",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "NextTimeTsuyuForever",
+      "commit": "4179c67aedb5e1c2db6a5f91f4069f84de34d3f0",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "ohm",
+      "commit": "a5b0af58faedf580d5fbbf91fb527ff647036cdb",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "omd",
+      "commit": "56c89dc6e51293260e9e9a97b52bc0cbd8c0870d",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "ooptdd",
+      "commit": "8acdab1325355e1d3bcdd8d07833d464cf778f06",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "ooptdd-loop",
+      "commit": "256dc26017bae8786c62481240de25047fbefca4",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "PyRealSenseServer",
+      "commit": "a47c2427e45233bf24f2dd890cc9873ec7561024",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "ReactTest",
+      "commit": "680fa97900e6a36336e9008002d7c5827f981d02",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "RealSenseTest",
+      "commit": "6057066e46a682fedf4f3a375d56bef35c66cf60",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "Regex",
+      "commit": "c67d030a8a9155b6f112d6f8479fc6be9363ef80",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "RSserverV2",
+      "commit": "1f9de19c44f6dcb0b64fed6bd55faab6863563dd",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "sam6d_enterprise_server",
+      "commit": "2de738af00132338562a1eb473af8867d943e9af",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "sam6d_enterprise_serverv2",
+      "commit": "fd6757c93d883a713e826dd99ff1a630270bdb1a",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "solar-system-3d",
+      "commit": "086247a5d408c0e9082c422ddf9255a753015c34",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "spacegirl",
+      "commit": "c76400e3284bb6bb3e67fea6a2afbdd6150d8fc3",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "spacegirl_tool",
+      "commit": "24d4d159fb30b824f51f90fdc1f33e230862e4bc",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "start",
+      "commit": "ffeabfef28987d71c74ccd87d85e404aff9c577a",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "symposium-skills",
+      "commit": "ad2615b8ad1e44bd3637f93ed04544121dfac63d",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "Test",
+      "commit": "869854061c81b58c0beea1a53bbd9044a6372079",
+      "branch": "main",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "tissue_anomalib",
+      "commit": "e015bdc1101715080c9df9d3ff26cbbc4e90eced",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "tpa-engine",
+      "commit": "e62ff681c4d6d1e4241c9dd401e0e659fe8b4924",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    },
+    {
+      "repository": "USL",
+      "commit": "2565759c37a1d3ab9ec87823dac4032c641c024e",
+      "branch": "master",
+      "visibility": "public",
+      "archived": false,
+      "status": "VERIFIED"
+    }
+  ],
+  "scope": "Read-only recheck of all 63 public default branches after license publication. Foundation report is committed subsequently."
+}
