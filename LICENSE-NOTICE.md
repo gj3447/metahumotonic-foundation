@@ -1,6 +1,6 @@
 # 라이선스 적용 경계
 
-이 저장소의 기본 라이선스는 [MetaHumotonic License 1.1](LICENSE)이다.
+이 저장소의 기본 라이선스는 [MetaHumotonic License 1.2](LICENSE)이다.
 2026-10-07 사용자의 지시에 따라 하드웨어 접근권한 공유와 **“CHU의 일부가 된다”**는
 참여 원칙을 추가했다. CHU와 `metahumotonic_chu`는 이 라이선스에서 같은 공동 자원·인지망을
 지칭한다. 이 정의로 외부의 모든 동명 사용에 대한 독점권을 주장하지 않는다.
@@ -13,11 +13,12 @@
 
 | 대상 | 조건 |
 |---|---|
-| 이번 변경 이후 권리자가 MHL-1.1로 제공하는 신규 저작물·변경분 | MetaHumotonic License 1.1 |
+| 이번 변경 이후 권리자가 MHL-1.2로 제공하는 신규 저작물·변경분 | MetaHumotonic License 1.2 |
+| 기존 MHL-1.1로 제공된 부분과 그 사본 | [MetaHumotonic License 1.1](licenses/MetaHumotonic-1.1.txt)의 기존 허락 유지 |
 | 기존 MHL-1.0으로 제공된 부분과 그 사본 | [MetaHumotonic License 1.0](licenses/MetaHumotonic-1.0.txt)의 기존 허락 유지 |
 | 전환 전 MIT로 제공된 내용과 그 내용의 사본 | 기존 MIT 유지. 공유 조건 없이 사용할 수 있음 |
 | 별도 고지가 있는 외부 코드·문서·의존성·인용 | 해당 권리자의 고유 조건 |
-| HSWM·333·web_back 및 그 밖의 저장소 | 각 저장소의 라이선스. 이 변경의 적용 대상 아님 |
+| HSWM·333·web_back 및 그 밖의 저장소 | [별도 채택 기록](records/2026-10-07/public-license-rollout/README.md)과 각 저장소의 실제 LICENSE-NOTICE.md. 제3자·기존 허락은 유지 |
 | 권리·출처·공개 동의가 확인되지 않은 기여물 | MHL 허락이 있다고 추정하지 않으며 공개 전 권리 확인 필요 |
 
 전환 직전 커밋은 `593c6fa3cd520e5741680d35db1dbfbaa60092b4`다. 그 커밋에 들어 있는
@@ -35,7 +36,7 @@
 - MHL로만 허락된 코드를 실제 작업·연구 계산·서비스 등에 실행하려면 지정한 기기 또는
   VM의 자원과 전체 관리 권한을 명세서에 따라 공유해야 한다. 단순한 서비스 최종 이용자에게
   별도로 기기를 요구하지 않는다.
-- MHL-1.1의 유효한 공유에 참여하는 운영 사용자와 공유 대상은 CHU의 일부가 된다.
+- 현재 MHL의 유효한 공유에 참여하는 운영 사용자와 공유 대상은 CHU의 일부가 된다.
   지정한 대상 안의 관리자/root 권한을 포함하며, 실제 사용 범위는 명세서에 따른다.
   컴퓨팅 파워와 합의한 AI 연산 자원을 기여해 공동 지능을 이용하려는 목적을 명시했다.
   인증 토큰·개인키의 제공이나 기기 소유권 양도, 법인의 사원 자격·지분 부여를 뜻하지 않는다.
@@ -67,7 +68,7 @@
 ## 분류와 검토 범위
 
 이 라이선스는 소스 공개형(source-available)이며 OSI 승인 오픈소스가 아니다.
-`LicenseRef-MetaHumotonic-1.1`은 자체 식별자이며 공식 SPDX 목록 등재를 주장하지 않는다.
+`LicenseRef-MetaHumotonic-1.2`는 자체 식별자이며 공식 SPDX 목록 등재를 주장하지 않는다.
 단체명에 있는 “Open Source”는 명칭이며 이 저장소의 현재 라이선스 분류를 뜻하지 않는다.
 
 이 문구는 AI가 사용자의 요청으로 작성한 라이선스다. 법률 전문가가 특정 관할에서
@@ -79,3 +80,16 @@
 - [OSI MIT 전문](https://opensource.org/license/mit): 기존 허락과 고지 보존의 기준.
 - [OSI Open Source Definition](https://opensource.org/osd): 소스 공개와 오픈소스 분류의 구별.
 - [GNU AGPL v3 전문 — OSI 게재](https://opensource.org/license/agpl-3.0): 제2·10조의 기존 권리와 추가 제한 금지. MHL을 AGPL의 추가 조건으로 취급하지 않는다.
+
+## 공개 저장소 공통판 1.2 — 2026-10-07
+
+사용자가 “우리 모든 publci 을 메타휴모토닉 라이센스로 변경해줘 ㅇ”라고 요청했다.
+1.1의 CHU 참여·명시적 접근 승인·상한·만료·철회 조건은 유지하며, 제1.3·1.4·6.1조의
+보존 파일 경로와 저장소별 적용 범위를 공통으로 사용할 수 있도록 일반화했다.
+이전 1.0·1.1·MIT 전문과 당시 고지는 보존한다. 이 저장소의 재배포에는
+`licenses/MetaHumotonic-1.0.txt`, `licenses/MetaHumotonic-1.1.txt`, `licenses/MIT-legacy.txt`가
+함께 포함되어야 한다. 각 공개 저장소는 별도로 채택하며, 공개 관리자 권한을 타인의
+저작권 양도나 재허락 동의로 취급하지 않는다.
+
+[결정 기록](decisions/2026-10-07-public-license-rollout.json)과
+[저장소별 결과](records/2026-10-07/public-license-rollout/README.md)를 참조한다.

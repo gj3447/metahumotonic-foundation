@@ -20,7 +20,7 @@ MetaHumotonic Open Source Foundation Initiative는 자유를 추상적 구호가
 경우에도 공개 프로젝트의 라이선스와 이미 부여된 사용 권한을 소급해 회수할 수
 없습니다.
 
-이 저장소의 현재 기본 조건은 [MetaHumotonic License 1.1](LICENSE)이며,
+이 저장소의 현재 기본 조건은 [MetaHumotonic License 1.2](LICENSE)이며,
 운영 사용에 하드웨어 공유를 요구하는 소스 공개형 라이선스입니다. 단체명의
 “Open Source”와 이 저장소의 라이선스 분류는 구별합니다. 기존 MIT 허락,
 다른 프로젝트의 라이선스와 공개 규범 채택 상태는
