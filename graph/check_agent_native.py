@@ -19,6 +19,7 @@ BASE = "https://github.com/gj3447/metahumotonic-foundation/"
 AN = Namespace(BASE + "graph/agent-native#")
 AV = Namespace(BASE + "agent-native-vocab#")
 PATHS = {"source": "records/2026-10-06/agent-native-source.json",
+         "correction": "records/2026-10-07/metahumo-context-correction.json",
          "research": "records/2026-10-06/agent-native-research.json",
          "suite": "records/2026-10-06/agent-native-suite.json", "report": "AGENT-ECONOMY.md",
          "ecosystem": "graph/ecosystem.jsonld", "philosophy": "graph/philosophy.jsonld",
@@ -103,6 +104,17 @@ def integrity(graph, vocab):
     require(str(graph.value(AN.priority, AV.text)) == user["verbatim"], "user wording changed")
     require(set(graph.subjects(RDF.type, AV.UserClaim)) == {AN.priority}, "user claim coverage")
     require(set(graph.subjects(RDF.type, AV.Design)) == {AN[x] for x in TARGETS}, "design coverage")
+    corrections = json.loads(blobs["correction"], object_pairs_hook=unique)
+    require(set(graph.subjects(RDF.type, AV.ContextCorrection)) ==
+            {AN['correction_' + row['id']] for row in corrections['messages']}, 'correction coverage')
+    for row in corrections['messages']:
+        node = AN['correction_' + row['id']]
+        require(row['role'] == 'user' and row['authority'] == 'USER_PRIMARY' and row['event_time'] is None,
+                'correction role/time changed')
+        require(row['sha256'] == hashlib.sha256(row['verbatim'].encode()).hexdigest(), 'correction source text hash')
+        require(str(graph.value(node, AV.text)) == row['verbatim'], 'correction user text changed')
+        require(str(graph.value(node, AV.recordedOn)) == corrections['recorded_on'], 'correction recording date')
+        require(set(graph.objects(node, AV.qualifies)) == {AN.principal, AN.cycle}, 'correction target scope')
     for key, targets in TARGETS.items():
         require(set(graph.objects(AN[key], AV.targets)) == {URIRef(BASE+'graph/ecosystem#'+x) for x in targets}, "design target mapping")
         require(set(graph.objects(AN[key], DCTERMS.references)) == {AN['obs_'+x] for x in REFERENCES[key]}, "design evidence mapping")
@@ -144,6 +156,8 @@ def queries(graph, evidence):
            str(r['summary']['final_offered_capacity'])) for r in evidence['runs']}),
         ('reuse existing agent identity', 'SELECT ?s WHERE { an:principal av:targets ?s }',
          {(BASE+'graph/ecosystem#agent',), (BASE+'graph/ecosystem#hswm',)}),
+        ('user context correction', 'SELECT ?c ?d WHERE { ?c a av:ContextCorrection; av:qualifies ?d; av:authority "USER_PRIMARY" }',
+         {(str(AN['correction_' + c]), str(AN[d])) for c in ['concept', 'perspectives'] for d in ['principal', 'cycle']}),
     ]
     for name, query, expected in questions:
         actual = {tuple(str(x) for x in row) for row in graph.query(prefix+query)}
@@ -173,6 +187,7 @@ def main():
         ok, report, _ = validate(bad, shacl_graph=shapes)
         require(not ok and any(report.value(r, SH.focusNode) == node for r in report.subjects(RDF.type, SH.ValidationResult)), 'negative shape escaped')
     changes = [(AN.priority, AV.text, Literal('AI rewrite')),
+               (AN.correction_concept, AV.text, Literal('generic free agent market')),
                (AN.artifact_suite, AV.sha256, Literal('0'*64)),
                (AN.artifact_source, AV.path, Literal('../outside')),
                (AN.principal, AV.targets, AN.missing),
@@ -196,7 +211,7 @@ def main():
         except ValueError:
             continue
         raise ValueError('negative serialization escaped')
-    print(f'agent-native: SHACL/meta-SHACL PASS; {nqueries} exact CQs; 13 negative cases; 12 policy/ledger runs replayed; LOCAL_SIMULATION')
+    print(f'agent-native: SHACL/meta-SHACL PASS; {nqueries} exact CQs; 14 negative cases; 12 policy/ledger runs replayed; LOCAL_SIMULATION')
 
 
 if __name__ == '__main__':

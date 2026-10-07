@@ -11,6 +11,8 @@ av:UserClaim a rdfs:Class .
 av:Design a rdfs:Class .
 av:Observation a rdfs:Class .
 av:Run a rdfs:Class .
+av:ContextCorrection a rdfs:Class ; rdfs:comment "A later verbatim user correction qualifies the interpretation of an earlier AI design; it does not rewrite that user's earlier words or invalidate the recorded local run." .
+av:qualifies a rdf:Property ; rdfs:domain av:ContextCorrection ; rdfs:range av:Design ; rdfs:comment "1..n, correction -> earlier AI design whose scope must be read with this correction." .
 av:authority a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 on each applicable node; subject -> recorded value. Run counts and capacity are simulated only." .
 av:state a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 on each applicable node; subject -> recorded value. Run counts and capacity are simulated only." .
 av:text a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 on each applicable node; subject -> recorded value. Run counts and capacity are simulated only." .

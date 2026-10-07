@@ -1,0 +1,23 @@
+{
+  "schema": "metahumotonic.context-correction/v1",
+  "recorded_on": "2026-10-07",
+  "scope": "Current conversation corrections only. No private company sources or narrative are reproduced. Earlier statements and local simulation results remain historical evidence.",
+  "messages": [
+    {
+      "id": "concept",
+      "role": "user",
+      "authority": "USER_PRIMARY",
+      "event_time": null,
+      "verbatim": "자유 에이전트 그 에이전트가 아니라 Metahumo 라는 개념을 이해해야하는데 ㅇㅇ;",
+      "sha256": "fe3363f855d449810b97358611d6d45b8fd53aff05694549d8058bc633dd99f9"
+    },
+    {
+      "id": "perspectives",
+      "role": "user",
+      "authority": "USER_PRIMARY",
+      "event_time": null,
+      "verbatim": "ㅇㅇ Metahumo 그리고 오퍼레이터도 있거든 확인해주고 ㅇㅇ 그 좀 다자적으로 해석해 너무 이건 이거다 이렇게 가지말고",
+      "sha256": "dd705f6ea9422bf37bd4db29ad468060b162a9c096666ebf921234fdc64163e7"
+    }
+  ]
+}

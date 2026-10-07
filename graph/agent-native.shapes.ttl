@@ -17,6 +17,14 @@ av:UserClaimShape a sh:NodeShape ; sh:targetClass av:UserClaim ;
   sh:property [ sh:path dcterms:source ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue an:artifact_source ] ;
   sh:property [ sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue <https://github.com/gj3447/metahumotonic-foundation/graph/spirit#proposer> ] ;
   sh:property [ sh:path av:recordedOn ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:date ] .
+av:ContextCorrectionShape a sh:NodeShape ; sh:targetClass av:ContextCorrection ;
+  sh:property [ sh:path av:authority ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "USER_PRIMARY" ] ;
+  sh:property [ sh:path av:state ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "STATED" ] ;
+  sh:property [ sh:path av:text ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path dcterms:source ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue an:artifact_correction ] ;
+  sh:property [ sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue <https://github.com/gj3447/metahumotonic-foundation/graph/spirit#proposer> ] ;
+  sh:property [ sh:path av:qualifies ; sh:minCount 1 ; sh:class av:Design ] ;
+  sh:property [ sh:path av:recordedOn ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:date ] .
 av:DesignShape a sh:NodeShape ; sh:targetClass av:Design ;
   sh:property [ sh:path av:authority ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "SECONDARY_AI" ] ;
   sh:property [ sh:path av:state ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "PROPOSED" ] ;

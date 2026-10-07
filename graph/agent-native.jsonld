@@ -58,6 +58,10 @@
     "targets": {
       "@id": "av:targets",
       "@type": "@id"
+    },
+    "qualifies": {
+      "@id": "av:qualifies",
+      "@type": "@id"
     }
   },
   "@graph": [
@@ -103,7 +107,7 @@
         "prov:Entity"
       ],
       "path": "AGENT-ECONOMY.md",
-      "sha256": "eb0d114881a64192b51997f9aa28ba55ea9f4b00898812b01400735bd7a51e7f",
+      "sha256": "4fececc7092014d190439079b35054c49ea47b961f70d16471c92c444d346458",
       "state": "WORKTREE_SNAPSHOT"
     },
     {
@@ -599,7 +603,45 @@
         "an:run_e0d4f04ad62ef9a536332344d92e1afff59d810a16bfa605b552e63bcd7c9032",
         "an:run_2267ed25072394f25e58f1f90f1c56ef6e5e340bee8c6a5630ee8d413943f0b2",
         "an:run_6b6b5adad8ee66e9e572287dd19e609b817991e217bc0ebf70bb6198d5e01cb6",
-        "an:run_836f16014cd23e79c64796acef56c475e51eec5c73f81eeefc417215a705d220"
+        "an:run_836f16014cd23e79c64796acef56c475e51eec5c73f81eeefc417215a705d220",
+        "an:artifact_correction",
+        "an:correction_concept",
+        "an:correction_perspectives"
+      ]
+    },
+    {
+      "@id": "an:artifact_correction",
+      "@type": "av:Artifact",
+      "path": "records/2026-10-07/metahumo-context-correction.json",
+      "sha256": "bfc6930e3313e60f10f606870f4c12f58413477bcff8baf54b9997e0042bcab8",
+      "state": "WORKTREE_SNAPSHOT"
+    },
+    {
+      "@id": "an:correction_concept",
+      "@type": "av:ContextCorrection",
+      "text": "자유 에이전트 그 에이전트가 아니라 Metahumo 라는 개념을 이해해야하는데 ㅇㅇ;",
+      "authority": "USER_PRIMARY",
+      "state": "STATED",
+      "source": "an:artifact_correction",
+      "attributedTo": "https://github.com/gj3447/metahumotonic-foundation/graph/spirit#proposer",
+      "recordedOn": "2026-10-07",
+      "qualifies": [
+        "an:principal",
+        "an:cycle"
+      ]
+    },
+    {
+      "@id": "an:correction_perspectives",
+      "@type": "av:ContextCorrection",
+      "text": "ㅇㅇ Metahumo 그리고 오퍼레이터도 있거든 확인해주고 ㅇㅇ 그 좀 다자적으로 해석해 너무 이건 이거다 이렇게 가지말고",
+      "authority": "USER_PRIMARY",
+      "state": "STATED",
+      "source": "an:artifact_correction",
+      "attributedTo": "https://github.com/gj3447/metahumotonic-foundation/graph/spirit#proposer",
+      "recordedOn": "2026-10-07",
+      "qualifies": [
+        "an:principal",
+        "an:cycle"
       ]
     }
   ]
