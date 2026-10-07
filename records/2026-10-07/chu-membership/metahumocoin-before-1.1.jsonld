@@ -1622,8 +1622,8 @@
         "mhv:File",
         "mhv:Norm"
       ],
-      "label": "2026-10-03 Charter §8 Non-goals",
-      "path": "records/2026-10-07/chu-membership/charter-before-1.1.md",
+      "label": "현재 Charter §8 Non-goals",
+      "path": "CHARTER.md",
       "sha256": "993c409c255bb35411bd462e418d9b1d0c98ccfeb7a4fd2d22b44361a544ed0a",
       "section": "8. Non-goals",
       "quote": "이 initiative는 다음을 약속하지 않습니다.\n\n- AI의 법적 인격에 대한 최종 결론\n- 암호자산, 토큰, 투자, 고정 수익 또는 자원 제공 대가",
@@ -1632,7 +1632,7 @@
       "prov:wasRevisionOf": {
         "@id": "mhc:charter_pre_mhl"
       },
-      "comment": "MHL-1.0 적용 후 파일 바이트를 재관측했다. §8 인용은 그대로이며 코인 정책이나 헌장 효력을 변경하지 않는다. 원 커밋의 경로는 CHARTER.md이며, 2026-10-07 라이선스 표시를 1.1로 갱신하면서 이 관측의 바이트는 보관본으로 유지했다."
+      "comment": "MHL-1.0 적용 후 파일 바이트를 재관측했다. §8 인용은 그대로이며 코인 정책이나 헌장 효력을 변경하지 않는다."
     },
     {
       "@id": "mhc:src_cosmos_staking",

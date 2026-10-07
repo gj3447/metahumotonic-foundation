@@ -421,7 +421,7 @@
     },
     {
       "id": "CQ7",
-      "question": "공유 권한의 긴장은 어느 실제 문서를 비교하는가?",
+      "question": "공유 권한의 긴장은 당시 문서의 어느 보존 원문을 비교하는가?",
       "columns": [
         "observation",
         "artifact",
@@ -432,12 +432,12 @@
         [
           "ph:O_license",
           "ph:source_license",
-          "LICENSE"
+          "licenses/MetaHumotonic-1.0.txt"
         ],
         [
           "ph:O_charter",
           "ph:source_charter",
-          "CHARTER.md"
+          "records/2026-10-07/chu-membership/charter-before-1.1.md"
         ],
         [
           "ph:O_owner",

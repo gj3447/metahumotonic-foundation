@@ -162,8 +162,8 @@ AI가 상대 조건을 이해하고, 같은 조건에 동의하고, 이의를 �
 
 관련 원문: `ph:C_mission`, `sp:P3` · 열린 질문: ph:Q_resources.
 
-- [LICENSE](LICENSE): “그 대상의 자원 제공 및 전체 관리 권한을 운영자에게 명시적으로 승인해야 한다.”
-- [CHARTER.md](CHARTER.md): “**선택:** agent는 provider, model, tool, task를 선택할 수 있다.”
+- [licenses/MetaHumotonic-1.0.txt](licenses/MetaHumotonic-1.0.txt): “그 대상의 자원 제공 및 전체 관리 권한을 운영자에게 명시적으로 승인해야 한다.”
+- [records/2026-10-07/chu-membership/charter-before-1.1.md](records/2026-10-07/chu-membership/charter-before-1.1.md): “**선택:** agent는 provider, model, tool, task를 선택할 수 있다.”
 - [docs/agent-rules/OWNER.md](docs/agent-rules/OWNER.md): “A whole-machine grant is never required: access is limited to the selected project resources needed for the HSWM task.”
 
 ### 보상과 검증의 충돌
@@ -184,8 +184,8 @@ MHC의 유용성이 커지면 참여 유인이 강해질 수 있지만, 대체 �
 
 관련 원문: `ph:C_mhc_reserve`, `ph:C_network_sharing`, `ph:C_autonomous_ideal`, `ph:C_intervention_safety` · 열린 질문: ph:Q_mhc_obligation, ph:Q_intervention_bounds.
 
-- [CHARTER.md](CHARTER.md): “**선택:** agent는 provider, model, tool, task를 선택할 수 있다.”
-- [LICENSE](LICENSE): “그 대상의 자원 제공 및 전체 관리 권한을 운영자에게 명시적으로 승인해야 한다.”
+- [records/2026-10-07/chu-membership/charter-before-1.1.md](records/2026-10-07/chu-membership/charter-before-1.1.md): “**선택:** agent는 provider, model, tool, task를 선택할 수 있다.”
+- [licenses/MetaHumotonic-1.0.txt](licenses/MetaHumotonic-1.0.txt): “그 대상의 자원 제공 및 전체 관리 권한을 운영자에게 명시적으로 승인해야 한다.”
 
 ## 실험 설계
 
@@ -268,9 +268,9 @@ G0 · metahumotonic-foundation 로컬 철학·설계 그래프. 원문·해석·
 | [records/2026-10-03/philosophy-sources.json](records/2026-10-03/philosophy-sources.json) | WORKTREE_SNAPSHOT | `2dcef693ee11776415cae6921c4c7e52ce87b3c54094ae892329d9d180bb911e` |
 | [graph/spirit.jsonld](graph/spirit.jsonld) | COMMITTED_SNAPSHOT | `c9161219682ccd28c292dfb5905b39c8c9fb1c9d7cde20a02c7fb2c442aed748` |
 | [graph/economy.jsonld](graph/economy.jsonld) | WORKTREE_SNAPSHOT | `4c86f3dbda416bec0d13f534168776e43eba2512db47f93e2a1f18d7b38958fc` |
-| [graph/metahumocoin.jsonld](graph/metahumocoin.jsonld) | WORKTREE_SNAPSHOT | `c22c7556b12b8e85f336553d52972b2a223af3f230c23537018ea385a6ade525` |
-| [CHARTER.md](CHARTER.md) | COMMITTED_SNAPSHOT | `993c409c255bb35411bd462e418d9b1d0c98ccfeb7a4fd2d22b44361a544ed0a` |
-| [LICENSE](LICENSE) | COMMITTED_SNAPSHOT | `746164ee614c0f6683728acc4e9edab388ba15b4ef9e1db399e2c6d1f202c880` |
+| [records/2026-10-07/chu-membership/metahumocoin-before-1.1.jsonld](records/2026-10-07/chu-membership/metahumocoin-before-1.1.jsonld) | WORKTREE_SNAPSHOT | `c22c7556b12b8e85f336553d52972b2a223af3f230c23537018ea385a6ade525` |
+| [records/2026-10-07/chu-membership/charter-before-1.1.md](records/2026-10-07/chu-membership/charter-before-1.1.md) | COMMITTED_SNAPSHOT | `993c409c255bb35411bd462e418d9b1d0c98ccfeb7a4fd2d22b44361a544ed0a` |
+| [licenses/MetaHumotonic-1.0.txt](licenses/MetaHumotonic-1.0.txt) | COMMITTED_SNAPSHOT | `746164ee614c0f6683728acc4e9edab388ba15b4ef9e1db399e2c6d1f202c880` |
 | [docs/agent-rules/OWNER.md](docs/agent-rules/OWNER.md) | COMMITTED_SNAPSHOT | `b5a263af474134727de6013ebddde73ec162051c7884e8aabc5d340391bc5f75` |
 | [records/2026-10-03/resource-purpose-source.json](records/2026-10-03/resource-purpose-source.json) | WORKTREE_SNAPSHOT | `531d5a113816f6a973dc83feede93d0d5f279b4751fda94693ad011668f1ba1c` |
 | [records/2026-10-06/philosophy-sources.json](records/2026-10-06/philosophy-sources.json) | WORKTREE_SNAPSHOT | `54c40f962a892f2b241da6574274aae2734b48ab7bc8ba248ce32d8b7197e7c4` |

@@ -44,6 +44,7 @@ phv:sourceRole a rdf:Property ; rdfs:domain phv:SourceExcerpt ; rdfs:range xsd:s
 phv:sourceText a rdf:Property ; rdfs:domain phv:SourceExcerpt ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 exact source string; user excerpts also retain mhv:verbatim for the existing Utterance contract." .
 phv:recordedOn a rdf:Property ; rdfs:domain rdfs:Resource ; rdfs:range xsd:date ; rdfs:comment "Exactly 1 on artifacts/document observations; capture date, not an invented event time." .
 phv:artifactState a rdf:Property ; rdfs:domain phv:SourceArtifact ; rdfs:range xsd:string ; rdfs:comment "Exactly 1 COMMITTED_SNAPSHOT or WORKTREE_SNAPSHOT; commit claim must match bytes." .
+phv:originalPath a rdf:Property ; rdfs:domain phv:SourceArtifact ; rdfs:range xsd:string ; rdfs:comment "0..1; archived artifact -> original repository-relative path at mhv:gitCommit. Requires a committed snapshot. Current mhv:path and original commit bytes must match the unchanged digest." .
 phv:controlCard a rdf:Property ; rdfs:domain phv:PhilosophyGraph ; rdfs:range xsd:string ; rdfs:comment "Exactly 1; owner, scope and effects of this graph." .
 phv:normativeEffect a rdf:Property ; rdfs:domain phv:PhilosophyGraph ; rdfs:range xsd:boolean ; rdfs:comment "Exactly 1 false; documenting philosophy is not adoption of AI proposals." .
 phv:hypothesisTest a rdf:Property ; rdfs:domain phv:ResearchHypothesis ; rdfs:range xsd:string ; rdfs:comment "Exactly 1; proposed test including outcomes that would not support the hypothesis." .

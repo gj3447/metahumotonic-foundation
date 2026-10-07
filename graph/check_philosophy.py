@@ -150,9 +150,18 @@ def check_integrity(graph, vocab):
                 f"input digest changed: {artifact}")
         artifacts[artifact] = raw
         revision = graph.value(artifact, MHV.gitCommit)
+        original_path = graph.value(artifact, PHV.originalPath)
+        require(original_path is None or revision is not None,
+                f"original path requires a commit: {artifact}")
         if revision:
+            # A relocated archive retains its original Git path and digest;
+            # relocation does not turn an old observation into a new one.
+            commit_path = (Path(str(original_path)) if original_path is not None
+                           else path.relative_to(REPO))
+            require(not commit_path.is_absolute() and ".." not in commit_path.parts
+                    and bool(commit_path.parts), f"unsafe original path: {original_path}")
             original = subprocess.check_output(
-                ["git", "show", f"{revision}:{path.relative_to(REPO).as_posix()}"], cwd=REPO)
+                ["git", "show", f"{revision}:{commit_path.as_posix()}"], cwd=REPO)
             require(original == raw, f"commit bytes differ: {artifact}")
 
     # Preserve earlier conversation artifacts byte-for-byte when a later user
@@ -298,6 +307,12 @@ def negative_checks(graph, shapes, vocab, documents):
 
     integrity_cases = [
         ("altered input digest", lambda g: g.set((PH.source_license, MHV.sha256, Literal("0" * 64)))),
+        ("archive points to different commit bytes", lambda g: g.set(
+            (PH.source_license, PHV.originalPath, Literal("CHARTER.md")))),
+        ("archive original path escapes repository", lambda g: g.set(
+            (PH.source_license, PHV.originalPath, Literal("../LICENSE")))),
+        ("archive original path without commit", lambda g: g.remove(
+            (PH.source_license, MHV.gitCommit, None))),
         ("changed source text with rehashed excerpt", lambda g: (
             g.set((PH.a_mission, PHV.sourceText, Literal("changed"))),
             g.set((PH.a_mission, MHV.sha256, Literal(digest(b"changed")))))),

@@ -19,6 +19,7 @@ phv:GraphShape a sh:NodeShape ; sh:targetNode ph:graph ; sh:class phv:Philosophy
 
 phv:ArtifactShape a sh:NodeShape ; sh:targetClass phv:SourceArtifact ;
   sh:property [ sh:path mhv:path ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+  sh:property [ sh:path phv:originalPath ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:minLength 1 ] ;
   sh:property [ sh:path mhv:sha256 ; sh:minCount 1 ; sh:maxCount 1 ; sh:pattern "^[0-9a-f]{64}$" ] ;
   sh:property [ sh:path phv:recordedOn ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:date ] ;
   sh:property [ sh:path phv:artifactState ; sh:minCount 1 ; sh:maxCount 1 ; sh:in ( "COMMITTED_SNAPSHOT" "WORKTREE_SNAPSHOT" ) ] ;
@@ -26,6 +27,7 @@ phv:ArtifactShape a sh:NodeShape ; sh:targetClass phv:SourceArtifact ;
     [ sh:property [ sh:path phv:artifactState ; sh:hasValue "COMMITTED_SNAPSHOT" ] ;
       sh:property [ sh:path mhv:gitCommit ; sh:minCount 1 ; sh:maxCount 1 ; sh:pattern "^[0-9a-f]{40}$" ] ]
     [ sh:property [ sh:path phv:artifactState ; sh:hasValue "WORKTREE_SNAPSHOT" ] ;
+      sh:property [ sh:path phv:originalPath ; sh:maxCount 0 ] ;
       sh:property [ sh:path mhv:gitCommit ; sh:maxCount 0 ] ]
   ) .
 

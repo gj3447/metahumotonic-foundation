@@ -126,7 +126,7 @@
         "av:Artifact",
         "prov:Entity"
       ],
-      "path": "graph/philosophy.jsonld",
+      "path": "records/2026-10-07/chu-membership/philosophy-before-1.1.jsonld",
       "sha256": "5dfdc70c8ec937a083bb96e2c3b921c82758adc125de15861cdd0f985b1e5e1d",
       "state": "WORKTREE_SNAPSHOT"
     },

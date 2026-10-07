@@ -18,7 +18,6 @@
     "span": "mhv:span",
     "sha256": "mhv:sha256",
     "path": "mhv:path",
-    "originalPath": "phv:originalPath",
     "gitCommit": "mhv:gitCommit",
     "limitation": "mhv:limitation",
     "date": {
@@ -271,7 +270,7 @@
         "prov:Entity"
       ],
       "label": "graph/metahumocoin.jsonld",
-      "path": "records/2026-10-07/chu-membership/metahumocoin-before-1.1.jsonld",
+      "path": "graph/metahumocoin.jsonld",
       "sha256": "c22c7556b12b8e85f336553d52972b2a223af3f230c23537018ea385a6ade525",
       "recordedOn": "2026-10-03",
       "artifactState": "WORKTREE_SNAPSHOT"
@@ -283,9 +282,8 @@
         "mhv:File",
         "prov:Entity"
       ],
-      "label": "CHARTER.md — 2026-10-03 snapshot",
-      "path": "records/2026-10-07/chu-membership/charter-before-1.1.md",
-      "originalPath": "CHARTER.md",
+      "label": "CHARTER.md",
+      "path": "CHARTER.md",
       "sha256": "993c409c255bb35411bd462e418d9b1d0c98ccfeb7a4fd2d22b44361a544ed0a",
       "recordedOn": "2026-10-03",
       "artifactState": "COMMITTED_SNAPSHOT",
@@ -298,9 +296,8 @@
         "mhv:File",
         "prov:Entity"
       ],
-      "label": "LICENSE — MetaHumotonic 1.0 snapshot",
-      "path": "licenses/MetaHumotonic-1.0.txt",
-      "originalPath": "LICENSE",
+      "label": "LICENSE",
+      "path": "LICENSE",
       "sha256": "746164ee614c0f6683728acc4e9edab388ba15b4ef9e1db399e2c6d1f202c880",
       "recordedOn": "2026-10-03",
       "artifactState": "COMMITTED_SNAPSHOT",

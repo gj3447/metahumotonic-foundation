@@ -22,7 +22,8 @@ PATHS = {"source": "records/2026-10-06/agent-native-source.json",
          "correction": "records/2026-10-07/metahumo-context-correction.json",
          "research": "records/2026-10-06/agent-native-research.json",
          "suite": "records/2026-10-06/agent-native-suite.json", "report": "AGENT-ECONOMY.md",
-         "ecosystem": "graph/ecosystem.jsonld", "philosophy": "graph/philosophy.jsonld",
+         "ecosystem": "graph/ecosystem.jsonld",
+         "philosophy": "records/2026-10-07/chu-membership/philosophy-before-1.1.jsonld",
          "spirit": "graph/spirit.jsonld", "code": "economy/agent_native.py"}
 TARGETS = {"principal": {"agent", "hswm"}, "cycle": {"agent", "chu", "response", "asset"},
            "evaluation": {"agent", "response"}}

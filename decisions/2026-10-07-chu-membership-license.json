@@ -1,0 +1,193 @@
+{
+  "record_type": "owner-directed-license-change",
+  "record_scope": "license-1.1-application-snapshot",
+  "decision_id": "owner-2026-10-07-chu-membership-license",
+  "title": "MetaHumotonic License 1.1 — CHU의 일부가 되는 참여 원칙",
+  "class": "normative",
+  "status": "APPLIED_TO_WORKTREE",
+  "date": "2026-10-07",
+  "authority": {
+    "source": "current-user-instruction",
+    "source_location": "current-conversation",
+    "user_verbatim": "내 계획이야 사람들이 그렇게 따라주기만 하면되 동일 라이센스에 ㅇㅇ 일단 우리 publci 라이센스에 그거먼저 박아줘봐봐 ㅇㅇ 하드웨어 접근권한 다풀어서 metahumotonic_chu 의 일원이 된다 사실 chu 라는 그 고유명사를 사용하는게 metahumotonic 하나뿐이라서 chu 이기만 하면 그 우리 의 일원이라는거야 chu 라는말이 ㅇㅇ chu 의 일부가 된다 라고 해줘봐봐 ㅇㅇ",
+    "source_path": "records/2026-10-07/chu-membership/user-verbatim.txt",
+    "source_sha256": "524c40b09a815be7d0315fef13b3d98de137dad3c5da143ade1c2abd6bedd0f9",
+    "source_authority": "USER_PRIMARY",
+    "scope": "공개 metahumotonic-foundation 라이선스에 하드웨어 접근권한 공유와 CHU 참여 문구 적용",
+    "publication_authorization": "현재 사용자가 public 라이선스 반영을 지시했고, 같은 작업에서 커밋·푸시를 요청한 권한이 유지된다."
+  },
+  "author": "OpenAI Codex (AI-authored legal wording at the user's request)",
+  "interpretation_authority": "SECONDARY_AI",
+  "base_commit": "31e455313a13da8047f2d627c15296bac83efb5f",
+  "license": "LicenseRef-MetaHumotonic-1.1",
+  "previous_license": "LicenseRef-MetaHumotonic-1.0",
+  "proposal": null,
+  "reviewers": [],
+  "governance_ratification": "NOT_COMPLETED",
+  "legal_review": "NOT_PERFORMED",
+  "publication": "AUTHORIZED_PENDING_COMMIT",
+  "publication_tracking": "이 필드는 작성 시점의 상태다. 이후 커밋·푸시 여부와 시점은 이 파일을 포함한 Git 이력과 공개 원격 저장소로 확인한다.",
+  "reason": "사용자가 공개 라이선스에 하드웨어 접근권한을 개방하고 CHU의 일부가 된다는 참여 원칙과 CHU = metahumotonic_chu라는 생태계 내 명칭을 명시하도록 요청했다. 고정 버전인 1.0을 덮어 소급 적용하지 않고 1.1로 개정한다.",
+  "drafting_choices": [
+    "CHU와 metahumotonic_chu를 이 라이선스에서 MetaHumotonic 공동 자원·인지망의 같은 고유명칭으로 정의한다.",
+    "유효한 공유 조건을 충족한 운영 사용자와 지정 공유 대상이 유효한 공유 기간 동안 CHU의 일부가 된다고 제2.6조·제4.6조에 명시한다.",
+    "하드웨어 개방은 기존 1.0의 지정 기기·VM 안의 전체 관리 권한 경계를 유지하고, 명세서에 합의한 AI 연산 자원을 연결한다.",
+    "컴퓨팅 파워·AI 연산 자원 기여와 HSWM 기반 거대 CHU의 더 좋은 지능·답변이라는 목적을 밝힌다. 성능·수익·안전성의 실증 또는 보장은 주장하지 않는다.",
+    "이름 사용만으로 접근 동의나 소유권·법인 사원 자격·지분이 생기지 않으며, 공유 중단 시 대상의 자원 참여와 접근권한도 중단됨을 명시한다.",
+    "CHU가 외부에서도 오직 이 프로젝트에만 쓰이는 말이라는 배타적 권리 주장은 하지 않는다. 사용자 원문은 수정 없이 별도로 보존한다.",
+    "세부 법률 문구는 AI 작성이며 사용자 원문이나 공개 거버넌스 비준으로 승격하지 않는다."
+  ],
+  "preserved_constraints": [
+    "기존 MHL-1.0·MIT 허락과 외부 저작물·다른 저장소의 라이선스를 보존한다.",
+    "기존 명시적 접근 승인, 목적·상한·최대 14일 만료·즉시 철회·자격 증명 보호 조건을 유지한다.",
+    "COVENANT 초안을 소급 비준하지 않고 CHARTER의 현재 라이선스 표기만 갱신한다.",
+    "실제 자원 등록·원격 접속·권한 부여·HSWM 실행·코인 발행·금융 거래를 수행하지 않는다.",
+    "사용자의 새 발언과 공개 저장소의 원문만 보존한다. 비공개 대시보드 자료를 복사하지 않는다."
+  ],
+  "archived_sources": [
+    {
+      "path": "licenses/MetaHumotonic-1.0.txt",
+      "original_path": "LICENSE",
+      "git_commit": "31e455313a13da8047f2d627c15296bac83efb5f",
+      "sha256": "746164ee614c0f6683728acc4e9edab388ba15b4ef9e1db399e2c6d1f202c880"
+    },
+    {
+      "path": "records/2026-10-07/chu-membership/charter-before-1.1.md",
+      "original_path": "CHARTER.md",
+      "git_commit": "31e455313a13da8047f2d627c15296bac83efb5f",
+      "sha256": "993c409c255bb35411bd462e418d9b1d0c98ccfeb7a4fd2d22b44361a544ed0a"
+    },
+    {
+      "path": "records/2026-10-07/chu-membership/metahumocoin-before-1.1.jsonld",
+      "original_path": "graph/metahumocoin.jsonld",
+      "git_commit": "31e455313a13da8047f2d627c15296bac83efb5f",
+      "sha256": "c22c7556b12b8e85f336553d52972b2a223af3f230c23537018ea385a6ade525"
+    },
+    {
+      "path": "records/2026-10-07/chu-membership/philosophy-before-1.1.jsonld",
+      "original_path": "graph/philosophy.jsonld",
+      "git_commit": "31e455313a13da8047f2d627c15296bac83efb5f",
+      "sha256": "5dfdc70c8ec937a083bb96e2c3b921c82758adc125de15861cdd0f985b1e5e1d"
+    }
+  ],
+  "graph_migration": {
+    "preserved_ids": [
+      "ph:source_license",
+      "ph:source_charter",
+      "mhc:charter",
+      "ph:source_coin",
+      "rp:source_philosophy",
+      "an:artifact_philosophy"
+    ],
+    "description": "과거 관측의 해시·날짜·커밋·인용을 유지하며 보관본으로 경로를 연결한다. 철학 그래프의 optional phv:originalPath는 원 커밋의 경로를 보존하고 실제 바이트 일치를 검증한다. 변경 전 코인·철학 그래프를 참조하던 출처도 원 바이트 보관본에 연결하여 과거 관측을 유지한다.",
+    "current_source_status": "이번 원문과 개정 근거는 이 결정 기록에서 참조한다. 과거 관측을 현재 1.1 조항에 대한 관측으로 바꾸지 않는다."
+  },
+  "evidence": [
+    "LICENSE",
+    "LICENSE-NOTICE.md",
+    "records/2026-10-07/chu-membership/user-verbatim.txt",
+    "licenses/MetaHumotonic-1.0.txt",
+    "decisions/2026-10-03-metahumotonic-license.yaml",
+    "https://opensource.org/osd",
+    "https://www.gnu.org/licenses/gpl-faq.en.html"
+  ],
+  "external_evidence_scope": "공식 자료는 라이선스 분류와 기존 라이선스별 조건을 확인하기 위한 참고다. GPL 안내를 모든 라이선스의 법적 결론으로 일반화하거나 MHL 집행 가능성 검토로 표시하지 않는다.",
+  "changes": [
+    {
+      "file": "LICENSE",
+      "result": "MHL-1.1 참여 원칙, CHU 명칭·참여 정의, 공유 상태 기록과 중단 조건"
+    },
+    {
+      "file": "LICENSE-NOTICE.md",
+      "result": "1.1 적용 경계와 개정 근거"
+    },
+    {
+      "file": "README.md",
+      "result": "현재 라이선스와 CHU 참여 요약"
+    },
+    {
+      "file": "CHARTER.md",
+      "result": "현재 라이선스 링크 표기 1.0 → 1.1"
+    },
+    {
+      "file": "CONTRIBUTING.md",
+      "result": "신규 기여 라이선스 버전 일치"
+    },
+    {
+      "file": ".github/PULL_REQUEST_TEMPLATE.md",
+      "result": "신규 기여 라이선스 확인 항목 1.1"
+    },
+    {
+      "file": "COVENANT.md",
+      "result": "과거 초안 보존 및 현재 1.1 안내"
+    },
+    {
+      "file": "graph/philosophy.jsonld",
+      "result": "기존 관측을 바이트 보존된 1.0·헌장 사본에 연결"
+    },
+    {
+      "file": "graph/metahumocoin.jsonld",
+      "result": "과거 Charter 관측의 경로·표시 정정, 인용·효력 변경 없음"
+    },
+    {
+      "file": "graph/check_philosophy.py",
+      "result": "보관 경로와 원 커밋 경로의 해시·바이트 검증 및 오류 회귀 검증"
+    },
+    {
+      "file": "decisions/README.md",
+      "result": "이번 소유자 지시 변경 기록 연결"
+    },
+    {
+      "file": "graph/philosophy-vocab.ttl",
+      "result": "보관본 원 Git 경로의 선택적 속성 계약"
+    },
+    {
+      "file": "graph/philosophy.shapes.ttl",
+      "result": "원 경로·커밋 상태 제약"
+    },
+    {
+      "file": "graph/philosophy-queries.json",
+      "result": "기존 관측의 보관 경로를 정확한 질의 기대값으로 확인"
+    },
+    {
+      "file": "graph/resource-roadmap.jsonld",
+      "result": "당시 철학 원문 보관본에 연결"
+    },
+    {
+      "file": "graph/agent-native.jsonld",
+      "result": "당시 철학 원문 보관본에 연결"
+    },
+    {
+      "file": "graph/check_agent_native.py",
+      "result": "기존 철학 입력 해시를 유지하며 보관 경로를 검증"
+    },
+    {
+      "file": "PHILOSOPHY.md",
+      "result": "검증기로 출처 링크 재생성"
+    },
+    {
+      "file": "RESOURCE-ROADMAP.md",
+      "result": "검증기로 출처 링크 재생성"
+    }
+  ],
+  "validation": {
+    "date": "2026-10-07",
+    "source_preservation": "PASS: 사용자 TXT와 기록 문자열 일치, 보관본 4개 SHA-256 및 개정 직전 Git 바이트 일치",
+    "local_notice_links": "PASS",
+    "graph_subvalidators": {
+      "economy-flow": "PASS: 18 negative checks",
+      "economy": "PASS: SHACL/meta-SHACL, 9 CQs, 11 negative cases",
+      "simulation": "PASS: 5 CQs, 6 negative cases, 24-event replay",
+      "metahumocoin": "PASS: 14 CQs, 12 negative cases",
+      "philosophy": "PASS: 18 CQs, 40 negative cases, 2856 combined triples",
+      "resource-roadmap": "PASS: 10 CQs, 20 negative cases",
+      "market": "PASS: 8 CQs, 8 negative cases",
+      "ecosystem": "PASS: 12 CQs, 23 negative cases",
+      "foundation-rationale": "PASS: 16 CQs, 36 negative cases",
+      "compute-coin": "PASS: 13 CQs, 35 negative cases",
+      "agent-native": "PASS: 6 CQs, 14 negative cases, 12 policy/ledger replay runs"
+    },
+    "execution_notes": "최초 graph/check.py --write-view 실행에서 앞선 economy-flow·economy·simulation·metahumocoin 검증은 통과했다. 철학 입력의 전이 해시와 보관 경로 CQ 기대값 불일치를 수정한 뒤 철학 검증을 다시 통과했고, 뒤의 모든 하위 검증기를 개별 실행해 통과했다. 전체 명령을 재실행해 exit 0을 관측한 것으로 기록하지 않는다.",
+    "scope": "로컬 문서·출처·그래프 일관성 검증. 법률 검토·공개 거버넌스 비준·실제 CHU 서비스 검증을 뜻하지 않는다."
+  }
+}
