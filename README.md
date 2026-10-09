@@ -73,6 +73,11 @@ MetaHumotonic 공동 자원·인지망의 고유명칭입니다. 참여의 목�
 공개 저장소별 채택은 [적용 기록](records/2026-10-07/public-license-rollout/README.md)에 정리합니다. 기존 AGPL·MIT 허락과 제3자 조건을 보존합니다. 적용 범위와 변경 이력은
 [LICENSE-NOTICE.md](LICENSE-NOTICE.md)를 따릅니다.
 
+[적대적 검토 후속 작업](records/2026-10-09/license-hardening/README.md)에는
+**미채택 1.3 초안**과 권리 명세, 로컬 CHU 참여·정산 구현을 담았습니다.
+`python3 -m market.participation_demo`로 가입만으로 잔고가 생기지 않는 흐름과
+거래·환불을 재현할 수 있습니다. 현재 1.2를 변경하거나 실제 하드웨어 접근권한·MHC를 발급하지 않습니다.
+
 ## 현재 상태
 
 - **공개 상태:** 누구나 문서와 제안, 구현, 검증에 참여할 수 있는 public initiative

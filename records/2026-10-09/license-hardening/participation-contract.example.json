@@ -1,0 +1,88 @@
+{
+  "schema": "chu-participation-contract-example/v1",
+  "status": "TEMPLATE_NOT_AUTHORIZED",
+  "authority": "SECONDARY_AI_DRAFT",
+  "fictional_parties": true,
+  "actual_remote_access_granted": false,
+  "license": {
+    "version": "LicenseRef-MetaHumotonic-1.3-DRAFT",
+    "adopted": false,
+    "terms_sha256": "5bb72b092307c504af1a73442b215fad80f3cd418d14801b15558fb518b1322c",
+    "target_work_revision": null,
+    "rights_review_sha256": null,
+    "rights_verified": false
+  },
+  "parties": {
+    "owner": {
+      "public_id": "example-owner",
+      "legal_identity_private_ref": null,
+      "authority_evidence_private_ref": null,
+      "signing_key_fingerprint": null
+    },
+    "operator": {
+      "public_id": "example-operator",
+      "legal_identity_private_ref": null,
+      "authority_evidence_private_ref": null,
+      "signing_key_fingerprint": null,
+      "notice_channel_private_ref": null
+    }
+  },
+  "resource": {
+    "usl_resource_id": "usl:fictional-example:vm",
+    "boundary": "Owner-selected isolated VM only; no host/hypervisor/other VM access",
+    "administration_scope": "Full administration inside the selected VM only if separately authorized",
+    "per_job_privilege": "Minimum for agreed job",
+    "purpose": "bounded sum computation example",
+    "limits": {
+      "cpu_cores": 1,
+      "gpu_count": 0,
+      "memory_mib": 256,
+      "storage_mib": 1024,
+      "network_egress_bytes": 0,
+      "term_ms": 3600000,
+      "per_job_wall_ms": 5000
+    },
+    "technical_enforcement_verified": false
+  },
+  "cost": {
+    "payer": "example-owner",
+    "currency": "sandbox:SIM-MHC",
+    "maximum_atoms": 1000,
+    "real_infrastructure_costs_approved": false
+  },
+  "authorization": {
+    "license_acceptance": null,
+    "owner_access_approval": null,
+    "operator_duties_acceptance": null,
+    "starts_at": null,
+    "expires_at": null,
+    "maximum_admin_term_days_under_proposed_license": 14,
+    "credential_transport_private_ref": null,
+    "reachability_evidence": null,
+    "automatic_renewal": false
+  },
+  "control": {
+    "owner_stop_private_ref": null,
+    "revoke_private_ref": null,
+    "uninstall_private_ref": null,
+    "status_usage_private_ref": null,
+    "incident_notice_private_ref": null,
+    "reallocate_before_stop_confirmation": false
+  },
+  "data": {
+    "type": "Fictional sum input and result only",
+    "retention_days_example": 7,
+    "delete_method_private_ref": null,
+    "public_receipt": "Only explicitly approved credential-free fictional IDs, terms hashes and usage; no real registration details"
+  },
+  "service_contract": {
+    "membership_creates_credit": false,
+    "membership_grants_unlimited_service": false,
+    "pricing": "Separate explicit offer with dimensioned units and expiry",
+    "verification": "Declared verifier and meter required before real use",
+    "refund_and_dispute_terms": null,
+    "governing_law": null,
+    "responsible_contracting_entity": null
+  },
+  "blocking_fields": "Null or unverified fields must be resolved by authorized parties before actual registration; this template is not accepted by a remote service."
+}

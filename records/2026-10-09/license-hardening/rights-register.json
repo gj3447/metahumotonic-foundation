@@ -1,0 +1,81 @@
+{
+  "schema": "metahumotonic-rights-register/v1",
+  "authority": "SECONDARY_AI_EVIDENCE_INDEX",
+  "scope": "Seed inventory only; not the whole repository or public portfolio",
+  "base_commit": "b5f3b7db78f77f5443dfde64c1660205b7eeb37e",
+  "legal_clearance": false,
+  "root_license_sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3",
+  "entries": [
+    {
+      "path": "LICENSE",
+      "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3",
+      "review_status": "NOT_LEGALLY_REVIEWED",
+      "exclusive_rights_confirmed": false,
+      "claim_boundary": "Only copyright-protected contributions for which a licensor has authority; preserve previous and third-party grants.",
+      "role": "UNCHANGED_CURRENT_LICENSE_TEXT",
+      "declared_version": "LicenseRef-MetaHumotonic-1.2",
+      "base_commit": "b5f3b7db78f77f5443dfde64c1660205b7eeb37e"
+    },
+    {
+      "path": "market/core.py",
+      "sha256": "a73a6290c30b450187a7aefe25330d59223fa80e727be503d4424b39309305a9",
+      "review_status": "NOT_LEGALLY_REVIEWED",
+      "exclusive_rights_confirmed": false,
+      "claim_boundary": "Only copyright-protected contributions for which a licensor has authority; preserve previous and third-party grants.",
+      "observed_first_git_commit": "ab2a5e016f98ed8022721adfecf260394811f177",
+      "observed_license_at_commit": "LicenseRef-MetaHumotonic-1.0",
+      "observed_license_sha256": "746164ee614c0f6683728acc4e9edab388ba15b4ef9e1db399e2c6d1f202c880",
+      "earlier_or_outside_git_distribution": "NOT_EXHAUSTIVELY_AUDITED",
+      "rights_holder_verification": "PENDING",
+      "human_authorship_evidence": "NOT_REVIEWED"
+    },
+    {
+      "path": "market/participation.py",
+      "sha256": "e701e407ed5692b206166d34f4b450b4da8ecc7c7077f7d49294ec84ab7c6359",
+      "review_status": "NOT_LEGALLY_REVIEWED",
+      "exclusive_rights_confirmed": false,
+      "claim_boundary": "Only copyright-protected contributions for which a licensor has authority; preserve previous and third-party grants.",
+      "creation_context": "AI-assisted draft or prototype in this authorized work session",
+      "tool": "OpenAI Codex",
+      "human_authorship_evidence": "NOT_LEGALLY_REVIEWED",
+      "declared_repository_default": "LicenseRef-MetaHumotonic-1.2",
+      "new_draft_adopted": false
+    },
+    {
+      "path": "market/participation_demo.py",
+      "sha256": "1a0f2602f8b11b4361742d46eb861c33ec62bd06a56a8e2a672797ac3705a80b",
+      "review_status": "NOT_LEGALLY_REVIEWED",
+      "exclusive_rights_confirmed": false,
+      "claim_boundary": "Only copyright-protected contributions for which a licensor has authority; preserve previous and third-party grants.",
+      "creation_context": "AI-assisted draft or prototype in this authorized work session",
+      "tool": "OpenAI Codex",
+      "human_authorship_evidence": "NOT_LEGALLY_REVIEWED",
+      "declared_repository_default": "LicenseRef-MetaHumotonic-1.2",
+      "new_draft_adopted": false
+    },
+    {
+      "path": "market/test_participation.py",
+      "sha256": "bde4348b3d4dee68011121b7d59eac22c8a41e96b2b514f4fa5d8d1c8831ce43",
+      "review_status": "NOT_LEGALLY_REVIEWED",
+      "exclusive_rights_confirmed": false,
+      "claim_boundary": "Only copyright-protected contributions for which a licensor has authority; preserve previous and third-party grants.",
+      "creation_context": "AI-assisted draft or prototype in this authorized work session",
+      "tool": "OpenAI Codex",
+      "human_authorship_evidence": "NOT_LEGALLY_REVIEWED",
+      "declared_repository_default": "LicenseRef-MetaHumotonic-1.2",
+      "new_draft_adopted": false
+    },
+    {
+      "path": "licenses/MetaHumotonic-1.3-DRAFT.txt",
+      "sha256": "5bb72b092307c504af1a73442b215fad80f3cd418d14801b15558fb518b1322c",
+      "review_status": "NOT_LEGALLY_REVIEWED",
+      "exclusive_rights_confirmed": false,
+      "claim_boundary": "Only copyright-protected contributions for which a licensor has authority; preserve previous and third-party grants.",
+      "creation_context": "AI-assisted draft or prototype in this authorized work session",
+      "tool": "OpenAI Codex",
+      "human_authorship_evidence": "NOT_LEGALLY_REVIEWED",
+      "declared_repository_default": "LicenseRef-MetaHumotonic-1.2",
+      "new_draft_adopted": false
+    }
+  ]
+}
