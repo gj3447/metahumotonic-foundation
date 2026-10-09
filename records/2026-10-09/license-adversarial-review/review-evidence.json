@@ -1,0 +1,376 @@
+{
+  "schema": "metahumotonic-license-adversarial-review/v1",
+  "date": "2026-10-09",
+  "subject": "MetaHumotonic License 1.2",
+  "base_commit": "aad07d10e52272af9cd0a15a52bf0cbde7b2f13b",
+  "authority": "SECONDARY_AI",
+  "reviewer": "OpenAI Codex",
+  "review_type": "SELF_ADVERSARIAL_REVIEW_NOT_INDEPENDENT_COUNSEL",
+  "status": "REVIEW_COMPLETE_FINDINGS_OPEN",
+  "user_source": {
+    "path": "user-verbatim.txt",
+    "sha256": "17b0513fe5479113e6209f3205720a8bf81187d6398525969546fe81d70c1754",
+    "authority": "USER_PRIMARY"
+  },
+  "local_sources": [
+    {
+      "path": "LICENSE",
+      "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+    },
+    {
+      "path": "LICENSE-NOTICE.md",
+      "sha256": "0b135afd51897135d2f0128b7719b6164fc714f8e0cc7f544dca89d90ddcb989"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "0be0ef19f2caa675400ee524184d73f2e016ec8d8ed305d4cd4e4b0c90858ce2"
+    },
+    {
+      "path": "CHARTER.md",
+      "sha256": "642769a99563426d403fd7ebb10f2a34401d3dbdfc587dea0e62935a4490c2c3"
+    },
+    {
+      "path": "records/2026-10-07/public-license-rollout/manifest.json",
+      "sha256": "2baf0f0a92c4c7e47b32eb709b3e2667f32e274f04a7c9e3350c20b60951b296"
+    },
+    {
+      "path": "decisions/2026-10-07-public-license-rollout.json",
+      "sha256": "7339ce1b45d92325da16ba633cb084205f0302c6f64d6bf260110ce6a7e6440e"
+    },
+    {
+      "path": "market/__init__.py",
+      "sha256": "c57eebfcf8c494a18b70beb268d0c1b7aec19a41935c7915f3bccab6e58c06bc"
+    }
+  ],
+  "external_sources": [
+    {
+      "id": "MIT",
+      "url": "https://opensource.org/license/mit",
+      "accessed_at": "2026-10-09",
+      "scope": "Prior permission and attribution conditions"
+    },
+    {
+      "id": "AGPL",
+      "url": "https://opensource.org/license/agpl-3.0",
+      "accessed_at": "2026-10-09",
+      "scope": "Sections 2, 6, 7, 10 and 13; preserve prior rights and compare source obligations"
+    },
+    {
+      "id": "KR_COPYRIGHT_46",
+      "url": "https://law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=00&joNo=0046&lsiSeq=283335&urlMode=lsScJoRltInfoR",
+      "accessed_at": "2026-10-09",
+      "scope": "Displayed effective date 2026-08-11; permitted use methods and conditions"
+    },
+    {
+      "id": "KR_COPYRIGHT_101_2",
+      "url": "https://www.law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=02&joNo=0101&lsiSeq=283335&urlMode=lsScJoRltInfoR",
+      "accessed_at": "2026-10-09",
+      "scope": "Displayed effective date 2026-08-11; program language/protocol/algorithm exclusions"
+    },
+    {
+      "id": "KR_TERMS_3",
+      "url": "https://www.law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1021562635",
+      "accessed_at": "2026-10-09",
+      "scope": "Displayed effective date 2024-08-07; explanation and incorporation when applicable"
+    },
+    {
+      "id": "KR_TERMS_6",
+      "url": "https://law.go.kr/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1025032405",
+      "accessed_at": "2026-10-09",
+      "scope": "Displayed effective date 2024-08-07; unfair terms when applicable"
+    },
+    {
+      "id": "USCO_AI",
+      "url": "https://copyright.gov/newsnet/2025/1060.html",
+      "accessed_at": "2026-10-09",
+      "scope": "2025-01-29 US Copyright Office position; human expressive contribution; not a Korean adjudication"
+    }
+  ],
+  "findings": [
+    {
+      "id": "F01",
+      "priority": "P0",
+      "classification": "CONFIRMED_PRESERVED_RIGHTS",
+      "license_clauses": "1.2–1.4; 10",
+      "summary": "이전 허락을 준수하는 fork에는 새 공유 의무를 강제할 수 없음"
+    },
+    {
+      "id": "F02",
+      "priority": "P0",
+      "classification": "CONDITIONAL_TEXTUAL_COUNTEREXAMPLE",
+      "license_clauses": "2.3; 4.1–4.4",
+      "summary": "수락된 작은 VM 기여와 운영 소프트웨어 규모의 비례 규칙 부재"
+    },
+    {
+      "id": "F03",
+      "priority": "P0",
+      "classification": "LEGAL_STRATEGY_UNCERTAINTY",
+      "license_clauses": "1.1–1.2; 1.5; 7",
+      "summary": "AI 산출물별 보호 가능성과 허락 권한 확인 필요"
+    },
+    {
+      "id": "F04",
+      "priority": "P1",
+      "classification": "AVAILABILITY_AND_IMPLEMENTATION_GAP",
+      "license_clauses": "4.3–4.5; 5.1",
+      "summary": "등록·접근·갱신 장애가 운영 사용 허락에 영향"
+    },
+    {
+      "id": "F05",
+      "priority": "P1",
+      "classification": "ABSENT_ECONOMIC_CONTRACT",
+      "license_clauses": "Preamble; 4.6; 5.4",
+      "summary": "기여에 따른 CHU 서비스량·AI 토큰·MHC 권리가 정의되지 않음"
+    },
+    {
+      "id": "F06",
+      "priority": "P1",
+      "classification": "ABSENT_RECIPROCITY_OBLIGATION",
+      "license_clauses": "2.2; 3; 6",
+      "summary": "MHL 자체에는 대응 소스·개선 코드 반환 의무가 없음"
+    },
+    {
+      "id": "F07",
+      "priority": "P1",
+      "classification": "ENFORCEMENT_GAP_NOT_PERMISSION",
+      "license_clauses": "4.1–4.7; 5.1–5.3",
+      "summary": "권한·측정·철회에 대한 문구는 기술적 강제와 별개"
+    },
+    {
+      "id": "F08",
+      "priority": "P1",
+      "classification": "IDENTITY_AND_ENFORCEMENT_SPEC_GAP",
+      "license_clauses": "1.1; 2.4; 4.2; 5.1; 7–8",
+      "summary": "운영자·권리자·대리권·통지 확인 절차 미정의"
+    },
+    {
+      "id": "F09",
+      "priority": "P1",
+      "classification": "JURISDICTION_DEPENDENT_LEGAL_RISK",
+      "license_clauses": "4.1–4.3; 5.1; 9–10",
+      "summary": "중요 조건의 고지·설명·계약 편입·공정성 검토 필요"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "S01",
+      "finding": "F01",
+      "input": "이전 MIT/AGPL 사본을 해당 조건에 맞춰 사용하고 MHL 전용 변경분은 사용하지 않음",
+      "analytical_assessment": "ALTERNATIVE_LICENSE_PATH",
+      "method": "MANUAL_TEXTUAL_REVIEW_NOT_EXECUTED_ATTACK_OR_COURT_RESULT"
+    },
+    {
+      "id": "S02",
+      "finding": "F02",
+      "input": "실제 작업 가능 1 vCPU VM 명세서를 운영자가 수락하고, 동일 조직은 다른 동급 CPU 1,000개에서 MHL 코드를 운영",
+      "analytical_assessment": "CONDITIONAL_COUNTEREXAMPLE",
+      "method": "MANUAL_TEXTUAL_REVIEW_NOT_EXECUTED_ATTACK_OR_COURT_RESULT"
+    },
+    {
+      "id": "S03",
+      "finding": "F02",
+      "input": "유효한 공유 상태지만 운영자가 작업을 배정하지 않아 완료 처리량이 0",
+      "analytical_assessment": "NOT_A_BREACH_BY_ITSELF_UNDER_4_4",
+      "method": "MANUAL_TEXTUAL_REVIEW_NOT_EXECUTED_ATTACK_OR_COURT_RESULT"
+    },
+    {
+      "id": "S04",
+      "finding": "F03",
+      "input": "보호되는 표현의 복제 없이 아이디어만 독립 구현",
+      "analytical_assessment": "RIGHTS_BOUNDARY_SUBJECT_TO_FACTS",
+      "method": "MANUAL_TEXTUAL_REVIEW_NOT_EXECUTED_ATTACK_OR_COURT_RESULT"
+    },
+    {
+      "id": "S05",
+      "finding": "F04",
+      "input": "등록처·접근 승인이 없거나 만료되어 MHL 전용 운영 조건을 충족하지 못함",
+      "analytical_assessment": "OPERATIONS_NOT_AUTHORIZED_UNDER_MHL",
+      "method": "MANUAL_TEXTUAL_REVIEW_NOT_EXECUTED_ATTACK_OR_COURT_RESULT"
+    },
+    {
+      "id": "S06",
+      "finding": "F05",
+      "input": "자원을 기여했으나 별도 서비스량·보상·상환 약정이 없음",
+      "analytical_assessment": "SPECIFIC_SERVICE_ENTITLEMENT_NOT_DEFINED",
+      "method": "MANUAL_TEXTUAL_REVIEW_NOT_EXECUTED_ATTACK_OR_COURT_RESULT"
+    },
+    {
+      "id": "S07",
+      "finding": "F06",
+      "input": "공유 조건을 충족한 MHL 전용 코드 서비스가 개선 소스를 제공하지 않고 API 고객만 늘어남",
+      "analytical_assessment": "SOURCE_RETURN_NOT_REQUIRED_BY_MHL_ITSELF",
+      "method": "MANUAL_TEXTUAL_REVIEW_NOT_EXECUTED_ATTACK_OR_COURT_RESULT"
+    },
+    {
+      "id": "S08",
+      "finding": "F07",
+      "input": "허위 측정·중복 예약 또는 root로 내부 측정기를 변경",
+      "analytical_assessment": "ENFORCEMENT_ATTACK_NOT_LEGAL_PERMISSION",
+      "method": "MANUAL_TEXTUAL_REVIEW_NOT_EXECUTED_ATTACK_OR_COURT_RESULT"
+    },
+    {
+      "id": "S09",
+      "finding": "F08",
+      "input": "CHU 운영자 자격과 계약 대표 권한을 주장하지만 독립 확인되지 않음",
+      "analytical_assessment": "AUTHORITY_NOT_ESTABLISHED",
+      "method": "MANUAL_TEXTUAL_REVIEW_NOT_EXECUTED_ATTACK_OR_COURT_RESULT"
+    },
+    {
+      "id": "S10",
+      "finding": "F09",
+      "input": "상대가 중요 조건의 설명·수락 사실 또는 공정성을 다툼",
+      "analytical_assessment": "LEGAL_OUTCOME_UNDETERMINED",
+      "method": "MANUAL_TEXTUAL_REVIEW_NOT_EXECUTED_ATTACK_OR_COURT_RESULT"
+    },
+    {
+      "id": "C01",
+      "finding": null,
+      "input": "전 자원 상한이 0이거나 실제 작업을 수용할 수 없는 공유 대상",
+      "analytical_assessment": "EXCLUDED_BY_4_2",
+      "method": "MANUAL_TEXTUAL_REVIEW_NOT_EXECUTED_ATTACK_OR_COURT_RESULT"
+    },
+    {
+      "id": "C02",
+      "finding": null,
+      "input": "실제 생산·연구 계산을 이름만 격리 테스트라고 부름",
+      "analytical_assessment": "NO_AUTOMATIC_TEST_EXEMPTION",
+      "method": "MANUAL_TEXTUAL_REVIEW_NOT_EXECUTED_ATTACK_OR_COURT_RESULT"
+    },
+    {
+      "id": "C03",
+      "finding": null,
+      "input": "상업 SaaS 운영자가 단순 최종 이용자 면제를 주장",
+      "analytical_assessment": "OPERATOR_STILL_SUBJECT_TO_2_1_AND_2_2",
+      "method": "MANUAL_TEXTUAL_REVIEW_NOT_EXECUTED_ATTACK_OR_COURT_RESULT"
+    },
+    {
+      "id": "C04",
+      "finding": null,
+      "input": "clone·설치·CHU 명칭만으로 접근을 시작",
+      "analytical_assessment": "NO_ACCESS_CONSENT_UNDER_2_6_AND_4_3",
+      "method": "MANUAL_TEXTUAL_REVIEW_NOT_EXECUTED_ATTACK_OR_COURT_RESULT"
+    },
+    {
+      "id": "C05",
+      "finding": null,
+      "input": "철회 이후 숨은 프로세스로 작업 지속",
+      "analytical_assessment": "PROHIBITED_BY_4_7_AND_5_3",
+      "method": "MANUAL_TEXTUAL_REVIEW_NOT_EXECUTED_ATTACK_OR_COURT_RESULT"
+    },
+    {
+      "id": "C06",
+      "finding": null,
+      "input": "30일 시정기간 동안 무공유 운영이 허용된다고 주장",
+      "analytical_assessment": "SHARING_FAILURE_SUBJECT_TO_4_5_NOT_30_DAY_GRACE",
+      "method": "MANUAL_TEXTUAL_REVIEW_NOT_EXECUTED_ATTACK_OR_COURT_RESULT"
+    },
+    {
+      "id": "C07",
+      "finding": null,
+      "input": "철회권 제거로 컴퓨팅 담보의 안정성이 입증된다고 주장",
+      "analytical_assessment": "DOES_NOT_ESTABLISH_AVAILABILITY_OR_SAFETY",
+      "method": "MANUAL_TEXTUAL_REVIEW_NOT_EXECUTED_ATTACK_OR_COURT_RESULT"
+    }
+  ],
+  "remote_comparisons": [
+    {
+      "repo": "HSWM",
+      "base": "8043a83841bf3e89dc4e089adbab012475839fc8",
+      "head": "27dca376f0e20b33eef94665f41dad24eba88cdd",
+      "url": "https://github.com/gj3447/HSWM/compare/8043a83841bf3e89dc4e089adbab012475839fc8...27dca376f0e20b33eef94665f41dad24eba88cdd",
+      "method": "Read-only gh api compare on 2026-10-09; returned complete changed-path list matched the stored manifest; paths manually reviewed.",
+      "runtime_source_paths_changed": false,
+      "paths": [
+        "CONTRIBUTING.md",
+        "COPYRIGHT",
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "LICENSING.md",
+        "NOTICE",
+        "README.md",
+        "license-migration.json",
+        "licenses/pre-mhl-2026-10-07/COPYRIGHT",
+        "licenses/pre-mhl-2026-10-07/LICENSE",
+        "licenses/pre-mhl-2026-10-07/LICENSING.md",
+        "licenses/pre-mhl-2026-10-07/NOTICE",
+        "pyproject.toml"
+      ]
+    },
+    {
+      "repo": "bhgman_tool",
+      "base": "0912625bb38e5c06a885f7160fb99d57c4674b77",
+      "head": "8dee567d3b42368c5f3ac249748f44160474a3cf",
+      "url": "https://github.com/gj3447/bhgman_tool/compare/0912625bb38e5c06a885f7160fb99d57c4674b77...8dee567d3b42368c5f3ac249748f44160474a3cf",
+      "method": "Read-only gh api compare on 2026-10-09; returned complete changed-path list matched the stored manifest; paths manually reviewed.",
+      "runtime_source_paths_changed": false,
+      "paths": [
+        "CONTRIBUTING.md",
+        "COPYRIGHT",
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "LICENSING.md",
+        "NOTICE",
+        "README.ja-JP.md",
+        "README.ko-KR.md",
+        "README.md",
+        "README.zh-CN.md",
+        "license-migration.json",
+        "licenses/pre-mhl-2026-10-07/COPYRIGHT",
+        "licenses/pre-mhl-2026-10-07/LICENSE",
+        "licenses/pre-mhl-2026-10-07/LICENSING.md",
+        "licenses/pre-mhl-2026-10-07/NOTICE",
+        "pyproject.toml"
+      ]
+    },
+    {
+      "repo": "ooptdd",
+      "base": "64242fcfcd07dbe21cd969117a579834477db500",
+      "head": "8acdab1325355e1d3bcdd8d07833d464cf778f06",
+      "url": "https://github.com/gj3447/ooptdd/compare/64242fcfcd07dbe21cd969117a579834477db500...8acdab1325355e1d3bcdd8d07833d464cf778f06",
+      "method": "Read-only gh api compare on 2026-10-09; returned complete changed-path list matched the stored manifest; paths manually reviewed.",
+      "runtime_source_paths_changed": false,
+      "paths": [
+        "CONTRIBUTING.md",
+        "COPYRIGHT",
+        "LICENSE",
+        "LICENSE-NOTICE.md",
+        "LICENSING.md",
+        "NOTICE",
+        "README.md",
+        "license-migration.json",
+        "licenses/pre-mhl-2026-10-07/COPYRIGHT",
+        "licenses/pre-mhl-2026-10-07/LICENSE",
+        "licenses/pre-mhl-2026-10-07/LICENSING.md",
+        "licenses/pre-mhl-2026-10-07/NOTICE",
+        "pyproject.toml"
+      ]
+    }
+  ],
+  "illustrative_arithmetic": {
+    "assumptions": "Same CPU performance and time window; one usable vCPU continuously offered under an accepted agreement; no credit valuation, real benchmark, or assertion of operator acceptance.",
+    "unit": "ratio_of_like_CPU_capacity",
+    "rows": [
+      {
+        "shared": 1,
+        "used_by_same_operator": 1000,
+        "ratio_exact": "1/1000",
+        "ratio_decimal": 0.001
+      },
+      {
+        "shared": 1,
+        "used_by_same_operator": 1000000,
+        "ratio_exact": "1/1000000",
+        "ratio_decimal": 1e-06
+      }
+    ],
+    "deduction": "Holding eligible contribution constant does not bound permitted software operating scale in the current clauses."
+  },
+  "limitations": [
+    "No legal enforceability determination",
+    "No complete copyright/contributor/vendor audit",
+    "No live sharing, attack, remote execution or token transfer",
+    "No automatic test oracle for legal interpretation",
+    "Existing 2026-10-07 graph checks do not validate this license economically or legally",
+    "No new license adopted; proposed changes are not ratified"
+  ]
+}
