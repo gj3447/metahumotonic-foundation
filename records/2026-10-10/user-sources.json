@@ -1,0 +1,50 @@
+{
+  "schema": "foundation-session-sources/1",
+  "scope": "Public excerpts and non-financial concept messages; current full message retained privately",
+  "messages": [
+    {
+      "id": "closeout",
+      "role": "user",
+      "authority": "USER_PRIMARY",
+      "event_time": null,
+      "recorded_on": "2026-10-10",
+      "source": "Current conversation",
+      "capture_scope": "EXACT_CONTIGUOUS_EXCERPT_OF_CURRENT_MESSAGE",
+      "verbatim": "오늘 작업 싹다 표준 그래프 엔지니어링으로 구축해주고 그 여기서는 라이센스 관련해서랑 그 실제 어케 실행할지 미국 그 법인? 어케세울지 이런거는 나중에 생각해봐야겟다 ㅇㅇ.",
+      "sha256": "38f6a1e2bb422d492c0b03c9ef6bf561a88944b6d81ee1820b8c566f36c9bc2c"
+    },
+    {
+      "id": "ai_operations",
+      "role": "user",
+      "authority": "USER_PRIMARY",
+      "event_time": null,
+      "recorded_on": "2026-10-10",
+      "source": "Current conversation",
+      "capture_scope": "EXACT_CONTIGUOUS_EXCERPT_OF_CURRENT_MESSAGE",
+      "verbatim": "그 미국의 비영리단체 법인은 어케 만들고 그 운영을 해야할지 거의 난 ai 기반으로 운영할건데 어케할건지 좀 깊게 생각해봐야할거같음 ㅇㅇ",
+      "sha256": "b53d7fdacfdc1bc8b3d4ed4ce3b0ff90348519c04ae69400ae653e2a5d2e2be1"
+    },
+    {
+      "id": "premise",
+      "role": "user",
+      "authority": "USER_PRIMARY",
+      "event_time": null,
+      "recorded_on": "2026-10-10",
+      "source": "Current conversation",
+      "capture_scope": "EARLIER_USER_MESSAGE_IN_THIS_CONVERSATION",
+      "verbatim": "그 플라이휠 이 이해가 되냐 ㅇㅇ? 전제는 그냥 ai 를 쓰는것보다 거대 HSWM CHU 기반으로 동작하는 llm 이 인터넷 데이터 증강하는것처럼 더 초지능이지 않을까 하는거야 같은 ai 성능 대비해서 ㅇㅇ. 토큰대비해서 ㅇㅇ 이게 전제가 되야해",
+      "sha256": "ad45808975714a413f9c4535ef4c9e5ed0b5260224d110dc7b7f8ce7b0aaeec2"
+    },
+    {
+      "id": "purpose",
+      "role": "user",
+      "authority": "USER_PRIMARY",
+      "event_time": null,
+      "recorded_on": "2026-10-10",
+      "source": "Current conversation",
+      "capture_scope": "EARLIER_USER_MESSAGE_IN_THIS_CONVERSATION",
+      "verbatim": "ㅇㅇ 이제 저기서 연구 이어서 할거야 입체운행구름과 MHC 를 사용하는 이유는 알지? 개인 컴퓨터에서 하는것보다 컴퓨팅 자원을 좀 상시적으로 제공하고 크레딧을 가져와서 HSWM CHU 거대한곳에서 그 답변을 얻어내는 그런느낌인거야 p2p 자유 경제 합의를 통해 뭔말인지 알지 ㅇㅇ?? 내용 좀 제대로 정리해서 저장해줘봐",
+      "sha256": "b6f3ce0837a3ae9f9eac90e8f2597f9a52d9ac7e51e5c1ccdb4f593b29e5872f"
+    }
+  ]
+}

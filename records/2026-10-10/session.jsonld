@@ -1,0 +1,479 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "rec": "https://github.com/gj3447/metahumotonic-foundation/records/2026-10-10#",
+    "sv": "https://github.com/gj3447/metahumotonic-foundation/records/2026-10-05/vocab#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "label": "rdfs:label",
+    "text": "sv:text",
+    "authority": "sv:authority",
+    "state": "sv:state",
+    "kind": "sv:kind",
+    "path": "sv:path",
+    "sha256": "sv:sha256",
+    "revision": "sv:revision",
+    "sourceKey": "sv:sourceKey",
+    "nextAction": "sv:nextAction",
+    "visibility": "sv:visibility",
+    "recordedOn": {
+      "@id": "sv:recordedOn",
+      "@type": "xsd:date"
+    },
+    "normativeEffect": {
+      "@id": "sv:normativeEffect",
+      "@type": "xsd:boolean"
+    },
+    "attributedTo": {
+      "@id": "prov:wasAttributedTo",
+      "@type": "@id"
+    },
+    "evidence": {
+      "@id": "sv:evidence",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "sourceArtifact": {
+      "@id": "sv:sourceArtifact",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "addresses": {
+      "@id": "sv:addresses",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "artifact": {
+      "@id": "sv:artifact",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "dependsOn": {
+      "@id": "sv:dependsOn",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "member": {
+      "@id": "prov:hadMember",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "references": {
+      "@id": "dcterms:references",
+      "@type": "@id",
+      "@container": "@set"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "rec:record",
+      "@type": [
+        "sv:SessionRecord",
+        "prov:Bundle"
+      ],
+      "label": "2026-10-10 재단과 입체운행구름 작업 정리",
+      "authority": "SECONDARY_AI",
+      "recordedOn": "2026-10-10",
+      "normativeEffect": false,
+      "attributedTo": "rec:codex",
+      "text": "이 대화에서 오늘 수행한 저장소·목적·플라이휠·연구 연결과 후속 검토 범위를 기록한다. 기존 라이선스 검토는 이전 작업의 현재 기준선이며 오늘 재실행한 것으로 세지 않는다.",
+      "member": [
+        "rec:user",
+        "rec:codex",
+        "rec:artifact_sources",
+        "rec:artifact_license",
+        "rec:artifact_license_followup",
+        "rec:artifact_draft",
+        "rec:artifact_omc",
+        "rec:artifact_hub",
+        "rec:u_closeout",
+        "rec:u_ai_operations",
+        "rec:u_premise",
+        "rec:u_purpose",
+        "rec:c_resources",
+        "rec:c_premise",
+        "rec:c_scope",
+        "rec:c_defer",
+        "rec:w_workspace",
+        "rec:w_purpose",
+        "rec:w_flywheel",
+        "rec:w_hub",
+        "rec:w_license_baseline",
+        "rec:w_performance",
+        "rec:w_license_review",
+        "rec:w_nonprofit",
+        "rec:w_ai_ops",
+        "rec:w_live_system"
+      ]
+    },
+    {
+      "@id": "rec:user",
+      "@type": [
+        "prov:Agent",
+        "prov:Person"
+      ],
+      "label": "이 대화의 사용자"
+    },
+    {
+      "@id": "rec:codex",
+      "@type": [
+        "prov:Agent",
+        "prov:SoftwareAgent"
+      ],
+      "label": "Codex 기록 작성자"
+    },
+    {
+      "@id": "rec:artifact_sources",
+      "@type": "sv:Artifact",
+      "label": "공개 가능한 사용자 발화와 발췌",
+      "kind": "LOCAL_SNAPSHOT",
+      "visibility": "PUBLIC",
+      "recordedOn": "2026-10-10",
+      "path": "records/2026-10-10/user-sources.json",
+      "sha256": "956063d4728b2a9161f71b36985e7c484de8c688c3750f8ff75b19e50ac94289"
+    },
+    {
+      "@id": "rec:artifact_license",
+      "@type": "sv:Artifact",
+      "label": "현행 MetaHumotonic License 1.2",
+      "kind": "LOCAL_SNAPSHOT",
+      "visibility": "PUBLIC",
+      "recordedOn": "2026-10-10",
+      "revision": "ac9953261f9a0d34748671021a9dbaf3ad36554a",
+      "path": "LICENSE",
+      "sha256": "dc4439a4bc7ea4cb913ba3a5a9ff679a1dc148a03f77a6deba82758c5a92b5a3"
+    },
+    {
+      "@id": "rec:artifact_license_followup",
+      "@type": "sv:Artifact",
+      "label": "이전 라이선스 검토 후속과 로컬 시험 기록",
+      "kind": "LOCAL_SNAPSHOT",
+      "visibility": "PUBLIC",
+      "recordedOn": "2026-10-10",
+      "revision": "ac9953261f9a0d34748671021a9dbaf3ad36554a",
+      "path": "records/2026-10-09/license-hardening/verification.json",
+      "sha256": "d7cd6fcf6dac4291437978ee1ece3eb67dca285bdf9dd181b5d81d34c77244b2"
+    },
+    {
+      "@id": "rec:artifact_draft",
+      "@type": "sv:Artifact",
+      "label": "미채택 MetaHumotonic License 1.3 초안",
+      "kind": "LOCAL_SNAPSHOT",
+      "visibility": "PUBLIC",
+      "recordedOn": "2026-10-10",
+      "revision": "ac9953261f9a0d34748671021a9dbaf3ad36554a",
+      "path": "licenses/MetaHumotonic-1.3-DRAFT.txt",
+      "sha256": "5bb72b092307c504af1a73442b215fad80f3cd418d14801b15558fb518b1322c"
+    },
+    {
+      "@id": "rec:artifact_omc",
+      "@type": "sv:Artifact",
+      "label": "비공개 입체운행구름 목적·플라이휠 기록",
+      "kind": "PRIVATE_REFERENCE",
+      "visibility": "PRIVATE",
+      "recordedOn": "2026-10-10",
+      "revision": "9b7ceb506ddefdf2daded380699bc42be58670e6"
+    },
+    {
+      "@id": "rec:artifact_hub",
+      "@type": "sv:Artifact",
+      "label": "비공개 WHAT_IS와 HOW_TO 완료 기록",
+      "kind": "PRIVATE_REFERENCE",
+      "visibility": "PRIVATE",
+      "recordedOn": "2026-10-10",
+      "revision": "c9fe4223b7f0956f563eff421cb6d1c836883511"
+    },
+    {
+      "@id": "rec:u_closeout",
+      "@type": "sv:UserSource",
+      "label": "closeout",
+      "authority": "USER_PRIMARY",
+      "recordedOn": "2026-10-10",
+      "attributedTo": "rec:user",
+      "text": "오늘 작업 싹다 표준 그래프 엔지니어링으로 구축해주고 그 여기서는 라이센스 관련해서랑 그 실제 어케 실행할지 미국 그 법인? 어케세울지 이런거는 나중에 생각해봐야겟다 ㅇㅇ.",
+      "sourceKey": "closeout",
+      "sha256": "38f6a1e2bb422d492c0b03c9ef6bf561a88944b6d81ee1820b8c566f36c9bc2c",
+      "sourceArtifact": [
+        "rec:artifact_sources"
+      ]
+    },
+    {
+      "@id": "rec:u_ai_operations",
+      "@type": "sv:UserSource",
+      "label": "ai_operations",
+      "authority": "USER_PRIMARY",
+      "recordedOn": "2026-10-10",
+      "attributedTo": "rec:user",
+      "text": "그 미국의 비영리단체 법인은 어케 만들고 그 운영을 해야할지 거의 난 ai 기반으로 운영할건데 어케할건지 좀 깊게 생각해봐야할거같음 ㅇㅇ",
+      "sourceKey": "ai_operations",
+      "sha256": "b53d7fdacfdc1bc8b3d4ed4ce3b0ff90348519c04ae69400ae653e2a5d2e2be1",
+      "sourceArtifact": [
+        "rec:artifact_sources"
+      ]
+    },
+    {
+      "@id": "rec:u_premise",
+      "@type": "sv:UserSource",
+      "label": "premise",
+      "authority": "USER_PRIMARY",
+      "recordedOn": "2026-10-10",
+      "attributedTo": "rec:user",
+      "text": "그 플라이휠 이 이해가 되냐 ㅇㅇ? 전제는 그냥 ai 를 쓰는것보다 거대 HSWM CHU 기반으로 동작하는 llm 이 인터넷 데이터 증강하는것처럼 더 초지능이지 않을까 하는거야 같은 ai 성능 대비해서 ㅇㅇ. 토큰대비해서 ㅇㅇ 이게 전제가 되야해",
+      "sourceKey": "premise",
+      "sha256": "ad45808975714a413f9c4535ef4c9e5ed0b5260224d110dc7b7f8ce7b0aaeec2",
+      "sourceArtifact": [
+        "rec:artifact_sources"
+      ]
+    },
+    {
+      "@id": "rec:u_purpose",
+      "@type": "sv:UserSource",
+      "label": "purpose",
+      "authority": "USER_PRIMARY",
+      "recordedOn": "2026-10-10",
+      "attributedTo": "rec:user",
+      "text": "ㅇㅇ 이제 저기서 연구 이어서 할거야 입체운행구름과 MHC 를 사용하는 이유는 알지? 개인 컴퓨터에서 하는것보다 컴퓨팅 자원을 좀 상시적으로 제공하고 크레딧을 가져와서 HSWM CHU 거대한곳에서 그 답변을 얻어내는 그런느낌인거야 p2p 자유 경제 합의를 통해 뭔말인지 알지 ㅇㅇ?? 내용 좀 제대로 정리해서 저장해줘봐",
+      "sourceKey": "purpose",
+      "sha256": "b6f3ce0837a3ae9f9eac90e8f2597f9a52d9ac7e51e5c1ccdb4f593b29e5872f",
+      "sourceArtifact": [
+        "rec:artifact_sources"
+      ]
+    },
+    {
+      "@id": "rec:c_resources",
+      "@type": "sv:SummaryClaim",
+      "label": "기여와 공동 지능 이용",
+      "authority": "SECONDARY_AI",
+      "kind": "USER_DIRECTION",
+      "attributedTo": "rec:codex",
+      "text": "지속적 컴퓨팅 자원 기여로 크레딧을 얻고, P2P 자유·경제·합의 속에서 HSWM·CHU의 답변을 이용한다.",
+      "evidence": [
+        "rec:u_purpose"
+      ]
+    },
+    {
+      "@id": "rec:c_premise",
+      "@type": "sv:SummaryClaim",
+      "label": "플라이휠의 품질 전제",
+      "authority": "SECONDARY_AI",
+      "kind": "UNTESTED_HYPOTHESIS",
+      "attributedTo": "rec:codex",
+      "text": "동일 기본 모델·동일 총토큰에서 HSWM·CHU가 더 유용한 답변을 만들어야 경제 순환의 출발점이 성립한다. 실제 성능은 미검증이다.",
+      "evidence": [
+        "rec:u_premise"
+      ]
+    },
+    {
+      "@id": "rec:c_scope",
+      "@type": "sv:SummaryClaim",
+      "label": "재단의 후속 검토 범위",
+      "authority": "SECONDARY_AI",
+      "kind": "USER_DIRECTION",
+      "attributedTo": "rec:codex",
+      "text": "입체운행구름 기술 연구는 해당 작업공간에서 계속하고, 재단은 라이선스·실제 운영·미국 법인 검토를 후속 과제로 기록한다.",
+      "evidence": [
+        "rec:u_closeout",
+        "rec:u_purpose"
+      ]
+    },
+    {
+      "@id": "rec:c_defer",
+      "@type": "sv:SummaryClaim",
+      "label": "AI 중심 운영과 법인 검토는 나중에",
+      "authority": "SECONDARY_AI",
+      "kind": "USER_DIRECTION",
+      "attributedTo": "rec:codex",
+      "text": "미국 비영리 법인 설립과 AI 중심 운영을 깊이 검토할 필요를 남긴다. 설립 관할·조직 형태·책임자·운영 구조를 이번 기록으로 확정하지 않는다.",
+      "evidence": [
+        "rec:u_closeout",
+        "rec:u_ai_operations"
+      ]
+    },
+    {
+      "@id": "rec:w_workspace",
+      "@type": "sv:WorkItem",
+      "label": "입체운행구름 전용 작업공간",
+      "authority": "SECONDARY_AI",
+      "attributedTo": "rec:codex",
+      "state": "VERIFIED",
+      "text": "비공개 저장소를 로컬 작업공간에 연결했다.",
+      "nextAction": "해당 소유 저장소에서 기술 연구를 이어간다.",
+      "addresses": [
+        "rec:c_scope"
+      ],
+      "artifact": [
+        "rec:artifact_omc"
+      ],
+      "dependsOn": []
+    },
+    {
+      "@id": "rec:w_purpose",
+      "@type": "sv:WorkItem",
+      "label": "자원 기여와 공동 지능 목적 기록",
+      "authority": "SECONDARY_AI",
+      "attributedTo": "rec:codex",
+      "state": "RECORDED",
+      "text": "원문과 해석을 분리하고 자원·크레딧·MHC·HSWM·CHU의 관계를 기록했다.",
+      "nextAction": "토큰당 효용 전제와 함께 유지한다.",
+      "addresses": [
+        "rec:c_resources"
+      ],
+      "artifact": [
+        "rec:artifact_omc"
+      ],
+      "dependsOn": [
+        "rec:w_workspace"
+      ]
+    },
+    {
+      "@id": "rec:w_flywheel",
+      "@type": "sv:WorkItem",
+      "label": "품질 전제와 조건부 플라이휠",
+      "authority": "SECONDARY_AI",
+      "attributedTo": "rec:codex",
+      "state": "LOCAL_PROTOTYPE",
+      "text": "31개 노드·39개 관계·3개 순환·5개 질의와 검사 도구를 구축했다. 그래프 검사와 반례 시험 6개를 통과했다. 성능 실험 결과는 없다.",
+      "nextAction": "동일 모델과 총토큰 상한에서 비교할 실행 조건을 정한다.",
+      "addresses": [
+        "rec:c_premise"
+      ],
+      "artifact": [
+        "rec:artifact_omc"
+      ],
+      "dependsOn": [
+        "rec:w_purpose"
+      ]
+    },
+    {
+      "@id": "rec:w_hub",
+      "@type": "sv:WorkItem",
+      "label": "WHAT_IS와 HOW_TO 연구 연결",
+      "authority": "SECONDARY_AI",
+      "attributedTo": "rec:codex",
+      "state": "VERIFIED",
+      "text": "두 기존 연구 기록이 COMPLETE이며 커밋·원문 해시·그래프·USL 연결을 확인했다.",
+      "nextAction": "기록의 소유와 비공개 범위를 유지한다.",
+      "addresses": [
+        "rec:c_scope"
+      ],
+      "artifact": [
+        "rec:artifact_hub"
+      ],
+      "dependsOn": [
+        "rec:w_purpose",
+        "rec:w_flywheel"
+      ]
+    },
+    {
+      "@id": "rec:w_license_baseline",
+      "@type": "sv:WorkItem",
+      "label": "라이선스 기준선 재확인",
+      "authority": "SECONDARY_AI",
+      "attributedTo": "rec:codex",
+      "state": "RECORDED",
+      "text": "현행 1.2와 미채택 1.3 초안을 유지한다. 44개 시험 통과는 2026-10-09의 기존 기록이며 오늘 재시험한 결과가 아니다.",
+      "nextAction": "후속 검토에서 기존 권리와 실제 운영 계약을 함께 다룬다.",
+      "addresses": [
+        "rec:c_scope"
+      ],
+      "artifact": [
+        "rec:artifact_license",
+        "rec:artifact_license_followup",
+        "rec:artifact_draft"
+      ],
+      "dependsOn": []
+    },
+    {
+      "@id": "rec:w_performance",
+      "@type": "sv:WorkItem",
+      "label": "HSWM CHU의 실제 토큰당 효용",
+      "authority": "SECONDARY_AI",
+      "attributedTo": "rec:codex",
+      "state": "PENDING",
+      "text": "동일 모델·자료·총토큰 회계의 비교 설계까지 있으며 실제 모델 실험은 미실행이다.",
+      "nextAction": "OMC에서 단독 LLM·일반 검색·HSWM CHU 비교를 실행할 조건을 준비한다.",
+      "addresses": [
+        "rec:c_premise"
+      ],
+      "artifact": [
+        "rec:artifact_omc"
+      ],
+      "dependsOn": [
+        "rec:w_flywheel"
+      ]
+    },
+    {
+      "@id": "rec:w_license_review",
+      "@type": "sv:WorkItem",
+      "label": "라이선스와 실제 운영 계약 검토",
+      "authority": "SECONDARY_AI",
+      "attributedTo": "rec:codex",
+      "state": "PENDING",
+      "text": "사용자 요청에 따라 후속 검토로 남겼다. 이번 기록은 라이선스 개정이나 초안 채택이 아니다.",
+      "nextAction": "검토 재개 시 권리자·계약 주체·기여와 서비스 이용 조건을 확인한다.",
+      "addresses": [
+        "rec:c_scope"
+      ],
+      "artifact": [
+        "rec:artifact_license_followup",
+        "rec:artifact_draft"
+      ],
+      "dependsOn": [
+        "rec:w_license_baseline"
+      ]
+    },
+    {
+      "@id": "rec:w_nonprofit",
+      "@type": "sv:WorkItem",
+      "label": "미국 비영리 법인 설립과 운영 검토",
+      "authority": "SECONDARY_AI",
+      "attributedTo": "rec:codex",
+      "state": "PENDING",
+      "text": "사용자가 나중에 검토할 의제로 지정했다. 법인 설립·관할 선택·신청 절차를 실행하지 않았다.",
+      "nextAction": "후속 조사에서 목적·조직 형태·관할·신청·지속 운영 의무를 확인한다.",
+      "addresses": [
+        "rec:c_defer"
+      ],
+      "artifact": [],
+      "dependsOn": []
+    },
+    {
+      "@id": "rec:w_ai_ops",
+      "@type": "sv:WorkItem",
+      "label": "AI 중심 재단 운영 설계",
+      "authority": "SECONDARY_AI",
+      "attributedTo": "rec:codex",
+      "state": "PENDING",
+      "text": "AI를 중심으로 운영하려는 방향을 기록했다. 법적 책임과 기술적 실행 권한 배분은 미정이다.",
+      "nextAction": "후속 검토에서 책임 주체·권한 위임·계약·기록·정산·복구 범위를 함께 설계한다.",
+      "addresses": [
+        "rec:c_defer"
+      ],
+      "artifact": [],
+      "dependsOn": [
+        "rec:w_nonprofit"
+      ]
+    },
+    {
+      "@id": "rec:w_live_system",
+      "@type": "sv:WorkItem",
+      "label": "실제 서비스와 MHC 실행",
+      "authority": "SECONDARY_AI",
+      "attributedTo": "rec:codex",
+      "state": "PENDING",
+      "text": "라이선스 문서와 설계 그래프만으로 실제 자원 공유·서비스 보장·MHC 발행이 완료되지 않는다.",
+      "nextAction": "효용 검증과 운영·정산 조건을 확보한 뒤 별도 구현 작업으로 진행한다.",
+      "addresses": [
+        "rec:c_scope"
+      ],
+      "artifact": [],
+      "dependsOn": [
+        "rec:w_performance",
+        "rec:w_license_review",
+        "rec:w_ai_ops"
+      ]
+    }
+  ]
+}

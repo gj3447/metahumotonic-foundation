@@ -1,0 +1,21 @@
+{
+  "record_type": "owner-directed-session-record-and-deferred-review",
+  "date": "2026-10-10",
+  "source_path": "records/2026-10-10/user-sources.json",
+  "source_sha256": "956063d4728b2a9161f71b36985e7c484de8c688c3750f8ff75b19e50ac94289",
+  "source_scope": "Identified public excerpts and earlier non-financial messages; complete current utterance retained privately",
+  "source_authority": "USER_PRIMARY",
+  "interpretation_authority": "SECONDARY_AI",
+  "actor": "OpenAI Codex",
+  "base_commit": "ac9953261f9a0d34748671021a9dbaf3ad36554a",
+  "record": "records/2026-10-10/session.jsonld",
+  "scope": "Close out this conversation’s OMC purpose and flywheel work; leave Foundation licensing, practical operation, US nonprofit formation and AI-led operation for later review.",
+  "root_license": "LicenseRef-MetaHumotonic-1.2",
+  "root_license_changed": false,
+  "draft_1_3_adopted": false,
+  "legal_research_performed": false,
+  "entity_formed": false,
+  "runtime_or_financial_actions_executed": false,
+  "governance_ratification": "NOT_PERFORMED",
+  "new_shared_kg_claims": false
+}

@@ -163,6 +163,7 @@ RFC는 최소 14일이며, 헌장의 불변 경계(동의 없는 컴퓨팅 / 이
 
 ## 문서
 
+- 2026-10-10 입체운행구름·플라이휠 작업 정리와 재단 후속 검토: [일일 기록](records/2026-10-10/README.md)
 - 에이전트 우선 계약·예산·연산 구매 설계와 12개 로컬 실험: [AGENT-ECONOMY.md](AGENT-ECONOMY.md)
 - 2026-10-05 대화·구현 마감 기록과 남은 일: [일일 기록](records/2026-10-05/README.md)
 - 재단의 존재 이유·대안·반론·검증할 조건 (**연구 제안, 미비준**): [FOUNDATION-RATIONALE.md](FOUNDATION-RATIONALE.md)
